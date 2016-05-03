@@ -10,17 +10,19 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Component\DataSet\Request;
+namespace WellCommerce\Component\DataSet\QueryBuilder;
+
+use WellCommerce\Component\DataSet\Repository\DataSetAwareRepositoryInterface;
 
 /**
- * Class DataSetRequestFactory
+ * Class DataSetQueryBuilderFactory
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class DataSetRequestFactory
+final class DataSetQueryBuilderFactory
 {
-    public function create(array $options = []) : DataSetRequestInterface
+    public function create(DataSetAwareRepositoryInterface $repository) : DataSetQueryBuilderInterface
     {
-        return new DataSetRequest($options);
+        return new DataSetQueryBuilder($repository);
     }
 }
