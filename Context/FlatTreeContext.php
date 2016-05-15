@@ -15,6 +15,7 @@ namespace WellCommerce\Component\DataSet\Context;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use WellCommerce\Component\DataSet\Cache\CacheOptions;
 use WellCommerce\Component\DataSet\Column\ColumnCollection;
 use WellCommerce\Component\DataSet\Request\DataSetRequestInterface;
 
@@ -28,9 +29,9 @@ class FlatTreeContext extends ArrayContext
     /**
      * {@inheritdoc}
      */
-    public function getResult(QueryBuilder $queryBuilder, DataSetRequestInterface $request, ColumnCollection $columns)
+    public function getResult(QueryBuilder $builder, DataSetRequestInterface $request, ColumnCollection $columns, CacheOptions $cache)
     {
-        $result = parent::getResult($queryBuilder, $request, $columns);
+        $result = parent::getResult($builder, $request, $columns, $cache);
 
         return $this->makeTree($result['rows']);
     }
@@ -84,6 +85,7 @@ class FlatTreeContext extends ArrayContext
         $resolver->setDefaults([
             'children_column'  => 'children',
             'hierarchy_column' => 'hierarchy',
+            'pagination'       => false
         ]);
 
         $resolver->setAllowedTypes('children_column', 'string');

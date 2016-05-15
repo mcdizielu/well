@@ -27,7 +27,7 @@ class DataSetPaginator implements DataSetPaginatorInterface
     /**
      * {@inheritdoc}
      */
-    public function getTotalRows(QueryBuilder $queryBuilder, ColumnCollection $columns)
+    public function getTotalRows(QueryBuilder $queryBuilder, ColumnCollection $columns) : int
     {
         $builder = clone $queryBuilder;
         $having  = $builder->getDQLPart('having');
@@ -35,7 +35,9 @@ class DataSetPaginator implements DataSetPaginatorInterface
             $this->replaceHaving($having, $columns, $builder);
         }
 
-        $query     = $builder->getQuery();
+        $query = $builder->getQuery();
+        $query->useQueryCache(true);
+        $query->useResultCache(true);
         $paginator = new Paginator($query, true);
         $paginator->setUseOutputWalkers(false);
 
@@ -56,6 +58,7 @@ class DataSetPaginator implements DataSetPaginatorInterface
         }
 
         $queryBuilder->resetDQLPart('having');
+        $queryBuilder->resetDQLPart('groupBy');
     }
 
     /**
@@ -67,30 +70,25 @@ class DataSetPaginator implements DataSetPaginatorInterface
      */
     protected function replaceSingleHavingClause(Query\Expr\Comparison $comparison, ColumnCollection $columns, QueryBuilder $queryBuilder)
     {
-        $source     = $columns->get($comparison->getLeftExpr())->getSource();
+        $source     = $columns->get($comparison->getLeftExpr())->getPaginatorSource();
         $param      = $comparison->getRightExpr();
         $operator   = $this->getOperator($comparison->getOperator());
         $expression = $queryBuilder->expr()->{$operator}($source, $param);
         $queryBuilder->andWhere($expression);
     }
 
-    protected function getOperator($operator)
+    protected function getOperator(string $operator) : string
     {
-        switch ($operator) {
-            case Query\Expr\Comparison::EQ:
-                return 'eq';
-            case Query\Expr\Comparison::NEQ:
-                return 'neq';
-            case Query\Expr\Comparison::LT:
-                return 'lt';
-            case Query\Expr\Comparison::LTE:
-                return 'lte';
-            case Query\Expr\Comparison::GT:
-                return 'gt';
-            case Query\Expr\Comparison::GTE:
-                return 'gte';
-            default:
-                return 'eq';
-        }
+        $operators = [
+            Query\Expr\Comparison::EQ  => 'eq',
+            Query\Expr\Comparison::NEQ => 'neq',
+            Query\Expr\Comparison::LT  => 'lt',
+            Query\Expr\Comparison::LTE => 'lte',
+            Query\Expr\Comparison::GT  => 'gt',
+            Query\Expr\Comparison::GTE => 'gte',
+            'LIKE'                     => 'like',
+        ];
+
+        return $operators[$operator] ?? 'eq';
     }
 }

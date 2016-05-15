@@ -13,6 +13,7 @@
 namespace WellCommerce\Component\DataSet\Request;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use WellCommerce\Component\DataSet\Conditions\ConditionInterface;
 use WellCommerce\Component\DataSet\Conditions\ConditionsCollection;
 
 /**
@@ -36,33 +37,40 @@ interface DataSetRequestInterface
      *
      * @return int
      */
-    public function getOffset();
+    public function getOffset() : int;
 
     /**
      * Returns limit for LIMIT clause
      *
      * @return int
      */
-    public function getLimit();
+    public function getLimit() : int;
 
     /**
      * Returns column name used for sorting results
      *
      * @return mixed
      */
-    public function getOrderBy();
+    public function getOrderBy() : string;
 
     /**
      * Returns the sorting direction
      *
      * @return string
      */
-    public function getOrderDir();
+    public function getOrderDir() : string;
 
     /**
      * Returns where conditions
      *
      * @return ConditionsCollection
      */
-    public function getConditions();
+    public function getConditions() : ConditionsCollection;
+
+    /**
+     * Adds new condition to collection
+     *
+     * @param ConditionInterface $condition
+     */
+    public function addCondition(ConditionInterface $condition);
 }

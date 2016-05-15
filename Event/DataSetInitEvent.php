@@ -20,12 +20,14 @@ use WellCommerce\Component\DataSet\DataSetInterface;
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class DataSetEvent extends Event
+final class DataSetInitEvent extends Event
 {
+    const EVENT_SUFFIX = 'dataset_init';
+    
     /**
      * @var DataSetInterface
      */
-    protected $dataset;
+    private $dataset;
 
     /**
      * Constructor
@@ -37,12 +39,7 @@ class DataSetEvent extends Event
         $this->dataset = $dataset;
     }
 
-    /**
-     * Returns current dataset
-     *
-     * @return DataSetInterface
-     */
-    public function getDataSet()
+    public function getDataSet() : DataSetInterface
     {
         return $this->dataset;
     }
