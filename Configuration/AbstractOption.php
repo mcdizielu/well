@@ -50,7 +50,7 @@ abstract class AbstractOption implements OptionInterface
      *
      * @return bool
      */
-    public function has($key)
+    public function has(string $key) : bool
     {
         return isset($this->options[$key]);
     }
@@ -63,7 +63,7 @@ abstract class AbstractOption implements OptionInterface
      * @return mixed
      * @throws \InvalidArgumentException
      */
-    public function get($key)
+    public function get(string $key)
     {
         if (!$this->has($key)) {
             throw new \InvalidArgumentException(sprintf('DataGrid option key "%s" was not found.', $key));
@@ -84,13 +84,10 @@ abstract class AbstractOption implements OptionInterface
         switch (gettype($value)) {
             case OptionInterface::TYPE_BOOLEAN:
                 return ($value) ? 'true' : 'false';
-                break;
             case OptionInterface::TYPE_NUMBER:
                 return $value;
-                break;
             case OptionInterface::TYPE_STRING:
-                return "'".$value."'";
-                break;
+                return "'" . $value . "'";
         }
     }
 
@@ -99,7 +96,7 @@ abstract class AbstractOption implements OptionInterface
      *
      * @return string
      */
-    public function __toString()
+    public function __toString() : string
     {
         $attributes = [];
         foreach ($this->options as $option => $value) {

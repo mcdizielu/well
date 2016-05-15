@@ -35,21 +35,21 @@ interface DataGridInterface
     const OPERATOR_IN         = '=';
     const DATAGRID_INIT_EVENT = 'datagrid.init';
     const GF_NULL             = 'GF.NULL';
-
+    
     /**
      * Returns an identifier
      *
      * @return string
      */
-    public function getIdentifier();
-
+    public function getIdentifier() : string;
+    
     /**
      * Returns current DataGrid instance
      *
      * @return DataGridInterface
      */
-    public function getInstance();
-
+    public function getInstance() : DataGridInterface;
+    
     /**
      * Sets DataGrid columns
      *
@@ -58,14 +58,14 @@ interface DataGridInterface
      * @return void
      */
     public function setColumns(ColumnCollection $columns);
-
+    
     /**
      * Returns columns collection
      *
      * @return ColumnCollection
      */
-    public function getColumns();
-
+    public function getColumns() : ColumnCollection;
+    
     /**
      * Sets DataGrid options
      *
@@ -74,14 +74,14 @@ interface DataGridInterface
      * @return void
      */
     public function setOptions(OptionsInterface $options);
-
+    
     /**
      * Returns DataGrid options
      *
      * @return OptionsInterface
      */
-    public function getOptions();
-
+    public function getOptions() : OptionsInterface;
+    
     /**
      * Forwards request to dataset and returns results
      *
@@ -89,5 +89,5 @@ interface DataGridInterface
      *
      * @return array
      */
-    public function loadResults(Request $request);
+    public function loadResults(Request $request) : array;
 }
