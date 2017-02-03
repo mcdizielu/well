@@ -26,22 +26,12 @@ class DataGridEvent extends Event
      */
     protected $datagrid;
     
-    /**
-     * Constructor
-     *
-     * @param DataGridInterface $datagrid
-     */
     public function __construct(DataGridInterface $datagrid)
     {
         $this->datagrid = $datagrid;
     }
-
-    /**
-     * Returns DataGrid
-     *
-     * @return DataGridInterface
-     */
-    public function getDataGrid() : DataGridInterface
+    
+    public function getDataGrid(): DataGridInterface
     {
         return $this->datagrid;
     }

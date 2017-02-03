@@ -12,6 +12,9 @@
 
 namespace WellCommerce\Component\DataGrid\Configuration\EventHandler;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use WellCommerce\Component\DataGrid\DataGridInterface;
+
 /**
  * Class EditRowEventHandler
  *
@@ -19,11 +22,17 @@ namespace WellCommerce\Component\DataGrid\Configuration\EventHandler;
  */
 class EditRowEventHandler extends ClickRowEventHandler
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function getFunctionName() : string
+    public function getFunctionName(): string
     {
         return 'edit_row';
+    }
+    
+    protected function configureOptions(OptionsResolver $resolver)
+    {
+        parent::configureOptions($resolver);
+        
+        $resolver->setDefaults([
+            'row_action' => DataGridInterface::ACTION_EDIT,
+        ]);
     }
 }

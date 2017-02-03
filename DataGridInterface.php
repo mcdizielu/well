@@ -12,7 +12,6 @@
 
 namespace WellCommerce\Component\DataGrid;
 
-use Symfony\Component\HttpFoundation\Request;
 use WellCommerce\Component\DataGrid\Column\ColumnCollection;
 use WellCommerce\Component\DataGrid\Options\OptionsInterface;
 
@@ -33,61 +32,19 @@ interface DataGridInterface
     const OPERATOR_GE         = '>=';
     const OPERATOR_LIKE       = 'LIKE';
     const OPERATOR_IN         = '=';
-    const DATAGRID_INIT_EVENT = 'datagrid.init';
     const GF_NULL             = 'GF.NULL';
     
-    /**
-     * Returns an identifier
-     *
-     * @return string
-     */
-    public function getIdentifier() : string;
+    public function getIdentifier(): string;
     
-    /**
-     * Returns current DataGrid instance
-     *
-     * @return DataGridInterface
-     */
-    public function getInstance() : DataGridInterface;
+    public function configureColumns(ColumnCollection $columns);
     
-    /**
-     * Sets DataGrid columns
-     *
-     * @param ColumnCollection $columns
-     *
-     * @return void
-     */
+    public function configureOptions(OptionsInterface $options);
+    
     public function setColumns(ColumnCollection $columns);
     
-    /**
-     * Returns columns collection
-     *
-     * @return ColumnCollection
-     */
-    public function getColumns() : ColumnCollection;
+    public function getColumns(): ColumnCollection;
     
-    /**
-     * Sets DataGrid options
-     *
-     * @param OptionsInterface $options
-     *
-     * @return void
-     */
     public function setOptions(OptionsInterface $options);
     
-    /**
-     * Returns DataGrid options
-     *
-     * @return OptionsInterface
-     */
-    public function getOptions() : OptionsInterface;
-    
-    /**
-     * Forwards request to dataset and returns results
-     *
-     * @param Request $request
-     *
-     * @return array|string
-     */
-    public function loadResults(Request $request);
+    public function getOptions(): OptionsInterface;
 }

@@ -12,6 +12,9 @@
 
 namespace WellCommerce\Component\DataGrid\Configuration\EventHandler;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use WellCommerce\Component\DataGrid\DataGridInterface;
+
 /**
  * Class DeleteRow
  *
@@ -19,11 +22,17 @@ namespace WellCommerce\Component\DataGrid\Configuration\EventHandler;
  */
 class DeleteRowEventHandler extends AbstractRowEventHandler
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function getFunctionName() : string
+    public function getFunctionName(): string
     {
         return 'delete_row';
+    }
+    
+    protected function configureOptions(OptionsResolver $resolver)
+    {
+        parent::configureOptions($resolver);
+        
+        $resolver->setDefaults([
+            'row_action' => DataGridInterface::ACTION_DELETE,
+        ]);
     }
 }
