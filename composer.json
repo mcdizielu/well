@@ -37,9 +37,6 @@
     "wellcommerce/collections": "^0.7@dev",
     "zendframework/zend-json": "^2.6@dev"
   },
-  "require-dev": {
-    "phpunit/phpunit": "^5.0@dev"
-  },
   "extra": {
     "branch-alias": {
       "dev-master": "0.7.x-dev"
