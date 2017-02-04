@@ -25,11 +25,9 @@ interface DataTransformerInterface
      * Transforms model data into its element representation
      *
      * @param object $modelData
-     *
-     * @return mixed
      */
     public function transform($modelData);
-
+    
     /**
      * Transforms element value into its model representation
      *
