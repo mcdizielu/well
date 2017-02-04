@@ -46,7 +46,7 @@ final class DataGridConfigurator implements DataGridConfiguratorInterface
         $dataGrid->setColumns($columns);
         $dataGrid->setOptions($options);
         
-        $eventName = $dataGrid->getIdentifier() . 'datagrid.post_init';
+        $eventName = sprintf('%s.%s', $dataGrid->getIdentifier(), DataGridEvent::EVENT_SUFFIX);
         $this->eventDispatcher->dispatch($eventName, new DataGridEvent($dataGrid));
     }
 }

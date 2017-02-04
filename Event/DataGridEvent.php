@@ -21,6 +21,8 @@ use WellCommerce\Component\DataGrid\DataGridInterface;
  */
 class DataGridEvent extends Event
 {
+    const EVENT_SUFFIX = 'datagrid.post_init';
+    
     /**
      * @var DataGridInterface
      */
