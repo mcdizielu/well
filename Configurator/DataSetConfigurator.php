@@ -12,10 +12,12 @@
 
 namespace WellCommerce\Component\DataSet\Configurator;
 
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use WellCommerce\Component\DataSet\Cache\CacheOptions;
 use WellCommerce\Component\DataSet\Column\Column;
 use WellCommerce\Component\DataSet\Column\ColumnCollection;
 use WellCommerce\Component\DataSet\DataSetInterface;
+use WellCommerce\Component\DataSet\Event\DataSetEvent;
 use WellCommerce\Component\DataSet\Transformer\ColumnTransformerCollection;
 
 /**
@@ -30,11 +32,23 @@ final class DataSetConfigurator implements DataSetConfiguratorInterface
      */
     private $dataset;
     
+    /**
+     * @var EventDispatcherInterface
+     */
+    private $eventDispatcher;
+    
+    public function __construct(EventDispatcherInterface $eventDispatcher)
+    {
+        $this->eventDispatcher = $eventDispatcher;
+    }
+    
     public function configure(DataSetInterface $dataset)
     {
         $this->dataset = $dataset;
         $dataset->configureOptions($this);
-        $dataset->dispatchOnDataSetInitEvent();
+        
+        $eventName = sprintf('%s.%s', $dataset->getIdentifier(), DataSetEvent::EVENT_SUFFIX);
+        $this->eventDispatcher->dispatch($eventName, new DataSetEvent($dataset));
     }
     
     public function setColumns(array $columns = [])

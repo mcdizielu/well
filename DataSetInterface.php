@@ -24,52 +24,17 @@ use WellCommerce\Component\DataSet\Transformer\ColumnTransformerCollection;
  */
 interface DataSetInterface
 {
-    /**
-     * Returns dataset columns
-     *
-     * @return ColumnCollection
-     */
-    public function getColumns() : ColumnCollection;
+    public function getIdentifier(): string;
     
-    /**
-     * Sets dataset columns
-     *
-     * @param ColumnCollection $columns
-     */
+    public function getColumns(): ColumnCollection;
+    
     public function setColumns(ColumnCollection $columns);
     
-    /**
-     * @param ColumnTransformerCollection $transformers
-     */
     public function setColumnTransformers(ColumnTransformerCollection $transformers);
     
-    /**
-     * Returns the dataset's result for given context type and options
-     *
-     * @param string $contextType
-     * @param array  $requestOptions
-     * @param array  $contextOptions
-     *
-     * @return array
-     */
-    public function getResult(string $contextType, array $requestOptions = [], array $contextOptions = []) : array;
+    public function getResult(string $contextType, array $requestOptions = [], array $contextOptions = []): array;
     
-    /**
-     * Configures dataset options
-     *
-     * @param DataSetConfiguratorInterface $resolver
-     */
     public function configureOptions(DataSetConfiguratorInterface $configurator);
     
-    /**
-     * Dispatches the init event using event-dispatcher service
-     *
-     * @return void
-     */
-    public function dispatchOnDataSetInitEvent();
-    
-    /**
-     * @param CacheOptions $options
-     */
     public function setCacheOptions(CacheOptions $options);
 }

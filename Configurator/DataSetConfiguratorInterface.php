@@ -22,33 +22,11 @@ use WellCommerce\Component\DataSet\DataSetInterface;
  */
 interface DataSetConfiguratorInterface
 {
-    /**
-     * Configures dataset
-     *
-     * @param DataSetInterface $dataset
-     */
     public function configure(DataSetInterface $dataset);
-
-    /**
-     * Sets dataset columns
-     *
-     * @param array $columns
-     */
+    
     public function setColumns(array $columns = []);
-
-    /**
-     * Simplifies adding new column transformers as default context options
-     *
-     * @param array $transformers
-     */
+    
     public function setColumnTransformers(array $transformers = []);
-
-    /**
-     * Sets the dataset's cache configuration
-     *
-     * @param CacheOptions $options
-     *
-     * @return mixed
-     */
+    
     public function setCacheOptions(CacheOptions $options);
 }
