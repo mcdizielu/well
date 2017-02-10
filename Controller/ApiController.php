@@ -15,8 +15,8 @@ namespace WellCommerce\Bundle\ApiBundle\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use WellCommerce\Bundle\CoreBundle\Handler\RequestHandlerCollection;
-use WellCommerce\Bundle\CoreBundle\Handler\RequestHandlerInterface;
+use WellCommerce\Bundle\ApiBundle\Handler\RequestHandlerCollection;
+use WellCommerce\Bundle\ApiBundle\Handler\RequestHandlerInterface;
 
 /**
  * Class ApiController
