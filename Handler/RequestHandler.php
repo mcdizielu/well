@@ -17,9 +17,9 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Serializer\SerializerInterface;
-use WellCommerce\Bundle\ApiBundle\Exception\ResourceNotFoundException;
+use Symfony\Component\Serializer\Serializer;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Bundle\CoreBundle\Exception\ResourceNotFoundException;
 use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
 
 /**
@@ -35,7 +35,7 @@ final class RequestHandler implements RequestHandlerInterface
     protected $manager;
     
     /**
-     * @var SerializerInterface|\Symfony\Component\Serializer\Normalizer\DenormalizerInterface|\Symfony\Component\Serializer\Normalizer\NormalizerInterface
+     * @var Serializer
      */
     protected $serializer;
     
@@ -47,33 +47,33 @@ final class RequestHandler implements RequestHandlerInterface
     /**
      * RequestHandler constructor.
      *
-     * @param string              $resourceType
-     * @param ManagerInterface    $manager
-     * @param SerializerInterface $serializer
+     * @param string           $resourceType
+     * @param ManagerInterface $manager
+     * @param Serializer       $serializer
      */
-    public function __construct(string $resourceType, ManagerInterface $manager, SerializerInterface $serializer)
+    public function __construct(string $resourceType, ManagerInterface $manager, Serializer $serializer)
     {
         $this->resourceType = $resourceType;
         $this->manager      = $manager;
         $this->serializer   = $serializer;
     }
     
-    public function getResourceType() : string
+    public function getResourceType(): string
     {
         return $this->resourceType;
     }
     
-    public function getManager() : ManagerInterface
+    public function getManager(): ManagerInterface
     {
         return $this->manager;
     }
     
-    public function getSerializer() : SerializerInterface
+    public function getSerializer(): Serializer
     {
         return $this->serializer;
     }
     
-    public function handleListRequest(Request $request) : Response
+    public function handleListRequest(Request $request): Response
     {
         $limit    = $request->get('limit') ?? 10;
         $offset   = $request->get('offset') ?? 0;
@@ -86,7 +86,7 @@ final class RequestHandler implements RequestHandlerInterface
         return new Response($data);
     }
     
-    public function handleCreateRequest(Request $request) : Response
+    public function handleCreateRequest(Request $request): Response
     {
         $result = $this->manager->initResource();
         $data   = $this->serializer->serialize($result, self::RESPONSE_FORMAT, ['group' => $this->getResourceType()]);
@@ -94,7 +94,7 @@ final class RequestHandler implements RequestHandlerInterface
         return new Response($data);
     }
     
-    public function handleDeleteRequest(Request $request, int $identifier) : Response
+    public function handleDeleteRequest(Request $request, int $identifier): Response
     {
         $resource = $this->getResourceById($identifier);
         
@@ -103,17 +103,17 @@ final class RequestHandler implements RequestHandlerInterface
         return new JsonResponse([
             'success'       => true,
             'identifier'    => $identifier,
-            'resource_type' => $this->getResourceType()
+            'resource_type' => $this->getResourceType(),
         ]);
     }
     
-    public function handleUpdateRequest(Request $request, int $identifier) : Response
+    public function handleUpdateRequest(Request $request, int $identifier): Response
     {
         $parameters = $request->request->all();
         $resource   = $this->getResourceById($identifier);
         $className  = ClassUtils::getRealClass(get_class($resource));
         $resource   = $this->serializer->denormalize($parameters, $className, self::RESPONSE_FORMAT, [
-            'resource' => $resource
+            'resource' => $resource,
         ]);
         
         $data = $this->serializer->serialize($resource, self::RESPONSE_FORMAT, ['group' => $this->getResourceType()]);
@@ -123,7 +123,7 @@ final class RequestHandler implements RequestHandlerInterface
         return new Response($data);
     }
     
-    public function handleGetRequest(Request $request, int $identifier) : Response
+    public function handleGetRequest(Request $request, int $identifier): Response
     {
         $resource = $this->getResourceById($identifier);
         $data     = $this->serializer->serialize($resource, self::RESPONSE_FORMAT, ['group' => $this->getResourceType()]);
@@ -131,7 +131,7 @@ final class RequestHandler implements RequestHandlerInterface
         return new Response($data);
     }
     
-    public function handleCountRequest() : Response
+    public function handleCountRequest(): Response
     {
         $repository   = $this->manager->getRepository();
         $queryBuilder = $repository->getQueryBuilder();
@@ -146,7 +146,7 @@ final class RequestHandler implements RequestHandlerInterface
         return new Response($data);
     }
     
-    private function getResourceById(int $identifier) : EntityInterface
+    private function getResourceById(int $identifier): EntityInterface
     {
         $resource = $this->manager->getRepository()->find($identifier);
         if (null === $resource) {

@@ -13,10 +13,11 @@
 namespace WellCommerce\Bundle\ApiBundle\CacheWarmer;
 
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Symfony\Component\HttpKernel\CacheWarmer\CacheWarmer;
+use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Yaml\Yaml;
-use WellCommerce\Bundle\ApiBundle\Metadata\Loader\SerializationMetadataLoaderInterface;
-use WellCommerce\Bundle\DistributionBundle\Resolver\ConfigurationFileResolverInterface;
+use WellCommerce\Component\Serializer\Metadata\Loader\SerializationMetadataLoaderInterface;
 
 /**
  * Class SerializationCacheWarmer
@@ -26,29 +27,23 @@ use WellCommerce\Bundle\DistributionBundle\Resolver\ConfigurationFileResolverInt
 final class SerializationCacheWarmer extends CacheWarmer
 {
     /**
-     * @var ConfigurationFileResolverInterface
+     * @var KernelInterface
      */
-    private $resolver;
-
+    private $kernel;
+    
     /**
      * @var array
      */
     private $mapping;
-
+    
     /**
      * @var Filesystem
      */
     private $filesystem;
     
-    /**
-     * SerializationCacheWarmer constructor.
-     *
-     * @param ConfigurationFileResolverInterface $resolver
-     * @param array                              $mapping
-     */
-    public function __construct(ConfigurationFileResolverInterface $resolver, array $mapping)
+    public function __construct(KernelInterface $kernel, array $mapping)
     {
-        $this->resolver   = $resolver;
+        $this->kernel     = $kernel;
         $this->mapping    = $mapping;
         $this->filesystem = new Filesystem();
     }
@@ -63,12 +58,12 @@ final class SerializationCacheWarmer extends CacheWarmer
         }
     }
     
-    private function getConfiguration() : array
+    private function getConfiguration(): array
     {
         $configuration = [];
-
+        
         foreach ($this->mapping as $className => $options) {
-            $path = $this->resolver->resolvePath($options['mapping']);
+            $path = $this->resolvePath($options['mapping']);
             if ($this->filesystem->exists($path)) {
                 $content       = file_get_contents($path);
                 $configuration = array_replace_recursive($configuration, $this->parseContent($content));
@@ -77,10 +72,29 @@ final class SerializationCacheWarmer extends CacheWarmer
         
         return $configuration;
     }
-
-    private function parseContent(string $content) : array
+    
+    private function parseContent(string $content): array
     {
         return Yaml::parse($content);
+    }
+    
+    private function resolvePath(string $path): string
+    {
+        $resourcePathExploded = explode('/', $path);
+        $resourcePathRoot     = array_shift($resourcePathExploded);
+        
+        if (strpos($resourcePathRoot, '@') === 0) {
+            $mappingFileBundle = ltrim($resourcePathRoot, '@');
+            $bundle            = $this->kernel->getBundle($mappingFileBundle);
+            
+            if ($bundle instanceof BundleInterface) {
+                $resourcePathRoot = $bundle->getPath();
+            }
+        }
+        
+        array_unshift($resourcePathExploded, $resourcePathRoot);
+        
+        return implode('/', $resourcePathExploded);
     }
     
     public function isOptional()

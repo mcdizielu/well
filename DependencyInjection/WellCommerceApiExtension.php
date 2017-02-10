@@ -18,24 +18,26 @@ use Symfony\Component\DependencyInjection\Reference;
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractExtension;
 
 /**
- * Class WellCommerceApiExtension
+ * Class WellCommerceCoreExtension
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class WellCommerceApiExtension extends AbstractExtension
+final class WellCommerceApiExtension extends AbstractExtension
 {
     protected function processExtensionConfiguration(array $configuration, ContainerBuilder $container)
     {
+        parent::processExtensionConfiguration($configuration, $container);
+        
         $requestHandlers      = $configuration['request_handler'];
         $serializationMapping = $configuration['serialization'];
         
         foreach ($requestHandlers as $rootName => $options) {
             $this->registerRequestHandler($rootName, $options, $container);
         }
-
+        
         $container->setParameter('api.serialization_mapping_map', $serializationMapping);
     }
-
+    
     private function registerRequestHandler(string $name, array $options, ContainerBuilder $container)
     {
         if (true === $options['enabled']) {

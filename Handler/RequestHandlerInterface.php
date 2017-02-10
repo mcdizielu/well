@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\ApiBundle\Handler;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Serializer\SerializerInterface;
+use Symfony\Component\Serializer\Serializer;
 use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
 
 /**
@@ -26,19 +26,21 @@ interface RequestHandlerInterface
 {
     const RESPONSE_FORMAT = 'json';
     
-    public function getResourceType() : string;
+    public function getResourceType(): string;
     
-    public function getManager() : ManagerInterface;
+    public function getManager(): ManagerInterface;
     
-    public function getSerializer() : SerializerInterface;
+    public function getSerializer(): Serializer;
     
-    public function handleListRequest(Request $request) : Response;
+    public function handleListRequest(Request $request): Response;
     
-    public function handleGetRequest(Request $request, int $identifier) : Response;
+    public function handleGetRequest(Request $request, int $identifier): Response;
     
-    public function handleCreateRequest(Request $request) : Response;
+    public function handleCreateRequest(Request $request): Response;
     
-    public function handleUpdateRequest(Request $request, int $identifier) : Response;
+    public function handleUpdateRequest(Request $request, int $identifier): Response;
     
-    public function handleDeleteRequest(Request $request, int $identifier) : Response;
+    public function handleDeleteRequest(Request $request, int $identifier): Response;
+    
+    public function handleCountRequest(): Response;
 }

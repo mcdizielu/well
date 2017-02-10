@@ -26,12 +26,13 @@
   },
   "autoload": {
     "psr-4": {
-      "": "src/"
+      "WellCommerce\\Bundle\\ApiBundle\\": "src/WellCommerce/Bundle/ApiBundle"
     }
   },
   "require": {
     "php": "^7.0",
-    "wellcommerce/core-bundle": "^0.7@dev"
+    "wellcommerce/core-bundle": "^0.7@dev",
+    "wellcommerce/serializer": "^0.7@dev"
   },
   "extra": {
     "branch-alias": {

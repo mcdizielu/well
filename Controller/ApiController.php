@@ -15,22 +15,32 @@ namespace WellCommerce\Bundle\ApiBundle\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use WellCommerce\Bundle\ApiBundle\Handler\RequestHandlerInterface;
-use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractContainerAware;
+use WellCommerce\Bundle\CoreBundle\Handler\RequestHandlerCollection;
+use WellCommerce\Bundle\CoreBundle\Handler\RequestHandlerInterface;
 
 /**
  * Class ApiController
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class ApiController extends AbstractContainerAware
+final class ApiController
 {
-    public function indexAction() : Response
+    /**
+     * @var RequestHandlerCollection
+     */
+    private $requestHandlerCollection;
+    
+    public function __construct(RequestHandlerCollection $requestHandlerCollection)
+    {
+        $this->requestHandlerCollection = $requestHandlerCollection;
+    }
+    
+    public function indexAction(): Response
     {
         return new Response('documentation');
     }
     
-    public function createResourceAction(Request $request, string $resourceType) : Response
+    public function createResourceAction(Request $request, string $resourceType): Response
     {
         try {
             $response = $this->getRequestHandler($resourceType)->handleCreateRequest($request);
@@ -41,7 +51,7 @@ final class ApiController extends AbstractContainerAware
         return $response;
     }
     
-    public function updateResourceAction(Request $request, string $resourceType, int $identifier) : Response
+    public function updateResourceAction(Request $request, string $resourceType, int $identifier): Response
     {
         try {
             $response = $this->getRequestHandler($resourceType)->handleUpdateRequest($request, $identifier);
@@ -52,18 +62,7 @@ final class ApiController extends AbstractContainerAware
         return $response;
     }
     
-    public function updateCollectionAction(Request $request, string $resourceType) : Response
-    {
-        try {
-            $response = $this->getRequestHandler($resourceType)->handleUpdateCollectionRequest($request);
-        } catch (\Exception $e) {
-            $response = $this->jsonErrorResponse($e);
-        }
-        
-        return $response;
-    }
-    
-    public function deleteResourceAction(Request $request, string $resourceType, int $identifier) : Response
+    public function deleteResourceAction(Request $request, string $resourceType, int $identifier): Response
     {
         try {
             $response = $this->getRequestHandler($resourceType)->handleDeleteRequest($request, $identifier);
@@ -74,7 +73,7 @@ final class ApiController extends AbstractContainerAware
         return $response;
     }
     
-    public function getResourceAction(Request $request, string $resourceType, int $identifier) : Response
+    public function getResourceAction(Request $request, string $resourceType, int $identifier): Response
     {
         try {
             $response = $this->getRequestHandler($resourceType)->handleGetRequest($request, $identifier);
@@ -85,7 +84,7 @@ final class ApiController extends AbstractContainerAware
         return $response;
     }
     
-    public function listResourceAction(Request $request, string $resourceType) : Response
+    public function listResourceAction(Request $request, string $resourceType): Response
     {
         try {
             $response = $this->getRequestHandler($resourceType)->handleListRequest($request);
@@ -96,10 +95,10 @@ final class ApiController extends AbstractContainerAware
         return $response;
     }
     
-    public function countResourceAction(Request $request, string $resourceType) : Response
+    public function countResourceAction(string $resourceType): Response
     {
         try {
-            $response = $this->getRequestHandler($resourceType)->handleCountRequest($request);
+            $response = $this->getRequestHandler($resourceType)->handleCountRequest();
         } catch (\Exception $e) {
             $response = $this->jsonErrorResponse($e);
         }
@@ -107,7 +106,7 @@ final class ApiController extends AbstractContainerAware
         return $response;
     }
     
-    private function jsonErrorResponse(\Exception $e) : JsonResponse
+    private function jsonErrorResponse(\Exception $e): JsonResponse
     {
         return new JsonResponse(
             ['message' => $e->getMessage()],
@@ -115,8 +114,8 @@ final class ApiController extends AbstractContainerAware
         );
     }
     
-    private function getRequestHandler(string $resourceType) : RequestHandlerInterface
+    private function getRequestHandler(string $resourceType): RequestHandlerInterface
     {
-        return $this->get('api.request_handler.collection')->get($resourceType);
+        return $this->requestHandlerCollection->get($resourceType);
     }
 }

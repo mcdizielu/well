@@ -12,7 +12,7 @@
 
 namespace WellCommerce\Bundle\ApiBundle\Tests\Controller;
 
-use WellCommerce\Bundle\ApiBundle\Handler\RequestHandlerInterface;
+use WellCommerce\Bundle\CoreBundle\Handler\RequestHandlerInterface;
 use WellCommerce\Bundle\CoreBundle\Test\AbstractTestCase;
 
 /**
@@ -93,7 +93,7 @@ class ApiControllerTest extends AbstractTestCase
     }
     
     /**
-     * @return \WellCommerce\Bundle\ApiBundle\Handler\RequestHandlerInterface[]
+     * @return \WellCommerce\Bundle\CoreBundle\Handler\RequestHandlerInterface[]
      */
     protected function getRequestHandlers()
     {

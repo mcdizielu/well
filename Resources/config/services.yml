@@ -12,7 +12,7 @@ services:
         arguments: ['@user.repository']
 
     api.subscriber:
-        class: WellCommerce\Bundle\ApiBundle\EventListener\ApiSubscriber
+        class: WellCommerce\Bundle\CoreBundle\EventListener\ApiSubscriber
         tags:
             - { name: kernel.event_subscriber }
         calls:
@@ -21,38 +21,31 @@ services:
     api.request_handler.collection:
         class: WellCommerce\Bundle\ApiBundle\Handler\RequestHandlerCollection
 
-    api.controller.front:
+    api.controller:
         class: WellCommerce\Bundle\ApiBundle\Controller\ApiController
-        calls:
-            - [setContainer, ['@service_container']]
+        arguments: ["@api.request_handler.collection"]
 
     api.serializer.normalizer:
-        class: WellCommerce\Bundle\ApiBundle\Serializer\EntityNormalizer
+        class: WellCommerce\Component\Serializer\EntityNormalizer
         public: false
+        arguments: ['@doctrine', '@api.serialization.metadata_loader']
         tags:
             - { name: serializer.normalizer }
-        arguments: ['@doctrine.helper', '@api.serialization.metadata_loader']
 
     api.serializer.denormalizer:
-        class: WellCommerce\Bundle\ApiBundle\Serializer\EntityDenormalizer
+        class: WellCommerce\Component\Serializer\EntityDenormalizer
         public: false
+        arguments: ['@doctrine', '@api.serialization.metadata_loader']
         tags:
             - { name: serializer.normalizer }
-        arguments: ['@doctrine.helper', '@api.serialization.metadata_loader']
 
     api.serialization.cache_warmer:
         class: WellCommerce\Bundle\ApiBundle\CacheWarmer\SerializationCacheWarmer
         public: false
         tags:
             - { name: kernel.cache_warmer }
-        arguments: ['@distribution.configuration_file_resolver', '%api.serialization_mapping_map%']
-
-    api.generate_serialization_metadata.command:
-        class: WellCommerce\Bundle\ApiBundle\Command\GenerateSerializationMetadataCommand
-        tags:
-            - { name: console.command }
-        arguments: ['@distribution.configuration_file_resolver', '@doctrine.helper', '%api.serialization_mapping_map%']
+        arguments: ['@kernel', '%api.serialization_mapping_map%']
 
     api.serialization.metadata_loader:
-        class: WellCommerce\Bundle\ApiBundle\Metadata\Loader\SerializationMetadataLoader
+        class: WellCommerce\Component\Serializer\Metadata\Loader\SerializationMetadataLoader
         arguments: ['@kernel']

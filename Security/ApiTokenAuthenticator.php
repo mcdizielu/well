@@ -20,7 +20,7 @@ use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
-use WellCommerce\Bundle\AdminBundle\Repository\UserRepositoryInterface;
+use WellCommerce\Bundle\AppBundle\Repository\UserRepositoryInterface;
 
 class ApiTokenAuthenticator extends AbstractGuardAuthenticator
 {

@@ -32,7 +32,6 @@ class ApiExtensionTest extends AbstractExtensionTestCase
                     'api.security.token_authenticator',
                     'api.request_handler.collection',
                     'api.controller.front',
-                    'api.generate_serialization_metadata.command',
                     'api.serialization.metadata_loader',
                     'availability.api.request_handler',
                     'category.api.request_handler',

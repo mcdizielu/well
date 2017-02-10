@@ -1,2 +1,3 @@
 # ApiBundle
-Subtree split of main WellCommerce repository
+
+Bundle provides basic API features in WellCommerce

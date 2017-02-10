@@ -21,14 +21,14 @@ use WellCommerce\Bundle\ApiBundle\Handler\RequestHandler;
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class Configuration implements ConfigurationInterface
+class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
         $rootNode    = $treeBuilder->root('well_commerce_api');
         $this->processConfiguration($rootNode);
-
+        
         return $treeBuilder;
     }
     
