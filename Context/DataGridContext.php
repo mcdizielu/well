@@ -12,7 +12,6 @@
 
 namespace WellCommerce\Component\DataSet\Context;
 
-use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use WellCommerce\Component\DataSet\Cache\CacheOptions;
@@ -52,7 +51,6 @@ class DataGridContext extends AbstractDataSetContext
     {
         $total    = $this->paginator->getTotalRows($builder, $columns);
         $result   = parent::getResult($builder, $request, $columns, $cache);
-        $filtered = ($request->getConditions()->count() !== 0) ? count($result) : $total;
 
         return [
             'data_id'       => $this->options['data_id'],

@@ -12,12 +12,11 @@
 
 namespace WellCommerce\Component\DataSet\Context;
 
-use Cache\Taggable\TaggablePoolInterface;
-use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use WellCommerce\Component\DataSet\Cache\CacheOptions;
 use WellCommerce\Component\DataSet\Column\ColumnCollection;
 use WellCommerce\Component\DataSet\Request\DataSetRequestInterface;
+use WellCommerce\Component\DataSet\Transformer\ColumnTransformerCollection;
 
 /**
  * Interface DataSetContextInterface
@@ -37,7 +36,12 @@ interface DataSetContextInterface
      * @return array
      */
     public function getResult(QueryBuilder $builder, DataSetRequestInterface $request, ColumnCollection $columns, CacheOptions $cache);
-
+    
+    /**
+     * @param ColumnTransformerCollection $transformers
+     */
+    public function setTransformers(ColumnTransformerCollection $transformers);
+    
     /**
      * Configures the context
      *

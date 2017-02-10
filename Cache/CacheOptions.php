@@ -17,22 +17,22 @@ namespace WellCommerce\Component\DataSet\Cache;
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class CacheOptions
+final class CacheOptions
 {
     /**
      * @var bool
      */
-    protected $enabled;
+    private $enabled;
 
     /**
      * @var int
      */
-    protected $ttl;
+    private $ttl;
 
     /**
      * @var array
      */
-    protected $tags;
+    private $tags;
 
     /**
      * CacheOptions constructor.
@@ -48,25 +48,16 @@ class CacheOptions
         $this->tags    = $tags;
     }
 
-    /**
-     * @return boolean
-     */
     public function isEnabled() : bool
     {
         return $this->enabled;
     }
 
-    /**
-     * @return int
-     */
     public function getTtl() : int
     {
         return $this->ttl;
     }
 
-    /**
-     * @return array
-     */
     public function getTags() : array
     {
         return $this->tags;

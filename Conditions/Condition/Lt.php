@@ -13,14 +13,18 @@
 namespace WellCommerce\Component\DataSet\Conditions\Condition;
 
 use WellCommerce\Component\DataSet\Conditions\AbstractCondition;
-use WellCommerce\Component\DataSet\Conditions\ConditionInterface;
 
 /**
  * Class Lt
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class Lt extends AbstractCondition implements ConditionInterface
+final class Lt extends AbstractCondition
 {
     protected $operator = 'lt';
+    
+    public function isRangedOperator() : bool
+    {
+        return true;
+    }
 }
