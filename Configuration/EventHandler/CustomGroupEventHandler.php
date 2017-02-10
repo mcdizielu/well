@@ -13,26 +13,41 @@
 namespace WellCommerce\Component\DataGrid\Configuration\EventHandler;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use WellCommerce\Component\DataGrid\DataGridInterface;
 
 /**
- * Class DeleteRow
+ * Class CustomGroupEventHandler
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class DeleteRowEventHandler extends AbstractRowEventHandler
+class CustomGroupEventHandler extends AbstractEventHandler
 {
-    public function getFunctionName(): string
+    /**
+     * {@inheritdoc}
+     */
+    public function getFunctionName() : string
     {
-        return 'delete_row';
+        return $this->get('group_action');
     }
     
-    protected function configureOptions(OptionsResolver $resolver)
+    /**
+     * {@inheritdoc}
+     */
+    public function configureOptions(OptionsResolver $resolver)
     {
         parent::configureOptions($resolver);
         
-        $resolver->setDefaults([
-            'row_action' => DataGridInterface::ACTION_DELETE,
+        $resolver->setRequired([
+            'group_action',
         ]);
+        
+        $resolver->setAllowedTypes('group_action', ['bool', 'string']);
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function isCustomEvent() : bool
+    {
+        return true;
     }
 }

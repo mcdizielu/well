@@ -21,9 +21,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 abstract class AbstractRowEventHandler extends AbstractEventHandler
 {
-    /**
-     * {@inheritdoc}
-     */
     protected function configureOptions(OptionsResolver $resolver)
     {
         parent::configureOptions($resolver);

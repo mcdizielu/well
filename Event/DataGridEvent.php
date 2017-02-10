@@ -21,27 +21,19 @@ use WellCommerce\Component\DataGrid\DataGridInterface;
  */
 class DataGridEvent extends Event
 {
+    const EVENT_SUFFIX = 'datagrid.post_init';
+    
     /**
      * @var DataGridInterface
      */
     protected $datagrid;
     
-    /**
-     * Constructor
-     *
-     * @param DataGridInterface $datagrid
-     */
     public function __construct(DataGridInterface $datagrid)
     {
         $this->datagrid = $datagrid;
     }
-
-    /**
-     * Returns DataGrid
-     *
-     * @return DataGridInterface
-     */
-    public function getDataGrid() : DataGridInterface
+    
+    public function getDataGrid(): DataGridInterface
     {
         return $this->datagrid;
     }
