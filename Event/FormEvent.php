@@ -12,7 +12,6 @@
 namespace WellCommerce\Component\Form\Event;
 
 use Symfony\Component\EventDispatcher\Event;
-use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
 
@@ -23,24 +22,25 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  */
 final class FormEvent extends Event
 {
-    const FORM_INIT_EVENT = 'form_init';
+    const FORM_PRE_INIT_EVENT  = 'pre_form_init';
+    const FORM_POST_INIT_EVENT = 'post_form_init';
 
     private $formBuilder;
     private $form;
-    private $entity;
+    private $resource;
 
     /**
      * FormEvent constructor.
      *
      * @param FormBuilderInterface $formBuilder
      * @param FormInterface        $form
-     * @param EntityInterface|null $entity
+     * @param null                 $resource
      */
-    public function __construct(FormBuilderInterface $formBuilder, FormInterface $form, EntityInterface $entity = null)
+    public function __construct(FormBuilderInterface $formBuilder, FormInterface $form, $resource = null)
     {
         $this->formBuilder = $formBuilder;
         $this->form        = $form;
-        $this->entity      = $entity;
+        $this->resource    = $resource;
     }
 
     public function getFormBuilder() : FormBuilderInterface
@@ -56,8 +56,8 @@ final class FormEvent extends Event
     /**
      * @return null|object
      */
-    public function getEntity()
+    public function getResource()
     {
-        return $this->entity;
+        return $this->resource;
     }
 }
