@@ -12,7 +12,7 @@ services:
         arguments: ['@user.repository']
 
     api.subscriber:
-        class: WellCommerce\Bundle\CoreBundle\EventListener\ApiSubscriber
+        class: WellCommerce\Bundle\ApiBundle\EventListener\ApiSubscriber
         tags:
             - { name: kernel.event_subscriber }
 
