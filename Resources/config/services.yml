@@ -15,8 +15,6 @@ services:
         class: WellCommerce\Bundle\CoreBundle\EventListener\ApiSubscriber
         tags:
             - { name: kernel.event_subscriber }
-        calls:
-            - [setContainer, ['@service_container']]
 
     api.request_handler.collection:
         class: WellCommerce\Bundle\ApiBundle\Handler\RequestHandlerCollection
@@ -41,10 +39,10 @@ services:
 
     api.serialization.cache_warmer:
         class: WellCommerce\Bundle\ApiBundle\CacheWarmer\SerializationCacheWarmer
+        arguments: ['@kernel', '%api.serialization_mapping_map%']
         public: false
         tags:
             - { name: kernel.cache_warmer }
-        arguments: ['@kernel', '%api.serialization_mapping_map%']
 
     api.serialization.metadata_loader:
         class: WellCommerce\Component\Serializer\Metadata\Loader\SerializationMetadataLoader
