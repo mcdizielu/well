@@ -14,6 +14,7 @@ namespace WellCommerce\Component\Form\Elements;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use WellCommerce\Component\Form\Handler\FormHandlerInterface;
+use WellCommerce\Component\Form\Validator\FormValidatorInterface;
 
 /**
  * Class Form
@@ -26,35 +27,35 @@ class Form extends AbstractContainer implements FormInterface
      * @var FormHandlerInterface
      */
     protected $formHandler;
-
+    
     /**
      * @var object
      */
     protected $modelData;
-
+    
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         parent::configureOptions($resolver);
-
+        
         $resolver->setDefaults([
             'label'             => '',
             'action'            => '',
             'ajax_enabled'      => true,
             'method'            => FormInterface::FORM_METHOD,
             'tabs'              => FormInterface::TABS_VERTICAL,
-            'validation_groups' => null
+            'validation_groups' => FormValidatorInterface::DEFAULT_VALIDATOR_GROUPS,
         ]);
-
+        
         $resolver->setAllowedTypes('action', 'string');
         $resolver->setAllowedTypes('method', 'string');
         $resolver->setAllowedTypes('ajax_enabled', 'bool');
         $resolver->setAllowedTypes('tabs', 'integer');
         $resolver->setAllowedTypes('validation_groups', ['null', 'array']);
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -62,7 +63,7 @@ class Form extends AbstractContainer implements FormInterface
     {
         $this->formHandler = $formHandler;
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -70,7 +71,7 @@ class Form extends AbstractContainer implements FormInterface
     {
         $this->modelData = $modelData;
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -78,7 +79,7 @@ class Form extends AbstractContainer implements FormInterface
     {
         return $this->formHandler->getFormModelData();
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -86,7 +87,7 @@ class Form extends AbstractContainer implements FormInterface
     {
         return $this->formHandler->handleRequest($this);
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -94,7 +95,7 @@ class Form extends AbstractContainer implements FormInterface
     {
         return $this->formHandler->isFormValid($this);
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -102,7 +103,7 @@ class Form extends AbstractContainer implements FormInterface
     {
         return $this->formHandler->isFormSubmitted($this);
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -110,7 +111,7 @@ class Form extends AbstractContainer implements FormInterface
     {
         return $this->formHandler->isFormAction($actionName);
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -118,14 +119,14 @@ class Form extends AbstractContainer implements FormInterface
     {
         return $this->options['validation_groups'];
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function prepareAttributesCollection(AttributeCollection $collection)
     {
         parent::prepareAttributesCollection($collection);
-
+        
         $collection->add(new Attribute('sFormName', $this->getName()));
         $collection->add(new Attribute('sAction', $this->getOption('action')));
         $collection->add(new Attribute('sMethod', $this->getOption('method')));
@@ -134,7 +135,7 @@ class Form extends AbstractContainer implements FormInterface
         $collection->add(new Attribute('iTabs', $this->getOption('tabs'), Attribute::TYPE_INTEGER));
         $collection->add(new Attribute('oValues', $this->getValue(), Attribute::TYPE_ARRAY));
         $collection->add(new Attribute('oErrors', $this->getError(), Attribute::TYPE_ARRAY));
-
+        
         $collection->remove('sName');
         $collection->remove('fType');
     }

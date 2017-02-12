@@ -21,6 +21,8 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 interface FormValidatorInterface
 {
+    const DEFAULT_VALIDATOR_GROUPS = ['Default'];
+    
     /**
      * Returns boolean indicating whether the form is valid
      *

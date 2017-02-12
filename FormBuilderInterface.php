@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Component\Form;
 
+use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
 use WellCommerce\Component\Form\Dependencies\DependencyInterface;
 use WellCommerce\Component\Form\Elements\ElementInterface;
 use WellCommerce\Component\Form\Elements\FormInterface;
@@ -25,14 +26,21 @@ use WellCommerce\Component\Form\Filters\FilterInterface;
 interface FormBuilderInterface
 {
     /**
+     * Returns the alias
+     *
+     * @return string
+     */
+    public function getAlias(): string;
+    
+    /**
      * Creates the form, triggers init event and then populates form with values
      *
-     * @param array $options
-     * @param null  $formData
+     * @param EntityInterface|null $defaultData
+     * @param array                $options
      *
      * @return FormInterface
      */
-    public function createForm(array $options, $formData = null) : FormInterface;
+    public function createForm(EntityInterface $defaultData = null, array $options = []): FormInterface;
     
     /**
      * Returns an element object by its type
@@ -42,7 +50,7 @@ interface FormBuilderInterface
      *
      * @return ElementInterface
      */
-    public function getElement(string $type, array $options = []) : ElementInterface;
+    public function getElement(string $type, array $options = []): ElementInterface;
     
     /**
      * Returns a filter object by its type
@@ -52,7 +60,7 @@ interface FormBuilderInterface
      *
      * @return FilterInterface
      */
-    public function getFilter(string $type, array $options = []) : FilterInterface;
+    public function getFilter(string $type, array $options = []): FilterInterface;
     
     /**
      * Returns a dependency object by its type
@@ -62,5 +70,5 @@ interface FormBuilderInterface
      *
      * @return DependencyInterface
      */
-    public function getDependency(string $type, array $options = []) : DependencyInterface;
+    public function getDependency(string $type, array $options = []): DependencyInterface;
 }
