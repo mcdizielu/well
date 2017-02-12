@@ -6,6 +6,14 @@
 # For the full copyright and license information,
 # please view the LICENSE file that was distributed with this source code.
 
+knp_doctrine_behaviors:
+    blameable:      true
+    geocodable:     false
+    loggable:       false
+    sluggable:      false
+    soft_deletable: false
+    timestampable:  true
+    translatable:   true
 
 doctrine_migrations:
     dir_name:   "%kernel.root_dir%/sql/migrations"
