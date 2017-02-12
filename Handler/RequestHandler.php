@@ -20,7 +20,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Serializer;
 use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
 use WellCommerce\Bundle\ApiBundle\Exception\ResourceNotFoundException;
-use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
+use WellCommerce\Bundle\DoctrineBundle\Manager\ManagerInterface;
 
 /**
  * Class RequestHandler
