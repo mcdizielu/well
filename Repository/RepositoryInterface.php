@@ -33,7 +33,7 @@ interface RepositoryInterface extends DataSetAwareRepositoryInterface
      * @return QueryBuilder
      */
     public function createQueryBuilder($alias);
-
+    
     /**
      * Returns a resource for given primary key
      *
@@ -42,14 +42,14 @@ interface RepositoryInterface extends DataSetAwareRepositoryInterface
      * @return mixed
      */
     public function find($id);
-
+    
     /**
      * Returns all entities
      *
      * @return mixed
      */
     public function findAll();
-
+    
     /**
      * Returns single entity using additional criteria
      *
@@ -59,7 +59,7 @@ interface RepositoryInterface extends DataSetAwareRepositoryInterface
      * @return mixed
      */
     public function findOneBy(array $criteria, array $orderBy = null);
-
+    
     /**
      * Returns all entities using additional criteria
      *
@@ -71,19 +71,19 @@ interface RepositoryInterface extends DataSetAwareRepositoryInterface
      * @return mixed
      */
     public function findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null);
-
+    
     /**
      * Creates QueryBuilder instance
      *
      * @return QueryBuilder
      */
-    public function getQueryBuilder() : QueryBuilder;
-
+    public function getQueryBuilder(): QueryBuilder;
+    
     /**
      * @return ClassMetadata
      */
-    public function getMetaData() : ClassMetadata;
-
+    public function getMetaData(): ClassMetadata;
+    
     /**
      * Select all elements from a selectable that match the expression and
      * return a new collection containing these elements.
@@ -93,11 +93,6 @@ interface RepositoryInterface extends DataSetAwareRepositoryInterface
      * @return Collection
      */
     public function matching(Criteria $criteria);
-
-    /**
-     * Returns the total count of entities in repository
-     *
-     * @return int
-     */
-    public function getTotalCount() : int;
+    
+    public function getCollection(Criteria $criteria = null): Collection;
 }

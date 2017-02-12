@@ -11,10 +11,11 @@
  */
 namespace WellCommerce\Bundle\DoctrineBundle\Repository;
 
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\EntityRepository as BaseEntityRepository;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\QueryBuilder;
-use Doctrine\ORM\Tools\Pagination\Paginator;
 use WellCommerce\Bundle\CoreBundle\Helper\Helper;
 
 /**
@@ -42,15 +43,12 @@ class EntityRepository extends BaseEntityRepository implements RepositoryInterfa
         return $this->createQueryBuilder($this->getAlias());
     }
     
-    public function getTotalCount(): int
+    public function getCollection(Criteria $criteria = null): Collection
     {
-        $queryBuilder = $this->getQueryBuilder();
-        $query        = $queryBuilder->getQuery();
-        $query->useQueryCache(true);
-        $query->useResultCache(true);
-        $paginator = new Paginator($query, true);
-        $paginator->setUseOutputWalkers(false);
+        if (null === $criteria) {
+            $criteria = new Criteria();
+        }
         
-        return $paginator->count();
+        return $this->matching($criteria);
     }
 }

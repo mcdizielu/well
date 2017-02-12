@@ -1,6 +1,5 @@
 {
   "name": "wellcommerce/doctrine-bundle",
-  "type": "wellcommerce-bundle",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce DoctrineBundle",
@@ -26,7 +25,7 @@
   },
   "autoload": {
     "psr-4": {
-      "": "src/"
+      "WellCommerce\\Bundle\\DoctrineBundle\\": ""
     }
   },
   "require": {
@@ -36,9 +35,6 @@
   "extra": {
     "branch-alias": {
       "dev-master": "0.7.x-dev"
-    },
-    "wellcommerce-bundle": {
-      "install-dir": "src/WellCommerce/Bundle/DoctrineBundle"
     }
   }
 }

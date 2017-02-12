@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * WellCommerce Open-Source E-Commerce Platform
  *
  * This file is part of the WellCommerce package.
@@ -10,14 +10,14 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\DoctrineBundle\Behaviours\Enableable;
+namespace WellCommerce\Bundle\DoctrineBundle\Behaviours;
 
 /**
- * Class EnableableTrait
+ * Class Enableable
  *
- * @author Adam Piotrowski <adam@wellcommerce.org>
+ * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-trait EnableableTrait
+trait Enableable
 {
     protected $enabled = true;
     

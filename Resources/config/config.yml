@@ -6,24 +6,12 @@
 # For the full copyright and license information,
 # please view the LICENSE file that was distributed with this source code.
 
+
 doctrine_migrations:
     dir_name:   "%kernel.root_dir%/sql/migrations"
     namespace:  WellCommerce\Migration
     table_name: migration
     name: WellCommerce Migrations
-
-knp_doctrine_behaviors:
-    blameable:      true
-    geocodable:     false
-    loggable:       false
-    sluggable:      false
-    soft_deletable: false
-    timestampable:  true
-    translatable:   true
-
-parameters:
-    knp.doctrine_behaviors.blameable_subscriber.user_entity: WellCommerce\Bundle\AdminBundle\Entity\User
-    knp.doctrine_behaviors.blameable_subscriber.class: WellCommerce\Bundle\DoctrineBundle\EventListener\BlameableSubscriber
 
 doctrine_cache:
     providers:
@@ -70,7 +58,7 @@ doctrine:
                         FIELD: DoctrineExtensions\Query\Mysql\Field
                 filters:
                     locale:
-                        class:   WellCommerce\Bundle\LocaleBundle\Doctrine\ORM\Filter\LocaleFilter
+                        class:   WellCommerce\Bundle\DoctrineBundle\Filter\LocaleFilter
                         enabled: false
                 second_level_cache:
                     region_cache_driver:

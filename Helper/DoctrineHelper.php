@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\DoctrineBundle\Helper\Doctrine;
+namespace WellCommerce\Bundle\DoctrineBundle\Helper;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
@@ -20,7 +20,6 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Query\Filter\SQLFilter;
 use Doctrine\ORM\Query\FilterCollection;
-use Doctrine\ORM\QueryBuilder;
 
 /**
  * Class DoctrineHelper
@@ -34,11 +33,6 @@ final class DoctrineHelper implements DoctrineHelperInterface
      */
     private $registry;
     
-    /**
-     * DoctrineHelper constructor.
-     *
-     * @param ManagerRegistry $registry
-     */
     public function __construct(ManagerRegistry $registry)
     {
         $this->registry = $registry;
@@ -87,53 +81,6 @@ final class DoctrineHelper implements DoctrineHelperInterface
     public function getMetadataFactory() : ClassMetadataFactory
     {
         return $this->getEntityManager()->getMetadataFactory();
-    }
-
-    public function getAllClassesForQueryBuilder(QueryBuilder $queryBuilder) : array
-    {
-        $classes      = [];
-        $rootEntities = $queryBuilder->getRootEntities();
-        foreach ($rootEntities as $rootEntity) {
-            $classes[$rootEntity] = $rootEntity;
-            $metadata             = $this->getClassMetadata($rootEntity);
-            $this->addAssociationsTargetClasses($metadata, $classes);
-        }
-        
-        return $classes;
-    }
-
-    public function getRepositoryForClass(string $className) : EntityRepository
-    {
-        return $this->getEntityManager()->getRepository($className);
-    }
-
-    public function truncateTable(string $className)
-    {
-        $entityManager = $this->getEntityManager();
-        $metadata      = $this->getClassMetadata($className);
-        if ($metadata instanceof ClassMetadata) {
-            $repository = $entityManager->getRepository($className);
-            $collection = $repository->findAll();
-            
-            foreach ($collection as $entity) {
-                $entityManager->remove($entity);
-            }
-            
-            $entityManager->flush();
-            
-            return true;
-        }
-        
-        return false;
-    }
-
-    private function addAssociationsTargetClasses(ClassMetadata $metadata, array &$classes)
-    {
-        $associationNames = $metadata->getAssociationNames();
-        foreach ($associationNames as $associationName) {
-            $associationClass           = $metadata->getAssociationTargetClass($associationName);
-            $classes[$associationClass] = $associationClass;
-        }
     }
 
     private function getRealClass($object) : string

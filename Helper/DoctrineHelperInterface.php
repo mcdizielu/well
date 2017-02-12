@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\DoctrineBundle\Helper\Doctrine;
+namespace WellCommerce\Bundle\DoctrineBundle\Helper;
 
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 use Doctrine\Common\Persistence\Mapping\ClassMetadataFactory;
@@ -31,8 +31,6 @@ interface DoctrineHelperInterface
 
     public function getEntityManager() : EntityManagerInterface;
 
-    public function getRepositoryForClass(string $className) : EntityRepository;
-
     public function disableFilter(string $filter);
 
     public function enableFilter(string $filter) : SQLFilter;
@@ -48,9 +46,5 @@ interface DoctrineHelperInterface
      */
     public function getAllMetadata() : array;
 
-    public function truncateTable(string $className);
-
     public function getMetadataFactory() : ClassMetadataFactory;
-
-    public function getAllClassesForQueryBuilder(QueryBuilder $queryBuilder) : array;
 }

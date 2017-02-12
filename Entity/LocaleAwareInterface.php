@@ -10,19 +10,22 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\DoctrineBundle\Enhancer\TraitGenerator;
-
-use Wingu\OctopusCore\CodeGenerator\PHP\OOP\TraitGenerator;
+namespace WellCommerce\Bundle\DoctrineBundle\Entity;
 
 /**
- * Interface TraitGeneratorEnhancerTraverserInterface
+ * Interface LocaleAwareInterface
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-interface TraitGeneratorEnhancerTraverserInterface
+interface LocaleAwareInterface
 {
     /**
-     * @param TraitGenerator $generator
+     * @param string $locale
      */
-    public function traverse(TraitGenerator $generator);
+    public function setLocale($locale);
+    
+    /**
+     * @return string
+     */
+    public function getLocale();
 }

@@ -20,7 +20,7 @@ use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class EntityEvent extends Event
+class EntityEvent extends Event
 {
     private $entity;
 
