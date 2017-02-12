@@ -13,7 +13,7 @@
 namespace WellCommerce\Component\DoctrineEnhancer;
 
 use Doctrine\ORM\Mapping\ClassMetadataInfo;
-use Wingu\OctopusCore\CodeGenerator\PHP\OOP\TraitGenerator;
+use WellCommerce\Component\DoctrineEnhancer\Definition\MappingDefinitionCollection;
 
 /**
  * Interface MappingEnhancerInterface
@@ -22,15 +22,11 @@ use Wingu\OctopusCore\CodeGenerator\PHP\OOP\TraitGenerator;
  */
 interface MappingEnhancerInterface
 {
-    public function visitClassMetadata(ClassMetadataInfo $metadata);
+    public function getMappingDefinitionCollection(): MappingDefinitionCollection;
     
-    public function visitTraitGenerator(TraitGenerator $generator);
+    public function visitClassMetadata(ClassMetadataInfo $metadata);
     
     public function getSupportedEntityClass(): string;
     
     public function getSupportedEntityExtraTraitClass(): string;
-    
-    public function supportsEntity(string $className): bool;
-    
-    public function supportsEntityExtraTrait(string $className): bool;
 }
