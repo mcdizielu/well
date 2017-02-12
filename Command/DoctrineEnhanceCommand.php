@@ -18,7 +18,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Environment\EnvironmentHelperInterface;
 use WellCommerce\Component\DoctrineEnhancer\TraitGenerator\TraitGenerator;
 use WellCommerce\Component\DoctrineEnhancer\TraitGenerator\TraitGeneratorEnhancerCollection;
-use WellCommerce\Component\DoctrineEnhancer\TraitGenerator\TraitGeneratorEnhancerTraverserInterface;
 
 /**
  * Class DoctrineEnhanceCommand
