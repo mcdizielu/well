@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Component\Form\Elements;
 
+use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use WellCommerce\Component\Form\Handler\FormHandlerInterface;
 use WellCommerce\Component\Form\Validator\FormValidatorInterface;
@@ -48,6 +49,10 @@ class Form extends AbstractContainer implements FormInterface
             'tabs'              => FormInterface::TABS_VERTICAL,
             'validation_groups' => FormValidatorInterface::DEFAULT_VALIDATOR_GROUPS,
         ]);
+        
+        $resolver->setNormalizer('name', function (Options $options, $value) {
+            return preg_replace('/[^A-Za-z0-9\-]/', '_', $value);
+        });
         
         $resolver->setAllowedTypes('action', 'string');
         $resolver->setAllowedTypes('method', 'string');
