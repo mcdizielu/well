@@ -30,7 +30,9 @@
   },
   "require": {
     "php": "^7.0",
-    "wellcommerce/core-bundle": "^0.7@dev"
+    "wellcommerce/doctrine-enhancer": "^0.7@dev",
+    "wellcommerce/collections": "^0.7@dev",
+    "doctrine/orm": "v2.5.4"
   },
   "extra": {
     "branch-alias": {
