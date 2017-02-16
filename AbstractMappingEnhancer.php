@@ -15,7 +15,6 @@ namespace WellCommerce\Component\DoctrineEnhancer;
 use Doctrine\ORM\Mapping\ClassMetadataInfo;
 use WellCommerce\Component\DoctrineEnhancer\Definition\MappingDefinitionCollection;
 use WellCommerce\Component\DoctrineEnhancer\Definition\MappingDefinitionInterface;
-use WellCommerce\Component\DoctrineEnhancer\TraitGenerator\TraitGenerator;
 
 /**
  * Class AbstractMappingEnhancer
