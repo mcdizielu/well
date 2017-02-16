@@ -31,8 +31,8 @@
   "require": {
     "php": "^7.0",
     "doctrine/orm": "2.5.2",
-    "symfony/options-resolver": "^3.0",
-    "symfony/property-access": "^3.0",
+    "symfony/options-resolver": "v3.2.2",
+    "symfony/property-access": "v3.2.2",
     "wellcommerce/collections": "^0.7@dev"
   },
   "extra": {
