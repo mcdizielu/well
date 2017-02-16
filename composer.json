@@ -30,10 +30,9 @@
   },
   "require": {
     "php": "^7.0",
-    "symfony/http-foundation": "^3.0",
-    "symfony/options-resolver": "^3.0",
+    "symfony/http-foundation": "v3.2.2",
+    "symfony/options-resolver": "v3.2.2",
     "wellcommerce/collections": "^0.7@dev",
-    "wellcommerce/dataset": "^0.7@dev",
     "zendframework/zend-json": "^2.6@dev"
   },
   "extra": {
