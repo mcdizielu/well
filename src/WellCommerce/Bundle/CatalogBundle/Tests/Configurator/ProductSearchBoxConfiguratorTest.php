@@ -16,21 +16,21 @@ use WellCommerce\Bundle\CoreBundle\Layout\Configurator\LayoutBoxConfiguratorInte
 use WellCommerce\Bundle\CoreBundle\Test\Configurator\AbstractLayoutBoxConfiguratorTestCase;
 
 /**
- * Class SearchBoxConfiguratorTest
+ * Class ProductSearchBoxConfiguratorTest
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class SearchBoxConfiguratorTest extends AbstractLayoutBoxConfiguratorTestCase
+class ProductSearchBoxConfiguratorTest extends AbstractLayoutBoxConfiguratorTestCase
 {
     protected function getService(): LayoutBoxConfiguratorInterface
     {
-        return $this->container->get('search.layout_box.configurator');
+        return $this->container->get('product_search.layout_box.configurator');
     }
     
     public function provideLayoutBoxConfiguration()
     {
         return [
-            ['Search', 'search.layout_box.controller'],
+            ['Search', 'product_search.layout_box.controller'],
         ];
     }
 }
