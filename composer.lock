@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "45b0457913d2f3aad7151c4a79f8e776",
+    "content-hash": "20a96b25126cc4711602e776874e42fb",
     "packages": [
         {
             "name": "asm89/twig-cache-extension",
@@ -6112,6 +6112,57 @@
             "time": "2016-11-23 20:04:41"
         },
         {
+            "name": "wellcommerce/api-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WellCommerce/ApiBundle.git",
+                "reference": "3cb55dcb9c1e521ba9c7459f94f90fe2b37ff143"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WellCommerce/ApiBundle/zipball/3cb55dcb9c1e521ba9c7459f94f90fe2b37ff143",
+                "reference": "3cb55dcb9c1e521ba9c7459f94f90fe2b37ff143",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "wellcommerce/serializer": "^0.7@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "WellCommerce\\Bundle\\ApiBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Piotrowski",
+                    "email": "adam@wellcommerce.org"
+                },
+                {
+                    "name": "WellCommerce Developers",
+                    "email": "developers@wellcommerce.org"
+                }
+            ],
+            "description": "WellCommerce ApiBundle",
+            "keywords": [
+                "e-commerce",
+                "open-source",
+                "wellcommerce"
+            ],
+            "time": "2017-02-18 13:58:12"
+        },
+        {
             "name": "wellcommerce/breadcrumb",
             "version": "dev-master",
             "source": {
@@ -7926,7 +7977,7 @@
         "zendframework/zend-json": 20,
         "jngermon/phpunit-entity-tester": 20,
         "wellcommerce/datagrid-bundle": 20,
-        "wellcommerce/serializer": 20,
+        "wellcommerce/api-bundle": 20,
         "wellcommerce/doctrine-enhancer": 20,
         "wellcommerce/form": 20,
         "wellcommerce/dataset": 20,
