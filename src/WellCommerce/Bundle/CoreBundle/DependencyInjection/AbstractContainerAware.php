@@ -13,9 +13,8 @@
 namespace WellCommerce\Bundle\CoreBundle\DependencyInjection;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\HttpKernel\KernelInterface;
 use WellCommerce\Bundle\AppBundle\Helper\CurrencyHelperInterface;
 use WellCommerce\Bundle\AppBundle\Storage\ShopStorageInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Flash\FlashHelperInterface;
@@ -37,7 +36,15 @@ use WellCommerce\Component\Breadcrumb\Provider\BreadcrumbProviderInterface;
  */
 abstract class AbstractContainerAware
 {
-    use ContainerAwareTrait;
+    /**
+     * @var ContainerInterface
+     */
+    protected $container;
+    
+    public function setContainer(ContainerInterface $container)
+    {
+        $this->container = $container;
+    }
     
     public function has(string $id): bool
     {
