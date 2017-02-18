@@ -1,13 +1,15 @@
 {
   "name": "wellcommerce/search-bundle",
-  "type": "wellcommerce-bundle",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce SearchBundle",
   "keywords": [
     "wellcommerce",
     "e-commerce",
-    "open-source"
+    "open-source",
+    "search",
+    "lucene",
+    "elasticsearch"
   ],
   "authors": [
     {
@@ -31,15 +33,11 @@
   },
   "require": {
     "php": "^7.0",
-    "wellcommerce/core-bundle": "^0.7@dev",
-    "egeloen/lucene-search-bundle": "^2.0@dev"
+    "wellcommerce/search": "^0.7.0@dev"
   },
   "extra": {
     "branch-alias": {
       "dev-master": "0.7.x-dev"
-    },
-    "wellcommerce-bundle": {
-      "install-dir": "src/WellCommerce/Bundle/SearchBundle"
     }
   }
 }

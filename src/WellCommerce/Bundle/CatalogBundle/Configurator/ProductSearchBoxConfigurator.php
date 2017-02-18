@@ -10,22 +10,19 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\SearchBundle\Configurator;
+namespace WellCommerce\Bundle\CatalogBundle\Configurator;
 
-use WellCommerce\Bundle\LayoutBundle\Configurator\AbstractLayoutBoxConfigurator;
+use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
 
 /**
- * Class SearchBoxConfigurator
+ * Class ProductSearchBoxConfigurator
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class SearchBoxConfigurator extends AbstractLayoutBoxConfigurator
+final class ProductSearchBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    /**
-     * {@inheritdoc}
-     */
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
     {
         $fieldset = $this->getFieldset($builder, $form);

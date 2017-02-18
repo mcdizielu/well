@@ -50,20 +50,20 @@ final class SearchRequestParamConverter implements ParamConverterInterface
         
         return true;
     }
-
-    private function createSearchRequest(Request $request) : SearchRequestInterface
+    
+    private function createSearchRequest(Request $request): SearchRequestInterface
     {
-        $type   = $this->manager->getType($request->get('type'));
+        $type   = $this->manager->getType($request->get('_type'));
         $phrase = $request->query->has('phrase') ? $request->query->get('phrase') : '';
         $fields = new ArrayCollection();
-
+        
         $type->getFields()->map(function (FieldInterface $field) use ($fields, $request) {
             if ($request->query->has($field->getName())) {
                 $field->setValue($request->query->get($field->getName(), ''));
                 $fields->set($field->getName(), $field);
             }
         });
-
+        
         return new SearchRequest($type, $fields, $phrase, $request->getLocale());
     }
     

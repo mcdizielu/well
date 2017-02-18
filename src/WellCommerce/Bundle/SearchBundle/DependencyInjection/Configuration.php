@@ -36,7 +36,7 @@ class Configuration implements ConfigurationInterface
     {
         $node
             ->children()
-                ->arrayNode('engine')
+                ->arrayNode('search_engine')
                     ->children()
                         ->arrayNode('quick_search')->isRequired()
                             ->children()

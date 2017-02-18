@@ -7,8 +7,16 @@
 # please view the LICENSE file that was distributed with this source code.
 
 services:
-    search.dataset.front:
-        class: WellCommerce\Bundle\SearchBundle\DataSet\Front\SearchDataSet
+    product_search.layout_box.configurator:
+        class: WellCommerce\Bundle\CatalogBundle\Configurator\ProductSearchBoxConfigurator
+        tags:
+            - { name: layout_box.configurator }
+        arguments: [Search, product_search.layout_box.controller, '@translator.helper']
+        calls:
+            - [setContainer, ['@service_container']]
+
+    product_search.dataset.front:
+        class: WellCommerce\Bundle\CatalogBundle\DataSet\Front\ProductSearchDataSet
         tags:
             - { name: dataset }
         arguments: ['@product.repository','@dataset.manager','@event_dispatcher']
@@ -16,14 +24,14 @@ services:
         calls:
             - [setContainer, ['@service_container']]
 
-    search.controller.front:
-        class: WellCommerce\Bundle\SearchBundle\Controller\Front\SearchController
+    product_search.controller.front:
+        class: WellCommerce\Bundle\CatalogBundle\Controller\Front\ProductSearchController
         arguments: ['@product.manager']
         calls:
             - [setContainer, ['@service_container']]
 
-    search.layout_box.controller:
-        class: WellCommerce\Bundle\SearchBundle\Controller\Box\SearchBoxController
+    product_search.layout_box.controller:
+        class: WellCommerce\Bundle\CatalogBundle\Controller\Box\ProductSearchBoxController
         arguments: ['@product.manager']
         calls:
             - [setContainer, ['@service_container']]

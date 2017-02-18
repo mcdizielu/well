@@ -1,2 +1,3 @@
 # SearchBundle
-Subtree split of main WellCommerce repository
+
+Provides simple & advanced search features in WellCommerce

@@ -297,6 +297,9 @@
     Translator.add("admin.user.help", "Help", "wellcommerce", "en");
     Translator.add("admin.button.show_all", "Show all", "wellcommerce", "en");
     Translator.add("admin.button.show_raports", "Show raports", "wellcommerce", "en");
+    Translator.add("search.heading.index", "Search results", "wellcommerce", "en");
+    Translator.add("search.label.phrase", "Enter search phrase", "wellcommerce", "en");
+    Translator.add("search.flash.no_results", "No search results", "wellcommerce", "en");
     Translator.add("order.form.fieldset.products", "Products", "wellcommerce", "en");
     Translator.add("order.heading.index", "Orders", "wellcommerce", "en");
     Translator.add("order.heading.edit", "Edit order", "wellcommerce", "en");
@@ -548,9 +551,6 @@
     Translator.add("product_status.label.id", "Id", "wellcommerce", "en");
     Translator.add("product_status.label.name", "Name", "wellcommerce", "en");
     Translator.add("product_status.comment.css_class", "A symbol used for example in CSS templates. Alphanumeric characters permitted.", "wellcommerce", "en");
-    Translator.add("search.heading.index", "Search results", "wellcommerce", "en");
-    Translator.add("search.label.phrase", "Enter search phrase", "wellcommerce", "en");
-    Translator.add("search.flash.no_results", "No search results", "wellcommerce", "en");
     Translator.add("unit.heading.index", "Units of measure", "wellcommerce", "en");
     Translator.add("unit.heading.add", "Add a unit of measure", "wellcommerce", "en");
     Translator.add("unit.heading.edit", "Edit a unit of measure", "wellcommerce", "en");

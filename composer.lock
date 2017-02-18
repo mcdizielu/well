@@ -1358,7 +1358,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2016-05-12 17:23:41"
+            "time": "2016-05-12T17:23:41+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -1466,7 +1466,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09 13:34:57"
+            "time": "2014-09-09T13:34:57+00:00"
         },
         {
             "name": "doctrine/migrations",
@@ -1732,7 +1732,7 @@
                 "symfony",
                 "twig"
             ],
-            "time": "2016-07-17 20:33:30"
+            "time": "2016-07-17T20:33:30+00:00"
         },
         {
             "name": "evenement/evenement",
@@ -1778,7 +1778,7 @@
                 "event-dispatcher",
                 "event-emitter"
             ],
-            "time": "2014-07-09 21:08:03"
+            "time": "2014-07-09T21:08:03+00:00"
         },
         {
             "name": "expalmer/php-bad-words",
@@ -2240,12 +2240,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "662ca4c076d56de355f423c1fa0fa7b51c224e17"
+                "reference": "41972f428b31bc3ebff0707f63dd2165d3ac4cf6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/662ca4c076d56de355f423c1fa0fa7b51c224e17",
-                "reference": "662ca4c076d56de355f423c1fa0fa7b51c224e17",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/41972f428b31bc3ebff0707f63dd2165d3ac4cf6",
+                "reference": "41972f428b31bc3ebff0707f63dd2165d3ac4cf6",
                 "shasum": ""
             },
             "require": {
@@ -2297,7 +2297,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-02-14 19:21:36"
+            "time": "2017-02-18 11:43:27"
         },
         {
             "name": "guzzlehttp/ringphp",
@@ -2398,7 +2398,7 @@
                 "Guzzle",
                 "stream"
             ],
-            "time": "2016-04-13 16:32:01"
+            "time": "2016-04-13T16:32:01+00:00"
         },
         {
             "name": "imagine/imagine",
@@ -2559,7 +2559,7 @@
                 "highlight",
                 "sql"
             ],
-            "time": "2015-08-30 16:36:01"
+            "time": "2015-08-30T16:36:01+00:00"
         },
         {
             "name": "jngermon/phpunit-entity-tester",
@@ -2716,7 +2716,7 @@
                 "composer",
                 "packagist"
             ],
-            "time": "2016-01-17 21:26:35"
+            "time": "2016-01-17T21:26:35+00:00"
         },
         {
             "name": "league/flysystem",
@@ -2724,12 +2724,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "546bd86f44fc8fc50e952fa989feabcb64793f09"
+                "reference": "6d64f3b51299db6cd56ab9d3a56fce5b38b397e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/546bd86f44fc8fc50e952fa989feabcb64793f09",
-                "reference": "546bd86f44fc8fc50e952fa989feabcb64793f09",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/6d64f3b51299db6cd56ab9d3a56fce5b38b397e0",
+                "reference": "6d64f3b51299db6cd56ab9d3a56fce5b38b397e0",
                 "shasum": ""
             },
             "require": {
@@ -2799,7 +2799,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2017-02-17 22:44:04"
+            "time": "2017-02-18 07:49:08"
         },
         {
             "name": "league/oauth2-client",
@@ -4275,7 +4275,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
@@ -4450,7 +4450,7 @@
             "keywords": [
                 "process"
             ],
-            "time": "2016-08-01 18:09:48"
+            "time": "2016-08-01T18:09:48+00:00"
         },
         {
             "name": "react/dns",
@@ -4614,7 +4614,7 @@
             "keywords": [
                 "Socket"
             ],
-            "time": "2016-03-01 20:10:35"
+            "time": "2016-03-01T20:10:35+00:00"
         },
         {
             "name": "react/socket-client",
@@ -7202,7 +7202,7 @@
                 "escaper",
                 "zf2"
             ],
-            "time": "2016-06-30 19:50:10"
+            "time": "2016-06-30T19:50:10+00:00"
         },
         {
             "name": "zendframework/zend-eventmanager",
@@ -7364,7 +7364,7 @@
                 "hydrator",
                 "zf2"
             ],
-            "time": "2016-02-18 22:38:26"
+            "time": "2016-02-18T22:38:26+00:00"
         },
         {
             "name": "zendframework/zend-json",
@@ -7463,7 +7463,7 @@
                 "loader",
                 "zf2"
             ],
-            "time": "2016-05-05 14:59:09"
+            "time": "2016-05-05T14:59:09+00:00"
         },
         {
             "name": "zendframework/zend-log",
@@ -7648,7 +7648,7 @@
                 "stdlib",
                 "zf2"
             ],
-            "time": "2016-04-12 21:17:31"
+            "time": "2016-04-12T21:17:31+00:00"
         },
         {
             "name": "zendframework/zend-uri",
@@ -7695,7 +7695,7 @@
                 "uri",
                 "zf2"
             ],
-            "time": "2016-05-11 18:49:50"
+            "time": "2016-05-11T18:49:50+00:00"
         },
         {
             "name": "zendframework/zend-validator",
@@ -7802,7 +7802,7 @@
                 "lucene",
                 "zf2"
             ],
-            "time": "2015-01-21 16:24:14"
+            "time": "2015-01-21T16:24:14+00:00"
         }
     ],
     "packages-dev": [

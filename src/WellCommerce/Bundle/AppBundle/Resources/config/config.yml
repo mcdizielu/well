@@ -14,6 +14,7 @@ imports:
     - { resource: "@WellCommerceDataGridBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceDataSetBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceFormBundle/Resources/config/config.yml" }
+    - { resource: "@WellCommerceSearchBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceCatalogBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceCmsBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceCouponBundle/Resources/config/config.yml" }

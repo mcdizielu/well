@@ -17,15 +17,15 @@ use WellCommerce\Component\DataSet\Configurator\DataSetConfiguratorInterface;
 use WellCommerce\Component\Search\Storage\SearchResultStorage;
 
 /**
- * Class SearchDataSet
+ * Class ProductSearchDataSet
  *
- * @author Adam Piotrowski <adam@wellcommerce.org>
+ * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class SearchDataSet extends ProductDataSet
+class ProductSearchDataSet extends ProductDataSet
 {
     public function getIdentifier(): string
     {
-        return 'front.search';
+        return 'front.product_search';
     }
     
     public function configureOptions(DataSetConfiguratorInterface $configurator)

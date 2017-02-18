@@ -303,6 +303,9 @@
     Translator.add("admin.user.logout", "Wyloguj", "wellcommerce", "pl");
     Translator.add("admin.user.help", "Pomoc", "wellcommerce", "pl");
     Translator.add("admin.button.show_all", "Poka\u017c wszystkie", "wellcommerce", "pl");
+    Translator.add("search.heading.index", "Wyniki wyszukiwania", "wellcommerce", "pl");
+    Translator.add("search.label.phrase", "Wpisz czego szukasz", "wellcommerce", "pl");
+    Translator.add("search.flash.no_results", "Brak wynik\u00f3w wyszukiwania", "wellcommerce", "pl");
     Translator.add("order.form.fieldset.products", "Produkty", "wellcommerce", "pl");
     Translator.add("order.heading.index", "Zam\u00f3wienia", "wellcommerce", "pl");
     Translator.add("order.heading.edit", "Edytuj zam\u00f3wienie", "wellcommerce", "pl");
@@ -563,9 +566,6 @@
     Translator.add("product_status.label.id", "Id", "wellcommerce", "pl");
     Translator.add("product_status.label.name", "Nazwa", "wellcommerce", "pl");
     Translator.add("product_status.comment.css_class", "Symbol wykorzystywany np. w szablonach CSS. Dozwolone znaki alfanumeryczne.", "wellcommerce", "pl");
-    Translator.add("search.heading.index", "Wyniki wyszukiwania", "wellcommerce", "pl");
-    Translator.add("search.label.phrase", "Wpisz czego szukasz", "wellcommerce", "pl");
-    Translator.add("search.flash.no_results", "Brak wynik\u00f3w wyszukiwania", "wellcommerce", "pl");
     Translator.add("unit.heading.index", "Jednostki miary", "wellcommerce", "pl");
     Translator.add("unit.heading.add", "Dodaj jednostk\u0119 miary", "wellcommerce", "pl");
     Translator.add("unit.heading.edit", "Edytuj jednostk\u0119 miary", "wellcommerce", "pl");

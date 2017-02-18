@@ -6,11 +6,11 @@
 # For the full copyright and license information,
 # please view the LICENSE file that was distributed with this source code.
 
-front.search.index:
-    path: '/index/{type},{page},{limit},{orderBy},{orderDir},{priceFrom},{priceTo},{view},{producers},{attributes}'
+front.product_search.index:
+    path: '/index/{page},{limit},{orderBy},{orderDir},{priceFrom},{priceTo},{view},{producers},{attributes}'
     defaults:
-        _controller: 'search.controller.front:indexAction'
-        type: 'product'
+        _controller: 'product_search.controller.front:indexAction'
+        _type: 'product'
         page: '1'
         limit: '12'
         orderBy: score
@@ -34,10 +34,10 @@ front.search.index:
         producers: '[\d+_]+'
         attributes: '[\d+_]+'
 
-front.search.quick:
-    path: '/quick/{type}'
+front.product_search.quick:
+    path: '/quick'
     defaults:
-        _controller: 'search.controller.front:quickSearchAction'
-        type: 'product'
+        _controller: 'product_search.controller.front:quickSearchAction'
+        _type: 'product'
     options:
         expose: true
