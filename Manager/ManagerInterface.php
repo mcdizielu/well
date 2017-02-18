@@ -35,14 +35,14 @@ interface ManagerInterface
      *
      * @return RepositoryInterface
      */
-    public function getRepository() : RepositoryInterface;
+    public function getRepository(): RepositoryInterface;
     
     /**
      * Initializes new resource object
      *
      * @return EntityInterface
      */
-    public function initResource() : EntityInterface;
+    public function initResource();
     
     /**
      * Persists new resource

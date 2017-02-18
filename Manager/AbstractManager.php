@@ -53,7 +53,7 @@ abstract class AbstractManager extends AbstractContainerAware implements Manager
         return $this->repository;
     }
     
-    public function initResource(): EntityInterface
+    public function initResource()
     {
         $entity = $this->factory->create();
         $this->dispatchEvent(self::POST_ENTITY_INIT_EVENT, $entity);
