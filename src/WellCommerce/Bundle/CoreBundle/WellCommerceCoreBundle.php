@@ -19,6 +19,6 @@ use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class WellCommerceCoreBundle extends AbstractWellCommerceBundle
+final class WellCommerceCoreBundle extends AbstractWellCommerceBundle
 {
 }

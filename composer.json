@@ -75,7 +75,7 @@
     "expalmer/php-bad-words": "0.1.3",
     "jngermon/phpunit-entity-tester": "dev-master",
     "wellcommerce/datagrid-bundle": "^0.7.0@dev",
-    "wellcommerce/serializer": "^0.7.0@dev",
+    "wellcommerce/api-bundle": "^0.7.0@dev",
     "wellcommerce/doctrine-enhancer": "^0.7.0@dev",
     "wellcommerce/form": "^0.7.0@dev",
     "wellcommerce/dataset": "^0.7.0@dev",

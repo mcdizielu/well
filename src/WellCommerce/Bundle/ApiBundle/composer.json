@@ -1,6 +1,5 @@
 {
   "name": "wellcommerce/api-bundle",
-  "type": "wellcommerce-bundle",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce ApiBundle",
@@ -26,20 +25,16 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Bundle\\ApiBundle\\": "src/WellCommerce/Bundle/ApiBundle"
+      "WellCommerce\\Bundle\\ApiBundle\\": ""
     }
   },
   "require": {
     "php": "^7.0",
-    "wellcommerce/core-bundle": "^0.7@dev",
     "wellcommerce/serializer": "^0.7@dev"
   },
   "extra": {
     "branch-alias": {
       "dev-master": "0.7.x-dev"
-    },
-    "wellcommerce-bundle": {
-      "install-dir": "src/WellCommerce/Bundle/ApiBundle"
     }
   }
 }

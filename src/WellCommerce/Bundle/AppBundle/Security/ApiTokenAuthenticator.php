@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\ApiBundle\Security;
+namespace WellCommerce\Bundle\AppBundle\Security;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,6 +22,11 @@ use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
 use WellCommerce\Bundle\AppBundle\Repository\UserRepositoryInterface;
 
+/**
+ * Class ApiTokenAuthenticator
+ *
+ * @author  Adam Piotrowski <adam@wellcommerce.org>
+ */
 class ApiTokenAuthenticator extends AbstractGuardAuthenticator
 {
     /**
@@ -29,11 +34,6 @@ class ApiTokenAuthenticator extends AbstractGuardAuthenticator
      */
     protected $userRepository;
     
-    /**
-     * ApiTokenAuthenticator constructor.
-     *
-     * @param UserRepositoryInterface $userRepository
-     */
     public function __construct(UserRepositoryInterface $userRepository)
     {
         $this->userRepository = $userRepository;
