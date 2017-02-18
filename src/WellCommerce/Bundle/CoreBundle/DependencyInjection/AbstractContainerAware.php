@@ -46,97 +46,97 @@ abstract class AbstractContainerAware
         $this->container = $container;
     }
     
-    public function has(string $id): bool
+    protected function has(string $id): bool
     {
         return $this->container->has($id);
     }
     
-    public function get(string $id)
+    protected function get(string $id)
     {
         return $this->container->get($id);
     }
     
-    public function trans(string $id, array $params = [], string $domain = TranslatorHelperInterface::DEFAULT_TRANSLATION_DOMAIN): string
+    protected function trans(string $id, array $params = [], string $domain = TranslatorHelperInterface::DEFAULT_TRANSLATION_DOMAIN): string
     {
         return $this->getTranslatorHelper()->trans($id, $params, $domain);
     }
     
-    public function getTranslatorHelper(): TranslatorHelperInterface
+    protected function getTranslatorHelper(): TranslatorHelperInterface
     {
         return $this->get('translator.helper');
     }
     
-    public function getFlashHelper(): FlashHelperInterface
+    protected function getFlashHelper(): FlashHelperInterface
     {
         return $this->get('flash.helper');
     }
     
-    public function getDoctrineHelper(): DoctrineHelperInterface
+    protected function getDoctrineHelper(): DoctrineHelperInterface
     {
         return $this->get('doctrine.helper');
     }
     
-    public function getRequestHelper(): RequestHelperInterface
+    protected function getRequestHelper(): RequestHelperInterface
     {
         return $this->get('request.helper');
     }
     
-    public function getRouterHelper(): RouterHelperInterface
+    protected function getRouterHelper(): RouterHelperInterface
     {
         return $this->get('router.helper');
     }
     
-    public function getImageHelper(): ImageHelperInterface
+    protected function getImageHelper(): ImageHelperInterface
     {
         return $this->get('image.helper');
     }
     
-    public function getLocales(): array
+    protected function getLocales(): array
     {
         return $this->get('locale.repository')->findAll();
     }
     
-    public function getCurrencyHelper(): CurrencyHelperInterface
+    protected function getCurrencyHelper(): CurrencyHelperInterface
     {
         return $this->get('currency.helper');
     }
     
-    public function getSecurityHelper(): SecurityHelperInterface
+    protected function getSecurityHelper(): SecurityHelperInterface
     {
         return $this->get('security.helper');
     }
     
-    public function getMailerHelper(): MailerHelperInterface
+    protected function getMailerHelper(): MailerHelperInterface
     {
         return $this->get('mailer.helper');
     }
     
-    public function getTemplatingHelper(): TemplatingHelperInterface
+    protected function getTemplatingHelper(): TemplatingHelperInterface
     {
         return $this->get('templating.helper');
     }
     
-    public function getValidatorHelper(): ValidatorHelperInterface
+    protected function getValidatorHelper(): ValidatorHelperInterface
     {
         return $this->get('validator.helper');
     }
     
-    public function getEntityManager(): EntityManagerInterface
+    protected function getEntityManager(): EntityManagerInterface
     {
         return $this->getDoctrineHelper()->getEntityManager();
     }
     
-    public function getEventDispatcher(): EventDispatcherInterface
+    protected function getEventDispatcher(): EventDispatcherInterface
     {
         return $this->get('event_dispatcher');
     }
     
-    public function getShopStorage(): ShopStorageInterface
+    protected function getShopStorage(): ShopStorageInterface
     {
         return $this->get('shop.storage');
     }
     
-    public function getBreadcrumbProvider(): BreadcrumbProviderInterface
+    protected function getBreadcrumbProvider(): BreadcrumbProviderInterface
     {
         return $this->get('breadcrumb.provider');
     }
