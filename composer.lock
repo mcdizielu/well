@@ -5252,12 +5252,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/security-checker.git",
-                "reference": "8f49b63abd128aa365963cc7ac636c5efdfbd024"
+                "reference": "f2ce0035fc512287978510ca1740cd111d60f89f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/8f49b63abd128aa365963cc7ac636c5efdfbd024",
-                "reference": "8f49b63abd128aa365963cc7ac636c5efdfbd024",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/f2ce0035fc512287978510ca1740cd111d60f89f",
+                "reference": "f2ce0035fc512287978510ca1740cd111d60f89f",
                 "shasum": ""
             },
             "require": {
@@ -5288,7 +5288,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2017-01-02 20:42:44"
+            "time": "2017-02-18 17:53:25"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6218,12 +6218,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/BreadcrumbBundle.git",
-                "reference": "14e77f189fbbed3258febe73845cc8dc5ddb3217"
+                "reference": "f674b0195a9da14b07f1da54f33783306290dc9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/BreadcrumbBundle/zipball/14e77f189fbbed3258febe73845cc8dc5ddb3217",
-                "reference": "14e77f189fbbed3258febe73845cc8dc5ddb3217",
+                "url": "https://api.github.com/repos/WellCommerce/BreadcrumbBundle/zipball/f674b0195a9da14b07f1da54f33783306290dc9a",
+                "reference": "f674b0195a9da14b07f1da54f33783306290dc9a",
                 "shasum": ""
             },
             "require": {
@@ -6261,7 +6261,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-18 09:39:27"
+            "time": "2017-02-18 22:21:57"
         },
         {
             "name": "wellcommerce/collections",
@@ -6581,12 +6581,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/DoctrineBundle.git",
-                "reference": "991c70afcc9fa1ef17fddd136c8c9cf06498c11b"
+                "reference": "dae8c683f87862e79b85475ba261a1aa64d8c78f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/DoctrineBundle/zipball/991c70afcc9fa1ef17fddd136c8c9cf06498c11b",
-                "reference": "991c70afcc9fa1ef17fddd136c8c9cf06498c11b",
+                "url": "https://api.github.com/repos/WellCommerce/DoctrineBundle/zipball/dae8c683f87862e79b85475ba261a1aa64d8c78f",
+                "reference": "dae8c683f87862e79b85475ba261a1aa64d8c78f",
                 "shasum": ""
             },
             "require": {
@@ -6626,7 +6626,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-16 23:36:59"
+            "time": "2017-02-18 22:50:12"
         },
         {
             "name": "wellcommerce/doctrine-enhancer",
@@ -6688,12 +6688,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/Form.git",
-                "reference": "605a27ea3a4c25fd7e7c538e272f74b1b35ad4f8"
+                "reference": "53f17a9af4ec4f2735edbc355a8ae65d9db71b1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/Form/zipball/605a27ea3a4c25fd7e7c538e272f74b1b35ad4f8",
-                "reference": "605a27ea3a4c25fd7e7c538e272f74b1b35ad4f8",
+                "url": "https://api.github.com/repos/WellCommerce/Form/zipball/53f17a9af4ec4f2735edbc355a8ae65d9db71b1f",
+                "reference": "53f17a9af4ec4f2735edbc355a8ae65d9db71b1f",
                 "shasum": ""
             },
             "require": {
@@ -6736,7 +6736,7 @@
                 "form",
                 "wellcommerce"
             ],
-            "time": "2017-02-16 00:54:21"
+            "time": "2017-02-18 23:00:43"
         },
         {
             "name": "wellcommerce/form-bundle",
@@ -6744,20 +6744,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/FormBundle.git",
-                "reference": "ebfdaf988f05666ff4def7749d44886d119b3ad6"
+                "reference": "dbecee714eac85277132152c18c85f040ca63ee0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/FormBundle/zipball/ebfdaf988f05666ff4def7749d44886d119b3ad6",
-                "reference": "ebfdaf988f05666ff4def7749d44886d119b3ad6",
+                "url": "https://api.github.com/repos/WellCommerce/FormBundle/zipball/dbecee714eac85277132152c18c85f040ca63ee0",
+                "reference": "dbecee714eac85277132152c18c85f040ca63ee0",
                 "shasum": ""
             },
             "require": {
                 "doctrine/orm": "v2.5.4",
                 "php": "^7.0",
+                "symfony/http-foundation": "v3.2.2",
                 "symfony/options-resolver": "v3.2.2",
                 "symfony/property-access": "v3.2.2",
-                "wellcommerce/collections": "^0.7@dev"
+                "wellcommerce/collections": "^0.7@dev",
+                "wellcommerce/form": "^0.7@dev"
             },
             "type": "library",
             "extra": {
@@ -6793,7 +6795,7 @@
                 "symfony",
                 "wellcommerce"
             ],
-            "time": "2017-02-17 23:01:11"
+            "time": "2017-02-18 23:00:14"
         },
         {
             "name": "wellcommerce/generator-bundle",
@@ -6906,12 +6908,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/SearchBundle.git",
-                "reference": "86669bc8ad76a08def471a7a17fb3400c58d31bb"
+                "reference": "fed1b41995fb11bcd5861103ae7934a1073f78d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/SearchBundle/zipball/86669bc8ad76a08def471a7a17fb3400c58d31bb",
-                "reference": "86669bc8ad76a08def471a7a17fb3400c58d31bb",
+                "url": "https://api.github.com/repos/WellCommerce/SearchBundle/zipball/fed1b41995fb11bcd5861103ae7934a1073f78d9",
+                "reference": "fed1b41995fb11bcd5861103ae7934a1073f78d9",
                 "shasum": ""
             },
             "require": {
@@ -6952,7 +6954,7 @@
                 "search",
                 "wellcommerce"
             ],
-            "time": "2017-02-18 13:15:30"
+            "time": "2017-02-18 22:51:38"
         },
         {
             "name": "wellcommerce/serializer",
@@ -7808,12 +7810,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-validator.git",
-                "reference": "8c6b4f2d37c7ef21a979638cb48e03c043062c8a"
+                "reference": "2c659f743adf9078477b880110526381294317af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-validator/zipball/8c6b4f2d37c7ef21a979638cb48e03c043062c8a",
-                "reference": "8c6b4f2d37c7ef21a979638cb48e03c043062c8a",
+                "url": "https://api.github.com/repos/zendframework/zend-validator/zipball/2c659f743adf9078477b880110526381294317af",
+                "reference": "2c659f743adf9078477b880110526381294317af",
                 "shasum": ""
             },
             "require": {
@@ -7836,13 +7838,13 @@
                 "zendframework/zend-uri": "^2.5"
             },
             "suggest": {
-                "zendframework/zend-db": "Zend\\Db component",
+                "zendframework/zend-db": "Zend\\Db component, required by the (No)RecordExists validator",
                 "zendframework/zend-filter": "Zend\\Filter component, required by the Digits validator",
-                "zendframework/zend-i18n": "Zend\\I18n component to allow translation of validation error messages as well as to use the various Date validators",
+                "zendframework/zend-i18n": "Zend\\I18n component to allow translation of validation error messages",
                 "zendframework/zend-i18n-resources": "Translations of validator messages",
-                "zendframework/zend-math": "Zend\\Math component",
+                "zendframework/zend-math": "Zend\\Math component, required by the Csrf validator",
                 "zendframework/zend-servicemanager": "Zend\\ServiceManager component to allow using the ValidatorPluginManager and validator chains",
-                "zendframework/zend-session": "Zend\\Session component",
+                "zendframework/zend-session": "Zend\\Session component, required by the Csrf validator",
                 "zendframework/zend-uri": "Zend\\Uri component, required by the Uri and Sitemap\\Loc validators"
             },
             "type": "library",
@@ -7871,7 +7873,7 @@
                 "validator",
                 "zf2"
             ],
-            "time": "2017-01-29 17:28:12"
+            "time": "2017-02-18 17:43:12"
         },
         {
             "name": "zendframework/zendsearch",
