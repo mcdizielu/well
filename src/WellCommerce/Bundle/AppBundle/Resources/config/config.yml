@@ -27,6 +27,7 @@ imports:
     - { resource: "@WellCommerceWishlistBundle/Resources/config/config.yml" }
 
 parameters:
+    upload_dir: "%kernel.root_dir%/../web/media"
     knp.doctrine_behaviors.blameable_subscriber.user_entity: WellCommerce\Bundle\AppBundle\Entity\User
     knp.doctrine_behaviors.blameable_subscriber.class: WellCommerce\Bundle\AppBundle\EventListener\BlameableSubscriber
     number_formatter_locale: ~
