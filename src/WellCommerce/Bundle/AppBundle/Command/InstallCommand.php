@@ -17,10 +17,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use WellCommerce\Bundle\CoreBundle\Console\Action\ClearCacheAction;
 use WellCommerce\Bundle\CoreBundle\Console\Action\InstallAssetsAction;
-use WellCommerce\Bundle\CoreBundle\Console\Action\InstallDatabaseAction;
-use WellCommerce\Bundle\CoreBundle\Console\Action\InstallFixturesAction;
-use WellCommerce\Bundle\CoreBundle\Console\Action\ReindexAction;
 use WellCommerce\Bundle\CoreBundle\Console\ConsoleActionExecutorInterface;
+use WellCommerce\Bundle\DoctrineBundle\Console\Action\InstallDatabaseAction;
+use WellCommerce\Bundle\DoctrineBundle\Console\Action\InstallFixturesAction;
+use WellCommerce\Bundle\SearchBundle\Console\Action\ReindexAction;
 
 /**
  * Class InstallCommand
@@ -44,7 +44,7 @@ class InstallCommand extends Command
         parent::__construct();
         $this->executor = $executor;
     }
-
+    
     protected function configure()
     {
         $this->setDescription('Installs WellCommerce Application');
