@@ -32,6 +32,26 @@
       "app/AppKernel.php"
     ]
   },
+  "autoload-dev": {
+    "psr-4": {
+      "WellCommerce\\Component\\Breadcrumb\\": "src/WellCommerce/Component/Breadcrumb",
+      "WellCommerce\\Component\\Collections\\": "src/WellCommerce/Component/Collections",
+      "WellCommerce\\Component\\DataGrid\\": "src/WellCommerce/Component/DataGrid",
+      "WellCommerce\\Component\\DataSet\\": "src/WellCommerce/Component/DataSet",
+      "WellCommerce\\Component\\DoctrineEnhancer\\": "src/WellCommerce/Component/DoctrineEnhancer",
+      "WellCommerce\\Component\\Form\\": "src/WellCommerce/Component/Form",
+      "WellCommerce\\Component\\Search\\": "src/WellCommerce/Component/Search",
+      "WellCommerce\\Component\\Serializer\\": "src/WellCommerce/Component/Serializer",
+      "WellCommerce\\Bundle\\ApiBundle\\": "src/WellCommerce/Bundle/ApiBundle",
+      "WellCommerce\\Bundle\\BreadcrumbBundle\\": "src/WellCommerce/Bundle/BreadcrumbBundle",
+      "WellCommerce\\Bundle\\DataGridBundle\\": "src/WellCommerce/Bundle/DataGridBundle",
+      "WellCommerce\\Bundle\\DataSetBundle\\": "src/WellCommerce/Bundle/DataSetBundle",
+      "WellCommerce\\Bundle\\DoctrineBundle\\": "src/WellCommerce/Bundle/DoctrineBundle",
+      "WellCommerce\\Bundle\\FormBundle\\": "src/WellCommerce/Bundle/FormBundle",
+      "WellCommerce\\Bundle\\GeneratorBundle\\": "src/WellCommerce/Bundle/GeneratorBundle",
+      "WellCommerce\\Bundle\\SearchBundle\\": "src/WellCommerce/Bundle/SearchBundle"
+    }
+  },
   "require": {
     "php": "^7.0",
     "ext-mbstring": "*",
@@ -73,7 +93,19 @@
     "raven/raven": "^0.13.0",
     "emanueleminotto/twig-cache-bundle": "^1.0",
     "expalmer/php-bad-words": "0.1.3",
-    "jngermon/phpunit-entity-tester": "dev-master"
+    "jngermon/phpunit-entity-tester": "dev-master",
+    "wellcommerce/datagrid-bundle": "^0.7.0@dev",
+    "wellcommerce/api-bundle": "^0.7.0@dev",
+    "wellcommerce/doctrine-enhancer": "^0.7.0@dev",
+    "wellcommerce/form": "^0.7.0@dev",
+    "wellcommerce/dataset": "^0.7.0@dev",
+    "wellcommerce/breadcrumb": "^0.7.0@dev",
+    "wellcommerce/dataset-bundle": "^0.7.0@dev",
+    "wellcommerce/doctrine-bundle": "^0.7.0@dev",
+    "wellcommerce/generator-bundle": "^0.7.0@dev",
+    "wellcommerce/form-bundle": "^0.7.0@dev",
+    "wellcommerce/breadcrumb-bundle": "^0.7.0@dev",
+    "wellcommerce/search-bundle": "^0.7.0@dev"
   },
   "scripts": {
     "pre-install-cmd": [
