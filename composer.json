@@ -129,5 +129,8 @@
     "branch-alias": {
       "dev-master": "0.7.x-dev"
     }
+  },
+  "require-dev": {
+    "dama/doctrine-test-bundle": "^1.0"
   }
 }

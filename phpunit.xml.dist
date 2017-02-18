@@ -34,4 +34,8 @@
             <directory suffix=".php">src/*/Component/*/Tests</directory>
         </testsuite>
     </testsuites>
+
+    <listeners>
+        <listener class="\DAMA\DoctrineTestBundle\PHPUnit\PHPUnitStaticDbConnectionListener" />
+    </listeners>
 </phpunit>
