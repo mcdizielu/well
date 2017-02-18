@@ -9,10 +9,9 @@
 services:
     breadcrumb.subscriber:
         class: WellCommerce\Bundle\BreadcrumbBundle\EventListener\BreadcrumbSubscriber
+        arguments: ["@router.helper", "@breadcrumb.provider"]
         tags:
             - { name: kernel.event_subscriber }
-        calls:
-            - [setContainer, ['@service_container']]
 
     breadcrumb.collection:
         class: WellCommerce\Component\Breadcrumb\Model\BreadcrumbCollection
