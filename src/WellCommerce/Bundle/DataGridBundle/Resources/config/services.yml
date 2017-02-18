@@ -1,0 +1,18 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+services:
+    datagrid.configurator:
+        class: WellCommerce\Component\DataGrid\Configurator\DataGridConfigurator
+        arguments: ['@event_dispatcher']
+
+    twig.extension.datagrid:
+        class: WellCommerce\Bundle\DataGridBundle\Twig\DataGridExtension
+        arguments: ['WellCommerceDataGridBundle:DataGrid:datagrid.html.twig', '@twig']
+        tags:
+            - { name: twig.extension }

@@ -1,0 +1,39 @@
+{
+  "name": "wellcommerce/datagrid-bundle",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "description": "WellCommerce DataGridBundle",
+  "keywords": [
+    "wellcommerce",
+    "e-commerce",
+    "open-source"
+  ],
+  "authors": [
+    {
+      "name": "Adam Piotrowski",
+      "email": "adam@wellcommerce.org"
+    },
+    {
+      "name": "WellCommerce Developers",
+      "email": "developers@wellcommerce.org"
+    }
+  ],
+  "support": {
+    "email": "support@wellcommerce.org",
+    "issues": "https://github.com/WellCommerce/DataGridBundle/issues",
+    "source": "https://github.com/WellCommerce/DataGridBundle/"
+  },
+  "autoload": {
+    "psr-4": {
+      "WellCommerce\\Bundle\\DataGridBundle\\": ""
+    }
+  },
+  "require": {
+    "wellcommerce/datagrid": "^0.7@dev"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.7.x-dev"
+    }
+  }
+}
