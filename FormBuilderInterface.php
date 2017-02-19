@@ -12,7 +12,6 @@
 
 namespace WellCommerce\Component\Form;
 
-use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
 use WellCommerce\Component\Form\Dependencies\DependencyInterface;
 use WellCommerce\Component\Form\Elements\ElementInterface;
 use WellCommerce\Component\Form\Elements\FormInterface;
@@ -35,12 +34,12 @@ interface FormBuilderInterface
     /**
      * Creates the form, triggers init event and then populates form with values
      *
-     * @param EntityInterface|null $defaultData
-     * @param array                $options
+     * @param mixed $defaultData
+     * @param array $options
      *
      * @return FormInterface
      */
-    public function createForm(EntityInterface $defaultData = null, array $options = []): FormInterface;
+    public function createForm($defaultData = null, array $options = []): FormInterface;
     
     /**
      * Returns an element object by its type
