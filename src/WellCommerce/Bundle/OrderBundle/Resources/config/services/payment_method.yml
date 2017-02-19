@@ -1,0 +1,75 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+services:
+    payment_method.doctrine.event_subscriber:
+        class: WellCommerce\Bundle\OrderBundle\EventListener\PaymentMethodDoctrineEventSubscriber
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+            - [setContainer, ['@service_container']]
+
+    payment_method.order.visitor:
+        class: WellCommerce\Bundle\OrderBundle\Visitor\PaymentMethodOrderVisitor
+        tags:
+            - { name: order.visitor, alias: payment_method }
+
+    payment_surcharge.order.modifier.configurator:
+        class: WellCommerce\Bundle\OrderBundle\Configurator\OrderModifierConfigurator
+        arguments: { name: payment_surcharge, description: order.label.payment_surcharge, subtraction: false, hierarchy: 900 }
+
+    payment_surcharge.order.modifier:
+        class: WellCommerce\Bundle\OrderBundle\Entity\OrderModifier
+        tags:
+            - { name: order.modifier, alias: payment_surcharge }
+        factory: ['@order_modifier.factory', create]
+        configurator: ['@payment_surcharge.order.modifier.configurator', configure]
+
+    payment.controller.front:
+        class: WellCommerce\Bundle\OrderBundle\Controller\Front\PaymentController
+        arguments: ['@payment.manager']
+        calls:
+            - [setContainer, ['@service_container']]
+
+    bank_transfer.gateway:
+        class: WellCommerce\Bundle\OrderBundle\Gateway\OfflinePaymentGateway
+        shared: false
+
+    bank_transfer.configurator:
+        class: WellCommerce\Bundle\OrderBundle\Configurator\BankTransferConfigurator
+        arguments: ["bank_transfer", "WellCommerceOrderBundle:Front/Payment/BankTransfer:initialize.html.twig"]
+        calls:
+            - [setContainer, ['@service_container']]
+        shared: false
+
+    bank_transfer.processor:
+        class: WellCommerce\Bundle\OrderBundle\Processor\GenericPaymentProcessor
+        tags:
+            - { name: payment.processor }
+        arguments: ['@bank_transfer.gateway', '@bank_transfer.configurator']
+
+    cash_on_delivery.gateway:
+        class: WellCommerce\Bundle\OrderBundle\Gateway\OfflinePaymentGateway
+        shared: false
+
+    cash_on_delivery.configurator:
+        class: WellCommerce\Bundle\OrderBundle\Configurator\CashOnDeliveryConfigurator
+        arguments: ["cash_on_delivery", "WellCommerceOrderBundle:Front/Payment/CashOnDelivery:initialize.html.twig"]
+        calls:
+            - [setContainer, ['@service_container']]
+        shared: false
+
+    cash_on_delivery.processor:
+        class: WellCommerce\Bundle\OrderBundle\Processor\GenericPaymentProcessor
+        tags:
+            - { name: payment.processor }
+        arguments: ['@cash_on_delivery.gateway', '@cash_on_delivery.configurator']
+
+    payment_method.datagrid.filter:
+        class: WellCommerce\Bundle\OrderBundle\DataGrid\PaymentMethodFilter
+        arguments: ["@payment_method.repository"]
