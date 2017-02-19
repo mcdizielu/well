@@ -53,6 +53,9 @@
     "wellcommerce/showcase-bundle": "^0.7.0@dev",
     "wellcommerce/wishlist-bundle": "^0.7.0@dev"
   },
+  "require-dev": {
+    "dama/doctrine-test-bundle": "^1.0"
+  },
   "scripts": {
     "pre-install-cmd": [
       "WellCommerce\\Composer\\HerokuEnvironment::populateEnvironment"

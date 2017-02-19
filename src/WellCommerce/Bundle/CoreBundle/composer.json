@@ -72,9 +72,6 @@
     "wellcommerce/form": "^0.7@dev",
     "wellcommerce/serializer": "^0.7@dev"
   },
-  "require-dev": {
-    "dama/doctrine-test-bundle": "^1.0"
-  },
   "extra": {
     "branch-alias": {
       "dev-master": "0.7.x-dev"
