@@ -1,6 +1,5 @@
 {
   "name": "wellcommerce/core-bundle",
-  "type": "wellcommerce-bundle",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce CoreBundle",
@@ -26,18 +25,16 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Bundle\\CoreBundle\\": "src/WellCommerce/Bundle/CoreBundle"
+      "WellCommerce\\Bundle\\CoreBundle\\": ""
     }
   },
   "require": {
-    "wellcommerce/api-bundle": "^0.7@dev"
+    "php": "^7.0",
+    "wellcommerce/datagrid": "^0.7@dev"
   },
   "extra": {
     "branch-alias": {
       "dev-master": "0.7.x-dev"
-    },
-    "wellcommerce-bundle": {
-      "install-dir": "src/WellCommerce/Bundle/CoreBundle"
     }
   }
 }

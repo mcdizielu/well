@@ -11,7 +11,7 @@
  */
 namespace WellCommerce\Bundle\AppBundle\DataGrid;
 
-use WellCommerce\Bundle\DataGridBundle\DataGrid\AbstractDataGrid;
+use WellCommerce\Bundle\CoreBundle\DataGrid\AbstractDataGrid;
 use WellCommerce\Component\DataGrid\Column\Column;
 use WellCommerce\Component\DataGrid\Column\ColumnCollection;
 use WellCommerce\Component\DataGrid\Column\Options\Appearance;

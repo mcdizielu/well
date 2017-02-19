@@ -17,7 +17,6 @@ if [ "$action" == 'init' ]
 
         git subtree add --prefix=src/WellCommerce/Bundle/ApiBundle git@github.com:WellCommerce/ApiBundle.git master
         git subtree add --prefix=src/WellCommerce/Bundle/BreadcrumbBundle git@github.com:WellCommerce/BreadcrumbBundle.git master
-        git subtree add --prefix=src/WellCommerce/Bundle/DataGridBundle git@github.com:WellCommerce/DataGridBundle.git master
         git subtree add --prefix=src/WellCommerce/Bundle/DataSetBundle git@github.com:WellCommerce/DataSetBundle.git master
         git subtree add --prefix=src/WellCommerce/Bundle/DoctrineBundle git@github.com:WellCommerce/DoctrineBundle.git master
         git subtree add --prefix=src/WellCommerce/Bundle/FormBundle git@github.com:WellCommerce/FormBundle.git master
@@ -40,7 +39,6 @@ if [ "$action" == 'push' ]
 
         git subtree push --prefix=src/WellCommerce/Bundle/ApiBundle git@github.com:WellCommerce/ApiBundle.git master
         git subtree push --prefix=src/WellCommerce/Bundle/BreadcrumbBundle git@github.com:WellCommerce/BreadcrumbBundle.git master
-        git subtree push --prefix=src/WellCommerce/Bundle/DataGridBundle git@github.com:WellCommerce/DataGridBundle.git master
         git subtree push --prefix=src/WellCommerce/Bundle/DataSetBundle git@github.com:WellCommerce/DataSetBundle.git master
         git subtree push --prefix=src/WellCommerce/Bundle/DoctrineBundle git@github.com:WellCommerce/DoctrineBundle.git master
         git subtree push --prefix=src/WellCommerce/Bundle/FormBundle git@github.com:WellCommerce/FormBundle.git master
@@ -63,7 +61,6 @@ if [ "$action" == 'pull' ]
 
         git subtree pull --prefix=src/WellCommerce/Bundle/ApiBundle git@github.com:WellCommerce/ApiBundle.git master
         git subtree pull --prefix=src/WellCommerce/Bundle/BreadcrumbBundle git@github.com:WellCommerce/BreadcrumbBundle.git master
-        git subtree pull --prefix=src/WellCommerce/Bundle/DataGridBundle git@github.com:WellCommerce/DataGridBundle.git master
         git subtree pull --prefix=src/WellCommerce/Bundle/DataSetBundle git@github.com:WellCommerce/DataSetBundle.git master
         git subtree pull --prefix=src/WellCommerce/Bundle/DoctrineBundle git@github.com:WellCommerce/DoctrineBundle.git master
         git subtree pull --prefix=src/WellCommerce/Bundle/FormBundle git@github.com:WellCommerce/FormBundle.git master

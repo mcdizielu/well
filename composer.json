@@ -36,7 +36,6 @@
     "psr-4": {
       "WellCommerce\\Component\\Breadcrumb\\": "src/WellCommerce/Component/Breadcrumb",
       "WellCommerce\\Component\\Collections\\": "src/WellCommerce/Component/Collections",
-      "WellCommerce\\Component\\DataGrid\\": "src/WellCommerce/Component/DataGrid",
       "WellCommerce\\Component\\DataSet\\": "src/WellCommerce/Component/DataSet",
       "WellCommerce\\Component\\DoctrineEnhancer\\": "src/WellCommerce/Component/DoctrineEnhancer",
       "WellCommerce\\Component\\Form\\": "src/WellCommerce/Component/Form",
