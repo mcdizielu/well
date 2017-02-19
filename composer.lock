@@ -6785,12 +6785,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/Search.git",
-                "reference": "fdd9ab47dff6b32da7beb0011f863fb8f41a4833"
+                "reference": "05293ba4d6d1e60a2446a366c925f7db01f3f6f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/Search/zipball/fdd9ab47dff6b32da7beb0011f863fb8f41a4833",
-                "reference": "fdd9ab47dff6b32da7beb0011f863fb8f41a4833",
+                "url": "https://api.github.com/repos/WellCommerce/Search/zipball/05293ba4d6d1e60a2446a366c925f7db01f3f6f8",
+                "reference": "05293ba4d6d1e60a2446a366c925f7db01f3f6f8",
                 "shasum": ""
             },
             "require": {
@@ -6834,7 +6834,7 @@
                 "search",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:43:38"
+            "time": "2017-02-19 21:52:09"
         },
         {
             "name": "wellcommerce/search-bundle",
