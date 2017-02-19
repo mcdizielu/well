@@ -19,7 +19,6 @@ use WellCommerce\Bundle\AppBundle\Entity\User;
 use WellCommerce\Bundle\AppBundle\Entity\UserGroup;
 use WellCommerce\Bundle\AppBundle\Entity\UserGroupPermission;
 use WellCommerce\Bundle\DoctrineBundle\DataFixtures\AbstractDataFixture;
-use WellCommerce\Bundle\CoreBundle\Helper\Helper;
 
 /**
  * Class LoadUserData

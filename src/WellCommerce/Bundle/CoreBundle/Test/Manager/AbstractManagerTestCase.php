@@ -12,9 +12,9 @@
 
 namespace WellCommerce\Bundle\CoreBundle\Test\Manager;
 
-use WellCommerce\Bundle\DoctrineBundle\Manager\ManagerInterface;
 use WellCommerce\Bundle\CoreBundle\Test\AbstractTestCase;
 use WellCommerce\Bundle\DoctrineBundle\Factory\EntityFactoryInterface;
+use WellCommerce\Bundle\DoctrineBundle\Manager\ManagerInterface;
 use WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface;
 
 /**

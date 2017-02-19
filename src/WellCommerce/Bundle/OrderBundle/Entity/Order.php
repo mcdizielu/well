@@ -20,9 +20,9 @@ use WellCommerce\Bundle\AppBundle\Entity\ClientContactDetails;
 use WellCommerce\Bundle\AppBundle\Entity\ClientDetails;
 use WellCommerce\Bundle\AppBundle\Entity\ClientShippingAddress;
 use WellCommerce\Bundle\AppBundle\Entity\Shop;
+use WellCommerce\Bundle\CouponBundle\Entity\Coupon;
 use WellCommerce\Bundle\DoctrineBundle\Behaviours\Identifiable;
 use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
-use WellCommerce\Bundle\CouponBundle\Entity\Coupon;
 use WellCommerce\Bundle\OrderBundle\Entity\Extra\OrderExtraTrait;
 use WellCommerce\Bundle\OrderBundle\Visitor\OrderVisitorInterface;
 

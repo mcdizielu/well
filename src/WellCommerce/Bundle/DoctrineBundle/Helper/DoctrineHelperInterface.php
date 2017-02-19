@@ -15,10 +15,8 @@ namespace WellCommerce\Bundle\DoctrineBundle\Helper;
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 use Doctrine\Common\Persistence\Mapping\ClassMetadataFactory;
 use Doctrine\ORM\EntityManagerInterface;
-use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Query\Filter\SQLFilter;
 use Doctrine\ORM\Query\FilterCollection;
-use Doctrine\ORM\QueryBuilder;
 
 /**
  * Interface DoctrineHelperInterface

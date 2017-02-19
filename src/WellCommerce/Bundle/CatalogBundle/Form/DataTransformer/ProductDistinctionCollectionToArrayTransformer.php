@@ -19,8 +19,8 @@ use Symfony\Component\PropertyAccess\PropertyPathInterface;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductDistinction;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductStatus;
-use WellCommerce\Bundle\FormBundle\Form\DataTransformer\CollectionToArrayTransformer;
 use WellCommerce\Bundle\DoctrineBundle\Manager\ManagerInterface;
+use WellCommerce\Bundle\FormBundle\Form\DataTransformer\CollectionToArrayTransformer;
 
 /**
  * Class ProductDistinctionCollectionToArrayTransformer

@@ -12,8 +12,6 @@
 
 namespace WellCommerce\Bundle\AppBundle\Entity;
 
-use WellCommerce\Bundle\AppBundle\Entity\AddressTrait;
-
 /**
  * Class ClientShippingAddress
  *

@@ -12,8 +12,8 @@
 
 namespace WellCommerce\Bundle\OrderBundle\Tests\Manager;
 
-use WellCommerce\Bundle\DoctrineBundle\Manager\ManagerInterface;
 use WellCommerce\Bundle\CoreBundle\Test\Manager\AbstractManagerTestCase;
+use WellCommerce\Bundle\DoctrineBundle\Manager\ManagerInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\PaymentMethod;
 
 /**

@@ -14,9 +14,9 @@ namespace WellCommerce\Bundle\AppBundle\Form\DataTransformer;
 
 use Doctrine\ORM\PersistentCollection;
 use Symfony\Component\PropertyAccess\PropertyPathInterface;
+use WellCommerce\Bundle\DoctrineBundle\Entity\LocaleAwareInterface;
 use WellCommerce\Bundle\FormBundle\Form\DataTransformer\AbstractDataTransformer;
 use WellCommerce\Bundle\FormBundle\Form\DataTransformer\RepositoryAwareDataTransformerInterface;
-use WellCommerce\Bundle\DoctrineBundle\Entity\LocaleAwareInterface;
 
 /**
  * Class TranslationTransformer
