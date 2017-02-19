@@ -12,8 +12,8 @@
 
 namespace WellCommerce\Component\DoctrineEnhancer\ClassMetadata;
 
-use WellCommerce\Component\DoctrineEnhancer\MappingEnhancerInterface;
 use WellCommerce\Component\Collections\ArrayCollection;
+use WellCommerce\Component\DoctrineEnhancer\MappingEnhancerInterface;
 
 /**
  * Class ClassMetadataEnhancerCollection
