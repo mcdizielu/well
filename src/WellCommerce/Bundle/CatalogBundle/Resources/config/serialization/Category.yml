@@ -1,0 +1,40 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+WellCommerce\Bundle\CatalogBundle\Entity\Category:
+    fields:
+        id:
+            groups:
+                - default
+                - category
+        hierarchy:
+            groups:
+                - default
+                - category
+        productsCount:
+            groups:
+                - default
+                - category
+        childrenCount:
+            groups:
+                - default
+                - category
+        enabled:
+            groups:
+                - default
+                - category
+    associations:
+        parent:
+            groups:
+                - category
+        translations:
+            groups:
+                - category
+        shops:
+            groups:
+                - category

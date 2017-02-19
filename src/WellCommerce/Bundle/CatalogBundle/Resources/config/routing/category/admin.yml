@@ -1,0 +1,64 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+admin.category.index:
+    path: /index
+    defaults:
+        _controller: 'category.controller.admin:indexAction'
+    options:
+        expose: true
+        require_admin_permission: category.index
+
+admin.category.grid:
+    path: /grid
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'category.controller.admin:gridAction'
+    options:
+        expose: true
+        require_admin_permission: category.index
+
+admin.category.add:
+    path: /add
+    defaults:
+        _controller: 'category.controller.admin:addAction'
+    options:
+        expose: true
+        require_admin_permission: category.add
+
+admin.category.edit:
+    path: '/edit/{id}'
+    defaults:
+        _controller: 'category.controller.admin:editAction'
+    options:
+        expose: true
+        require_admin_permission: category.edit
+
+admin.category.delete:
+    path: '/delete/{id}'
+    defaults:
+        _controller: 'category.controller.admin:deleteAction'
+    options:
+        expose: true
+        require_admin_permission: category.delete
+
+admin.category.delete_group:
+    path: '/delete_group'
+    defaults:
+        _controller: 'category.controller.admin:deleteGroupAction'
+    options:
+        expose: true
+        require_admin_permission: category.delete
+
+admin.category.ajax.get_children:
+    path: '/ajax/children'
+    defaults:
+        _controller: 'category.controller.admin:ajaxGetChildrenAction'
+    options:
+        expose: true
+        require_admin_permission: category.index
