@@ -1,5 +1,6 @@
 {
   "name": "wellcommerce/form",
+  "type": "wellcommerce-component",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce Form",
@@ -25,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Component\\Form\\": ""
+      "WellCommerce\\Component\\Form\\": "src/WellCommerce/Component/Form"
     }
   },
   "require": {
@@ -38,8 +39,8 @@
     "zendframework/zend-json": "^2.6@dev"
   },
   "extra": {
-    "branch-alias": {
-      "dev-master": "0.7.x-dev"
+    "wellcommerce-bundle": {
+      "install-dir": "src/WellCommerce/Component/Form"
     }
   }
 }
