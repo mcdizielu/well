@@ -14,8 +14,8 @@ namespace WellCommerce\Bundle\CoreBundle\Form\DataTransformer;
 
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
 use Symfony\Component\PropertyAccess\PropertyAccess;
-use WellCommerce\Bundle\CoreBundle\Helper\Doctrine\DoctrineHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Doctrine\DoctrineHelperInterface;
 
 /**
  * Class AbstractDataTransformer
@@ -28,17 +28,17 @@ abstract class AbstractDataTransformer implements RepositoryAwareDataTransformer
      * @var \Symfony\Component\PropertyAccess\PropertyAccessor
      */
     protected $propertyAccessor;
-
+    
     /**
      * @var RepositoryInterface
      */
     private $repository;
-
+    
     /**
      * @var DoctrineHelperInterface
      */
     private $doctrineHelper;
-
+    
     /**
      * Constructor
      *
@@ -49,7 +49,7 @@ abstract class AbstractDataTransformer implements RepositoryAwareDataTransformer
         $this->propertyAccessor = PropertyAccess::createPropertyAccessor();
         $this->doctrineHelper   = $doctrineHelper;
     }
-
+    
     /**
      * @param RepositoryInterface $repository
      */
@@ -57,35 +57,35 @@ abstract class AbstractDataTransformer implements RepositoryAwareDataTransformer
     {
         $this->repository = $repository;
     }
-
+    
     /**
      * Returns current repository
      *
      * @return RepositoryInterface
      */
-    protected function getRepository() : RepositoryInterface
+    protected function getRepository(): RepositoryInterface
     {
         if (null === $this->repository) {
             throw new \LogicException('Repository was not set during class initialization.');
         }
-
+        
         return $this->repository;
     }
-
+    
     /**
      * Returns the Doctrine helper
      *
      * @return DoctrineHelperInterface
      */
-    protected function getDoctrineHelper() : DoctrineHelperInterface
+    protected function getDoctrineHelper(): DoctrineHelperInterface
     {
         if (null === $this->doctrineHelper) {
             throw new \LogicException('Doctrine helper was not set during class initialization.');
         }
-
+        
         return $this->doctrineHelper;
     }
-
+    
     /**
      * Returns mapping information for class
      *
@@ -93,13 +93,13 @@ abstract class AbstractDataTransformer implements RepositoryAwareDataTransformer
      *
      * @return ClassMetadata
      */
-    protected function getClassMetadata(string $class) : ClassMetadata
+    protected function getClassMetadata(string $class): ClassMetadata
     {
         $factory = $this->getDoctrineHelper()->getMetadataFactory();
         if (!$factory->hasMetadataFor($class)) {
             throw new \InvalidArgumentException(sprintf('No metadata found for class "%s"', $class));
         }
-
+        
         return $factory->getMetadataFor($class);
     }
 }
