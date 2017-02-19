@@ -6088,12 +6088,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/ComposerPlugin.git",
-                "reference": "d844d8c9000705e99eaf268c2a4cc8bfa6336d13"
+                "reference": "3acd4373b5ec25142f3b2eb89ac796481feba34b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/ComposerPlugin/zipball/d844d8c9000705e99eaf268c2a4cc8bfa6336d13",
-                "reference": "d844d8c9000705e99eaf268c2a4cc8bfa6336d13",
+                "url": "https://api.github.com/repos/WellCommerce/ComposerPlugin/zipball/3acd4373b5ec25142f3b2eb89ac796481feba34b",
+                "reference": "3acd4373b5ec25142f3b2eb89ac796481feba34b",
                 "shasum": ""
             },
             "require": {
@@ -6129,7 +6129,7 @@
                 "plugin",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 23:12:06"
+            "time": "2017-02-19 23:14:57"
         },
         {
             "name": "wellcommerce/core-bundle",
