@@ -45,8 +45,6 @@
     "ext-gd": "*",
     "ext-intl": "*",
     "ext-exif": "*",
-    "symfony/symfony": "v3.2.2",
-    "doctrine/orm": "v2.5.4",
     "twig/extensions": "v1.4.1",
     "sensio/distribution-bundle": "v5.0.18",
     "sensio/framework-extra-bundle": "v3.0.21",

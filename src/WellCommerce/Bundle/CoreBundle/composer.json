@@ -30,6 +30,8 @@
   },
   "require": {
     "php": "^7.0",
+    "symfony/symfony": "v3.2.2",
+    "doctrine/orm": "v2.5.4",
     "wellcommerce/collections": "^0.7@dev",
     "wellcommerce/breadcrumb": "^0.7@dev",
     "wellcommerce/datagrid": "^0.7@dev",
