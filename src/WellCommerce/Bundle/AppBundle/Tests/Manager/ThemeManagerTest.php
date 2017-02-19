@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\AppBundle\Tests\Manager\Admin;
 
 use WellCommerce\Bundle\AppBundle\Entity\Theme;
 use WellCommerce\Bundle\CoreBundle\Test\Manager\AbstractManagerTestCase;
-use WellCommerce\Bundle\DoctrineBundle\Manager\ManagerInterface;
+use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
 
 /**
  * Class ThemeManagerTest

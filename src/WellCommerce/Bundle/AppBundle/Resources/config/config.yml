@@ -9,15 +9,11 @@
 imports:
     - { resource: "app/" }
     - { resource: "@WellCommerceApiBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceBreadcrumbBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceCoreBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceDataSetBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceFormBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceSearchBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceCatalogBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceCmsBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceCouponBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceDoctrineBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceGeneratorBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceOrderBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceReviewBundle/Resources/config/config.yml" }

@@ -13,7 +13,7 @@
 namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use WellCommerce\Bundle\DoctrineBundle\DataFixtures\AbstractDataFixture;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderStatus;
 
 /**

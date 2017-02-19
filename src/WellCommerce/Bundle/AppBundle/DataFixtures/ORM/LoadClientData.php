@@ -16,7 +16,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use WellCommerce\Bundle\AppBundle\Entity\Client;
 use WellCommerce\Bundle\AppBundle\Entity\ClientBillingAddress;
 use WellCommerce\Bundle\AppBundle\Entity\ClientShippingAddress;
-use WellCommerce\Bundle\DoctrineBundle\DataFixtures\AbstractDataFixture;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
 
 /**
  * Class LoadClientData

@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\CatalogBundle\DataSet\Transformer;
 
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductDistinction;
-use WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 use WellCommerce\Component\DataSet\Transformer\AbstractDataSetTransformer;
 
 /**

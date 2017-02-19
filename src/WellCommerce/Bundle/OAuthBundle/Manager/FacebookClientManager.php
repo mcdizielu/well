@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\OAuthBundle\Manager;
 
 use League\OAuth2\Client\Provider\FacebookUser;
 use WellCommerce\Bundle\AppBundle\Entity\Client;
-use WellCommerce\Bundle\DoctrineBundle\Manager\AbstractManager;
+use WellCommerce\Bundle\CoreBundle\Manager\AbstractManager;
 
 /**
  * Class FacebookClientManager

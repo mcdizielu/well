@@ -17,7 +17,7 @@ use Doctrine\Common\Collections\Collection;
 use Symfony\Component\PropertyAccess\PropertyPathInterface;
 use WellCommerce\Bundle\AppBundle\Entity\UserGroup;
 use WellCommerce\Bundle\AppBundle\Entity\UserGroupPermission;
-use WellCommerce\Bundle\FormBundle\Form\DataTransformer\CollectionToArrayTransformer;
+use WellCommerce\Bundle\CoreBundle\Form\DataTransformer\CollectionToArrayTransformer;
 
 /**
  * Class UserGroupPermissionToArrayTransformer

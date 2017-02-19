@@ -7,8 +7,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\KernelInterface;
-use WellCommerce\Bundle\CoreBundle\Console\ConsoleActionExecutor;
-use WellCommerce\Bundle\CoreBundle\Generator\WellCommerceBundleGenerator;
+use WellCommerce\Bundle\CoreBundle\Console\Executor\ConsoleActionExecutorInterface;
+use WellCommerce\Bundle\GeneratorBundle\Generator\WellCommerceBundleGenerator;
 use WellCommerce\Bundle\GeneratorBundle\Manipulator\WellCommerceManipulator;
 
 /**
@@ -29,7 +29,7 @@ abstract class AbstractBundleCommand extends ContainerAwareCommand
     protected $filesystem;
     
     /**
-     * @var ConsoleActionExecutor
+     * @var ConsoleActionExecutorInterface
      */
     protected $executor;
     
@@ -47,7 +47,7 @@ abstract class AbstractBundleCommand extends ContainerAwareCommand
     {
         $this->kernel      = $this->getContainer()->get('kernel');
         $this->filesystem  = new Filesystem();
-        $this->executor    = $this->getContainer()->get('distribution.console.action_executor');
+        $this->executor    = $this->getContainer()->get('console.action_executor');
         $this->generator   = $this->getContainer()->get('distribution.bundle.generator');
         $this->manipulator = $this->getContainer()->get('distribution.bundle.manipulator');
     }

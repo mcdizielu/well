@@ -6,6 +6,13 @@
 # For the full copyright and license information,
 # please view the LICENSE file that was distributed with this source code.
 
+imports:
+    - { resource: 'services/breadcrumb.yml' }
+    - { resource: 'services/datagrid.yml' }
+    - { resource: 'services/dataset.yml' }
+    - { resource: 'services/doctrine.yml' }
+    - { resource: 'services/form.yml' }
+
 services:
     flash.helper:
         class: WellCommerce\Bundle\CoreBundle\Helper\Flash\FlashHelper
@@ -44,13 +51,13 @@ services:
         arguments: ['@security.token_storage', '@request.helper']
 
     twig.extension.image:
-        class: WellCommerce\Bundle\CoreBundle\Twig\Extension\ImageExtension
+        class: WellCommerce\Bundle\CoreBundle\Twig\ImageExtension
         tags:
             - { name: twig.extension }
         arguments: ['@image.helper']
 
     twig.extension.mail:
-        class: WellCommerce\Bundle\CoreBundle\Twig\Extension\MailExtension
+        class: WellCommerce\Bundle\CoreBundle\Twig\MailExtension
         tags:
             - { name: twig.extension }
         arguments: ['@kernel']
@@ -67,6 +74,6 @@ services:
         class: WellCommerce\Bundle\CoreBundle\Helper\Package\PackageHelper
         arguments: ['@knp.packagist_api.client']
 
-    distribution.console.action_executor:
-        class: WellCommerce\Bundle\CoreBundle\Console\ConsoleActionExecutor
+    console.action_executor:
+        class: WellCommerce\Bundle\CoreBundle\Console\Executor\ConsoleActionExecutor
         arguments: ['@kernel']

@@ -18,8 +18,8 @@ use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Symfony\Component\Security\Core\Encoder\EncoderAwareInterface;
 use Symfony\Component\Security\Core\User\EquatableInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
-use WellCommerce\Bundle\DoctrineBundle\Behaviours\Identifiable;
-use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
+use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
 
 /**

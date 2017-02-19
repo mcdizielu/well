@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\RoutingBundle\Validator;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
-use WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 use WellCommerce\Bundle\RoutingBundle\Entity\RoutableSubjectInterface;
 use WellCommerce\Bundle\RoutingBundle\Entity\Route;
 use WellCommerce\Bundle\RoutingBundle\Helper\RouterHelperInterface;

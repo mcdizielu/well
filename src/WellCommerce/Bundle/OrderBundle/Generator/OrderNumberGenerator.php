@@ -12,7 +12,7 @@
 
 namespace WellCommerce\Bundle\OrderBundle\Generator;
 
-use WellCommerce\Bundle\DoctrineBundle\Helper\DoctrineHelperInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Doctrine\DoctrineHelperInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
 
 /**

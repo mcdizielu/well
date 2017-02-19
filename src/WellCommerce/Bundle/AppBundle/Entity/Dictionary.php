@@ -15,8 +15,8 @@ namespace WellCommerce\Bundle\AppBundle\Entity;
 use Knp\DoctrineBehaviors\Model\Blameable\Blameable;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
-use WellCommerce\Bundle\DoctrineBundle\Behaviours\Identifiable;
-use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
+use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 
 /**
  * Dictionary

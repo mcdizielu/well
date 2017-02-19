@@ -1,2 +1,0 @@
-# Breadcrumb
-WellCommerce Breadcrumb Component

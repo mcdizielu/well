@@ -13,7 +13,7 @@
 namespace WellCommerce\Bundle\CatalogBundle\Repository;
 
 use WellCommerce\Bundle\CatalogBundle\Entity\Category;
-use WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 
 /**
  * Interface CategoryRepositoryInterface

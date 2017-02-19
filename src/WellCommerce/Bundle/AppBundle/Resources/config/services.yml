@@ -31,7 +31,7 @@ services:
 
     app.install.command:
         class: WellCommerce\Bundle\AppBundle\Command\InstallCommand
-        arguments: ['@distribution.console.action_executor']
+        arguments: ['@console.action_executor']
         tags:
             - { name: console.command }
 

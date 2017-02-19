@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\OrderBundle\Manager;
 
 use WellCommerce\Bundle\AppBundle\Entity\Client;
 use WellCommerce\Bundle\AppBundle\Entity\Shop;
-use WellCommerce\Bundle\DoctrineBundle\Manager\AbstractManager;
+use WellCommerce\Bundle\CoreBundle\Manager\AbstractManager;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
 
 /**

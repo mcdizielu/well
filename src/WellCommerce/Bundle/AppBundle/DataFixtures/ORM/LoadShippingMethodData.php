@@ -15,7 +15,7 @@ namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Persistence\ObjectManager;
 use WellCommerce\Bundle\AppBundle\Entity\Price;
-use WellCommerce\Bundle\DoctrineBundle\DataFixtures\AbstractDataFixture;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
 use WellCommerce\Bundle\OrderBundle\Entity\ShippingMethod;
 use WellCommerce\Bundle\OrderBundle\Entity\ShippingMethodCost;
 

@@ -13,7 +13,7 @@
 namespace WellCommerce\Bundle\AppBundle\Repository;
 
 use WellCommerce\Bundle\AppBundle\Entity\Shop;
-use WellCommerce\Bundle\DoctrineBundle\Repository\EntityRepository;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\EntityRepository;
 
 /**
  * Class ShopRepository

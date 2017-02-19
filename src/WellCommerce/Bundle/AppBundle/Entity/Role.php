@@ -15,8 +15,8 @@ namespace WellCommerce\Bundle\AppBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Security\Core\Role\RoleInterface;
-use WellCommerce\Bundle\DoctrineBundle\Behaviours\Identifiable;
-use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
+use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 
 /**
  * Class Role

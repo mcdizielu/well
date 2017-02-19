@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\ReviewBundle\Repository;
 
 use Doctrine\Common\Collections\Collection;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
-use WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 
 /**
  * Interface ReviewRepositoryInterface

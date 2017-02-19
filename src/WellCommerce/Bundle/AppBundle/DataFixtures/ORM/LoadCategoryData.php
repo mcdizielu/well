@@ -17,7 +17,7 @@ use WellCommerce\Bundle\AppBundle\Entity\Shop;
 use WellCommerce\Bundle\CatalogBundle\Entity\Category;
 use WellCommerce\Bundle\CatalogBundle\Entity\CategoryTranslation;
 use WellCommerce\Bundle\CoreBundle\Helper\Helper;
-use WellCommerce\Bundle\DoctrineBundle\DataFixtures\AbstractDataFixture;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
 
 /**
  * Class LoadCategoryData

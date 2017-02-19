@@ -15,7 +15,7 @@ namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
 use Doctrine\Common\Persistence\ObjectManager;
 use WellCommerce\Bundle\AppBundle\Entity\Shop;
 use WellCommerce\Bundle\CoreBundle\Entity\MailerConfiguration;
-use WellCommerce\Bundle\DoctrineBundle\DataFixtures\AbstractDataFixture;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
 
 /**
  * Class LoadShopData

@@ -3,7 +3,7 @@
 namespace WellCommerce\Bundle\AppBundle\DataGrid;
 
 use WellCommerce\Bundle\AppBundle\Entity\ClientGroup;
-use WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 
 /**
  * Class ClientGroupFilter

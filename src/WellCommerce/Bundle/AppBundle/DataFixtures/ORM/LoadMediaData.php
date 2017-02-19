@@ -15,7 +15,7 @@ namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use WellCommerce\Bundle\AppBundle\Entity\Media;
-use WellCommerce\Bundle\DoctrineBundle\DataFixtures\AbstractDataFixture;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
 
 /**
  * Class LoadMediaData

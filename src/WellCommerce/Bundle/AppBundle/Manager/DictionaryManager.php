@@ -18,7 +18,7 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Yaml\Yaml;
 use WellCommerce\Bundle\AppBundle\Entity\Dictionary;
 use WellCommerce\Bundle\AppBundle\Entity\Locale;
-use WellCommerce\Bundle\DoctrineBundle\Manager\AbstractManager;
+use WellCommerce\Bundle\CoreBundle\Manager\AbstractManager;
 
 /**
  * Class DictionaryManager

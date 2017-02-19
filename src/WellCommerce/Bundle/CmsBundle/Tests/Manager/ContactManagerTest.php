@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\CmsBundle\Tests\Manager;
 
 use WellCommerce\Bundle\CmsBundle\Entity\Contact;
 use WellCommerce\Bundle\CoreBundle\Test\Manager\AbstractManagerTestCase;
-use WellCommerce\Bundle\DoctrineBundle\Manager\ManagerInterface;
+use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
 
 /**
  * Class ContactManagerTest

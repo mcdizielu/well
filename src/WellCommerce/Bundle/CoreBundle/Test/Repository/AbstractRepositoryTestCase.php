@@ -13,7 +13,7 @@
 namespace WellCommerce\Bundle\CoreBundle\Test\Repository;
 
 use WellCommerce\Bundle\CoreBundle\Test\AbstractTestCase;
-use WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 
 /**
  * Class AbstractRepositoryTestCase
@@ -37,7 +37,7 @@ abstract class AbstractRepositoryTestCase extends AbstractTestCase
     }
     
     /**
-     * @return null|\WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface
+     * @return null|\WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface
      */
     protected function get()
     {

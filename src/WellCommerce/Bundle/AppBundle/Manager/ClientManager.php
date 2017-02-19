@@ -14,8 +14,8 @@ namespace WellCommerce\Bundle\AppBundle\Manager;
 
 use WellCommerce\Bundle\AppBundle\Entity\Client;
 use WellCommerce\Bundle\AppBundle\Exception\ResetPasswordException;
-use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
-use WellCommerce\Bundle\DoctrineBundle\Manager\AbstractManager;
+use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Bundle\CoreBundle\Manager\AbstractManager;
 
 /**
  * Class ClientManager

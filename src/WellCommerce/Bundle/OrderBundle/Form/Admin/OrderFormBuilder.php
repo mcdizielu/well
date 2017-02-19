@@ -13,7 +13,7 @@ namespace WellCommerce\Bundle\OrderBundle\Form\Admin;
 
 use WellCommerce\Bundle\CouponBundle\Entity\Coupon;
 use WellCommerce\Bundle\CouponBundle\Helper\CouponHelper;
-use WellCommerce\Bundle\FormBundle\Form\AbstractFormBuilder;
+use WellCommerce\Bundle\CoreBundle\Form\AbstractFormBuilder;
 use WellCommerce\Bundle\OrderBundle\Context\OrderContext;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderModifier;
 use WellCommerce\Bundle\OrderBundle\Entity\PaymentMethod;

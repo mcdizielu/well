@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\CatalogBundle\Tests\Manager;
 
 use WellCommerce\Bundle\CatalogBundle\Entity\Deliverer;
 use WellCommerce\Bundle\CoreBundle\Test\Manager\AbstractManagerTestCase;
-use WellCommerce\Bundle\DoctrineBundle\Manager\ManagerInterface;
+use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
 
 /**
  * Class DelivererManagerTest

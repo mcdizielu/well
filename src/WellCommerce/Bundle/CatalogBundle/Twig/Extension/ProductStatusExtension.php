@@ -12,7 +12,7 @@
 namespace WellCommerce\Bundle\CatalogBundle\Twig\Extension;
 
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductStatus;
-use WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 use WellCommerce\Component\DataSet\DataSetInterface;
 
 /**

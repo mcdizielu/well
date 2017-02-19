@@ -15,7 +15,7 @@ namespace WellCommerce\Bundle\CatalogBundle\DataSet\Front;
 use Doctrine\ORM\QueryBuilder;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductStatus;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductStatusTranslation;
-use WellCommerce\Bundle\DataSetBundle\DataSet\AbstractDataSet;
+use WellCommerce\Bundle\CoreBundle\DataSet\AbstractDataSet;
 use WellCommerce\Component\DataSet\Cache\CacheOptions;
 use WellCommerce\Component\DataSet\Configurator\DataSetConfiguratorInterface;
 

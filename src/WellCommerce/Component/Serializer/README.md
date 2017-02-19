@@ -1,2 +1,0 @@
-# Serializer
-WellCommerce Serializer Component

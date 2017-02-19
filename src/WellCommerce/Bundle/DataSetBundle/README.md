@@ -1,3 +1,0 @@
-# DataGridBundle
-
-DataGrid Component integration.

@@ -11,7 +11,7 @@
  */
 namespace WellCommerce\Bundle\CouponBundle\Form\Admin;
 
-use WellCommerce\Bundle\FormBundle\Form\AbstractFormBuilder;
+use WellCommerce\Bundle\CoreBundle\Form\AbstractFormBuilder;
 use WellCommerce\Component\Form\DataTransformer\DateTransformer;
 use WellCommerce\Component\Form\Elements\FormInterface;
 

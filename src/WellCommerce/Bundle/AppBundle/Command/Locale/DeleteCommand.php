@@ -20,10 +20,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
 use WellCommerce\Bundle\AppBundle\Entity\Locale;
-use WellCommerce\Bundle\DoctrineBundle\Entity\LocaleAwareInterface;
-use WellCommerce\Bundle\DoctrineBundle\Helper\DoctrineHelperInterface;
-use WellCommerce\Bundle\DoctrineBundle\Repository\EntityRepository;
-use WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Entity\LocaleAwareInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Doctrine\DoctrineHelperInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\EntityRepository;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 
 /**
  * Class DeleteCommand

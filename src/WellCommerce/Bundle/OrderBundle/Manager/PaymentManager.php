@@ -12,7 +12,7 @@
 
 namespace WellCommerce\Bundle\OrderBundle\Manager;
 
-use WellCommerce\Bundle\DoctrineBundle\Manager\AbstractManager;
+use WellCommerce\Bundle\CoreBundle\Manager\AbstractManager;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderStatus;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderStatusHistory;

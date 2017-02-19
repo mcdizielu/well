@@ -19,7 +19,7 @@ use WellCommerce\Bundle\CatalogBundle\Entity\AttributeValue;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CatalogBundle\Entity\Variant;
 use WellCommerce\Bundle\CatalogBundle\Entity\VariantOption;
-use WellCommerce\Bundle\DoctrineBundle\Manager\AbstractManager;
+use WellCommerce\Bundle\CoreBundle\Manager\AbstractManager;
 
 /**
  * Class VariantManager

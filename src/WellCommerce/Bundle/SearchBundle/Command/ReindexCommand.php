@@ -21,7 +21,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use WellCommerce\Bundle\AppBundle\Entity\Locale;
-use WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 use WellCommerce\Bundle\SearchBundle\Manager\SearchManagerInterface;
 use WellCommerce\Component\Search\Model\TypeInterface;
 

@@ -12,7 +12,7 @@
 
 namespace WellCommerce\Bundle\OrderBundle\Repository;
 
-use WellCommerce\Bundle\DoctrineBundle\Repository\EntityRepository;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\EntityRepository;
 
 /**
  * Class OrderStatusRepository

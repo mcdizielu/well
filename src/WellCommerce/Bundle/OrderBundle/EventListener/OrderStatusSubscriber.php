@@ -12,8 +12,8 @@
 namespace WellCommerce\Bundle\OrderBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use WellCommerce\Bundle\DoctrineBundle\Event\EntityEvent;
-use WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Event\EntityEvent;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderStatus;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderStatusGroup;
 

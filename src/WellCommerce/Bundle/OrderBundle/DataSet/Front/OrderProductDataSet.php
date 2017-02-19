@@ -17,7 +17,7 @@ use Doctrine\ORM\QueryBuilder;
 use WellCommerce\Bundle\AppBundle\Entity\Tax;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CatalogBundle\Entity\Variant;
-use WellCommerce\Bundle\DataSetBundle\DataSet\AbstractDataSet;
+use WellCommerce\Bundle\CoreBundle\DataSet\AbstractDataSet;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderProduct;
 use WellCommerce\Bundle\OrderBundle\Provider\Front\OrderProviderInterface;

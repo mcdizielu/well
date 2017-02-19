@@ -22,7 +22,7 @@ use WellCommerce\Bundle\AppBundle\DataSet\Admin\CurrencyDataSet;
 use WellCommerce\Bundle\AppBundle\DataSet\Admin\LocaleDataSet;
 use WellCommerce\Bundle\AppBundle\Entity\Currency;
 use WellCommerce\Bundle\AppBundle\Entity\Locale;
-use WellCommerce\Bundle\DoctrineBundle\Manager\ManagerInterface;
+use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
 
 /**
  * Class AddLocaleCommand

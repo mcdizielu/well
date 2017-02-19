@@ -20,7 +20,7 @@ use WellCommerce\Bundle\CatalogBundle\Entity\Producer;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProducerTranslation;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductTranslation;
-use WellCommerce\Bundle\DataSetBundle\DataSet\AbstractDataSet;
+use WellCommerce\Bundle\CoreBundle\DataSet\AbstractDataSet;
 use WellCommerce\Component\DataSet\Cache\CacheOptions;
 use WellCommerce\Component\DataSet\Configurator\DataSetConfiguratorInterface;
 

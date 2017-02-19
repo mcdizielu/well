@@ -12,7 +12,7 @@
 namespace WellCommerce\Bundle\AppBundle\EventListener;
 
 use WellCommerce\Bundle\CoreBundle\EventListener\AbstractEventSubscriber;
-use WellCommerce\Bundle\DoctrineBundle\Event\EntityEvent;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Event\EntityEvent;
 
 /**
  * Class ClientSubscriber

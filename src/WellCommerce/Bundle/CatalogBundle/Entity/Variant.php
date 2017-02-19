@@ -18,10 +18,10 @@ use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use WellCommerce\Bundle\AppBundle\Entity\DiscountablePrice;
 use WellCommerce\Bundle\AppBundle\Entity\Media;
 use WellCommerce\Bundle\CatalogBundle\Entity\Extra\VariantExtraTrait;
-use WellCommerce\Bundle\DoctrineBundle\Behaviours\Enableable;
-use WellCommerce\Bundle\DoctrineBundle\Behaviours\Identifiable;
-use WellCommerce\Bundle\DoctrineBundle\Behaviours\Sortable;
-use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Sortable;
+use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 
 /**
  * Class Variant

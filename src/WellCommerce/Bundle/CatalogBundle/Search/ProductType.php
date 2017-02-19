@@ -15,7 +15,7 @@ namespace WellCommerce\Bundle\CatalogBundle\Search;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
-use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
+use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 use WellCommerce\Component\Search\Model\DocumentInterface;
 use WellCommerce\Component\Search\Model\Field;
 use WellCommerce\Component\Search\Model\TypeInterface;

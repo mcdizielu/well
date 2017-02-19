@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\WishlistBundle\Repository;
 
 use Doctrine\Common\Collections\Collection;
 use WellCommerce\Bundle\AppBundle\Entity\Client;
-use WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 
 /**
  * Interface WishlistRepositoryInterface

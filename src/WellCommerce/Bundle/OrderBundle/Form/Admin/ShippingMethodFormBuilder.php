@@ -12,7 +12,7 @@
 namespace WellCommerce\Bundle\OrderBundle\Form\Admin;
 
 use Doctrine\Common\Collections\Collection;
-use WellCommerce\Bundle\FormBundle\Form\AbstractFormBuilder;
+use WellCommerce\Bundle\CoreBundle\Form\AbstractFormBuilder;
 use WellCommerce\Bundle\OrderBundle\Calculator\ShippingCalculatorInterface;
 use WellCommerce\Component\Form\Elements\FormInterface;
 

@@ -16,7 +16,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 use WellCommerce\Bundle\AppBundle\Entity\User;
 use WellCommerce\Bundle\AppBundle\Repository\UserRepositoryInterface;
 use WellCommerce\Bundle\CoreBundle\EventListener\AbstractEventSubscriber;
-use WellCommerce\Bundle\DoctrineBundle\Event\EntityEvent;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Event\EntityEvent;
 
 /**
  * Class AdminSubscriber

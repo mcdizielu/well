@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\CatalogBundle\Repository;
 use WellCommerce\Bundle\CatalogBundle\Entity\Attribute;
 use WellCommerce\Bundle\CatalogBundle\Entity\AttributeGroup;
 use WellCommerce\Bundle\CatalogBundle\Entity\AttributeValue;
-use WellCommerce\Bundle\DoctrineBundle\Repository\EntityRepository;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\EntityRepository;
 
 /**
  * Class AttributeRepository

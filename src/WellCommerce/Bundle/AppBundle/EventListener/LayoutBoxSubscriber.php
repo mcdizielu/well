@@ -16,7 +16,7 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
 use WellCommerce\Bundle\AppBundle\Entity\LayoutBox;
 use WellCommerce\Bundle\CoreBundle\EventListener\AbstractEventSubscriber;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\LayoutBoxConfiguratorInterface;
-use WellCommerce\Bundle\DoctrineBundle\Event\EntityEvent;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Event\EntityEvent;
 use WellCommerce\Component\Form\Event\FormEvent;
 
 /**

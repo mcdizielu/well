@@ -12,7 +12,7 @@
 
 namespace WellCommerce\Bundle\OrderBundle\Repository;
 
-use WellCommerce\Bundle\DoctrineBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 
 /**
  * Interface OrderStatusRepositoryInterface
