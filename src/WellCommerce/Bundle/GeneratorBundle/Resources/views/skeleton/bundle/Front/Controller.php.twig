@@ -1,0 +1,35 @@
+<?php
+/*
+ * WellCommerce Open-Source E-Commerce Platform
+ *
+ * This file is part of the WellCommerce package.
+ *
+ * (c) Adam Piotrowski <adam@wellcommerce.org>
+ *
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
+ */
+
+namespace {{ bundle.namespace }}\Controller\Front;
+
+use Symfony\Component\HttpFoundation\Response;
+use WellCommerce\Bundle\CoreBundle\Controller\Front\AbstractFrontController;
+use {{ bundle.namespace }}\Entity\{{ bundle.prefix }};
+
+/**
+ * Class {{ bundle.prefix }}Controller
+ */
+class {{ bundle.prefix }}Controller extends AbstractFrontController
+{
+    public function indexAction() : Response
+    {
+        return $this->displayTemplate('index');
+    }
+
+    public function viewAction({{ bundle.prefix }} ${{ bundle.alias }}) : Response
+    {
+        return $this->displayTemplate('index',[
+            '{{ bundle.alias }}' => ${{ bundle.alias }}
+        ]);
+    }
+}
