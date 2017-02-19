@@ -1,0 +1,63 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+admin.package.index:
+    path: /index
+    defaults:
+        _controller: 'package.controller.admin:indexAction'
+    options:
+        require_admin_permission: package.index
+
+admin.package.grid:
+    path: /grid
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'package.controller.admin:gridAction'
+    options:
+        expose: true
+        require_admin_permission: package.index
+
+admin.package.require:
+    path: '/require,{id}'
+    defaults:
+        _controller: 'package.controller.admin:packageAction'
+    options:
+        expose: true
+        require_admin_permission: package.add
+
+admin.package.update:
+    path: '/update,{id}'
+    defaults:
+        _controller: 'package.controller.admin:packageAction'
+    options:
+        expose: true
+        require_admin_permission: package.edit
+
+admin.package.remove:
+    path: '/remove,{id}'
+    defaults:
+        _controller: 'package.controller.admin:packageAction'
+    options:
+        expose: true
+        require_admin_permission: package.delete
+
+admin.package.sync:
+    path: /sync
+    defaults:
+        _controller: 'package.controller.admin:syncAction'
+    options:
+        expose: true
+        require_admin_permission: package.index
+
+admin.package.console:
+    path: '/console/{id},{port},{operation}'
+    defaults:
+        _controller: 'package.controller.admin:consoleAction'
+    options:
+        expose: true
+        require_admin_permission: package.index

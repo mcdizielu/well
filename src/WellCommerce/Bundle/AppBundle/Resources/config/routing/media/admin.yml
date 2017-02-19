@@ -1,0 +1,54 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+admin.media.index:
+    path: /index
+    defaults:
+        _controller: 'media.controller.admin:indexAction'
+    options:
+        require_admin_permission: media.index
+
+admin.media.grid:
+    path: /grid
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'media.controller.admin:gridAction'
+    options:
+        expose: true
+        require_admin_permission: media.index
+
+admin.media.add:
+    path: /add
+    defaults:
+        _controller: 'media.controller.admin:addAction'
+    options:
+        require_admin_permission: media.add
+
+admin.media.edit:
+    path: '/edit/{id}'
+    defaults:
+        _controller: 'media.controller.admin:editAction'
+    options:
+        expose: true
+        require_admin_permission: media.edit
+
+admin.media.delete:
+    path: '/delete/{id}'
+    defaults:
+        _controller: 'media.controller.admin:deleteAction'
+    options:
+        expose: true
+        require_admin_permission: media.delete
+
+admin.media.delete_group:
+    path: '/delete_group'
+    defaults:
+        _controller: 'media.controller.admin:deleteGroupAction'
+    options:
+        expose: true
+        require_admin_permission: media.delete

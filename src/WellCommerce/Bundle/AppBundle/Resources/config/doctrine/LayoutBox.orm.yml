@@ -1,0 +1,24 @@
+WellCommerce\Bundle\AppBundle\Entity\LayoutBox:
+    type: entity
+    cache:
+        usage: NONSTRICT_READ_WRITE
+    table: layout_box
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        boxType:
+            type: string
+            length: 255
+            nullable: false
+            column: box_type
+        settings:
+            type: json_array
+            nullable: false
+        identifier:
+            type: string
+            length: 255
+            unique: true
+            nullable: false

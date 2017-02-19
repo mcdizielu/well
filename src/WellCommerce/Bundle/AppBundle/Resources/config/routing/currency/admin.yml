@@ -1,0 +1,62 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+admin.currency.index:
+    path: /index
+    defaults:
+        _controller: 'currency.controller.admin:indexAction'
+    options:
+        require_admin_permission: currency.index
+
+admin.currency.grid:
+    path: /grid
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'currency.controller.admin:gridAction'
+    options:
+        expose: true
+        require_admin_permission: currency.index
+
+admin.currency.add:
+    path: /add
+    defaults:
+        _controller: 'currency.controller.admin:addAction'
+    options:
+        require_admin_permission: currency.add
+
+admin.currency.edit:
+    path: '/edit/{id}'
+    defaults:
+        _controller: 'currency.controller.admin:editAction'
+    options:
+        expose: true
+        require_admin_permission: currency.edit
+
+admin.currency.sync:
+    path: /sync
+    defaults:
+        _controller: 'currency.controller.admin:syncExchangeRatesAction'
+    options:
+        expose: true
+        require_admin_permission: currency.edit
+
+admin.currency.delete:
+    path: '/delete/{id}'
+    defaults:
+        _controller: 'currency.controller.admin:deleteAction'
+    options:
+        expose: true
+        require_admin_permission: currency.delete
+
+admin.currency.delete_group:
+    path: '/delete_group'
+    defaults:
+        _controller: 'currency.controller.admin:deleteGroupAction'
+    options:
+        expose: true
+        require_admin_permission: currency.delete

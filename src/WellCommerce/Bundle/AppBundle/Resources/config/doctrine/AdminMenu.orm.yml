@@ -1,0 +1,48 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+WellCommerce\Bundle\AppBundle\Entity\AdminMenu:
+    type: entity
+    table: admin_menu
+    cache:
+        usage : NONSTRICT_READ_WRITE
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        identifier:
+            type: string
+            nullable: false
+        name:
+            type: string
+            nullable: false
+        routeName:
+            type: string
+            nullable: true
+            column: route_name
+        cssClass:
+            type: string
+            nullable: true
+            column: css_class
+    manyToOne:
+        parent:
+            targetEntity: WellCommerce\Bundle\AppBundle\Entity\AdminMenu
+            fetch: LAZY
+            inversedBy: children
+            joinColumns:
+                parent_id:
+                    referencedColumnName: id
+                    onDelete: CASCADE
+    oneToMany:
+        children:
+            targetEntity: WellCommerce\Bundle\AppBundle\Entity\AdminMenu
+            fetch: LAZY
+            mappedBy: parent
+            orderBy: {'hierarchy': 'ASC'}
