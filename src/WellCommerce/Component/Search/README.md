@@ -1,0 +1,3 @@
+# Search
+
+WellCommerce Search Component
