@@ -35,6 +35,9 @@
     "wellcommerce/api-bundle": "^0.7@dev"
   },
   "extra": {
+    "branch-alias": {
+      "dev-master": "0.7.x-dev"
+    },
     "wellcommerce-bundle": {
       "install-dir": "src/WellCommerce/Bundle/AppBundle"
     }

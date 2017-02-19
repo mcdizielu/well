@@ -37,6 +37,9 @@
     "symfony/options-resolver": "v3.2.2"
   },
   "extra": {
+    "branch-alias": {
+      "dev-master": "0.7.x-dev"
+    },
     "wellcommerce-bundle": {
       "install-dir": "src/WellCommerce/Component/Search"
     }

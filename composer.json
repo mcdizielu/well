@@ -49,8 +49,8 @@
     "wellcommerce/order-bundle": "^0.7.0@dev",
     "wellcommerce/review-bundle": "^0.7.0@dev",
     "wellcommerce/routing-bundle": "^0.7.0@dev",
-    "wellcommerce/search-bundle": "^0.7.0@dev"
-    "wellcommerce/showcase-bundle": "^0.7.0@dev"
+    "wellcommerce/search-bundle": "^0.7.0@dev",
+    "wellcommerce/showcase-bundle": "^0.7.0@dev",
     "wellcommerce/wishlist-bundle": "^0.7.0@dev"
   },
   "scripts": {
@@ -91,9 +91,6 @@
         "database_password": "SYMFONY_DATABASE_PASSWORD",
         "prod_log_path": "SYMFONY_PROD_LOG_PATH"
       }
-    },
-    "branch-alias": {
-      "dev-master": "0.7.x-dev"
     }
   }
 }

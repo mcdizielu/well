@@ -35,6 +35,9 @@
     "expalmer/php-bad-words": "0.1.3"
   },
   "extra": {
+    "branch-alias": {
+      "dev-master": "0.7.x-dev"
+    },
     "wellcommerce-bundle": {
       "install-dir": "src/WellCommerce/Bundle/ReviewBundle"
     }

@@ -33,6 +33,9 @@
     "php": "^7.0"
   },
   "extra": {
+    "branch-alias": {
+      "dev-master": "0.7.x-dev"
+    },
     "wellcommerce-bundle": {
       "install-dir": "src/WellCommerce/Component/Collections"
     }
