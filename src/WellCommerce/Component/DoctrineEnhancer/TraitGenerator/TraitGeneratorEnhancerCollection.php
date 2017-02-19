@@ -12,8 +12,8 @@
 
 namespace WellCommerce\Component\DoctrineEnhancer\TraitGenerator;
 
-use WellCommerce\Component\DoctrineEnhancer\MappingEnhancerInterface;
 use WellCommerce\Component\Collections\ArrayCollection;
+use WellCommerce\Component\DoctrineEnhancer\MappingEnhancerInterface;
 
 /**
  * Class TraitGeneratorEnhancerCollection
