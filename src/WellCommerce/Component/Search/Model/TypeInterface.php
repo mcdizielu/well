@@ -13,7 +13,7 @@
 namespace WellCommerce\Component\Search\Model;
 
 use Doctrine\Common\Collections\Collection;
-use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
+use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 
 /**
  * Interface TypeInterface
@@ -22,9 +22,9 @@ use WellCommerce\Bundle\DoctrineBundle\Entity\EntityInterface;
  */
 interface TypeInterface
 {
-    public function getName() : string;
-
-    public function createDocument(EntityInterface $entity, string $locale) : DocumentInterface;
-
-    public function getFields() : Collection;
+    public function getName(): string;
+    
+    public function createDocument(EntityInterface $entity, string $locale): DocumentInterface;
+    
+    public function getFields(): Collection;
 }
