@@ -12,9 +12,9 @@
 
 namespace WellCommerce\Bundle\WishlistBundle\Tests\Manager;
 
-use WellCommerce\Bundle\CoreBundle\Test\Manager\AbstractManagerTestCase;
 use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
-use WellCommerce\Bundle\WishlistBundle\Entity\Wishlist;
+use WellCommerce\Bundle\CoreBundle\Test\Manager\AbstractManagerTestCase;
+use WellCommerce\Bundle\WishlistBundle\Entity\WishlistInterface;
 
 /**
  * Class WishlistManagerTest
@@ -30,6 +30,6 @@ class WishlistManagerTest extends AbstractManagerTestCase
     
     protected function getExpectedEntityInterface(): string
     {
-        return Wishlist::class;
+        return WishlistInterface::class;
     }
 }

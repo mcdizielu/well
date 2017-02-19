@@ -12,48 +12,19 @@
 namespace WellCommerce\Bundle\WishlistBundle\Entity;
 
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
-use WellCommerce\Bundle\AppBundle\Entity\Client;
-use WellCommerce\Bundle\CatalogBundle\Entity\Product;
-use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
-use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Bundle\ClientBundle\Entity\ClientAwareTrait;
+use WellCommerce\Bundle\CoreBundle\Entity\IdentifiableTrait;
+use WellCommerce\Bundle\ProductBundle\Entity\ProductAwareTrait;
 
 /**
  * Class Wishlist
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class Wishlist implements EntityInterface
+class Wishlist implements WishlistInterface
 {
-    use Identifiable;
+    use IdentifiableTrait;
     use Timestampable;
-    
-    /**
-     * @var Client
-     */
-    protected $client;
-    
-    /**
-     * @var Product
-     */
-    protected $product;
-    
-    public function getClient(): Client
-    {
-        return $this->client;
-    }
-    
-    public function setClient(Client $client)
-    {
-        $this->client = $client;
-    }
-    
-    public function getProduct(): Product
-    {
-        return $this->product;
-    }
-    
-    public function setProduct(Product $product)
-    {
-        $this->product = $product;
-    }
+    use ClientAwareTrait;
+    use ProductAwareTrait;
 }

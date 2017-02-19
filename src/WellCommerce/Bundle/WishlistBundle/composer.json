@@ -26,17 +26,18 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Bundle\\WishlistBundle\\": "src/WellCommerce/Bundle/WishlistBundle"
+      "": "src/"
     }
   },
   "require": {
-    "wellcommerce/app-bundle": "^0.7@dev"
+    "php": "^7.0",
+    "wellcommerce/core-bundle": "^0.7@dev"
   },
   "extra": {
+    "branch-alias": {
+      "dev-master": "0.7.x-dev"
+    },
     "wellcommerce-bundle": {
-      "branch-alias": {
-        "dev-master": "0.7.x-dev"
-      },
       "install-dir": "src/WellCommerce/Bundle/WishlistBundle"
     }
   }

@@ -14,8 +14,8 @@ namespace WellCommerce\Bundle\WishlistBundle\Repository;
 
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
-use WellCommerce\Bundle\AppBundle\Entity\Client;
-use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\EntityRepository;
+use WellCommerce\Bundle\ClientBundle\Entity\ClientInterface;
+use WellCommerce\Bundle\CoreBundle\Repository\EntityRepository;
 
 /**
  * Class WishlistRepository
@@ -24,7 +24,7 @@ use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\EntityRepository;
  */
 class WishlistRepository extends EntityRepository implements WishlistRepositoryInterface
 {
-    public function getClientWishlistCollection(Client $client): Collection
+    public function getClientWishlistCollection(ClientInterface $client) : Collection
     {
         $criteria = new Criteria();
         $criteria->where($criteria->expr()->eq('client', $client));

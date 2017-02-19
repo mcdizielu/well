@@ -12,7 +12,7 @@
 
 namespace WellCommerce\Bundle\WishlistBundle\Configurator;
 
-use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
+use WellCommerce\Bundle\LayoutBundle\Configurator\AbstractLayoutBoxConfigurator;
 
 /**
  * Class WishlistBoxConfigurator

@@ -17,14 +17,14 @@ WellCommerce\Bundle\WishlistBundle\Entity\Wishlist:
                 strategy: AUTO
     manyToOne:
         client:
-            targetEntity: WellCommerce\Bundle\AppBundle\Entity\Client
+            targetEntity: WellCommerce\Bundle\ClientBundle\Entity\Client
             fetch: LAZY
             joinColumns:
                 client_id:
                     referencedColumnName: id
             orphanRemoval: false
         product:
-            targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\Product
+            targetEntity: WellCommerce\Bundle\ProductBundle\Entity\Product
             fetch: LAZY
             joinColumns:
                 product_id:

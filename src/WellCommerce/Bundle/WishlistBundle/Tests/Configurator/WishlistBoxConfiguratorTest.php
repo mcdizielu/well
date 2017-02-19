@@ -12,8 +12,8 @@
 
 namespace WellCommerce\Bundle\WishlistBundle\Tests\Manager;
 
-use WellCommerce\Bundle\CoreBundle\Layout\Configurator\LayoutBoxConfiguratorInterface;
 use WellCommerce\Bundle\CoreBundle\Test\Configurator\AbstractLayoutBoxConfiguratorTestCase;
+use WellCommerce\Bundle\LayoutBundle\Configurator\LayoutBoxConfiguratorInterface;
 
 /**
  * Class WishlistBoxConfiguratorTest
