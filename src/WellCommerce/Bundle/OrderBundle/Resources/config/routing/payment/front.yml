@@ -1,0 +1,52 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+front.payment.initialize:
+    path: '/initialize/{token}'
+    defaults:
+        _controller: 'payment.controller.front:initializeAction'
+    options:
+        expose: true
+        breadcrumb:
+            label: payment.heading.initialize
+
+front.payment.confirm:
+    path: '/confirm/{token}'
+    defaults:
+        _controller: 'payment.controller.front:confirmAction'
+    options:
+        expose: true
+        breadcrumb:
+            label: payment.heading.confirm
+
+front.payment.cancel:
+    path: '/cancel/{token}'
+    defaults:
+        _controller: 'payment.controller.front:cancelAction'
+    options:
+        expose: true
+        breadcrumb:
+            label: payment.heading.cancel
+
+front.payment.execute:
+    path: '/execute/{token}'
+    defaults:
+        _controller: 'payment.controller.front:executeAction'
+    options:
+        expose: true
+        breadcrumb:
+            label: payment.heading.execute
+
+front.payment.notify:
+    path: '/notify/{token}'
+    defaults:
+        _controller: 'payment.controller.front:notifyAction'
+    options:
+        expose: true
+        breadcrumb:
+            label: payment.heading.notify
