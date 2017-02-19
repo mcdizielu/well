@@ -33,10 +33,10 @@
     "wellcommerce/app-bundle": "^0.7@dev"
   },
   "extra": {
+    "branch-alias": {
+      "dev-master": "0.7.x-dev"
+    },
     "wellcommerce-bundle": {
-      "branch-alias": {
-        "dev-master": "0.7.x-dev"
-      },
       "install-dir": "src/WellCommerce/Bundle/WishlistBundle"
     }
   }
