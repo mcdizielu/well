@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "20a96b25126cc4711602e776874e42fb",
+    "content-hash": "5064cf638075502b8b13d5902221702f",
     "packages": [
         {
             "name": "asm89/twig-cache-extension",
@@ -2124,12 +2124,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "01324c2fbc7994bca00d10323bc3826a41426a9b"
+                "reference": "6a99df94a22f01b4b9c32ed8789cf30d05bdba92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/01324c2fbc7994bca00d10323bc3826a41426a9b",
-                "reference": "01324c2fbc7994bca00d10323bc3826a41426a9b",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/6a99df94a22f01b4b9c32ed8789cf30d05bdba92",
+                "reference": "6a99df94a22f01b4b9c32ed8789cf30d05bdba92",
                 "shasum": ""
             },
             "require": {
@@ -2181,7 +2181,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-02-05 02:32:13"
+            "time": "2017-02-19 15:59:27"
         },
         {
             "name": "guzzlehttp/promises",
@@ -6117,12 +6117,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/ApiBundle.git",
-                "reference": "3cb55dcb9c1e521ba9c7459f94f90fe2b37ff143"
+                "reference": "1dd008179adf2917de32613e81561c5ada2c4679"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/ApiBundle/zipball/3cb55dcb9c1e521ba9c7459f94f90fe2b37ff143",
-                "reference": "3cb55dcb9c1e521ba9c7459f94f90fe2b37ff143",
+                "url": "https://api.github.com/repos/WellCommerce/ApiBundle/zipball/1dd008179adf2917de32613e81561c5ada2c4679",
+                "reference": "1dd008179adf2917de32613e81561c5ada2c4679",
                 "shasum": ""
             },
             "require": {
@@ -6160,7 +6160,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-18 13:58:12"
+            "time": "2017-02-19 00:19:48"
         },
         {
             "name": "wellcommerce/breadcrumb",
@@ -6211,57 +6211,6 @@
                 "wellcommerce"
             ],
             "time": "2017-02-16 09:09:04"
-        },
-        {
-            "name": "wellcommerce/breadcrumb-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/WellCommerce/BreadcrumbBundle.git",
-                "reference": "f674b0195a9da14b07f1da54f33783306290dc9a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/BreadcrumbBundle/zipball/f674b0195a9da14b07f1da54f33783306290dc9a",
-                "reference": "f674b0195a9da14b07f1da54f33783306290dc9a",
-                "shasum": ""
-            },
-            "require": {
-                "wellcommerce/breadcrumb": "^0.7@dev",
-                "wellcommerce/collections": "^0.7@dev"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.7.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "WellCommerce\\Bundle\\BreadcrumbBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Adam Piotrowski",
-                    "email": "adam@wellcommerce.org"
-                },
-                {
-                    "name": "WellCommerce Developers",
-                    "email": "developers@wellcommerce.org"
-                }
-            ],
-            "description": "WellCommerce BreadcrumbBundle",
-            "keywords": [
-                "e-commerce",
-                "open-source",
-                "wellcommerce"
-            ],
-            "time": "2017-02-18 22:21:57"
         },
         {
             "name": "wellcommerce/collections",
@@ -6366,6 +6315,68 @@
             "time": "2017-02-17 21:22:33"
         },
         {
+            "name": "wellcommerce/core-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WellCommerce/CoreBundle.git",
+                "reference": "2712d9fcba63b4b9f9f9c9de21f88423027a656c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WellCommerce/CoreBundle/zipball/2712d9fcba63b4b9f9f9c9de21f88423027a656c",
+                "reference": "2712d9fcba63b4b9f9f9c9de21f88423027a656c",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "v2.5.4",
+                "php": "^7.0",
+                "symfony/symfony": "v3.2.2",
+                "wellcommerce/breadcrumb": "^0.7@dev",
+                "wellcommerce/collections": "^0.7@dev",
+                "wellcommerce/datagrid": "^0.7@dev",
+                "wellcommerce/dataset": "^0.7@dev",
+                "wellcommerce/doctrine-enhancer": "^0.7@dev",
+                "wellcommerce/form": "^0.7@dev",
+                "wellcommerce/serializer": "^0.7@dev"
+            },
+            "type": "wellcommerce-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.7.x-dev"
+                },
+                "wellcommerce-bundle": {
+                    "install-dir": "src/WellCommerce/Bundle/CoreBundle"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "WellCommerce\\Bundle\\CoreBundle\\": "src/WellCommerce/Bundle/CoreBundle"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Piotrowski",
+                    "email": "adam@wellcommerce.org"
+                },
+                {
+                    "name": "WellCommerce Developers",
+                    "email": "developers@wellcommerce.org"
+                }
+            ],
+            "description": "WellCommerce CoreBundle",
+            "keywords": [
+                "e-commerce",
+                "open-source",
+                "wellcommerce"
+            ],
+            "time": "2017-02-19 17:07:59"
+        },
+        {
             "name": "wellcommerce/datagrid",
             "version": "dev-master",
             "source": {
@@ -6418,56 +6429,6 @@
                 "wellcommerce"
             ],
             "time": "2017-02-16 00:25:21"
-        },
-        {
-            "name": "wellcommerce/datagrid-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/WellCommerce/DataGridBundle.git",
-                "reference": "8a058cd75a50a1205b9b9a2a3a5584e882922c8b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/DataGridBundle/zipball/8a058cd75a50a1205b9b9a2a3a5584e882922c8b",
-                "reference": "8a058cd75a50a1205b9b9a2a3a5584e882922c8b",
-                "shasum": ""
-            },
-            "require": {
-                "wellcommerce/datagrid": "^0.7@dev"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.7.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "WellCommerce\\Bundle\\DataGridBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Adam Piotrowski",
-                    "email": "adam@wellcommerce.org"
-                },
-                {
-                    "name": "WellCommerce Developers",
-                    "email": "developers@wellcommerce.org"
-                }
-            ],
-            "description": "WellCommerce DataGridBundle",
-            "keywords": [
-                "e-commerce",
-                "open-source",
-                "wellcommerce"
-            ],
-            "time": "2017-02-16 00:43:27"
         },
         {
             "name": "wellcommerce/dataset",
@@ -6524,122 +6485,17 @@
             "time": "2017-02-16 08:58:05"
         },
         {
-            "name": "wellcommerce/dataset-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/WellCommerce/DataSetBundle.git",
-                "reference": "061e57c9ddc10d3c0ab60b7c376eb54efc80719c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/DataSetBundle/zipball/061e57c9ddc10d3c0ab60b7c376eb54efc80719c",
-                "reference": "061e57c9ddc10d3c0ab60b7c376eb54efc80719c",
-                "shasum": ""
-            },
-            "require": {
-                "wellcommerce/dataset": "^0.7@dev"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.7.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "WellCommerce\\Bundle\\DataSetBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Adam Piotrowski",
-                    "email": "adam@wellcommerce.org"
-                },
-                {
-                    "name": "WellCommerce Developers",
-                    "email": "developers@wellcommerce.org"
-                }
-            ],
-            "description": "WellCommerce DataSetBundle",
-            "keywords": [
-                "dataset",
-                "e-commerce",
-                "open-source",
-                "symfony",
-                "wellcommerce"
-            ],
-            "time": "2017-02-16 22:50:24"
-        },
-        {
-            "name": "wellcommerce/doctrine-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/WellCommerce/DoctrineBundle.git",
-                "reference": "dae8c683f87862e79b85475ba261a1aa64d8c78f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/DoctrineBundle/zipball/dae8c683f87862e79b85475ba261a1aa64d8c78f",
-                "reference": "dae8c683f87862e79b85475ba261a1aa64d8c78f",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/orm": "v2.5.4",
-                "php": "^7.0",
-                "wellcommerce/collections": "^0.7@dev",
-                "wellcommerce/doctrine-enhancer": "^0.7@dev"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.7.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "WellCommerce\\Bundle\\DoctrineBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Adam Piotrowski",
-                    "email": "adam@wellcommerce.org"
-                },
-                {
-                    "name": "WellCommerce Developers",
-                    "email": "developers@wellcommerce.org"
-                }
-            ],
-            "description": "WellCommerce DoctrineBundle",
-            "keywords": [
-                "e-commerce",
-                "open-source",
-                "wellcommerce"
-            ],
-            "time": "2017-02-18 22:50:12"
-        },
-        {
             "name": "wellcommerce/doctrine-enhancer",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/DoctrineEnhancer.git",
-                "reference": "2d0f0030cf0dcc955e5fcec06a29a8c63e6c84a5"
+                "reference": "b0042de6b791882ee97b9cff19e7aca2f34ee312"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/DoctrineEnhancer/zipball/2d0f0030cf0dcc955e5fcec06a29a8c63e6c84a5",
-                "reference": "2d0f0030cf0dcc955e5fcec06a29a8c63e6c84a5",
+                "url": "https://api.github.com/repos/WellCommerce/DoctrineEnhancer/zipball/b0042de6b791882ee97b9cff19e7aca2f34ee312",
+                "reference": "b0042de6b791882ee97b9cff19e7aca2f34ee312",
                 "shasum": ""
             },
             "require": {
@@ -6680,7 +6536,7 @@
                 "enhancer",
                 "wellcommerce"
             ],
-            "time": "2017-02-16 00:49:48"
+            "time": "2017-02-19 00:06:59"
         },
         {
             "name": "wellcommerce/form",
@@ -6737,65 +6593,6 @@
                 "wellcommerce"
             ],
             "time": "2017-02-18 23:00:43"
-        },
-        {
-            "name": "wellcommerce/form-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/WellCommerce/FormBundle.git",
-                "reference": "dbecee714eac85277132152c18c85f040ca63ee0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/FormBundle/zipball/dbecee714eac85277132152c18c85f040ca63ee0",
-                "reference": "dbecee714eac85277132152c18c85f040ca63ee0",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/orm": "v2.5.4",
-                "php": "^7.0",
-                "symfony/http-foundation": "v3.2.2",
-                "symfony/options-resolver": "v3.2.2",
-                "symfony/property-access": "v3.2.2",
-                "wellcommerce/collections": "^0.7@dev",
-                "wellcommerce/form": "^0.7@dev"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.7.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "WellCommerce\\Bundle\\FormBundle\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Adam Piotrowski",
-                    "email": "adam@wellcommerce.org"
-                },
-                {
-                    "name": "WellCommerce Developers",
-                    "email": "developers@wellcommerce.org"
-                }
-            ],
-            "description": "WellCommerce FormBundle",
-            "keywords": [
-                "bundle",
-                "e-commerce",
-                "form",
-                "open-source",
-                "symfony",
-                "wellcommerce"
-            ],
-            "time": "2017-02-18 23:00:14"
         },
         {
             "name": "wellcommerce/generator-bundle",
@@ -6962,12 +6759,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/Serializer.git",
-                "reference": "8aeede019cbf887ce90fdffb265c84e3b45e6e75"
+                "reference": "0b56408ba53601355ae7df25fc780d7c9a7080ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/Serializer/zipball/8aeede019cbf887ce90fdffb265c84e3b45e6e75",
-                "reference": "8aeede019cbf887ce90fdffb265c84e3b45e6e75",
+                "url": "https://api.github.com/repos/WellCommerce/Serializer/zipball/0b56408ba53601355ae7df25fc780d7c9a7080ae",
+                "reference": "0b56408ba53601355ae7df25fc780d7c9a7080ae",
                 "shasum": ""
             },
             "require": {
@@ -7009,7 +6806,7 @@
                 "form",
                 "wellcommerce"
             ],
-            "time": "2017-02-10 21:23:30"
+            "time": "2017-02-19 00:06:59"
         },
         {
             "name": "willdurand/js-translation-bundle",
@@ -7978,17 +7775,9 @@
         "devristo/phpws": 20,
         "zendframework/zend-json": 20,
         "jngermon/phpunit-entity-tester": 20,
-        "wellcommerce/datagrid-bundle": 20,
+        "wellcommerce/core-bundle": 20,
         "wellcommerce/api-bundle": 20,
-        "wellcommerce/doctrine-enhancer": 20,
-        "wellcommerce/form": 20,
-        "wellcommerce/dataset": 20,
-        "wellcommerce/breadcrumb": 20,
-        "wellcommerce/dataset-bundle": 20,
-        "wellcommerce/doctrine-bundle": 20,
         "wellcommerce/generator-bundle": 20,
-        "wellcommerce/form-bundle": 20,
-        "wellcommerce/breadcrumb-bundle": 20,
         "wellcommerce/search-bundle": 20
     },
     "prefer-stable": false,
