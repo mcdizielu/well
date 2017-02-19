@@ -1,5 +1,6 @@
 {
   "name": "wellcommerce/datagrid",
+  "type": "wellcommerce-component",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce DataGrid",
@@ -25,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Component\\DataGrid\\": ""
+      "WellCommerce\\Component\\DataGrid\\": "src/WellCommerce/Component/DataGrid"
     }
   },
   "require": {
@@ -36,8 +37,8 @@
     "zendframework/zend-json": "^2.6@dev"
   },
   "extra": {
-    "branch-alias": {
-      "dev-master": "0.7.x-dev"
+    "wellcommerce-bundle": {
+      "install-dir": "src/WellCommerce/Component/DataGrid"
     }
   }
 }
