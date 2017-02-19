@@ -1,0 +1,18 @@
+WellCommerce\Bundle\CatalogBundle\Entity\ProductPhoto:
+    fields:
+        id:
+            groups:
+                - default
+                - photo
+        mainPhoto:
+            groups:
+                - default
+                - photo
+        hierarchy:
+            groups:
+                - default
+                - photo
+    associations:
+        photo:
+            groups:
+                - photo

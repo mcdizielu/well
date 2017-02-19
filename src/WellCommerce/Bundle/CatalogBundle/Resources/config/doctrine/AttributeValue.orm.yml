@@ -1,0 +1,23 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+WellCommerce\Bundle\CatalogBundle\Entity\AttributeValue:
+    type: entity
+    table: attribute_value
+    cache:
+        usage: NONSTRICT_READ_WRITE
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    manyToMany:
+        attributes:
+            targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\Attribute
+            fetch: LAZY
+            mappedBy: values

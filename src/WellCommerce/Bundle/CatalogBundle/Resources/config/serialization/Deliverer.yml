@@ -1,0 +1,27 @@
+WellCommerce\Bundle\CatalogBundle\Entity\Deliverer:
+    fields:
+        id:
+            groups:
+                - default
+                - deliverer
+        createdAt:
+            groups: {  }
+        updatedAt:
+            groups: {  }
+    associations:
+        producers:
+            groups:
+                - deliverer
+        createdBy:
+            groups:
+                - deliverer
+        updatedBy:
+            groups:
+                - deliverer
+        deletedBy:
+            groups:
+                - deliverer
+        translations:
+            groups:
+                - deliverer
+    callbacks: {  }

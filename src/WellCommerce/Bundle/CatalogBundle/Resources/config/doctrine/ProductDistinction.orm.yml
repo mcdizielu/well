@@ -1,0 +1,35 @@
+WellCommerce\Bundle\CatalogBundle\Entity\ProductDistinction:
+    type: entity
+    table: product_distinction
+    cache:
+        usage: NONSTRICT_READ_WRITE
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        validFrom:
+            type: datetime
+            nullable: true
+            column: valid_from
+        validTo:
+            type: datetime
+            nullable: true
+            column: valid_to
+    manyToOne:
+        product:
+            targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\Product
+            fetch: LAZY
+            inversedBy: distinctions
+            joinColumns:
+                product_id:
+                    referencedColumnName: id
+                    onDelete: CASCADE
+        status:
+            targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\ProductStatus
+            fetch: LAZY
+            joinColumns:
+                product_status_id:
+                    referencedColumnName: id
+                    onDelete: CASCADE
