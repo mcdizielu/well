@@ -1,5 +1,6 @@
 {
   "name": "wellcommerce/generator-bundle",
+  "type": "wellcommerce-bundle",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce GeneratorBundle",
@@ -26,15 +27,15 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Bundle\\GeneratorBundle\\": ""
+      "WellCommerce\\Bundle\\GeneratorBundle\\": "src/WellCommerce/Bundle/GeneratorBundle"
     }
   },
   "require": {
-    "php": "^7.0"
+    "wellcommerce/order-bundle": "^0.7@dev"
   },
   "extra": {
-    "branch-alias": {
-      "dev-master": "0.7.x-dev"
+    "wellcommerce-bundle": {
+      "install-dir": "src/WellCommerce/Bundle/GeneratorBundle"
     }
   }
 }

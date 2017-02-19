@@ -26,18 +26,13 @@
   },
   "autoload": {
     "psr-4": {
-      "": "src/"
+      "WellCommerce\\Bundle\\OAuthBundle\\": "src/WellCommerce/Bundle/OAuthBundle"
     }
   },
   "require": {
-    "php": "^7.0",
-    "wellcommerce/core-bundle": "^0.7@dev",
-    "wellcommerce/api-bundle": "^0.7@dev"
+    "wellcommerce/app-bundle": "^0.7@dev"
   },
   "extra": {
-    "branch-alias": {
-      "dev-master": "0.7.x-dev"
-    },
     "wellcommerce-bundle": {
       "install-dir": "src/WellCommerce/Bundle/OAuthBundle"
     }

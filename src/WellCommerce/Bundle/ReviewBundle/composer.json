@@ -26,19 +26,15 @@
   },
   "autoload": {
     "psr-4": {
-      "": "src/"
+      "WellCommerce\\Bundle\\ReviewBundle\\": "src/WellCommerce/Bundle/ReviewBundle"
     }
   },
   "require": {
-    "php": "^7.0",
-    "wellcommerce/core-bundle": "^0.7@dev",
-    "wellcommerce/product-bundle": "^0.7@dev",
-    "wellcommerce/api-bundle": "^0.7@dev"
+    "wellcommerce/app-bundle": "^0.7@dev",
+    "wellcommerce/catalog-bundle": "^0.7@dev",
+    "expalmer/php-bad-words": "0.1.3"
   },
   "extra": {
-    "branch-alias": {
-      "dev-master": "0.7.x-dev"
-    },
     "wellcommerce-bundle": {
       "install-dir": "src/WellCommerce/Bundle/ReviewBundle"
     }
