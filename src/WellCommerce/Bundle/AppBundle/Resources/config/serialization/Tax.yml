@@ -1,0 +1,14 @@
+WellCommerce\Bundle\AppBundle\Entity\Tax:
+    fields:
+        id:
+            groups:
+                - default
+                - tax
+        value:
+            groups:
+                - default
+                - tax
+    associations:
+        translations:
+            groups:
+                - tax

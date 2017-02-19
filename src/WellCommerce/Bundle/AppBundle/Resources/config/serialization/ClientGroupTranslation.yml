@@ -1,0 +1,27 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+WellCommerce\Bundle\AppBundle\Entity\ClientGroupTranslation:
+    fields:
+        name:
+            groups:
+                - default
+                - client_group_translation
+        locale:
+            groups:
+                - default
+                - client_group_translation
+        id:
+            groups:
+                - default
+                - client_group_translation
+    associations:
+        translatable:
+            groups:
+                - client_group_translation
+    callbacks: {  }

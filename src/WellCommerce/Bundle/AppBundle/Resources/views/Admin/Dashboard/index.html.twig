@@ -1,0 +1,122 @@
+{% extends 'WellCommerceAppBundle:Admin:layout.html.twig' %}
+{% trans_default_domain "wellcommerce" %}
+{% block content %}
+    <h2>{% trans %}admin.heading.dashboard{% endtrans %}</h2>
+
+    <div class="block" id="desktop">
+        {{ sales_report('admin.sales_report.index') }}
+
+        <div class="layout-four-columns">
+            <div class="column">
+                <div class="box simple">
+                    <h3>{% trans %}admin.heading.last_opinions{% endtrans %}</h3>
+                    <table cellspacing="0" class="full-size">
+                        <thead>
+                        <tr>
+                            <th>{% trans %}user.label.username{% endtrans %}</th>
+                            <th>{% trans %}admin.label.content{% endtrans %}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {% for review in reviews %}
+                            <tr class="{{ cycle(['o', 'e'], review) }}">
+                                <th scope="row"><a title="{{ review.nick }} - {{ review.review }}" href="{{ path('admin.review.edit',{"id": review.id}) }}">{{ review.nick }}</a></th>
+                                <td>
+                                    <div style="max-width:170px;">{{ review.review }}</div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <p class="more"><a class="btnMore" href="{{ path('admin.review.index') }}"><span>{% trans %}admin.button.show_all{% endtrans %}</span></a></p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="box simple">
+                    <h3>{% trans %}admin.heading.last_orders{% endtrans %}</h3>
+                    <table cellspacing="0" class="full-size">
+                        <thead>
+                        <tr>
+                            <th>{% trans %}order.label.number{% endtrans %}</th>
+                            <th>{% trans %}admin.label.sum{% endtrans %}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for order in orders %}
+                            <tr class="{{ cycle(['o', 'e'], order) }}">
+                                <th scope="row"><a href="{{ path('admin.order.edit',{"id": order.id}) }}">{{ order.number }}</a></th>
+                                <td>
+                                    {{ format_price(order.summary.grossAmount, order.currency) }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <p class="more"><a class="btnMore" href="{{ path('admin.order.index') }}"><span>{% trans %}admin.button.show_all{% endtrans %}</span></a></p>
+                </div>
+            </div>
+
+            <!-- begin: New customers -->
+            <div class="column">
+                <div class="box simple">
+                    <h3>{% trans %}admin.heading.new_customers{% endtrans %}</h3>
+                    <table cellspacing="0" class="full-size">
+                        <thead>
+                        <tr>
+                            <th>{% trans %}admin.label.firstname{% endtrans %}</th>
+                            <th abbr="Sztuk">{% trans %}admin.label.lastname{% endtrans %}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <p class="more"><a class="btnMore" href="client"><span>{% trans %}admin.button.show_all{% endtrans %}</span></a></p>
+                </div>
+            </div>
+            <!-- end: New customers -->
+
+            <!-- begin: Bestsellers -->
+            <div class="column">
+                <div class="box simple">
+                    <h3>{% trans %}admin.heading.bestsellers{% endtrans %}</h3>
+                    <table cellspacing="0" class="full-size">
+                        <thead>
+                        <tr>
+                            <th>{% trans %}admin.label.product{% endtrans %}</th>
+                            <th abbr="Sztuk">{% trans %}admin.label.quantity{% endtrans %}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <p class="more"><a class="btnMore" href="statsproducts"><span>{% trans %}admin.button.show_raports{% endtrans %}</span></a></p>
+                </div>
+            </div>
+            <!-- end: Bestsellers -->
+
+            <!-- begin: Most popular -->
+            <div class="column">
+                <div class="box simple">
+                    <h3>{% trans %}admin.heading.customers_online{% endtrans %}</h3>
+                    <table cellspacing="0" class="full-size">
+                        <thead>
+                        <tr>
+                            <th>{% trans %}admin.label.client{% endtrans %}</th>
+                            <th>{% trans %}admin.label.cart{% endtrans %}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <p class="more"><a class="btnMore" href="spy"><span>{% trans %}admin.button.show_raports{% endtrans %}</span></a></p>
+                </div>
+            </div>
+            <!-- end: Most popular -->
+        </div>
+        <!-- end: Four columns -->
+    </div>
+{% endblock %}

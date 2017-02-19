@@ -1,0 +1,62 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+WellCommerce\Bundle\AppBundle\Entity\ClientBillingAddress:
+    type: embeddable
+    fields:
+        firstName:
+            type: string
+            length: 255
+            nullable: true
+            column: first_name
+        lastName:
+            type: string
+            length: 255
+            nullable: true
+            column: last_name
+        line1:
+            type: string
+            length: 255
+            nullable: true
+        line2:
+            type: string
+            length: 255
+            nullable: true
+        postalCode:
+            type: string
+            length: 255
+            nullable: true
+            column: postal_code
+        state:
+            type: string
+            length: 255
+            nullable: true
+        city:
+            type: string
+            length: 255
+            nullable: true
+        country:
+            type: string
+            length: 3
+            nullable: true
+        vatId:
+            type: string
+            length: 255
+            nullable: true
+            column: vat_id
+        companyName:
+            type: string
+            length: 255
+            nullable: true
+            column: company_name
+        viesValid:
+            type: boolean
+            nullable: false
+            column: vies_valid
+            options:
+                default: false
