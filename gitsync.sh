@@ -16,9 +16,19 @@ if [ "$action" == 'init' ]
         git subtree add --prefix=src/WellCommerce/Component/Serializer git@github.com:WellCommerce/Serializer.git master
 
         git subtree add --prefix=src/WellCommerce/Bundle/ApiBundle git@github.com:WellCommerce/ApiBundle.git master
+        git subtree add --prefix=src/WellCommerce/Bundle/AppBundle git@github.com:WellCommerce/AppBundle.git master
+        git subtree add --prefix=src/WellCommerce/Bundle/CatalogBundle git@github.com:WellCommerce/CatalogBundle.git master
+        git subtree add --prefix=src/WellCommerce/Bundle/CmsBundle git@github.com:WellCommerce/CmsBundle.git master
         git subtree add --prefix=src/WellCommerce/Bundle/CoreBundle git@github.com:WellCommerce/CoreBundle.git master
+        git subtree add --prefix=src/WellCommerce/Bundle/CouponBundle git@github.com:WellCommerce/CouponBundle.git master
         git subtree add --prefix=src/WellCommerce/Bundle/GeneratorBundle git@github.com:WellCommerce/GeneratorBundle.git master
+        git subtree add --prefix=src/WellCommerce/Bundle/OAuthBundle git@github.com:WellCommerce/OAuthBundle.git master
+        git subtree add --prefix=src/WellCommerce/Bundle/OrderBundle git@github.com:WellCommerce/OrderBundle.git master
+        git subtree add --prefix=src/WellCommerce/Bundle/ReviewBundle git@github.com:WellCommerce/ReviewBundle.git master
+        git subtree add --prefix=src/WellCommerce/Bundle/RoutingBundle git@github.com:WellCommerce/RoutingBundle.git master
         git subtree add --prefix=src/WellCommerce/Bundle/SearchBundle git@github.com:WellCommerce/SearchBundle.git master
+        git subtree add --prefix=src/WellCommerce/Bundle/ShowcaseBundle git@github.com:WellCommerce/ShowcaseBundle.git master
+        git subtree add --prefix=src/WellCommerce/Bundle/WishlistBundle git@github.com:WellCommerce/WishlistBundle.git master
 fi
 
 if [ "$action" == 'push' ]
@@ -35,9 +45,19 @@ if [ "$action" == 'push' ]
         git subtree push --prefix=src/WellCommerce/Component/Serializer git@github.com:WellCommerce/Serializer.git master
 
         git subtree push --prefix=src/WellCommerce/Bundle/ApiBundle git@github.com:WellCommerce/ApiBundle.git master
+        git subtree push --prefix=src/WellCommerce/Bundle/AppBundle git@github.com:WellCommerce/AppBundle.git master
+        git subtree push --prefix=src/WellCommerce/Bundle/CatalogBundle git@github.com:WellCommerce/CatalogBundle.git master
+        git subtree push --prefix=src/WellCommerce/Bundle/CmsBundle git@github.com:WellCommerce/CmsBundle.git master
         git subtree push --prefix=src/WellCommerce/Bundle/CoreBundle git@github.com:WellCommerce/CoreBundle.git master
+        git subtree push --prefix=src/WellCommerce/Bundle/CouponBundle git@github.com:WellCommerce/CouponBundle.git master
         git subtree push --prefix=src/WellCommerce/Bundle/GeneratorBundle git@github.com:WellCommerce/GeneratorBundle.git master
+        git subtree push --prefix=src/WellCommerce/Bundle/OAuthBundle git@github.com:WellCommerce/OAuthBundle.git master
+        git subtree push --prefix=src/WellCommerce/Bundle/OrderBundle git@github.com:WellCommerce/OrderBundle.git master
+        git subtree push --prefix=src/WellCommerce/Bundle/ReviewBundle git@github.com:WellCommerce/ReviewBundle.git master
+        git subtree push --prefix=src/WellCommerce/Bundle/RoutingBundle git@github.com:WellCommerce/RoutingBundle.git master
         git subtree push --prefix=src/WellCommerce/Bundle/SearchBundle git@github.com:WellCommerce/SearchBundle.git master
+        git subtree push --prefix=src/WellCommerce/Bundle/ShowcaseBundle git@github.com:WellCommerce/ShowcaseBundle.git master
+        git subtree push --prefix=src/WellCommerce/Bundle/WishlistBundle git@github.com:WellCommerce/WishlistBundle.git master
 fi
 
 if [ "$action" == 'pull' ]
@@ -54,7 +74,17 @@ if [ "$action" == 'pull' ]
         git subtree pull --prefix=src/WellCommerce/Component/Serializer git@github.com:WellCommerce/Serializer.git master
 
         git subtree pull --prefix=src/WellCommerce/Bundle/ApiBundle git@github.com:WellCommerce/ApiBundle.git master
+        git subtree pull --prefix=src/WellCommerce/Bundle/AppBundle git@github.com:WellCommerce/AppBundle.git master
+        git subtree pull --prefix=src/WellCommerce/Bundle/CatalogBundle git@github.com:WellCommerce/CatalogBundle.git master
+        git subtree pull --prefix=src/WellCommerce/Bundle/CmsBundle git@github.com:WellCommerce/CmsBundle.git master
         git subtree pull --prefix=src/WellCommerce/Bundle/CoreBundle git@github.com:WellCommerce/CoreBundle.git master
+        git subtree pull --prefix=src/WellCommerce/Bundle/CouponBundle git@github.com:WellCommerce/CouponBundle.git master
         git subtree pull --prefix=src/WellCommerce/Bundle/GeneratorBundle git@github.com:WellCommerce/GeneratorBundle.git master
+        git subtree pull --prefix=src/WellCommerce/Bundle/OAuthBundle git@github.com:WellCommerce/OAuthBundle.git master
+        git subtree pull --prefix=src/WellCommerce/Bundle/OrderBundle git@github.com:WellCommerce/OrderBundle.git master
+        git subtree pull --prefix=src/WellCommerce/Bundle/ReviewBundle git@github.com:WellCommerce/ReviewBundle.git master
+        git subtree pull --prefix=src/WellCommerce/Bundle/RoutingBundle git@github.com:WellCommerce/RoutingBundle.git master
         git subtree pull --prefix=src/WellCommerce/Bundle/SearchBundle git@github.com:WellCommerce/SearchBundle.git master
+        git subtree pull --prefix=src/WellCommerce/Bundle/ShowcaseBundle git@github.com:WellCommerce/ShowcaseBundle.git master
+        git subtree pull --prefix=src/WellCommerce/Bundle/WishlistBundle git@github.com:WellCommerce/WishlistBundle.git master
 fi
