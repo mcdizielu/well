@@ -1,5 +1,6 @@
 {
   "name": "wellcommerce/collections",
+  "type": "wellcommerce-component",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce Collections",
@@ -25,18 +26,15 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Component\\Collections\\": ""
+      "WellCommerce\\Component\\Collections\\": "src/WellCommerce/Component/Collections"
     }
   },
   "require": {
     "php": "^7.0"
   },
-  "require-dev": {
-    "phpunit/phpunit": "^5.0@dev"
-  },
   "extra": {
-    "branch-alias": {
-      "dev-master": "0.7.x-dev"
+    "wellcommerce-bundle": {
+      "install-dir": "src/WellCommerce/Component/Collections"
     }
   }
 }

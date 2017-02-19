@@ -1,5 +1,6 @@
 {
   "name": "wellcommerce/search",
+  "type": "wellcommerce-component",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce Search Component",
@@ -25,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Component\\Search\\": ""
+      "WellCommerce\\Component\\Search\\": "src/WellCommerce/Component/Search"
     }
   },
   "require": {
@@ -36,8 +37,8 @@
     "symfony/options-resolver": "v3.2.2"
   },
   "extra": {
-    "branch-alias": {
-      "dev-master": "0.7.x-dev"
+    "wellcommerce-bundle": {
+      "install-dir": "src/WellCommerce/Component/Search"
     }
   }
 }

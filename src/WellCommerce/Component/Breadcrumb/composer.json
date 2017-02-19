@@ -1,5 +1,6 @@
 {
   "name": "wellcommerce/breadcrumb",
+  "type": "wellcommerce-component",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce Breadcrumb",
@@ -25,15 +26,15 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Component\\Breadcrumb\\": ""
+      "WellCommerce\\Component\\Breadcrumb\\": "src/WellCommerce/Component/Breadcrumb"
     }
   },
   "require": {
     "php": "^7.0"
   },
   "extra": {
-    "branch-alias": {
-      "dev-master": "0.7.x-dev"
+    "wellcommerce-bundle": {
+      "install-dir": "src/WellCommerce/Component/Breadcrumb"
     }
   }
 }

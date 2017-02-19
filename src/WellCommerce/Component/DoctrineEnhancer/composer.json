@@ -1,5 +1,6 @@
 {
   "name": "wellcommerce/doctrine-enhancer",
+  "type": "wellcommerce-component",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce DoctrineEnhancer",
@@ -26,7 +27,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Component\\DoctrineEnhancer\\": ""
+      "WellCommerce\\Component\\DoctrineEnhancer\\": "src/WellCommerce/Component/DoctrineEnhancer"
     }
   },
   "require": {
@@ -36,8 +37,8 @@
     "doctrine/orm": "v2.5.4"
   },
   "extra": {
-    "branch-alias": {
-      "dev-master": "0.7.x-dev"
+    "wellcommerce-bundle": {
+      "install-dir": "src/WellCommerce/Component/DoctrineEnhancer"
     }
   }
 }

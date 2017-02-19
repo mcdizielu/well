@@ -1,5 +1,6 @@
 {
   "name": "wellcommerce/dataset",
+  "type": "wellcommerce-component",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce DataSet",
@@ -25,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Component\\DataSet\\": ""
+      "WellCommerce\\Component\\DataSet\\": "src/WellCommerce/Component/DataSet"
     }
   },
   "require": {
@@ -36,8 +37,8 @@
     "wellcommerce/collections": "^0.7@dev"
   },
   "extra": {
-    "branch-alias": {
-      "dev-master": "0.7.x-dev"
+    "wellcommerce-bundle": {
+      "install-dir": "src/WellCommerce/Component/DataSet"
     }
   }
 }
