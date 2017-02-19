@@ -31,13 +31,6 @@
       "app/AppKernel.php"
     ]
   },
-  "autoload-dev": {
-    "psr-4": {
-      "WellCommerce\\Bundle\\ApiBundle\\": "src/WellCommerce/Bundle/ApiBundle",
-      "WellCommerce\\Bundle\\GeneratorBundle\\": "src/WellCommerce/Bundle/GeneratorBundle",
-      "WellCommerce\\Bundle\\SearchBundle\\": "src/WellCommerce/Bundle/SearchBundle"
-    }
-  },
   "require": {
     "php": "^7.0",
     "ext-mbstring": "*",
@@ -46,8 +39,19 @@
     "ext-exif": "*",
     "wellcommerce/composer-plugin": "^1.0@dev",
     "wellcommerce/api-bundle": "^0.7.0@dev",
+    "wellcommerce/app-bundle": "^0.7.0@dev",
+    "wellcommerce/catalog-bundle": "^0.7.0@dev",
+    "wellcommerce/cms-bundle": "^0.7.0@dev",
+    "wellcommerce/core-bundle": "^0.7.0@dev",
+    "wellcommerce/coupon-bundle": "^0.7.0@dev",
     "wellcommerce/generator-bundle": "^0.7.0@dev",
+    "wellcommerce/oauth-bundle": "^0.7.0@dev",
+    "wellcommerce/order-bundle": "^0.7.0@dev",
+    "wellcommerce/review-bundle": "^0.7.0@dev",
+    "wellcommerce/routing-bundle": "^0.7.0@dev",
     "wellcommerce/search-bundle": "^0.7.0@dev"
+    "wellcommerce/showcase-bundle": "^0.7.0@dev"
+    "wellcommerce/wishlist-bundle": "^0.7.0@dev"
   },
   "scripts": {
     "pre-install-cmd": [
