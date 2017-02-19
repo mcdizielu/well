@@ -4,6 +4,8 @@ action=$1
 
 if [ "$action" == 'init' ]
     then
+        rm -rf src/WellCommerce/Bundle/*
+        rm -rf src/WellCommerce/Component/*
         git commit -a -m "Commiting changes before initializing subtrees"
 
         git subtree add --prefix=src/WellCommerce/Component/Breadcrumb git@github.com:WellCommerce/Breadcrumb.git master
