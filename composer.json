@@ -39,6 +39,9 @@
     "zendframework/zend-json": "^2.6@dev"
   },
   "extra": {
+    "branch-alias": {
+      "dev-master": "0.7.x-dev"
+    },
     "wellcommerce-bundle": {
       "install-dir": "src/WellCommerce/Component/Form"
     }
