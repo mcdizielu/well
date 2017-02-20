@@ -1,2 +1,3 @@
 # Collections
-WellCommerce Collections Component
+
+Subtree split of main WellCommerce repository
