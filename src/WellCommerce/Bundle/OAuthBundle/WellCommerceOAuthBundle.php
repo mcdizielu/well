@@ -18,7 +18,6 @@ use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
  * Class WellCommerceOAuthBundle
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
- * @author  Rafał Martonik <rafal@wellcommerce.org>
  */
 final class WellCommerceOAuthBundle extends AbstractWellCommerceBundle
 {
