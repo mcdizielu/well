@@ -27,7 +27,7 @@ class ClientForgotPasswordBoxController extends AbstractBoxController
 {
     public function resetAction()
     {
-        $form = $this->getForm(null);
+        $form = $this->formBuilder->createForm();
         
         if ($form->handleRequest()->isSubmitted()) {
             $data = $form->getValue();

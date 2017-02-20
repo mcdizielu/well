@@ -16,7 +16,7 @@ use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use WellCommerce\Bundle\AppBundle\Entity\ClientDetails;
 use WellCommerce\Bundle\AppBundle\Repository\ClientRepositoryInterface;
-use WellCommerce\Bundle\CoreBundle\Helper\Router\RouterHelperInterface;
+use WellCommerce\Bundle\RoutingBundle\Helper\RouterHelperInterface;
 
 /**
  * Class UniqueEntityValidator

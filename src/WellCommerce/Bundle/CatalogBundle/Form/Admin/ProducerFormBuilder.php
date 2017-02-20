@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class ProducerFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.producer';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
@@ -49,7 +51,7 @@ class ProducerFormBuilder extends AbstractFormBuilder
             'name'            => 'slug',
             'label'           => $this->trans('common.label.slug'),
             'name_field'      => $name,
-            'generate_route'  => 'admin.routing.generate',
+            'generate_route'  => 'route.generate',
             'translatable_id' => $this->getRequestHelper()->getAttributesBagParam('id'),
             'rules'           => [
                 $this->getRule('required')

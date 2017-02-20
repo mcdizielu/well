@@ -63,7 +63,7 @@ class CategoryController extends AbstractAdminController
     public function editAction(int $id): Response
     {
         $category = $this->getManager()->getRepository()->find($id);
-        $form     = $this->getForm($category);
+        $form     = $this->formBuilder->createForm($category);
         
         if ($form->handleRequest()->isSubmitted()) {
             if ($form->isValid()) {
@@ -82,9 +82,8 @@ class CategoryController extends AbstractAdminController
     
     protected function createCategoryTreeForm(): FormInterface
     {
-        return $this->get('category_tree.form_builder.admin')->createForm([
-            'name'  => 'category_tree',
-            'class' => 'category-select',
+        return $this->get('category_tree.form_builder.admin')->createForm(null, [
+            'class' => 'category-select'
         ]);
     }
     

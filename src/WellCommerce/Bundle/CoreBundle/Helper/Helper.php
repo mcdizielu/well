@@ -11,6 +11,8 @@
  */
 namespace WellCommerce\Bundle\CoreBundle\Helper;
 
+use Knp\DoctrineBehaviors\Model\Sluggable\Transliterator;
+
 /**
  * Class Helper
  *
@@ -23,5 +25,10 @@ class Helper
         $replace = '$1' . $delimiter . '$2';
         
         return ctype_lower($value) ? $value : strtolower(preg_replace('/(.)([A-Z])/', $replace, $value));
+    }
+    
+    public static function urlize(string $text, string $delimiter = '-'): string
+    {
+        return Transliterator::urlize($text, $delimiter);
     }
 }

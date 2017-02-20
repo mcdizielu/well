@@ -20,6 +20,4 @@ namespace WellCommerce\Bundle\CoreBundle\Helper\Mailer;
 interface MailerHelperInterface
 {
     public function sendEmail(array $options): int;
-    
-    public function isEmailValid(string $email): bool;
 }

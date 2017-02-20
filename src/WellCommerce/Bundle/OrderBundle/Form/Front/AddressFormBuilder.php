@@ -22,6 +22,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class AddressFormBuilder extends AbstractFormBuilder
 {
+    public function getAlias(): string
+    {
+        return 'front.address';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $form->addChild($this->getElement('checkbox', [

@@ -13,7 +13,7 @@ namespace WellCommerce\Bundle\OrderBundle\Repository;
 
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
-use WellCommerce\Bundle\CoreBundle\Repository\EntityRepository;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\EntityRepository;
 use WellCommerce\Bundle\OrderBundle\Entity\ShippingMethod;
 
 /**

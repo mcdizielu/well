@@ -20,7 +20,7 @@ use WellCommerce\Bundle\CoreBundle\Controller\Front\AbstractFrontController;
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-abstract class AbstractBoxController extends AbstractFrontController implements BoxControllerInterface
+abstract class AbstractBoxController extends AbstractFrontController
 {
     public function indexAction(LayoutBoxSettingsCollection $boxSettings) : Response
     {

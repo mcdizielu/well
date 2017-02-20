@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class UserGroupFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.user_group';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [

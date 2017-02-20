@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class ThemeFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.theme';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $themeFolders = $this->get('theme.locator')->getThemeFolders();

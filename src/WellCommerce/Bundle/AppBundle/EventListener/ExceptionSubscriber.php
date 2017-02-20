@@ -11,19 +11,37 @@
  */
 namespace WellCommerce\Bundle\AppBundle\EventListener;
 
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
-use WellCommerce\Bundle\CoreBundle\EventListener\AbstractEventSubscriber;
+use Symfony\Component\HttpKernel\KernelInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Templating\TemplatingHelperInterface;
 
 /**
  * Class ExceptionSubscriber
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class ExceptionSubscriber extends AbstractEventSubscriber
+class ExceptionSubscriber implements EventSubscriberInterface
 {
+    /**
+     * @var KernelInterface
+     */
+    protected $kernel;
+    
+    /**
+     * @var TemplatingHelperInterface
+     */
+    protected $templatingHelper;
+    
+    public function __construct(KernelInterface $kernel, TemplatingHelperInterface $templatingHelper)
+    {
+        $this->kernel           = $kernel;
+        $this->templatingHelper = $templatingHelper;
+    }
+    
     public static function getSubscribedEvents()
     {
         return [
@@ -33,16 +51,15 @@ class ExceptionSubscriber extends AbstractEventSubscriber
     
     public function onKernelException(GetResponseForExceptionEvent $event)
     {
-        if ($this->getKernel()->getEnvironment() !== 'dev') {
+        if ($this->kernel->getEnvironment() !== 'dev') {
             $exception = $event->getException();
-            $event->getRequest()->setLocale($this->container->getParameter('locale'));
             if ($exception instanceof HttpExceptionInterface) {
-                $content = $this->getTemplatingHelper()->render('WellCommerceAppBundle:Front/Exception:404.html.twig', [
+                $content = $this->templatingHelper->render('WellCommerceAppBundle:Front/Exception:404.html.twig', [
                     'message' => $exception->getMessage(),
                     'code'    => $exception->getCode(),
                 ]);
             } else {
-                $content = $this->getTemplatingHelper()->render('WellCommerceAppBundle:Front/Exception:500.html.twig', [
+                $content = $this->templatingHelper->render('WellCommerceAppBundle:Front/Exception:500.html.twig', [
                     'message' => $exception->getMessage(),
                     'code'    => $exception->getCode(),
                 ]);

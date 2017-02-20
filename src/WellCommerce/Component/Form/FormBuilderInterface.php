@@ -25,14 +25,21 @@ use WellCommerce\Component\Form\Filters\FilterInterface;
 interface FormBuilderInterface
 {
     /**
+     * Returns the alias
+     *
+     * @return string
+     */
+    public function getAlias(): string;
+    
+    /**
      * Creates the form, triggers init event and then populates form with values
      *
+     * @param mixed $defaultData
      * @param array $options
-     * @param null  $formData
      *
      * @return FormInterface
      */
-    public function createForm(array $options, $formData = null) : FormInterface;
+    public function createForm($defaultData = null, array $options = []): FormInterface;
     
     /**
      * Returns an element object by its type
@@ -42,7 +49,7 @@ interface FormBuilderInterface
      *
      * @return ElementInterface
      */
-    public function getElement(string $type, array $options = []) : ElementInterface;
+    public function getElement(string $type, array $options = []): ElementInterface;
     
     /**
      * Returns a filter object by its type
@@ -52,7 +59,7 @@ interface FormBuilderInterface
      *
      * @return FilterInterface
      */
-    public function getFilter(string $type, array $options = []) : FilterInterface;
+    public function getFilter(string $type, array $options = []): FilterInterface;
     
     /**
      * Returns a dependency object by its type
@@ -62,5 +69,5 @@ interface FormBuilderInterface
      *
      * @return DependencyInterface
      */
-    public function getDependency(string $type, array $options = []) : DependencyInterface;
+    public function getDependency(string $type, array $options = []): DependencyInterface;
 }

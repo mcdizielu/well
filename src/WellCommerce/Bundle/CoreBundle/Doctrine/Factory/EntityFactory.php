@@ -26,11 +26,6 @@ final class EntityFactory implements EntityFactoryInterface
      */
     private $class;
     
-    /**
-     * EntityFactory constructor.
-     *
-     * @param string $class
-     */
     public function __construct(string $class)
     {
         $this->class = $class;

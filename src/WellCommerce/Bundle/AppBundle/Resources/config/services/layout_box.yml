@@ -9,7 +9,7 @@
 services:
     layout_box.renderer:
         class: WellCommerce\Bundle\AppBundle\Renderer\LayoutBoxRenderer
-        arguments: ['@layout_box.configurator.collection', '@layout_box.manager']
+        arguments: ['@layout_box.configurator.collection', '@layout_box.repository']
         calls:
             - [setContainer, ['@service_container']]
 
@@ -21,7 +21,7 @@ services:
             - [setContainer, ['@service_container']]
 
     layout_box.configurator.collection:
-        class: WellCommerce\Bundle\AppBundle\Configurator\LayoutBoxConfiguratorCollection
+        class: WellCommerce\Bundle\CoreBundle\Layout\Configurator\LayoutBoxConfiguratorCollection
 
     twig.extension.layout_box:
         class: WellCommerce\Bundle\AppBundle\Twig\Extension\LayoutBoxExtension

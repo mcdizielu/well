@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class CategoryTreeFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.category_tree';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $form->addChild($this->getElement('tree', [

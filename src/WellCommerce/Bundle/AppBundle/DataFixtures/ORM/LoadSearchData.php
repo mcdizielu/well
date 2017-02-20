@@ -13,7 +13,7 @@
 namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use WellCommerce\Bundle\CoreBundle\DataFixtures\AbstractDataFixture;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
 
 /**
  * Class LoadSearchData
@@ -32,7 +32,7 @@ class LoadSearchData extends AbstractDataFixture
         }
         
         $this->createLayoutBoxes($manager, [
-            'search' => [
+            'product_search' => [
                 'type' => 'Search',
                 'name' => 'Search results',
             ],

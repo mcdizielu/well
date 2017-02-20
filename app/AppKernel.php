@@ -42,12 +42,15 @@ class AppKernel extends Kernel
             new \WellCommerce\Bundle\ApiBundle\WellCommerceApiBundle(),
             new \WellCommerce\Bundle\AppBundle\WellCommerceAppBundle(),
             new \WellCommerce\Bundle\CoreBundle\WellCommerceCoreBundle(),
+            new \WellCommerce\Bundle\SearchBundle\WellCommerceSearchBundle(),
+            new \WellCommerce\Bundle\GeneratorBundle\WellCommerceGeneratorBundle(),
             new \WellCommerce\Bundle\OrderBundle\WellCommerceOrderBundle(),
             new \WellCommerce\Bundle\CatalogBundle\WellCommerceCatalogBundle(),
             new \WellCommerce\Bundle\CouponBundle\WellCommerceCouponBundle(),
             new \WellCommerce\Bundle\OAuthBundle\WellCommerceOAuthBundle(),
             new \WellCommerce\Bundle\CmsBundle\WellCommerceCmsBundle(),
             new \WellCommerce\Bundle\ReviewBundle\WellCommerceReviewBundle(),
+            new \WellCommerce\Bundle\RoutingBundle\WellCommerceRoutingBundle(),
             new \WellCommerce\Bundle\ShowcaseBundle\WellCommerceShowcaseBundle(),
             new \WellCommerce\Bundle\WishlistBundle\WellCommerceWishlistBundle(),
         ];
@@ -55,6 +58,10 @@ class AppKernel extends Kernel
         if (in_array($this->getEnvironment(), ['dev', 'test'])) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+
+            if ($this->getEnvironment() === 'test') {
+                $bundles[] = new \DAMA\DoctrineTestBundle\DAMADoctrineTestBundle();
+            }
         }
         
         return $bundles;

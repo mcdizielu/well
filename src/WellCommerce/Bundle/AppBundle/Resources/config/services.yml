@@ -7,6 +7,7 @@
 # please view the LICENSE file that was distributed with this source code.
 
 imports:
+    - { resource: 'services/api.yml' }
     - { resource: 'services/admin.yml' }
     - { resource: 'services/client.yml' }
     - { resource: 'services/currency.yml' }
@@ -24,16 +25,15 @@ services:
 
     exception.subscriber:
         class: WellCommerce\Bundle\AppBundle\EventListener\ExceptionSubscriber
+        arguments: ['@kernel', '@templating.helper']
         tags:
             - { name: kernel.event_subscriber }
-        calls:
-            - [setContainer, ['@service_container']]
 
     app.install.command:
         class: WellCommerce\Bundle\AppBundle\Command\InstallCommand
+        arguments: ['@console.action_executor']
         tags:
             - { name: console.command }
-        arguments: ['@distribution.console.action_executor']
 
     country.repository:
         class: WellCommerce\Bundle\AppBundle\Repository\CountryRepository

@@ -24,7 +24,7 @@ use WellCommerce\Bundle\OrderBundle\Provider\Front\OrderProviderInterface;
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-abstract class AbstractFrontController extends AbstractController implements FrontControllerInterface
+abstract class AbstractFrontController extends AbstractController
 {
     protected function getCategoryStorage(): CategoryStorageInterface
     {

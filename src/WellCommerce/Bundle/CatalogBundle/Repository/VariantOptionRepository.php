@@ -13,7 +13,7 @@ namespace WellCommerce\Bundle\CatalogBundle\Repository;
 
 use Doctrine\ORM\Query\Expr;
 use WellCommerce\Bundle\CatalogBundle\Entity\Category;
-use WellCommerce\Bundle\CoreBundle\Repository\EntityRepository;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\EntityRepository;
 
 /**
  * Class VariantOptionRepository

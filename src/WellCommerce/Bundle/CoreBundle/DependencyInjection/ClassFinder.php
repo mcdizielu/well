@@ -15,7 +15,7 @@ namespace WellCommerce\Bundle\CoreBundle\DependencyInjection;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
-use WellCommerce\Bundle\CoreBundle\Controller\Admin\AdminControllerInterface;
+use WellCommerce\Bundle\CoreBundle\Controller\ControllerInterface;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Factory\EntityFactoryInterface;
 use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
@@ -30,7 +30,7 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  */
 final class ClassFinder
 {
-    public function findEntityClasses(BundleInterface $bundle) : array
+    public function findEntityClasses(BundleInterface $bundle): array
     {
         $directory = $bundle->getPath() . '/Entity';
         $namespace = $bundle->getNamespace() . '\Entity';
@@ -40,7 +40,7 @@ final class ClassFinder
         return $classes;
     }
     
-    public function findEntityFactoryClasses(BundleInterface $bundle) : array
+    public function findEntityFactoryClasses(BundleInterface $bundle): array
     {
         $directory = $bundle->getPath() . '/Factory';
         $namespace = $bundle->getNamespace() . '\Factory';
@@ -50,7 +50,7 @@ final class ClassFinder
         return $classes;
     }
     
-    public function findManagerClasses(BundleInterface $bundle) : array
+    public function findManagerClasses(BundleInterface $bundle): array
     {
         $directory = $bundle->getPath() . '/Manager';
         $namespace = $bundle->getNamespace() . '\Manager';
@@ -60,7 +60,7 @@ final class ClassFinder
         return $classes;
     }
     
-    public function findDataGridClasses(BundleInterface $bundle) : array
+    public function findDataGridClasses(BundleInterface $bundle): array
     {
         $directory = $bundle->getPath() . '/DataGrid';
         $namespace = $bundle->getNamespace() . '\DataGrid';
@@ -94,13 +94,13 @@ final class ClassFinder
     {
         $directory = $bundle->getPath() . '/Controller/Admin';
         $namespace = $bundle->getNamespace() . '\Controller\Admin';
-        $interface = AdminControllerInterface::class;
+        $interface = ControllerInterface::class;
         $classes   = $this->findClassesImplementingInterface($directory, $namespace, $interface);
         
         return $classes;
     }
     
-    private function findClassesImplementingInterface(string $directory, string $namespace, string $interface) : array
+    private function findClassesImplementingInterface(string $directory, string $namespace, string $interface): array
     {
         $classes    = [];
         $filesystem = new Filesystem();

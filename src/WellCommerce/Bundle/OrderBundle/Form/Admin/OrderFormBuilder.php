@@ -11,9 +11,9 @@
  */
 namespace WellCommerce\Bundle\OrderBundle\Form\Admin;
 
-use WellCommerce\Bundle\CoreBundle\Form\AbstractFormBuilder;
 use WellCommerce\Bundle\CouponBundle\Entity\Coupon;
 use WellCommerce\Bundle\CouponBundle\Helper\CouponHelper;
+use WellCommerce\Bundle\CoreBundle\Form\AbstractFormBuilder;
 use WellCommerce\Bundle\OrderBundle\Context\OrderContext;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderModifier;
 use WellCommerce\Bundle\OrderBundle\Entity\PaymentMethod;
@@ -32,9 +32,11 @@ use WellCommerce\Component\Form\Elements\Optioned\Select;
  */
 class OrderFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.order';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $order     = $this->getOrderProvider()->getCurrentOrder();

@@ -63,10 +63,8 @@ security:
     encoders:
         WellCommerce\Bundle\AppBundle\Entity\User:
             algorithm: bcrypt
-            cost: 12
         WellCommerce\Bundle\AppBundle\Entity\Client:
             algorithm: bcrypt
-            cost: 12
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER

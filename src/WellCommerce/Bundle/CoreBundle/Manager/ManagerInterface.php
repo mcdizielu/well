@@ -13,7 +13,7 @@
 namespace WellCommerce\Bundle\CoreBundle\Manager;
 
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
-use WellCommerce\Bundle\CoreBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 
 /**
  * Interface ManagerInterface
@@ -35,14 +35,14 @@ interface ManagerInterface
      *
      * @return RepositoryInterface
      */
-    public function getRepository() : RepositoryInterface;
+    public function getRepository(): RepositoryInterface;
     
     /**
      * Initializes new resource object
      *
      * @return EntityInterface
      */
-    public function initResource() : EntityInterface;
+    public function initResource();
     
     /**
      * Persists new resource

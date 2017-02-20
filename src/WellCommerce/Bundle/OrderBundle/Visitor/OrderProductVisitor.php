@@ -55,6 +55,7 @@ final class OrderProductVisitor implements OrderVisitorInterface
                     $this->refreshOrderProductSellPrice($orderProduct);
                     $this->refreshOrderProductBuyPrice($orderProduct);
                     $this->refreshOrderProductVariantOptions($orderProduct);
+                    $this->refreshOrderProductWeight($orderProduct);
                 }
             }
         });
@@ -124,5 +125,10 @@ final class OrderProductVisitor implements OrderVisitorInterface
             $options = $this->variantHelper->getVariantOptions($orderProduct->getVariant());
             $orderProduct->setOptions($options);
         }
+    }
+    
+    private function refreshOrderProductWeight(OrderProduct $orderProduct)
+    {
+        $orderProduct->setWeight($orderProduct->getCurrentWeight());
     }
 }

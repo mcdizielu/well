@@ -2,6 +2,10 @@
     // pl
     Translator.add("form.help.required_fields", "* pola wymagane", "wellcommerce", "pl");
     Translator.add("form.media_data.image_id", "ID obrazka", "wellcommerce", "pl");
+    Translator.add("channel.heading.index", "Kana\u0142y aktualizacji", "wellcommerce", "pl");
+    Translator.add("channel.heading.add", "Dodaj nowy kana\u0142", "wellcommerce", "pl");
+    Translator.add("channel.label.name", "Nazwa", "wellcommerce", "pl");
+    Translator.add("channel.label.url", "Adres URL", "wellcommerce", "pl");
     Translator.add("client.label.username", "Login (e-mail)", "wellcommerce", "pl");
     Translator.add("client.label.password", "Has\u0142o", "wellcommerce", "pl");
     Translator.add("client.label.confirm_password", "Potwierd\u017a has\u0142o", "wellcommerce", "pl");
@@ -203,6 +207,22 @@
     Translator.add("media.heading.index", "Media", "wellcommerce", "pl");
     Translator.add("media.button.select_from_library", "Wybierz z biblioteki", "wellcommerce", "pl");
     Translator.add("media.button.add_from_disk", "Dodaj z dysku", "wellcommerce", "pl");
+    Translator.add("package.heading.index", "Modu\u0142y", "wellcommerce", "pl");
+    Translator.add("package.heading.require", "Pobierz modu\u0142", "wellcommerce", "pl");
+    Translator.add("package.button.sync", "Synchronizuj modu\u0142y", "wellcommerce", "pl");
+    Translator.add("package.button.run", "Rozpocznij pobieranie", "wellcommerce", "pl");
+    Translator.add("package.label.id", "ID", "wellcommerce", "pl");
+    Translator.add("package.label.name", "Nazwa", "wellcommerce", "pl");
+    Translator.add("package.label.full_name", "Pe\u0142na nazwa", "wellcommerce", "pl");
+    Translator.add("package.label.vendor", "Dostawca", "wellcommerce", "pl");
+    Translator.add("package.label.local_version", "Wersja lokalna", "wellcommerce", "pl");
+    Translator.add("package.label.remote_version", "Wersja zdalna", "wellcommerce", "pl");
+    Translator.add("package.label.created_at", "Zainstalowany", "wellcommerce", "pl");
+    Translator.add("package.label.updated_at", "Zaktualizowany", "wellcommerce", "pl");
+    Translator.add("package.label.output", "Status instalacji", "wellcommerce", "pl");
+    Translator.add("package.fieldset.information", "Informacje", "wellcommerce", "pl");
+    Translator.add("package.fieldset.progress", "Post\u0119p pobierania", "wellcommerce", "pl");
+    Translator.add("package.flash.sync.success", "Synchronizacja zako\u0144czona sukcesem.", "wellcommerce", "pl");
     Translator.add("price.sell_price.net", "Cena sprzeda\u017cy netto", "wellcommerce", "pl");
     Translator.add("price.sell_price.gross", "Cena sprzeda\u017cy brutto", "wellcommerce", "pl");
     Translator.add("price.buy_price.net", "Cena zakupu netto", "wellcommerce", "pl");
@@ -283,6 +303,9 @@
     Translator.add("admin.user.logout", "Wyloguj", "wellcommerce", "pl");
     Translator.add("admin.user.help", "Pomoc", "wellcommerce", "pl");
     Translator.add("admin.button.show_all", "Poka\u017c wszystkie", "wellcommerce", "pl");
+    Translator.add("search.heading.index", "Wyniki wyszukiwania", "wellcommerce", "pl");
+    Translator.add("search.label.phrase", "Wpisz czego szukasz", "wellcommerce", "pl");
+    Translator.add("search.flash.no_results", "Brak wynik\u00f3w wyszukiwania", "wellcommerce", "pl");
     Translator.add("order.form.fieldset.products", "Produkty", "wellcommerce", "pl");
     Translator.add("order.heading.index", "Zam\u00f3wienia", "wellcommerce", "pl");
     Translator.add("order.heading.edit", "Edytuj zam\u00f3wienie", "wellcommerce", "pl");
@@ -543,9 +566,6 @@
     Translator.add("product_status.label.id", "Id", "wellcommerce", "pl");
     Translator.add("product_status.label.name", "Nazwa", "wellcommerce", "pl");
     Translator.add("product_status.comment.css_class", "Symbol wykorzystywany np. w szablonach CSS. Dozwolone znaki alfanumeryczne.", "wellcommerce", "pl");
-    Translator.add("search.heading.index", "Wyniki wyszukiwania", "wellcommerce", "pl");
-    Translator.add("search.label.phrase", "Wpisz czego szukasz", "wellcommerce", "pl");
-    Translator.add("search.flash.no_results", "Brak wynik\u00f3w wyszukiwania", "wellcommerce", "pl");
     Translator.add("unit.heading.index", "Jednostki miary", "wellcommerce", "pl");
     Translator.add("unit.heading.add", "Dodaj jednostk\u0119 miary", "wellcommerce", "pl");
     Translator.add("unit.heading.edit", "Edytuj jednostk\u0119 miary", "wellcommerce", "pl");

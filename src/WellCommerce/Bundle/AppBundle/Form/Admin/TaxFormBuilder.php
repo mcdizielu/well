@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class TaxFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.tax';
+    }
+    
     public function buildForm(FormInterface $taxForm)
     {
         $taxRequiredData = $taxForm->addChild($this->getElement('nested_fieldset', [

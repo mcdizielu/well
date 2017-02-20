@@ -16,8 +16,8 @@ use Carbon\Carbon;
 use Doctrine\Common\Persistence\ObjectManager;
 use WellCommerce\Bundle\CmsBundle\Entity\News;
 use WellCommerce\Bundle\CmsBundle\Entity\NewsTranslation;
-use WellCommerce\Bundle\CoreBundle\DataFixtures\AbstractDataFixture;
-use WellCommerce\Bundle\CoreBundle\Helper\Sluggable;
+use WellCommerce\Bundle\CoreBundle\Helper\Helper;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
 
 /**
  * Class LoadNewsData
@@ -57,7 +57,7 @@ class LoadNewsData extends AbstractDataFixture
                 /** @var NewsTranslation $translation */
                 $translation = $news->translate($locale->getCode());
                 $translation->setTopic($topic);
-                $translation->setSlug($locale->getCode() . '/' . Sluggable::makeSlug($topic));
+                $translation->setSlug(Helper::urlize($topic));
                 $translation->setSummary($this->getFakerGenerator()->text(200));
                 $translation->setContent($this->getFakerGenerator()->text(600));
             }

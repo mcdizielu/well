@@ -1,7 +1,6 @@
 <?php
 
-namespace WellCommerce\Bundle\CatalogBundle\Entity\Extra {
+namespace WellCommerce\Bundle\CatalogBundle\Entity\Extra;
 
-    trait AvailabilityExtraTrait {
-    }
+trait AvailabilityExtraTrait {
 }

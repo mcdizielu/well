@@ -24,9 +24,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class PaymentMethodFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.payment_method';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $orderStatuses = $this->get('order_status.dataset.admin')->getResult('select');

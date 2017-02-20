@@ -22,18 +22,12 @@ class ClientDetails
     protected $password              = '';
     protected $passwordConfirm       = null;
     protected $username              = '';
-    protected $salt                  = '';
     protected $discount              = 0.00;
     protected $conditionsAccepted    = false;
     protected $newsletterAccepted    = false;
     protected $resetPasswordHash     = null;
     protected $legacyPassword        = null;
     protected $legacyPasswordEncoder = null;
-    
-    public function __construct()
-    {
-        $this->salt = base_convert(sha1(uniqid(mt_rand(), true)), 16, 36);
-    }
     
     public function getDiscount(): float
     {
@@ -62,7 +56,7 @@ class ClientDetails
     
     public function setHashedPassword(string $password)
     {
-        $this->password = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
+        $this->password = password_hash($password, PASSWORD_BCRYPT);
     }
     
     public function setPasswordConfirm($password)
@@ -78,16 +72,6 @@ class ClientDetails
     public function isPasswordConfirmed(): bool
     {
         return strlen($this->passwordConfirm) && password_verify($this->passwordConfirm, $this->password);
-    }
-    
-    public function getSalt()
-    {
-        return null;
-    }
-    
-    public function setSalt(string $salt)
-    {
-        $this->salt = $salt;
     }
     
     public function getUsername(): string

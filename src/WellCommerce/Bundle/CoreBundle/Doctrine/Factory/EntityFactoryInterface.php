@@ -21,8 +21,5 @@ use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
  */
 interface EntityFactoryInterface
 {
-    /**
-     * @return EntityInterface
-     */
-    public function create();
+    public function create(): EntityInterface;
 }

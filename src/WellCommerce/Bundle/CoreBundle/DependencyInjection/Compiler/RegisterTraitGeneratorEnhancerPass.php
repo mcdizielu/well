@@ -12,6 +12,8 @@
 
 namespace WellCommerce\Bundle\CoreBundle\DependencyInjection\Compiler;
 
+use WellCommerce\Bundle\CoreBundle\DependencyInjection\Compiler\AbstractCollectionPass;
+
 /**
  * Class RegisterTraitGeneratorEnhancerPass
  *

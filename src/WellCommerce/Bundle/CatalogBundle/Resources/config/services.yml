@@ -12,4 +12,4 @@ imports:
     - { resource: 'services/producer.yml' }
     - { resource: 'services/product.yml' }
     - { resource: 'services/product_status.yml' }
-    - { resource: 'services/search.yml' }
+    - { resource: 'services/product_search.yml' }

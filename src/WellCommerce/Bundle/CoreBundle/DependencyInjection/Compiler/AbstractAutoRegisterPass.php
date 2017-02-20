@@ -13,6 +13,8 @@
 namespace WellCommerce\Bundle\CoreBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\ClassFinder;
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\ServiceIdGenerator;
@@ -44,5 +46,12 @@ abstract class AbstractAutoRegisterPass implements CompilerPassInterface
         $this->bundle             = $bundle;
         $this->classFinder        = new ClassFinder();
         $this->serviceIdGenerator = new ServiceIdGenerator();
+    }
+    
+    protected function createReference(string $baseName, string $type, ContainerBuilder $container)
+    {
+        $serviceId = $this->serviceIdGenerator->getServiceId($baseName, $type);
+        
+        return $container->has($serviceId) ? new Reference($serviceId) : null;
     }
 }

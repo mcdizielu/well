@@ -21,8 +21,9 @@ use WellCommerce\Bundle\CatalogBundle\Entity\Category;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductDistinction;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductPhoto;
-use WellCommerce\Bundle\CoreBundle\DataFixtures\AbstractDataFixture;
-use WellCommerce\Bundle\CoreBundle\Helper\Sluggable;
+use WellCommerce\Bundle\CatalogBundle\Entity\ProductTranslation;
+use WellCommerce\Bundle\CoreBundle\Helper\Helper;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
 
 /**
  * Class LoadProductData
@@ -121,10 +122,12 @@ class LoadProductData extends AbstractDataFixture
         $product->addShop($shop);
         
         foreach ($this->getLocales() as $locale) {
-            $product->translate($locale->getCode())->setName($name);
-            $product->translate($locale->getCode())->setSlug($locale->getCode() . '/' . Sluggable::makeSlug($name));
-            $product->translate($locale->getCode())->setShortDescription($shortDescription);
-            $product->translate($locale->getCode())->setDescription($description);
+            /** @var ProductTranslation $translation */
+            $translation = $product->translate($locale->getCode());
+            $translation->setName($name);
+            $translation->setSlug(Helper::urlize($name));
+            $translation->setShortDescription($shortDescription);
+            $translation->setDescription($description);
         }
         
         $product->mergeNewTranslations();

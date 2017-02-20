@@ -12,7 +12,7 @@
 namespace WellCommerce\Bundle\AppBundle\Repository;
 
 use Symfony\Component\Intl\Intl;
-use WellCommerce\Bundle\CoreBundle\Repository\EntityRepository;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\EntityRepository;
 
 /**
  * Class LocaleRepository

@@ -37,10 +37,10 @@ class ClientLoginBoxController extends AbstractBoxController
 
     protected function createForm() : FormInterface
     {
-        return $this->get('client_login.form_builder.front')->createForm([
+        return $this->get('client_login.form_builder.front')->createForm(null, [
             'name'         => 'login',
             'ajax_enabled' => false,
             'action'       => $this->getRouterHelper()->generateUrl('front.client.login_check')
-        ], null);
+        ]);
     }
 }

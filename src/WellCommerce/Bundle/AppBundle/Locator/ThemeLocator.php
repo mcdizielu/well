@@ -27,7 +27,7 @@ final class ThemeLocator implements ThemeLocatorInterface
     /**
      * @var ThemeStorageInterface
      */
-    private $ThemeStorage;
+    private $themeStorage;
     
     /**
      * @var KernelInterface
@@ -53,33 +53,33 @@ final class ThemeLocator implements ThemeLocatorInterface
      * ThemeLocator constructor.
      *
      * @param KernelInterface       $kernel
-     * @param ThemeStorageInterface $ThemeStorage
+     * @param ThemeStorageInterface $themeStorage
      * @param string                $fallbackTheme
      * @param string                $themesDir
      */
-    public function __construct(KernelInterface $kernel, ThemeStorageInterface $ThemeStorage, string $fallbackTheme, string $themesDir)
+    public function __construct(KernelInterface $kernel, ThemeStorageInterface $themeStorage, string $fallbackTheme, string $themesDir)
     {
         $this->kernel        = $kernel;
         $this->fallBackTheme = $fallbackTheme;
-        $this->ThemeStorage  = $ThemeStorage;
+        $this->themeStorage  = $themeStorage;
         $this->themesDir     = $themesDir;
     }
     
-    public function getCurrentThemeFolder() : string
+    public function getCurrentThemeFolder(): string
     {
-        if (false === $this->ThemeStorage->hasCurrentTheme()) {
+        if (false === $this->themeStorage->hasCurrentTheme()) {
             return $this->fallBackTheme;
         }
         
-        return $this->ThemeStorage->getCurrentThemeFolder();
+        return $this->themeStorage->getCurrentThemeFolder();
     }
     
-    public function getThemesDirectory() : string
+    public function getThemesDirectory(): string
     {
         return $this->themesDir;
     }
     
-    public function getThemeFolders() : array
+    public function getThemeFolders(): array
     {
         if (empty($this->themeFolders)) {
             $this->themeFolders = $this->scanThemesDirectory();
@@ -88,7 +88,7 @@ final class ThemeLocator implements ThemeLocatorInterface
         return $this->themeFolders;
     }
     
-    public function locateTemplate(string $name) : string
+    public function locateTemplate(string $name): string
     {
         if (!$this->isValidFilename($name)) {
             throw new \RuntimeException(sprintf('File name "%s" contains invalid characters (..).', $name));
@@ -111,7 +111,7 @@ final class ThemeLocator implements ThemeLocatorInterface
         return $this->locateBundlesResource($bundles, $parameters, $path);
     }
     
-    private function getBundleNameAndPath(string $name) : array
+    private function getBundleNameAndPath(string $name): array
     {
         $bundleName = substr($name, 1);
         $path       = '';
@@ -122,11 +122,11 @@ final class ThemeLocator implements ThemeLocatorInterface
         
         return [
             $bundleName,
-            $path
+            $path,
         ];
     }
     
-    protected function locateBundlesResource(array $bundles, array $parameters, string $name) : string
+    protected function locateBundlesResource(array $bundles, array $parameters, string $name): string
     {
         $themePaths    = [];
         $resourcePaths = [];
@@ -147,7 +147,7 @@ final class ThemeLocator implements ThemeLocatorInterface
     
     private function locateThemePathForBundleResource(BundleInterface $bundle, array $parameters, array &$checkPaths)
     {
-        $parameters  = array_merge($parameters, [
+        $parameters = array_merge($parameters, [
             '%bundle_name%' => $bundle->getName(),
         ]);
         
@@ -166,17 +166,17 @@ final class ThemeLocator implements ThemeLocatorInterface
         }
     }
     
-    private function isValidPath(string $path) : bool
+    private function isValidPath(string $path): bool
     {
         return file_exists($path);
     }
     
-    private function isValidFilename(string $name) : bool
+    private function isValidFilename(string $name): bool
     {
         return (false === strpos($name, '..'));
     }
     
-    private function scanThemesDirectory() : array
+    private function scanThemesDirectory(): array
     {
         $folders     = [];
         $finder      = new Finder();

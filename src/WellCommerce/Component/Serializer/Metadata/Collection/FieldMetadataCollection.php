@@ -12,8 +12,8 @@
 
 namespace WellCommerce\Component\Serializer\Metadata\Collection;
 
-use WellCommerce\Component\Serializer\Metadata\FieldMetadataInterface;
 use WellCommerce\Component\Collections\ArrayCollection;
+use WellCommerce\Component\Serializer\Metadata\FieldMetadataInterface;
 
 /**
  * Class FieldMetadataCollection

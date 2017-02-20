@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class ClientChangePasswordFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'front.client_change_password';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $clientDetails = $form->addChild($this->getElement('nested_fieldset', [

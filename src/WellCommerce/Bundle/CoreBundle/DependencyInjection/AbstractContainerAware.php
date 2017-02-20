@@ -13,22 +13,20 @@
 namespace WellCommerce\Bundle\CoreBundle\DependencyInjection;
 
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
-use Symfony\Component\HttpKernel\KernelInterface;
 use WellCommerce\Bundle\AppBundle\Helper\CurrencyHelperInterface;
 use WellCommerce\Bundle\AppBundle\Storage\ShopStorageInterface;
-use WellCommerce\Bundle\CoreBundle\Helper\Doctrine\DoctrineHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Flash\FlashHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Image\ImageHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Mailer\MailerHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Request\RequestHelperInterface;
-use WellCommerce\Bundle\CoreBundle\Helper\Router\RouterHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Security\SecurityHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Templating\TemplatingHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Translator\TranslatorHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Validator\ValidatorHelperInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Doctrine\DoctrineHelperInterface;
+use WellCommerce\Bundle\RoutingBundle\Helper\RouterHelperInterface;
 use WellCommerce\Component\Breadcrumb\Provider\BreadcrumbProviderInterface;
 
 /**
@@ -38,104 +36,107 @@ use WellCommerce\Component\Breadcrumb\Provider\BreadcrumbProviderInterface;
  */
 abstract class AbstractContainerAware
 {
-    use ContainerAwareTrait;
+    /**
+     * @var ContainerInterface
+     */
+    protected $container;
     
-    public function has(string $id) : bool
+    public function setContainer(ContainerInterface $container)
+    {
+        $this->container = $container;
+    }
+    
+    protected function has(string $id): bool
     {
         return $this->container->has($id);
     }
     
-    public function get(string $id)
+    protected function get(string $id)
     {
         return $this->container->get($id);
     }
     
-    public function trans(string $id, array $params = [], string $domain = TranslatorHelperInterface::DEFAULT_TRANSLATION_DOMAIN) : string
+    protected function trans(string $id, array $params = [], string $domain = TranslatorHelperInterface::DEFAULT_TRANSLATION_DOMAIN): string
     {
         return $this->getTranslatorHelper()->trans($id, $params, $domain);
     }
     
-    public function getKernel() : KernelInterface
-    {
-        return $this->get('kernel');
-    }
-    
-    public function getTranslatorHelper() : TranslatorHelperInterface
+    protected function getTranslatorHelper(): TranslatorHelperInterface
     {
         return $this->get('translator.helper');
     }
     
-    public function getFlashHelper() : FlashHelperInterface
+    protected function getFlashHelper(): FlashHelperInterface
     {
         return $this->get('flash.helper');
     }
     
-    public function getDoctrineHelper() : DoctrineHelperInterface
+    protected function getDoctrineHelper(): DoctrineHelperInterface
     {
         return $this->get('doctrine.helper');
     }
     
-    public function getRequestHelper() : RequestHelperInterface
+    protected function getRequestHelper(): RequestHelperInterface
     {
         return $this->get('request.helper');
     }
     
-    public function getRouterHelper() : RouterHelperInterface
+    protected function getRouterHelper(): RouterHelperInterface
     {
         return $this->get('router.helper');
     }
     
-    public function getImageHelper() : ImageHelperInterface
+    protected function getImageHelper(): ImageHelperInterface
     {
         return $this->get('image.helper');
     }
     
-    public function getLocales() : array
+    protected function getLocales(): array
     {
         return $this->get('locale.repository')->findAll();
     }
     
-    public function getCurrencyHelper() : CurrencyHelperInterface
+    protected function getCurrencyHelper(): CurrencyHelperInterface
     {
         return $this->get('currency.helper');
     }
     
-    public function getSecurityHelper() : SecurityHelperInterface
+    protected function getSecurityHelper(): SecurityHelperInterface
     {
         return $this->get('security.helper');
     }
     
-    public function getMailerHelper() : MailerHelperInterface
+    protected function getMailerHelper(): MailerHelperInterface
     {
         return $this->get('mailer.helper');
     }
     
-    public function getTemplatingHelper() : TemplatingHelperInterface
+    protected function getTemplatingHelper(): TemplatingHelperInterface
     {
         return $this->get('templating.helper');
     }
     
-    public function getValidatorHelper() : ValidatorHelperInterface
+    protected function getValidatorHelper(): ValidatorHelperInterface
     {
         return $this->get('validator.helper');
     }
     
-    public function getEntityManager() : EntityManagerInterface
+    protected function getEntityManager(): EntityManagerInterface
     {
         return $this->getDoctrineHelper()->getEntityManager();
     }
     
-    public function getEventDispatcher() : EventDispatcherInterface
+    protected function getEventDispatcher(): EventDispatcherInterface
     {
         return $this->get('event_dispatcher');
     }
-
-    public function getShopStorage() : ShopStorageInterface
+    
+    protected function getShopStorage(): ShopStorageInterface
     {
         return $this->get('shop.storage');
     }
-
-    public function getBreadcrumbProvider() : BreadcrumbProviderInterface
+    
+    protected function getBreadcrumbProvider(): BreadcrumbProviderInterface
     {
         return $this->get('breadcrumb.provider');
     }

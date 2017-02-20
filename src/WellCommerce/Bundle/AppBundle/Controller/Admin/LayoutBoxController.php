@@ -29,7 +29,7 @@ class LayoutBoxController extends AbstractAdminController
     {
         /** @var LayoutBox $resource */
         $resource = $this->getManager()->initResource();
-        $form     = $this->getForm($resource);
+        $form     = $this->formBuilder->createForm($resource);
         
         if ($form->handleRequest()->isSubmitted()) {
             if ($form->isValid()) {

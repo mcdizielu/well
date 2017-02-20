@@ -12,7 +12,7 @@
 
 namespace WellCommerce\Bundle\CatalogBundle\Configurator;
 
-use WellCommerce\Bundle\AppBundle\Configurator\AbstractLayoutBoxConfigurator;
+use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 
 /**
  * Class ProducerProductsBoxConfigurator

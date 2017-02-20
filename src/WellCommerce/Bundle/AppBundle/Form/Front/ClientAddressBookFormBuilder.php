@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class ClientAddressBookFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'front.client_address_book';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $countries      = $this->get('country.repository')->all();

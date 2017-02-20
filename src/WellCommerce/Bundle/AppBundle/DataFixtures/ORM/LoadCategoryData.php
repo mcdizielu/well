@@ -13,10 +13,11 @@
 namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
+use WellCommerce\Bundle\AppBundle\Entity\Shop;
 use WellCommerce\Bundle\CatalogBundle\Entity\Category;
 use WellCommerce\Bundle\CatalogBundle\Entity\CategoryTranslation;
-use WellCommerce\Bundle\CoreBundle\DataFixtures\AbstractDataFixture;
-use WellCommerce\Bundle\CoreBundle\Helper\Sluggable;
+use WellCommerce\Bundle\CoreBundle\Helper\Helper;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
 
 /**
  * Class LoadCategoryData
@@ -70,6 +71,7 @@ class LoadCategoryData extends AbstractDataFixture
     
     private function addCategories(ObjectManager $manager)
     {
+        /** @var Shop $shop */
         $shop      = $this->getReference('shop');
         $hierarchy = 0;
         
@@ -81,7 +83,7 @@ class LoadCategoryData extends AbstractDataFixture
                 /** @var CategoryTranslation $translation */
                 $translation = $category->translate($locale->getCode());
                 $translation->setName($name);
-                $translation->setSlug($locale->getCode() . '/' . Sluggable::makeSlug($name));
+                $translation->setSlug(Helper::urlize($name));
             }
             $category->mergeNewTranslations();
             $manager->persist($category);

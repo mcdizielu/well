@@ -12,8 +12,8 @@
 
 namespace WellCommerce\Bundle\ApiBundle\Handler;
 
-use WellCommerce\Bundle\CoreBundle\Exception\NonUniqueRequestHandlerException;
-use WellCommerce\Bundle\CoreBundle\Exception\RequestHandlerNotFoundException;
+use WellCommerce\Bundle\ApiBundle\Exception\NonUniqueRequestHandlerException;
+use WellCommerce\Bundle\ApiBundle\Exception\RequestHandlerNotFoundException;
 use WellCommerce\Component\Collections\ArrayCollection;
 
 /**

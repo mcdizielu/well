@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class ReviewFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.review';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $mainData = $form->addChild($this->getElement('nested_fieldset', [

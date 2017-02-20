@@ -12,7 +12,7 @@
 
 namespace WellCommerce\Bundle\CatalogBundle\Entity;
 
-use WellCommerce\Bundle\CoreBundle\Entity\Route;
+use WellCommerce\Bundle\RoutingBundle\Entity\Route;
 
 /**
  * Class Route

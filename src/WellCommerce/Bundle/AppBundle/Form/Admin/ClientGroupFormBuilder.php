@@ -21,16 +21,18 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class ClientGroupFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.client_group';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general')
+            'label' => $this->trans('common.fieldset.general'),
         ]));
-
+        
         $requiredData->addChild($this->getElement('text_field', [
             'name'    => 'discount',
             'label'   => $this->trans('common.label.discount'),
@@ -40,24 +42,24 @@ class ClientGroupFormBuilder extends AbstractFormBuilder
                 $this->getFilter('comma_to_dot_changer'),
             ],
             'rules'   => [
-                $this->getRule('required')
+                $this->getRule('required'),
             ],
         ]));
-
+        
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
             'label'       => $this->trans('common.fieldset.translations'),
-            'transformer' => $this->getRepositoryTransformer('translation', $this->get('client_group.repository'))
+            'transformer' => $this->getRepositoryTransformer('translation', $this->get('client_group.repository')),
         ]));
-
+        
         $languageData->addChild($this->getElement('text_field', [
             'name'  => 'name',
             'label' => $this->trans('common.label.name'),
             'rules' => [
-                $this->getRule('required')
+                $this->getRule('required'),
             ],
         ]));
-
+        
         $form->addFilter($this->getFilter('no_code'));
         $form->addFilter($this->getFilter('trim'));
         $form->addFilter($this->getFilter('secure'));

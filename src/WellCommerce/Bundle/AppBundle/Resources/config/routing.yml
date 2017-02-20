@@ -30,6 +30,9 @@ wellcommerce_oauth:
 wellcommerce_order:
     resource: "@WellCommerceOrderBundle/Resources/config/routing.yml"
 
+wellcommerce_routing:
+    resource: "@WellCommerceRoutingBundle/Resources/config/routing.yml"
+
 _admin_client:
     resource: "@WellCommerceAppBundle/Resources/config/routing/client/admin.yml"
     prefix: /admin/client
@@ -65,6 +68,10 @@ _admin_locale:
 _admin_media:
     resource: "@WellCommerceAppBundle/Resources/config/routing/media/admin.yml"
     prefix: /admin/media
+
+_admin_package:
+    resource: "@WellCommerceAppBundle/Resources/config/routing/package/admin.yml"
+    prefix: /admin/package
 
 _admin_shop:
     resource: "@WellCommerceAppBundle/Resources/config/routing/shop/admin.yml"

@@ -14,10 +14,10 @@ namespace WellCommerce\Bundle\CoreBundle\Form;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractContainerAware;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 use WellCommerce\Bundle\CoreBundle\Form\DataTransformer\DataTransformerFactory;
 use WellCommerce\Bundle\CoreBundle\Form\DataTransformer\RepositoryAwareDataTransformerInterface;
-use WellCommerce\Bundle\CoreBundle\Repository\RepositoryInterface;
 use WellCommerce\Component\Form\Dependencies\DependencyInterface;
 use WellCommerce\Component\Form\Elements\ElementInterface;
 use WellCommerce\Component\Form\Elements\FormInterface;
@@ -67,9 +67,12 @@ abstract class AbstractFormBuilder extends AbstractContainerAware implements For
         $this->eventDispatcher        = $eventDispatcher;
     }
     
-    public function createForm(array $options, $defaultData = null): FormInterface
+    public function createForm($defaultData = null, array $options = []): FormInterface
     {
-        $form = $this->getFormService($options);
+        $defaultOptions = ['name' => $this->getAlias()];
+        $options        = array_merge($defaultOptions, $options);
+        $form           = $this->getFormService($options);
+        
         $this->buildForm($form);
         $this->dispatchFormEvent($form, $defaultData, FormEvent::FORM_PRE_INIT_EVENT);
         $this->formHandler->initForm($form, $defaultData);
@@ -135,7 +138,7 @@ abstract class AbstractFormBuilder extends AbstractContainerAware implements For
     
     protected function dispatchFormEvent(FormInterface $form, EntityInterface $entity = null, string $name)
     {
-        $eventName = sprintf('%s.%s', $form->getOption('name'), $name);
+        $eventName = sprintf('%s.%s', $this->getAlias(), $name);
         
         $this->eventDispatcher->dispatch($eventName, new FormEvent($this, $form, $entity));
     }

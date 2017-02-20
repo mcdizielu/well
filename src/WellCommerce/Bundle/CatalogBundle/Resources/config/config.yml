@@ -86,7 +86,7 @@ well_commerce_api:
         WellCommerce\Bundle\CatalogBundle\Entity\UnitTranslation:
             mapping: "@WellCommerceCatalogBundle/Resources/config/serialization/UnitTranslation.yml"
 
-well_commerce_core:
+well_commerce_routing:
     dynamic_routing:
         category:
             entity: WellCommerce\Bundle\CatalogBundle\Entity\CategoryRoute
@@ -232,32 +232,9 @@ well_commerce_catalog:
             condition: WellCommerce\Component\DataSet\Conditions\Condition\In
             enabled: true
             column: filteredCategory
+
+well_commerce_search:
     search_engine:
-        quick_search:
-            limit: 20
-            order_by: "score"
-            order_dir: "asc"
-        adapters:
-            elasticsearch:
-                class: WellCommerce\Component\Search\Adapter\ElasticSearch\ElasticSearchAdapter
-                options:
-                    number_of_shards: 2
-                    number_of_replicas: 0
-                    index_prefix: wellcommerce_
-                    query_min_length: 3
-                    result_limit: 100
-                    query_builder_class: WellCommerce\Component\Search\Adapter\ElasticSearch\ElasticSearchQueryBuilder
-            lucene:
-                class: WellCommerce\Component\Search\Adapter\ZendLucene\ZendLuceneAdapter
-                options:
-                    index_path: "%kernel.root_dir%/lucene"
-                    max_buffered_docs: 10
-                    max_merge_docs: 100000
-                    merge_factor: 10
-                    index_prefix: wellcommerce_
-                    query_min_length: 3
-                    result_limit: 100
-                    query_builder_class: WellCommerce\Component\Search\Adapter\ZendLucene\ZendLuceneQueryBuilder
         index:
             types:
                 product:

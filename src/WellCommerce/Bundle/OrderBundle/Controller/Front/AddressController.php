@@ -31,7 +31,7 @@ class AddressController extends AbstractFrontController
     public function indexAction(Request $request): Response
     {
         $order = $this->getOrderProvider()->getCurrentOrder();
-        $form  = $this->getForm($order, [
+        $form  = $this->formBuilder->createForm($order, [
             'validation_groups' => $this->getValidationGroupsForRequest($request),
         ]);
         

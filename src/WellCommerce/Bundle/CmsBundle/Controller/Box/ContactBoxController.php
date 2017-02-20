@@ -28,8 +28,7 @@ class ContactBoxController extends AbstractBoxController
     {
         /** @var ContactTicket $resource */
         $resource = $this->get('contact_ticket.manager')->initResource();
-        
-        $form = $this->getForm($resource);
+        $form     = $this->formBuilder->createForm($resource);
         
         if ($form->handleRequest()->isSubmitted()) {
             if ($form->isValid()) {

@@ -12,6 +12,8 @@
 
 namespace WellCommerce\Bundle\AppBundle\Configurator;
 
+use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
+
 /**
  * Class ClientForgotPasswordBoxConfigurator
  *

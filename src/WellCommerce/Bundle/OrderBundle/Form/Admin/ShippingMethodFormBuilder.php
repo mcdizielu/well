@@ -25,9 +25,11 @@ class ShippingMethodFormBuilder extends AbstractFormBuilder
 {
     protected $calculators;
     
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.shipping_method';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $calculatorOptions = [];

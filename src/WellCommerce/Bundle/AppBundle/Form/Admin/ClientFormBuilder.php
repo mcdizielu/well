@@ -12,7 +12,6 @@
 namespace WellCommerce\Bundle\AppBundle\Form\Admin;
 
 use WellCommerce\Bundle\CoreBundle\Form\AbstractFormBuilder;
-use WellCommerce\Bundle\CoreBundle\Helper\Helper;
 use WellCommerce\Component\Form\Elements\FormInterface;
 
 /**
@@ -22,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class ClientFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.client';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $countries      = $this->get('country.repository')->all();
@@ -200,7 +201,7 @@ class ClientFormBuilder extends AbstractFormBuilder
             'name'  => 'shippingAddress.line1',
             'label' => $this->trans('client.label.address.line1'),
         ]));
-    
+        
         $shippingAddress->addChild($this->getElement('text_field', [
             'name'  => 'shippingAddress.companyName',
             'label' => $this->trans('client.label.address.company_name'),

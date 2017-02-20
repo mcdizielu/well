@@ -50,9 +50,9 @@ _admin_product_status:
     resource: "@WellCommerceCatalogBundle/Resources/config/routing/product_status/admin.yml"
     prefix: /admin/catalog/product/status
 
-_front_search:
-    resource: "@WellCommerceCatalogBundle/Resources/config/routing/search/front.yml"
-    prefix: /search
+_front_product_search:
+    resource: "@WellCommerceCatalogBundle/Resources/config/routing/product_search/front.yml"
+    prefix: /search/product
 
 _admin_unit:
     resource: "@WellCommerceCatalogBundle/Resources/config/routing/unit/admin.yml"

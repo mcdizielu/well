@@ -21,6 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class ConfirmationFormBuilder extends AbstractFormBuilder
 {
+    public function getAlias(): string
+    {
+        return 'front.confirmation';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $form->addChild($this->getElement('text_area', [

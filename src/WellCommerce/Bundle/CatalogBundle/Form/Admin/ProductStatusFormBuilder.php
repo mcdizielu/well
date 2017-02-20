@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class ProductStatusFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.product_status';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $mainData = $form->addChild($this->getElement('nested_fieldset', [
@@ -57,7 +59,7 @@ class ProductStatusFormBuilder extends AbstractFormBuilder
             'name'            => 'slug',
             'label'           => $this->trans('common.label.slug'),
             'name_field'      => $name,
-            'generate_route'  => 'admin.routing.generate',
+            'generate_route'  => 'route.generate',
             'translatable_id' => $this->getRequestHelper()->getAttributesBagParam('id'),
             'rules'           => [
                 $this->getRule('required')

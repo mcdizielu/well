@@ -21,39 +21,40 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class ContactFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'front.contact';
+    }
+    
     public function buildForm(FormInterface $form)
     {
-
         $form->addChild($this->getElement('text_field', [
             'name'  => 'name',
             'label' => $this->trans('contact_ticket.label.name'),
         ]));
-
+        
         $form->addChild($this->getElement('text_field', [
             'name'  => 'surname',
             'label' => $this->trans('contact_ticket.label.surname'),
         ]));
-
+        
         $form->addChild($this->getElement('text_field', [
             'name'  => 'phone',
             'label' => $this->trans('contact_ticket.label.phone_number'),
         ]));
-
+        
         $form->addChild($this->getElement('text_field', [
             'name'  => 'email',
             'label' => $this->trans('contact_ticket.label.email'),
         ]));
-
+        
         $form->addChild($this->getElement('text_area', [
             'name'  => 'content',
             'label' => $this->trans('contact_ticket.label.content'),
             'rows'  => 5,
-            'cols'  => 20
+            'cols'  => 20,
         ]));
-
+        
         $form->addFilter($this->getFilter('no_code'));
         $form->addFilter($this->getFilter('trim'));
         $form->addFilter($this->getFilter('secure'));

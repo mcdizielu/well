@@ -13,7 +13,6 @@
 namespace WellCommerce\Bundle\CoreBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Reference;
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\Definition\AdminControllerDefinitionFactory;
 
 /**
@@ -30,16 +29,13 @@ final class AutoRegisterControllerPass extends AbstractAutoRegisterPass
         
         foreach ($classes as $baseName => $className) {
             $controllerServiceId = $this->serviceIdGenerator->getServiceId($baseName, 'controller.admin');
+            
             if (false === $container->has($controllerServiceId)) {
-                $managerServiceId     = $this->serviceIdGenerator->getServiceId($baseName, 'manager');
-                $formBuilderServiceId = $this->serviceIdGenerator->getServiceId($baseName, 'form_builder.admin');
-                $dataGridServiceId    = $this->serviceIdGenerator->getServiceId($baseName, 'datagrid');
-                $dataSetServiceId     = $this->serviceIdGenerator->getServiceId($baseName, 'dataset.admin');
-                $manager              = $container->has($managerServiceId) ? new Reference($managerServiceId) : null;
-                $formBuilder          = $container->has($formBuilderServiceId) ? new Reference($formBuilderServiceId) : null;
-                $dataGrid             = $container->has($dataGridServiceId) ? new Reference($dataGridServiceId) : null;
-                $dataSet              = $container->has($dataSetServiceId) ? new Reference($dataSetServiceId) : null;
-                $definition           = $definitionFactory->create($className, $manager, $formBuilder, $dataGrid, $dataSet);
+                $manager     = $this->createReference($baseName, 'manager', $container);
+                $formBuilder = $this->createReference($baseName, 'form_builder.admin', $container);
+                $dataGrid    = $this->createReference($baseName, 'datagrid', $container);
+                $dataSet     = $this->createReference($baseName, 'dataset.admin', $container);
+                $definition  = $definitionFactory->create($className, $manager, $formBuilder, $dataGrid, $dataSet);
                 $container->setDefinition($controllerServiceId, $definition);
             }
         }

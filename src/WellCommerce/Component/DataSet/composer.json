@@ -1,5 +1,6 @@
 {
   "name": "wellcommerce/dataset",
+  "type": "wellcommerce-component",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce DataSet",
@@ -30,14 +31,17 @@
   },
   "require": {
     "php": "^7.0",
-    "doctrine/orm": "2.5.2",
-    "symfony/options-resolver": "^3.0",
-    "symfony/property-access": "^3.0",
+    "doctrine/orm": "v2.5.4",
+    "symfony/options-resolver": "v3.2.2",
+    "symfony/property-access": "v3.2.2",
     "wellcommerce/collections": "^0.7@dev"
   },
   "extra": {
     "branch-alias": {
       "dev-master": "0.7.x-dev"
+    },
+    "wellcommerce-component": {
+      "install-dir": "src/WellCommerce/Component/DataSet"
     }
   }
 }

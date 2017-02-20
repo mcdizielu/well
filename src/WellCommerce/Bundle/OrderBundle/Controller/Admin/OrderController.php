@@ -44,7 +44,7 @@ class OrderController extends AbstractAdminController
         
         $this->getOrderProvider()->setCurrentOrder($resource);
         
-        $form = $this->getForm($resource, [
+        $form = $this->formBuilder->createForm($resource, [
             'class' => 'editOrder',
         ]);
         
@@ -140,10 +140,9 @@ class OrderController extends AbstractAdminController
     
     protected function createOrderStatusHistoryForm(OrderStatusHistory $orderStatusHistory): FormInterface
     {
-        return $this->get('order_status_history.form_builder.admin')->createForm([
-            'name'  => 'orderStatusHistory',
+        return $this->get('order_status_history.form_builder.admin')->createForm($orderStatusHistory, [
             'class' => 'statusChange',
-        ], $orderStatusHistory);
+        ]);
     }
     
     protected function createOrderStatusHistoryResource(Order $order): OrderStatusHistory

@@ -12,6 +12,14 @@ form:
     media_data:
         image_id: ID obrazka
 
+channel:
+    heading:
+        index: Kanały aktualizacji
+        add: Dodaj nowy kanał
+    label:
+        name: Nazwa
+        url: Adres URL
+
 client:
     label:
         username: Login (e-mail)
@@ -279,6 +287,30 @@ media:
     button:
         select_from_library: Wybierz z biblioteki
         add_from_disk: Dodaj z dysku
+
+package:
+    heading:
+        index: Moduły
+        require: Pobierz moduł
+    button:
+        sync: Synchronizuj moduły
+        run: Rozpocznij pobieranie
+    label:
+        id: ID
+        name: Nazwa
+        full_name: Pełna nazwa
+        vendor: Dostawca
+        local_version: Wersja lokalna
+        remote_version: Wersja zdalna
+        created_at: Zainstalowany
+        updated_at: Zaktualizowany
+        output: Status instalacji
+    fieldset:
+        information: Informacje
+        progress: Postęp pobierania
+    flash:
+        sync:
+            success: Synchronizacja zakończona sukcesem.
 
 price:
     sell_price:

@@ -13,7 +13,7 @@
 namespace WellCommerce\Bundle\OrderBundle\DataSet\Transformer;
 
 use Doctrine\Common\Collections\Criteria;
-use WellCommerce\Bundle\CoreBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderProduct;
 use WellCommerce\Component\DataSet\Transformer\AbstractDataSetTransformer;
 

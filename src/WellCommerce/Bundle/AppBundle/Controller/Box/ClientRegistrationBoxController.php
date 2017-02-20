@@ -23,14 +23,13 @@ use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
  */
 class ClientRegistrationBoxController extends AbstractBoxController
 {
-    public function indexAction(LayoutBoxSettingsCollection $boxSettings) : Response
+    public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
         $manager  = $this->getManager();
         $resource = $manager->initResource();
         
-        $form = $this->getForm($resource, [
-            'name'              => 'register',
-            'validation_groups' => ['client_registration']
+        $form = $this->formBuilder->createForm($resource, [
+            'validation_groups' => ['client_registration'],
         ]);
         
         if ($form->handleRequest()->isSubmitted()) {

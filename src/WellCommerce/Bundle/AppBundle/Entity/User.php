@@ -40,7 +40,6 @@ class User implements \Serializable, EquatableInterface, UserInterface, EntityIn
     protected $apiKey    = '';
     protected $password  = '';
     protected $email     = '';
-    protected $salt      = '';
     
     /**
      * @var Collection
@@ -56,7 +55,6 @@ class User implements \Serializable, EquatableInterface, UserInterface, EntityIn
     {
         $this->roles  = new ArrayCollection();
         $this->groups = new ArrayCollection();
-        $this->salt   = base_convert(sha1(uniqid(mt_rand(), true)), 16, 36);
     }
     
     public function getFirstName(): string
@@ -99,14 +97,9 @@ class User implements \Serializable, EquatableInterface, UserInterface, EntityIn
         $this->email = $email;
     }
     
-    public function setSalt($salt)
-    {
-        $this->salt = $salt;
-    }
-    
     public function getSalt()
     {
-        return;
+        return null;
     }
     
     public function getPassword()
@@ -117,7 +110,7 @@ class User implements \Serializable, EquatableInterface, UserInterface, EntityIn
     public function setPassword($password)
     {
         if (strlen($password)) {
-            $this->password = password_hash($password, PASSWORD_BCRYPT, ['cost' => 12]);
+            $this->password = password_hash($password, PASSWORD_BCRYPT);
         }
     }
     
@@ -152,11 +145,11 @@ class User implements \Serializable, EquatableInterface, UserInterface, EntityIn
     
     public function isEqualTo(UserInterface $user)
     {
-        if ($this->password !== $user->getPassword()) {
+        if (!$user instanceof User) {
             return false;
         }
         
-        if ($this->salt !== $user->getSalt()) {
+        if ($this->password !== $user->getPassword()) {
             return false;
         }
         

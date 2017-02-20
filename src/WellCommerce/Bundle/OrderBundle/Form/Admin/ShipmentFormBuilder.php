@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class ShipmentFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.shipment';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $orderStatuses = $this->get('order_status.dataset.admin')->getResult('select');

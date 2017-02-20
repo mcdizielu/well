@@ -15,7 +15,7 @@ namespace WellCommerce\Bundle\CatalogBundle\Manager;
 use WellCommerce\Bundle\AppBundle\Entity\Locale;
 use WellCommerce\Bundle\AppBundle\Entity\Shop;
 use WellCommerce\Bundle\CatalogBundle\Entity\Category;
-use WellCommerce\Bundle\CoreBundle\Helper\Sluggable;
+use WellCommerce\Bundle\CoreBundle\Helper\Helper;
 use WellCommerce\Bundle\CoreBundle\Manager\AbstractManager;
 
 /**
@@ -79,12 +79,12 @@ class CategoryManager extends AbstractManager
         $category->mergeNewTranslations();
     }
     
-    protected function getLocaleSlug(Locale $locale, $categoryName)
+    protected function getLocaleSlug(Locale $locale, $name)
     {
-        $slug          = Sluggable::makeSlug($categoryName);
+        $slug          = Helper::urlize($name);
         $currentLocale = $this->getRequestHelper()->getCurrentLocale();
         if ($locale->getCode() != $currentLocale) {
-            $slug = Sluggable::makeSlug(sprintf('%s-%s', $categoryName, $locale->getCode()));
+            $slug = sprintf('%s/%s', $locale->getCode(), $slug);
         }
         
         return $slug;

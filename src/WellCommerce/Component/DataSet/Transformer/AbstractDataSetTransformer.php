@@ -25,27 +25,18 @@ abstract class AbstractDataSetTransformer implements DataSetTransformerInterface
      * @var array
      */
     protected $options;
-
-    /**
-     * {@inheritdoc}
-     */
+    
     public function configure(array $options = [])
     {
         $optionsResolver = new OptionsResolver();
         $this->configureOptions($optionsResolver);
         $this->options = $optionsResolver->resolve($options);
     }
-
-    /**
-     * {@inheritdoc}
-     */
+    
     public function configureOptions(OptionsResolver $resolver)
     {
-
+        
     }
-
-    /**
-     * {@inheritdoc}
-     */
+    
     abstract public function transformValue($value);
 }

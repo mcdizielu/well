@@ -17,9 +17,9 @@ use WellCommerce\Bundle\CoreBundle\Controller\AbstractController;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
 use WellCommerce\Bundle\OrderBundle\Provider\Admin\OrderProviderInterface;
-use WellCommerce\Component\DataGrid\Conditions\ConditionsResolver;
 use WellCommerce\Component\DataGrid\DataGridInterface;
 use WellCommerce\Component\DataSet\Conditions\ConditionsCollection;
+use WellCommerce\Component\DataSet\Conditions\ConditionsResolver;
 use WellCommerce\Component\DataSet\DataSetInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
 
@@ -28,7 +28,7 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-abstract class AbstractAdminController extends AbstractController implements AdminControllerInterface
+abstract class AbstractAdminController extends AbstractController
 {
     /**
      * @var null|DataGridInterface
@@ -85,7 +85,7 @@ abstract class AbstractAdminController extends AbstractController implements Adm
     public function addAction(Request $request): Response
     {
         $resource = $this->getManager()->initResource();
-        $form     = $this->getForm($resource);
+        $form     = $this->formBuilder->createForm($resource);
         
         if ($form->handleRequest()->isSubmitted()) {
             if ($form->isValid()) {
@@ -108,7 +108,7 @@ abstract class AbstractAdminController extends AbstractController implements Adm
             return $this->redirectToAction('index');
         }
         
-        $form = $this->getForm($resource);
+        $form = $this->formBuilder->createForm($resource);
         
         if ($form->handleRequest()->isSubmitted()) {
             if ($form->isValid()) {

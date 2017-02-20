@@ -12,8 +12,8 @@
 
 namespace WellCommerce\Bundle\CoreBundle\Test\Configurator;
 
-use WellCommerce\Bundle\AppBundle\Configurator\LayoutBoxConfiguratorInterface;
-use WellCommerce\Bundle\CoreBundle\Controller\Box\BoxControllerInterface;
+use WellCommerce\Bundle\CoreBundle\Controller\ControllerInterface;
+use WellCommerce\Bundle\CoreBundle\Layout\Configurator\LayoutBoxConfiguratorInterface;
 use WellCommerce\Bundle\CoreBundle\Test\AbstractTestCase;
 
 /**
@@ -31,7 +31,7 @@ abstract class AbstractLayoutBoxConfiguratorTestCase extends AbstractTestCase
         $configurator = $this->getService();
         $this->assertEquals($type, $configurator->getType());
         $this->assertEquals($controllerService, $configurator->getControllerService());
-        $this->assertInstanceOf(BoxControllerInterface::class, $this->container->get($controllerService));
+        $this->assertInstanceOf(ControllerInterface::class, $this->container->get($controllerService));
     }
     
     abstract protected function getService(): LayoutBoxConfiguratorInterface;

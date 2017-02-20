@@ -15,8 +15,8 @@ namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
 use Doctrine\Common\Persistence\ObjectManager;
 use WellCommerce\Bundle\CatalogBundle\Entity\Producer;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProducerTranslation;
-use WellCommerce\Bundle\CoreBundle\DataFixtures\AbstractDataFixture;
-use WellCommerce\Bundle\CoreBundle\Helper\Sluggable;
+use WellCommerce\Bundle\CoreBundle\Helper\Helper;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
 
 /**
  * Class LoadProducerData
@@ -63,7 +63,7 @@ class LoadProducerData extends AbstractDataFixture
                 /** @var ProducerTranslation $translation */
                 $translation = $producer->translate($locale->getCode());
                 $translation->setName($name);
-                $translation->setSlug($locale->getCode() . '/' . Sluggable::makeSlug($name));
+                $translation->setSlug(Helper::urlize($name));
             }
             
             $producer->mergeNewTranslations();

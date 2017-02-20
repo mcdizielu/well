@@ -15,12 +15,12 @@ namespace WellCommerce\Bundle\AppBundle\Renderer;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 use Symfony\Component\HttpFoundation\Response;
 use WellCommerce\Bundle\AppBundle\Collection\LayoutBoxSettingsCollection;
-use WellCommerce\Bundle\AppBundle\Configurator\LayoutBoxConfiguratorCollection;
 use WellCommerce\Bundle\AppBundle\Entity\LayoutBox;
 use WellCommerce\Bundle\AppBundle\Exception\LayoutBoxNotFoundException;
-use WellCommerce\Bundle\CoreBundle\Controller\Box\BoxControllerInterface;
+use WellCommerce\Bundle\CoreBundle\Controller\ControllerInterface;
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractContainerAware;
-use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
+use WellCommerce\Bundle\CoreBundle\Layout\Configurator\LayoutBoxConfiguratorCollection;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 
 /**
  * Class LayoutBoxRenderer
@@ -30,18 +30,18 @@ use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
 final class LayoutBoxRenderer extends AbstractContainerAware implements LayoutBoxRendererInterface
 {
     /**
-     * @var ManagerInterface
+     * @var RepositoryInterface
      */
-    private $manager;
+    private $repository;
     
     /**
      * @var LayoutBoxConfiguratorCollection
      */
     private $configurators;
     
-    public function __construct(LayoutBoxConfiguratorCollection $configurators, ManagerInterface $manager)
+    public function __construct(LayoutBoxConfiguratorCollection $configurators, RepositoryInterface $repository)
     {
-        $this->manager       = $manager;
+        $this->repository    = $repository;
         $this->configurators = $configurators;
     }
     
@@ -54,7 +54,7 @@ final class LayoutBoxRenderer extends AbstractContainerAware implements LayoutBo
     
     private function findLayoutBox($identifier): LayoutBox
     {
-        $layoutBox = $this->manager->getRepository()->findOneBy(['identifier' => $identifier]);
+        $layoutBox = $this->repository->findOneBy(['identifier' => $identifier]);
         
         if (!$layoutBox instanceof LayoutBox) {
             throw new LayoutBoxNotFoundException($identifier);
@@ -66,8 +66,8 @@ final class LayoutBoxRenderer extends AbstractContainerAware implements LayoutBo
     private function getLayoutBoxContent(string $identifier, array $params = []): Response
     {
         $layoutBox  = $this->findLayoutBox($identifier);
-        $controller = $this->resolveControllerService($layoutBox);
-        $action     = $this->resolveControllerAction($controller);
+        $controller = $this->getControllerService($layoutBox);
+        $action     = $this->getControllerAction($controller);
         $settings   = $this->makeSettingsCollection($layoutBox, $params);
         
         return call_user_func_array([$controller, $action], [$settings]);
@@ -89,7 +89,7 @@ final class LayoutBoxRenderer extends AbstractContainerAware implements LayoutBo
         return $collection;
     }
     
-    private function resolveControllerService(LayoutBox $layoutBox): BoxControllerInterface
+    private function getControllerService(LayoutBox $layoutBox): ControllerInterface
     {
         $boxType      = $layoutBox->getBoxType();
         $configurator = $this->configurators->get($boxType);
@@ -102,7 +102,7 @@ final class LayoutBoxRenderer extends AbstractContainerAware implements LayoutBo
         return $this->get($service);
     }
     
-    private function resolveControllerAction(BoxControllerInterface $controller): string
+    private function getControllerAction(ControllerInterface $controller): string
     {
         $currentAction = $this->getRouterHelper()->getCurrentAction();
         

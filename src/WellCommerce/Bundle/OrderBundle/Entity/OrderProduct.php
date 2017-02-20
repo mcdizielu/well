@@ -74,6 +74,15 @@ class OrderProduct implements EntityInterface
         return $this->getProduct()->getSellPrice();
     }
     
+    public function getCurrentWeight(): float
+    {
+        if ($this->hasVariant()) {
+            return $this->getVariant()->getWeight();
+        }
+        
+        return $this->getProduct()->getWeight();
+    }
+    
     public function getQuantity(): int
     {
         return $this->quantity;

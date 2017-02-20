@@ -12,9 +12,9 @@
 
 namespace WellCommerce\Bundle\OrderBundle\Calculator;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use WellCommerce\Bundle\OrderBundle\Entity\ShippingMethod;
+use WellCommerce\Bundle\OrderBundle\Entity\ShippingMethodCost;
 
 /**
  * Class WeightTableCalculator
@@ -23,12 +23,14 @@ use WellCommerce\Bundle\OrderBundle\Entity\ShippingMethod;
  */
 class WeightTableCalculator implements ShippingCalculatorInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function calculate(ShippingMethod $shippingMethod, ShippingSubjectInterface $subject): Collection
     {
-        return new ArrayCollection();
+        $ranges      = $shippingMethod->getCosts();
+        $totalWeight = $subject->getWeight();
+        
+        return $ranges->filter(function (ShippingMethodCost $cost) use ($totalWeight) {
+            return ($cost->getRangeFrom() <= $totalWeight && $cost->getRangeTo() >= $totalWeight);
+        });
     }
     
     public function getAlias(): string

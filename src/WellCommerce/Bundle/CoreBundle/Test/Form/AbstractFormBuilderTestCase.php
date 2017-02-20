@@ -45,9 +45,7 @@ abstract class AbstractFormBuilderTestCase extends AbstractTestCase
         $formBuilder = $this->getFormBuilderService();
 
         if (null !== $formBuilder) {
-            $form = $formBuilder->createForm([
-                'name' => 'test'
-            ], $this->getDefaultFormData());
+            $form = $formBuilder->createForm($this->getDefaultFormData());
 
             $this->assertInstanceOf(FormInterface::class, $form);
         }
@@ -60,9 +58,7 @@ abstract class AbstractFormBuilderTestCase extends AbstractTestCase
         if (null !== $formBuilder) {
             $sample = $this->getDefaultFormData();
 
-            $form = $formBuilder->createForm([
-                'name' => 'test'
-            ], $sample);
+            $form = $formBuilder->createForm($sample);
 
             $this->assertEquals($sample, $form->getModelData());
         }
@@ -77,9 +73,7 @@ abstract class AbstractFormBuilderTestCase extends AbstractTestCase
         if (null !== $formBuilder) {
             $sample = $this->getDefaultFormData();
 
-            $form = $formBuilder->createForm([
-                'name' => 'test'
-            ], $sample);
+            $form = $formBuilder->createForm($sample);
 
             $this->assertGreaterThan(0, $form->getChildren()->count());
         }

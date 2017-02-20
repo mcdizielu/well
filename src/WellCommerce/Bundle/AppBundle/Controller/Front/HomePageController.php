@@ -22,7 +22,7 @@ use WellCommerce\Bundle\CoreBundle\Controller\AbstractController;
  */
 class HomePageController extends AbstractController
 {
-    public function indexAction() : Response
+    public function indexAction(): Response
     {
         return $this->displayTemplate('index');
     }

@@ -27,8 +27,8 @@ $(document).ready(function () {
     });
 
     $('form#search').GSearch({
-        sProductSearchRoute:        'front.search.index',
-        sProductLiveSearchRoute:    'front.search.quick',
+        sProductSearchRoute:        'front.product_search.index',
+        sProductLiveSearchRoute:    'front.product_search.quick',
         sPhraseInputSelector:       '#phrase',
         sSearchResultsSelector:     'div#search-results',
         oAddCartButtonSettings:     oAddCartButtonSettings

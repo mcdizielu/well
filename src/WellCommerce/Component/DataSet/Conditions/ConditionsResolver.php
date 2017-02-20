@@ -19,40 +19,25 @@ namespace WellCommerce\Component\DataSet\Conditions;
  */
 class ConditionsResolver
 {
-    /**
-     * Adds additional conditions to request
-     *
-     * @param array                $params
-     * @param ConditionsCollection $conditions
-     *
-     * @return ConditionsCollection
-     */
     public function resolveConditions($params, ConditionsCollection $conditions)
     {
         if (is_array($params)) {
             foreach ($params as $where) {
                 list($column, $operator, $value) = $this->parseParam($where);
-
+                
                 $factory   = new ConditionFactory($column, $value);
                 $condition = $factory->createCondition($operator);
                 $conditions->add($condition);
             }
         }
     }
-
-    /**
-     * Parses "where" parameters
-     *
-     * @param array $param
-     *
-     * @return array
-     */
-    private function parseParam(array $param)
+    
+    private function parseParam(array $param): array
     {
         $column   = $param['column'];
         $operator = $param['operator'];
-        $value    = isset($param['value']) ? $param['value'] : null;
-
+        $value    = $param['value'] ?? null;
+        
         return [
             $column,
             $operator,

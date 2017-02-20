@@ -14,9 +14,6 @@ addons:
         packages:
             - apache2
 
-before_install:
-    - if [[ $TRAVIS_PHP_VERSION = 7.* ]] ; then pecl config-set preferred_state beta; echo yes | pecl install apcu; fi;
-
 before_script:
     - sleep 10
     - phpenv config-rm xdebug.ini

@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class UserLoginFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.user_login';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $form->addChild($this->getElement('text_field', [

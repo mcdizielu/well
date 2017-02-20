@@ -31,7 +31,7 @@ class CartController extends AbstractFrontController
     public function indexAction(): Response
     {
         $order = $this->getOrderProvider()->getCurrentOrder();
-        $form  = $this->getForm($order, [
+        $form  = $this->formBuilder->createForm($order, [
             'validation_groups' => ['cart'],
         ]);
         

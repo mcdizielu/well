@@ -31,7 +31,7 @@ class ReviewBoxController extends AbstractBoxController
 {
     const RECOMMENDATION_COOKIE_EXPIRE = 86400 * 30 * 12 * 4;
     
-    public function indexAction(LayoutBoxSettingsCollection $boxSettings) : Response
+    public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
         $product = $this->getProductStorage()->getCurrentProduct();
         
@@ -40,7 +40,7 @@ class ReviewBoxController extends AbstractBoxController
         $resource->setProduct($product);
         
         $currentRoute = $product->translate()->getRoute()->getId();
-        $form         = $this->getForm($resource);
+        $form         = $this->formBuilder->createForm($resource);
         
         if ($form->handleRequest()->isSubmitted()) {
             if ($form->isValid()) {
@@ -53,7 +53,7 @@ class ReviewBoxController extends AbstractBoxController
                 
                 $this->getFlashHelper()->addSuccess('review.flash.success');
                 
-                return $this->getRouterHelper()->redirectTo('dynamic_'.$currentRoute);
+                return $this->getRouterHelper()->redirectTo('dynamic_' . $currentRoute);
             }
             
             $this->getFlashHelper()->addError('review.flash.error');
@@ -89,11 +89,11 @@ class ReviewBoxController extends AbstractBoxController
             
             $this->getFlashHelper()->addSuccess('report.flash.success');
             
-            return $this->getRouterHelper()->redirectTo('dynamic_'.$currentRoute);
+            return $this->getRouterHelper()->redirectTo('dynamic_' . $currentRoute);
         }
     }
     
-    public function recommendationAction(int $id, bool $like = true) : JsonResponse
+    public function recommendationAction(int $id, bool $like = true): JsonResponse
     {
         
         try {
@@ -160,7 +160,7 @@ class ReviewBoxController extends AbstractBoxController
         return $response;
     }
     
-    private function getRepository() : ReviewRepositoryInterface
+    private function getRepository(): ReviewRepositoryInterface
     {
         return $this->getManager()->getRepository();
     }

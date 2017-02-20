@@ -13,11 +13,11 @@
 namespace WellCommerce\Bundle\CoreBundle\Manager;
 
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractContainerAware;
-use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
-use WellCommerce\Bundle\CoreBundle\Event\EntityEvent;
-use WellCommerce\Bundle\CoreBundle\Doctrine\Factory\EntityFactoryInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Helper;
-use WellCommerce\Bundle\CoreBundle\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Event\EntityEvent;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Factory\EntityFactoryInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 
 /**
  * Class Manager
@@ -53,7 +53,7 @@ abstract class AbstractManager extends AbstractContainerAware implements Manager
         return $this->repository;
     }
     
-    public function initResource(): EntityInterface
+    public function initResource()
     {
         $entity = $this->factory->create();
         $this->dispatchEvent(self::POST_ENTITY_INIT_EVENT, $entity);

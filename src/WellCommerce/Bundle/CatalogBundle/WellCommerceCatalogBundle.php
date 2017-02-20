@@ -12,8 +12,6 @@
 
 namespace WellCommerce\Bundle\CatalogBundle;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use WellCommerce\Bundle\CatalogBundle\DependencyInjection\Compiler\SearchTypePass;
 use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
 
 /**
@@ -23,9 +21,4 @@ use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
  */
 final class WellCommerceCatalogBundle extends AbstractWellCommerceBundle
 {
-    public function build(ContainerBuilder $container)
-    {
-        parent::build($container);
-        $container->addCompilerPass(new SearchTypePass());
-    }
 }

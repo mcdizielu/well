@@ -12,7 +12,7 @@
 
 namespace WellCommerce\Bundle\WishlistBundle\Tests\Manager;
 
-use WellCommerce\Bundle\AppBundle\Configurator\LayoutBoxConfiguratorInterface;
+use WellCommerce\Bundle\CoreBundle\Layout\Configurator\LayoutBoxConfiguratorInterface;
 use WellCommerce\Bundle\CoreBundle\Test\Configurator\AbstractLayoutBoxConfiguratorTestCase;
 
 /**

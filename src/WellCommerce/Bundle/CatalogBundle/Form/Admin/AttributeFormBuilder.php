@@ -21,6 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class AttributeFormBuilder extends AbstractFormBuilder
 {
+    public function getAlias(): string
+    {
+        return 'admin.attribute';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [

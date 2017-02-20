@@ -18,6 +18,8 @@ use Swift_Plugins_LoggerPlugin;
 use Swift_Plugins_Loggers_EchoLogger;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\NotBlank;
 use WellCommerce\Bundle\CoreBundle\Entity\MailerConfiguration;
 use WellCommerce\Bundle\CoreBundle\Helper\Templating\TemplatingHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Validator\ValidatorHelperInterface;
@@ -61,14 +63,6 @@ final class MailerHelper implements MailerHelperInterface
         $this->templatingHelper = $templatingHelper;
         $this->validatorHelper  = $validatorHelper;
         $this->debug            = $debug;
-    }
-    
-    public function isEmailValid(string $email): bool
-    {
-        return $this->validatorHelper->isValid($email, [
-            new \Symfony\Component\Validator\Constraints\Email(),
-            new \Symfony\Component\Validator\Constraints\NotBlank(),
-        ]);
     }
     
     public function sendEmail(array $options): int
@@ -179,5 +173,13 @@ final class MailerHelper implements MailerHelperInterface
         }
         
         return $mailer;
+    }
+    
+    private function isEmailValid(string $email): bool
+    {
+        return $this->validatorHelper->isValid($email, [
+            new Email(),
+            new NotBlank(),
+        ]);
     }
 }

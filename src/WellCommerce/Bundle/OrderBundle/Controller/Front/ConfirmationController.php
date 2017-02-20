@@ -33,7 +33,7 @@ class ConfirmationController extends AbstractFrontController
             return $this->redirectToRoute('front.cart.index');
         }
         
-        $form = $this->getForm($order);
+        $form = $this->formBuilder->createForm($order);
         
         if ($form->handleRequest()->isSubmitted()) {
             if ($form->isValid()) {

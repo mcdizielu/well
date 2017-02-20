@@ -28,9 +28,8 @@ class ClientController extends AbstractAdminController
     {
         /** @var Client $resource */
         $resource = $this->getManager()->initResource();
-        $form     = $this->getForm($resource, [
-            'name'              => $this->getManager()->getRepository()->getAlias(),
-            'validation_groups' => ['client_admin_registration'],
+        $form     = $this->formBuilder->createForm($resource, [
+            'validation_groups' => ['client_admin_registration']
         ]);
         
         if ($form->handleRequest()->isSubmitted()) {

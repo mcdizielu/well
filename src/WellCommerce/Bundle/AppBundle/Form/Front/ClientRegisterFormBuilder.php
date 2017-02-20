@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class ClientRegisterFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'front.client_register';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $contactDetails = $form->addChild($this->getElement('nested_fieldset', [

@@ -31,6 +31,11 @@ use WellCommerce\Component\Form\Elements\Optioned\RadioGroup;
  */
 class CartFormBuilder extends AbstractFormBuilder
 {
+    public function getAlias(): string
+    {
+        return 'front.cart';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $order = $this->getOrderProvider()->getCurrentOrder();

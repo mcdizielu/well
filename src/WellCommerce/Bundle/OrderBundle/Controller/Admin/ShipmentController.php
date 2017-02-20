@@ -26,7 +26,7 @@ use WellCommerce\Bundle\OrderBundle\Entity\ShipmentInterface;
  */
 class ShipmentController extends AbstractAdminController
 {
-    public function addAction(Request $request) : Response
+    public function addAction(Request $request): Response
     {
         $courier = $request->get('courier');
         $orderId = $request->get('orderId');
@@ -38,8 +38,7 @@ class ShipmentController extends AbstractAdminController
         $shipment->setOrder($order);
         $shipment->setCourier($courier);
         
-        $form = $this->getForm($shipment, [
-            'name'         => $courier,
+        $form = $this->formBuilder->createForm($shipment, [
             'ajax_enabled' => false,
         ]);
         
@@ -69,12 +68,12 @@ class ShipmentController extends AbstractAdminController
         $labels  = $adapter->getLabels($date);
     }
     
-    private function getAdapter(string $courier) : ShipmentAdapterInterface
+    private function getAdapter(string $courier): ShipmentAdapterInterface
     {
-        if (false === $this->has($courier.'.shipment.adapter')) {
-            throw new ServiceNotFoundException($courier.'.shipment.adapter');
+        if (false === $this->has($courier . '.shipment.adapter')) {
+            throw new ServiceNotFoundException($courier . '.shipment.adapter');
         }
         
-        return $this->get($courier.'.shipment.adapter');
+        return $this->get($courier . '.shipment.adapter');
     }
 }

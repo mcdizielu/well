@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class AttributeGroupFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.attribute_group';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $groupData = $form->addChild($this->getElement('nested_fieldset', [

@@ -23,26 +23,25 @@ use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
  */
 class ClientSettingsBoxController extends AbstractBoxController
 {
-    public function indexAction(LayoutBoxSettingsCollection $boxSettings) : Response
+    public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
         $client             = $this->getAuthenticatedClient();
-        $contactDetailsForm = $this->getForm($client, [
-            'name'              => 'contact_details',
-            'validation_groups' => ['client_settings']
+        $contactDetailsForm = $this->formBuilder->createForm($client, [
+            'validation_groups' => ['client_settings'],
         ]);
-
+        
         if ($contactDetailsForm->handleRequest()->isSubmitted()) {
             if ($contactDetailsForm->isValid()) {
                 $this->getManager()->updateResource($client);
-
+                
                 $this->getFlashHelper()->addSuccess('client.flash.contact_details.success');
-
+                
                 return $this->redirectToRoute('front.client_settings.index');
             }
-
+            
             $this->getFlashHelper()->addError('client.flash.contact_details.error');
         }
-
+        
         return $this->displayTemplate('index', [
             'contactDetailsForm' => $contactDetailsForm,
         ]);

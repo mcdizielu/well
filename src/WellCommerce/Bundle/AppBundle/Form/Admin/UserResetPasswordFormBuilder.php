@@ -21,9 +21,11 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class UserResetPasswordFormBuilder extends AbstractFormBuilder
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getAlias(): string
+    {
+        return 'admin.user_reset_password';
+    }
+    
     public function buildForm(FormInterface $form)
     {
         $form->addChild($this->getElement('text_field', [

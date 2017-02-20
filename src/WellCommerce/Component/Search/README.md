@@ -1,2 +1,3 @@
 # Search
+
 WellCommerce Search Component

@@ -23,11 +23,6 @@ WellCommerce\Bundle\AppBundle\Entity\ClientDetails:
             length: 60
             unique: false
             nullable: false
-        salt:
-            type: string
-            length: 40
-            unique: false
-            nullable: false
         resetPasswordHash:
             type: string
             length: 48

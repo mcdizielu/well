@@ -14,8 +14,9 @@ namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use WellCommerce\Bundle\CmsBundle\Entity\Page;
-use WellCommerce\Bundle\CoreBundle\DataFixtures\AbstractDataFixture;
-use WellCommerce\Bundle\CoreBundle\Helper\Sluggable;
+use WellCommerce\Bundle\CmsBundle\Entity\PageTranslation;
+use WellCommerce\Bundle\CoreBundle\Helper\Helper;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
 
 /**
  * Class LoadPageData
@@ -93,9 +94,11 @@ class LoadPageData extends AbstractDataFixture
         $page->setSection('');
         $page->addShop($this->shop);
         foreach ($this->getLocales() as $locale) {
-            $page->translate($locale->getCode())->setName($name);
-            $page->translate($locale->getCode())->setSlug($locale->getCode() . '/' . Sluggable::makeSlug($name));
-            $page->translate($locale->getCode())->setContent($this->defaultText);
+            /** @var PageTranslation $translation */
+            $translation = $page->translate($locale->getCode());
+            $translation->setName($name);
+            $translation->setSlug(Helper::urlize($name));
+            $translation->setContent($this->defaultText);
         }
         
         $page->mergeNewTranslations();

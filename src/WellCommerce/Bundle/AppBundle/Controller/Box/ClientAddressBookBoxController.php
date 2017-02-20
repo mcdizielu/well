@@ -23,26 +23,25 @@ use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
  */
 class ClientAddressBookBoxController extends AbstractBoxController
 {
-    public function indexAction(LayoutBoxSettingsCollection $boxSettings) : Response
+    public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
         $client          = $this->getAuthenticatedClient();
-        $addressBookForm = $this->getForm($client, [
-            'name'              => 'client_address_book',
-            'validation_groups' => ['client_address_book']
+        $addressBookForm = $this->formBuilder->createForm($client, [
+            'validation_groups' => ['client_address_book'],
         ]);
-
+        
         if ($addressBookForm->handleRequest()->isSubmitted()) {
             if ($addressBookForm->isValid()) {
                 $this->getManager()->updateResource($client);
-
+                
                 $this->getFlashHelper()->addSuccess('client.flash.address_book.success');
-
+                
                 return $this->redirectToRoute('front.client_address_book.index');
             }
-
+            
             $this->getFlashHelper()->addError('client.flash.contact_details.error');
         }
-
+        
         return $this->displayTemplate('index', [
             'form' => $addressBookForm,
         ]);

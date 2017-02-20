@@ -534,8 +534,8 @@ var GLayeredNavigation = function(oOptions) {
 new GPlugin('GLayeredNavigation', oLayeredNavigationDefaults, GLayeredNavigation);
 
 var oSearchDefaultParams = {
-    sProductSearchRoute:      'front.search.index',
-    sProductLiveSearchRoute:  'front.search.quick',
+    sProductSearchRoute:      'front.product_search.index',
+    sProductLiveSearchRoute:  'front.product_search.quick',
     sPhraseInputSelector:     'form#search #phrase',
     sSearchResultsSelector:   'div#search-results',
     oAddCartButtonSettings:   {}
