@@ -1,2 +1,3 @@
 # Breadcrumb
-WellCommerce Breadcrumb Component
+
+Subtree split of main WellCommerce repository

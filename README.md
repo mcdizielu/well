@@ -18,7 +18,7 @@ The code is still hot but it only gets cooler :). Here are most important things
 - [Doctrine 2.5 ORM][2]
 - [PHPUnit 5 testing framework][3]
 - [Twig template engine][4]
-- [Twitter Bootstrap 3 as a base HTML framework][5]
+- [Twitter Bootstrap 3 as a base HTML framework][5]``
 
 Demo
 ------------
@@ -58,11 +58,11 @@ Then, use the `create-project` command to generate a new WellCommerce applicatio
 
 For developer/contributor edition use following command:
 
-    php composer.phar create-project wellcommerce/wellcommerce -s dev path/to/wellcommerce
+    php composer.phar create-project wellcommerce/wellcommerce -s dev path/to/wellcommerce dev-development
 
  or if the Composer is installed globally
     
-    composer create-project wellcommerce/wellcommerce -s dev path/to/wellcommerce
+    composer create-project wellcommerce/wellcommerce -s dev path/to/wellcommerce dev-development
     
 Composer will install WellCommerce and all its dependencies under the `path/to/wellcommerce` directory. You will be asked to enter configuration parameters during the install process.
 

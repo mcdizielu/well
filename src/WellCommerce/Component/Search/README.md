@@ -1,3 +1,3 @@
 # Search
 
-WellCommerce Search Component
+Subtree split of main WellCommerce repository
