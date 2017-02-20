@@ -1,3 +1,3 @@
 # ApiBundle
 
-Bundle provides basic API features in WellCommerce
+Provides basic API features in WellCommerce.
