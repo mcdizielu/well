@@ -27,7 +27,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Component\\DoctrineEnhancer\\": "src/WellCommerce/Component/DoctrineEnhancer"
+      "WellCommerce\\Component\\DoctrineEnhancer\\": ""
     }
   },
   "require": {
