@@ -1,0 +1,26 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+services:
+    review.layout_box.controller:
+        class: WellCommerce\Bundle\ReviewBundle\Controller\Box\ReviewBoxController
+        arguments: ['@review.manager', '@review.form_builder.front']
+        calls:
+            - [setContainer, ['@service_container']]
+
+    review.twig.extension:
+        class: WellCommerce\Bundle\ReviewBundle\Twig\Extension\ReviewExtension
+        tags:
+            - { name: twig.extension }
+        arguments:
+            - '@review_recommendation.repository'
+
+    review.doctrine.event_subscriber:
+        class: WellCommerce\Bundle\ReviewBundle\EventListener\ReviewEventSubscriber
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
