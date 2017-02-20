@@ -1,2 +1,3 @@
 # DataGrid
-WellCommerce DataGrid Component
+
+Subtree split of main WellCommerce repository
