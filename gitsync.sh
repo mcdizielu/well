@@ -58,3 +58,24 @@ if [ "$action" == 'pull' ]
             git subtree pull --prefix=src/WellCommerce/Bundle/$i git@github.com:WellCommerce/$i.git master
         done
 fi
+
+if [ "$action" == 'release' ]
+    then
+        git commit -a -m "Pushing changes before synchronizing subtrees"
+
+        for i in "${components[@]}"
+        do
+            git subtree push --prefix=src/WellCommerce/Component/$i git@github.com:WellCommerce/$i.git master
+        done
+
+        for i in "${bundles[@]}"
+        do
+            git subtree push --prefix=src/WellCommerce/Bundle/$i git@github.com:WellCommerce/$i.git master
+        done
+
+        sleep 1m
+
+        php composer.phar update
+        git commit -a -m "Updated composer.lock file"
+        git push
+fi
