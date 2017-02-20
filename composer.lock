@@ -5768,12 +5768,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/ApiBundle.git",
-                "reference": "375130f686de501e879defbf87306fd76165f342"
+                "reference": "f4e7e8fde7ff50a1ad6084e4c5dfc17865c5cf9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/ApiBundle/zipball/375130f686de501e879defbf87306fd76165f342",
-                "reference": "375130f686de501e879defbf87306fd76165f342",
+                "url": "https://api.github.com/repos/WellCommerce/ApiBundle/zipball/f4e7e8fde7ff50a1ad6084e4c5dfc17865c5cf9f",
+                "reference": "f4e7e8fde7ff50a1ad6084e4c5dfc17865c5cf9f",
                 "shasum": ""
             },
             "require": {
@@ -5790,7 +5790,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\ApiBundle\\": "src/WellCommerce/Bundle/ApiBundle"
+                    "WellCommerce\\Bundle\\ApiBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -5813,7 +5813,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:24:16"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/app-bundle",
@@ -5821,12 +5821,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/AppBundle.git",
-                "reference": "fbe2b44ee97b678c8a5541847d8ce2ab3c5e84c6"
+                "reference": "7b08eb4c46f92a71560e4b87a69a481d73d0b420"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/AppBundle/zipball/fbe2b44ee97b678c8a5541847d8ce2ab3c5e84c6",
-                "reference": "fbe2b44ee97b678c8a5541847d8ce2ab3c5e84c6",
+                "url": "https://api.github.com/repos/WellCommerce/AppBundle/zipball/7b08eb4c46f92a71560e4b87a69a481d73d0b420",
+                "reference": "7b08eb4c46f92a71560e4b87a69a481d73d0b420",
                 "shasum": ""
             },
             "require": {
@@ -5844,7 +5844,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\AppBundle\\": "src/WellCommerce/Bundle/AppBundle"
+                    "WellCommerce\\Bundle\\AppBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -5868,7 +5868,7 @@
                 "symfony",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:24:16"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/breadcrumb",
@@ -5876,12 +5876,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/Breadcrumb.git",
-                "reference": "c29cfa865547ea9709937d00733b2eab68eac2cf"
+                "reference": "05f79205913e39e83a91aa127c8f94c38e867700"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/Breadcrumb/zipball/c29cfa865547ea9709937d00733b2eab68eac2cf",
-                "reference": "c29cfa865547ea9709937d00733b2eab68eac2cf",
+                "url": "https://api.github.com/repos/WellCommerce/Breadcrumb/zipball/05f79205913e39e83a91aa127c8f94c38e867700",
+                "reference": "05f79205913e39e83a91aa127c8f94c38e867700",
                 "shasum": ""
             },
             "require": {
@@ -5898,7 +5898,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Component\\Breadcrumb\\": "src/WellCommerce/Component/Breadcrumb"
+                    "WellCommerce\\Component\\Breadcrumb\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -5921,7 +5921,7 @@
                 "component",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:43:38"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/catalog-bundle",
@@ -5929,12 +5929,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/CatalogBundle.git",
-                "reference": "9f0ffa8ce6ecb23122f268068f81b6c61f0651fe"
+                "reference": "9e1573c67f873429d94195ced37ea17d7ce3af82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/CatalogBundle/zipball/9f0ffa8ce6ecb23122f268068f81b6c61f0651fe",
-                "reference": "9f0ffa8ce6ecb23122f268068f81b6c61f0651fe",
+                "url": "https://api.github.com/repos/WellCommerce/CatalogBundle/zipball/9e1573c67f873429d94195ced37ea17d7ce3af82",
+                "reference": "9e1573c67f873429d94195ced37ea17d7ce3af82",
                 "shasum": ""
             },
             "require": {
@@ -5951,7 +5951,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\CatalogBundle\\": "src/WellCommerce/Bundle/CatalogBundle"
+                    "WellCommerce\\Bundle\\CatalogBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -5974,7 +5974,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:24:16"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/cms-bundle",
@@ -5982,12 +5982,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/CmsBundle.git",
-                "reference": "977869a96ca1b9f158812371052015f56253e43b"
+                "reference": "c999fb538fb2836ead711b884c4bb317d9572f99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/CmsBundle/zipball/977869a96ca1b9f158812371052015f56253e43b",
-                "reference": "977869a96ca1b9f158812371052015f56253e43b",
+                "url": "https://api.github.com/repos/WellCommerce/CmsBundle/zipball/c999fb538fb2836ead711b884c4bb317d9572f99",
+                "reference": "c999fb538fb2836ead711b884c4bb317d9572f99",
                 "shasum": ""
             },
             "require": {
@@ -6004,7 +6004,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\CmsBundle\\": "src/WellCommerce/Bundle/CmsBundle"
+                    "WellCommerce\\Bundle\\CmsBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6027,7 +6027,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 22:23:32"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/collections",
@@ -6035,12 +6035,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/Collections.git",
-                "reference": "39418e597d30ba9dae67cf97c13c380067f2dd1e"
+                "reference": "9c07110e515796a539196321be295b20ad2a59a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/Collections/zipball/39418e597d30ba9dae67cf97c13c380067f2dd1e",
-                "reference": "39418e597d30ba9dae67cf97c13c380067f2dd1e",
+                "url": "https://api.github.com/repos/WellCommerce/Collections/zipball/9c07110e515796a539196321be295b20ad2a59a4",
+                "reference": "9c07110e515796a539196321be295b20ad2a59a4",
                 "shasum": ""
             },
             "require": {
@@ -6057,7 +6057,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Component\\Collections\\": "src/WellCommerce/Component/Collections"
+                    "WellCommerce\\Component\\Collections\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6080,7 +6080,7 @@
                 "component",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:43:38"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/composer-plugin",
@@ -6137,12 +6137,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/CoreBundle.git",
-                "reference": "78a7b805dc8bc461a6a7d5c8b5d0f23533d73d39"
+                "reference": "c627e7968844b8aa6d482fbdd160db42bfaa847d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/CoreBundle/zipball/78a7b805dc8bc461a6a7d5c8b5d0f23533d73d39",
-                "reference": "78a7b805dc8bc461a6a7d5c8b5d0f23533d73d39",
+                "url": "https://api.github.com/repos/WellCommerce/CoreBundle/zipball/c627e7968844b8aa6d482fbdd160db42bfaa847d",
+                "reference": "c627e7968844b8aa6d482fbdd160db42bfaa847d",
                 "shasum": ""
             },
             "require": {
@@ -6199,7 +6199,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\CoreBundle\\": "src/WellCommerce/Bundle/CoreBundle"
+                    "WellCommerce\\Bundle\\CoreBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6222,7 +6222,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 22:14:39"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/coupon-bundle",
@@ -6230,12 +6230,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/CouponBundle.git",
-                "reference": "af20d56935413f0a9f66fd608e61b79296ae81ba"
+                "reference": "3de650f7c496b24e0a6d20779e16a71612fd28cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/CouponBundle/zipball/af20d56935413f0a9f66fd608e61b79296ae81ba",
-                "reference": "af20d56935413f0a9f66fd608e61b79296ae81ba",
+                "url": "https://api.github.com/repos/WellCommerce/CouponBundle/zipball/3de650f7c496b24e0a6d20779e16a71612fd28cb",
+                "reference": "3de650f7c496b24e0a6d20779e16a71612fd28cb",
                 "shasum": ""
             },
             "require": {
@@ -6252,7 +6252,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\CouponBundle\\": "src/WellCommerce/Bundle/CouponBundle"
+                    "WellCommerce\\Bundle\\CouponBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6275,7 +6275,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:24:16"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/datagrid",
@@ -6283,12 +6283,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/DataGrid.git",
-                "reference": "5396ca70c95ca7860671284394207c95b9a918c1"
+                "reference": "a8bfb98265937a2ad7a093ef8f4faf7054c0919f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/DataGrid/zipball/5396ca70c95ca7860671284394207c95b9a918c1",
-                "reference": "5396ca70c95ca7860671284394207c95b9a918c1",
+                "url": "https://api.github.com/repos/WellCommerce/DataGrid/zipball/a8bfb98265937a2ad7a093ef8f4faf7054c0919f",
+                "reference": "a8bfb98265937a2ad7a093ef8f4faf7054c0919f",
                 "shasum": ""
             },
             "require": {
@@ -6309,7 +6309,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Component\\DataGrid\\": "src/WellCommerce/Component/DataGrid"
+                    "WellCommerce\\Component\\DataGrid\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6332,7 +6332,7 @@
                 "datagrid",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:43:38"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/dataset",
@@ -6340,12 +6340,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/DataSet.git",
-                "reference": "55a079066daf612b43980dfeb83ed9e805a145b1"
+                "reference": "840d604f0e08176cd95c859b0aa4bc5aba17b734"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/DataSet/zipball/55a079066daf612b43980dfeb83ed9e805a145b1",
-                "reference": "55a079066daf612b43980dfeb83ed9e805a145b1",
+                "url": "https://api.github.com/repos/WellCommerce/DataSet/zipball/840d604f0e08176cd95c859b0aa4bc5aba17b734",
+                "reference": "840d604f0e08176cd95c859b0aa4bc5aba17b734",
                 "shasum": ""
             },
             "require": {
@@ -6366,7 +6366,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Component\\DataSet\\": "src/WellCommerce/Component/DataSet"
+                    "WellCommerce\\Component\\DataSet\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6389,7 +6389,7 @@
                 "dataset",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:43:38"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/doctrine-enhancer",
@@ -6397,12 +6397,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/DoctrineEnhancer.git",
-                "reference": "3d2754a9c2a9a28a1d0035d66789b0e2c5660a69"
+                "reference": "3e1e138870ca4538137772a89874b2bbc170fc1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/DoctrineEnhancer/zipball/3d2754a9c2a9a28a1d0035d66789b0e2c5660a69",
-                "reference": "3d2754a9c2a9a28a1d0035d66789b0e2c5660a69",
+                "url": "https://api.github.com/repos/WellCommerce/DoctrineEnhancer/zipball/3e1e138870ca4538137772a89874b2bbc170fc1f",
+                "reference": "3e1e138870ca4538137772a89874b2bbc170fc1f",
                 "shasum": ""
             },
             "require": {
@@ -6422,7 +6422,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Component\\DoctrineEnhancer\\": "src/WellCommerce/Component/DoctrineEnhancer"
+                    "WellCommerce\\Component\\DoctrineEnhancer\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6446,7 +6446,7 @@
                 "enhancer",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:43:38"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/form",
@@ -6454,12 +6454,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/Form.git",
-                "reference": "177fd6e01a69ad472b8700e8335030d87f967703"
+                "reference": "c9546c0785736b409b2d77089fb66c8315ca4103"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/Form/zipball/177fd6e01a69ad472b8700e8335030d87f967703",
-                "reference": "177fd6e01a69ad472b8700e8335030d87f967703",
+                "url": "https://api.github.com/repos/WellCommerce/Form/zipball/c9546c0785736b409b2d77089fb66c8315ca4103",
+                "reference": "c9546c0785736b409b2d77089fb66c8315ca4103",
                 "shasum": ""
             },
             "require": {
@@ -6482,7 +6482,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Component\\Form\\": "src/WellCommerce/Component/Form"
+                    "WellCommerce\\Component\\Form\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6505,7 +6505,7 @@
                 "form",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:43:38"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/generator-bundle",
@@ -6513,12 +6513,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/GeneratorBundle.git",
-                "reference": "3acf1f8c7757b431fd227e21b00ce064369f4bbd"
+                "reference": "8b68bcd49c6b981c779bdd2ebe5d087b97dd0166"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/GeneratorBundle/zipball/3acf1f8c7757b431fd227e21b00ce064369f4bbd",
-                "reference": "3acf1f8c7757b431fd227e21b00ce064369f4bbd",
+                "url": "https://api.github.com/repos/WellCommerce/GeneratorBundle/zipball/8b68bcd49c6b981c779bdd2ebe5d087b97dd0166",
+                "reference": "8b68bcd49c6b981c779bdd2ebe5d087b97dd0166",
                 "shasum": ""
             },
             "require": {
@@ -6535,7 +6535,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\GeneratorBundle\\": "src/WellCommerce/Bundle/GeneratorBundle"
+                    "WellCommerce\\Bundle\\GeneratorBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6559,7 +6559,7 @@
                 "symfony",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:24:16"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/oauth-bundle",
@@ -6567,12 +6567,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/OAuthBundle.git",
-                "reference": "fa5d10f25af252a4758abd4862d3abe9d2ae9bb1"
+                "reference": "61a257111fec03acde7b6e3348ed386c887d8d86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/OAuthBundle/zipball/fa5d10f25af252a4758abd4862d3abe9d2ae9bb1",
-                "reference": "fa5d10f25af252a4758abd4862d3abe9d2ae9bb1",
+                "url": "https://api.github.com/repos/WellCommerce/OAuthBundle/zipball/61a257111fec03acde7b6e3348ed386c887d8d86",
+                "reference": "61a257111fec03acde7b6e3348ed386c887d8d86",
                 "shasum": ""
             },
             "require": {
@@ -6589,7 +6589,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\OAuthBundle\\": "src/WellCommerce/Bundle/OAuthBundle"
+                    "WellCommerce\\Bundle\\OAuthBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6612,7 +6612,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:24:16"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/order-bundle",
@@ -6620,12 +6620,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/OrderBundle.git",
-                "reference": "1aaba4abce175fb91ffc5bf1c3b1a8f1438a8a0e"
+                "reference": "f9dee6f7a0a24fb4362a7364e844b6c7e3bbe4c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/OrderBundle/zipball/1aaba4abce175fb91ffc5bf1c3b1a8f1438a8a0e",
-                "reference": "1aaba4abce175fb91ffc5bf1c3b1a8f1438a8a0e",
+                "url": "https://api.github.com/repos/WellCommerce/OrderBundle/zipball/f9dee6f7a0a24fb4362a7364e844b6c7e3bbe4c6",
+                "reference": "f9dee6f7a0a24fb4362a7364e844b6c7e3bbe4c6",
                 "shasum": ""
             },
             "require": {
@@ -6643,7 +6643,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\OrderBundle\\": "src/WellCommerce/Bundle/OrderBundle"
+                    "WellCommerce\\Bundle\\OrderBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6666,7 +6666,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:24:16"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/review-bundle",
@@ -6674,12 +6674,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/ReviewBundle.git",
-                "reference": "b260dc54db48a8a60874de502b49f13e35753098"
+                "reference": "f43a0f922463b4e03159d7be17b37bb1af8d2dd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/ReviewBundle/zipball/b260dc54db48a8a60874de502b49f13e35753098",
-                "reference": "b260dc54db48a8a60874de502b49f13e35753098",
+                "url": "https://api.github.com/repos/WellCommerce/ReviewBundle/zipball/f43a0f922463b4e03159d7be17b37bb1af8d2dd5",
+                "reference": "f43a0f922463b4e03159d7be17b37bb1af8d2dd5",
                 "shasum": ""
             },
             "require": {
@@ -6698,7 +6698,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\ReviewBundle\\": "src/WellCommerce/Bundle/ReviewBundle"
+                    "WellCommerce\\Bundle\\ReviewBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6721,7 +6721,7 @@
                 "open-source",
                 "symfony"
             ],
-            "time": "2017-02-19 21:24:16"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/routing-bundle",
@@ -6729,12 +6729,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/RoutingBundle.git",
-                "reference": "1f39694eae9a02edb92508b243bfb474c95fc0a0"
+                "reference": "93ff07ed9cb28a2621c55cda657273b276d7a807"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/RoutingBundle/zipball/1f39694eae9a02edb92508b243bfb474c95fc0a0",
-                "reference": "1f39694eae9a02edb92508b243bfb474c95fc0a0",
+                "url": "https://api.github.com/repos/WellCommerce/RoutingBundle/zipball/93ff07ed9cb28a2621c55cda657273b276d7a807",
+                "reference": "93ff07ed9cb28a2621c55cda657273b276d7a807",
                 "shasum": ""
             },
             "require": {
@@ -6751,7 +6751,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\RoutingBundle\\": "src/WellCommerce/Bundle/RoutingBundle"
+                    "WellCommerce\\Bundle\\RoutingBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6774,7 +6774,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:24:16"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/search",
@@ -6782,12 +6782,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/Search.git",
-                "reference": "05293ba4d6d1e60a2446a366c925f7db01f3f6f8"
+                "reference": "c32cb0d9c98e1864eb195456f979d59b0336a4c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/Search/zipball/05293ba4d6d1e60a2446a366c925f7db01f3f6f8",
-                "reference": "05293ba4d6d1e60a2446a366c925f7db01f3f6f8",
+                "url": "https://api.github.com/repos/WellCommerce/Search/zipball/c32cb0d9c98e1864eb195456f979d59b0336a4c9",
+                "reference": "c32cb0d9c98e1864eb195456f979d59b0336a4c9",
                 "shasum": ""
             },
             "require": {
@@ -6808,7 +6808,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Component\\Search\\": "src/WellCommerce/Component/Search"
+                    "WellCommerce\\Component\\Search\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6831,7 +6831,7 @@
                 "search",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:52:09"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/search-bundle",
@@ -6839,12 +6839,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/SearchBundle.git",
-                "reference": "848d62b177d278ae331e8234562409938357cef5"
+                "reference": "39f143abd8424136f2653ef496ec578d4752be13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/SearchBundle/zipball/848d62b177d278ae331e8234562409938357cef5",
-                "reference": "848d62b177d278ae331e8234562409938357cef5",
+                "url": "https://api.github.com/repos/WellCommerce/SearchBundle/zipball/39f143abd8424136f2653ef496ec578d4752be13",
+                "reference": "39f143abd8424136f2653ef496ec578d4752be13",
                 "shasum": ""
             },
             "require": {
@@ -6862,7 +6862,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\SearchBundle\\": "src/WellCommerce/Bundle/SearchBundle"
+                    "WellCommerce\\Bundle\\SearchBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6888,7 +6888,7 @@
                 "search",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:24:16"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/serializer",
@@ -6896,12 +6896,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/Serializer.git",
-                "reference": "a292452546195d94e379c860d9aaeef82188dfbd"
+                "reference": "9deac07ee6eec1eeae56a4712fe9b0d665788f4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/Serializer/zipball/a292452546195d94e379c860d9aaeef82188dfbd",
-                "reference": "a292452546195d94e379c860d9aaeef82188dfbd",
+                "url": "https://api.github.com/repos/WellCommerce/Serializer/zipball/9deac07ee6eec1eeae56a4712fe9b0d665788f4d",
+                "reference": "9deac07ee6eec1eeae56a4712fe9b0d665788f4d",
                 "shasum": ""
             },
             "require": {
@@ -6923,7 +6923,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Component\\Serializer\\": "src/WellCommerce/Component/Serializer"
+                    "WellCommerce\\Component\\Serializer\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -6946,7 +6946,7 @@
                 "form",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:43:38"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/showcase-bundle",
@@ -6954,12 +6954,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/ShowcaseBundle.git",
-                "reference": "12d84f5cbd9590aa4e4a7cc6ba9a42e1db91dd62"
+                "reference": "37e6d8155134ac41a4aff89d986c8a9c0435e9a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/ShowcaseBundle/zipball/12d84f5cbd9590aa4e4a7cc6ba9a42e1db91dd62",
-                "reference": "12d84f5cbd9590aa4e4a7cc6ba9a42e1db91dd62",
+                "url": "https://api.github.com/repos/WellCommerce/ShowcaseBundle/zipball/37e6d8155134ac41a4aff89d986c8a9c0435e9a2",
+                "reference": "37e6d8155134ac41a4aff89d986c8a9c0435e9a2",
                 "shasum": ""
             },
             "require": {
@@ -6976,7 +6976,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\ShowcaseBundle\\": "src/WellCommerce/Bundle/ShowcaseBundle"
+                    "WellCommerce\\Bundle\\ShowcaseBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -7000,7 +7000,7 @@
                 "symfony",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 21:24:16"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "wellcommerce/wishlist-bundle",
@@ -7008,12 +7008,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/WishlistBundle.git",
-                "reference": "451efd3d26ebd17d920fe9e6cd463494b9589e75"
+                "reference": "4e901d9fcbc6312a199de35ceb7be0aaedb58eb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/WishlistBundle/zipball/451efd3d26ebd17d920fe9e6cd463494b9589e75",
-                "reference": "451efd3d26ebd17d920fe9e6cd463494b9589e75",
+                "url": "https://api.github.com/repos/WellCommerce/WishlistBundle/zipball/4e901d9fcbc6312a199de35ceb7be0aaedb58eb9",
+                "reference": "4e901d9fcbc6312a199de35ceb7be0aaedb58eb9",
                 "shasum": ""
             },
             "require": {
@@ -7030,7 +7030,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "WellCommerce\\Bundle\\WishlistBundle\\": "src/WellCommerce/Bundle/WishlistBundle"
+                    "WellCommerce\\Bundle\\WishlistBundle\\": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -7053,7 +7053,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-19 22:06:34"
+            "time": "2017-02-20 00:53:36"
         },
         {
             "name": "willdurand/js-translation-bundle",
