@@ -1,3 +1,3 @@
 # DoctrineEnhancer
 
-Provides ability to enhance Doctrine entities with auto-generated traits. 
+Subtree split of main WellCommerce repository
