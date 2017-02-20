@@ -1,0 +1,29 @@
+WellCommerce\Bundle\AppBundle\Entity\Currency:
+    fields:
+        id:
+            groups:
+                - default
+                - currency
+        code:
+            groups:
+                - default
+                - currency
+        enabled:
+            groups:
+                - default
+                - currency
+        createdAt:
+            groups: {  }
+        updatedAt:
+            groups: {  }
+    associations:
+        createdBy:
+            groups:
+                - currency
+        updatedBy:
+            groups:
+                - currency
+        deletedBy:
+            groups:
+                - currency
+    callbacks: {  }

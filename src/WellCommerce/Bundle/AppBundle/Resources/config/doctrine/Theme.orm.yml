@@ -1,0 +1,21 @@
+WellCommerce\Bundle\AppBundle\Entity\Theme:
+    type: entity
+    cache:
+        usage: NONSTRICT_READ_WRITE
+    table: theme
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: false
+            nullable: false
+        folder:
+            type: string
+            length: 255
+            unique: true
+            nullable: false

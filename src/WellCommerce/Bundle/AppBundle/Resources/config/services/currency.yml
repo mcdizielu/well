@@ -1,0 +1,36 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+services:
+    currency.controller.front:
+        class: WellCommerce\Bundle\AppBundle\Controller\Front\CurrencyController
+        arguments: ['@currency.manager']
+        calls:
+            - [setContainer, ['@service_container']]
+
+    twig.extension.currency:
+        class: WellCommerce\Bundle\AppBundle\Twig\Extension\CurrencyExtension
+        tags:
+            - { name: twig.extension }
+        arguments: ['@currency.helper', '@currency.dataset.front']
+
+    currency.subscriber:
+        class: WellCommerce\Bundle\AppBundle\EventListener\CurrencySubscriber
+        tags:
+            - { name: kernel.event_subscriber }
+        calls:
+            - [setContainer, ['@service_container']]
+
+    currency.importer.ecb:
+        class: WellCommerce\Bundle\AppBundle\Importer\EcbRatesImporter
+        arguments: ['@currency.repository', '@currency_rate.repository', '@doctrine.helper']
+
+    currency.helper:
+        class: WellCommerce\Bundle\AppBundle\Helper\CurrencyHelper
+        arguments: ['@request.helper', '@currency_rate.repository', '%number_formatter_locale%']
+

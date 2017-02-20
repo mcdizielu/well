@@ -1,0 +1,54 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+admin.layout_box.index:
+    path: /index
+    defaults:
+        _controller: 'layout_box.controller.admin:indexAction'
+    options:
+        require_admin_permission: layout_box.index
+
+admin.layout_box.grid:
+    path: /grid
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'layout_box.controller.admin:gridAction'
+    options:
+        expose: true
+        require_admin_permission: layout_box.index
+
+admin.layout_box.add:
+    path: /add
+    defaults:
+        _controller: 'layout_box.controller.admin:addAction'
+    options:
+        require_admin_permission: layout_box.add
+
+admin.layout_box.edit:
+    path: '/edit/{id}'
+    defaults:
+        _controller: 'layout_box.controller.admin:editAction'
+    options:
+        expose: true
+        require_admin_permission: layout_box.edit
+
+admin.layout_box.delete:
+    path: '/delete/{id}'
+    defaults:
+        _controller: 'layout_box.controller.admin:deleteAction'
+    options:
+        expose: true
+        require_admin_permission: layout_box.delete
+
+admin.layout_box.delete_group:
+    path: '/delete_group'
+    defaults:
+        _controller: 'layout_box.controller.admin:deleteGroupAction'
+    options:
+        expose: true
+        require_admin_permission: layout_box.delete
