@@ -27,7 +27,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Bundle\\ShowcaseBundle\\": "src/WellCommerce/Bundle/ShowcaseBundle"
+      "WellCommerce\\Bundle\\ShowcaseBundle\\": ""
     }
   },
   "require": {

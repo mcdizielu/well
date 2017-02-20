@@ -26,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Component\\DataSet\\": "src/WellCommerce/Component/DataSet"
+      "WellCommerce\\Component\\DataSet\\": ""
     }
   },
   "require": {

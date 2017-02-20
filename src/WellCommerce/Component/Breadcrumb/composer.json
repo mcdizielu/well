@@ -26,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Component\\Breadcrumb\\": "src/WellCommerce/Component/Breadcrumb"
+      "WellCommerce\\Component\\Breadcrumb\\": ""
     }
   },
   "require": {

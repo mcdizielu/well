@@ -26,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Component\\Collections\\": "src/WellCommerce/Component/Collections"
+      "WellCommerce\\Component\\Collections\\": ""
     }
   },
   "require": {

@@ -29,7 +29,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Bundle\\SearchBundle\\": "src/WellCommerce/Bundle/SearchBundle"
+      "WellCommerce\\Bundle\\SearchBundle\\": ""
     }
   },
   "require": {

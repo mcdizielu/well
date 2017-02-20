@@ -26,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Bundle\\WishlistBundle\\": "src/WellCommerce/Bundle/WishlistBundle"
+      "WellCommerce\\Bundle\\WishlistBundle\\": ""
     }
   },
   "require": {
