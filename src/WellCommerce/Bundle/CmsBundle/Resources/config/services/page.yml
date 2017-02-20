@@ -1,0 +1,37 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+services:
+    page.layout_box.configurator:
+        class: WellCommerce\Bundle\CmsBundle\Configurator\PageBoxConfigurator
+        tags:
+            - { name: layout_box.configurator }
+        arguments: [Page, page.layout_box.controller, '@translator.helper']
+        calls:
+            - [setContainer, ['@service_container']]
+
+    page.controller.front:
+        class: WellCommerce\Bundle\CmsBundle\Controller\Front\PageController
+        arguments: ['@page.manager']
+        calls:
+            - [setContainer, ['@service_container']]
+
+    page.layout_box.controller:
+        class: WellCommerce\Bundle\CmsBundle\Controller\Box\PageBoxController
+        arguments: ['@page.manager']
+        calls:
+            - [setContainer, ['@service_container']]
+
+    twig.extension.page:
+        class: WellCommerce\Bundle\CmsBundle\Twig\PageExtension
+        arguments: ['@page.dataset.front']
+        tags:
+            - { name: twig.extension }
+
+    page.request.storage:
+        class: WellCommerce\Bundle\CmsBundle\Request\PageRequestStorage

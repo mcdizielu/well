@@ -1,0 +1,41 @@
+WellCommerce\Bundle\CmsBundle\Entity\Page:
+    fields:
+        id:
+            groups:
+                - default
+                - page
+        section:
+            groups:
+                - default
+                - page
+        publish:
+            groups:
+                - default
+                - page
+        redirectType:
+            groups:
+                - default
+                - page
+        redirectUrl:
+            groups:
+                - default
+                - page
+        redirectRoute:
+            groups:
+                - default
+                - page
+        hierarchy:
+            groups:
+                - default
+                - page
+    associations:
+        clientGroups:
+            groups:
+                - page
+        translations:
+            groups:
+                - page
+        shops:
+            groups:
+                - page
+    callbacks: {  }

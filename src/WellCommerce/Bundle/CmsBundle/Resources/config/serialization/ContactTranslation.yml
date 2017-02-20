@@ -1,0 +1,55 @@
+WellCommerce\Bundle\CmsBundle\Entity\ContactTranslation:
+    fields:
+        name:
+            groups:
+                - default
+                - contact_translation
+        email:
+            groups:
+                - default
+                - contact_translation
+        phone:
+            groups:
+                - default
+                - contact_translation
+        businessHours:
+            groups:
+                - default
+                - contact_translation
+        line1:
+            groups:
+                - default
+                - contact_translation
+        line2:
+            groups:
+                - default
+                - contact_translation
+        postalCode:
+            groups:
+                - default
+                - contact_translation
+        state:
+            groups:
+                - default
+                - contact_translation
+        city:
+            groups:
+                - default
+                - contact_translation
+        country:
+            groups:
+                - default
+                - contact_translation
+        locale:
+            groups:
+                - default
+                - contact_translation
+        id:
+            groups:
+                - default
+                - contact_translation
+    associations:
+        translatable:
+            groups:
+                - contact_translation
+    callbacks: {  }
