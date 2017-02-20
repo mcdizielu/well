@@ -1,0 +1,14 @@
+WellCommerce\Bundle\CatalogBundle\Entity\ProductStatus:
+    fields:
+        id:
+            groups:
+                - default
+                - product_status
+        symbol:
+            groups:
+                - default
+                - product_status
+    associations:
+        translations:
+            groups:
+                - product_status
