@@ -1,0 +1,79 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+admin.order.index:
+    path: /admin/order/index
+    defaults:
+        _controller: 'order.controller.admin:indexAction'
+    options:
+        require_admin_permission: order.index
+
+admin.order.grid:
+    path: /admin/order/grid
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'order.controller.admin:gridAction'
+    options:
+        expose: true
+        require_admin_permission: order.index
+
+admin.order.products.grid:
+    path: /admin/order/products/grid
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'order.controller.admin:viewProductsGridAction'
+    options:
+        expose: true
+        require_admin_permission: order.edit
+
+admin.order.add:
+    path: /admin/order/add
+    defaults:
+        _controller: 'order.controller.admin:addAction'
+    options:
+        require_admin_permission: order.add
+
+admin.order.edit:
+    path: '/admin/order/edit/{id}'
+    defaults:
+        _controller: 'order.controller.admin:editAction'
+    options:
+        expose: true
+        require_admin_permission: order.edit
+
+admin.order.delete:
+    path: '/admin/order/delete/{id}'
+    defaults:
+        _controller: 'order.controller.admin:deleteAction'
+    options:
+        expose: true
+        require_admin_permission: order.delete
+
+admin.order.delete_group:
+    path: '/admin/order/delete_group'
+    defaults:
+        _controller: 'order.controller.admin:deleteGroupAction'
+    options:
+        expose: true
+        require_admin_permission: order.delete
+
+admin.order.ajax_change_order_status:
+    path: '/admin/order/status/change'
+    defaults:
+        _controller: 'order.controller.admin:ajaxChangeOrderStatusAction'
+    options:
+        expose: true
+        require_admin_permission: order.edit
+
+admin.order.ajax_change_order_status_multi:
+    path: '/admin/order/statuses/change'
+    defaults:
+        _controller: 'order.controller.admin:ajaxChangeOrderStatusMultiAction'
+    options:
+        expose: true
+        require_admin_permission: order.edit
