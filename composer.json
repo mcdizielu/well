@@ -29,6 +29,11 @@
       "WellCommerce\\Bundle\\ApiBundle\\": ""
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "WellCommerce\\Bundle\\ApiBundle\\": "src/WellCommerce/Bundle/ApiBundle"
+    }
+  },
   "require": {
     "wellcommerce/core-bundle": "^0.7@dev"
   },
