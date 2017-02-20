@@ -25,7 +25,28 @@
   },
   "autoload": {
     "psr-4": {
-      "": "src/"
+      "WellCommerce\\Bundle\\ApiBundle\\": "src/WellCommerce/Bundle/ApiBundle",
+      "WellCommerce\\Bundle\\AppBundle\\": "src/WellCommerce/Bundle/AppBundle",
+      "WellCommerce\\Bundle\\CatalogBundle\\": "src/WellCommerce/Bundle/CatalogBundle",
+      "WellCommerce\\Bundle\\CmsBundle\\": "src/WellCommerce/Bundle/CmsBundle",
+      "WellCommerce\\Bundle\\CoreBundle\\": "src/WellCommerce/Bundle/CoreBundle",
+      "WellCommerce\\Bundle\\CouponBundle\\": "src/WellCommerce/Bundle/CouponBundle",
+      "WellCommerce\\Bundle\\GeneratorBundle\\": "src/WellCommerce/Bundle/GeneratorBundle",
+      "WellCommerce\\Bundle\\OAuthBundle\\": "src/WellCommerce/Bundle/OAuthBundle",
+      "WellCommerce\\Bundle\\OrderBundle\\": "src/WellCommerce/Bundle/OrderBundle",
+      "WellCommerce\\Bundle\\ReviewBundle\\": "src/WellCommerce/Bundle/ReviewBundle",
+      "WellCommerce\\Bundle\\RoutingBundle\\": "src/WellCommerce/Bundle/RoutingBundle",
+      "WellCommerce\\Bundle\\SearchBundle\\": "src/WellCommerce/Bundle/SearchBundle",
+      "WellCommerce\\Bundle\\ShowcaseBundle\\": "src/WellCommerce/Bundle/ShowcaseBundle",
+      "WellCommerce\\Bundle\\WishlistBundle\\": "src/WellCommerce/Bundle/WishlistBundle",
+      "WellCommerce\\Component\\Breadcrumb\\": "src/WellCommerce/Component/Breadcrumb",
+      "WellCommerce\\Component\\Collections\\": "src/WellCommerce/Component/Collections",
+      "WellCommerce\\Component\\DataGrid\\": "src/WellCommerce/Component/DataGrid",
+      "WellCommerce\\Component\\DataSet\\": "src/WellCommerce/Component/DataSet",
+      "WellCommerce\\Component\\DoctrineEnhancer\\": "src/WellCommerce/Component/DoctrineEnhancer",
+      "WellCommerce\\Component\\Form\\": "src/WellCommerce/Component/Form",
+      "WellCommerce\\Component\\Search\\": "src/WellCommerce/Component/Search",
+      "WellCommerce\\Component\\Serializer\\": "src/WellCommerce/Component/Serializer"
     },
     "files": [
       "app/AppKernel.php"
@@ -82,6 +103,7 @@
     "secure-http": false
   },
   "extra": {
+    "wellcommerce-developer-mode": false,
     "symfony-app-dir": "app",
     "symfony-web-dir": "web",
     "symfony-assets-install": "relative",

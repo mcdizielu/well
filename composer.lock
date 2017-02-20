@@ -5768,12 +5768,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/ApiBundle.git",
-                "reference": "f4e7e8fde7ff50a1ad6084e4c5dfc17865c5cf9f"
+                "reference": "81d5de692c64dd344ea751e8af3858dcaa1c2f4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/ApiBundle/zipball/f4e7e8fde7ff50a1ad6084e4c5dfc17865c5cf9f",
-                "reference": "f4e7e8fde7ff50a1ad6084e4c5dfc17865c5cf9f",
+                "url": "https://api.github.com/repos/WellCommerce/ApiBundle/zipball/81d5de692c64dd344ea751e8af3858dcaa1c2f4f",
+                "reference": "81d5de692c64dd344ea751e8af3858dcaa1c2f4f",
                 "shasum": ""
             },
             "require": {
@@ -5813,7 +5813,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-20 00:53:36"
+            "time": "2017-02-20 01:04:58"
         },
         {
             "name": "wellcommerce/app-bundle",
