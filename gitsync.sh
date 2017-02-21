@@ -73,7 +73,7 @@ if [ "$action" == 'release' ]
             git subtree push --prefix=src/WellCommerce/Bundle/$i git@github.com:WellCommerce/$i.git master
         done
 
-        sleep 1m
+        sleep 3m
 
         php -d memory_limit=4096M composer.phar update
         git commit -a -m "Updated composer.lock file"
