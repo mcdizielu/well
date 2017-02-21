@@ -31,42 +31,44 @@ interface DataSetRequestInterface
      * @return void
      */
     public function configureOptions(OptionsResolver $resolver);
-
+    
+    public function getDataId(): int;
+    
     /**
      * Returns offset for LIMIT clause
      *
      * @return int
      */
-    public function getOffset() : int;
-
+    public function getOffset(): int;
+    
     /**
      * Returns limit for LIMIT clause
      *
      * @return int
      */
-    public function getLimit() : int;
-
+    public function getLimit(): int;
+    
     /**
      * Returns column name used for sorting results
      *
      * @return mixed
      */
-    public function getOrderBy() : string;
-
+    public function getOrderBy(): string;
+    
     /**
      * Returns the sorting direction
      *
      * @return string
      */
-    public function getOrderDir() : string;
-
+    public function getOrderDir(): string;
+    
     /**
      * Returns where conditions
      *
      * @return ConditionsCollection
      */
-    public function getConditions() : ConditionsCollection;
-
+    public function getConditions(): ConditionsCollection;
+    
     /**
      * Adds new condition to collection
      *

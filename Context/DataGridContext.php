@@ -53,7 +53,7 @@ class DataGridContext extends AbstractDataSetContext
         $result   = parent::getResult($builder, $request, $columns, $cache);
 
         return [
-            'data_id'       => $this->options['data_id'],
+            'data_id'       => $request->getDataId(),
             'rows_num'      => $total,
             'starting_from' => $request->getOffset(),
             'total'         => $total,

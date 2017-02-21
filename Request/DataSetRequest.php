@@ -28,7 +28,7 @@ class DataSetRequest implements DataSetRequestInterface
      * @var array
      */
     protected $options;
-
+    
     /**
      * Constructor
      *
@@ -40,13 +40,14 @@ class DataSetRequest implements DataSetRequestInterface
         $this->configureOptions($resolver);
         $this->options = $resolver->resolve($options);
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setRequired([
+            'data_id',
             'offset',
             'page',
             'limit',
@@ -54,8 +55,9 @@ class DataSetRequest implements DataSetRequestInterface
             'order_dir',
             'conditions',
         ]);
-
+        
         $resolver->setDefaults([
+            'data_id'    => 0,
             'offset'     => 0,
             'page'       => 1,
             'limit'      => 150,
@@ -63,14 +65,15 @@ class DataSetRequest implements DataSetRequestInterface
             'order_dir'  => 'asc',
             'conditions' => new ConditionsCollection(),
         ]);
-
+        
         $resolver->setNormalizer('offset', function (Options $options) {
             $page  = $options['page'];
             $limit = $options['limit'];
-
+            
             return ($page * $limit) - $limit;
         });
-
+        
+        $resolver->setAllowedTypes('data_id', 'numeric');
         $resolver->setAllowedTypes('offset', 'numeric');
         $resolver->setAllowedTypes('page', 'numeric');
         $resolver->setAllowedTypes('limit', 'numeric');
@@ -78,34 +81,39 @@ class DataSetRequest implements DataSetRequestInterface
         $resolver->setAllowedTypes('order_dir', 'string');
         $resolver->setAllowedTypes('conditions', ConditionsCollection::class);
     }
-
-    public function getOffset() : int
+    
+    public function getDataId(): int
+    {
+        return $this->options['data_id'];
+    }
+    
+    public function getOffset(): int
     {
         return $this->options['offset'];
     }
-
-    public function getLimit() : int
+    
+    public function getLimit(): int
     {
         return $this->options['limit'];
     }
-
-    public function getOrderBy() : string
+    
+    public function getOrderBy(): string
     {
         return $this->options['order_by'];
     }
-
-    public function getOrderDir() : string
+    
+    public function getOrderDir(): string
     {
         $order = strtolower($this->options['order_dir']);
-
+        
         return in_array($order, ['asc', 'desc']) ? $order : 'asc';
     }
-
-    public function getConditions() : ConditionsCollection
+    
+    public function getConditions(): ConditionsCollection
     {
         return $this->options['conditions'];
     }
-
+    
     public function addCondition(ConditionInterface $condition)
     {
         $this->getConditions()->add($condition);
