@@ -57,9 +57,6 @@
     "dama/doctrine-test-bundle": "^1.0"
   },
   "scripts": {
-    "pre-install-cmd": [
-      "WellCommerce\\Composer\\HerokuEnvironment::populateEnvironment"
-    ],
     "post-install-cmd": [
       "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
       "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
