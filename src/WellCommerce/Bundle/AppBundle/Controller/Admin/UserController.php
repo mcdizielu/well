@@ -31,22 +31,22 @@ class UserController extends AbstractAdminController
      */
     protected $manager;
     
-    public function loginAction(Request $request) : Response
+    public function loginAction(Request $request): Response
     {
-        $form = $this->get('user_login.form_builder.admin')->createForm([
+        $form = $this->get('user_login.form_builder.admin')->createForm(null, [
             'name'         => 'login',
             'ajax_enabled' => false,
             'action'       => $this->getRouterHelper()->generateUrl('admin.user.login_check'),
             'class'        => 'login-form',
-        ], null);
+        ]);
         
         return $this->displayTemplate('login', [
             'error' => $this->getSecurityErrors($request),
-            'form'  => $form
+            'form'  => $form,
         ]);
     }
     
-    public function resetPasswordAction() : Response
+    public function resetPasswordAction(): Response
     {
         $form = $this->createLoginForm();
         
@@ -69,17 +69,17 @@ class UserController extends AbstractAdminController
         }
         
         return $this->displayTemplate('reset_password', [
-            'form' => $form
+            'form' => $form,
         ]);
     }
     
-    private function createLoginForm() : FormInterface
+    private function createLoginForm(): FormInterface
     {
-        return $this->get('user_reset_password.form_builder.admin')->createForm([
+        return $this->get('user_reset_password.form_builder.admin')->createForm(null, [
             'name'         => 'reset_password',
             'ajax_enabled' => false,
             'class'        => 'login-form',
-        ], null);
+        ]);
     }
     
     private function getSecurityErrors(Request $request)
@@ -101,12 +101,12 @@ class UserController extends AbstractAdminController
     {
     }
     
-    public function deleteAction(int $id) : Response
+    public function deleteAction(int $id): Response
     {
         $user = $this->getSecurityHelper()->getAuthenticatedAdmin();
         if (null !== $user && $user->getId() === $id) {
             return $this->jsonResponse([
-                'error' => 'You cannot delete your own admin account.'
+                'error' => 'You cannot delete your own admin account.',
             ]);
         }
         
@@ -124,7 +124,7 @@ class UserController extends AbstractAdminController
         return $this->jsonResponse(['success' => true]);
     }
     
-    public function accessDeniedAction() : Response
+    public function accessDeniedAction(): Response
     {
         return $this->displayTemplate('access_denied');
     }
