@@ -46,7 +46,7 @@
             });
         }
 
-        var processOrderDataGrid = function(oRow){
+        var processOrder = function(oRow){
             oRow.productTotal   = oRow.productTotal + ' ' + oRow.currency;
             oRow.shippingTotal  = oRow.shippingTotal + ' ' + oRow.currency;
             oRow.orderTotal     = oRow.orderTotal + ' ' + oRow.currency;
@@ -56,7 +56,7 @@
             return oRow;
         };
 
-        function loadedOrderDataGrid(dDg) {
+        function loadedOrder(dDg) {
             $('.GF_Datagrid_Col_currentStatusName span span').each(function(){
                 var color = $(this).css('color');
 
@@ -75,7 +75,7 @@
             });
         }
 
-        var changeStatusMultiOrderDataGrid = new GF_Action({
+        var changeStatusMultiOrder = new GF_Action({
             img: '{{ asset('images/datagrid/change-status.png') }}',
             caption: 'Zmień status',
             action: changeStatusMulti,

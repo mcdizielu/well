@@ -4731,40 +4731,39 @@ GF_Slider = GF_Instance.GF_Extend('GF_Slider', function(jTarget, oOptions) {
 
 });
 
-
 GF_Datagrid.Language = {
-	options: '<span class="hidden">Opcje</span>',
-	select_all: 'Zaznacz wszystkie',
-	modify_columns: 'Zmień ustawienia kolumn',
-	retract_filters: 'Zwiń filtry',
-	expand_filters: 'Rozwiń filtry',
+	options: '<span class="hidden">Options</span>',
+	select_all: 'Select all',
+	modify_columns: 'Change column settings',
+	retract_filters: 'Collapse filters',
+	expand_filters: 'Expand filters',
 	from: 'From',
 	to: 'To',
-	delete_group: 'Usuń wybrane rekordy',
+	delete_group: 'Delete selected records',
 	delete_row: 'Delete',
 	edit_row: 'Edit',
-	view_row: 'Wyświetl rekord',
+	view_row: 'Show record',
 	records_shown: 'Records:',
 	out_of: 'of',
 	choose_page: 'Page:',
-	go_to_prev_page: 'Przejdź do poprzedniej strony',
-	go_to_next_page: 'Przejdź do następnej strony',
-	go_to_first_page: 'Przejdź do pierwszej strony',
-	go_to_last_page: 'Przejdź do ostatniej strony',
-	selected_records: 'Wybranych:',
-	clear_selection: 'Anuluj wybór',
+	go_to_prev_page: 'Go to previous page',
+	go_to_next_page: 'Go to next page',
+	go_to_first_page: 'Go to first page',
+	go_to_last_page: 'Go to last page',
+	selected_records: 'Selected:',
+	clear_selection: 'Cancel selection',
 	confirm: 'OK',
 	restore_default: 'Restore defaults',
-	restore_default_desc: 'Przywróć domyślne ustawienia kolumn dla tego modułu',
+	restore_default_desc: 'Restore default settings for this module',
 	save_and_confirm: 'Save settings',
-	save_and_confirm_desc: 'Zapamiętaj ustawienia i szerokości kolumn, aby stały się domyślnymi dla tego modułu',
-	no_rows_selected: 'Nie wybrano żadnego wiersza.',
-	not_all_shown: 'Uwaga! Zastosowano filtrację. Ukrytych rekordów: ',
+	save_and_confirm_desc: 'Save column widths and placement for this module',
+	no_rows_selected: 'No record was selected',
+	not_all_shown: 'Warning: filters are enabled. Not all records all visible.',
 	filter_tree_expand: 'Choose',
 	filter_tree_retract: 'Collapse',
 	filter_tree_cancel: 'Remove from filter',
 	filter_tree_cancel_all: 'Reset',
-	filter_tree_empty: '(brak filtracji)'
+	filter_tree_empty: '(no filter)'
 };
 
 GF_Datagrid.Files = {
