@@ -1,4 +1,5 @@
 .idea
+nbproject/*
 *.phar
 app/bootstrap.*
 app/cache/*
@@ -10,3 +11,4 @@ app/lucene/*
 /bin/
 /vendor/
 *node_modules
+*.sh
