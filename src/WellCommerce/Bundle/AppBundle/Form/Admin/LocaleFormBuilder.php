@@ -30,7 +30,7 @@ class LocaleFormBuilder extends AbstractFormBuilder
     {
         $currencies = $this->get('currency.dataset.admin')->getResult('select', ['order_by' => 'code'], [
             'label_column' => 'code',
-            'value_column' => 'code',
+            'value_column' => 'id'
         ]);
         
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [

@@ -34,30 +34,22 @@ class LocaleExtension extends \Twig_Extension implements \Twig_Extension_Globals
     {
         $this->dataset = $dataset;
     }
-
+    
     public function getFunctions()
     {
         return [
             new \Twig_SimpleFunction('locales', [$this, 'getLocales'], ['is_safe' => ['html']]),
         ];
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getLocales() : array
+    
+    public function getLocales(): array
     {
-        return [
-            'locales' => $this->dataset->getResult('select', ['order_by' => 'code'], [
-                'label_column' => 'code',
-                'value_column' => 'code'
-            ])
-        ];
+        return $this->dataset->getResult('select', ['order_by' => 'code'], [
+            'label_column' => 'code',
+            'value_column' => 'code',
+        ]);
     }
-
-    /**
-     * {@inheritdoc}
-     */
+    
     public function getName()
     {
         return 'locale';

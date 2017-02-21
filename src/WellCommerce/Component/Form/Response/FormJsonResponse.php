@@ -1,6 +1,6 @@
 <?php
 
-namespace WellCommerce\Bundle\Form\Response;
+namespace WellCommerce\Component\Form\Response;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use WellCommerce\Component\Form\Elements\FormInterface;
