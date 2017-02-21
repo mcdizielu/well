@@ -1012,17 +1012,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "076fe5a95557f5ae461d60222af7efdecd1d0e45"
+                "reference": "339625a884cc2a61038aac5266ef2e2f5b65d128"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/076fe5a95557f5ae461d60222af7efdecd1d0e45",
-                "reference": "076fe5a95557f5ae461d60222af7efdecd1d0e45",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/339625a884cc2a61038aac5266ef2e2f5b65d128",
+                "reference": "339625a884cc2a61038aac5266ef2e2f5b65d128",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "~2.3",
-                "doctrine/doctrine-cache-bundle": "~1.0",
+                "doctrine/doctrine-cache-bundle": "~1.2",
                 "jdorn/sql-formatter": "~1.1",
                 "php": ">=5.5.9",
                 "symfony/console": "~2.7|~3.0",
@@ -1085,7 +1085,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2017-02-15 17:00:00"
+            "time": "2017-02-21 15:54:24"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -6137,12 +6137,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/CoreBundle.git",
-                "reference": "23d14b92bc734263e38119b3c22cf8f3b027e772"
+                "reference": "ce87d2a3f3b660aed15412c2f08238639e1bae2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/CoreBundle/zipball/23d14b92bc734263e38119b3c22cf8f3b027e772",
-                "reference": "23d14b92bc734263e38119b3c22cf8f3b027e772",
+                "url": "https://api.github.com/repos/WellCommerce/CoreBundle/zipball/ce87d2a3f3b660aed15412c2f08238639e1bae2a",
+                "reference": "ce87d2a3f3b660aed15412c2f08238639e1bae2a",
                 "shasum": ""
             },
             "require": {
@@ -6222,7 +6222,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-21 11:18:50"
+            "time": "2017-02-21 21:54:45"
         },
         {
             "name": "wellcommerce/coupon-bundle",
@@ -6340,12 +6340,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/DataSet.git",
-                "reference": "42b483d5184e9a96afc69eef924d2678a6166bad"
+                "reference": "8fbbeaa49295c5acc1105d1b6cae9eb28d1d221e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/DataSet/zipball/42b483d5184e9a96afc69eef924d2678a6166bad",
-                "reference": "42b483d5184e9a96afc69eef924d2678a6166bad",
+                "url": "https://api.github.com/repos/WellCommerce/DataSet/zipball/8fbbeaa49295c5acc1105d1b6cae9eb28d1d221e",
+                "reference": "8fbbeaa49295c5acc1105d1b6cae9eb28d1d221e",
                 "shasum": ""
             },
             "require": {
@@ -6389,7 +6389,7 @@
                 "dataset",
                 "wellcommerce"
             ],
-            "time": "2017-02-20 23:51:29"
+            "time": "2017-02-21 21:54:45"
         },
         {
             "name": "wellcommerce/doctrine-enhancer",
