@@ -5821,12 +5821,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/AppBundle.git",
-                "reference": "ea90b2f23255515f74880c231c854a0379b84ff0"
+                "reference": "1525ad64aff94d2519e2a4fc8ca70beadc1fce9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/AppBundle/zipball/ea90b2f23255515f74880c231c854a0379b84ff0",
-                "reference": "ea90b2f23255515f74880c231c854a0379b84ff0",
+                "url": "https://api.github.com/repos/WellCommerce/AppBundle/zipball/1525ad64aff94d2519e2a4fc8ca70beadc1fce9f",
+                "reference": "1525ad64aff94d2519e2a4fc8ca70beadc1fce9f",
                 "shasum": ""
             },
             "require": {
@@ -5868,7 +5868,7 @@
                 "symfony",
                 "wellcommerce"
             ],
-            "time": "2017-02-21 11:00:28"
+            "time": "2017-02-21 11:18:50"
         },
         {
             "name": "wellcommerce/breadcrumb",
@@ -6137,12 +6137,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/CoreBundle.git",
-                "reference": "a77f2645cd5c16e9ab88fc23ba57cbf7ac5c5f22"
+                "reference": "23d14b92bc734263e38119b3c22cf8f3b027e772"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/CoreBundle/zipball/a77f2645cd5c16e9ab88fc23ba57cbf7ac5c5f22",
-                "reference": "a77f2645cd5c16e9ab88fc23ba57cbf7ac5c5f22",
+                "url": "https://api.github.com/repos/WellCommerce/CoreBundle/zipball/23d14b92bc734263e38119b3c22cf8f3b027e772",
+                "reference": "23d14b92bc734263e38119b3c22cf8f3b027e772",
                 "shasum": ""
             },
             "require": {
@@ -6222,7 +6222,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-20 23:51:29"
+            "time": "2017-02-21 11:18:50"
         },
         {
             "name": "wellcommerce/coupon-bundle",
