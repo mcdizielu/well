@@ -26,19 +26,23 @@ use WellCommerce\Bundle\CoreBundle\Controller\Admin\AbstractAdminController;
 class MediaController extends AbstractAdminController
 {
     /**
-     * @var \WellCommerce\Bundle\AppBundle\Manager\Admin\MediaManager
+     * @var \WellCommerce\Bundle\AppBundle\Manager\MediaManager
      */
     protected $manager;
-
-    public function addAction(Request $request) : Response
+    
+    public function addAction(Request $request): Response
     {
+        if (false === $request->files->has('file')) {
+            return $this->redirectToAction('index');
+        }
+        
         $file   = $request->files->get('file');
         $helper = $this->getImageHelper();
-
+        
         try {
             $media     = $this->getUploader()->upload($file, 'images');
             $thumbnail = $helper->getImage($media->getPath(), 'medium');
-
+            
             $response = [
                 'sId'        => $media->getId(),
                 'sThumb'     => $thumbnail,
@@ -52,11 +56,11 @@ class MediaController extends AbstractAdminController
                 'sMessage' => $this->trans($e->getMessage()),
             ];
         }
-
+        
         return $this->jsonResponse($response);
     }
     
-    private function getUploader() : MediaUploaderInterface
+    private function getUploader(): MediaUploaderInterface
     {
         return $this->get('media.uploader');
     }
