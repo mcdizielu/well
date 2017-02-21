@@ -66,6 +66,7 @@ abstract class AbstractAdminController extends AbstractController
         $conditionsResolver->resolveConditions($request->request->get('where'), $conditions);
         
         $requestOptions = [
+            'data_id'    => $request->request->get('id', 0),
             'page'       => $page,
             'limit'      => $request->request->get('limit', 10),
             'order_by'   => $request->request->get('order_by', 'id'),
