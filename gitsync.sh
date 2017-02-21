@@ -75,7 +75,7 @@ if [ "$action" == 'release' ]
 
         sleep 1m
 
-        php composer.phar update
+        php -d memory_limit=4096M composer.phar update
         git commit -a -m "Updated composer.lock file"
         git push
 fi
