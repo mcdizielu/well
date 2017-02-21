@@ -22,6 +22,17 @@ use WellCommerce\Bundle\CoreBundle\Test\Controller\Admin\AbstractAdminController
  */
 class UserControllerTest extends AbstractAdminControllerTestCase
 {
+    public function testLoginAction()
+    {
+        $this->logOut();
+        
+        $url     = $this->generateUrl('admin.user.login');
+        $crawler = $this->client->request('GET', $url);
+        
+        $this->assertTrue($this->client->getResponse()->isSuccessful());
+        $this->assertEquals(1, $crawler->filter('html:contains("' . $this->jsFormClass . '")')->count());
+    }
+    
     public function testIndexAction()
     {
         $url     = $this->generateUrl('admin.user.index');

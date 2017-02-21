@@ -5821,12 +5821,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/AppBundle.git",
-                "reference": "7dbbb7ce13b12e0840a8bf4310a5d6a9b691dce3"
+                "reference": "ea90b2f23255515f74880c231c854a0379b84ff0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/AppBundle/zipball/7dbbb7ce13b12e0840a8bf4310a5d6a9b691dce3",
-                "reference": "7dbbb7ce13b12e0840a8bf4310a5d6a9b691dce3",
+                "url": "https://api.github.com/repos/WellCommerce/AppBundle/zipball/ea90b2f23255515f74880c231c854a0379b84ff0",
+                "reference": "ea90b2f23255515f74880c231c854a0379b84ff0",
                 "shasum": ""
             },
             "require": {
@@ -5868,7 +5868,7 @@
                 "symfony",
                 "wellcommerce"
             ],
-            "time": "2017-02-20 23:51:29"
+            "time": "2017-02-21 11:00:28"
         },
         {
             "name": "wellcommerce/breadcrumb",

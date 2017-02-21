@@ -31,7 +31,12 @@ class AbstractAdminControllerTestCase extends AbstractTestCase
         parent::setUp();
         $this->logIn();
     }
-
+    
+    protected function logOut()
+    {
+        $this->client->request('GET', $this->generateUrl('admin.user.logout'));
+    }
+    
     protected function logIn()
     {
         $user     = $this->container->get('user.repository')->findOneBy([]);
