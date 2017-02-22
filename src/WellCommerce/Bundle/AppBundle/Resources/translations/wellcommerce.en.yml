@@ -232,6 +232,10 @@ currency:
     comment:
         enabled: Currency will be visible in shop
 
+dashboard:
+    heading:
+        carts: Carts
+
 dictionary:
     heading:
         index: Translations

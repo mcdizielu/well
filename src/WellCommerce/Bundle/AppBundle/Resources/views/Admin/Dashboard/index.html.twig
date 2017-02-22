@@ -4,7 +4,7 @@
     <h2>{% trans %}admin.heading.dashboard{% endtrans %}</h2>
 
     <div class="block" id="desktop">
-        {{ sales_report('admin.sales_report.index') }}
+        {{ sales_report('admin.dashboard.index') }}
 
         <div class="layout-four-columns">
             <div class="column">
@@ -18,14 +18,14 @@
                         </tr>
                         </thead>
                         <tbody>
-                            {% for review in reviews %}
-                            <tr class="{{ cycle(['o', 'e'], review) }}">
+                        {% for review in reviews %}
+                            <tr>
                                 <th scope="row"><a title="{{ review.nick }} - {{ review.review }}" href="{{ path('admin.review.edit',{"id": review.id}) }}">{{ review.nick }}</a></th>
                                 <td>
                                     <div style="max-width:170px;">{{ review.review }}</div>
                                 </td>
                             </tr>
-                            {% endfor %}
+                        {% endfor %}
                         </tbody>
                     </table>
                     <p class="more"><a class="btnMore" href="{{ path('admin.review.index') }}"><span>{% trans %}admin.button.show_all{% endtrans %}</span></a></p>
@@ -44,8 +44,8 @@
                         </thead>
                         <tbody>
                         {% for order in orders %}
-                            <tr class="{{ cycle(['o', 'e'], order) }}">
-                                <th scope="row"><a href="{{ path('admin.order.edit',{"id": order.id}) }}">{{ order.number }}</a></th>
+                            <tr>
+                                <th scope="row"><a href="{{ path('admin.order.edit', {"id": order.id}) }}">{{ order.number }}</a></th>
                                 <td>
                                     {{ format_price(order.summary.grossAmount, order.currency) }}
                                 </td>
@@ -69,53 +69,55 @@
                         </tr>
                         </thead>
                         <tbody>
-
+                        {% for client in clients %}
+                            <tr>
+                                <th scope="row"><a href="{{ path('admin.client.edit', {"id": client.id}) }}">{{ client.contactDetails.firstName }}</a></th>
+                                <td>
+                                    {{ client.contactDetails.lastName }}
+                                </td>
+                            </tr>
+                        {% endfor %}
                         </tbody>
                     </table>
-                    <p class="more"><a class="btnMore" href="client"><span>{% trans %}admin.button.show_all{% endtrans %}</span></a></p>
+                    <p class="more"><a class="btnMore" href="{{ path('admin.client.index') }}"><span>{% trans %}admin.button.show_all{% endtrans %}</span></a></p>
                 </div>
             </div>
             <!-- end: New customers -->
 
-            <!-- begin: Bestsellers -->
-            <div class="column">
-                <div class="box simple">
-                    <h3>{% trans %}admin.heading.bestsellers{% endtrans %}</h3>
-                    <table cellspacing="0" class="full-size">
-                        <thead>
-                        <tr>
-                            <th>{% trans %}admin.label.product{% endtrans %}</th>
-                            <th abbr="Sztuk">{% trans %}admin.label.quantity{% endtrans %}</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                    <p class="more"><a class="btnMore" href="statsproducts"><span>{% trans %}admin.button.show_raports{% endtrans %}</span></a></p>
-                </div>
-            </div>
-            <!-- end: Bestsellers -->
-
             <!-- begin: Most popular -->
-            <div class="column">
+            <div class="column" style="width: 434px;">
                 <div class="box simple">
-                    <h3>{% trans %}admin.heading.customers_online{% endtrans %}</h3>
+                    <h3>{% trans %}dashboard.heading.carts{% endtrans %}</h3>
                     <table cellspacing="0" class="full-size">
                         <thead>
                         <tr>
                             <th>{% trans %}admin.label.client{% endtrans %}</th>
-                            <th>{% trans %}admin.label.cart{% endtrans %}</th>
+                            <th>{% trans %}order.label.summary.gross_amount{% endtrans %}</th>
+                            <th>{% trans %}common.label.created_at{% endtrans %}</th>
+                            <th>{% trans %}common.label.updated_at{% endtrans %}</th>
                         </tr>
                         </thead>
                         <tbody>
-
+                        {% for cart in carts %}
+                            <tr>
+                                <th scope="row">{{ cart.client.contactDetails.firstName }} {{ cart.client.contactDetails.lastName }}</th>
+                                <td>
+                                    {{ format_price(cart.summary.grossAmount, cart.currency) }}
+                                </td>
+                                <td>
+                                    {{ cart.createdAt|date('Y-m-d H:i:s') }}
+                                </td>
+                                <td>
+                                    {{ cart.updatedAt|date('Y-m-d H:i:s') }}
+                                </td>
+                            </tr>
+                        {% endfor %}
                         </tbody>
                     </table>
-                    <p class="more"><a class="btnMore" href="spy"><span>{% trans %}admin.button.show_raports{% endtrans %}</span></a></p>
                 </div>
             </div>
             <!-- end: Most popular -->
+
         </div>
         <!-- end: Four columns -->
     </div>

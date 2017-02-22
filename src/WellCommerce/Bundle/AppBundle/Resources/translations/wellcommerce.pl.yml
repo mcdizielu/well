@@ -241,6 +241,10 @@ currency:
     comment:
         enabled: Waluta będzie widoczna w sklepie
 
+dashboard:
+    heading:
+        carts: Koszyki
+
 dictionary:
     heading:
         index: Tłumaczenia

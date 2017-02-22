@@ -7,7 +7,7 @@
 # please view the LICENSE file that was distributed with this source code.
 
 admin.dashboard.index:
-    path: /admin/dashboard/index
+    path: /index
     defaults:
         _controller: 'dashboard.controller.admin:indexAction'
     options:
