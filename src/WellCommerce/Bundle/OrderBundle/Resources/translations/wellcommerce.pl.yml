@@ -109,11 +109,12 @@ order_status:
         index: Statusy zamówienia
         add: Dodaj status
         edit: Edytuj status
-        label:
-            order_status_group: Grupa statusu zamówienia
-            default_comment: Domyślny komentarz dla zamówienia
-        comment:
-            enabled: Status zamówienia będzie widoczny.
+    label:
+        order_status_group: Grupa statusu zamówienia
+        default_comment: Domyślny komentarz dla zamówienia
+        colour: Kolor statusu
+    comment:
+        enabled: Status zamówienia będzie widoczny.
 
 order_status_group:
     heading:

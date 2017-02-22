@@ -14,9 +14,9 @@ namespace WellCommerce\Bundle\AppBundle\EventListener;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use WellCommerce\Bundle\AppBundle\Entity\LayoutBox;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Event\EntityEvent;
 use WellCommerce\Bundle\CoreBundle\EventListener\AbstractEventSubscriber;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\LayoutBoxConfiguratorInterface;
-use WellCommerce\Bundle\CoreBundle\Doctrine\Event\EntityEvent;
 use WellCommerce\Component\Form\Event\FormEvent;
 
 /**
@@ -26,11 +26,11 @@ use WellCommerce\Component\Form\Event\FormEvent;
  */
 class LayoutBoxSubscriber extends AbstractEventSubscriber
 {
-    public static function getSubscribedEvents ()
+    public static function getSubscribedEvents()
     {
         return [
-            'layout_box.pre_form_init' => 'onLayoutBoxFormInit',
-            'layout_box.pre_update'    => 'onLayoutBoxPreUpdate',
+            'admin.layout_box.pre_form_init' => 'onLayoutBoxFormInit',
+            'layout_box.pre_update'          => 'onLayoutBoxPreUpdate',
         ];
     }
     
@@ -40,7 +40,7 @@ class LayoutBoxSubscriber extends AbstractEventSubscriber
      *
      * @param FormEvent $event
      */
-    public function onLayoutBoxFormInit (FormEvent $event)
+    public function onLayoutBoxFormInit(FormEvent $event)
     {
         $builder       = $event->getFormBuilder();
         $form          = $event->getForm();
@@ -65,7 +65,7 @@ class LayoutBoxSubscriber extends AbstractEventSubscriber
      *
      * @param EntityEvent $event
      */
-    public function onLayoutBoxPreUpdate (EntityEvent $event)
+    public function onLayoutBoxPreUpdate(EntityEvent $event)
     {
         $resource = $event->getEntity();
         if ($resource instanceof LayoutBox) {
@@ -76,20 +76,20 @@ class LayoutBoxSubscriber extends AbstractEventSubscriber
         }
     }
     
-    private function getBoxSettingsFromRequest (Request $request)
+    private function getBoxSettingsFromRequest(Request $request)
     {
         $settings   = [];
         $accessor   = PropertyAccess::createPropertyAccessor();
         $parameters = $request->request->all();
         $boxType    = $accessor->getValue($parameters, '[required_data][boxType]');
-        if ($accessor->isReadable($parameters, '['.$boxType.']')) {
-            $settings = $accessor->getValue($parameters, '['.$boxType.']');
+        if ($accessor->isReadable($parameters, '[' . $boxType . ']')) {
+            $settings = $accessor->getValue($parameters, '[' . $boxType . ']');
         }
         
         return !is_array($settings) ? [] : $settings;
     }
     
-    private function mergeUnmodifiedSettings (array $oldSettings, array $newSettings) : array
+    private function mergeUnmodifiedSettings(array $oldSettings, array $newSettings): array
     {
         foreach ($newSettings as $key => &$setting) {
             if (is_array($setting) && array_key_exists('unmodified', $setting)) {
