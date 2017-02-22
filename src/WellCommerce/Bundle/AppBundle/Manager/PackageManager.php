@@ -16,7 +16,7 @@ use ComposerRevisions\Revisions;
 use Doctrine\ORM\EntityNotFoundException;
 use Packagist\Api\Result\Package as RemotePackage;
 use Symfony\Component\HttpFoundation\Request;
-use WellCommerce\Bundle\CoreBundle\Entity\Package;
+use WellCommerce\Bundle\AppBundle\Entity\Package;
 use WellCommerce\Bundle\CoreBundle\Helper\Package\PackageHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Manager\AbstractManager;
 
@@ -32,23 +32,16 @@ final class PackageManager extends AbstractManager
      */
     public function syncPackages($type)
     {
-        $criteria      = ['type' => $type];
-        $em            = $this->getDoctrineHelper()->getEntityManager();
-        $searchResults = $this->getHelper()->getPackages($criteria);
+        $searchResults = $this->getHelper()->getPackages(['type' => $type]);
         
         foreach ($searchResults as $result) {
             $package = $this->getHelper()->getPackage($result);
             $this->syncPackage($package);
         }
         
-        $em->flush();
+        $this->getEntityManager()->flush();
     }
     
-    /**
-     * Syncs single remote package
-     *
-     * @param RemotePackage $remotePackage
-     */
     protected function syncPackage(RemotePackage $remotePackage)
     {
         $repository   = $this->getRepository();
@@ -61,11 +54,6 @@ final class PackageManager extends AbstractManager
         }
     }
     
-    /**
-     * Adds new package to info to Smuggler
-     *
-     * @param RemotePackage $remotePackage
-     */
     protected function addPackage(RemotePackage $remotePackage)
     {
         list($vendor, $name) = explode('/', $remotePackage->getName());
@@ -77,13 +65,6 @@ final class PackageManager extends AbstractManager
         $this->getDoctrineHelper()->getEntityManager()->persist($package);
     }
     
-    /**
-     * Returns console command arguments
-     *
-     * @param Request $request
-     *
-     * @return array
-     */
     public function getConsoleCommandArguments(Request $request)
     {
         $port      = (int)$request->attributes->get('port');
@@ -98,19 +79,8 @@ final class PackageManager extends AbstractManager
         ];
     }
     
-    /**
-     * Changes package info according to operation and data fetched from PackagistAPI
-     *
-     * @param Request $request
-     *
-     * @throws EntityNotFoundException
-     */
-    
     public function changePackageStatus(Request $request)
     {
-        /**
-         * @var $package \WellCommerce\Bundle\CoreBundle\Entity\Package
-         */
         $id         = $request->attributes->get('id');
         $em         = $this->getDoctrineHelper()->getEntityManager();
         $repository = $this->getRepository();
@@ -130,25 +100,17 @@ final class PackageManager extends AbstractManager
         $branch        = PackageHelperInterface::DEFAULT_BRANCH_VERSION;
         $remotePackage = $this->getHelper()->getPackage($package->getFullName());
         $remoteVersion = $this->getPackageVersionReference($remotePackage->getVersions()[$branch]);
+        $localVersion  = '';
         
         if (isset(Revisions::$byName[$package->getFullName()])) {
             $localVersion = Revisions::$byName[$package->getFullName()];
-        } else {
-            $localVersion = null;
         }
         
         $package->setLocalVersion($localVersion);
         $package->setRemoteVersion($remoteVersion);
     }
     
-    /**
-     * Returns reference for particular package version
-     *
-     * @param RemotePackage\Version $version
-     *
-     * @return string
-     */
-    protected function getPackageVersionReference(RemotePackage\Version $version)
+    protected function getPackageVersionReference(RemotePackage\Version $version): string
     {
         return $version->getSource()->getReference();
     }

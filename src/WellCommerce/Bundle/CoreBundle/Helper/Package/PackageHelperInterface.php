@@ -19,7 +19,7 @@ namespace WellCommerce\Bundle\CoreBundle\Helper\Package;
  */
 interface PackageHelperInterface
 {
-    const PACKAGIST_URL               = 'http://packages.wellcommerce.org';
+    const PACKAGIST_URL               = 'https://packagist.org';
     const DEFAULT_BRANCH_VERSION      = 'dev-master';
     const DEFAULT_PACKAGE_BUNDLE_TYPE = 'wellcommerce-bundle';
     const DEFAULT_PACKAGE_THEME_TYPE  = 'wellcommerce-theme';
