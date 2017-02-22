@@ -56,11 +56,11 @@ class LoadShippingMethodData extends AbstractDataFixture
         $ups->setTax($tax);
         $ups->setCurrency($currency);
         foreach ($this->getLocales() as $locale) {
-            $fedEx->translate($locale->getCode())->setName('UPS');
+            $ups->translate($locale->getCode())->setName('UPS');
         }
         $ups->mergeNewTranslations();
         $ups->setCosts($this->getShippingCostsCollection($ups));
-        $fedEx->setShops($shops);
+        $ups->setShops($shops);
         $manager->persist($ups);
         
         $manager->flush();
