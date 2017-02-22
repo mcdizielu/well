@@ -30,12 +30,12 @@ class DictionaryFormBuilder extends AbstractFormBuilder
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general')
+            'label' => 'common.fieldset.general'
         ]));
 
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'identifier',
-            'label' => $this->trans('dictionary.label.identifier'),
+            'label' => 'dictionary.label.identifier',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -43,13 +43,13 @@ class DictionaryFormBuilder extends AbstractFormBuilder
 
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
-            'label'       => $this->trans('common.fieldset.translations'),
+            'label'       => 'common.fieldset.translations',
             'transformer' => $this->getRepositoryTransformer('translation', $this->get('dictionary.repository'))
         ]));
 
         $languageData->addChild($this->getElement('text_field', [
             'name'  => 'value',
-            'label' => $this->trans('dictionary.label.value'),
+            'label' => 'dictionary.label.value',
             'rules' => [
                 $this->getRule('required')
             ],

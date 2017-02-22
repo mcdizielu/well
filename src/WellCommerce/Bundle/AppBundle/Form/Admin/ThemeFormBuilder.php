@@ -32,12 +32,12 @@ class ThemeFormBuilder extends AbstractFormBuilder
         
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general')
+            'label' => 'common.fieldset.general'
         ]));
         
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'name',
-            'label' => $this->trans('common.label.name'),
+            'label' => 'common.label.name',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -45,8 +45,8 @@ class ThemeFormBuilder extends AbstractFormBuilder
         
         $requiredData->addChild($this->getElement('select', [
             'name'    => 'folder',
-            'label'   => $this->trans('theme.label.folder'),
-            'comment' => $this->trans('theme.comment.folder'),
+            'label'   => 'theme.label.folder',
+            'comment' => 'theme.comment.folder',
             'options' => $themeFolders,
             'default' => reset($themeFolders)
         ]));

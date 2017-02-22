@@ -35,26 +35,26 @@ class LocaleFormBuilder extends AbstractFormBuilder
         
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general'),
+            'label' => 'common.fieldset.general',
         ]));
         
         $requiredData->addChild($this->getElement('select', [
             'name'    => 'code',
-            'label'   => $this->trans('locale.label.code'),
+            'label'   => 'locale.label.code',
             'options' => $this->get('locale.repository')->getLocaleNames(),
         ]));
         
         $requiredData->addChild($this->getElement('select', [
             'name'        => 'currency',
-            'label'       => $this->trans('locale.label.currency'),
+            'label'       => 'locale.label.currency',
             'options'     => $currencies,
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('currency.repository')),
         ]));
         
         $requiredData->addChild($this->getElement('checkbox', [
             'name'    => 'enabled',
-            'label'   => $this->trans('common.label.enabled'),
-            'comment' => $this->trans('locale.comment.enabled'),
+            'label'   => 'common.label.enabled',
+            'comment' => 'locale.comment.enabled',
         ]));
         
         $form->addFilter($this->getFilter('no_code'));

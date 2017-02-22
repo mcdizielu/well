@@ -30,19 +30,19 @@ class OrderStatusFormBuilder extends AbstractFormBuilder
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general')
+            'label' => 'common.fieldset.general'
         ]));
 
         $requiredData->addChild($this->getElement('checkbox', [
             'name'    => 'enabled',
-            'label'   => $this->trans('common.label.enabled'),
-            'comment' => $this->trans('order_status.comment.enabled'),
+            'label'   => 'common.label.enabled',
+            'comment' => 'order_status.comment.enabled',
             'default' => 1
         ]));
     
         $requiredData->addChild($this->getElement('text_field', [
             'name'    => 'colour',
-            'label'   => $this->trans('order_status.label.colour'),
+            'label'   => 'order_status.label.colour',
             'default' => '#000'
         ]));
         
@@ -50,7 +50,7 @@ class OrderStatusFormBuilder extends AbstractFormBuilder
 
         $requiredData->addChild($this->getElement('select', [
             'name'        => 'orderStatusGroup',
-            'label'       => $this->trans('order_status.label.order_status_group'),
+            'label'       => 'order_status.label.order_status_group',
             'options'     => $orderStatusGroups,
             'default'     => current(array_keys($orderStatusGroups)),
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('order_status_group.repository'))
@@ -58,18 +58,18 @@ class OrderStatusFormBuilder extends AbstractFormBuilder
 
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
-            'label'       => $this->trans('common.fieldset.translations'),
+            'label'       => 'common.fieldset.translations',
             'transformer' => $this->getRepositoryTransformer('translation', $this->get('order_status.repository'))
         ]));
 
         $languageData->addChild($this->getElement('text_field', [
             'name'  => 'name',
-            'label' => $this->trans('common.label.name'),
+            'label' => 'common.label.name',
         ]));
 
         $languageData->addChild($this->getElement('rich_text_editor', [
             'name'  => 'defaultComment',
-            'label' => $this->trans('order_status.label.default_comment')
+            'label' => 'order_status.label.default_comment'
         ]));
 
         $form->addFilter($this->getFilter('trim'));

@@ -16,6 +16,8 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Finder\Finder;
 use Symfony\Component\Intl\Intl;
 use WellCommerce\Bundle\AppBundle\Copier\LocaleCopierInterface;
 use WellCommerce\Bundle\AppBundle\DataSet\Admin\CurrencyDataSet;
@@ -79,6 +81,28 @@ final class AddCommand extends ContainerAwareCommand
     
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $rootDir    = $this->getContainer()->get('kernel')->getRootDir() . '/../src/WellCommerce';
+        $filesystem = new Filesystem();
+        $finder     = new Finder();
+        $finder->in($rootDir)->name('*FormBuilder.php');
+        foreach ($finder->files() as $file) {
+            $contents    = $file->getContents();
+            $patterns = [
+                '/\$this->trans\((\'\w+\.\w+\.\w+\')\)/',
+            ];
+            $pattern     = '/\$this->trans\((\'\w+\.\w+\.\w+\')\)/';
+            $replacement = '${1}';
+            $contents    = preg_replace($pattern, $replacement, $contents);
+    
+            $pattern     = '/\$this->trans\((\'\w+\.\w+\.\w+\.\w+\')\)/';
+            $replacement = '${1}';
+            $contents    = preg_replace($pattern, $replacement, $contents);
+            
+            $filesystem->dumpFile($file->getRealPath(), $contents);
+        }
+        
+        die();
+        
         $sourceLocale   = $this->chooseSourceLocale($input, $output);
         $targetLocale   = $this->chooseTargetLocale($input, $output);
         $targetCurrency = $this->chooseTargetCurrency($input, $output);

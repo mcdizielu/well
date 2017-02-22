@@ -30,12 +30,12 @@ class UserFormBuilder extends AbstractFormBuilder
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general')
+            'label' => 'common.fieldset.general'
         ]));
 
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'firstName',
-            'label' => $this->trans('user.label.first_name'),
+            'label' => 'user.label.first_name',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -43,7 +43,7 @@ class UserFormBuilder extends AbstractFormBuilder
 
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'lastName',
-            'label' => $this->trans('user.label.last_name'),
+            'label' => 'user.label.last_name',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -51,7 +51,7 @@ class UserFormBuilder extends AbstractFormBuilder
 
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'username',
-            'label' => $this->trans('user.label.username'),
+            'label' => 'user.label.username',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -59,7 +59,7 @@ class UserFormBuilder extends AbstractFormBuilder
 
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'email',
-            'label' => $this->trans('user.label.email'),
+            'label' => 'user.label.email',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -67,19 +67,19 @@ class UserFormBuilder extends AbstractFormBuilder
 
         $requiredData->addChild($this->getElement('multi_select', [
             'name'        => 'groups',
-            'label'       => $this->trans('user.label.user_group'),
+            'label'       => 'user.label.user_group',
             'options'     => $this->get('user_group.dataset.admin')->getResult('select'),
             'transformer' => $this->getRepositoryTransformer('collection', $this->get('user_group.repository')),
         ]));
 
         $apiData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'api_data',
-            'label' => $this->trans('user.fieldset.api_access')
+            'label' => 'user.fieldset.api_access'
         ]));
 
         $apiData->addChild($this->getElement('text_field', [
             'name'  => 'apiKey',
-            'label' => $this->trans('user.label.api_key'),
+            'label' => 'user.label.api_key',
         ]));
 
         $form->addFilter($this->getFilter('no_code'));

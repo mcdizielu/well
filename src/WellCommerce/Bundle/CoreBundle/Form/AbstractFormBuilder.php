@@ -147,28 +147,28 @@ abstract class AbstractFormBuilder extends AbstractContainerAware implements For
     {
         $metadata = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'metadata',
-            'label' => $this->trans('common.fieldset.meta'),
+            'label' => 'common.fieldset.meta',
         ]));
         
         $languageData = $metadata->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
-            'label'       => $this->trans('common.fieldset.translations'),
+            'label'       => 'common.fieldset.translations',
             'transformer' => $this->getRepositoryTransformer('translation', $repository),
         ]));
         
         $languageData->addChild($this->getElement('text_field', [
             'name'  => 'meta.title',
-            'label' => $this->trans('common.label.meta.title'),
+            'label' => 'common.label.meta.title',
         ]));
         
         $languageData->addChild($this->getElement('text_field', [
             'name'  => 'meta.keywords',
-            'label' => $this->trans('common.label.meta.keywords'),
+            'label' => 'common.label.meta.keywords',
         ]));
         
         $languageData->addChild($this->getElement('text_area', [
             'name'  => 'meta.description',
-            'label' => $this->trans('common.label.meta.description'),
+            'label' => 'common.label.meta.description',
         ]));
     }
     
@@ -176,12 +176,12 @@ abstract class AbstractFormBuilder extends AbstractContainerAware implements For
     {
         $shopsData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'shops_data',
-            'label' => $this->trans('common.fieldset.shops'),
+            'label' => 'common.fieldset.shops',
         ]));
         
         $shopsData->addChild($this->getElement('multi_select', [
             'name'        => 'shops',
-            'label'       => $this->trans('common.label.shops'),
+            'label'       => 'common.label.shops',
             'options'     => $this->get('shop.dataset.admin')->getResult('select'),
             'transformer' => $this->getRepositoryTransformer('collection', $this->get('shop.repository')),
         ]));

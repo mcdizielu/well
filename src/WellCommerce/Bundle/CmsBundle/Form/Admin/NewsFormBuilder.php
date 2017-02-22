@@ -31,40 +31,40 @@ class NewsFormBuilder extends AbstractFormBuilder
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general'),
+            'label' => 'common.fieldset.general',
         ]));
         
         $requiredData->addChild($this->getElement('checkbox', [
             'name'  => 'publish',
-            'label' => $this->trans('common.label.publish'),
+            'label' => 'common.label.publish',
         ]));
         
         $requiredData->addChild($this->getElement('checkbox', [
             'name'  => 'featured',
-            'label' => $this->trans('common.label.featured'),
+            'label' => 'common.label.featured',
         ]));
         
         $requiredData->addChild($this->getElement('date', [
             'name'        => 'startDate',
-            'label'       => $this->trans('common.label.valid_from'),
+            'label'       => 'common.label.valid_from',
             'transformer' => new DateTransformer('m/d/Y'),
         ]));
         
         $requiredData->addChild($this->getElement('date', [
             'name'        => 'endDate',
-            'label'       => $this->trans('common.label.valid_to'),
+            'label'       => 'common.label.valid_to',
             'transformer' => new DateTransformer('m/d/Y'),
         ]));
         
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
-            'label'       => $this->trans('common.fieldset.translations'),
+            'label'       => 'common.fieldset.translations',
             'transformer' => $this->getRepositoryTransformer('translation', $this->get('news.repository')),
         ]));
         
         $name = $languageData->addChild($this->getElement('text_field', [
             'name'  => 'topic',
-            'label' => $this->trans('news.label.topic'),
+            'label' => 'news.label.topic',
             'rules' => [
                 $this->getRule('required'),
             ],
@@ -72,7 +72,7 @@ class NewsFormBuilder extends AbstractFormBuilder
         
         $languageData->addChild($this->getElement('slug_field', [
             'name'            => 'slug',
-            'label'           => $this->trans('common.label.slug'),
+            'label'           => 'common.label.slug',
             'name_field'      => $name,
             'generate_route'  => 'route.generate',
             'translatable_id' => $this->getRequestHelper()->getAttributesBagParam('id'),
@@ -83,22 +83,22 @@ class NewsFormBuilder extends AbstractFormBuilder
         
         $languageData->addChild($this->getElement('rich_text_editor', [
             'name'  => 'summary',
-            'label' => $this->trans('news.label.summary'),
+            'label' => 'news.label.summary',
         ]));
         
         $languageData->addChild($this->getElement('rich_text_editor', [
             'name'  => 'content',
-            'label' => $this->trans('news.label.content'),
+            'label' => 'news.label.content',
         ]));
         
         $mediaData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'media_data',
-            'label' => $this->trans('common.fieldset.photos'),
+            'label' => 'common.fieldset.photos',
         ]));
         
         $mediaData->addChild($this->getElement('image', [
             'name'         => 'photo',
-            'label'        => $this->trans('form.media_data.image_id'),
+            'label'        => 'form.media_data.image_id',
             'load_route'   => $this->getRouterHelper()->generateUrl('admin.media.grid'),
             'upload_url'   => $this->getRouterHelper()->generateUrl('admin.media.add'),
             'repeat_min'   => 0,

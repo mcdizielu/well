@@ -36,18 +36,18 @@ class CouponFormBuilder extends AbstractFormBuilder
 
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general')
+            'label' => 'common.fieldset.general'
         ]));
 
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
-            'label'       => $this->trans('common.fieldset.translations'),
+            'label'       => 'common.fieldset.translations',
             'transformer' => $this->getRepositoryTransformer('translation', $this->get('coupon.repository'))
         ]));
 
         $languageData->addChild($this->getElement('text_field', [
             'name'  => 'name',
-            'label' => $this->trans('common.label.name'),
+            'label' => 'common.label.name',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -55,24 +55,24 @@ class CouponFormBuilder extends AbstractFormBuilder
 
         $languageData->addChild($this->getElement('text_area', [
             'name'  => 'description',
-            'label' => $this->trans('common.label.description'),
+            'label' => 'common.label.description',
         ]));
 
         $requiredData->addChild($this->getElement('date', [
             'name'        => 'validFrom',
-            'label'       => $this->trans('common.label.valid_from'),
+            'label'       => 'common.label.valid_from',
             'transformer' => new DateTransformer('m/d/Y'),
         ]));
 
         $requiredData->addChild($this->getElement('date', [
             'name'        => 'validTo',
-            'label'       => $this->trans('common.label.valid_to'),
+            'label'       => 'common.label.valid_to',
             'transformer' => new DateTransformer('m/d/Y'),
         ]));
 
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'code',
-            'label' => $this->trans('common.label.code'),
+            'label' => 'common.label.code',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -80,7 +80,7 @@ class CouponFormBuilder extends AbstractFormBuilder
 
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'clientUsageLimit',
-            'label' => $this->trans('coupon.label.client_usage_limit'),
+            'label' => 'coupon.label.client_usage_limit',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -88,7 +88,7 @@ class CouponFormBuilder extends AbstractFormBuilder
 
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'globalUsageLimit',
-            'label' => $this->trans('coupon.label.global_usage_limit'),
+            'label' => 'coupon.label.global_usage_limit',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -96,24 +96,24 @@ class CouponFormBuilder extends AbstractFormBuilder
 
         $discountPane = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'discount_pane',
-            'label' => $this->trans('coupon.fieldset.discount_settings')
+            'label' => 'coupon.fieldset.discount_settings'
         ]));
     
         $discountPane->addChild($this->getElement('select', [
             'name'         => 'currency',
-            'label'        => $this->trans('common.label.currency'),
+            'label'        => 'common.label.currency',
             'options'      => $currencies,
         ]));
         
         $discountPane->addChild($this->getElement('select', [
             'name'    => 'modifierType',
-            'label'   => $this->trans('coupon.label.modifier_type'),
+            'label'   => 'coupon.label.modifier_type',
             'options' => $this->getModifierTypes()
         ]));
         
         $discountPane->addChild($this->getElement('text_field', [
             'name'  => 'modifierValue',
-            'label' => $this->trans('coupon.label.modifier_value'),
+            'label' => 'coupon.label.modifier_value',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -121,7 +121,7 @@ class CouponFormBuilder extends AbstractFormBuilder
     
         $discountPane->addChild($this->getElement('text_field', [
             'name'  => 'minimumOrderValue',
-            'label' => $this->trans('coupon.label.minimum_order_value'),
+            'label' => 'coupon.label.minimum_order_value',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -129,7 +129,7 @@ class CouponFormBuilder extends AbstractFormBuilder
     
         $discountPane->addChild($this->getElement('checkbox', [
             'name'  => 'excludePromotions',
-            'label' => $this->trans('coupon.label.exclude_promotions'),
+            'label' => 'coupon.label.exclude_promotions',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -143,8 +143,8 @@ class CouponFormBuilder extends AbstractFormBuilder
     protected function getModifierTypes()
     {
         return [
-            '%' => $this->trans('coupon.label.modifier_type_percent'),
-            '-' => $this->trans('coupon.label.modifier_type_subtract'),
+            '%' => 'coupon.label.modifier_type_percent',
+            '-' => 'coupon.label.modifier_type_subtract',
         ];
     }
 }

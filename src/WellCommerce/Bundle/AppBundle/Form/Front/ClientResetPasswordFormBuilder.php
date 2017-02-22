@@ -30,7 +30,7 @@ class ClientResetPasswordFormBuilder extends AbstractFormBuilder
     {
         $form->addChild($this->getElement('text_field', [
             'name'  => '_username',
-            'label' => $this->trans('client.label.username'),
+            'label' => 'client.label.username',
         ]));
 
         $form->addFilter($this->getFilter('no_code'));

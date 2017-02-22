@@ -40,7 +40,7 @@ var GFormNestedFieldset = GCore.ExtendClass(GFormContainer, function () {
         gThis.m_jNode = $('<fieldset/>');
         gThis.m_jNode.addClass(gThis.m_oOptions.sClass);
         gThis.m_jNode.attr('id', gThis.m_oOptions.sName);
-        gThis.m_jNode.append('<legend><span>' + gThis.m_oOptions.sLabel + '</span></legend>');
+        gThis.m_jNode.append('<legend><span>' + GTranslation(gThis.m_oOptions.sLabel) + '</span></legend>');
         if (!gThis.m_bRepeatable) {
             gThis.m_jNode.append(gThis.RenderChildren());
         }

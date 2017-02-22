@@ -86,7 +86,7 @@ var GFormTree = GCore.ExtendClass(GFormField, function () {
         gThis.m_jNode.append(gThis.m_jField);
         gThis.m_jFieldWrapper = $('<div/>');
         gThis.m_jNode.append(gThis.m_jFieldWrapper);
-        gThis.m_jNode.append('<label>' + gThis.m_oOptions.sLabel + '</label>');
+        gThis.m_jNode.append('<label>' + GTranslation(gThis.m_oOptions.sLabel) + '</label>');
         gThis.m_jExpandAll = $('<a href="#"/>').text(GForm.Language.tree_expand_all);
         gThis.m_jRetractAll = $('<a href="#"/>').text(GForm.Language.tree_retract_all).css('visibility', 'hidden');
         if (gThis.m_oOptions.bRetractable) {

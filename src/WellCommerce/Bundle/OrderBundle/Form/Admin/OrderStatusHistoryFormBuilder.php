@@ -32,7 +32,7 @@ class OrderStatusHistoryFormBuilder extends AbstractFormBuilder
         
         $form->addChild($this->getElement('select', [
             'name'        => 'orderStatus',
-            'label'       => $this->trans('order_status_history.label.order_status'),
+            'label'       => 'order_status_history.label.order_status',
             'options'     => $orderStatuses,
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('order_status.repository'))
         ]));
@@ -40,18 +40,18 @@ class OrderStatusHistoryFormBuilder extends AbstractFormBuilder
         $form->addChild($this->getElement('text_area', [
             'name'  => 'comment',
             'rows'  => 10,
-            'label' => $this->trans('order_status_history.label.comment')
+            'label' => 'order_status_history.label.comment'
         ]));
 
         $form->addChild($this->getElement('checkbox', [
             'name'    => 'notify',
-            'label'   => $this->trans('order_status_history.label.nofity'),
+            'label'   => 'order_status_history.label.nofity',
             'default' => 1
         ]));
 
         $form->addChild($this->getElement('submit', [
             'name'  => 'add_order_status_history',
-            'label' => $this->trans('order_status_history.button.change'),
+            'label' => 'order_status_history.button.change',
         ]));
         
         $form->addFilter($this->getFilter('trim'));

@@ -30,38 +30,38 @@ class ReviewFormBuilder extends AbstractFormBuilder
     {
         $mainData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general')
+            'label' => 'common.fieldset.general'
         ]));
 
         $mainData->addChild($this->getElement('checkbox', [
             'name'    => 'enabled',
-            'label'   => $this->trans('common.label.enabled'),
+            'label'   => 'common.label.enabled',
         ]));
 
         $mainData->addChild($this->getElement('text_field', [
             'name'  => 'nick',
-            'label' => $this->trans('review.label.nick'),
+            'label' => 'review.label.nick',
         ]));
 
         $mainData->addChild($this->getElement('text_field', [
             'name'  => 'rating',
-            'label' => $this->trans('review.label.rating'),
+            'label' => 'review.label.rating',
         ]));
 
         $mainData->addChild($this->getElement('text_field', [
             'name'  => 'ratingLevel',
-            'label' => $this->trans('review.label.rating_level'),
+            'label' => 'review.label.rating_level',
         ]));
 
 
         $mainData->addChild($this->getElement('text_field', [
             'name'  => 'ratingRecommendation',
-            'label' => $this->trans('review.label.rating_recommendation'),
+            'label' => 'review.label.rating_recommendation',
         ]));
 
         $mainData->addChild($this->getElement('text_area', [
             'name'  => 'review',
-            'label' => $this->trans('review.label.review'),
+            'label' => 'review.label.review',
             'rows'  => 5,
             'cols'  => 10
         ]));

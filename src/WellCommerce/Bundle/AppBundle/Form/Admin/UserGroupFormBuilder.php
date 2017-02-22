@@ -30,12 +30,12 @@ class UserGroupFormBuilder extends AbstractFormBuilder
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general')
+            'label' => 'common.fieldset.general'
         ]));
 
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'name',
-            'label' => $this->trans('common.label.name'),
+            'label' => 'common.label.name',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -43,7 +43,7 @@ class UserGroupFormBuilder extends AbstractFormBuilder
 
         $requiredData->addChild($this->getElement('rights_table', [
             'name'        => 'permissions',
-            'label'       => $this->trans('user_group.label.permissions'),
+            'label'       => 'user_group.label.permissions',
             'actions'     => $this->getPermissionActions(),
             'controllers' => $this->getPermissionTypes(),
             'transformer' => $this->getRepositoryTransformer('user_group_permission', $this->get('user_group.repository'))

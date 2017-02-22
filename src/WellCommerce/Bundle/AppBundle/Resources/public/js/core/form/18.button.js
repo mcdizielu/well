@@ -26,7 +26,7 @@ var GFormButton = GCore.ExtendClass(GFormField, function () {
     gThis._PrepareNode = function () {
         gThis.m_jNode = $('<div/>').addClass(gThis._GetClass('Field'));
         gThis.m_jNode.addClass(gThis.m_oOptions.sCssClass);
-        gThis.m_jButton = $('<button class="' + gThis._GetClass('Button') + '" type="button" name="' + gThis.GetName() + '"><span>' + gThis.m_oOptions.sLabel + '</span></button>');
+        gThis.m_jButton = $('<button class="' + gThis._GetClass('Button') + '" type="button" name="' + gThis.GetName() + '"><span>' + GTranslation(gThis.m_oOptions.sLabel) + '</span></button>');
         gThis.m_jNode.append(gThis.m_jButton);
 
         gThis.m_jButton.click(function () {

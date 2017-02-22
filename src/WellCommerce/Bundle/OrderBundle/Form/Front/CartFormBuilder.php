@@ -42,19 +42,19 @@ class CartFormBuilder extends AbstractFormBuilder
         
         $shippingAddress = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'shippingAddress',
-            'label' => $this->trans('client.heading.shipping_address'),
+            'label' => 'client.heading.shipping_address',
         ]));
         
         $shippingAddress->addChild($this->getElement('select', [
             'name'    => 'shippingAddress.country',
-            'label'   => $this->trans('client.label.address.country'),
+            'label'   => 'client.label.address.country',
             'options' => $this->get('country.repository')->all(),
             'default' => $this->getShopStorage()->getCurrentShop()->getDefaultCountry(),
         ]));
         
         $shippingMethods = $form->addChild($this->getElement('radio_group', [
             'name'        => 'shippingMethod',
-            'label'       => $this->trans('order.label.shipping_method'),
+            'label'       => 'order.label.shipping_method',
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('shipping_method.repository')),
         ]));
         
@@ -64,7 +64,7 @@ class CartFormBuilder extends AbstractFormBuilder
         
         $paymentMethods = $form->addChild($this->getElement('radio_group', [
             'name'        => 'paymentMethod',
-            'label'       => $this->trans('order.label.payment_method'),
+            'label'       => 'order.label.payment_method',
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('payment_method.repository')),
         ]));
         
@@ -88,7 +88,7 @@ class CartFormBuilder extends AbstractFormBuilder
             if ($provider instanceof ShippingMethodOptionsProviderInterface) {
                 $form->addChild($this->getElement('select', [
                     'name'    => 'shippingMethodOption',
-                    'label'   => $this->trans('order.label.shipping_method'),
+                    'label'   => 'order.label.shipping_method',
                     'options' => $provider->getShippingOptions(),
                 ]));
             }

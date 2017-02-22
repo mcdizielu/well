@@ -35,12 +35,12 @@ class ShopFormBuilder extends AbstractFormBuilder
         
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general'),
+            'label' => 'common.fieldset.general',
         ]));
         
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'name',
-            'label' => $this->trans('common.label.name'),
+            'label' => 'common.label.name',
             'rules' => [
                 $this->getRule('required'),
             ],
@@ -48,26 +48,26 @@ class ShopFormBuilder extends AbstractFormBuilder
         
         $requiredData->addChild($this->getElement('select', [
             'name'        => 'company',
-            'label'       => $this->trans('shop.label.company'),
+            'label'       => 'shop.label.company',
             'options'     => $this->get('company.dataset.admin')->getResult('select'),
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('company.repository')),
         ]));
         
         $requiredData->addChild($this->getElement('select', [
             'name'        => 'theme',
-            'label'       => $this->trans('shop.label.theme'),
+            'label'       => 'shop.label.theme',
             'options'     => $this->get('theme.dataset.admin')->getResult('select'),
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('theme.repository')),
         ]));
         
         $urlData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'url_data',
-            'label' => $this->trans('shop.fieldset.url_configuration'),
+            'label' => 'shop.fieldset.url_configuration',
         ]));
         
         $urlData->addChild($this->getElement('text_field', [
             'name'  => 'url',
-            'label' => $this->trans('shop.label.url'),
+            'label' => 'shop.label.url',
             'rules' => [
                 $this->getRule('required'),
             ],
@@ -75,36 +75,36 @@ class ShopFormBuilder extends AbstractFormBuilder
         
         $cartSettings = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'cart_settings',
-            'label' => $this->trans('shop.fieldset.cart_configuration'),
+            'label' => 'shop.fieldset.cart_configuration',
         ]));
         
         $cartSettings->addChild($this->getElement('select', [
             'name'    => 'defaultCountry',
-            'label'   => $this->trans('shop.label.default_country'),
+            'label'   => 'shop.label.default_country',
             'options' => $this->get('country.repository')->all(),
         ]));
         
         $cartSettings->addChild($this->getElement('select', [
             'name'    => 'defaultCurrency',
-            'label'   => $this->trans('shop.label.default_currency'),
+            'label'   => 'shop.label.default_currency',
             'options' => $currencies,
         ]));
         
         $cartSettings->addChild($this->getElement('select', [
             'name'        => 'clientGroup',
-            'label'       => $this->trans('shop.label.default_client_group'),
+            'label'       => 'shop.label.default_client_group',
             'options'     => $this->get('client_group.dataset.admin')->getResult('select'),
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('client_group.repository')),
         ]));
         
         $mailerConfiguration = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'mailer_configuration',
-            'label' => $this->trans('shop.fieldset.mailer_configuration'),
+            'label' => 'shop.fieldset.mailer_configuration',
         ]));
         
         $mailerConfiguration->addChild($this->getElement('text_field', [
             'name'  => 'mailerConfiguration.from',
-            'label' => $this->trans('shop.label.mailer_configuration.from'),
+            'label' => 'shop.label.mailer_configuration.from',
             'rules' => [
                 $this->getRule('required'),
             ],
@@ -112,7 +112,7 @@ class ShopFormBuilder extends AbstractFormBuilder
         
         $mailerConfiguration->addChild($this->getElement('text_field', [
             'name'  => 'mailerConfiguration.host',
-            'label' => $this->trans('shop.label.mailer_configuration.host'),
+            'label' => 'shop.label.mailer_configuration.host',
             'rules' => [
                 $this->getRule('required'),
             ],
@@ -120,7 +120,7 @@ class ShopFormBuilder extends AbstractFormBuilder
         
         $mailerConfiguration->addChild($this->getElement('text_field', [
             'name'  => 'mailerConfiguration.port',
-            'label' => $this->trans('shop.label.mailer_configuration.port'),
+            'label' => 'shop.label.mailer_configuration.port',
             'rules' => [
                 $this->getRule('required'),
             ],
@@ -128,7 +128,7 @@ class ShopFormBuilder extends AbstractFormBuilder
         
         $mailerConfiguration->addChild($this->getElement('text_field', [
             'name'  => 'mailerConfiguration.user',
-            'label' => $this->trans('shop.label.mailer_configuration.user'),
+            'label' => 'shop.label.mailer_configuration.user',
             'rules' => [
                 $this->getRule('required'),
             ],
@@ -136,7 +136,7 @@ class ShopFormBuilder extends AbstractFormBuilder
         
         $mailerConfiguration->addChild($this->getElement('password', [
             'name'  => 'mailerConfiguration.pass',
-            'label' => $this->trans('shop.label.mailer_configuration.pass'),
+            'label' => 'shop.label.mailer_configuration.pass',
             'rules' => [
                 $this->getRule('required'),
             ],
@@ -144,7 +144,7 @@ class ShopFormBuilder extends AbstractFormBuilder
         
         $mailerConfiguration->addChild($this->getElement('password', [
             'name'  => 'mailerConfiguration.pass',
-            'label' => $this->trans('shop.label.mailer_configuration.pass'),
+            'label' => 'shop.label.mailer_configuration.pass',
             'rules' => [
                 $this->getRule('required'),
             ],
@@ -152,7 +152,7 @@ class ShopFormBuilder extends AbstractFormBuilder
         
         $mailerConfiguration->addChild($this->getElement('text_field', [
             'name'  => 'mailerConfiguration.bcc',
-            'label' => $this->trans('shop.label.mailer_configuration.bcc'),
+            'label' => 'shop.label.mailer_configuration.bcc',
         ]));
         
         $form->addFilter($this->getFilter('no_code'));

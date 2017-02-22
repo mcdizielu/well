@@ -30,7 +30,7 @@ class UserResetPasswordFormBuilder extends AbstractFormBuilder
     {
         $form->addChild($this->getElement('text_field', [
             'name'  => 'username',
-            'label' => $this->trans('user.label.username'),
+            'label' => 'user.label.username',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -38,7 +38,7 @@ class UserResetPasswordFormBuilder extends AbstractFormBuilder
 
         $form->addChild($this->getElement('submit', [
             'name'  => 'reset_password',
-            'label' => $this->trans('user.button.reset_password'),
+            'label' => 'user.button.reset_password',
         ]));
 
         $form->addFilter($this->getFilter('no_code'));

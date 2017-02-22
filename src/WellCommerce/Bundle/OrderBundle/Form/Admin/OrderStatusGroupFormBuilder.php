@@ -30,18 +30,18 @@ class OrderStatusGroupFormBuilder extends AbstractFormBuilder
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.required_data')
+            'label' => 'common.fieldset.required_data'
         ]));
 
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
-            'label'       => $this->trans('common.fieldset.translations'),
+            'label'       => 'common.fieldset.translations',
             'transformer' => $this->getRepositoryTransformer('translation', $this->get('order_status_group.repository'))
         ]));
 
         $languageData->addChild($this->getElement('text_field', [
             'name'  => 'name',
-            'label' => $this->trans('order_status_group.label.name'),
+            'label' => 'order_status_group.label.name',
         ]));
 
         $form->addFilter($this->getFilter('no_code'));

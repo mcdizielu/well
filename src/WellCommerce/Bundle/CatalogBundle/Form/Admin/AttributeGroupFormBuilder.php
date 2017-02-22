@@ -30,18 +30,18 @@ class AttributeGroupFormBuilder extends AbstractFormBuilder
     {
         $groupData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'main_data',
-            'label' => $this->trans('attribute_group.label.group')
+            'label' => 'attribute_group.label.group'
         ]));
 
         $languageData = $groupData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
-            'label'       => $this->trans('common.fieldset.translations'),
+            'label'       => 'common.fieldset.translations',
             'transformer' => $this->getRepositoryTransformer('translation', $this->get('attribute_group.repository'))
         ]));
 
         $languageData->addChild($this->getElement('text_field', [
             'name'  => 'name',
-            'label' => $this->trans('common.label.name'),
+            'label' => 'common.label.name',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -49,12 +49,12 @@ class AttributeGroupFormBuilder extends AbstractFormBuilder
 
         $attributesData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'attributes_data',
-            'label' => $this->trans('attribute_group.fieldset.attributes')
+            'label' => 'attribute_group.fieldset.attributes'
         ]));
 
         $attributesData->addChild($this->getElement('multi_select', [
             'name'        => 'attributes',
-            'label'       => $this->trans('attribute_group.label.attributes'),
+            'label'       => 'attribute_group.label.attributes',
             'options'     => $this->get('attribute.dataset.admin')->getResult('select'),
             'transformer' => $this->getRepositoryTransformer('collection', $this->get('attribute.repository'))
         ]));

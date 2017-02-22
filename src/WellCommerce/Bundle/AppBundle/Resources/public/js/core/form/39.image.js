@@ -74,9 +74,9 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
     gThis._PrepareNode = function () {
         gThis.m_jNode = $('<div/>').addClass(gThis._GetClass('Field'));
         var jLabel = $('<label for="' + gThis.GetId() + '"/>');
-        jLabel.text(gThis.m_oOptions.sLabel);
+        jLabel.text(GTranslation(gThis.m_oOptions.sLabel));
         if ((gThis.m_oOptions.sComment != undefined) && (gThis.m_oOptions.sComment.length)) {
-            jLabel.append(' <small>' + gThis.m_oOptions.sComment + '</small>');
+            jLabel.append(' <small>' + GTranslation(gThis.m_oOptions.sComment) + '</small>');
         }
         gThis.m_jSwfUpload = $('<div class="' + gThis._GetClass('AddFiles') + '"><a href="#" class="button expand"><span id="' + gThis.GetId() + '__upload"><img src="' + gThis._GetImage('ChooseIcon') + '" alt=""/>' + GTranslation('media.button.add_from_disk') + '</span></a></div>');
         gThis.m_jNode.append(gThis.m_jSwfUpload);

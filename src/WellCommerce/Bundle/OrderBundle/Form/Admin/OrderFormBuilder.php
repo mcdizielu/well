@@ -44,12 +44,12 @@ class OrderFormBuilder extends AbstractFormBuilder
         
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('order.form.fieldset.products'),
+            'label' => 'order.form.fieldset.products',
         ]));
         
         $requiredData->addChild($this->getElement('order_editor', [
             'name'                => 'products',
-            'label'               => $this->trans('order.heading.products'),
+            'label'               => 'order.heading.products',
             'repeat_min'          => 1,
             'repeat_max'          => ElementInterface::INFINITE,
             'load_products_route' => 'admin.product.grid',
@@ -60,159 +60,159 @@ class OrderFormBuilder extends AbstractFormBuilder
         
         $contactDetails = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'contactDetails',
-            'label' => $this->trans('order.heading.contact_details'),
+            'label' => 'order.heading.contact_details',
         ]));
         
         $contactDetails->addChild($this->getElement('text_field', [
             'name'  => 'contactDetails.firstName',
-            'label' => $this->trans('client.label.contact_details.first_name'),
+            'label' => 'client.label.contact_details.first_name',
         ]));
         
         $contactDetails->addChild($this->getElement('text_field', [
             'name'  => 'contactDetails.lastName',
-            'label' => $this->trans('client.label.contact_details.last_name'),
+            'label' => 'client.label.contact_details.last_name',
         ]));
         
         $contactDetails->addChild($this->getElement('text_field', [
             'name'  => 'contactDetails.phone',
-            'label' => $this->trans('client.label.contact_details.phone'),
+            'label' => 'client.label.contact_details.phone',
         ]));
         
         $contactDetails->addChild($this->getElement('text_field', [
             'name'  => 'contactDetails.secondaryPhone',
-            'label' => $this->trans('client.label.contact_details.secondary_phone'),
+            'label' => 'client.label.contact_details.secondary_phone',
         ]));
         
         $contactDetails->addChild($this->getElement('text_field', [
             'name'  => 'contactDetails.email',
-            'label' => $this->trans('client.label.contact_details.email'),
+            'label' => 'client.label.contact_details.email',
         ]));
         
         $addresses = $form->addChild($this->getElement('columns', [
             'name'  => 'addresses',
-            'label' => $this->trans('order.heading.address'),
+            'label' => 'order.heading.address',
         ]));
         
         $billingAddress = $addresses->addChild($this->getElement('nested_fieldset', [
             'name'  => 'billingAddress',
-            'label' => $this->trans('client.heading.billing_address'),
+            'label' => 'client.heading.billing_address',
         ]));
         
         $billingAddress->addChild($this->getElement('text_field', [
             'name'  => 'billingAddress.firstName',
-            'label' => $this->trans('client.label.address.first_name'),
+            'label' => 'client.label.address.first_name',
         ]));
         
         $billingAddress->addChild($this->getElement('text_field', [
             'name'  => 'billingAddress.lastName',
-            'label' => $this->trans('client.label.address.last_name'),
+            'label' => 'client.label.address.last_name',
         ]));
         
         $billingAddress->addChild($this->getElement('text_field', [
             'name'  => 'billingAddress.line1',
-            'label' => $this->trans('client.label.address.line1'),
+            'label' => 'client.label.address.line1',
         ]));
         
         $billingAddress->addChild($this->getElement('text_field', [
             'name'  => 'billingAddress.line2',
-            'label' => $this->trans('client.label.address.line2'),
+            'label' => 'client.label.address.line2',
         ]));
         
         $billingAddress->addChild($this->getElement('text_field', [
             'name'  => 'billingAddress.postalCode',
-            'label' => $this->trans('client.label.address.postal_code'),
+            'label' => 'client.label.address.postal_code',
         ]));
         
         $billingAddress->addChild($this->getElement('text_field', [
             'name'  => 'billingAddress.state',
-            'label' => $this->trans('client.label.address.state'),
+            'label' => 'client.label.address.state',
         ]));
         
         $billingAddress->addChild($this->getElement('text_field', [
             'name'  => 'billingAddress.city',
-            'label' => $this->trans('client.label.address.city'),
+            'label' => 'client.label.address.city',
         ]));
         
         $billingAddress->addChild($this->getElement('select', [
             'name'    => 'billingAddress.country',
-            'label'   => $this->trans('client.label.address.country'),
+            'label'   => 'client.label.address.country',
             'options' => $countries,
         ]));
         
         $billingAddress->addChild($this->getElement('text_field', [
             'name'  => 'billingAddress.vatId',
-            'label' => $this->trans('client.label.address.vat_id'),
+            'label' => 'client.label.address.vat_id',
         ]));
         
         $billingAddress->addChild($this->getElement('text_field', [
             'name'  => 'billingAddress.companyName',
-            'label' => $this->trans('client.label.address.company_name'),
+            'label' => 'client.label.address.company_name',
         ]));
         
         $shippingAddress = $addresses->addChild($this->getElement('nested_fieldset', [
             'name'  => 'shippingAddress',
-            'label' => $this->trans('client.heading.shipping_address'),
+            'label' => 'client.heading.shipping_address',
         ]));
         
         $shippingAddress->addChild($this->getElement('text_field', [
             'name'  => 'shippingAddress.firstName',
-            'label' => $this->trans('client.label.address.first_name'),
+            'label' => 'client.label.address.first_name',
         ]));
         
         $shippingAddress->addChild($this->getElement('text_field', [
             'name'  => 'shippingAddress.lastName',
-            'label' => $this->trans('client.label.address.last_name'),
+            'label' => 'client.label.address.last_name',
         ]));
         
         $shippingAddress->addChild($this->getElement('text_field', [
             'name'  => 'shippingAddress.companyName',
-            'label' => $this->trans('client.label.address.company_name'),
+            'label' => 'client.label.address.company_name',
         ]));
         
         $shippingAddress->addChild($this->getElement('text_field', [
             'name'  => 'shippingAddress.line1',
-            'label' => $this->trans('client.label.address.line1'),
+            'label' => 'client.label.address.line1',
         ]));
         
         $shippingAddress->addChild($this->getElement('text_field', [
             'name'  => 'shippingAddress.line2',
-            'label' => $this->trans('client.label.address.line2'),
+            'label' => 'client.label.address.line2',
         ]));
         
         $shippingAddress->addChild($this->getElement('text_field', [
             'name'  => 'shippingAddress.postalCode',
-            'label' => $this->trans('client.label.address.postal_code'),
+            'label' => 'client.label.address.postal_code',
         ]));
         
         $shippingAddress->addChild($this->getElement('text_field', [
             'name'  => 'shippingAddress.state',
-            'label' => $this->trans('client.label.address.state'),
+            'label' => 'client.label.address.state',
         ]));
         
         $shippingAddress->addChild($this->getElement('text_field', [
             'name'  => 'shippingAddress.city',
-            'label' => $this->trans('client.label.address.city'),
+            'label' => 'client.label.address.city',
         ]));
         
         $shippingAddress->addChild($this->getElement('select', [
             'name'    => 'shippingAddress.country',
-            'label'   => $this->trans('client.label.address.country'),
+            'label'   => 'client.label.address.country',
             'options' => $countries,
         ]));
         
         $orderDetails = $form->addChild($this->getElement('columns', [
             'name'  => 'orderMethodsDetails',
-            'label' => $this->trans('order.heading.order_methods_details'),
+            'label' => 'order.heading.order_methods_details',
         ]));
         
         $paymentShippingData = $orderDetails->addChild($this->getElement('nested_fieldset', [
             'name'  => 'methods',
-            'label' => $this->trans('order.heading.methods'),
+            'label' => 'order.heading.methods',
         ]));
         
         $shippingMethod = $paymentShippingData->addChild($this->getElement('select', [
             'name'        => 'shippingMethod',
-            'label'       => $this->trans('order.label.shipping_method'),
+            'label'       => 'order.label.shipping_method',
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('shipping_method.repository')),
         ]));
         
@@ -220,7 +220,7 @@ class OrderFormBuilder extends AbstractFormBuilder
         
         $paymentMethod = $paymentShippingData->addChild($this->getElement('select', [
             'name'        => 'paymentMethod',
-            'label'       => $this->trans('order.label.payment_method'),
+            'label'       => 'order.label.payment_method',
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('payment_method.repository')),
         ]));
         
@@ -236,48 +236,48 @@ class OrderFormBuilder extends AbstractFormBuilder
         if ($order->getCoupon() instanceof Coupon) {
             $paymentShippingData->addChild($this->getElement('constant', [
                 'name'  => 'coupon.code',
-                'label' => $this->trans('order.label.coupon.code'),
+                'label' => 'order.label.coupon.code',
             ]))->setValue($order->getCoupon()->getCode());
             
             $paymentShippingData->addChild($this->getElement('constant', [
                 'name'  => 'coupon.modifier',
-                'label' => $this->trans('order.label.coupon.modifier'),
+                'label' => 'order.label.coupon.modifier',
             ]))->setValue(CouponHelper::formatModifier($order->getCoupon()));
         }
         
         $summaryData = $orderDetails->addChild($this->getElement('nested_fieldset', [
             'name'  => 'summary',
-            'label' => $this->trans('order.heading.order_total'),
+            'label' => 'order.heading.order_total',
         ]));
         
         $summaryData->addChild($this->getElement('constant', [
             'name'  => 'productTotal.netPrice',
-            'label' => $this->trans('order.label.product_total.net_price'),
+            'label' => 'order.label.product_total.net_price',
         ]));
         
         $summaryData->addChild($this->getElement('constant', [
             'name'  => 'productTotal.taxAmount',
-            'label' => $this->trans('order.label.product_total.tax_amount'),
+            'label' => 'order.label.product_total.tax_amount',
         ]));
         
         $summaryData->addChild($this->getElement('constant', [
             'name'  => 'productTotal.grossPrice',
-            'label' => $this->trans('order.label.product_total.gross_price'),
+            'label' => 'order.label.product_total.gross_price',
         ]));
         
         $summaryData->addChild($this->getElement('constant', [
             'name'  => 'summary.netAmount',
-            'label' => $this->trans('order.label.summary.net_amount'),
+            'label' => 'order.label.summary.net_amount',
         ]));
         
         $summaryData->addChild($this->getElement('constant', [
             'name'  => 'summary.taxAmount',
-            'label' => $this->trans('order.label.summary.tax_amount'),
+            'label' => 'order.label.summary.tax_amount',
         ]));
         
         $summaryData->addChild($this->getElement('constant', [
             'name'  => 'summary.grossAmount',
-            'label' => $this->trans('order.label.summary.gross_amount'),
+            'label' => 'order.label.summary.gross_amount',
         ]));
         
         $form->addFilter($this->getFilter('no_code'));

@@ -30,18 +30,18 @@ class AttributeFormBuilder extends AbstractFormBuilder
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general')
+            'label' => 'common.fieldset.general'
         ]));
 
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
-            'label'       => $this->trans('common.fieldset.translations'),
+            'label'       => 'common.fieldset.translations',
             'transformer' => $this->getRepositoryTransformer('translation', $this->get('attribute.repository'))
         ]));
 
         $languageData->addChild($this->getElement('text_field', [
             'name'  => 'name',
-            'label' => $this->trans('common.label.name'),
+            'label' => 'common.label.name',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -49,24 +49,24 @@ class AttributeFormBuilder extends AbstractFormBuilder
 
         $groupsData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'groups_data',
-            'label' => $this->trans('attribute.fieldset.groups')
+            'label' => 'attribute.fieldset.groups'
         ]));
 
         $groupsData->addChild($this->getElement('multi_select', [
             'name'        => 'groups',
-            'label'       => $this->trans('attribute.label.groups'),
+            'label'       => 'attribute.label.groups',
             'options'     => $this->get('attribute_group.dataset.admin')->getResult('select'),
             'transformer' => $this->getRepositoryTransformer('collection', $this->get('attribute_group.repository'))
         ]));
 
         $valuesData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'values_data',
-            'label' => $this->trans('attribute.fieldset.values')
+            'label' => 'attribute.fieldset.values'
         ]));
 
         $valuesData->addChild($this->getElement('multi_select', [
             'name'        => 'values',
-            'label'       => $this->trans('attribute.label.values'),
+            'label'       => 'attribute.label.values',
             'options'     => $this->get('attribute_value.dataset.admin')->getResult('select'),
             'transformer' => $this->getRepositoryTransformer('collection', $this->get('attribute_value.repository'))
         ]));

@@ -55,15 +55,15 @@ var GFormProgressBar = GCore.ExtendClass(GFormFile, function () {
         gThis.m_jNode = $('<div/>').addClass(gThis._GetClass('Field'));
         gThis.m_jNode.css({marginBottom: 20});
         var jLabel = $('<label for="' + gThis.GetId() + '"/>');
-        jLabel.text(gThis.m_oOptions.sLabel);
+        jLabel.text(GTranslation(gThis.m_oOptions.sLabel));
         if ((gThis.m_oOptions.sComment != undefined) && (gThis.m_oOptions.sComment.length)) {
-            jLabel.append(' <small>' + gThis.m_oOptions.sComment + '</small>');
+            jLabel.append(' <small>' + GTranslation(gThis.m_oOptions.sComment) + '</small>');
         }
         var iTotal = gThis.m_oOptions.iTotal;
         var iCompleted = gThis.m_oOptions.iCompleted;
         var iPercentage = Math.round(iCompleted / iTotal * 100);
 
-        gThis.m_jNode.append('<h4>' + gThis.m_oOptions.sLabel + '</h4>');
+        gThis.m_jNode.append('<h4>' + GTranslation(gThis.m_oOptions.sLabel) + '</h4>');
 
         gThis.m_jNode.append('<p class="' + gThis._GetClass('Progress') + '"/>');
 
@@ -72,7 +72,7 @@ var GFormProgressBar = GCore.ExtendClass(GFormFile, function () {
         if (iTotal == 0) {
             gThis.m_jNode.find('.' + gThis._GetClass('Progress')).text('Brak limitu');
         } else {
-            gThis.m_jNode.find('.' + gThis._GetClass('Progress')).text(Math.round(gThis.m_oOptions.iCompleted / gThis.m_oOptions.iTotal * 100) + '%: ' + gThis.m_oOptions.iCompleted + ' / ' + gThis.m_oOptions.iTotal + ' ' + gThis.m_oOptions.sComment);
+            gThis.m_jNode.find('.' + gThis._GetClass('Progress')).text(Math.round(gThis.m_oOptions.iCompleted / gThis.m_oOptions.iTotal * 100) + '%: ' + gThis.m_oOptions.iCompleted + ' / ' + gThis.m_oOptions.iTotal + ' ' + GTranslation(gThis.m_oOptions.sComment));
         }
 
     };

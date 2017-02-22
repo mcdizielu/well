@@ -44,18 +44,18 @@ class PaymentMethodFormBuilder extends AbstractFormBuilder
         
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general')
+            'label' => 'common.fieldset.general'
         ]));
         
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
-            'label'       => $this->trans('common.fieldset.translations'),
+            'label'       => 'common.fieldset.translations',
             'transformer' => $this->getRepositoryTransformer('translation', $this->get('payment_method.repository'))
         ]));
         
         $languageData->addChild($this->getElement('text_field', [
             'name'  => 'name',
-            'label' => $this->trans('common.label.name'),
+            'label' => 'common.label.name',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -63,19 +63,19 @@ class PaymentMethodFormBuilder extends AbstractFormBuilder
         
         $processorType = $requiredData->addChild($this->getElement('select', [
             'name'    => 'processor',
-            'label'   => $this->trans('payment_method.label.processor'),
+            'label'   => 'payment_method.label.processor',
             'options' => $options,
             'default' => $defaultProcessor
         ]));
         
         $requiredData->addChild($this->getElement('checkbox', [
             'name'  => 'enabled',
-            'label' => $this->trans('common.label.enabled'),
+            'label' => 'common.label.enabled',
         ]));
         
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'hierarchy',
-            'label' => $this->trans('common.label.hierarchy'),
+            'label' => 'common.label.hierarchy',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -83,38 +83,38 @@ class PaymentMethodFormBuilder extends AbstractFormBuilder
         
         $statusesData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'statuses',
-            'label' => $this->trans('payment_method.fieldset.order_statuses')
+            'label' => 'payment_method.fieldset.order_statuses'
         ]));
         
         $statusesData->addChild($this->getElement('select', [
             'name'        => 'paymentPendingOrderStatus',
-            'label'       => $this->trans('payment_method.label.payment_pending_order_status'),
+            'label'       => 'payment_method.label.payment_pending_order_status',
             'options'     => $orderStatuses,
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('order_status.repository'))
         ]));
         
         $statusesData->addChild($this->getElement('select', [
             'name'        => 'paymentSuccessOrderStatus',
-            'label'       => $this->trans('payment_method.label.payment_success_order_status'),
+            'label'       => 'payment_method.label.payment_success_order_status',
             'options'     => $orderStatuses,
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('order_status.repository'))
         ]));
         
         $statusesData->addChild($this->getElement('select', [
             'name'        => 'paymentFailureOrderStatus',
-            'label'       => $this->trans('payment_method.label.payment_failure_order_status'),
+            'label'       => 'payment_method.label.payment_failure_order_status',
             'options'     => $orderStatuses,
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('order_status.repository'))
         ]));
         
         $shippingMethodsData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'shipping_methods_data',
-            'label' => $this->trans('payment_method.fieldset.shipping_methods')
+            'label' => 'payment_method.fieldset.shipping_methods'
         ]));
         
         $shippingMethodsData->addChild($this->getElement('multi_select', [
             'name'        => 'shippingMethods',
-            'label'       => $this->trans('payment_method.label.shipping_methods'),
+            'label'       => 'payment_method.label.shipping_methods',
             'options'     => $this->get('shipping_method.dataset.admin')->getResult('select'),
             'transformer' => $this->getRepositoryTransformer('collection', $this->get('shipping_method.repository'))
         ]));
@@ -122,7 +122,7 @@ class PaymentMethodFormBuilder extends AbstractFormBuilder
         $configurationData = $form->addChild($this->getElement('nested_fieldset', [
             'name'          => 'configuration',
             'property_path' => new PropertyPath('configuration'),
-            'label'         => $this->trans('payment_method.fieldset.processor_configuration')
+            'label'         => 'payment_method.fieldset.processor_configuration'
         ]));
         
         foreach ($processors->all() as $processor) {

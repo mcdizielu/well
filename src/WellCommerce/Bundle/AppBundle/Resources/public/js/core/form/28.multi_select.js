@@ -78,9 +78,9 @@ var GFormMultiSelect = GCore.ExtendClass(GFormField, function () {
     gThis._PrepareNode = function () {
         gThis.m_jNode = $('<div/>').addClass(gThis._GetClass('Field'));
         var jLabel = $('<label for="' + gThis.GetId() + '" class="' + gThis._GetClass('Group') + '"/>');
-        jLabel.text(gThis.m_oOptions.sLabel);
+        jLabel.text(GTranslation(gThis.m_oOptions.sLabel));
         if ((gThis.m_oOptions.sComment != undefined) && (gThis.m_oOptions.sComment.length)) {
-            jLabel.append(' <small>' + gThis.m_oOptions.sComment + '</small>');
+            jLabel.append(' <small>' + GTranslation(gThis.m_oOptions.sComment) + '</small>');
         }
         gThis.m_jNode.append(jLabel);
         gThis.m_jNode.append(gThis._AddField());

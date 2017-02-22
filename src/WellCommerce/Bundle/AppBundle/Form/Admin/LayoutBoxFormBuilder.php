@@ -30,18 +30,18 @@ class LayoutBoxFormBuilder extends AbstractFormBuilder
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general')
+            'label' => 'common.fieldset.general'
         ]));
         
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
-            'label'       => $this->trans('common.fieldset.translations'),
+            'label'       => 'common.fieldset.translations',
             'transformer' => $this->getRepositoryTransformer('translation', $this->get('layout_box.repository'))
         ]));
         
         $languageData->addChild($this->getElement('text_field', [
             'name'  => 'name',
-            'label' => $this->trans('layout_box.label.name'),
+            'label' => 'layout_box.label.name',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -49,13 +49,13 @@ class LayoutBoxFormBuilder extends AbstractFormBuilder
     
         $languageData->addChild($this->getElement('rich_text_editor', [
             'name'  => 'content',
-            'label' => $this->trans('layout_box.label.content')
+            'label' => 'layout_box.label.content'
         ]));
         
         $requiredData->addChild($this->getElement('text_field', [
             'name'    => 'identifier',
-            'label'   => $this->trans('layout_box.label.identifier'),
-            'comment' => $this->trans('layout_box.comment.identifier'),
+            'label'   => 'layout_box.label.identifier',
+            'comment' => 'layout_box.comment.identifier',
             'rules'   => [
                 $this->getRule('required')
             ],
@@ -63,7 +63,7 @@ class LayoutBoxFormBuilder extends AbstractFormBuilder
         
         $requiredData->addChild($this->getElement('select', [
             'name'    => 'boxType',
-            'label'   => $this->trans('layout_box.label.type'),
+            'label'   => 'layout_box.label.type',
             'default' => $this->getDefaultLayoutBoxType()
         ]));
         

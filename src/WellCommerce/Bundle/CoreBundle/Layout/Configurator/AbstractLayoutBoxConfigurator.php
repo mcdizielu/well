@@ -40,7 +40,7 @@ abstract class AbstractLayoutBoxConfigurator extends AbstractContainerAware impl
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => $this->trans('layout_box.configuration'),
+            'tip' => 'layout_box.configuration',
         ]));
         
         return $fieldset;
@@ -54,7 +54,7 @@ abstract class AbstractLayoutBoxConfigurator extends AbstractContainerAware impl
         
         $fieldset = $form->addChild($builder->getElement('nested_fieldset', [
             'name'         => $type,
-            'label'        => $this->trans('layout_box.label.settings'),
+            'label'        => 'layout_box.label.settings',
             'dependencies' => [
                 $builder->getDependency('show', [
                     'field'     => $boxTypeSelect,

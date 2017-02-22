@@ -30,7 +30,7 @@ class UserLoginFormBuilder extends AbstractFormBuilder
     {
         $form->addChild($this->getElement('text_field', [
             'name'  => '_username',
-            'label' => $this->trans('user.label.username'),
+            'label' => 'user.label.username',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -38,7 +38,7 @@ class UserLoginFormBuilder extends AbstractFormBuilder
 
         $form->addChild($this->getElement('password', [
             'name'  => '_password',
-            'label' => $this->trans('user.label.password'),
+            'label' => 'user.label.password',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -46,13 +46,13 @@ class UserLoginFormBuilder extends AbstractFormBuilder
 
         $form->addChild($this->getElement('submit', [
             'name'  => 'log_in',
-            'label' => $this->trans('user.button.log_in'),
+            'label' => 'user.button.log_in',
         ]));
 
         $resetUrl = $this->getRouterHelper()->generateUrl('admin.user.reset_password');
 
         $form->addChild($this->getElement('static_text', [
-            'text' => '<a href="' . $resetUrl . '">' . $this->trans('user.button.reset_password') . '</a>',
+            'text' => '<a href="' . $resetUrl . '">' . 'user.button.reset_password' . '</a>',
         ]));
 
         $form->addFilter($this->getFilter('no_code'));

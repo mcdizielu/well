@@ -30,12 +30,12 @@ class ClientChangePasswordFormBuilder extends AbstractFormBuilder
     {
         $clientDetails = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'clientDetails',
-            'label' => $this->trans('client.heading.client_details'),
+            'label' => 'client.heading.client_details',
         ]));
 
         $clientDetails->addChild($this->getElement('password', [
             'name'  => 'clientDetails.hashedPassword',
-            'label' => $this->trans('client.label.new_password'),
+            'label' => 'client.label.new_password',
         ]));
 
         $form->addFilter($this->getFilter('no_code'));

@@ -30,12 +30,12 @@ class CompanyFormBuilder extends AbstractFormBuilder
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general')
+            'label' => 'common.fieldset.general'
         ]));
 
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'name',
-            'label' => $this->trans('company.label.name'),
+            'label' => 'company.label.name',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -43,7 +43,7 @@ class CompanyFormBuilder extends AbstractFormBuilder
 
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'shortName',
-            'label' => $this->trans('company.label.short_name'),
+            'label' => 'company.label.short_name',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -51,37 +51,37 @@ class CompanyFormBuilder extends AbstractFormBuilder
 
         $addressData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'address_data',
-            'label' => $this->trans('address.label.addresses')
+            'label' => 'address.label.addresses'
         ]));
 
         $addressData->addChild($this->getElement('text_field', [
             'name'  => 'line1',
-            'label' => $this->trans('address.label.line1'),
+            'label' => 'address.label.line1',
         ]));
 
         $addressData->addChild($this->getElement('text_field', [
             'name'  => 'line2',
-            'label' => $this->trans('address.label.line2'),
+            'label' => 'address.label.line2',
         ]));
 
         $addressData->addChild($this->getElement('text_field', [
             'name'  => 'state',
-            'label' => $this->trans('address.label.state'),
+            'label' => 'address.label.state',
         ]));
 
         $addressData->addChild($this->getElement('text_field', [
             'name'  => 'postalCode',
-            'label' => $this->trans('address.label.post_code'),
+            'label' => 'address.label.post_code',
         ]));
 
         $addressData->addChild($this->getElement('text_field', [
             'name'  => 'city',
-            'label' => $this->trans('address.label.city'),
+            'label' => 'address.label.city',
         ]));
 
         $addressData->addChild($this->getElement('select', [
             'name'    => 'country',
-            'label'   => $this->trans('address.label.country'),
+            'label'   => 'address.label.country',
             'options' => $this->get('country.repository')->all()
         ]));
 

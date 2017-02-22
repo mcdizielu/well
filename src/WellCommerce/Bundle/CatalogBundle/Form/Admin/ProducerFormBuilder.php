@@ -30,18 +30,18 @@ class ProducerFormBuilder extends AbstractFormBuilder
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general')
+            'label' => 'common.fieldset.general'
         ]));
 
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
-            'label'       => $this->trans('common.fieldset.translations'),
+            'label'       => 'common.fieldset.translations',
             'transformer' => $this->getRepositoryTransformer('translation', $this->get('product.repository'))
         ]));
 
         $name = $languageData->addChild($this->getElement('text_field', [
             'name'  => 'name',
-            'label' => $this->trans('common.label.name'),
+            'label' => 'common.label.name',
             'rules' => [
                 $this->getRule('required')
             ],
@@ -49,7 +49,7 @@ class ProducerFormBuilder extends AbstractFormBuilder
 
         $languageData->addChild($this->getElement('slug_field', [
             'name'            => 'slug',
-            'label'           => $this->trans('common.label.slug'),
+            'label'           => 'common.label.slug',
             'name_field'      => $name,
             'generate_route'  => 'route.generate',
             'translatable_id' => $this->getRequestHelper()->getAttributesBagParam('id'),
@@ -62,12 +62,12 @@ class ProducerFormBuilder extends AbstractFormBuilder
 
         $mediaData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'media_data',
-            'label' => $this->trans('common.fieldset.photos')
+            'label' => 'common.fieldset.photos'
         ]));
 
         $mediaData->addChild($this->getElement('image', [
             'name'         => 'photo',
-            'label'        => $this->trans('form.media_data.image_id'),
+            'label'        => 'form.media_data.image_id',
             'load_route'   => $this->getRouterHelper()->generateUrl('admin.media.grid'),
             'upload_url'   => $this->getRouterHelper()->generateUrl('admin.media.add'),
             'repeat_min'   => 0,
@@ -79,12 +79,12 @@ class ProducerFormBuilder extends AbstractFormBuilder
 
         $delivererData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'deliverers_data',
-            'label' => $this->trans('producer.fieldset.deliverers')
+            'label' => 'producer.fieldset.deliverers'
         ]));
 
         $delivererData->addChild($this->getElement('multi_select', [
             'name'        => 'deliverers',
-            'label'       => $this->trans('producer.label.deliverers'),
+            'label'       => 'producer.label.deliverers',
             'options'     => $this->get('deliverer.dataset.admin')->getResult('select'),
             'transformer' => $this->getRepositoryTransformer('collection', $this->get('deliverer.repository'))
         ]));

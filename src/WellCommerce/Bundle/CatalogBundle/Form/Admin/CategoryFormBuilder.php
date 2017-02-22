@@ -30,18 +30,18 @@ class CategoryFormBuilder extends AbstractFormBuilder
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general'),
+            'label' => 'common.fieldset.general',
         ]));
         
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
-            'label'       => $this->trans('common.fieldset.translations'),
+            'label'       => 'common.fieldset.translations',
             'transformer' => $this->getRepositoryTransformer('translation', $this->get('category.repository')),
         ]));
         
         $name = $languageData->addChild($this->getElement('text_field', [
             'name'  => 'name',
-            'label' => $this->trans('common.label.name'),
+            'label' => 'common.label.name',
             'rules' => [
                 $this->getRule('required'),
             ],
@@ -49,7 +49,7 @@ class CategoryFormBuilder extends AbstractFormBuilder
         
         $languageData->addChild($this->getElement('slug_field', [
             'name'            => 'slug',
-            'label'           => $this->trans('category.label.slug'),
+            'label'           => 'category.label.slug',
             'name_field'      => $name,
             'generate_route'  => 'route.generate',
             'translatable_id' => $this->getRequestHelper()->getAttributesBagParam('id'),
@@ -60,13 +60,13 @@ class CategoryFormBuilder extends AbstractFormBuilder
         
         $requiredData->addChild($this->getElement('checkbox', [
             'name'    => 'enabled',
-            'label'   => $this->trans('category.label.enabled'),
-            'comment' => $this->trans('category.comment.enabled'),
+            'label'   => 'category.label.enabled',
+            'comment' => 'category.comment.enabled',
         ]));
         
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'hierarchy',
-            'label' => $this->trans('common.label.hierarchy'),
+            'label' => 'common.label.hierarchy',
             'rules' => [
                 $this->getRule('required'),
             ],
@@ -74,12 +74,12 @@ class CategoryFormBuilder extends AbstractFormBuilder
         
         $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'symbol',
-            'label' => $this->trans('common.label.symbol'),
+            'label' => 'common.label.symbol',
         ]));
         
         $requiredData->addChild($this->getElement('tree', [
             'name'        => 'parent',
-            'label'       => $this->trans('category.label.parent'),
+            'label'       => 'category.label.parent',
             'choosable'   => true,
             'selectable'  => false,
             'sortable'    => false,
@@ -91,23 +91,23 @@ class CategoryFormBuilder extends AbstractFormBuilder
         
         $descriptionData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'description_data',
-            'label' => $this->trans('category.form.fieldset.description'),
+            'label' => 'category.form.fieldset.description',
         ]));
         
         $languageData = $descriptionData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
-            'label'       => $this->trans('common.fieldset.translations'),
+            'label'       => 'common.fieldset.translations',
             'transformer' => $this->getRepositoryTransformer('translation', $this->get('category.repository')),
         ]));
         
         $languageData->addChild($this->getElement('rich_text_editor', [
             'name'  => 'shortDescription',
-            'label' => $this->trans('common.label.short_description'),
+            'label' => 'common.label.short_description',
         ]));
         
         $languageData->addChild($this->getElement('rich_text_editor', [
             'name'  => 'description',
-            'label' => $this->trans('common.label.description'),
+            'label' => 'common.label.description',
         ]));
         
         $this->addMetadataFieldset($form, $this->get('category.repository'));

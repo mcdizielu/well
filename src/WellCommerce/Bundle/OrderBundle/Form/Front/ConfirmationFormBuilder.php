@@ -32,14 +32,14 @@ class ConfirmationFormBuilder extends AbstractFormBuilder
             'name'  => 'comment',
             'rows'  => 5,
             'cols'  => 20,
-            'label' => $this->trans('order.label.comment'),
+            'label' => 'order.label.comment',
         ]));
         
         $form->addChild($this->getElement('checkbox', [
             'name'    => 'conditionsAccepted',
-            'label'   => $this->trans('order.label.accept_conditions'),
+            'label'   => 'order.label.accept_conditions',
             'default' => false,
-            'comment' => $this->trans('order.label.accept_conditions'),
+            'comment' => 'order.label.accept_conditions',
         ]));
         
         $form->addFilter($this->getFilter('no_code'));

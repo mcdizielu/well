@@ -31,20 +31,20 @@ class CurrencyFormBuilder extends AbstractFormBuilder
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
-            'label' => $this->trans('common.fieldset.general'),
+            'label' => 'common.fieldset.general',
         ]));
         
         $requiredData->addChild($this->getElement('select', [
             'name'    => 'code',
-            'label'   => $this->trans('currency.label.code'),
+            'label'   => 'currency.label.code',
             'options' => $this->getCurrenciesToSelect(),
             'default' => $this->getRequestHelper()->getCurrentCurrency(),
         ]));
         
         $requiredData->addChild($this->getElement('checkbox', [
             'name'    => 'enabled',
-            'label'   => $this->trans('common.label.enabled'),
-            'comment' => $this->trans('currency.comment.enabled'),
+            'label'   => 'common.label.enabled',
+            'comment' => 'currency.comment.enabled',
         ]));
         
         $form->addFilter($this->getFilter('no_code'));

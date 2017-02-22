@@ -54,12 +54,12 @@ var GFormProgressIndicator = GCore.ExtendClass(GFormFile, function () {
     gThis._PrepareNode = function () {
         gThis.m_jNode = $('<div/>').addClass(gThis._GetClass('Field'));
         var jLabel = $('<label for="' + gThis.GetId() + '"/>');
-        jLabel.text(gThis.m_oOptions.sLabel);
+        jLabel.text(GTranslation(gThis.m_oOptions.sLabel));
         if ((gThis.m_oOptions.sComment != undefined) && (gThis.m_oOptions.sComment.length)) {
-            jLabel.append(' <small>' + gThis.m_oOptions.sComment + '</small>');
+            jLabel.append(' <small>' + GTranslation(gThis.m_oOptions.sComment) + '</small>');
         }
 
-        gThis.m_jNode.append('<h4>' + gThis.m_oOptions.sLabel + '</h4>');
+        gThis.m_jNode.append('<h4>' + GTranslation(gThis.m_oOptions.sLabel) + '</h4>');
         gThis.m_jNode.append('<p class="' + gThis._GetClass('Progress') + '"/>');
         gThis.m_jNode.append('<div class="' + gThis._GetClass('ProgressBar') + '"><div class="' + gThis._GetClass('ProgressBarIndicator') + '"></div>');
         gThis.m_jNode.find('.' + gThis._GetClass('Progress')).text(GForm.Language.progress_indicator_run_comment);
@@ -126,7 +126,7 @@ var GFormProgressIndicator = GCore.ExtendClass(GFormFile, function () {
         }
         var iTotal = gThis.iTotal;
         var iPercentage = Math.round(iCompleted / iTotal * 100);
-        gThis.m_jNode.find('.' + gThis._GetClass('Progress')).text(iPercentage + '%: ' + iCompleted + ' / ' + iTotal + ' ' + gThis.m_oOptions.sComment);
+        gThis.m_jNode.find('.' + gThis._GetClass('Progress')).text(iPercentage + '%: ' + iCompleted + ' / ' + iTotal + ' ' + GTranslation(gThis.m_oOptions.sComment));
         gThis.m_jNode.find('.' + gThis._GetClass('ProgressBarIndicator')).css('width', (iCompleted / iTotal * 100) + '%');
     };
 
@@ -134,7 +134,7 @@ var GFormProgressIndicator = GCore.ExtendClass(GFormFile, function () {
         var iCompleted = eEvent.iCompleted;
         var iTotal = eEvent.iTotal;
         var iPercentage = Math.round(iCompleted / iTotal * 100);
-        gThis.m_jNode.find('.' + gThis._GetClass('Progress')).text(iPercentage + '%: ' + iCompleted + ' / ' + iTotal + ' ' + gThis.m_oOptions.sComment);
+        gThis.m_jNode.find('.' + gThis._GetClass('Progress')).text(iPercentage + '%: ' + iCompleted + ' / ' + iTotal + ' ' + GTranslation(gThis.m_oOptions.sComment));
         gThis.iTotal = iTotal;
         gThis.m_jNode.find('h4').text('Przetwarzanie danych');
         gThis.OnStartProcess(iCompleted, 0);

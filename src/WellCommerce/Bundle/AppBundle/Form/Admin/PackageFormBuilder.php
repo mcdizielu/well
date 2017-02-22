@@ -39,7 +39,7 @@ class PackageFormBuilder extends AbstractFormBuilder
         
         $packageData = $packageForm->addChild($this->getElement('nested_fieldset', [
             'name'  => 'package_data',
-            'label' => $this->trans('package.fieldset.information'),
+            'label' => 'package.fieldset.information',
         ]));
         
         foreach ($versions as $version) {
@@ -59,12 +59,12 @@ class PackageFormBuilder extends AbstractFormBuilder
         
         $packageRequiredData = $packageForm->addChild($this->getElement('nested_fieldset', [
             'name'  => 'progress_data',
-            'label' => $this->trans('package.fieldset.progress'),
+            'label' => 'package.fieldset.progress',
         ]));
         
         $packageRequiredData->addChild($this->getElement('console_output', [
             'name'        => 'console_output',
-            'label'       => $this->trans('package.label.console_output'),
+            'label'       => 'package.label.console_output',
             'port'        => $port,
             'console_url' => $router->generateUrl(
                 'admin.package.console', [

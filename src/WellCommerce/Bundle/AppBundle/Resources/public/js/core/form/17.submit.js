@@ -25,7 +25,7 @@ var GFormSubmit = GCore.ExtendClass(GFormField, function () {
 
     gThis._PrepareNode = function () {
         gThis.m_jNode = $('<div/>').addClass(gThis._GetClass('Field'));
-        gThis.m_jNode.append('<button class="' + gThis._GetClass('Button') + '" type="submit" name="' + gThis.GetName() + '"><span>' + gThis.m_oOptions.sLabel + '</span></button>');
+        gThis.m_jNode.append('<button class="' + gThis._GetClass('Button') + '" type="submit" name="' + gThis.GetName() + '"><span>' + GTranslation(gThis.m_oOptions.sLabel)+ '</span></button>');
     };
 
 }, oDefaults);

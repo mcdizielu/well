@@ -55,14 +55,14 @@ var GFormCheckbox = GCore.ExtendClass(GFormField, function () {
     gThis._PrepareNode = function () {
         gThis.m_jNode = $('<div/>').addClass(gThis._GetClass('Field'));
         var jLabel = $('<label for="' + gThis.GetId() + '"/>');
-        jLabel.text(gThis.m_oOptions.sLabel);
+        jLabel.text(GTranslation(gThis.m_oOptions.sLabel));
         gThis.m_jNode.append(jLabel);
         gThis.m_jHiddenField = $('<input type="hidden" name="' + gThis.GetName() + '" value="0"/>');
         gThis.m_jField = $('<input type="' + gThis.m_oOptions.sFieldType + '" name="' + gThis.GetName() + '" id="' + gThis.GetId() + '" value="1"/>');
         var jRepetitionNode = $('<span class="' + gThis._GetClass('FieldRepetition') + '"/>');
         jRepetitionNode.append($('<span class="' + gThis._GetClass('FieldSpan') + '"/>').append(gThis.m_jHiddenField).append(gThis.m_jField));
         if ((gThis.m_oOptions.sComment != undefined) && (gThis.m_oOptions.sComment.length)) {
-            jRepetitionNode.append(' <small>' + gThis.m_oOptions.sComment + '</small>');
+            jRepetitionNode.append(' <small>' + GTranslation(gThis.m_oOptions.sComment) + '</small>');
         }
         gThis.m_jNode.append(jRepetitionNode);
     };

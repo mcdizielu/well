@@ -74,7 +74,7 @@ var GFormSortableList = GCore.ExtendClass(GFormField, function () {
         gThis.m_jNode.append(gThis.m_jField);
         gThis.m_jFieldWrapper = $('<div/>');
         gThis.m_jNode.append(gThis.m_jFieldWrapper);
-        gThis.m_jNode.append('<label>' + gThis.m_oOptions.sLabel + '</label>');
+        gThis.m_jNode.append('<label>' + GTranslation(gThis.m_oOptions.sLabel) + '</label>');
         gThis.m_jTree = $('<ul/>');
         if (gThis.m_oOptions.iTotal > 0) {
             gThis.m_jNode.append($('<div class="tree-wrapper"/>').append(gThis.m_jTree));
