@@ -13,6 +13,8 @@
 namespace WellCommerce\Bundle\CatalogBundle\Configurator;
 
 use WellCommerce\Bundle\CatalogBundle\Controller\Box\CategoryMenuBoxController;
+use WellCommerce\Bundle\CatalogBundle\DataSet\Admin\CategoryDataSet;
+use WellCommerce\Bundle\CatalogBundle\Repository\CategoryRepository;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
@@ -24,9 +26,21 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  */
 final class CategoryMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    public function __construct(CategoryMenuBoxController $controller)
+    /**
+     * @var CategoryDataSet
+     */
+    private $dataSet;
+    
+    /**
+     * @var CategoryRepository
+     */
+    private $repository;
+    
+    public function __construct(CategoryMenuBoxController $controller, CategoryDataSet $dataSet, CategoryRepository $repository)
     {
         $this->controller = $controller;
+        $this->dataSet    = $dataSet;
+        $this->repository = $repository;
     }
     
     public function getType(): string
@@ -40,18 +54,18 @@ final class CategoryMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
         $accessor = $this->getPropertyAccessor();
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => $this->trans('Choose categories which should be not visible in box.'),
+            'tip' => 'Choose categories which should be not visible in box.',
         ]));
         
         $exclude = $fieldset->addChild($builder->getElement('tree', [
             'name'        => 'exclude',
-            'label'       => $this->trans('category.label.exclude'),
+            'label'       => 'category.label.exclude',
             'choosable'   => false,
             'selectable'  => true,
             'sortable'    => false,
             'clickable'   => false,
-            'items'       => $this->get('category.dataset.admin')->getResult('flat_tree'),
-            'transformer' => $builder->getRepositoryTransformer('entity', $this->get('category.repository')),
+            'items'       => $this->dataSet->getResult('flat_tree'),
+            'transformer' => $builder->getRepositoryTransformer('entity', $this->repository),
         ]));
         
         $exclude->setValue($accessor->getValue($defaults, '[exclude]'));

@@ -17,6 +17,8 @@ use Doctrine\Common\Persistence\Mapping\ClassMetadataFactory;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Query\Filter\SQLFilter;
 use Doctrine\ORM\Query\FilterCollection;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 
 /**
  * Interface DoctrineHelperInterface
@@ -25,24 +27,26 @@ use Doctrine\ORM\Query\FilterCollection;
  */
 interface DoctrineHelperInterface
 {
-    public function getDoctrineFilters() : FilterCollection;
-
-    public function getEntityManager() : EntityManagerInterface;
-
+    public function getDoctrineFilters(): FilterCollection;
+    
+    public function getEntityManager(): EntityManagerInterface;
+    
     public function disableFilter(string $filter);
-
-    public function enableFilter(string $filter) : SQLFilter;
-
-    public function getClassMetadata(string $className) : ClassMetadata;
-
-    public function getClassMetadataForEntity($entity) : ClassMetadata;
-
-    public function hasClassMetadataForEntity($object) : bool;
-
+    
+    public function enableFilter(string $filter): SQLFilter;
+    
+    public function getClassMetadata(string $className): ClassMetadata;
+    
+    public function getClassMetadataForEntity($entity): ClassMetadata;
+    
+    public function hasClassMetadataForEntity($object): bool;
+    
+    public function getEntityRepository(EntityInterface $entity): RepositoryInterface;
+    
     /**
      * @return \Doctrine\Common\Persistence\Mapping\ClassMetadata[]
      */
-    public function getAllMetadata() : array;
-
-    public function getMetadataFactory() : ClassMetadataFactory;
+    public function getAllMetadata(): array;
+    
+    public function getMetadataFactory(): ClassMetadataFactory;
 }

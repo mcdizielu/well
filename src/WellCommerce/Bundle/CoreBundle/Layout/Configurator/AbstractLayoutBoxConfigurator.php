@@ -14,7 +14,6 @@ namespace WellCommerce\Bundle\CoreBundle\Layout\Configurator;
 
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyAccessor;
-use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractContainerAware;
 use WellCommerce\Component\Form\Conditions\Equals;
 use WellCommerce\Component\Form\Elements\Fieldset\FieldsetInterface;
 use WellCommerce\Component\Form\Elements\FormInterface;
@@ -28,7 +27,7 @@ use WellCommerce\Component\Layout\Controller\BoxControllerInterface;
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-abstract class AbstractLayoutBoxConfigurator extends AbstractContainerAware implements LayoutBoxConfiguratorInterface
+abstract class AbstractLayoutBoxConfigurator implements LayoutBoxConfiguratorInterface
 {
     /**
      * @var BoxControllerInterface

@@ -39,7 +39,7 @@ final class NewsBoxConfigurator extends AbstractLayoutBoxConfigurator
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => $this->trans('layout_box.news.tip'),
+            'tip' => 'layout_box.news.tip',
         ]));
     }
 }

@@ -19,6 +19,8 @@ use Doctrine\Common\Util\ClassUtils;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Query\Filter\SQLFilter;
 use Doctrine\ORM\Query\FilterCollection;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 
 /**
  * Class DoctrineHelper
@@ -42,47 +44,52 @@ final class DoctrineHelper implements DoctrineHelperInterface
         $this->getDoctrineFilters()->disable($filter);
     }
     
-    public function enableFilter(string $filter) : SQLFilter
+    public function enableFilter(string $filter): SQLFilter
     {
         return $this->getDoctrineFilters()->enable($filter);
     }
     
-    public function getDoctrineFilters() : FilterCollection
+    public function getDoctrineFilters(): FilterCollection
     {
         return $this->getEntityManager()->getFilters();
     }
     
-    public function getEntityManager() : EntityManagerInterface
+    public function getEntityManager(): EntityManagerInterface
     {
         return $this->registry->getManager();
     }
     
-    public function getClassMetadata(string $className) : ClassMetadata
+    public function getClassMetadata(string $className): ClassMetadata
     {
         return $this->getEntityManager()->getClassMetadata($className);
     }
     
-    public function getClassMetadataForEntity($object) : ClassMetadata
+    public function getEntityRepository(EntityInterface $entity): RepositoryInterface
+    {
+        return $this->getEntityManager()->getRepository($this->getRealClass($entity));
+    }
+    
+    public function getClassMetadataForEntity($object): ClassMetadata
     {
         return $this->getClassMetadata($this->getRealClass($object));
     }
     
-    public function getAllMetadata() : array
+    public function getAllMetadata(): array
     {
         return $this->getMetadataFactory()->getAllMetadata();
     }
     
-    public function hasClassMetadataForEntity($object) : bool
+    public function hasClassMetadataForEntity($object): bool
     {
         return $this->getMetadataFactory()->hasMetadataFor($this->getRealClass($object));
     }
     
-    public function getMetadataFactory() : ClassMetadataFactory
+    public function getMetadataFactory(): ClassMetadataFactory
     {
         return $this->getEntityManager()->getMetadataFactory();
     }
-
-    private function getRealClass($object) : string
+    
+    private function getRealClass($object): string
     {
         return ClassUtils::getRealClass(get_class($object));
     }

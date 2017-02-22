@@ -16,7 +16,6 @@ use WellCommerce\Bundle\CatalogBundle\Controller\Box\CategoryInfoBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
-use WellCommerce\Component\Layout\Controller\BoxControllerInterface;
 
 /**
  * Class CategoryInfoBoxConfigurator
@@ -40,7 +39,7 @@ final class CategoryInfoBoxConfigurator extends AbstractLayoutBoxConfigurator
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => $this->trans('Choose categories which should be not visible in box.'),
+            'tip' => 'Choose categories which should be not visible in box.',
         ]));
     }
 }

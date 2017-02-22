@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\ShowcaseBundle\Configurator;
 
+use WellCommerce\Bundle\CatalogBundle\DataSet\Admin\ProductStatusDataSet;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Bundle\ShowcaseBundle\Controller\Box\ShowcaseBoxController;
 use WellCommerce\Component\Form\Elements\FormInterface;
@@ -24,9 +25,15 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  */
 final class ShowcaseBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    public function __construct(ShowcaseBoxController $controller)
+    /**
+     * @var ProductStatusDataSet
+     */
+    private $dataSet;
+    
+    public function __construct(ShowcaseBoxController $controller, ProductStatusDataSet $dataSet)
     {
         $this->controller = $controller;
+        $this->dataSet    = $dataSet;
     }
     
     public function getType(): string
@@ -39,13 +46,13 @@ final class ShowcaseBoxConfigurator extends AbstractLayoutBoxConfigurator
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => $this->trans('layout_box.showcase.tip'),
+            'tip' => 'layout_box.showcase.tip',
         ]));
         
         $status = $fieldset->addChild($builder->getElement('select', [
             'name'    => 'status',
-            'label'   => $this->trans('showcase.label.status'),
-            'options' => $this->get('product_status.dataset.admin')->getResult('select'),
+            'label'   => 'showcase.label.status',
+            'options' => $this->dataSet->getResult('select'),
         ]));
         
         $status->setValue($this->getPropertyAccessor()->getValue($defaults, '[status]'));

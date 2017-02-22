@@ -39,7 +39,7 @@ final class PageBoxConfigurator extends AbstractLayoutBoxConfigurator
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => $this->trans('page.box.help'),
+            'tip' => 'page.box.help',
         ]));
     }
 }

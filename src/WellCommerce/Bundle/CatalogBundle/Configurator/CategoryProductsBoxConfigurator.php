@@ -40,7 +40,7 @@ final class CategoryProductsBoxConfigurator extends AbstractLayoutBoxConfigurato
         
         $fieldset->addChild($builder->getElement('text_field', [
             'name'  => 'per_page',
-            'label' => $this->trans('layout_box.category_products.per_page'),
+            'label' => 'layout_box.category_products.per_page',
         ]));
     }
 }

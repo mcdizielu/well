@@ -39,7 +39,7 @@ final class ProductSearchBoxConfigurator extends AbstractLayoutBoxConfigurator
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => $this->trans('layout_box.search.tip'),
+            'tip' => 'layout_box.search.tip',
         ]));
     }
 }

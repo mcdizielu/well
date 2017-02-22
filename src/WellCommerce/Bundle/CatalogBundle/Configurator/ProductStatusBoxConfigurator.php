@@ -39,7 +39,7 @@ final class ProductStatusBoxConfigurator extends AbstractLayoutBoxConfigurator
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => $this->trans('layout_box.product_status.tip'),
+            'tip' => 'layout_box.product_status.tip',
         ]));
         
         $statuses   = $this->get('product_status.dataset.admin')->getResult('select');
@@ -47,7 +47,7 @@ final class ProductStatusBoxConfigurator extends AbstractLayoutBoxConfigurator
         
         $fieldset->addChild($builder->getElement('select', [
             'name'        => 'status',
-            'label'       => $this->trans('product.label.statuses'),
+            'label'       => 'product.label.statuses',
             'options'     => $this->get('product_status.dataset.admin')->getResult('select'),
             'transformer' => $builder->getRepositoryTransformer('collection', $this->get('product_status.repository')),
         ]))->setValue(current($statusKeys));
