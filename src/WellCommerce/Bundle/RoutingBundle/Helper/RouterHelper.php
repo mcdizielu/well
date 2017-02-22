@@ -12,15 +12,12 @@
 
 namespace WellCommerce\Bundle\RoutingBundle\Helper;
 
-use ReflectionClass;
-use ReflectionMethod;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouterInterface;
-use WellCommerce\Bundle\CoreBundle\Controller\ControllerInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Request\RequestHelperInterface;
 
 /**
@@ -50,19 +47,6 @@ final class RouterHelper implements RouterHelperInterface
     {
         $this->router        = $router;
         $this->requestHelper = $requestHelper;
-    }
-    
-    public function hasControllerAction(ControllerInterface $controller, string $action): bool
-    {
-        $reflectionClass = new ReflectionClass($controller);
-        if ($reflectionClass->hasMethod($action)) {
-            $reflectionMethod = new ReflectionMethod($controller, $action);
-            if ($reflectionMethod->isPublic()) {
-                return true;
-            }
-        }
-        
-        return false;
     }
     
     public function getCurrentAction(): string

@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\ShowcaseBundle\Configurator;
 
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
+use WellCommerce\Bundle\ShowcaseBundle\Controller\Box\ShowcaseBoxController;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
 
@@ -23,9 +24,16 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  */
 final class ShowcaseBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function __construct(ShowcaseBoxController $controller)
+    {
+        $this->controller = $controller;
+    }
+    
+    public function getType(): string
+    {
+        return 'Showcase';
+    }
+    
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
     {
         $fieldset = $this->getFieldset($builder, $form);

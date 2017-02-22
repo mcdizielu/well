@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\CmsBundle\Configurator;
 
+use WellCommerce\Bundle\CmsBundle\Controller\Box\NewsBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
@@ -23,6 +24,16 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  */
 final class NewsBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
+    public function __construct(NewsBoxController $controller)
+    {
+        $this->controller = $controller;
+    }
+    
+    public function getType(): string
+    {
+        return 'News';
+    }
+    
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
     {
         $fieldset = $this->getFieldset($builder, $form);

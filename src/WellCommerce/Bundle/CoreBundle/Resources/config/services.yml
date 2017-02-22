@@ -12,6 +12,7 @@ imports:
     - { resource: 'services/dataset.yml' }
     - { resource: 'services/doctrine.yml' }
     - { resource: 'services/form.yml' }
+    - { resource: 'services/layout.yml' }
 
 services:
     flash.helper:

@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\ReviewBundle\Configurator;
 
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
+use WellCommerce\Bundle\ReviewBundle\Controller\Box\ReviewBoxController;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
 
@@ -23,9 +24,16 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  */
 final class ReviewBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function __construct(ReviewBoxController $controller)
+    {
+        $this->controller = $controller;
+    }
+    
+    public function getType(): string
+    {
+        return 'Review';
+    }
+    
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
     {
         $fieldset = $this->getFieldset($builder, $form);

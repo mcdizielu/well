@@ -15,7 +15,7 @@ namespace WellCommerce\Bundle\ShowcaseBundle\Controller\Box;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
 use Symfony\Component\HttpFoundation\Response;
-use WellCommerce\Bundle\AppBundle\Collection\LayoutBoxSettingsCollection;
+use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 use WellCommerce\Bundle\CatalogBundle\Entity\Category;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
 use WellCommerce\Component\DataSet\Conditions\Condition\Eq;

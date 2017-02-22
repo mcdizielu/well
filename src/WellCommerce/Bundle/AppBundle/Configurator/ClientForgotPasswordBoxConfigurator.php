@@ -12,7 +12,9 @@
 
 namespace WellCommerce\Bundle\AppBundle\Configurator;
 
+use WellCommerce\Bundle\AppBundle\Controller\Box\ClientForgotPasswordBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
+use WellCommerce\Component\Layout\Controller\BoxControllerInterface;
 
 /**
  * Class ClientForgotPasswordBoxConfigurator
@@ -21,4 +23,13 @@ use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigur
  */
 final class ClientForgotPasswordBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
+    public function __construct(ClientForgotPasswordBoxController $controller)
+    {
+        $this->controller = $controller;
+    }
+    
+    public function getType(): string
+    {
+        return 'ClientForgotPassword';
+    }
 }

@@ -7,24 +7,15 @@
 # please view the LICENSE file that was distributed with this source code.
 
 services:
-    layout_box.renderer:
-        class: WellCommerce\Bundle\AppBundle\Renderer\LayoutBoxRenderer
-        arguments: ['@layout_box.configurator.collection', '@layout_box.repository']
-        calls:
-            - [setContainer, ['@service_container']]
-
     layout_box.subscriber:
         class: WellCommerce\Bundle\AppBundle\EventListener\LayoutBoxSubscriber
-        tags:
-            - { name: kernel.event_subscriber }
         calls:
             - [setContainer, ['@service_container']]
-
-    layout_box.configurator.collection:
-        class: WellCommerce\Bundle\CoreBundle\Layout\Configurator\LayoutBoxConfiguratorCollection
+        tags:
+            - { name: kernel.event_subscriber }
 
     twig.extension.layout_box:
-        class: WellCommerce\Bundle\AppBundle\Twig\Extension\LayoutBoxExtension
+        class: WellCommerce\Bundle\AppBundle\Twig\LayoutBoxExtension
+        arguments: ['@layout_box.renderer', '@layout_box.repository']
         tags:
             - { name: twig.extension }
-        arguments: ['@layout_box.renderer']

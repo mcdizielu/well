@@ -12,7 +12,9 @@
 
 namespace WellCommerce\Bundle\AppBundle\Configurator;
 
+use WellCommerce\Bundle\AppBundle\Controller\Box\ClientAddressBookBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
+use WellCommerce\Component\Layout\Controller\BoxControllerInterface;
 
 /**
  * Class ClientAddressBookBoxConfigurator
@@ -21,4 +23,13 @@ use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigur
  */
 final class ClientAddressBookBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
+    public function __construct(ClientAddressBookBoxController $controller)
+    {
+        $this->controller = $controller;
+    }
+    
+    public function getType(): string
+    {
+        return 'ClientAddressBook';
+    }
 }

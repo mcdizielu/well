@@ -7,23 +7,21 @@
 # please view the LICENSE file that was distributed with this source code.
 
 services:
+    contact.layout_box.controller:
+        class: WellCommerce\Bundle\CmsBundle\Controller\Box\ContactBoxController
+        arguments: ['@contact.manager', '@contact.form_builder.front']
+
     contact.layout_box.configurator:
         class: WellCommerce\Bundle\CmsBundle\Configurator\ContactBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [Contact, contact.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     contact.controller.front:
         class: WellCommerce\Bundle\CmsBundle\Controller\Front\ContactController
         arguments: ['@contact.manager', '@contact.form_builder.front']
         calls:
             - [setContainer, ['@service_container']]
-
-    contact.layout_box.controller:
-        class: WellCommerce\Bundle\CmsBundle\Controller\Box\ContactBoxController
-        arguments: ['@service_container', '@contact.repository']
 
     contact.request.storage:
         class: WellCommerce\Bundle\CmsBundle\Request\ContactRequestStorage

@@ -12,9 +12,11 @@
 
 namespace WellCommerce\Bundle\CatalogBundle\Configurator;
 
+use WellCommerce\Bundle\CatalogBundle\Controller\Box\CategoryInfoBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
+use WellCommerce\Component\Layout\Controller\BoxControllerInterface;
 
 /**
  * Class CategoryInfoBoxConfigurator
@@ -23,9 +25,16 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  */
 final class CategoryInfoBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function __construct(CategoryInfoBoxController $controller)
+    {
+        $this->controller = $controller;
+    }
+    
+    public function getType(): string
+    {
+        return 'CategoryInfo';
+    }
+    
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
     {
         $fieldset = $this->getFieldset($builder, $form);

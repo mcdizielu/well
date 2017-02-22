@@ -5,14 +5,60 @@
 #
 # For the full copyright and license information,
 # please view the LICENSE file that was distributed with this source code.
-
 well_commerce_api:
+    request_handler:
+        client:
+            manager: client.manager
+        client_group:
+            manager: client_group.manager
+        company:
+            manager: company.manager
+        currency:
+            manager: currency.manager
+        locale:
+            manager: locale.manager
+        media:
+            manager: media.manager
+        shop:
+            manager: shop.manager
+        tax:
+            manager: tax.manager
     serialization:
+        WellCommerce\Bundle\AppBundle\Entity\Client:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Client.yml"
+        WellCommerce\Bundle\AppBundle\Entity\ClientBillingAddress:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/ClientBillingAddress.yml"
+        WellCommerce\Bundle\AppBundle\Entity\ClientDetails:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/ClientDetails.yml"
+        WellCommerce\Bundle\AppBundle\Entity\ClientContactDetails:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/ClientContactDetails.yml"
+        WellCommerce\Bundle\AppBundle\Entity\ClientGroup:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/ClientGroup.yml"
+        WellCommerce\Bundle\AppBundle\Entity\ClientGroupTranslation:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/ClientGroupTranslation.yml"
+        WellCommerce\Bundle\AppBundle\Entity\ClientShippingAddress:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/ClientShippingAddress.yml"
+        WellCommerce\Bundle\AppBundle\Entity\Company:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Company.yml"
+        WellCommerce\Bundle\AppBundle\Entity\Currency:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Currency.yml"
+        WellCommerce\Bundle\AppBundle\Entity\CurrencyRate:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/CurrencyRate.yml"
         WellCommerce\Bundle\AppBundle\Entity\Dimension:
             mapping: "@WellCommerceAppBundle/Resources/config/serialization/Dimension.yml"
         WellCommerce\Bundle\AppBundle\Entity\DiscountablePrice:
             mapping: "@WellCommerceAppBundle/Resources/config/serialization/DiscountablePrice.yml"
+        WellCommerce\Bundle\AppBundle\Entity\Locale:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Locale.yml"
+        WellCommerce\Bundle\AppBundle\Entity\Media:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Media.yml"
         WellCommerce\Bundle\AppBundle\Entity\Meta:
             mapping: "@WellCommerceAppBundle/Resources/config/serialization/Meta.yml"
         WellCommerce\Bundle\AppBundle\Entity\Price:
             mapping: "@WellCommerceAppBundle/Resources/config/serialization/Price.yml"
+        WellCommerce\Bundle\AppBundle\Entity\Shop:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Shop.yml"
+        WellCommerce\Bundle\AppBundle\Entity\Tax:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Tax.yml"
+        WellCommerce\Bundle\AppBundle\Entity\TaxTranslation:
+            mapping: "@WellCommerceAppBundle/Resources/config/serialization/TaxTranslation.yml"

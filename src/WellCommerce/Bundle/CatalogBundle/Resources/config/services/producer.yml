@@ -9,11 +9,9 @@
 services:
     producer_menu.layout_box.configurator:
         class: WellCommerce\Bundle\CatalogBundle\Configurator\ProducerMenuBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [ProducerMenu, producer_menu.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     producer_menu.layout_box.controller:
         class: WellCommerce\Bundle\CatalogBundle\Controller\Box\ProducerMenuBoxController
@@ -23,11 +21,9 @@ services:
 
     producer_products.layout_box.configurator:
         class: WellCommerce\Bundle\CatalogBundle\Configurator\ProducerProductsBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [ProducerProducts, producer_products.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     producer_products.layout_box.controller:
         class: WellCommerce\Bundle\CatalogBundle\Controller\Box\ProducerProductsBoxController

@@ -20,11 +20,9 @@ services:
 
     client_login.layout_box.configurator:
         class: WellCommerce\Bundle\AppBundle\Configurator\ClientLoginBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [ClientLogin, client_login.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     client_menu.layout_box.controller:
         class: WellCommerce\Bundle\AppBundle\Controller\Box\ClientMenuBoxController
@@ -34,11 +32,9 @@ services:
 
     client_menu.layout_box.configurator:
         class: WellCommerce\Bundle\AppBundle\Configurator\ClientMenuBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [ClientMenu, client_menu.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     client_order.layout_box.controller:
         class: WellCommerce\Bundle\AppBundle\Controller\Box\ClientOrderBoxController
@@ -48,11 +44,9 @@ services:
 
     client_order.configurator:
         class: WellCommerce\Bundle\AppBundle\Configurator\ClientOrderBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [ClientOrder, client_order.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     client_settings.controller.front:
         class: WellCommerce\Bundle\AppBundle\Controller\Front\ClientSettingsController
@@ -68,11 +62,9 @@ services:
 
     client_settings.configurator:
         class: WellCommerce\Bundle\AppBundle\Configurator\ClientSettingsBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [ClientSettings, client_settings.controller.box, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     client_registration.layout_box.controller:
         class: WellCommerce\Bundle\AppBundle\Controller\Box\ClientRegistrationBoxController
@@ -82,11 +74,9 @@ services:
 
     client_registration.layout_box.configurator:
         class: WellCommerce\Bundle\AppBundle\Configurator\ClientRegistrationBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [ClientRegistration, client_registration.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     client_forgot_password.controller.front:
         class: WellCommerce\Bundle\AppBundle\Controller\Front\ClientForgotPasswordController
@@ -102,11 +92,9 @@ services:
 
     client_forgot_password.layout_box.configurator:
         class: WellCommerce\Bundle\AppBundle\Configurator\ClientForgotPasswordBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [ClientForgotPassword, client_forgot_password.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     client_address_book.controller.front:
         class: WellCommerce\Bundle\AppBundle\Controller\Front\ClientAddressBookController
@@ -122,11 +110,9 @@ services:
 
     client_address_book.layout_box.configurator:
         class: WellCommerce\Bundle\AppBundle\Configurator\ClientAddressBookBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [ClientAddressBook, client_address_book.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     client.subscriber:
         class: WellCommerce\Bundle\AppBundle\EventListener\ClientSubscriber

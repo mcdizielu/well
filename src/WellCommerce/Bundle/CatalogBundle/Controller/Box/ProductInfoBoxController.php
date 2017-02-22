@@ -13,7 +13,7 @@
 namespace WellCommerce\Bundle\CatalogBundle\Controller\Box;
 
 use Symfony\Component\HttpFoundation\Response;
-use WellCommerce\Bundle\AppBundle\Collection\LayoutBoxSettingsCollection;
+use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 use WellCommerce\Bundle\CatalogBundle\Helper\VariantHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
 use WellCommerce\Bundle\OrderBundle\Context\ProductContext;

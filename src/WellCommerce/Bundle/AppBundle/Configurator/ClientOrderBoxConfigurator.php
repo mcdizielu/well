@@ -12,7 +12,9 @@
 
 namespace WellCommerce\Bundle\AppBundle\Configurator;
 
+use WellCommerce\Bundle\AppBundle\Controller\Box\ClientOrderBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
+use WellCommerce\Component\Layout\Controller\BoxControllerInterface;
 
 /**
  * Class ClientOrderBoxConfigurator
@@ -21,4 +23,13 @@ use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigur
  */
 final class ClientOrderBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
+    public function __construct(ClientOrderBoxController $controller)
+    {
+        $this->controller = $controller;
+    }
+    
+    public function getType(): string
+    {
+        return 'ClientOrder';
+    }
 }

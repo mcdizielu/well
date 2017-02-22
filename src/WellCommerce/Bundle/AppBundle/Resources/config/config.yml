@@ -26,122 +26,6 @@ parameters:
     knp.doctrine_behaviors.blameable_subscriber.user_entity: WellCommerce\Bundle\AppBundle\Entity\User
     knp.doctrine_behaviors.blameable_subscriber.class: WellCommerce\Bundle\AppBundle\EventListener\BlameableSubscriber
     number_formatter_locale: ~
-    fixtures_load_order:
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadAdminMenuData: 0
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadThemeData: 10
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadCompanyData: 20
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadCurrencyData: 30
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadLocaleData: 40
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadOrderStatusGroupData: 41
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadOrderStatusData: 42
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadClientGroupData: 43
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShopData: 50
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadUserData: 60
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadTaxData: 70
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadClientData: 90
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadUnitData: 110
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadContactData: 130
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadMediaData: 135
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadDelivererData: 140
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadAvailabilityData: 150
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadProducerData: 160
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadAttributeData: 170
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadCategoryData: 180
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadProductStatusData: 190
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadProductData: 200
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShippingMethodData: 220
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadPaymentMethodData: 230
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadPageData: 240
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadNewsData: 250
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadSearchData: 260
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadReviewData: 270
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShowcaseData: 280
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadLayeredNavigationData: 290
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShowcaseData: 280
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadWishlistData: 280
-    fixtures_product_limit: 100
-    enabled_fixtures:
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadAdminMenuData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadThemeData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadCompanyData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadCurrencyData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadLocaleData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadOrderStatusGroupData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadOrderStatusData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShopData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadUserData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadTaxData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadClientGroupData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadClientData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadUnitData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadContactData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadMediaData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadDelivererData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadAvailabilityData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadProducerData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadAttributeData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadCategoryData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadProductStatusData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadProductData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShippingMethodData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadPaymentMethodData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadPageData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadNewsData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadSearchData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadReviewData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShowcaseData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadLayeredNavigationData: true
-        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadWishlistData: true
-
-well_commerce_api:
-    request_handler:
-        client:
-            manager: client.manager
-        client_group:
-            manager: client_group.manager
-        company:
-            manager: company.manager
-        currency:
-            manager: currency.manager
-        locale:
-            manager: locale.manager
-        media:
-            manager: media.manager
-        shop:
-            manager: shop.manager
-        tax:
-            manager: tax.manager
-    serialization:
-        WellCommerce\Bundle\AppBundle\Entity\Client:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Client.yml"
-        WellCommerce\Bundle\AppBundle\Entity\ClientBillingAddress:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/ClientBillingAddress.yml"
-        WellCommerce\Bundle\AppBundle\Entity\ClientDetails:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/ClientDetails.yml"
-        WellCommerce\Bundle\AppBundle\Entity\ClientContactDetails:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/ClientContactDetails.yml"
-        WellCommerce\Bundle\AppBundle\Entity\ClientGroup:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/ClientGroup.yml"
-        WellCommerce\Bundle\AppBundle\Entity\ClientGroupTranslation:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/ClientGroupTranslation.yml"
-        WellCommerce\Bundle\AppBundle\Entity\ClientShippingAddress:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/ClientShippingAddress.yml"
-        WellCommerce\Bundle\AppBundle\Entity\Company:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Company.yml"
-        WellCommerce\Bundle\AppBundle\Entity\Currency:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Currency.yml"
-        WellCommerce\Bundle\AppBundle\Entity\CurrencyRate:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/CurrencyRate.yml"
-        WellCommerce\Bundle\AppBundle\Entity\Locale:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Locale.yml"
-        WellCommerce\Bundle\AppBundle\Entity\Media:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Media.yml"
-        WellCommerce\Bundle\AppBundle\Entity\Shop:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Shop.yml"
-        WellCommerce\Bundle\AppBundle\Entity\Tax:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/Tax.yml"
-        WellCommerce\Bundle\AppBundle\Entity\TaxTranslation:
-            mapping: "@WellCommerceAppBundle/Resources/config/serialization/TaxTranslation.yml"
 
 well_commerce_app:
     locale_copier:
@@ -167,22 +51,22 @@ liip_imagine:
     filter_sets:
         smallest:
             filters:
-                thumbnail: { size: [60, 60], mode: outbound }
+                thumbnail: { size: [60, 60], mode: inset }
         small:
             filters:
-                thumbnail: { size: [120, 120], mode: outbound }
+                thumbnail: { size: [120, 120], mode: inset }
         normal:
             filters:
-                thumbnail: { size: [175, 175], mode: outbound }
+                thumbnail: { size: [175, 175], mode: inset }
         medium:
             filters:
-                thumbnail: { size: [240, 240], mode: outbound }
+                thumbnail: { size: [240, 240], mode: inset }
         large:
             filters:
-                thumbnail: { size: [600, 600], mode: outbound }
+                thumbnail: { size: [600, 600], mode: inset }
         largest:
             filters:
-                thumbnail: { size: [1200, 1200], mode: outbound }
+                thumbnail: { size: [1200, 1200], mode: inset }
         original:
             filters:
               strip: ~

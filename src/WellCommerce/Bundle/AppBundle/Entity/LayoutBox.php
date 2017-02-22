@@ -17,13 +17,14 @@ use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Component\Layout\Model\LayoutBoxInterface;
 
 /**
  * Class LayoutBox
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class LayoutBox implements EntityInterface
+class LayoutBox implements EntityInterface, LayoutBoxInterface
 {
     use Identifiable;
     use Timestampable;
@@ -62,6 +63,16 @@ class LayoutBox implements EntityInterface
     public function setIdentifier(string $identifier)
     {
         $this->identifier = $identifier;
+    }
+    
+    public function getName(): string
+    {
+        return $this->translate()->getName();
+    }
+    
+    public function getContent(): string
+    {
+        return $this->translate()->getContent();
     }
     
     public function translate($locale = null, $fallbackToDefault = true): LayoutBoxTranslation

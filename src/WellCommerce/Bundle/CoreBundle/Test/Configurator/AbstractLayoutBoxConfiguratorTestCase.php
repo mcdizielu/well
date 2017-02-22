@@ -13,7 +13,7 @@
 namespace WellCommerce\Bundle\CoreBundle\Test\Configurator;
 
 use WellCommerce\Bundle\CoreBundle\Controller\ControllerInterface;
-use WellCommerce\Bundle\CoreBundle\Layout\Configurator\LayoutBoxConfiguratorInterface;
+use WellCommerce\Component\Layout\Configurator\LayoutBoxConfiguratorInterface;
 use WellCommerce\Bundle\CoreBundle\Test\AbstractTestCase;
 
 /**

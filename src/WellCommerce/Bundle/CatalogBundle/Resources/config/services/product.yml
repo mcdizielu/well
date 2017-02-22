@@ -9,11 +9,9 @@
 services:
     product_info.layout_box.configurator:
         class: WellCommerce\Bundle\CatalogBundle\Configurator\ProductInfoBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [ProductInfo, product_info.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     product.storage:
         class: WellCommerce\Bundle\CatalogBundle\Request\Storage\ProductStorage

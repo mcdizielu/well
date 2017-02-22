@@ -9,11 +9,9 @@
 services:
     news.layout_box.configurator:
         class: WellCommerce\Bundle\CatalogBundle\Configurator\ProductInfoBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [News, news.controller.box]
-        calls:
-            - [setContainer, ['@service_container']]
 
     news.controller.box:
         class: WellCommerce\Bundle\CmsBundle\Controller\Box\NewsBoxController

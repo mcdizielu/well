@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\AppBundle\Collection;
+namespace WellCommerce\Component\Layout\Collection;
 
 use WellCommerce\Component\Collections\ArrayCollection;
 

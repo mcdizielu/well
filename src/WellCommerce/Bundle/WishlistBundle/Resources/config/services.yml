@@ -21,8 +21,6 @@ services:
 
     wishlist.configurator:
         class: WellCommerce\Bundle\WishlistBundle\Configurator\WishlistBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [Wishlist, wishlist.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]

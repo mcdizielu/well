@@ -9,11 +9,9 @@
 services:
     showcase.layout_box.configurator:
         class: WellCommerce\Bundle\ShowcaseBundle\Configurator\ShowcaseBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [Showcase, showcase.box.controller]
-        calls:
-            - [setContainer, ['@service_container']]
 
     showcase.box.controller:
         class: WellCommerce\Bundle\ShowcaseBundle\Controller\Box\ShowcaseBoxController

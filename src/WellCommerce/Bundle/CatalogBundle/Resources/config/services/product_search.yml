@@ -9,11 +9,9 @@
 services:
     product_search.layout_box.configurator:
         class: WellCommerce\Bundle\CatalogBundle\Configurator\ProductSearchBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [Search, product_search.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     product_search.dataset.front:
         class: WellCommerce\Bundle\CatalogBundle\DataSet\Front\ProductSearchDataSet

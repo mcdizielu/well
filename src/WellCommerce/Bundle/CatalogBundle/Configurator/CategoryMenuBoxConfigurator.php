@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\CatalogBundle\Configurator;
 
+use WellCommerce\Bundle\CatalogBundle\Controller\Box\CategoryMenuBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
@@ -23,18 +24,25 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  */
 final class CategoryMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function __construct(CategoryMenuBoxController $controller)
+    {
+        $this->controller = $controller;
+    }
+    
+    public function getType(): string
+    {
+        return 'CategoryMenu';
+    }
+    
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
     {
         $fieldset = $this->getFieldset($builder, $form);
         $accessor = $this->getPropertyAccessor();
-
+        
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => $this->trans('Choose categories which should be not visible in box.')
+            'tip' => $this->trans('Choose categories which should be not visible in box.'),
         ]));
-
+        
         $exclude = $fieldset->addChild($builder->getElement('tree', [
             'name'        => 'exclude',
             'label'       => $this->trans('category.label.exclude'),
@@ -45,7 +53,7 @@ final class CategoryMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
             'items'       => $this->get('category.dataset.admin')->getResult('flat_tree'),
             'transformer' => $builder->getRepositoryTransformer('entity', $this->get('category.repository')),
         ]));
-
+        
         $exclude->setValue($accessor->getValue($defaults, '[exclude]'));
     }
 }

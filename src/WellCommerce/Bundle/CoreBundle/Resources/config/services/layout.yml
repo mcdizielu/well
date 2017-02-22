@@ -7,8 +7,9 @@
 # please view the LICENSE file that was distributed with this source code.
 
 services:
-    review.layout_box.configurator:
-        class: WellCommerce\Bundle\ReviewBundle\Configurator\ReviewBoxConfigurator
+    layout_box.renderer:
+        class: WellCommerce\Component\Layout\Renderer\LayoutBoxRenderer
         autowire: true
-        tags:
-            - { name: layout_box.configurator }
+
+    layout_box.configurator.collection:
+        class: WellCommerce\Component\Layout\Configurator\LayoutBoxConfiguratorCollection

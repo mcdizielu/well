@@ -105,7 +105,7 @@ _front_locale:
     resource: "@WellCommerceAppBundle/Resources/config/routing/locale/front.yml"
     prefix: /locale
 
-wellcommerce_wishlist:
+_front_wishlist:
     resource: "@WellCommerceWishlistBundle/Resources/config/routing.yml"
 
 front.home_page.index:

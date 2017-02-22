@@ -25,8 +25,6 @@ use WellCommerce\Bundle\CoreBundle\Controller\ControllerInterface;
  */
 interface RouterHelperInterface
 {
-    public function hasControllerAction(ControllerInterface $controller, string $action): bool;
-    
     public function getCurrentAction(): string;
     
     public function getRouterRequestContext(): RequestContext;

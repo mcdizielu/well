@@ -12,7 +12,9 @@
 
 namespace WellCommerce\Bundle\AppBundle\Configurator;
 
+use WellCommerce\Bundle\AppBundle\Controller\Box\ClientLoginBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
+use WellCommerce\Component\Layout\Controller\BoxControllerInterface;
 
 /**
  * Class ClientLoginBoxConfigurator
@@ -21,4 +23,13 @@ use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigur
  */
 final class ClientLoginBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
+    public function __construct(ClientLoginBoxController $controller)
+    {
+        $this->controller = $controller;
+    }
+    
+    public function getType(): string
+    {
+        return 'ClientLogin';
+    }
 }

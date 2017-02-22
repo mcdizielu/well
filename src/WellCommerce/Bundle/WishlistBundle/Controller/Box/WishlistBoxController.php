@@ -13,7 +13,7 @@
 namespace WellCommerce\Bundle\WishlistBundle\Controller\Box;
 
 use Symfony\Component\HttpFoundation\Response;
-use WellCommerce\Bundle\AppBundle\Collection\LayoutBoxSettingsCollection;
+use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
 use WellCommerce\Bundle\WishlistBundle\Entity\Wishlist;
 use WellCommerce\Bundle\WishlistBundle\Repository\WishlistRepositoryInterface;

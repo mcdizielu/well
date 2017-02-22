@@ -20,6 +20,8 @@ use WellCommerce\Component\Form\Elements\Fieldset\FieldsetInterface;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\Elements\Optioned\Select;
 use WellCommerce\Component\Form\FormBuilderInterface;
+use WellCommerce\Component\Layout\Configurator\LayoutBoxConfiguratorInterface;
+use WellCommerce\Component\Layout\Controller\BoxControllerInterface;
 
 /**
  * Class AbstractLayoutBoxConfigurator
@@ -29,35 +31,9 @@ use WellCommerce\Component\Form\FormBuilderInterface;
 abstract class AbstractLayoutBoxConfigurator extends AbstractContainerAware implements LayoutBoxConfiguratorInterface
 {
     /**
-     * @var string
+     * @var BoxControllerInterface
      */
-    protected $type;
-    
-    /**
-     * @var string
-     */
-    protected $controllerService;
-    
-    public function __construct(string $type, string $controllerService)
-    {
-        $this->type              = $type;
-        $this->controllerService = $controllerService;
-    }
-    
-    protected function getPropertyAccessor(): PropertyAccessor
-    {
-        return PropertyAccess::createPropertyAccessor();
-    }
-    
-    public function getControllerService(): string
-    {
-        return $this->controllerService;
-    }
-    
-    public function getType(): string
-    {
-        return $this->type;
-    }
+    protected $controller;
     
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
     {
@@ -72,16 +48,17 @@ abstract class AbstractLayoutBoxConfigurator extends AbstractContainerAware impl
     
     protected function getFieldset(FormBuilderInterface $builder, FormInterface $form): FieldsetInterface
     {
+        $type          = $this->getType();
         $boxTypeSelect = $this->getBoxTypeSelect($form);
-        $boxTypeSelect->addOptionToSelect($this->type, $this->type);
+        $boxTypeSelect->addOptionToSelect($type, $type);
         
         $fieldset = $form->addChild($builder->getElement('nested_fieldset', [
-            'name'         => $this->getType(),
+            'name'         => $type,
             'label'        => $this->trans('layout_box.label.settings'),
             'dependencies' => [
                 $builder->getDependency('show', [
                     'field'     => $boxTypeSelect,
-                    'condition' => new Equals($this->type),
+                    'condition' => new Equals($type),
                     'form'      => $form,
                 ]),
             ],
@@ -90,8 +67,18 @@ abstract class AbstractLayoutBoxConfigurator extends AbstractContainerAware impl
         return $fieldset;
     }
     
+    protected function getPropertyAccessor(): PropertyAccessor
+    {
+        return PropertyAccess::createPropertyAccessor();
+    }
+    
     protected function getBoxTypeSelect(FormInterface $form): Select
     {
         return $form->getChildren()->get('required_data')->getChildren()->get('boxType');
+    }
+    
+    public function getController(): BoxControllerInterface
+    {
+        return $this->controller;
     }
 }

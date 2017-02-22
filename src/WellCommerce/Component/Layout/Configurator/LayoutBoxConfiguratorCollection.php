@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\CoreBundle\Layout\Configurator;
+namespace WellCommerce\Component\Layout\Configurator;
 
 use WellCommerce\Component\Collections\ArrayCollection;
 
@@ -21,19 +21,13 @@ use WellCommerce\Component\Collections\ArrayCollection;
  */
 class LayoutBoxConfiguratorCollection extends ArrayCollection
 {
-    /**
-     * Adds new configurator to collection
-     *
-     * @param LayoutBoxConfiguratorInterface $configurator
-     *
-     * @throws \InvalidArgumentException If such configurator already exists in collection
-     */
     public function add(LayoutBoxConfiguratorInterface $configurator)
     {
-        $type = $configurator->getType();
-        if ($this->has($type)) {
-            throw new \InvalidArgumentException(sprintf('Layout box configurator "%s" already exists.', $type));
-        }
         $this->items[$configurator->getType()] = $configurator;
+    }
+    
+    public function get($key): LayoutBoxConfiguratorInterface
+    {
+        return $this->items[$key];
     }
 }

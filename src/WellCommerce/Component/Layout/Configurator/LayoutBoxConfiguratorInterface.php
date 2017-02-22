@@ -10,10 +10,11 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\CoreBundle\Layout\Configurator;
+namespace WellCommerce\Component\Layout\Configurator;
 
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
+use WellCommerce\Component\Layout\Controller\BoxControllerInterface;
 
 /**
  * Interface LayoutBoxConfiguratorInterface
@@ -22,28 +23,9 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  */
 interface LayoutBoxConfiguratorInterface
 {
-    /**
-     * Returns configurator type
-     *
-     * @return string
-     */
-    public function getType() : string;
-
-    /**
-     * Adds form fields required to configure the layout box
-     *
-     * @param FormBuilderInterface $builder
-     * @param FormInterface        $form
-     * @param object               $resource
-     *
-     * @return mixed
-     */
+    public function getType(): string;
+    
+    public function getController(): BoxControllerInterface;
+    
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $resource);
-
-    /**
-     * Returns box controller service name
-     *
-     * @return string
-     */
-    public function getControllerService() : string;
 }

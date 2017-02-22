@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\CatalogBundle\Configurator;
 
+use WellCommerce\Bundle\CatalogBundle\Controller\Box\ProducerProductsBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 
 /**
@@ -21,4 +22,13 @@ use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigur
  */
 final class ProducerProductsBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
+    public function __construct(ProducerProductsBoxController $controller)
+    {
+        $this->controller = $controller;
+    }
+    
+    public function getType(): string
+    {
+        return 'ProducerProducts';
+    }
 }

@@ -9,27 +9,21 @@
 services:
     category_menu.layout_box.configurator:
         class: WellCommerce\Bundle\CatalogBundle\Configurator\CategoryMenuBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [CategoryMenu, category_menu.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     category_info.layout_box.configurator:
         class: WellCommerce\Bundle\CatalogBundle\Configurator\CategoryInfoBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [CategoryInfo, category_info.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     category_products.layout_box.configurator:
         class: WellCommerce\Bundle\CatalogBundle\Configurator\CategoryProductsBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [CategoryProducts, category_products.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     category.controller.front:
         class: WellCommerce\Bundle\CatalogBundle\Controller\Front\CategoryController

@@ -9,11 +9,9 @@
 services:
     page.layout_box.configurator:
         class: WellCommerce\Bundle\CmsBundle\Configurator\PageBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [Page, page.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     page.controller.front:
         class: WellCommerce\Bundle\CmsBundle\Controller\Front\PageController

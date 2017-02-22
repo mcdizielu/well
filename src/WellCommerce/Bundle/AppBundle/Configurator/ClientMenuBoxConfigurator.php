@@ -12,7 +12,9 @@
 
 namespace WellCommerce\Bundle\AppBundle\Configurator;
 
+use WellCommerce\Bundle\AppBundle\Controller\Box\ClientMenuBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
+use WellCommerce\Component\Layout\Controller\BoxControllerInterface;
 
 /**
  * Class ClientMenuBoxConfigurator
@@ -21,4 +23,13 @@ use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigur
  */
 final class ClientMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
+    public function __construct(ClientMenuBoxController $controller)
+    {
+        $this->controller = $controller;
+    }
+    
+    public function getType(): string
+    {
+        return 'ClientMenu';
+    }
 }

@@ -9,11 +9,9 @@
 services:
     layered_navigation.layout_box.configurator:
         class: WellCommerce\Bundle\CatalogBundle\Configurator\LayeredNavigationBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [LayeredNavigation, layered_navigation.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     layered_navigation.helper:
         class: WellCommerce\Bundle\CatalogBundle\Helper\LayeredNavigationHelper

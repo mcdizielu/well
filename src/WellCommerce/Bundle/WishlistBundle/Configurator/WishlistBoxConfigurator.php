@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\WishlistBundle\Configurator;
 
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
+use WellCommerce\Bundle\WishlistBundle\Controller\Box\WishlistBoxController;
 
 /**
  * Class WishlistBoxConfigurator
@@ -21,4 +22,13 @@ use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigur
  */
 final class WishlistBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
+    public function __construct(WishlistBoxController $controller)
+    {
+        $this->controller = $controller;
+    }
+    
+    public function getType(): string
+    {
+        return 'Wishlist';
+    }
 }

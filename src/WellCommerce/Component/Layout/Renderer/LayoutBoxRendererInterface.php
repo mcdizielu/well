@@ -10,7 +10,9 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\AppBundle\Renderer;
+namespace WellCommerce\Component\Layout\Renderer;
+
+use WellCommerce\Component\Layout\Model\LayoutBoxInterface;
 
 /**
  * Interface LayoutBoxRendererInterface
@@ -19,13 +21,5 @@ namespace WellCommerce\Bundle\AppBundle\Renderer;
  */
 interface LayoutBoxRendererInterface
 {
-    /**
-     * Forwards request to box controller and returns rendered template
-     *
-     * @param string $identifier Box identifier
-     * @param array  $params     Parameters to override
-     *
-     * @return string
-     */
-    public function render(string $identifier, array $params) : string;
+    public function render(LayoutBoxInterface $layoutBox, array $params): string;
 }

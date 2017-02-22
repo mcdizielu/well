@@ -9,11 +9,9 @@
 services:
     product_status.layout_box.configurator:
         class: WellCommerce\Bundle\CatalogBundle\Configurator\ProductStatusBoxConfigurator
+        autowire: true
         tags:
             - { name: layout_box.configurator }
-        arguments: [ProductStatus, product_status.layout_box.controller, '@translator.helper']
-        calls:
-            - [setContainer, ['@service_container']]
 
     product_status.storage:
         class: WellCommerce\Bundle\CatalogBundle\Request\Storage\ProductStatusStorage
