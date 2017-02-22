@@ -15,6 +15,7 @@ coupon:
         minimum_order_value: "Minimalna kwota zamówienia"
         accept: Zapisz
         remove: Usuń
+        exclude_promotions: Wyklucz promocje
     error:
         not_found: Kod kuponu jest nieprawidłowy
         future_coupon: Data wykorzystania kuponu jest w przyszłości

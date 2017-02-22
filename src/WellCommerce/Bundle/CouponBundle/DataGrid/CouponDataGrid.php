@@ -59,7 +59,7 @@ class CouponDataGrid extends AbstractDataGrid
         
         $collection->add(new Column([
             'id'      => 'minimumOrderValue',
-            'caption' => 'common.label.minimum_order_value',
+            'caption' => 'coupon.label.minimum_order_value',
         ]));
         
         $collection->add(new Column([
