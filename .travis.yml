@@ -23,6 +23,7 @@ before_script:
 
     - mysql -e 'CREATE DATABASE travis;'
     - cp app/config/parameters.yml.travis app/config/parameters.yml
+    - wget https://gist.githubusercontent.com/adampiotrowski/2300cf0b6b953cb0897f753254d9eb66/raw/929b817a6ac02e07420dc11a5e2a98527677f25b/contributor.sh
 
     - composer self-update
     - if [[ $TRAVIS_PHP_VERSION = 7.* ]] ; then composer install --no-interaction --prefer-dist; fi;

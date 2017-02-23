@@ -12,8 +12,9 @@
 
 namespace WellCommerce\Bundle\CatalogBundle\Tests\Manager;
 
-use WellCommerce\Component\Layout\Configurator\LayoutBoxConfiguratorInterface;
+use WellCommerce\Bundle\CatalogBundle\Controller\Box\ProducerProductsBoxController;
 use WellCommerce\Bundle\CoreBundle\Test\Configurator\AbstractLayoutBoxConfiguratorTestCase;
+use WellCommerce\Component\Layout\Configurator\LayoutBoxConfiguratorInterface;
 
 /**
  * Class ProducerProductsBoxConfiguratorTest
@@ -30,7 +31,7 @@ class ProducerProductsBoxConfiguratorTest extends AbstractLayoutBoxConfiguratorT
     public function provideLayoutBoxConfiguration()
     {
         return [
-            ['ProducerProducts', 'producer_products.layout_box.controller'],
+            ['ProducerProducts', ProducerProductsBoxController::class],
         ];
     }
 }

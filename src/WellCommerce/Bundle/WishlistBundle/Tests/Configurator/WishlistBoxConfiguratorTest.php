@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\WishlistBundle\Tests\Manager;
 
 use WellCommerce\Bundle\CoreBundle\Test\Configurator\AbstractLayoutBoxConfiguratorTestCase;
+use WellCommerce\Bundle\WishlistBundle\Controller\Box\WishlistBoxController;
 use WellCommerce\Component\Layout\Configurator\LayoutBoxConfiguratorInterface;
 
 /**
@@ -30,7 +31,7 @@ class WishlistBoxConfiguratorTest extends AbstractLayoutBoxConfiguratorTestCase
     public function provideLayoutBoxConfiguration()
     {
         return [
-            ['Wishlist', 'wishlist.layout_box.controller'],
+            ['Wishlist', WishlistBoxController::class],
         ];
     }
 }

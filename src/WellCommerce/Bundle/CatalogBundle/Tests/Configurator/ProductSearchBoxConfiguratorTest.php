@@ -12,8 +12,9 @@
 
 namespace WellCommerce\Bundle\CatalogBundle\Tests\Manager;
 
-use WellCommerce\Component\Layout\Configurator\LayoutBoxConfiguratorInterface;
+use WellCommerce\Bundle\CatalogBundle\Controller\Box\ProductSearchBoxController;
 use WellCommerce\Bundle\CoreBundle\Test\Configurator\AbstractLayoutBoxConfiguratorTestCase;
+use WellCommerce\Component\Layout\Configurator\LayoutBoxConfiguratorInterface;
 
 /**
  * Class ProductSearchBoxConfiguratorTest
@@ -30,7 +31,7 @@ class ProductSearchBoxConfiguratorTest extends AbstractLayoutBoxConfiguratorTest
     public function provideLayoutBoxConfiguration()
     {
         return [
-            ['Search', 'product_search.layout_box.controller'],
+            ['ProductSearch', ProductSearchBoxController::class],
         ];
     }
 }

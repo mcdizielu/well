@@ -12,8 +12,9 @@
 
 namespace WellCommerce\Bundle\ShowcaseBundle\Tests\Manager;
 
-use WellCommerce\Component\Layout\Configurator\LayoutBoxConfiguratorInterface;
 use WellCommerce\Bundle\CoreBundle\Test\Configurator\AbstractLayoutBoxConfiguratorTestCase;
+use WellCommerce\Bundle\ShowcaseBundle\Controller\Box\ShowcaseBoxController;
+use WellCommerce\Component\Layout\Configurator\LayoutBoxConfiguratorInterface;
 
 /**
  * Class ShowcaseBoxConfiguratorTest
@@ -30,7 +31,7 @@ class ShowcaseBoxConfiguratorTest extends AbstractLayoutBoxConfiguratorTestCase
     public function provideLayoutBoxConfiguration()
     {
         return [
-            ['Showcase', 'showcase.box.controller'],
+            ['Showcase', ShowcaseBoxController::class],
         ];
     }
 }

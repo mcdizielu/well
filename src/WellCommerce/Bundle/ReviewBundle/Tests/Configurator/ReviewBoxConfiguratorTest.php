@@ -12,8 +12,9 @@
 
 namespace WellCommerce\Bundle\ReviewBundle\Tests\Manager;
 
-use WellCommerce\Component\Layout\Configurator\LayoutBoxConfiguratorInterface;
 use WellCommerce\Bundle\CoreBundle\Test\Configurator\AbstractLayoutBoxConfiguratorTestCase;
+use WellCommerce\Bundle\ReviewBundle\Controller\Box\ReviewBoxController;
+use WellCommerce\Component\Layout\Configurator\LayoutBoxConfiguratorInterface;
 
 /**
  * Class ReviewBoxConfiguratorTest
@@ -30,7 +31,7 @@ class ReviewBoxConfiguratorTest extends AbstractLayoutBoxConfiguratorTestCase
     public function provideLayoutBoxConfiguration()
     {
         return [
-            ['Review', 'review.layout_box.controller'],
+            ['Review', ReviewBoxController::class],
         ];
     }
 }
