@@ -13,6 +13,8 @@
 namespace WellCommerce\Bundle\CatalogBundle\Controller\Box;
 
 use Symfony\Component\HttpFoundation\Response;
+use WellCommerce\Bundle\CatalogBundle\Entity\Category;
+use WellCommerce\Bundle\CatalogBundle\Repository\CategoryRepository;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
 use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 
@@ -23,10 +25,21 @@ use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
  */
 final class CategoryMenuBoxController extends AbstractBoxController
 {
-    public function indexAction(LayoutBoxSettingsCollection $boxSettings) : Response
+    public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
+        /** @var CategoryRepository $repository */
+        $repository = $this->manager->getRepository();
+        $category   = $this->getCategoryStorage()->getCurrentCategory();
+        $paths      = $repository->getCategoryPath($category);
+        $active     = [];
+        
+        /** @var Category $path */
+        foreach ($paths as $path) {
+            $active[] = $path->getId();
+        }
+        
         return $this->displayTemplate('index', [
-            'active' => $this->getCategoryStorage()->getCurrentCategoryIdentifier()
+            'active' => $active,
         ]);
     }
 }
