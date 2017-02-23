@@ -105,11 +105,6 @@ final class DataSetQueryBuilder implements DataSetQueryBuilderInterface
         return new Expr\OrderBy($orderBy, $orderDir);
     }
     
-    /**
-     * Adds additional conditions to query
-     *
-     * @param ColumnCollection $columns
-     */
     private function setColumnConditions(ColumnCollection $columns)
     {
         foreach ($this->conditions->all() as $condition) {
@@ -118,18 +113,8 @@ final class DataSetQueryBuilder implements DataSetQueryBuilderInterface
         }
     }
     
-    /**
-     * Adds additional where/having clauses for given dataset's column
-     *
-     * @param ColumnInterface    $column
-     * @param ConditionInterface $condition
-     */
     private function addColumnConditionToQueryBuilder(ColumnInterface $column, ConditionInterface $condition)
     {
-        $source   = $column->getSource();
-        $alias    = $column->getAlias();
-        $operator = $condition->getOperator();
-        
         if ($condition->isRangedOperator()) {
             $identifier = sprintf('%s_%s', $condition->getIdentifier(), $this->paramIteration++);
         } else {
@@ -137,13 +122,39 @@ final class DataSetQueryBuilder implements DataSetQueryBuilderInterface
         }
         
         if ($column->isAggregated()) {
-            $expression = $this->queryBuilder->expr()->{$operator}($alias, ':' . $identifier);
-            $this->queryBuilder->andHaving($expression);
+            $this->addHavingExpression($column, $condition, $identifier);
+        } else {
+            $this->addWhereExpression($column, $condition, $identifier);
+        }
+    }
+    
+    private function addWhereExpression(ColumnInterface $column, ConditionInterface $condition, string $identifier)
+    {
+        $source   = $column->getSource();
+        $operator = $condition->getOperator();
+        
+        if (null === $condition->getValue()) {
+            $expression = $this->queryBuilder->expr()->isNull($source);
+            $this->queryBuilder->andWhere($expression);
         } else {
             $expression = $this->queryBuilder->expr()->{$operator}($source, ':' . $identifier);
             $this->queryBuilder->andWhere($expression);
+            $this->queryBuilder->setParameter($identifier, $condition->getValue());
         }
+    }
+    
+    private function addHavingExpression(ColumnInterface $column, ConditionInterface $condition, string $identifier)
+    {
+        $alias    = $column->getAlias();
+        $operator = $condition->getOperator();
         
-        $this->queryBuilder->setParameter($identifier, $condition->getValue());
+        if (null === $condition->getValue()) {
+            $expression = $this->queryBuilder->expr()->isNull($alias);
+            $this->queryBuilder->andHaving($expression);
+        } else {
+            $expression = $this->queryBuilder->expr()->{$operator}($alias, ':' . $identifier);
+            $this->queryBuilder->andHaving($expression);
+            $this->queryBuilder->setParameter($identifier, $condition->getValue());
+        }
     }
 }
