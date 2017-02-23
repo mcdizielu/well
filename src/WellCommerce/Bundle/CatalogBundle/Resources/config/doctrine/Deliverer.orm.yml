@@ -1,0 +1,13 @@
+WellCommerce\Bundle\CatalogBundle\Entity\Deliverer:
+    type: entity
+    table: deliverer
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    manyToMany:
+        producers:
+            targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\Producer
+            fetch: LAZY
+            mappedBy: deliverers
