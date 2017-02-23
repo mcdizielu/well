@@ -1,0 +1,28 @@
+WellCommerce\Bundle\CmsBundle\Entity\Contact:
+    fields:
+        id:
+            groups:
+                - default
+                - contact
+        enabled:
+            groups:
+                - default
+                - contact
+        createdAt:
+            groups: {  }
+        updatedAt:
+            groups: {  }
+    associations:
+        createdBy:
+            groups:
+                - contact
+        updatedBy:
+            groups:
+                - contact
+        deletedBy:
+            groups:
+                - contact
+        translations:
+            groups:
+                - contact
+    callbacks: {  }
