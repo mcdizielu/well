@@ -12,9 +12,9 @@
 
 namespace WellCommerce\Bundle\CouponBundle\Tests\Manager;
 
+use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
 use WellCommerce\Bundle\CoreBundle\Test\Manager\AbstractManagerTestCase;
 use WellCommerce\Bundle\CouponBundle\Entity\Coupon;
-use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
 
 /**
  * Class CouponManagerTest

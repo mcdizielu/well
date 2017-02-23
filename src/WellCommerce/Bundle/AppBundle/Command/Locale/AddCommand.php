@@ -16,8 +16,6 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\ChoiceQuestion;
-use Symfony\Component\Filesystem\Filesystem;
-use Symfony\Component\Finder\Finder;
 use Symfony\Component\Intl\Intl;
 use WellCommerce\Bundle\AppBundle\Copier\LocaleCopierInterface;
 use WellCommerce\Bundle\AppBundle\DataSet\Admin\CurrencyDataSet;

@@ -12,8 +12,8 @@
 
 namespace WellCommerce\Bundle\CoreBundle\Manager;
 
-use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 
 /**
  * Interface ManagerInterface

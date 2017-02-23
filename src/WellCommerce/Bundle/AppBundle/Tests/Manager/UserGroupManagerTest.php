@@ -13,8 +13,8 @@
 namespace WellCommerce\Bundle\AppBundle\Tests\Manager;
 
 use WellCommerce\Bundle\AppBundle\Entity\UserGroup;
-use WellCommerce\Bundle\CoreBundle\Test\Manager\AbstractManagerTestCase;
 use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
+use WellCommerce\Bundle\CoreBundle\Test\Manager\AbstractManagerTestCase;
 
 /**
  * Class UserManagerTest

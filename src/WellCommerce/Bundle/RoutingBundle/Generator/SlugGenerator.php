@@ -12,8 +12,8 @@
 
 namespace WellCommerce\Bundle\RoutingBundle\Generator;
 
-use WellCommerce\Bundle\CoreBundle\Helper\Helper;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Helper;
 use WellCommerce\Bundle\RoutingBundle\Entity\Route;
 
 /**

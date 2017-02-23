@@ -14,8 +14,8 @@ namespace WellCommerce\Bundle\AppBundle\Helper;
 
 use InvalidArgumentException;
 use WellCommerce\Bundle\AppBundle\Entity\CurrencyRate;
-use WellCommerce\Bundle\CoreBundle\Helper\Request\RequestHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Request\RequestHelperInterface;
 
 /**
  * Class CurrencyHelper

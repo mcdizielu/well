@@ -14,7 +14,6 @@ namespace WellCommerce\Bundle\AppBundle\Configurator;
 
 use WellCommerce\Bundle\AppBundle\Controller\Box\ClientOrderBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
-use WellCommerce\Component\Layout\Controller\BoxControllerInterface;
 
 /**
  * Class ClientOrderBoxConfigurator

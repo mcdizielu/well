@@ -22,8 +22,8 @@ use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductDistinction;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductPhoto;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductTranslation;
-use WellCommerce\Bundle\CoreBundle\Helper\Helper;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
+use WellCommerce\Bundle\CoreBundle\Helper\Helper;
 
 /**
  * Class LoadProductData

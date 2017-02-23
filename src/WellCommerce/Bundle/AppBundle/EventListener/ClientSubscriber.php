@@ -11,8 +11,8 @@
  */
 namespace WellCommerce\Bundle\AppBundle\EventListener;
 
-use WellCommerce\Bundle\CoreBundle\EventListener\AbstractEventSubscriber;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Event\EntityEvent;
+use WellCommerce\Bundle\CoreBundle\EventListener\AbstractEventSubscriber;
 
 /**
  * Class ClientSubscriber

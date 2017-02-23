@@ -15,8 +15,8 @@ namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
 use Doctrine\Common\Persistence\ObjectManager;
 use WellCommerce\Bundle\CatalogBundle\Entity\Producer;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProducerTranslation;
-use WellCommerce\Bundle\CoreBundle\Helper\Helper;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
+use WellCommerce\Bundle\CoreBundle\Helper\Helper;
 
 /**
  * Class LoadProducerData

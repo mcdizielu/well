@@ -13,8 +13,8 @@
 namespace WellCommerce\Bundle\CatalogBundle\Tests\Manager;
 
 use WellCommerce\Bundle\CatalogBundle\Entity\Availability;
-use WellCommerce\Bundle\CoreBundle\Test\Manager\AbstractManagerTestCase;
 use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
+use WellCommerce\Bundle\CoreBundle\Test\Manager\AbstractManagerTestCase;
 
 /**
  * Class AvailabilityManagerTest

@@ -13,11 +13,11 @@
 namespace WellCommerce\Bundle\CatalogBundle\Controller\Box;
 
 use Symfony\Component\HttpFoundation\Response;
-use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductStatus;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
 use WellCommerce\Component\DataSet\Conditions\Condition\Eq;
 use WellCommerce\Component\DataSet\Conditions\ConditionsCollection;
+use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 
 /**
  * Class ProductShowcaseBoxController

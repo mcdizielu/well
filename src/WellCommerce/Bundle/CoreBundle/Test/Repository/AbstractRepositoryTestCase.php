@@ -12,8 +12,8 @@
 
 namespace WellCommerce\Bundle\CoreBundle\Test\Repository;
 
-use WellCommerce\Bundle\CoreBundle\Test\AbstractTestCase;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
+use WellCommerce\Bundle\CoreBundle\Test\AbstractTestCase;
 
 /**
  * Class AbstractRepositoryTestCase

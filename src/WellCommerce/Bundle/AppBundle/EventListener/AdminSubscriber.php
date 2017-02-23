@@ -15,8 +15,8 @@ use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use WellCommerce\Bundle\AppBundle\Entity\User;
 use WellCommerce\Bundle\AppBundle\Repository\UserRepositoryInterface;
-use WellCommerce\Bundle\CoreBundle\EventListener\AbstractEventSubscriber;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Event\EntityEvent;
+use WellCommerce\Bundle\CoreBundle\EventListener\AbstractEventSubscriber;
 
 /**
  * Class AdminSubscriber

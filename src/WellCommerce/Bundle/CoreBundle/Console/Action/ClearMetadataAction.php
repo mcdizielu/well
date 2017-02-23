@@ -12,8 +12,6 @@
 
 namespace WellCommerce\Bundle\CoreBundle\Console\Action;
 
-use WellCommerce\Bundle\CoreBundle\Console\Action\ConsoleActionInterface;
-
 /**
  * Class ClearMetadataAction
  *

@@ -13,10 +13,10 @@
 namespace WellCommerce\Bundle\AppBundle\Controller\Box;
 
 use Symfony\Component\HttpFoundation\Response;
-use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
 use WellCommerce\Bundle\OrderBundle\Repository\OrderRepositoryInterface;
+use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 
 /**
  * Class ClientOrderBoxController
