@@ -1,0 +1,55 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+admin.locale.index:
+    path: /index
+    defaults:
+        _controller: 'locale.controller.admin:indexAction'
+    options:
+        require_admin_permission: locale.index
+
+admin.locale.grid:
+    path: /grid
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'locale.controller.admin:gridAction'
+    options:
+        expose: true
+        require_admin_permission: locale.index
+
+admin.locale.add:
+    path: /add
+    defaults:
+        _controller: 'locale.controller.admin:addAction'
+    options:
+        require_admin_permission: locale.add
+
+admin.locale.edit:
+    path: '/edit/{id}'
+    defaults:
+        _controller: 'locale.controller.admin:editAction'
+    options:
+        expose: true
+        require_admin_permission: locale.edit
+
+admin.locale.delete:
+    path: '/delete/{id}'
+    defaults:
+        _controller: 'locale.controller.admin:deleteAction'
+    options:
+        expose: true
+        require_admin_permission: locale.delete
+
+admin.locale.delete_group:
+    path: '/delete_group'
+    defaults:
+        _controller: 'locale.controller.admin:deleteGroupAction'
+    options:
+        expose: true
+        require_admin_permission: locale.delete
+

@@ -1,0 +1,75 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+parameters:
+    fixtures_load_order:
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadAdminMenuData: 0
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadThemeData: 10
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadCompanyData: 20
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadCurrencyData: 30
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadLocaleData: 40
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadOrderStatusGroupData: 41
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadOrderStatusData: 42
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadClientGroupData: 43
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShopData: 50
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadUserData: 60
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadTaxData: 70
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadClientData: 90
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadUnitData: 110
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadContactData: 130
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadMediaData: 135
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadDelivererData: 140
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadAvailabilityData: 150
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadProducerData: 160
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadAttributeData: 170
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadCategoryData: 180
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadProductStatusData: 190
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadProductData: 200
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShippingMethodData: 220
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadPaymentMethodData: 230
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadPageData: 240
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadNewsData: 250
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadSearchData: 260
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadReviewData: 270
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShowcaseData: 280
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadLayeredNavigationData: 290
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShowcaseData: 280
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadWishlistData: 280
+    fixtures_product_limit: 100
+    enabled_fixtures:
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadAdminMenuData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadThemeData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadCompanyData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadCurrencyData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadLocaleData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadOrderStatusGroupData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadOrderStatusData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShopData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadUserData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadTaxData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadClientGroupData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadClientData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadUnitData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadContactData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadMediaData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadDelivererData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadAvailabilityData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadProducerData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadAttributeData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadCategoryData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadProductStatusData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadProductData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShippingMethodData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadPaymentMethodData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadPageData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadNewsData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadSearchData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadReviewData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadShowcaseData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadLayeredNavigationData: true
+        WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadWishlistData: true
