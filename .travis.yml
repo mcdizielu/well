@@ -27,6 +27,8 @@ before_script:
 
     - composer self-update
     - if [[ $TRAVIS_PHP_VERSION = 7.* ]] ; then composer install --no-interaction --prefer-dist; fi;
+    - composer dump-autoload
+    - php app/console cache:clear --env=test
 
     - php app/console wellcommerce:app:install
     - php app/console cache:warmup --env=test
