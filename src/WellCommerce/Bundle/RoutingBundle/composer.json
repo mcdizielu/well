@@ -30,7 +30,9 @@
     }
   },
   "require": {
-    "wellcommerce/core-bundle": "^0.7@dev"
+    "wellcommerce/core-bundle": "^0.7@dev",
+    "friendsofsymfony/jsrouting-bundle": "^2.0@dev",
+    "symfony-cmf/routing": "1.4.0"
   },
   "extra": {
     "branch-alias": {
