@@ -1,3 +1,4 @@
+{% trans_default_domain "wellcommerce" %}
 {% macro form_begin(form, class) %}
     {% autoescape true %}
         <form
@@ -45,7 +46,7 @@
     {% endif %}
     {% autoescape true %}
     <div class="form-group {% if element.getError()|length %}has-error has-feedback{% endif %}">
-        <label for="{{ options.name }}">{{ options.label }}</label>
+        <label for="{{ options.name }}">{{ options.label|trans }}</label>
         <input type="text" class="{{ classes|join(' ')|trim }}" id="{{ options.name }}" name="{{ fieldName }}" value="{{ element.getValue() }}">
         {% if element.getError()|length %}
         <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
@@ -69,7 +70,7 @@
         <input type="hidden" name="{{ fieldName }}" value="0">
         <label for="{{ options.name }}">
             <input type="checkbox" id="{{ options.name }}" name="{{ fieldName }}" value="1" {% if element.getValue() == 1 %}checked{% endif %}>
-            {{ options.label }}
+            {{ options.label|trans }}
         </label>
         {% if element.getError()|length %}
             <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
@@ -89,7 +90,7 @@
         {% set fieldName = options.name %}
     {% endif %}
     {% autoescape true %}
-    <h4>{{ options.label }}</h4>
+    <h4>{{ options.label|trans }}</h4>
     <textarea class="form-control" id="{{ options.name }}" name="{{ fieldName }}" rows="{{ options.rows }}" cols="{{ options.cols }}">{{ element.getValue() }}</textarea>
     {% endautoescape %}
 {% endmacro %}
@@ -109,7 +110,7 @@
                 <label class="block">
                     <input type="radio" name="{{ fieldName }}" value="{{ key }}" id="{{ options.name }}_{{ key }}" {% if element.getValue() == key %}checked{% endif %}>
                     {% if label is iterable %}
-                        {{ label.name }} <strong class="pull-right">{{ label.comment }}</strong>
+                        {{ label.name }} <strong class="pull-right">{{ label.comment|trans }}</strong>
                     {% else %}
                         {{ label }}
                     {% endif %}
@@ -130,7 +131,7 @@
     {% endif %}
     {% autoescape true %}
     <div class="form-group {% if element.getError()|length %}has-error has-feedback{% endif %}">
-        <label for="{{ options.name }}">{{ options.label }}</label>
+        <label for="{{ options.name }}">{{ options.label|trans }}</label>
         <select class="{{ classes|join(' ')|trim }}" id="{{ options.name }}" name="{{ fieldName }}">
         {% for key, label in options.options %}
             <option value="{{ key }}" {% if element.getValue() == key %}selected{% endif %}>{{ label }}</option>
@@ -151,7 +152,7 @@
     {% endif %}
     {% autoescape true %}
     <div class="form-group {% if element.getError()|length %}has-error has-feedback{% endif %}">
-        <label for="{{ options.name }}">{{ options.label }}</label>
+        <label for="{{ options.name }}">{{ options.label|trans }}</label>
         <input type="password" class="{{ classes|join(' ')|trim }}" id="{{ options.name }}" name="{{ fieldName }}" value="{{ element.getValue() }}">
         {% if element.getError()|length %}
             <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
@@ -173,6 +174,6 @@
     {% set options = element.getOptions() %}
     {% set classes = ['btn btn-lg btn-primary btn-block', options.class, class] %}
     {% autoescape true %}
-    <button value="{{ element.getValue() }}" class="{{ classes|join(' ')|trim }}" type="submit">{{ options.label }}</button>
+    <button value="{{ element.getValue() }}" class="{{ classes|join(' ')|trim }}" type="submit">{{ options.label|trans }}</button>
     {% endautoescape %}
 {% endmacro %}
