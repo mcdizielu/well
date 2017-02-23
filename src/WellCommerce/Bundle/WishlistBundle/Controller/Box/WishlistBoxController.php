@@ -13,12 +13,12 @@
 namespace WellCommerce\Bundle\WishlistBundle\Controller\Box;
 
 use Symfony\Component\HttpFoundation\Response;
-use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
 use WellCommerce\Bundle\WishlistBundle\Entity\Wishlist;
 use WellCommerce\Bundle\WishlistBundle\Repository\WishlistRepositoryInterface;
 use WellCommerce\Component\DataSet\Conditions\Condition\In;
 use WellCommerce\Component\DataSet\Conditions\ConditionsCollection;
+use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 
 /**
  * Class WishlistBoxController
