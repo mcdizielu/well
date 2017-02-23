@@ -5929,12 +5929,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/CatalogBundle.git",
-                "reference": "2304ee2c9b66ea2021a6d072f7e2b4f87a8e8150"
+                "reference": "4c7da9a9692c7bada3a7bd9231f9310c2e6ed437"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/CatalogBundle/zipball/2304ee2c9b66ea2021a6d072f7e2b4f87a8e8150",
-                "reference": "2304ee2c9b66ea2021a6d072f7e2b4f87a8e8150",
+                "url": "https://api.github.com/repos/WellCommerce/CatalogBundle/zipball/4c7da9a9692c7bada3a7bd9231f9310c2e6ed437",
+                "reference": "4c7da9a9692c7bada3a7bd9231f9310c2e6ed437",
                 "shasum": ""
             },
             "require": {
@@ -5974,7 +5974,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-23 00:01:01"
+            "time": "2017-02-23 00:43:12"
         },
         {
             "name": "wellcommerce/cms-bundle",
@@ -6137,12 +6137,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/CoreBundle.git",
-                "reference": "4e6410f271e52b3abe0622367433b798763b21d2"
+                "reference": "597cf1b1d1c8268a75b412f47824abc1db2a4ae6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/CoreBundle/zipball/4e6410f271e52b3abe0622367433b798763b21d2",
-                "reference": "4e6410f271e52b3abe0622367433b798763b21d2",
+                "url": "https://api.github.com/repos/WellCommerce/CoreBundle/zipball/597cf1b1d1c8268a75b412f47824abc1db2a4ae6",
+                "reference": "597cf1b1d1c8268a75b412f47824abc1db2a4ae6",
                 "shasum": ""
             },
             "require": {
@@ -6223,7 +6223,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-23 00:10:45"
+            "time": "2017-02-23 00:43:12"
         },
         {
             "name": "wellcommerce/coupon-bundle",
@@ -6730,12 +6730,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/ReviewBundle.git",
-                "reference": "9c3f64f0c762b1f000e0f6c1c5c817fde8184c22"
+                "reference": "3a46ecb44078c251afa22e75698425095c7b3213"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/ReviewBundle/zipball/9c3f64f0c762b1f000e0f6c1c5c817fde8184c22",
-                "reference": "9c3f64f0c762b1f000e0f6c1c5c817fde8184c22",
+                "url": "https://api.github.com/repos/WellCommerce/ReviewBundle/zipball/3a46ecb44078c251afa22e75698425095c7b3213",
+                "reference": "3a46ecb44078c251afa22e75698425095c7b3213",
                 "shasum": ""
             },
             "require": {
@@ -6777,7 +6777,7 @@
                 "open-source",
                 "symfony"
             ],
-            "time": "2017-02-22 21:25:44"
+            "time": "2017-02-23 00:43:12"
         },
         {
             "name": "wellcommerce/routing-bundle",
@@ -7010,12 +7010,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/ShowcaseBundle.git",
-                "reference": "7e381e7400437f8cdd717be54138fee451d864aa"
+                "reference": "2165829a58fe29596a60b54e01a8eb0f97a59729"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/ShowcaseBundle/zipball/7e381e7400437f8cdd717be54138fee451d864aa",
-                "reference": "7e381e7400437f8cdd717be54138fee451d864aa",
+                "url": "https://api.github.com/repos/WellCommerce/ShowcaseBundle/zipball/2165829a58fe29596a60b54e01a8eb0f97a59729",
+                "reference": "2165829a58fe29596a60b54e01a8eb0f97a59729",
                 "shasum": ""
             },
             "require": {
@@ -7056,7 +7056,7 @@
                 "symfony",
                 "wellcommerce"
             ],
-            "time": "2017-02-22 21:25:44"
+            "time": "2017-02-23 00:43:12"
         },
         {
             "name": "wellcommerce/wishlist-bundle",
@@ -7064,12 +7064,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/WishlistBundle.git",
-                "reference": "5f8f6e8323a8e4f0c094f93712b8a544a697e796"
+                "reference": "97bbed416b7fbb2e96386945283ce77d2b63ce2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/WishlistBundle/zipball/5f8f6e8323a8e4f0c094f93712b8a544a697e796",
-                "reference": "5f8f6e8323a8e4f0c094f93712b8a544a697e796",
+                "url": "https://api.github.com/repos/WellCommerce/WishlistBundle/zipball/97bbed416b7fbb2e96386945283ce77d2b63ce2c",
+                "reference": "97bbed416b7fbb2e96386945283ce77d2b63ce2c",
                 "shasum": ""
             },
             "require": {
@@ -7109,7 +7109,7 @@
                 "open-source",
                 "wellcommerce"
             ],
-            "time": "2017-02-22 11:35:40"
+            "time": "2017-02-23 00:43:12"
         },
         {
             "name": "willdurand/js-translation-bundle",
