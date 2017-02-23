@@ -81,28 +81,6 @@ final class AddCommand extends ContainerAwareCommand
     
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $rootDir    = $this->getContainer()->get('kernel')->getRootDir() . '/../src/WellCommerce';
-        $filesystem = new Filesystem();
-        $finder     = new Finder();
-        $finder->in($rootDir)->name('*FormBuilder.php');
-        foreach ($finder->files() as $file) {
-            $contents    = $file->getContents();
-            $patterns = [
-                '/\$this->trans\((\'\w+\.\w+\.\w+\')\)/',
-            ];
-            $pattern     = '/\$this->trans\((\'\w+\.\w+\.\w+\')\)/';
-            $replacement = '${1}';
-            $contents    = preg_replace($pattern, $replacement, $contents);
-    
-            $pattern     = '/\$this->trans\((\'\w+\.\w+\.\w+\.\w+\')\)/';
-            $replacement = '${1}';
-            $contents    = preg_replace($pattern, $replacement, $contents);
-            
-            $filesystem->dumpFile($file->getRealPath(), $contents);
-        }
-        
-        die();
-        
         $sourceLocale   = $this->chooseSourceLocale($input, $output);
         $targetLocale   = $this->chooseTargetLocale($input, $output);
         $targetCurrency = $this->chooseTargetCurrency($input, $output);
