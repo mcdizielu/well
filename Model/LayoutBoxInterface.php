@@ -22,7 +22,7 @@ interface LayoutBoxInterface
     
     public function setIdentifier(string $identifier);
     
-    public function getName(): string;
+    public function getBoxName(): string;
     
-    public function getContent(): string;
+    public function getBoxContent(): string;
 }
