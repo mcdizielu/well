@@ -65,12 +65,12 @@ class LayoutBox implements EntityInterface, LayoutBoxInterface
         $this->identifier = $identifier;
     }
     
-    public function getName(): string
+    public function getBoxName(): string
     {
         return $this->translate()->getName();
     }
     
-    public function getContent(): string
+    public function getBoxContent(): string
     {
         return $this->translate()->getContent();
     }

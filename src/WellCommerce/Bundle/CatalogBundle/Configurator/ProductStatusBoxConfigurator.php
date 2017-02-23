@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\CatalogBundle\Configurator;
 
 use WellCommerce\Bundle\CatalogBundle\Controller\Box\ProductStatusBoxController;
+use WellCommerce\Bundle\CatalogBundle\DataSet\Admin\ProductStatusDataSet;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
@@ -24,9 +25,12 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  */
 final class ProductStatusBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    public function __construct(ProductStatusBoxController $controller)
+    protected $dataSet;
+    
+    public function __construct(ProductStatusBoxController $controller, ProductStatusDataSet $dataSet)
     {
         $this->controller = $controller;
+        $this->dataSet    = $dataSet;
     }
     
     public function getType(): string
@@ -42,14 +46,13 @@ final class ProductStatusBoxConfigurator extends AbstractLayoutBoxConfigurator
             'tip' => 'layout_box.product_status.tip',
         ]));
         
-        $statuses   = $this->get('product_status.dataset.admin')->getResult('select');
+        $statuses   = $this->dataSet->getResult('select');
         $statusKeys = array_keys($statuses);
         
         $fieldset->addChild($builder->getElement('select', [
-            'name'        => 'status',
-            'label'       => 'product.label.statuses',
-            'options'     => $this->get('product_status.dataset.admin')->getResult('select'),
-            'transformer' => $builder->getRepositoryTransformer('collection', $this->get('product_status.repository')),
+            'name'    => 'status',
+            'label'   => 'product.label.statuses',
+            'options' => $statuses,
         ]))->setValue(current($statusKeys));
     }
 }

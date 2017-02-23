@@ -14,7 +14,6 @@ namespace WellCommerce\Bundle\CatalogBundle\Configurator;
 
 use WellCommerce\Bundle\CatalogBundle\Controller\Box\CategoryMenuBoxController;
 use WellCommerce\Bundle\CatalogBundle\DataSet\Admin\CategoryDataSet;
-use WellCommerce\Bundle\CatalogBundle\Repository\CategoryRepository;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
@@ -31,16 +30,10 @@ final class CategoryMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
      */
     private $dataSet;
     
-    /**
-     * @var CategoryRepository
-     */
-    private $repository;
-    
-    public function __construct(CategoryMenuBoxController $controller, CategoryDataSet $dataSet, CategoryRepository $repository)
+    public function __construct(CategoryMenuBoxController $controller, CategoryDataSet $dataSet)
     {
         $this->controller = $controller;
         $this->dataSet    = $dataSet;
-        $this->repository = $repository;
     }
     
     public function getType(): string
@@ -58,14 +51,13 @@ final class CategoryMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
         ]));
         
         $exclude = $fieldset->addChild($builder->getElement('tree', [
-            'name'        => 'exclude',
-            'label'       => 'category.label.exclude',
-            'choosable'   => false,
-            'selectable'  => true,
-            'sortable'    => false,
-            'clickable'   => false,
-            'items'       => $this->dataSet->getResult('flat_tree'),
-            'transformer' => $builder->getRepositoryTransformer('entity', $this->repository),
+            'name'       => 'exclude',
+            'label'      => 'category.label.exclude',
+            'choosable'  => false,
+            'selectable' => true,
+            'sortable'   => false,
+            'clickable'  => false,
+            'items'      => $this->dataSet->getResult('flat_tree'),
         ]));
         
         $exclude->setValue($accessor->getValue($defaults, '[exclude]'));
