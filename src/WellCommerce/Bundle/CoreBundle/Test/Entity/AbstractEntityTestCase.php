@@ -12,7 +12,7 @@
 
 namespace WellCommerce\Bundle\CoreBundle\Test\Entity;
 
-use PhpUnitEntityTester\AccessorTester;
+use Symfony\Component\PropertyAccess\PropertyAccess;
 use WellCommerce\Bundle\CoreBundle\Test\AbstractTestCase;
 
 /**
@@ -25,13 +25,19 @@ abstract class AbstractEntityTestCase extends AbstractTestCase
     /**
      * @dataProvider providerTestAccessor
      */
-    public function testAccessor($attribute, $setValue, $getValue = AccessorTester::USE_SET_DATA)
+    public function testAccessor($property, $setValue, $getValue = null)
     {
-        $entity = $this->createEntity();
-        $tester = new AccessorTester($entity, $attribute);
-        $tester->fluent(false);
+        if (null === $getValue) {
+            $getValue = $setValue;
+        }
         
-        $tester->test($setValue, $getValue);
+        $entity           = $this->createEntity();
+        $propertyAccessor = PropertyAccess::createPropertyAccessor();
+        
+        $this->assertTrue($propertyAccessor->isWritable($entity, $property));
+        $propertyAccessor->setValue($entity, $property, $setValue);
+        $this->assertTrue($propertyAccessor->isReadable($entity, $property));
+        $this->assertEquals($getValue, $propertyAccessor->getValue($entity, $property));
     }
     
     abstract protected function createEntity();
