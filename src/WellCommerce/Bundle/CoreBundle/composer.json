@@ -69,6 +69,7 @@
     "wellcommerce/datagrid": "^0.7@dev",
     "wellcommerce/dataset": "^0.7@dev",
     "wellcommerce/doctrine-enhancer": "^0.7@dev",
+    "wellcommerce/layout": "^0.7@dev",
     "wellcommerce/form": "^0.7@dev",
     "wellcommerce/serializer": "^0.7@dev"
   },
