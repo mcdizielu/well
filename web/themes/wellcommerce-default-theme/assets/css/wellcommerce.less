@@ -993,22 +993,6 @@ footer {
 			.radius(0);
 		}
 
-		small {
-			font-size: 12px;
-			color: #a6932d;
-		}
-
-		.triangle {
-			width: 0;
-			height: 0;
-			border-style: solid;
-			border-width: 3px 0 3px 4px;
-			border-color: transparent transparent transparent #555b5a;
-			display: inline-block;
-			float: right;
-			margin: 7px 0;
-		}
-
 		&.active:hover,
 		&.active {
 			margin-left: -18px;
@@ -1020,6 +1004,49 @@ footer {
 			.triangle {
 				float: left;
 				margin-right: 18px;
+			}
+		}
+
+		small {
+			color: #a6932d;
+		}
+	}
+
+	a {
+		.triangle {
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 3px 0 3px 4px;
+			border-color: transparent transparent transparent #555b5a;
+			display: inline-block;
+			float: right;
+			margin: 7px 0;
+		}
+
+		small {
+			font-size: 12px;
+		}
+	}
+
+	> ul {
+		list-style-type: none;
+		padding-left: 0;
+		margin-bottom: 0;
+
+		> li {
+			&:first-child > a.list-group-item {
+				border-top: 0;
+			}
+
+			> a.list-group-item {
+				.radius(0);
+				border-bottom: 0;
+
+				&:hover,
+				&.active {
+					color: @font-primary-color;
+				}
 			}
 		}
 	}
