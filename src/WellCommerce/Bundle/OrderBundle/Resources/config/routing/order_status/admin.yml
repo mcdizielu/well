@@ -1,0 +1,53 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+admin.order_status.index:
+    path: /index
+    defaults:
+        _controller: 'order_status.controller.admin:indexAction'
+    options:
+        require_admin_permission: order_status.index
+
+admin.order_status.grid:
+    path: /grid
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'order_status.controller.admin:gridAction'
+    options:
+        expose: true
+        require_admin_permission: order_status.index
+
+admin.order_status.add:
+    path: /add
+    defaults:
+        _controller: 'order_status.controller.admin:addAction'
+    options:
+        require_admin_permission: order_status.add
+admin.order_status.edit:
+    path: '/edit/{id}'
+    defaults:
+        _controller: 'order_status.controller.admin:editAction'
+    options:
+        expose: true
+        require_admin_permission: order_status.edit
+
+admin.order_status.delete:
+    path: '/delete/{id}'
+    defaults:
+        _controller: 'order_status.controller.admin:deleteAction'
+    options:
+        expose: true
+        require_admin_permission: order_status.delete
+
+admin.order_status.delete_group:
+    path: '/delete_group'
+    defaults:
+        _controller: 'order_status.controller.admin:deleteGroupAction'
+    options:
+        expose: true
+        require_admin_permission: order_status.delete

@@ -1,0 +1,9 @@
+admin.sales_report.index:
+    path: /index/{startDate},{endDate}
+    defaults:
+        _controller: 'sales_report.controller.admin:indexAction'
+        startDate: null
+        endDate: null
+    options:
+        expose: true
+        require_admin_permission: sales_report.index
