@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f850fc192b0d08b9deeae7fe9276fb8d",
+    "content-hash": "5558abf7340de6961cbe304049dae187",
     "packages": [
         {
             "name": "asm89/twig-cache-extension",
@@ -605,12 +605,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "d116e276bc676c7048e3d6b65daa5e713b4f16e6"
+                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/d116e276bc676c7048e3d6b65daa5e713b4f16e6",
-                "reference": "d116e276bc676c7048e3d6b65daa5e713b4f16e6",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/54cacc9b81758b14e3ce750f205a393d52339e97",
+                "reference": "54cacc9b81758b14e3ce750f205a393d52339e97",
                 "shasum": ""
             },
             "require": {
@@ -665,7 +665,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2017-02-10 00:02:43"
+            "time": "2017-02-24 16:22:25"
         },
         {
             "name": "doctrine/cache",
@@ -3657,12 +3657,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "85d85209dccf325c1357b444a7c9b3a4a1852627"
+                "reference": "7f075aa497bc08559ea26350fa222492f40657f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/85d85209dccf325c1357b444a7c9b3a4a1852627",
-                "reference": "85d85209dccf325c1357b444a7c9b3a4a1852627",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/7f075aa497bc08559ea26350fa222492f40657f7",
+                "reference": "7f075aa497bc08559ea26350fa222492f40657f7",
                 "shasum": ""
             },
             "require": {
@@ -3703,7 +3703,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2017-02-13 09:07:58"
+            "time": "2017-02-24 19:52:51"
         },
         {
             "name": "symfony-cmf/routing",
@@ -4428,12 +4428,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WellCommerce/ComposerPlugin.git",
-                "reference": "21960282c31bd704d94f5ece9d8a848ef66d01ff"
+                "reference": "e84125d6f002885d9015e2e82fe86b6cd640ece8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WellCommerce/ComposerPlugin/zipball/21960282c31bd704d94f5ece9d8a848ef66d01ff",
-                "reference": "21960282c31bd704d94f5ece9d8a848ef66d01ff",
+                "url": "https://api.github.com/repos/WellCommerce/ComposerPlugin/zipball/e84125d6f002885d9015e2e82fe86b6cd640ece8",
+                "reference": "e84125d6f002885d9015e2e82fe86b6cd640ece8",
                 "shasum": ""
             },
             "require": {
@@ -4469,7 +4469,7 @@
                 "plugin",
                 "wellcommerce"
             ],
-            "time": "2017-02-23 16:10:54"
+            "time": "2017-02-24 21:11:59"
         },
         {
             "name": "willdurand/js-translation-bundle",
@@ -5388,9 +5388,7 @@
     "prefer-lowest": false,
     "platform": {
         "php": "^7.0",
-        "ext-mbstring": "*",
         "ext-gd": "*",
-        "ext-intl": "*",
         "ext-exif": "*"
     },
     "platform-dev": []
