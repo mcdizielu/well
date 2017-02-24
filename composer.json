@@ -37,24 +37,23 @@
     "ext-gd": "*",
     "ext-intl": "*",
     "ext-exif": "*",
-    "wellcommerce/composer-plugin": "^1.0@dev",
-    "wellcommerce/api-bundle": "^0.7.0@dev",
-    "wellcommerce/app-bundle": "^0.7.0@dev",
-    "wellcommerce/catalog-bundle": "^0.7.0@dev",
-    "wellcommerce/cms-bundle": "^0.7.0@dev",
-    "wellcommerce/core-bundle": "^0.7.0@dev",
-    "wellcommerce/coupon-bundle": "^0.7.0@dev",
-    "wellcommerce/generator-bundle": "^0.7.0@dev",
-    "wellcommerce/oauth-bundle": "^0.7.0@dev",
-    "wellcommerce/order-bundle": "^0.7.0@dev",
-    "wellcommerce/review-bundle": "^0.7.0@dev",
-    "wellcommerce/routing-bundle": "^0.7.0@dev",
-    "wellcommerce/search-bundle": "^0.7.0@dev",
-    "wellcommerce/showcase-bundle": "^0.7.0@dev",
-    "wellcommerce/wishlist-bundle": "^0.7.0@dev"
+    "wellcommerce/composer-plugin": "^1.0@dev"
   },
-  "require-dev": {
-    "dama/doctrine-test-bundle": "^1.0"
+  "replace": {
+    "wellcommerce/api-bundle": "self.version",
+    "wellcommerce/app-bundle": "self.version",
+    "wellcommerce/catalog-bundle": "self.version",
+    "wellcommerce/cms-bundle": "self.version",
+    "wellcommerce/core-bundle": "self.version",
+    "wellcommerce/coupon-bundle": "self.version",
+    "wellcommerce/generator-bundle": "self.version",
+    "wellcommerce/oauth-bundle": "self.version",
+    "wellcommerce/order-bundle": "self.version",
+    "wellcommerce/review-bundle": "self.version",
+    "wellcommerce/routing-bundle": "self.version",
+    "wellcommerce/search-bundle": "self.version",
+    "wellcommerce/showcase-bundle": "self.version",
+    "wellcommerce/wishlist-bundle": "self.version"
   },
   "scripts": {
     "post-install-cmd": [
@@ -91,6 +90,9 @@
         "database_password": "SYMFONY_DATABASE_PASSWORD",
         "prod_log_path": "SYMFONY_PROD_LOG_PATH"
       }
+    },
+    "branch-alias": {
+      "dev-master": "0.7.x-dev"
     }
   }
 }
