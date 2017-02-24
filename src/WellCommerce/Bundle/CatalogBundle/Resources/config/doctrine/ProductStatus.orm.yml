@@ -1,0 +1,22 @@
+WellCommerce\Bundle\CatalogBundle\Entity\ProductStatus:
+    type: entity
+    cache:
+        usage: NONSTRICT_READ_WRITE
+    table: product_status
+    id:
+        id:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        symbol:
+            type: string
+            length: 64
+            nullable: false
+            unique: true

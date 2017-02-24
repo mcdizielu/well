@@ -1,0 +1,54 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+admin.availability.index:
+    path: /index
+    defaults:
+        _controller: 'availability.controller.admin:indexAction'
+    options:
+        require_admin_permission: availability.index
+
+admin.availability.grid:
+    path: /grid
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'availability.controller.admin:gridAction'
+    options:
+        expose: true
+        require_admin_permission: availability.index
+
+admin.availability.add:
+    path: /add
+    defaults:
+        _controller: 'availability.controller.admin:addAction'
+    options:
+        require_admin_permission: availability.add
+
+admin.availability.edit:
+    path: '/edit/{id}'
+    defaults:
+        _controller: 'availability.controller.admin:editAction'
+    options:
+        expose: true
+        require_admin_permission: availability.edit
+
+admin.availability.delete:
+    path: '/delete/{id}'
+    defaults:
+        _controller: 'availability.controller.admin:deleteAction'
+    options:
+        expose: true
+        require_admin_permission: availability.delete
+
+admin.availability.delete_group:
+    path: '/delete_group'
+    defaults:
+        _controller: 'availability.controller.admin:deleteGroupAction'
+    options:
+        expose: true
+        require_admin_permission: availability.delete
