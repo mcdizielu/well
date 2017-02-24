@@ -25,7 +25,8 @@
   },
   "autoload": {
     "psr-4": {
-      "": "src/"
+      "WellCommerce\\Bundle\\": "src/WellCommerce/Bundle",
+      "WellCommerce\\Component\\": "src/WellCommerce/Component"
     },
     "files": [
       "app/AppKernel.php"
@@ -47,7 +48,7 @@
     "fzaninotto/faker": "v1.5.0",
     "willdurand/js-translation-bundle": "2.6.2",
     "friendsofsymfony/jsrouting-bundle": "^2.0@dev",
-    "symfony-cmf/routing": "1.4.0"
+    "symfony-cmf/routing": "1.4.0",
     "liip/imagine-bundle": "1.7.2",
     "beberlei/DoctrineExtensions": "v1.0.13",
     "symfony/monolog-bundle": "v3.0.3",
