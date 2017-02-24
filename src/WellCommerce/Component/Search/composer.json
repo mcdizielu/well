@@ -31,8 +31,8 @@
   "require": {
     "php": "^7.0",
     "zendframework/zendsearch": "dev-master",
-    "wellcommerce/collections": "^0.7@dev",
     "elasticsearch/elasticsearch": "v2.3.0",
+    "wellcommerce/collections": "^0.7@dev",
     "symfony/options-resolver": "v3.2.2"
   },
   "extra": {
