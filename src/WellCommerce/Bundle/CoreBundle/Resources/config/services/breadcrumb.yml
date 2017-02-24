@@ -1,0 +1,28 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+services:
+    breadcrumb.subscriber:
+        class: WellCommerce\Bundle\CoreBundle\EventListener\BreadcrumbSubscriber
+        arguments: ["@router.helper", "@breadcrumb.provider"]
+        tags:
+            - { name: kernel.event_subscriber }
+
+    breadcrumb.collection:
+        class: WellCommerce\Component\Breadcrumb\Model\BreadcrumbCollection
+        shared: false
+
+    breadcrumb.provider:
+        class: WellCommerce\Component\Breadcrumb\Provider\BreadcrumbProvider
+        arguments: ['@breadcrumb.collection']
+
+    twig.extension.breadcrumb:
+        class: WellCommerce\Bundle\CoreBundle\Twig\BreadcrumbExtension
+        tags:
+            - { name: twig.extension }
+        arguments: ['@breadcrumb.provider']
