@@ -1,0 +1,21 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+services:
+    layout_box.subscriber:
+        class: WellCommerce\Bundle\AppBundle\EventListener\LayoutBoxSubscriber
+        calls:
+            - [setContainer, ['@service_container']]
+        tags:
+            - { name: kernel.event_subscriber }
+
+    twig.extension.layout_box:
+        class: WellCommerce\Bundle\AppBundle\Twig\LayoutBoxExtension
+        arguments: ['@layout_box.renderer', '@layout_box.repository']
+        tags:
+            - { name: twig.extension }

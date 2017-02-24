@@ -1,0 +1,16 @@
+WellCommerce\Bundle\AppBundle\Entity\Tax:
+    type: entity
+    cache:
+        usage: NONSTRICT_READ_WRITE
+    table: tax
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        value:
+            type: decimal
+            scale: 2
+            precision: 15
+            nullable: false
