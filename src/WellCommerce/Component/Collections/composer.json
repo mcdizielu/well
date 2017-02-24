@@ -1,6 +1,5 @@
 {
   "name": "wellcommerce/collections",
-  "type": "wellcommerce-component",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce Collections",
@@ -35,9 +34,6 @@
   "extra": {
     "branch-alias": {
       "dev-master": "0.7.x-dev"
-    },
-    "wellcommerce-component": {
-      "install-dir": "src/WellCommerce/Component/Collections"
     }
   }
 }

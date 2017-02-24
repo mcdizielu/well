@@ -1,6 +1,5 @@
 {
   "name": "wellcommerce/layout",
-  "type": "wellcommerce-component",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce Layout Component",
@@ -37,9 +36,6 @@
   "extra": {
     "branch-alias": {
       "dev-master": "0.7.x-dev"
-    },
-    "wellcommerce-component": {
-      "install-dir": "src/WellCommerce/Component/Layout"
     }
   }
 }

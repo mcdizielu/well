@@ -1,6 +1,5 @@
 {
   "name": "wellcommerce/search",
-  "type": "wellcommerce-component",
   "license": "MIT",
   "minimum-stability": "dev",
   "description": "WellCommerce Search Component",
@@ -39,9 +38,6 @@
   "extra": {
     "branch-alias": {
       "dev-master": "0.7.x-dev"
-    },
-    "wellcommerce-component": {
-      "install-dir": "src/WellCommerce/Component/Search"
     }
   }
 }
