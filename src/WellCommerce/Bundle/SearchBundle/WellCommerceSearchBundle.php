@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\SearchBundle;
 
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use WellCommerce\Bundle\SearchBundle\DependencyInjection\Compiler\SearchTypePass;
@@ -27,5 +28,10 @@ class WellCommerceSearchBundle extends Bundle
     {
         parent::build($container);
         $container->addCompilerPass(new SearchTypePass());
+    }
+    
+    public static function registerBundles(Collection $bundles)
+    {
+        $bundles->add(new self());
     }
 }

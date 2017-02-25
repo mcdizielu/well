@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\OrderBundle;
 
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
 use WellCommerce\Bundle\OrderBundle\DependencyInjection\Compiler;
@@ -31,5 +32,10 @@ final class WellCommerceOrderBundle extends AbstractWellCommerceBundle
         $container->addCompilerPass(new Compiler\RegisterPaymentProcessorPass());
         $container->addCompilerPass(new Compiler\RegisterShippingMethodCalculatorPass());
         $container->addCompilerPass(new Compiler\RegisterShippingMethodOptionsProviderPass());
+    }
+    
+    public static function registerBundles(Collection $bundles)
+    {
+        $bundles->add(new self());
     }
 }

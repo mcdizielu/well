@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\ReviewBundle;
 
+use Doctrine\Common\Collections\Collection;
 use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
 
 /**
@@ -21,4 +22,8 @@ use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
  */
 final class WellCommerceReviewBundle extends AbstractWellCommerceBundle
 {
+    public static function registerBundles(Collection $bundles)
+    {
+        $bundles->add(new self());
+    }
 }

@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\CoreBundle;
 
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\Compiler;
 use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
@@ -32,5 +33,26 @@ final class WellCommerceCoreBundle extends AbstractWellCommerceBundle
         $container->addCompilerPass(new Compiler\DataSetTransformerPass());
         $container->addCompilerPass(new Compiler\RegisterTraitGeneratorEnhancerPass());
         $container->addCompilerPass(new Compiler\RegisterClassMetadataEnhancerPass());
+    }
+    
+    public static function registerBundles(Collection $bundles)
+    {
+        $bundles->add(new \Symfony\Bundle\FrameworkBundle\FrameworkBundle());
+        $bundles->add(new \Symfony\Bundle\SecurityBundle\SecurityBundle());
+        $bundles->add(new \Symfony\Bundle\TwigBundle\TwigBundle());
+        $bundles->add(new \Symfony\Bundle\MonologBundle\MonologBundle());
+        $bundles->add(new \Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle());
+        $bundles->add(new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle());
+        $bundles->add(new \Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle());
+        $bundles->add(new \Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle());
+        $bundles->add(new \Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle());
+        $bundles->add(new \Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle());
+        $bundles->add(new \FOS\JsRoutingBundle\FOSJsRoutingBundle());
+        $bundles->add(new \Bazinga\Bundle\JsTranslationBundle\BazingaJsTranslationBundle());
+        $bundles->add(new \Liip\ImagineBundle\LiipImagineBundle());
+        $bundles->add(new \Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle());
+        $bundles->add(new \Cache\AdapterBundle\CacheAdapterBundle());
+        $bundles->add(new \EmanueleMinotto\TwigCacheBundle\TwigCacheBundle());
+        $bundles->add(new self());
     }
 }

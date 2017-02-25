@@ -10,33 +10,45 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-use WellCommerce\Bundle\CoreBundle\HttpKernel\WellCommerceKernel;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\HttpKernel\Kernel;
 
 /**
  * Class AppKernel
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class AppKernel extends WellCommerceKernel
+class AppKernel extends Kernel
 {
     public function registerBundles()
     {
-        $bundles = [
-            new \WellCommerce\Bundle\ApiBundle\WellCommerceApiBundle(),
-            new \WellCommerce\Bundle\AppBundle\WellCommerceAppBundle(),
-            new \WellCommerce\Bundle\CoreBundle\WellCommerceCoreBundle(),
-            new \WellCommerce\Bundle\SearchBundle\WellCommerceSearchBundle(),
-            new \WellCommerce\Bundle\GeneratorBundle\WellCommerceGeneratorBundle(),
-            new \WellCommerce\Bundle\OrderBundle\WellCommerceOrderBundle(),
-            new \WellCommerce\Bundle\CatalogBundle\WellCommerceCatalogBundle(),
-            new \WellCommerce\Bundle\CouponBundle\WellCommerceCouponBundle(),
-            new \WellCommerce\Bundle\OAuthBundle\WellCommerceOAuthBundle(),
-            new \WellCommerce\Bundle\CmsBundle\WellCommerceCmsBundle(),
-            new \WellCommerce\Bundle\ReviewBundle\WellCommerceReviewBundle(),
-            new \WellCommerce\Bundle\ShowcaseBundle\WellCommerceShowcaseBundle(),
-            new \WellCommerce\Bundle\WishlistBundle\WellCommerceWishlistBundle(),
-        ];
+        $bundles = new ArrayCollection();
         
-        return array_merge(parent::registerBundles(), $bundles);
+        \WellCommerce\Bundle\CoreBundle\WellCommerceCoreBundle::registerBundles($bundles);
+        \WellCommerce\Bundle\ApiBundle\WellCommerceApiBundle::registerBundles($bundles);
+        \WellCommerce\Bundle\AppBundle\WellCommerceAppBundle::registerBundles($bundles);
+        \WellCommerce\Bundle\SearchBundle\WellCommerceSearchBundle::registerBundles($bundles);
+        \WellCommerce\Bundle\GeneratorBundle\WellCommerceGeneratorBundle::registerBundles($bundles);
+        \WellCommerce\Bundle\OrderBundle\WellCommerceOrderBundle::registerBundles($bundles);
+        \WellCommerce\Bundle\CatalogBundle\WellCommerceCatalogBundle::registerBundles($bundles);
+        \WellCommerce\Bundle\CouponBundle\WellCommerceCouponBundle::registerBundles($bundles);
+        \WellCommerce\Bundle\OAuthBundle\WellCommerceOAuthBundle::registerBundles($bundles);
+        \WellCommerce\Bundle\CmsBundle\WellCommerceCmsBundle::registerBundles($bundles);
+        \WellCommerce\Bundle\ReviewBundle\WellCommerceReviewBundle::registerBundles($bundles);
+        \WellCommerce\Bundle\ShowcaseBundle\WellCommerceShowcaseBundle::registerBundles($bundles);
+        \WellCommerce\Bundle\WishlistBundle\WellCommerceWishlistBundle::registerBundles($bundles);
+        
+        if (in_array($this->getEnvironment(), ['dev', 'test'])) {
+            $bundles->add(new \Symfony\Bundle\WebProfilerBundle\WebProfilerBundle());
+            $bundles->add(new \Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle());
+        }
+        
+        return $bundles->toArray();
+    }
+    
+    public function registerContainerConfiguration(LoaderInterface $loader)
+    {
+        $loader->load($this->getRootDir() . '/config/config_' . $this->getEnvironment() . '.yml');
     }
 }

@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\ApiBundle;
 
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use WellCommerce\Bundle\ApiBundle\DependencyInjection\Compiler\RegisterRequestHandlerPass;
@@ -28,5 +29,10 @@ class WellCommerceApiBundle extends AbstractWellCommerceBundle
     {
         parent::build($container);
         $container->addCompilerPass(new RegisterRequestHandlerPass(), PassConfig::TYPE_BEFORE_REMOVING);
+    }
+    
+    public static function registerBundles(Collection $bundles)
+    {
+        $bundles->add(new self);
     }
 }

@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\CoreBundle\HttpKernel;
 
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\Compiler\AutoRegisterControllerPass;
@@ -41,4 +42,6 @@ abstract class AbstractWellCommerceBundle extends Bundle
         $container->addCompilerPass(new AutoRegisterManagerPass($this));
         $container->addCompilerPass(new AutoRegisterControllerPass($this));
     }
+    
+    abstract public static function registerBundles(Collection $bundles);
 }

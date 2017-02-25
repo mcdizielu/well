@@ -12,9 +12,12 @@
 
 namespace WellCommerce\Bundle\AppBundle;
 
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use WellCommerce\Bundle\ApiBundle\WellCommerceApiBundle;
 use WellCommerce\Bundle\AppBundle\DependencyInjection\Compiler;
 use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
+use WellCommerce\Bundle\CoreBundle\WellCommerceCoreBundle;
 
 /**
  * Class WellCommerceAppBundle
@@ -28,5 +31,10 @@ final class WellCommerceAppBundle extends AbstractWellCommerceBundle
         parent::build($container);
         $container->addCompilerPass(new Compiler\ThemeCompilerPass());
         $container->addCompilerPass(new Compiler\LayoutBoxConfiguratorPass());
+    }
+    
+    public static function registerBundles(Collection $bundles)
+    {
+        $bundles->add(new self);
     }
 }
