@@ -6,33 +6,6 @@
 # For the full copyright and license information,
 # please view the LICENSE file that was distributed with this source code.
 
-wellcommerce_api:
-    resource: "@WellCommerceApiBundle/Resources/config/routing.yml"
-
-wellcommerce_catalog:
-    resource: "@WellCommerceCatalogBundle/Resources/config/routing.yml"
-
-wellcommerce_cms:
-    resource: "@WellCommerceCmsBundle/Resources/config/routing.yml"
-
-wellcommerce_core:
-    resource: "@WellCommerceCoreBundle/Resources/config/routing.yml"
-
-wellcommerce_review:
-    resource: "@WellCommerceReviewBundle/Resources/config/routing.yml"
-
-wellcommerce_coupon:
-    resource: "@WellCommerceCouponBundle/Resources/config/routing.yml"
-
-wellcommerce_oauth:
-    resource: "@WellCommerceOAuthBundle/Resources/config/routing.yml"
-
-wellcommerce_order:
-    resource: "@WellCommerceOrderBundle/Resources/config/routing.yml"
-
-wellcommerce_routing:
-    resource: "@WellCommerceRoutingBundle/Resources/config/routing.yml"
-
 _admin_client:
     resource: "@WellCommerceAppBundle/Resources/config/routing/client/admin.yml"
     prefix: /admin/client

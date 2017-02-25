@@ -8,18 +8,6 @@
 
 imports:
     - { resource: "app/" }
-    - { resource: "@WellCommerceApiBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceCoreBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceSearchBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceCatalogBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceCmsBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceCouponBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceGeneratorBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceOrderBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceReviewBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceRoutingBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceShowcaseBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceWishlistBundle/Resources/config/config.yml" }
 
 parameters:
     upload_dir: "%kernel.root_dir%/../web/media"
