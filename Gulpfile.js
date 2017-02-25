@@ -13,9 +13,6 @@ var paths = {
         libs: [
             'web/bundles/fosjsrouting/js/router.js',
             'web/bundles/wellcommerceapp/js/libs/**',
-            'web/bundles/bazingajstranslation/js/translator.min.js',
-            'js/translations/config.js',
-            'web/js/translations/**/*.js',
             'web/bundles/wellcommerceapp/js/core/plugin/*.js',
             'web/bundles/wellcommerceapp/js/core/form/*.js',
             'web/bundles/wellcommerceapp/js/core/language/*.js'
@@ -25,45 +22,36 @@ var paths = {
             'web/bundles/wellcommerceapp/js/core/init.js'
         ],
         css:  [
-            'web/bundles/wellcommerceapp/css/**'
-        ],
-        images: [
-            'web/bundles/wellcommerceapp/images/**'
+            'web/bundles/wellcommerceapp/css/admin.css'
         ]
     }
 };
 
 gulp.task('admin-libs', function () {
     return gulp.src(paths.admin.libs)
-        .pipe(concat('libs.js'))
+        .pipe(concat('libs.min.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('web/js/admin/'))
+        .pipe(gulp.dest('src/WellCommerce/Bundle/AppBundle/Resources/public/js/compiled/'))
         .pipe(livereload());
 });
 
 gulp.task('admin-core', function () {
     return gulp.src(paths.admin.core)
-        .pipe(concat('core.js'))
+        .pipe(concat('core.min.js'))
         .pipe(uglify())
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('web/js/admin/'))
+        .pipe(gulp.dest('src/WellCommerce/Bundle/AppBundle/Resources/public/js/compiled/'))
         .pipe(livereload());
 });
 
 gulp.task('admin-css', function () {
     return gulp.src(paths.admin.css)
-        .pipe(concat('admin.css'))
+        .pipe(concat('admin.min.css'))
         .pipe(uglifycss())
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('web/css/'))
+        .pipe(gulp.dest('src/WellCommerce/Bundle/AppBundle/Resources/public/css/'))
         .pipe(livereload());
-});
-
-gulp.task('admin-images', function() {
-    return gulp.src(paths.admin.images)
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('web/images/'));
 });
 
 gulp.task('watch', function() {
@@ -73,5 +61,5 @@ gulp.task('watch', function() {
     gulp.watch(paths.admin.js, ['admin-js']);
 });
 
-gulp.task('default', ['admin-libs', 'admin-core', 'admin-css', 'admin-images']);
+gulp.task('default', ['admin-libs', 'admin-core', 'admin-css']);
 

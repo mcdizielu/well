@@ -1,20 +1,22 @@
 {% trans_default_domain "wellcommerce" %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ app.request.locale }}">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ app.request.locale }}" lang="{{ app.request.locale|split('_')[0] }}">
 <head>
     <title>Administration</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Author" content="WellCommerce sp. z o.o."/>
     <meta name="robots" content="noindex, nofollow"/>
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}" />
-    <script type="text/javascript" src="{{ asset('js/admin/libs.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('bundles/wellcommerceapp/css/admin.min.css') }}" />
+    <script src="{{ asset('bundles/bazingajstranslation/js/translator.min.js') }}"></script>
+    <script src="{{ url('bazinga_jstranslation_js', { 'domain': 'wellcommerce' }) }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/wellcommerceapp/js/compiled/libs.min.js') }}"></script>
     <script src="//cdn.ckeditor.com/4.5.11/full/ckeditor.js"></script>
     <script type="text/javascript" src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
     <script type="text/javascript">
         new GCore({
             iCookieLifetime: 30,
-            sDesignPath: '/',
+            sDesignPath: '/bundles/wellcommerceapp/',
             iActiveView: '',
             iActiveLanguage: '',
             aoLanguages: '',
@@ -24,7 +26,7 @@
         });
         var DataGrid;
     </script>
-    <script type="text/javascript" src="{{ asset('js/admin/core.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/wellcommerceapp/js/compiled/core.min.js') }}"></script>
     <script type="text/javascript">
         GF_Debug.s_iLevel = GF_Debug.LEVEL_ALL;
     </script>
@@ -37,7 +39,7 @@
     <div class="layout-container">
         <h1>
             <a href="{{ path('admin.dashboard.index') }}">
-                <img src="{{ asset('images/logo.png') }}" alt="WellCommerce" />
+                <img src="{{ asset('bundles/wellcommerceapp/images/logo.png') }}" alt="WellCommerce" />
             </a>
         </h1>
 
