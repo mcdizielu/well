@@ -4,7 +4,7 @@
                     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
 
     <class name="WellCommerce\Bundle\CoreBundle\Entity\Route">
-        <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
+        <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueRoute">
             <option name="fields">path</option>
         </constraint>
     </class>

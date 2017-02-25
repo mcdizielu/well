@@ -37,6 +37,6 @@
                 <option name="message">category_translation.name.not_null</option>
             </constraint>
         </property>
-        <constraint name="WellCommerce\Bundle\CoreBundle\Validator\UniqueEntity" />
+        <constraint name="WellCommerce\Bundle\CoreBundle\Validator\UniqueRoute" />
     </class>
 </constraint-mapping>

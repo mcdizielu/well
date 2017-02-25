@@ -13,7 +13,7 @@ namespace WellCommerce\Bundle\CoreBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
-use WellCommerce\Bundle\CoreBundle\Helper\RouterHelperInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Router\RouterHelperInterface;
 use WellCommerce\Component\Breadcrumb\Model\Breadcrumb;
 use WellCommerce\Component\Breadcrumb\Provider\BreadcrumbProviderInterface;
 

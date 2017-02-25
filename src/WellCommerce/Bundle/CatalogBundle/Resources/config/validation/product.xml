@@ -62,7 +62,7 @@
             <constraint name="NotBlank" />
             <constraint name="NotNull" />
         </property>
-        <constraint name="WellCommerce\Bundle\CoreBundle\Validator\UniqueEntity" />
+        <constraint name="WellCommerce\Bundle\CoreBundle\Validator\UniqueRoute" />
     </class>
 
     <class name="WellCommerce\Bundle\ReviewBundle\Entity\Review">

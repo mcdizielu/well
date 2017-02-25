@@ -17,14 +17,14 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 use WellCommerce\Bundle\CoreBundle\Entity\RoutableSubjectInterface;
 use WellCommerce\Bundle\CoreBundle\Entity\Route;
-use WellCommerce\Bundle\CoreBundle\Helper\RouterHelperInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Router\RouterHelperInterface;
 
 /**
- * Class UniqueEntityValidator
+ * Class UniqueRouteValidator
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class UniqueEntityValidator extends ConstraintValidator
+final class UniqueRouteValidator extends ConstraintValidator
 {
     /**
      * @var RepositoryInterface
@@ -36,12 +36,6 @@ final class UniqueEntityValidator extends ConstraintValidator
      */
     private $routerHelper;
     
-    /**
-     * UniqueEntityValidator constructor.
-     *
-     * @param RepositoryInterface   $repository
-     * @param RouterHelperInterface $routerHelper
-     */
     public function __construct(RepositoryInterface $repository, RouterHelperInterface $routerHelper)
     {
         $this->repository   = $repository;

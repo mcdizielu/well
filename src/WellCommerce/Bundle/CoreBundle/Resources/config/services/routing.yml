@@ -12,10 +12,10 @@ services:
         arguments: ["@slug.generator"]
 
     routable.subscriber:
-        class: WellCommerce\Bundle\CoreBundle\EventListener\RoutableSubscriber
+        class: WellCommerce\Bundle\CoreBundle\Doctrine\EventSubscriber\RoutableSubscriber
+        arguments: ['%routing_discriminator_map%']
         tags:
             - { name: doctrine.event_subscriber }
-        arguments: ['%routing_discriminator_map%']
 
     dataset.transformer.route:
         class: WellCommerce\Bundle\CoreBundle\DataSet\Transformer\RouteTransformer
@@ -24,10 +24,10 @@ services:
         arguments: ['@routing.generator']
 
     routing.orm.validator.unique:
-        class: WellCommerce\Bundle\CoreBundle\Validator\UniqueEntityValidator
+        class: WellCommerce\Bundle\CoreBundle\Validator\UniqueRouteValidator
+        arguments: ['@route.repository', '@router.helper']
         tags:
             - { name: validator.constraint_validator, alias: routing.orm.validator.unique }
-        arguments: ['@route.repository', '@router.helper']
 
     routing.provider:
         class: WellCommerce\Bundle\CoreBundle\Provider\RouteProvider
@@ -68,11 +68,11 @@ services:
         arguments: ['@route.repository']
 
     router.helper:
-        class: WellCommerce\Bundle\CoreBundle\Helper\RouterHelper
+        class: WellCommerce\Bundle\CoreBundle\Helper\Router\RouterHelper
         arguments: ['@router', '@request.helper']
 
     twig.extension.dynamic_routing:
         class: WellCommerce\Bundle\CoreBundle\Twig\DynamicRoutingExtension
+        arguments: ['@router', '@request.helper']
         tags:
             - { name: twig.extension }
-        arguments: ['@router', '@request.helper']

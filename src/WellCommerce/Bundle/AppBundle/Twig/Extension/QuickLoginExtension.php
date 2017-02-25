@@ -11,7 +11,7 @@
  */
 namespace WellCommerce\Bundle\AppBundle\Twig\Extension;
 
-use WellCommerce\Bundle\CoreBundle\Helper\RouterHelperInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Router\RouterHelperInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
 
 /**

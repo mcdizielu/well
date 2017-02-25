@@ -16,10 +16,10 @@ use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use WellCommerce\Bundle\AppBundle\Entity\ClientDetails;
 use WellCommerce\Bundle\AppBundle\Repository\ClientRepositoryInterface;
-use WellCommerce\Bundle\CoreBundle\Helper\RouterHelperInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Router\RouterHelperInterface;
 
 /**
- * Class UniqueEntityValidator
+ * Class UniqueUsernameValidator
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
