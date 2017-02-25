@@ -37,7 +37,7 @@ final class ElasticSearchAdapter implements AdapterInterface
      * @var Client
      */
     private $client;
-
+    
     /**
      * ElasticSearchAdapter constructor.
      *
@@ -50,29 +50,27 @@ final class ElasticSearchAdapter implements AdapterInterface
         $this->options = $resolver->resolve($options);
     }
     
-    public function search(SearchRequestInterface $request) : array
+    public function search(SearchRequestInterface $request): array
     {
         $params = [
             'index' => $this->getIndexName($request->getLocale()),
             'type'  => $request->getType()->getName(),
             "size"  => $this->options['result_limit'],
-            'body'  => [
-                'query' => $this->createQueryBuilder($request)->getQuery()
-            ]
+            'body'  => $this->createQueryBuilder($request)->getQuery(),
         ];
-
+        
         $results = $this->getClient()->search($params);
-
+        
         return $this->processResults($results);
     }
-
+    
     public function addDocument(DocumentInterface $document)
     {
         $params = [
             'index' => $this->getIndexName($document->getLocale()),
             'type'  => $document->getType()->getName(),
             'id'    => $document->getIdentifier(),
-            'body'  => $this->createDocumentBody($document)
+            'body'  => $this->createDocumentBody($document),
         ];
         
         $this->getClient()->index($params);
@@ -95,17 +93,17 @@ final class ElasticSearchAdapter implements AdapterInterface
             'index' => $this->getIndexName($document->getLocale()),
             'type'  => $document->getType()->getName(),
             'id'    => $document->getIdentifier(),
-            'body'  => $this->createDocumentBody($document)
+            'body'  => $this->createDocumentBody($document),
         ];
         
         $this->getClient()->update($params);
     }
-
-    public function getIndexName(string $locale) : string
+    
+    public function getIndexName(string $locale): string
     {
         return sprintf('%s%s', $this->options['index_prefix'], $locale);
     }
-
+    
     public function createIndex(string $locale)
     {
         return $this->getClient()->indices()->create([
@@ -113,20 +111,20 @@ final class ElasticSearchAdapter implements AdapterInterface
             'body'  => [
                 'settings' => [
                     'number_of_shards'   => $this->options['number_of_shards'],
-                    'number_of_replicas' => $this->options['number_of_replicas']
-                ]
-            ]
+                    'number_of_replicas' => $this->options['number_of_replicas'],
+                ],
+            ],
         ]);
     }
-
+    
     public function removeIndex(string $locale)
     {
         if (false === $this->hasIndex($locale)) {
             return false;
         }
-
+        
         return $this->getClient()->indices()->delete([
-            'index' => $this->getIndexName($locale)
+            'index' => $this->getIndexName($locale),
         ]);
     }
     
@@ -135,21 +133,21 @@ final class ElasticSearchAdapter implements AdapterInterface
         if (false === $this->hasIndex($locale)) {
             return $this->createIndex($locale);
         }
-
+        
         return $this->getClient()->indices()->flush([
-            'index' => $this->getIndexName($locale)
+            'index' => $this->getIndexName($locale),
         ]);
-
+        
     }
-
+    
     public function optimizeIndex(string $locale)
     {
         if (false === $this->hasIndex($locale)) {
             $this->createIndex($locale);
         }
-
+        
         return $this->getClient()->indices()->optimize([
-            'index' => $this->getIndexName($locale)
+            'index' => $this->getIndexName($locale),
         ]);
     }
     
@@ -158,13 +156,13 @@ final class ElasticSearchAdapter implements AdapterInterface
         if (false === $this->hasIndex($locale)) {
             $this->createIndex($locale);
         }
-
+        
         return $this->getClient()->indices()->stats([
-            'index' => $this->getIndexName($locale)
+            'index' => $this->getIndexName($locale),
         ]);
     }
-
-    private function createQueryBuilder(SearchRequestInterface $request) : QueryBuilderInterface
+    
+    private function createQueryBuilder(SearchRequestInterface $request): QueryBuilderInterface
     {
         return new $this->options['query_builder_class']($request, $this->options['query_min_length']);
     }
@@ -177,7 +175,7 @@ final class ElasticSearchAdapter implements AdapterInterface
             'result_limit',
             'number_of_shards',
             'number_of_replicas',
-            'query_builder_class'
+            'query_builder_class',
         ]);
         
         $resolver->setDefault('index_prefix', 'wellcommerce_');
@@ -186,7 +184,7 @@ final class ElasticSearchAdapter implements AdapterInterface
         $resolver->setDefault('number_of_shards', 2);
         $resolver->setDefault('number_of_replicas', 0);
         $resolver->setDefault('query_builder_class', ElasticSearchQueryBuilder::class);
-
+        
         $resolver->setAllowedTypes('index_prefix', 'string');
         $resolver->setAllowedTypes('query_min_length', 'integer');
         $resolver->setAllowedTypes('result_limit', 'integer');
@@ -194,42 +192,42 @@ final class ElasticSearchAdapter implements AdapterInterface
         $resolver->setAllowedTypes('number_of_replicas', 'integer');
         $resolver->setAllowedTypes('query_builder_class', 'string');
     }
-
-    private function createDocumentBody(DocumentInterface $document) : array
+    
+    private function createDocumentBody(DocumentInterface $document): array
     {
         $body = [];
-
+        
         $document->getFields()->map(function (FieldInterface $field) use (&$body) {
             $body[$field->getName()] = $field->getValue();
         });
-
+        
         return $body;
     }
-
-    private function getClient() : Client
+    
+    private function getClient(): Client
     {
         if (null === $this->client) {
             $this->client = ClientBuilder::create()->build();
         }
-
+        
         return $this->client;
     }
     
-    private function hasIndex(string $locale) : bool
+    private function hasIndex(string $locale): bool
     {
         return $this->getClient()->indices()->exists([
-            'index' => $this->getIndexName($locale)
+            'index' => $this->getIndexName($locale),
         ]);
     }
-
-    private function processResults(array $results) : array
+    
+    private function processResults(array $results): array
     {
         $identifiers = [];
-
+        
         foreach ($results['hits']['hits'] as $hit) {
             $identifiers[] = $hit['_id'];
         }
-
+        
         return $identifiers;
     }
 }
