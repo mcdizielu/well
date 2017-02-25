@@ -30,6 +30,6 @@
         <property name="content">
             <constraint name="NotNull" />
         </property>
-        <constraint name="WellCommerce\Bundle\RoutingBundle\Validator\UniqueEntity" />
+        <constraint name="WellCommerce\Bundle\CoreBundle\Validator\UniqueEntity" />
     </class>
 </constraint-mapping>

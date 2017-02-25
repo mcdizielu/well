@@ -14,7 +14,7 @@ namespace WellCommerce\Component\Layout\Renderer;
 
 use ReflectionClass;
 use ReflectionMethod;
-use WellCommerce\Bundle\RoutingBundle\Helper\RouterHelperInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\RouterHelperInterface;
 use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 use WellCommerce\Component\Layout\Configurator\LayoutBoxConfiguratorCollection;
 use WellCommerce\Component\Layout\Controller\BoxControllerInterface;

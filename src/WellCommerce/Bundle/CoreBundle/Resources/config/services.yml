@@ -13,6 +13,7 @@ imports:
     - { resource: 'services/doctrine.yml' }
     - { resource: 'services/form.yml' }
     - { resource: 'services/layout.yml' }
+    - { resource: 'services/routing.yml' }
 
 services:
     flash.helper:

@@ -25,7 +25,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
 use WellCommerce\Bundle\OAuthBundle\Manager\FacebookClientManager;
-use WellCommerce\Bundle\RoutingBundle\Helper\RouterHelperInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\RouterHelperInterface;
 
 /**
  * Class FacebookAuthenticator

@@ -32,6 +32,3 @@ wellcommerce_oauth:
 
 wellcommerce_order:
     resource: "@WellCommerceOrderBundle/Resources/config/routing.yml"
-
-wellcommerce_routing:
-    resource: "@WellCommerceRoutingBundle/Resources/config/routing.yml"

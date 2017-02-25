@@ -31,6 +31,6 @@
         <constraint name="Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity">
             <option name="fields">name</option>
         </constraint>
-        <constraint name="WellCommerce\Bundle\RoutingBundle\Validator\UniqueEntity" />
+        <constraint name="WellCommerce\Bundle\CoreBundle\Validator\UniqueEntity" />
     </class>
 </constraint-mapping>

@@ -86,7 +86,7 @@ well_commerce_api:
         WellCommerce\Bundle\CatalogBundle\Entity\UnitTranslation:
             mapping: "@WellCommerceCatalogBundle/Resources/config/serialization/UnitTranslation.yml"
 
-well_commerce_routing:
+well_commerce_core:
     dynamic_routing:
         category:
             entity: WellCommerce\Bundle\CatalogBundle\Entity\CategoryRoute

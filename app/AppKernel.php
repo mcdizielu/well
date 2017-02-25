@@ -33,7 +33,6 @@ class AppKernel extends WellCommerceKernel
             new \WellCommerce\Bundle\OAuthBundle\WellCommerceOAuthBundle(),
             new \WellCommerce\Bundle\CmsBundle\WellCommerceCmsBundle(),
             new \WellCommerce\Bundle\ReviewBundle\WellCommerceReviewBundle(),
-            new \WellCommerce\Bundle\RoutingBundle\WellCommerceRoutingBundle(),
             new \WellCommerce\Bundle\ShowcaseBundle\WellCommerceShowcaseBundle(),
             new \WellCommerce\Bundle\WishlistBundle\WellCommerceWishlistBundle(),
         ];

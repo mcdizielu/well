@@ -11,6 +11,7 @@
 
 namespace WellCommerce\Bundle\CoreBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -24,8 +25,53 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('well_commerce_core');
+        $rootNode    = $treeBuilder->root('well_commerce_core');
+        $this->processConfiguration($rootNode);
         
         return $treeBuilder;
     }
+    
+    //@formatter:off
+    protected function processConfiguration(ArrayNodeDefinition $node)
+    {
+        $node
+            ->children()
+                ->arrayNode('routers')
+                    ->defaultValue(['router.default' => 100])
+                    ->useAttributeAsKey('id')
+                    ->prototype('scalar')->end()
+                ->end()
+                ->arrayNode('dynamic_routing')
+                    ->useAttributeAsKey('name')
+                    ->prototype('array')
+                        ->children()
+                            ->scalarNode('entity')->isRequired()->end()
+                            ->arrayNode('defaults')
+                                ->useAttributeAsKey('name')
+                                ->prototype('scalar')->end()
+                            ->end()
+                            ->arrayNode('requirements')
+                               ->useAttributeAsKey('name')
+                                ->prototype('scalar')->end()
+                            ->end()
+                            ->arrayNode('options')
+                                ->prototype('array')->end()
+                                ->children()
+                                    ->arrayNode('breadcrumb')
+                                        ->children()
+                                            ->scalarNode('label')->isRequired()->end()
+                                            ->scalarNode('css_class')->defaultValue('')->end()
+                                            ->scalarNode('route')->defaultValue('')->end()
+                                            ->scalarNode('parent_route')->defaultValue('')->end()
+                                        ->end()
+                                    ->end()
+                                ->end()
+                            ->end()
+                            ->scalarNode('pattern')->defaultValue('')->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
+    }
+    //@formatter:on
 }
