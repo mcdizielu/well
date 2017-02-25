@@ -248,7 +248,7 @@ well_commerce_search:
                         name:
                             indexable: true
                             boost: 1
-                            fuzziness: 3
+                            fuzziness: 2
                             value_expression: resource.translate(locale).getName()
                         short_description:
                             indexable: true
