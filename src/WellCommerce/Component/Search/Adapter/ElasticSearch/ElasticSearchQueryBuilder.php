@@ -26,7 +26,7 @@ final class ElasticSearchQueryBuilder extends AbstractQueryBuilder
     protected function createMultiFieldSearch(Collection $fields)
     {
         $matches = [];
-
+        
         $fields->map(function (FieldInterface $field) use (&$matches) {
             $matches[] = [
                 'query_string' => [
@@ -34,42 +34,44 @@ final class ElasticSearchQueryBuilder extends AbstractQueryBuilder
                     'query'         => $field->getValue(),
                     'boost'         => $field->getBoost(),
                     "fuzziness"     => $field->getFuzziness(),
-                ]
+                ],
             ];
         });
-
+        
         return [
             'query' => [
                 'bool' => [
                     'should'               => [
-                        $matches
+                        $matches,
                     ],
-                    'minimum_should_match' => $fields->count() - 1
+                    'minimum_should_match' => $fields->count() - 1,
                 ],
-            ]
+            ],
         ];
     }
-
+    
     protected function createSimpleSearch(string $phrase)
     {
         $configuration = [];
-
+        
         $this->request->getType()->getFields()->map(function (FieldInterface $field) use (&$configuration) {
             $configuration[] = sprintf('%s^%s', $field->getName(), $field->getBoost());
         });
-
+        
         return [
-            'template' => [
-                'inline' => [
-                    "simple_query_string" => [
-                        'query'  => '{{query_string}}*',
-                        'fields' => $configuration
-                    ]
+            'query' => [
+                'template' => [
+                    'inline' => [
+                        "simple_query_string" => [
+                            'query'  => '{{query_string}}*',
+                            'fields' => $configuration,
+                        ],
+                    ],
+                    'params' => [
+                        'query_string' => $phrase,
+                    ],
                 ],
-                'params' => [
-                    'query_string' => $phrase
-                ]
-            ]
+            ],
         ];
     }
 }
