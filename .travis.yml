@@ -1,21 +1,23 @@
 language: php
 
-sudo: false
+sudo: true
 
 php:
   - 7.0
   - 7.1
 
-services:
-  - elasticsearch
-
 addons:
     apt:
         packages:
             - apache2
+            - oracle-java8-set-default
 
 before_script:
+    - curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.1.1.deb && \
+    - sudo dpkg -i --force-confnew elasticsearch-5.1.1.deb && \
+    - sudo service elasticsearch start
     - sleep 10
+    - curl -v http://localhost:9200/
     - phpenv config-rm xdebug.ini
     - if [[ $TRAVIS_PHP_VERSION = 7.* ]] ; then echo "zend.enable_gc = 0" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi;
     - if [[ $TRAVIS_PHP_VERSION = 7.* ]] ; then echo "apc.enabled = 1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi;
