@@ -13,8 +13,8 @@ addons:
             - oracle-java8-set-default
 
 before_script:
-    - curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.1.1.deb && \
-    - sudo dpkg -i --force-confnew elasticsearch-5.1.1.deb && \
+    - curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.1.1.deb
+    - sudo dpkg -i --force-confnew elasticsearch-5.1.1.deb
     - sudo service elasticsearch start
     - sleep 10
     - curl -v http://localhost:9200/
