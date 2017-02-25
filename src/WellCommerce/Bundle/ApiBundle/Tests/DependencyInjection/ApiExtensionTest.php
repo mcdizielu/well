@@ -24,7 +24,7 @@ class ApiExtensionTest extends AbstractExtensionTestCase
     /**
      * @return array
      */
-    public function getRequiredServices()
+    public function getRequiredServices(): array
     {
         return [
             'services' => [
@@ -32,7 +32,7 @@ class ApiExtensionTest extends AbstractExtensionTestCase
                     'api.security.token_authenticator',
                     'api.request_handler.collection',
                     'api.controller',
-                    'api.serialization.metadata_loader'
+                    'api.serialization.metadata_loader',
                 ],
             ],
         ];

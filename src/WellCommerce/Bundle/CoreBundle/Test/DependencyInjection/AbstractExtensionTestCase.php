@@ -30,11 +30,11 @@ abstract class AbstractExtensionTestCase extends AbstractTestCase
             $this->assertTrue($this->container->has($service), sprintf('Container does not have %s service', $service));
         }
     }
-
-    public function getRequiredServices()
+    
+    public function getRequiredServices(): array
     {
         return [
-            'services' => [[]]
+            'services' => [[]],
         ];
     }
 }

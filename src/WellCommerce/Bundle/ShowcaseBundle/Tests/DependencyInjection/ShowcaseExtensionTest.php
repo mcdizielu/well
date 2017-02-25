@@ -24,7 +24,7 @@ class ShowcaseExtensionTest extends AbstractExtensionTestCase
     /**
      * @return array
      */
-    public function getRequiredServices()
+    public function getRequiredServices(): array
     {
         return [
             'services' => [
