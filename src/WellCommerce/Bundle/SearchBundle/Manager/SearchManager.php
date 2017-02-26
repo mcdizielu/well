@@ -56,7 +56,7 @@ final class SearchManager implements SearchManagerInterface
         $this->adapter = $adapter;
     }
     
-    public function search(SearchRequestInterface $request) : array
+    public function search(SearchRequestInterface $request): array
     {
         $result = $this->adapter->search($request);
         
@@ -100,12 +100,17 @@ final class SearchManager implements SearchManagerInterface
         $this->adapter->removeIndex($locale);
     }
     
-    public function getType(string $type) : TypeInterface
+    public function getType(string $type): TypeInterface
     {
         if (false === $this->types->containsKey($type)) {
             throw new TypeNotFoundException($type, $this->types->getKeys());
         }
         
         return $this->types->get($type);
+    }
+    
+    public function getTypes(): Collection
+    {
+        return $this->types;
     }
 }

@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\SearchBundle\Manager;
 
+use Doctrine\Common\Collections\Collection;
 use WellCommerce\Component\Search\Model\DocumentInterface;
 use WellCommerce\Component\Search\Model\TypeInterface;
 use WellCommerce\Component\Search\Request\SearchRequestInterface;
@@ -40,4 +41,6 @@ interface SearchManagerInterface
     public function removeIndex(string $locale);
     
     public function getType(string $type): TypeInterface;
+    
+    public function getTypes(): Collection;
 }

@@ -12,11 +12,8 @@
 
 namespace WellCommerce\Bundle\CatalogBundle\Tests\Controller\Front;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CoreBundle\Test\Controller\Admin\AbstractAdminControllerTestCase;
-use WellCommerce\Bundle\SearchBundle\Manager\SearchManagerInterface;
-use WellCommerce\Component\Search\Request\SearchRequest;
 
 /**
  * Class ProductSearchControllerTest
@@ -27,87 +24,37 @@ class ProductSearchControllerTest extends AbstractAdminControllerTestCase
 {
     public function testIndexAction()
     {
-        /** @var SearchManagerInterface $manager */
-        $manager    = $this->container->get('search.manager');
         $collection = $this->container->get('product.repository')->getCollection();
-        $type       = $manager->getType('product');
-        
-        $collection->map(function (Product $product) use ($type, $manager) {
-            $field = $type->getFields()->get('sku');
-            $field->setValue($product->getSku());
-            $fields = new ArrayCollection([$field]);
-            
-            $searchRequest = new SearchRequest($type, $fields, '', 'en');
-            $result        = $manager->search($searchRequest);
-            $this->assertGreaterThanOrEqual(1, count($result));
-            $this->assertContains($product->getId(), $result);
-        });
-        
-        $collection->map(function (Product $product) use ($type, $manager) {
-            $field = $type->getFields()->get('name');
-            $field->setValue($product->translate()->getName());
-            $fields = new ArrayCollection([$field]);
-            
-            $searchRequest = new SearchRequest($type, $fields, '', 'en');
-            $result        = $manager->search($searchRequest);
-            $this->assertGreaterThanOrEqual(1, count($result));
-            $this->assertContains($product->getId(), $result);
-        });
-        
-        $collection->map(function (Product $product) use ($type, $manager) {
-            $fields = new ArrayCollection();
-            
-            $field = $type->getFields()->get('name');
-            $field->setValue('');
-            $fields->add($field);
-            
-            $field = $type->getFields()->get('sku');
-            $field->setValue($product->getSku());
-            $fields->add($field);
-            
-            $searchRequest = new SearchRequest($type, $fields, '', 'en');
-            $result        = $manager->search($searchRequest);
-            $this->assertGreaterThanOrEqual(1, count($result));
-            $this->assertContains($product->getId(), $result);
-        });
-        
-        $collection->map(function (Product $product) use ($type, $manager) {
-            $fields = new ArrayCollection();
-            
-            $field = $type->getFields()->get('name');
-            $field->setValue($product->translate()->getName());
-            $fields->add($field);
-            
-            $field = $type->getFields()->get('sku');
-            $field->setValue($product->getSku());
-            $fields->add($field);
-            
-            $searchRequest = new SearchRequest($type, $fields, '', 'en');
-            $result        = $manager->search($searchRequest);
-            $this->assertGreaterThanOrEqual(1, count($result));
-            $this->assertContains($product->getId(), $result);
+
+        $collection->map(function (Product $product) {
+            $url     = $this->generateUrl('front.product_search.index', ['sku' => $product->getSku()]);
+            $crawler = $this->client->request('GET', $url);
+
+            $this->assertTrue($this->client->getResponse()->isSuccessful(), sprintf(
+                'Code: %s, URL: %s',
+                $this->client->getResponse()->getStatusCode(),
+                $url
+            ));
+
+            $this->assertGreaterThan(0, $crawler->filter('html:contains("' . $product->translate()->getName() . '")')->count());
         });
     }
     
     public function testQuickSearchAction()
     {
-        /** @var SearchManagerInterface $manager */
-        $manager    = $this->container->get('search.manager');
         $collection = $this->container->get('product.repository')->getCollection();
-        $type       = $manager->getType('product');
         
-        $collection->map(function (Product $product) use ($type, $manager) {
-            $searchRequest = new SearchRequest($type, new ArrayCollection(), $product->getSku(), 'en');
-            $result        = $manager->search($searchRequest);
-            $this->assertGreaterThanOrEqual(1, count($result));
-            $this->assertContains($product->getId(), $result);
-        });
-        
-        $collection->map(function (Product $product) use ($type, $manager) {
-            $searchRequest = new SearchRequest($type, new ArrayCollection(), $product->translate()->getName(), 'en');
-            $result        = $manager->search($searchRequest);
-            $this->assertGreaterThanOrEqual(1, count($result));
-            $this->assertContains($product->getId(), $result);
+        $collection->map(function (Product $product) {
+            $url     = $this->generateUrl('front.product_search.quick', ['phrase' => $product->getSku()]);
+            
+            $this->client->request('GET', $url);
+            $json = $this->client->getResponse()->getContent();
+            
+            $this->assertTrue($this->client->getResponse()->isSuccessful());
+            $this->assertJson($json);
+            $this->assertContains($product->translate()->getName(), $json);
+            $result = json_decode($json, true);
+            $this->assertArrayHasKey('liveSearchContent', $result);
         });
     }
 }
