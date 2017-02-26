@@ -31,12 +31,9 @@ before_script:
 
     - php app/console wellcommerce:install
     - php app/console cache:warmup --env=test
-
-    - wget http://get.sensiolabs.org/security-checker.phar
-
 script:
     - phpunit -c phpunit.xml.dist
-    - php security-checker.phar security:check composer.lock
+    - bin/security-checker security:check composer.lock
 
 notifications:
     email: false
