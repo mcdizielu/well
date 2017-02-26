@@ -10,17 +10,17 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
+namespace WellCommerce\Bundle\ShowcaseBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
+use WellCommerce\Bundle\AppBundle\DataFixtures\AbstractDataFixture;
 
 /**
- * Class LoadReviewData
+ * Class LoadShowcaseData
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class LoadReviewData extends AbstractDataFixture
+final class LoadShowcaseData extends AbstractDataFixture
 {
     /**
      * {@inheritDoc}
@@ -32,9 +32,12 @@ class LoadReviewData extends AbstractDataFixture
         }
         
         $this->createLayoutBoxes($manager, [
-            'review' => [
-                'type' => 'Review',
-                'name' => 'Product reviews',
+            'showcase' => [
+                'type'     => 'Showcase',
+                'name'     => 'Showcase',
+                'settings' => [
+                    'status' => $this->getReference('product_status_featured')->getId(),
+                ],
             ],
         ]);
         

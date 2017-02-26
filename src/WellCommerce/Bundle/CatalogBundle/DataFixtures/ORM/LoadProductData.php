@@ -10,10 +10,14 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
+namespace WellCommerce\Bundle\CatalogBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Persistence\ObjectManager;
+use WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadCurrencyData;
+use WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadMediaData;
+use WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadTaxData;
+use WellCommerce\Bundle\AppBundle\DataFixtures\ORM\LoadUnitData;
 use WellCommerce\Bundle\AppBundle\Entity\Dimension;
 use WellCommerce\Bundle\AppBundle\Entity\DiscountablePrice;
 use WellCommerce\Bundle\AppBundle\Entity\Price;
@@ -22,7 +26,7 @@ use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductDistinction;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductPhoto;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProductTranslation;
-use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
+use WellCommerce\Bundle\AppBundle\DataFixtures\AbstractDataFixture;
 use WellCommerce\Bundle\CoreBundle\Helper\Helper;
 
 /**

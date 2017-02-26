@@ -13,7 +13,8 @@
 namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
+use Symfony\Component\Config\FileLocator;
+use WellCommerce\Bundle\AppBundle\DataFixtures\AbstractDataFixture;
 
 /**
  * Class LoadAdminMenuData
@@ -27,7 +28,7 @@ class LoadAdminMenuData extends AbstractDataFixture
         if (!$this->isEnabled()) {
             return;
         }
-
+        
         $this->importAdminMenuConfiguration('catalog.xml');
         $this->importAdminMenuConfiguration('cms.xml');
         $this->importAdminMenuConfiguration('configuration.xml');

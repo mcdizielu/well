@@ -30,11 +30,7 @@ class ProductSearchControllerTest extends AbstractAdminControllerTestCase
             $url     = $this->generateUrl('front.product_search.index', ['sku' => $product->getSku()]);
             $crawler = $this->client->request('GET', $url);
 
-            $this->assertTrue($this->client->getResponse()->isSuccessful(), sprintf(
-                'Code: %s, URL: %s',
-                $this->client->getResponse()->getStatusCode(),
-                $url
-            ));
+            $this->assertTrue($this->client->getResponse()->isSuccessful());
 
             $this->assertGreaterThan(0, $crawler->filter('html:contains("' . $product->translate()->getName() . '")')->count());
         });

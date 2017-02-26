@@ -10,17 +10,17 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
+namespace WellCommerce\Bundle\CatalogBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
+use WellCommerce\Bundle\AppBundle\DataFixtures\AbstractDataFixture;
 
 /**
- * Class LoadLayeredNavigationData
+ * Class LoadSearchData
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class LoadLayeredNavigationData extends AbstractDataFixture
+class LoadSearchData extends AbstractDataFixture
 {
     /**
      * {@inheritDoc}
@@ -32,9 +32,9 @@ class LoadLayeredNavigationData extends AbstractDataFixture
         }
         
         $this->createLayoutBoxes($manager, [
-            'layered_navigation' => [
-                'type' => 'LayeredNavigation',
-                'name' => 'Filters',
+            'product_search' => [
+                'type' => 'ProductSearch',
+                'name' => 'Search results',
             ],
         ]);
         

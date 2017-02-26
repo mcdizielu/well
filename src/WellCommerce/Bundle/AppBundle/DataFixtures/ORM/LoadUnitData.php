@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use WellCommerce\Bundle\CatalogBundle\Entity\Unit;
-use WellCommerce\Bundle\CoreBundle\Doctrine\Fixtures\AbstractDataFixture;
+use WellCommerce\Bundle\AppBundle\DataFixtures\AbstractDataFixture;
 
 /**
  * Class LoadUnitData
@@ -25,9 +25,6 @@ class LoadUnitData extends AbstractDataFixture
 {
     public static $samples = ['pcs.', 'set'];
     
-    /**
-     * {@inheritDoc}
-     */
     public function load(ObjectManager $manager)
     {
         if (!$this->isEnabled()) {

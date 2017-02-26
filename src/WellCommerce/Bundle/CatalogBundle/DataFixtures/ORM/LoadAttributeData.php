@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * WellCommerce Open-Source E-Commerce Platform
  *
  * This file is part of the WellCommerce package.
@@ -10,35 +10,22 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\AppBundle\DataFixtures\ORM;
+namespace WellCommerce\Bundle\CatalogBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use WellCommerce\Bundle\AppBundle\Entity\Locale;
 use WellCommerce\Bundle\AppBundle\DataFixtures\AbstractDataFixture;
 
 /**
- * Class LoadLocaleData
+ * Class LoadAttributeData
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class LoadLocaleData extends AbstractDataFixture
+class LoadAttributeData extends AbstractDataFixture
 {
-    /**
-     * {@inheritDoc}
-     */
     public function load(ObjectManager $manager)
     {
         if (!$this->isEnabled()) {
             return;
         }
-
-        $locale = new Locale();
-        $locale->setCode('en');
-        $locale->setEnabled(true);
-        $locale->setCurrency($this->getReference('currency_USD'));
-        $manager->persist($locale);
-        $manager->flush();
-
-        $this->setReference('locale_en', $locale);
     }
 }
