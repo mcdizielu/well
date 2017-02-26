@@ -39,7 +39,7 @@ class SearchManagerTest extends AbstractTestCase
         $requests = new ArrayCollection();
         
         
-        $types->map(function (TypeInterface $type) use ($manager, $requests, $manager) {
+        $types->map(function (TypeInterface $type) use ($manager, $requests) {
             $collection = $this->container->get($type->getName() . '.repository')->getCollection();
             $collection->map(function (EntityInterface $entity) use ($type, $requests) {
                 $fields   = $type->getFields();
