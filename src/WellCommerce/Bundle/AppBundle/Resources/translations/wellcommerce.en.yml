@@ -70,6 +70,10 @@ client:
         shipping_address: Shipping address
         reset_password: Reset password
         change_password: Change password
+        orders: Orders
+        address_book: Addresses
+        settings: Settings
+        wishlist: Wishlist
     link:
         login: 'Sign in or Sign up'
         register: 'Sign up'
