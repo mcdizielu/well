@@ -23,7 +23,6 @@ before_script:
     - if [[ $TRAVIS_PHP_VERSION = 7.* ]] ; then echo "apc.enabled = 1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi;
     - if [[ $TRAVIS_PHP_VERSION = 7.* ]] ; then echo "memory_limit=4096M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi;
 
-    - mysql -e 'CREATE DATABASE travis;'
     - cp app/config/parameters.yml.travis app/config/parameters.yml
 
     - composer self-update
