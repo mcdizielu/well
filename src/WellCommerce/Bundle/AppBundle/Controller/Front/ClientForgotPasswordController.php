@@ -12,7 +12,7 @@
 
 namespace WellCommerce\Bundle\AppBundle\Controller\Front;
 
-use Symfony\Component\HttpFoundation\Response;
+use WellCommerce\Bundle\AppBundle\Entity\Client;
 use WellCommerce\Bundle\CoreBundle\Controller\Front\AbstractFrontController;
 
 /**
@@ -22,18 +22,21 @@ use WellCommerce\Bundle\CoreBundle\Controller\Front\AbstractFrontController;
  */
 class ClientForgotPasswordController extends AbstractFrontController
 {
-    public function indexAction() : Response
-    {
-        return $this->displayTemplate('index');
-    }
-
     public function resetAction()
     {
+        if ($this->getSecurityHelper()->getCurrentUser() instanceof Client) {
+            return $this->redirectToRoute('front.client_settings.index');
+        }
+        
         return $this->displayTemplate('reset');
     }
-
+    
     public function changeAction()
     {
+        if ($this->getSecurityHelper()->getCurrentUser() instanceof Client) {
+            return $this->redirectToRoute('front.client_settings.index');
+        }
+        
         return $this->displayTemplate('change');
     }
 }

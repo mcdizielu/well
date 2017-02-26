@@ -73,6 +73,5 @@ class AbstractFrontControllerTestCase extends AbstractTestCase
             $this->client->getResponse()->headers->get('location'),
             $redirectUrl
         ));
-        
     }
 }
