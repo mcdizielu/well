@@ -33,7 +33,7 @@ class LoadSearchData extends AbstractDataFixture
         
         $this->createLayoutBoxes($manager, [
             'product_search' => [
-                'type' => 'Search',
+                'type' => 'ProductSearch',
                 'name' => 'Search results',
             ],
         ]);
