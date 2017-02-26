@@ -33,10 +33,10 @@ class ClientAddressBookControllerTest extends AbstractFrontControllerTestCase
         
         $this->logOut();
     }
-//
-//    public function testIndexNonLoggedAction()
-//    {
-//        $this->client->request('GET', $this->generateUrl('front.client_address_book.index'));
-//        $this->assertIsLoginRedirect();
-//    }
+    
+    public function testIndexNonLoggedAction()
+    {
+        $this->client->request('GET', $this->generateUrl('front.client_address_book.index'));
+        $this->assertIsLoginRedirect();
+    }
 }

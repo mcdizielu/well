@@ -31,6 +31,7 @@ before_script:
 
     - php app/console wellcommerce:install
     - php app/console cache:warmup --env=test
+
 script:
     - phpunit -c phpunit.xml.dist
     - bin/security-checker security:check composer.lock
