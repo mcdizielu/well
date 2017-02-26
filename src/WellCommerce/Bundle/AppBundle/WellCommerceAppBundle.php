@@ -33,7 +33,7 @@ final class WellCommerceAppBundle extends AbstractWellCommerceBundle
         $container->addCompilerPass(new Compiler\LayoutBoxConfiguratorPass());
     }
     
-    public static function registerBundles(Collection $bundles)
+    public static function registerBundles(Collection $bundles, string $environment)
     {
         $bundles->add(new self);
     }

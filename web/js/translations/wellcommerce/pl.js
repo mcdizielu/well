@@ -178,6 +178,7 @@
     Translator.add("currency.button.sync", "Synchronizuj kursy walutowe", "wellcommerce", "pl");
     Translator.add("currency.label.code", "Kod", "wellcommerce", "pl");
     Translator.add("currency.comment.enabled", "Waluta b\u0119dzie widoczna w sklepie", "wellcommerce", "pl");
+    Translator.add("dashboard.heading.carts", "Koszyki", "wellcommerce", "pl");
     Translator.add("dictionary.heading.index", "T\u0142umaczenia", "wellcommerce", "pl");
     Translator.add("dictionary.heading.add", "Dodaj t\u0142umaczenie", "wellcommerce", "pl");
     Translator.add("dictionary.heading.edit", "Edytuj t\u0142umaczenie", "wellcommerce", "pl");
@@ -388,9 +389,10 @@
     Translator.add("order_status.heading.index", "Statusy zam\u00f3wienia", "wellcommerce", "pl");
     Translator.add("order_status.heading.add", "Dodaj status", "wellcommerce", "pl");
     Translator.add("order_status.heading.edit", "Edytuj status", "wellcommerce", "pl");
-    Translator.add("order_status.heading.label.order_status_group", "Grupa statusu zam\u00f3wienia", "wellcommerce", "pl");
-    Translator.add("order_status.heading.label.default_comment", "Domy\u015blny komentarz dla zam\u00f3wienia", "wellcommerce", "pl");
-    Translator.add("order_status.heading.comment.enabled", "Status zam\u00f3wienia b\u0119dzie widoczny.", "wellcommerce", "pl");
+    Translator.add("order_status.label.order_status_group", "Grupa statusu zam\u00f3wienia", "wellcommerce", "pl");
+    Translator.add("order_status.label.default_comment", "Domy\u015blny komentarz dla zam\u00f3wienia", "wellcommerce", "pl");
+    Translator.add("order_status.label.colour", "Kolor statusu", "wellcommerce", "pl");
+    Translator.add("order_status.comment.enabled", "Status zam\u00f3wienia b\u0119dzie widoczny.", "wellcommerce", "pl");
     Translator.add("order_status_group.heading.index", "Grupy status\u00f3w zam\u00f3wienia", "wellcommerce", "pl");
     Translator.add("order_status_group.heading.add", "Dodaj grup\u0119", "wellcommerce", "pl");
     Translator.add("order_status_group.heading.edit", "Edytuj grup\u0119", "wellcommerce", "pl");
@@ -507,6 +509,7 @@
     Translator.add("product.label.slug", "\u015acie\u017cka SEO", "wellcommerce", "pl");
     Translator.add("product.label.enabled", "W\u0142\u0105czony", "wellcommerce", "pl");
     Translator.add("product.label.sku", "SKU", "wellcommerce", "pl");
+    Translator.add("product.label.barcode", "Kod kreskowy", "wellcommerce", "pl");
     Translator.add("product.label.statuses", "Statusy produktu", "wellcommerce", "pl");
     Translator.add("product.label.shops", "Dost\u0119pny w sklepach", "wellcommerce", "pl");
     Translator.add("product.label.categories", "Kategorie", "wellcommerce", "pl");
@@ -582,6 +585,7 @@
     Translator.add("coupon.label.minimum_order_value", "Minimalna kwota zam\u00f3wienia", "wellcommerce", "pl");
     Translator.add("coupon.label.accept", "Zapisz", "wellcommerce", "pl");
     Translator.add("coupon.label.remove", "Usu\u0144", "wellcommerce", "pl");
+    Translator.add("coupon.label.exclude_promotions", "Wyklucz promocje", "wellcommerce", "pl");
     Translator.add("coupon.error.not_found", "Kod kuponu jest nieprawid\u0142owy", "wellcommerce", "pl");
     Translator.add("coupon.error.future_coupon", "Data wykorzystania kuponu jest w przysz\u0142o\u015bci", "wellcommerce", "pl");
     Translator.add("coupon.error.coupon_expired", "Kupon wygas\u0142", "wellcommerce", "pl");

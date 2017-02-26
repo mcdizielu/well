@@ -22,7 +22,7 @@ use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
  */
 final class WellCommerceReviewBundle extends AbstractWellCommerceBundle
 {
-    public static function registerBundles(Collection $bundles)
+    public static function registerBundles(Collection $bundles, string $environment)
     {
         $bundles->add(new self());
     }

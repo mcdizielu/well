@@ -43,5 +43,5 @@ abstract class AbstractWellCommerceBundle extends Bundle
         $container->addCompilerPass(new AutoRegisterControllerPass($this));
     }
     
-    abstract public static function registerBundles(Collection $bundles);
+    abstract public static function registerBundles(Collection $bundles, string $environment);
 }

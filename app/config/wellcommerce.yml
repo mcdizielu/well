@@ -7,15 +7,4 @@
 # please view the LICENSE file that was distributed with this source code.
 
 imports:
-    - { resource: "@WellCommerceApiBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceCoreBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceAppBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceSearchBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceCatalogBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceCmsBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceCouponBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceGeneratorBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceOrderBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceReviewBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceShowcaseBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceWishlistBundle/Resources/config/config.yml" }
+    - { resource: "@WellCommerceStandardEditionBundle/Resources/config/config.yml" }

@@ -172,6 +172,7 @@
     Translator.add("currency.label.code", "Code", "wellcommerce", "en");
     Translator.add("currency.label.name", "Currency", "wellcommerce", "en");
     Translator.add("currency.comment.enabled", "Currency will be visible in shop", "wellcommerce", "en");
+    Translator.add("dashboard.heading.carts", "Carts", "wellcommerce", "en");
     Translator.add("dictionary.heading.index", "Translations", "wellcommerce", "en");
     Translator.add("dictionary.heading.add", "Add a translation", "wellcommerce", "en");
     Translator.add("dictionary.heading.edit", "Edit a translation", "wellcommerce", "en");
@@ -310,12 +311,18 @@
     Translator.add("order.heading.products", "Products", "wellcommerce", "en");
     Translator.add("order.heading.contact_details", "Contact details", "wellcommerce", "en");
     Translator.add("order.heading.cart", "Cart", "wellcommerce", "en");
+    Translator.add("order.heading.methods", "Payment & shipping methods", "wellcommerce", "en");
     Translator.add("order.button.confirm", "Go to confirmation", "wellcommerce", "en");
     Translator.add("order.button.add_product", "Add product", "wellcommerce", "en");
     Translator.add("order.label.id", "ID", "wellcommerce", "en");
     Translator.add("order.label.number", "Order no.", "wellcommerce", "en");
     Translator.add("order.label.client", "Client", "wellcommerce", "en");
-    Translator.add("order.label.product_total", "Products value", "wellcommerce", "en");
+    Translator.add("order.label.product_total.net_price", "Products net value", "wellcommerce", "en");
+    Translator.add("order.label.product_total.tax_amount", "Products tax value", "wellcommerce", "en");
+    Translator.add("order.label.product_total.gross_price", "Products gross value", "wellcommerce", "en");
+    Translator.add("order.label.summary.net_amount", "Net summary", "wellcommerce", "en");
+    Translator.add("order.label.summary.tax_amount", "Tax summary", "wellcommerce", "en");
+    Translator.add("order.label.summary.gross_amount", "Gross summary", "wellcommerce", "en");
     Translator.add("order.label.shipping_total", "Shipping cost", "wellcommerce", "en");
     Translator.add("order.label.order_total", "Total value", "wellcommerce", "en");
     Translator.add("order.label.variant", "Variant", "wellcommerce", "en");
@@ -374,6 +381,7 @@
     Translator.add("order_status.heading.edit", "Edit an order status", "wellcommerce", "en");
     Translator.add("order_status.label.order_status_group", "Order status group", "wellcommerce", "en");
     Translator.add("order_status.label.default_comment", "Default comment for order", "wellcommerce", "en");
+    Translator.add("order_status.label.colour", "Status colour", "wellcommerce", "en");
     Translator.add("order_status.comment.enabled", "Order status will be visible.", "wellcommerce", "en");
     Translator.add("order_status_group.heading.index", "Order status groups", "wellcommerce", "en");
     Translator.add("order_status_group.heading.add", "Add a new order status group", "wellcommerce", "en");
@@ -491,6 +499,7 @@
     Translator.add("product.label.slug", "Slug", "wellcommerce", "en");
     Translator.add("product.label.enabled", "Enabled", "wellcommerce", "en");
     Translator.add("product.label.sku", "SKU", "wellcommerce", "en");
+    Translator.add("product.label.barcode", "Barcode", "wellcommerce", "en");
     Translator.add("product.label.statuses", "Product's statuses", "wellcommerce", "en");
     Translator.add("product.label.shops", "Available in shops", "wellcommerce", "en");
     Translator.add("product.label.categories", "Categories", "wellcommerce", "en");
@@ -565,6 +574,7 @@
     Translator.add("coupon.label.modifier_type_percent", "%", "wellcommerce", "en");
     Translator.add("coupon.label.modifier_type_subtract", "-", "wellcommerce", "en");
     Translator.add("coupon.label.minimum_order_value", "Minimal order value", "wellcommerce", "en");
+    Translator.add("coupon.label.exclude_promotions", "Exclude promotions", "wellcommerce", "en");
     Translator.add("coupon.error.not_found", "Coupon code is invalid", "wellcommerce", "en");
     Translator.add("coupon.error.future_coupon", "Coupon is not yet valid", "wellcommerce", "en");
     Translator.add("coupon.error.coupon_expired", "Coupon is expired", "wellcommerce", "en");
@@ -640,6 +650,7 @@
     Translator.add("client.label.address.flat_no", "Flat no.", "wellcommerce", "en");
     Translator.add("client.label.address.post_code", "Post code", "wellcommerce", "en");
     Translator.add("order.label.order_no", "Order no.", "wellcommerce", "en");
+    Translator.add("order.label.product_total", "Products value", "wellcommerce", "en");
     Translator.add("payment_method.bank_transfer.tip", "Your order will be processed upon receiving of the payment at the following bank account", "wellcommerce", "en");
     Translator.add("payment_method.bank_transfer.account", "Account number", "wellcommerce", "en");
     Translator.add("payment_method.bank_transfer.sort_number", "Sort code", "wellcommerce", "en");

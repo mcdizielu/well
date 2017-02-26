@@ -35,7 +35,7 @@ final class WellCommerceCoreBundle extends AbstractWellCommerceBundle
         $container->addCompilerPass(new Compiler\RegisterClassMetadataEnhancerPass());
     }
     
-    public static function registerBundles(Collection $bundles)
+    public static function registerBundles(Collection $bundles, string $environment)
     {
         $bundles->add(new \Symfony\Bundle\FrameworkBundle\FrameworkBundle());
         $bundles->add(new \Symfony\Bundle\SecurityBundle\SecurityBundle());
@@ -54,5 +54,10 @@ final class WellCommerceCoreBundle extends AbstractWellCommerceBundle
         $bundles->add(new \Cache\AdapterBundle\CacheAdapterBundle());
         $bundles->add(new \EmanueleMinotto\TwigCacheBundle\TwigCacheBundle());
         $bundles->add(new self());
+        
+        if (in_array($environment, ['dev', 'test'])) {
+            $bundles->add(new \Symfony\Bundle\WebProfilerBundle\WebProfilerBundle());
+            $bundles->add(new \Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle());
+        }
     }
 }

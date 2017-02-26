@@ -1,0 +1,55 @@
+{
+  "name": "wellcommerce/standard-edition-bundle",
+  "type": "wellcommerce-bundle",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "description": "WellCommerce Standard Edition Bundle",
+  "keywords": [
+    "wellcommerce",
+    "e-commerce",
+    "open-source",
+    "symfony"
+  ],
+  "authors": [
+    {
+      "name": "Adam Piotrowski",
+      "email": "adam@wellcommerce.org"
+    },
+    {
+      "name": "WellCommerce Developers",
+      "email": "developers@wellcommerce.org"
+    }
+  ],
+  "support": {
+    "email": "support@wellcommerce.org",
+    "issues": "https://github.com/WellCommerce/StandardEditionBundle/issues",
+    "source": "https://github.com/WellCommerce/StandardEditionBundle/"
+  },
+  "autoload": {
+    "psr-4": {
+      "WellCommerce\\Bundle\\StandardEditionBundle\\": ""
+    }
+  },
+  "require": {
+    "wellcommerce/composer-plugin": "^1.0@dev",
+    "wellcommerce/api-bundle": "dev-master",
+    "wellcommerce/app-bundle": "dev-master",
+    "wellcommerce/catalog-bundle": "dev-master",
+    "wellcommerce/cms-bundle": "dev-master",
+    "wellcommerce/core-bundle": "dev-master",
+    "wellcommerce/coupon-bundle": "dev-master",
+    "wellcommerce/generator-bundle": "dev-master",
+    "wellcommerce/oauth-bundle": "dev-master",
+    "wellcommerce/order-bundle": "dev-master",
+    "wellcommerce/review-bundle": "dev-master",
+    "wellcommerce/search-bundle": "dev-master",
+    "wellcommerce/showcase-bundle": "dev-master",
+    "wellcommerce/wishlist-bundle": "dev-master",
+    "wellcommerce/wellcommerce-default-theme": "dev-master"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.7.x-dev"
+    }
+  }
+}

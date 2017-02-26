@@ -30,7 +30,7 @@ class WellCommerceSearchBundle extends Bundle
         $container->addCompilerPass(new SearchTypePass());
     }
     
-    public static function registerBundles(Collection $bundles)
+    public static function registerBundles(Collection $bundles, string $environment)
     {
         $bundles->add(new self());
     }

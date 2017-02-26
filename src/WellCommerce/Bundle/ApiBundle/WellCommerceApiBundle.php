@@ -31,7 +31,7 @@ class WellCommerceApiBundle extends AbstractWellCommerceBundle
         $container->addCompilerPass(new RegisterRequestHandlerPass(), PassConfig::TYPE_BEFORE_REMOVING);
     }
     
-    public static function registerBundles(Collection $bundles)
+    public static function registerBundles(Collection $bundles, string $environment)
     {
         $bundles->add(new self);
     }

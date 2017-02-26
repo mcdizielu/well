@@ -29,11 +29,5 @@ services:
         tags:
             - { name: kernel.event_subscriber }
 
-    app.install.command:
-        class: WellCommerce\Bundle\AppBundle\Command\InstallCommand
-        arguments: ['@console.action_executor']
-        tags:
-            - { name: console.command }
-
     country.repository:
         class: WellCommerce\Bundle\AppBundle\Repository\CountryRepository
