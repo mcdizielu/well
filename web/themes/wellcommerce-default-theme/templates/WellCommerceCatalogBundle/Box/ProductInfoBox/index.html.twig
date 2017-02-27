@@ -9,6 +9,8 @@
 
 					{% for photo in product.productPhotos if photo.mainPhoto == 1 %}
 		                <div class="mainphoto"><a href="{{ image(photo.photo.path, 'large') }}"><img src="{{ image(photo.photo.path, 'large') }}" /></a></div>
+                    {% else %}
+                        <div class="mainphoto"><img src="{{ image('', 'large') }}" /></div>
 					{% endfor %}
 
 		            <div class="thumbnails">
