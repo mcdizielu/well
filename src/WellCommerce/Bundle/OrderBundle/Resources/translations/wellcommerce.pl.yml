@@ -68,6 +68,7 @@ order:
         flash:
             added: został dodany do koszyka
             empty: Koszyk jest pusty.
+            not_added: nie został dodany do koszyka z powodu zbyt niskiego stanu magazynowego
         button:
             add: Dodaj do koszyka
         link:

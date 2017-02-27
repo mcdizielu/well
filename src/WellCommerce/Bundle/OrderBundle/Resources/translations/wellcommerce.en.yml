@@ -64,6 +64,7 @@ order:
         flash:
             added: was added to cart
             empty: Cart is empty.
+            not_added: was not added to cart because quantity was too low
         button:
             add: Add to cart
             go_to_cart: Go to cart

@@ -44,6 +44,17 @@ final class OrderProductManager extends AbstractManager implements OrderProductM
         $this->updateResource($order);
     }
     
+    public function getCartQuantity(Product $product, Variant $variant = null, Order $order): int
+    {
+        $quantity     = 0;
+        $orderProduct = $this->findProductInOrder($product, $variant, $order);
+        if ($orderProduct instanceof OrderProduct) {
+            $quantity = $orderProduct->getQuantity();
+        }
+        
+        return $quantity;
+    }
+    
     public function findProductInOrder(Product $product, Variant $variant = null, Order $order)
     {
         return $this->getRepository()->findOneBy([

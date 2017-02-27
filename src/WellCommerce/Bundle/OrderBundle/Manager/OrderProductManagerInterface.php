@@ -27,6 +27,8 @@ interface OrderProductManagerInterface extends ManagerInterface
 {
     public function addProductToOrder(Product $product, Variant $variant = null, int $quantity = 1, Order $order);
     
+    public function getCartQuantity(Product $product, Variant $variant = null, Order $order): int;
+    
     public function findProductInOrder(Product $product, Variant $variant = null, Order $order);
     
     public function createOrderProduct(Product $product, Variant $variant = null, Order $order): OrderProduct;

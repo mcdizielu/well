@@ -56,8 +56,9 @@ class CartController extends AbstractFrontController
     
     public function addAction(Product $product, Variant $variant = null, int $quantity = 1): Response
     {
-        $variants = $product->getVariants();
-        $order    = $this->getOrderProvider()->getCurrentOrder();
+        $variants         = $product->getVariants();
+        $order            = $this->getOrderProvider()->getCurrentOrder();
+        $previousQuantity = $this->getManager()->getCartQuantity($product, $variant, $order);
         
         if ($variants->count() && false === $variants->contains($variant)) {
             return $this->redirectToRoute('front.product.view', ['id' => $product->getId()]);
@@ -76,13 +77,23 @@ class CartController extends AbstractFrontController
             ]);
         }
         
+        $expectedQuantity = $previousQuantity + $quantity;
+        $currentQuantity  = $this->getManager()->getCartQuantity($product, $variant, $order);
+        $addedQuantity    = 0;
+        if ($currentQuantity >= $expectedQuantity) {
+            $addedQuantity = $currentQuantity - $previousQuantity;
+        }
+        
         $category        = $product->getCategories()->first();
         $recommendations = $this->get('product.helper')->getProductRecommendationsForCategory($category);
         
         $basketModalContent = $this->renderView('WellCommerceOrderBundle:Front/Cart:add.html.twig', [
-            'product'         => $product,
-            'order'           => $order,
-            'recommendations' => $recommendations,
+            'product'          => $product,
+            'order'            => $order,
+            'recommendations'  => $recommendations,
+            'previousQuantity' => $previousQuantity,
+            'currentQuantity'  => $currentQuantity,
+            'addedQuantity'    => $addedQuantity,
         ]);
         
         $cartPreviewContent = $this->renderView('WellCommerceOrderBundle:Front/Cart:preview.html.twig');
