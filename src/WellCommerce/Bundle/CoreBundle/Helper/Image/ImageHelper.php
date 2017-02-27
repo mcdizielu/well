@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\CoreBundle\Helper\Image;
 
 use Liip\ImagineBundle\Imagine\Cache\CacheManager;
+use Liip\ImagineBundle\Imagine\Filter\FilterConfiguration;
 
 /**
  * Class ImageHelper
@@ -26,13 +27,32 @@ final class ImageHelper implements ImageHelperInterface
      */
     private $cacheManager;
     
-    public function __construct(CacheManager $cacheManager)
+    /**
+     * @var FilterConfiguration
+     */
+    private $configuration;
+    
+    public function __construct(CacheManager $cacheManager, FilterConfiguration $configuration)
     {
-        $this->cacheManager = $cacheManager;
+        $this->cacheManager  = $cacheManager;
+        $this->configuration = $configuration;
     }
     
-    public function getImage(string $path, string $filter, array $config = []): string
+    public function getImage(string $path = null, string $filter, array $config = []): string
     {
+        if ('' === (string)$path) {
+            return $this->getDefaultImage($filter);
+        }
+        
         return $this->cacheManager->getBrowserPath($path, $filter, $config);
+    }
+    
+    private function getDefaultImage(string $filter): string
+    {
+        $configuration = $this->configuration->get($filter);
+        $size          = $configuration['filters']['thumbnail']['size'] ?? [300, 300];
+        list($width, $height) = $size;
+        
+        return sprintf('http://placehold.it/%sx%s', $width, $height);
     }
 }

@@ -49,10 +49,6 @@ final class ImageExtension extends \Twig_Extension
     
     public function getImagePath(string $path = null, string $filter): string
     {
-        if (null === $path) {
-            return '';
-        }
-        
         return $this->helper->getImage($path, $filter);
     }
 }
