@@ -2,6 +2,17 @@
     // en
     Translator.add("form.help.required_fields", "* required fields", "wellcommerce", "en");
     Translator.add("form.media_data.image_id", "Image ID", "wellcommerce", "en");
+    Translator.add("form.button.delete_selected", "Delete selected", "wellcommerce", "en");
+    Translator.add("form.file_selector.photo", "Photo", "wellcommerce", "en");
+    Translator.add("form.file_selector.main", "Main", "wellcommerce", "en");
+    Translator.add("form.file_selector.cancel", "Cancel selection", "wellcommerce", "en");
+    Translator.add("form.file_selector.select_from_library", "Select from library", "wellcommerce", "en");
+    Translator.add("form.file_selector.add_from_disk", "Add from disk", "wellcommerce", "en");
+    Translator.add("form.file_selector.expand", "Expand", "wellcommerce", "en");
+    Translator.add("form.file_selector.collapse", "Collapse", "wellcommerce", "en");
+    Translator.add("form.file_selector.filename", "Filename", "wellcommerce", "en");
+    Translator.add("form.file_selector.extension", "Extension", "wellcommerce", "en");
+    Translator.add("form.file_selector.preview", "Preview", "wellcommerce", "en");
     Translator.add("channel.heading.index", "Channel", "wellcommerce", "en");
     Translator.add("channel.heading.add", "Add a new channel", "wellcommerce", "en");
     Translator.add("channel.label.name", "Name", "wellcommerce", "en");
@@ -50,6 +61,10 @@
     Translator.add("client.heading.shipping_address", "Shipping address", "wellcommerce", "en");
     Translator.add("client.heading.reset_password", "Reset password", "wellcommerce", "en");
     Translator.add("client.heading.change_password", "Change password", "wellcommerce", "en");
+    Translator.add("client.heading.orders", "Orders", "wellcommerce", "en");
+    Translator.add("client.heading.address_book", "Addresses", "wellcommerce", "en");
+    Translator.add("client.heading.settings", "Settings", "wellcommerce", "en");
+    Translator.add("client.heading.wishlist", "Wishlist", "wellcommerce", "en");
     Translator.add("client.link.login", "Sign in or Sign up", "wellcommerce", "en");
     Translator.add("client.link.register", "Sign up", "wellcommerce", "en");
     Translator.add("client.link.logout", "Logout", "wellcommerce", "en");
@@ -153,7 +168,9 @@
     Translator.add("common.label.line2", "Address line 2", "wellcommerce", "en");
     Translator.add("common.label.province", "Province", "wellcommerce", "en");
     Translator.add("common.label.postal_code", "Postal code", "wellcommerce", "en");
+    Translator.add("common.label.state", "State", "wellcommerce", "en");
     Translator.add("common.label.country", "Country", "wellcommerce", "en");
+    Translator.add("common.label.city", "City", "wellcommerce", "en");
     Translator.add("common.label.meta_title", "Meta title", "wellcommerce", "en");
     Translator.add("common.label.meta_description", "Meta description", "wellcommerce", "en");
     Translator.add("common.label.meta_keywords", "Meta keywords", "wellcommerce", "en");
@@ -165,6 +182,7 @@
     Translator.add("company.heading.edit", "Edit a company", "wellcommerce", "en");
     Translator.add("company.label.name", "Full name", "wellcommerce", "en");
     Translator.add("company.label.short_name", "Short name", "wellcommerce", "en");
+    Translator.add("company.label.addresses", "Addresses", "wellcommerce", "en");
     Translator.add("currency.heading.index", "Currencies", "wellcommerce", "en");
     Translator.add("currency.heading.add", "Add a currency", "wellcommerce", "en");
     Translator.add("currency.heading.edit", "Edit a currency", "wellcommerce", "en");
@@ -464,6 +482,7 @@
     Translator.add("category.label.short_description", "Short description", "wellcommerce", "en");
     Translator.add("category.label.description", "Description", "wellcommerce", "en");
     Translator.add("category.label.category_add", "Add category", "wellcommerce", "en");
+    Translator.add("category.label.subcategory_add", "Add subcategory", "wellcommerce", "en");
     Translator.add("category.label.category_name", "Category name", "wellcommerce", "en");
     Translator.add("category.label.tree", "Categories tree", "wellcommerce", "en");
     Translator.add("category.heading.index", "Categories", "wellcommerce", "en");

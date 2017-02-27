@@ -11,6 +11,19 @@ form:
         required_fields: '* required fields'
     media_data:
         image_id: Image ID
+    button:
+        delete_selected: "Delete selected"
+    file_selector:
+        photo: Photo
+        main: Main
+        cancel: Cancel selection
+        select_from_library: "Select from library"
+        add_from_disk: "Add from disk"
+        expand: Expand
+        collapse: Collapse
+        filename: Filename
+        extension: Extension
+        preview: Preview
 
 channel:
     heading:
@@ -55,6 +68,11 @@ client:
         client_group_discount: Client's group discount
         create_account: I want to register as a client
         conditions_accepted: I have read and agree to the Privacy Policy
+    benefits:
+        headline: If you are our registered customer
+        line1: You buy quick & easy
+        line2: You can track progress of your orders
+        line3: You will receive information about promotions
     heading:
         index: Clients
         add: Create a client
@@ -74,6 +92,7 @@ client:
         address_book: Addresses
         settings: Settings
         wishlist: Wishlist
+        terms_conditions: "Terms & conditions"
     link:
         login: 'Sign in or Sign up'
         register: 'Sign up'
@@ -202,7 +221,9 @@ common:
         line2: Address line 2
         province: Province
         postal_code: Postal code
+        state: State
         country: Country
+        city: City
         phone: Phone
         secondary_phone: Secondary phone
         email: E-mail
@@ -222,6 +243,7 @@ company:
     label:
         name: Full name
         short_name: Short name
+        addresses: Addresses
 
 currency:
     heading:

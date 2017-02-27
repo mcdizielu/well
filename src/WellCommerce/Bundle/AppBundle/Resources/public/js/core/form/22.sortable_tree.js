@@ -118,7 +118,7 @@ var GFormTree = GCore.ExtendClass(GFormField, function () {
         if (gThis.m_oOptions.bAddable && (gThis.m_oOptions.fOnAdd instanceof Function)) {
 
             jA = $('<a id="add-category" class="' + gThis._GetClass('Button') + '" href="#"/>');
-            jA.append('<span><img src="' + gThis._GetImage('Add') + '" alt=""/>' + gThis.m_oOptions.sAddLabel + '</span>');
+            jA.append('<span><img src="' + gThis._GetImage('Add') + '" alt=""/>' + GTranslation(gThis.m_oOptions.sAddLabel) + '</span>');
             jA.click(function (eEvent) {
                 GAlert.DestroyAll();
                 GPrompt(gThis.m_oOptions.sAddItemPrompt, function (sName) {
@@ -158,7 +158,7 @@ var GFormTree = GCore.ExtendClass(GFormField, function () {
 
             if (gThis.m_oOptions.fOnDuplicate instanceof Function) {
                 jB = $('<a class="' + gThis._GetClass('Button') + ' duplicate" href="#"/>');
-                jB.append('<span><img src="' + gThis._GetImage('Duplicate') + '" alt=""/>' + GForm.Language.tree_duplicate_item + '</span>');
+                jB.append('<span><img src="' + gThis._GetImage('Duplicate') + '" alt=""/>' + GTranslation(GForm.Language.tree_duplicate_item) + '</span>');
                 jB.click(function (eEvent) {
                     if (gThis.m_oOptions.fOnDuplicate instanceof Function) {
                         gThis.m_oOptions.fOnDuplicate(sId);
@@ -174,7 +174,7 @@ var GFormTree = GCore.ExtendClass(GFormField, function () {
 
                 var sId = gThis.m_jTree.find('.' + gThis._GetClass('Active')).get(0).sId;
                 jA = $('<a class="' + gThis._GetClass('Button') + '" href="#"/>');
-                jA.append('<span><img src="' + gThis._GetImage('Add') + '" alt=""/>' + GForm.Language.tree_add_subitem + '</span>');
+                jA.append('<span><img src="' + gThis._GetImage('Add') + '" alt=""/>' + GTranslation(gThis.m_oOptions.sAddSubItemLabel) + '</span>');
                 jA.click(function (eEvent) {
                     GAlert.DestroyAll();
                     GPrompt(gThis.m_oOptions.sAddItemPrompt, function (sName) {
@@ -221,7 +221,7 @@ var GFormTree = GCore.ExtendClass(GFormField, function () {
 
             var sId = gThis.m_jTree.find('.' + gThis._GetClass('Active')).get(0).sId;
             jA = $('<a id="delete-category" class="' + gThis._GetClass('Button') + ' delete" href="#"/>');
-            jA.append('<span><img src="' + gThis._GetImage('Delete') + '" alt=""/>' + GForm.Language.tree_delete_item + '</span>');
+            jA.append('<span><img src="' + gThis._GetImage('Delete') + '" alt=""/>' + GTranslation('form.button.delete_selected') + '</span>');
             jA.click(function (eEvent) {
                 GAlert.DestroyAll();
                 GWarning(GForm.Language.tree_delete_item_warning, GForm.Language.tree_delete_item_warning_description, {

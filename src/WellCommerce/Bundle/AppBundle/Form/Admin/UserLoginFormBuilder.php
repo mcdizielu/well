@@ -52,7 +52,7 @@ class UserLoginFormBuilder extends AbstractFormBuilder
         $resetUrl = $this->getRouterHelper()->generateUrl('admin.user.reset_password');
 
         $form->addChild($this->getElement('static_text', [
-            'text' => '<a href="' . $resetUrl . '">' . 'user.button.reset_password' . '</a>',
+            'text' => '<a href="' . $resetUrl . '">' . $this->trans('user.button.reset_password') . '</a>',
         ]));
 
         $form->addFilter($this->getFilter('no_code'));

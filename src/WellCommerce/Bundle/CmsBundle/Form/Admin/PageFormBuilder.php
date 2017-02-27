@@ -108,7 +108,7 @@ class PageFormBuilder extends AbstractFormBuilder
         ]));
 
         $mainData->addChild($this->getElement('tip', [
-            'tip' => 'page.tip.client_groups'
+            'tip' => $this->trans('page.tip.client_groups')
         ]));
 
         $mainData->addChild($this->getElement('multi_select', [
@@ -156,9 +156,9 @@ class PageFormBuilder extends AbstractFormBuilder
             'name'    => 'redirectType',
             'label'   => 'page.label.redirect.type',
             'options' => [
-                0 => 'page.label.redirect.none',
-                1 => 'page.label.redirect.url',
-                2 => 'page.label.redirect.route',
+                0 => $this->trans('page.label.redirect.none'),
+                1 => $this->trans('page.label.redirect.url'),
+                2 => $this->trans('page.label.redirect.route'),
             ]
         ]));
 

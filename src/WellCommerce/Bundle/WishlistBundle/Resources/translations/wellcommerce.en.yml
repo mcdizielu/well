@@ -9,3 +9,5 @@
 client:
     link:
         wishlist: Wishlist
+    flash:
+        empty_wishlist: Your wishlist is empty

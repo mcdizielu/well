@@ -9,3 +9,5 @@
 client:
     link:
         wishlist: Schowek
+    flash:
+        empty_wishlist: Twoja lista życzeń jest pusta

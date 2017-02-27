@@ -11,6 +11,19 @@ form:
         required_fields: '* pola wymagane'
     media_data:
         image_id: ID obrazka
+    button:
+        delete_selected: "Delete selected"
+    file_selector:
+        photo: Zdjęcie
+        main: Główne
+        cancel: Anuluj wybór
+        select_from_library: "Wybierz z biblioteki"
+        add_from_disk: "Dodaj z dysku"
+        expand: Rozwiń
+        collapse: Zwiń
+        filename: Plik
+        extension: Rozszerzenie
+        preview: Podgląd
 
 channel:
     heading:
@@ -58,6 +71,11 @@ client:
         client_group_discount: Rabat grupy klienta
         create_account: Chcę założyć konto w sklepie
         conditions_accepted: Akceptuję warunki użytkowania sklepu
+    benefits:
+        headline: Jako zarejestrowany klient
+        line1: kupujesz szybciej
+        line2: możesz śledzić stan realizacji swoich zamówień
+        line3: otrzymujesz dodatkowe rabaty
     heading:
         index: Klienci
         client: Klient
@@ -78,6 +96,7 @@ client:
         address_book: Adresy
         settings: Ustawienia
         wishlist: Lista życzeń
+        terms_conditions: Regulamin i zgody marketingowe
     link:
         login: 'Zaloguj lub zarejestruj się'
         register: Rejestracja
@@ -208,6 +227,8 @@ common:
         line2: Druga linia adresu
         province: Prowincja
         postal_code: Kod pocztowy
+        state: Województwo
+        city: Miasto
         country: Państwo
         phone: Telefon
         secondary_phone: Telefon dodatkowy
@@ -228,6 +249,7 @@ company:
     label:
         name: Pełna nazwa
         short_name: Skrócona nazwa
+        addresses: Adres
 
 currency:
     heading:

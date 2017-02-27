@@ -2,6 +2,17 @@
     // pl
     Translator.add("form.help.required_fields", "* pola wymagane", "wellcommerce", "pl");
     Translator.add("form.media_data.image_id", "ID obrazka", "wellcommerce", "pl");
+    Translator.add("form.button.delete_selected", "Delete selected", "wellcommerce", "pl");
+    Translator.add("form.file_selector.photo", "Zdj\u0119cie", "wellcommerce", "pl");
+    Translator.add("form.file_selector.main", "G\u0142\u00f3wne", "wellcommerce", "pl");
+    Translator.add("form.file_selector.cancel", "Anuluj wyb\u00f3r", "wellcommerce", "pl");
+    Translator.add("form.file_selector.select_from_library", "Wybierz z biblioteki", "wellcommerce", "pl");
+    Translator.add("form.file_selector.add_from_disk", "Dodaj z dysku", "wellcommerce", "pl");
+    Translator.add("form.file_selector.expand", "Rozwi\u0144", "wellcommerce", "pl");
+    Translator.add("form.file_selector.collapse", "Zwi\u0144", "wellcommerce", "pl");
+    Translator.add("form.file_selector.filename", "Plik", "wellcommerce", "pl");
+    Translator.add("form.file_selector.extension", "Rozszerzenie", "wellcommerce", "pl");
+    Translator.add("form.file_selector.preview", "Podgl\u0105d", "wellcommerce", "pl");
     Translator.add("channel.heading.index", "Kana\u0142y aktualizacji", "wellcommerce", "pl");
     Translator.add("channel.heading.add", "Dodaj nowy kana\u0142", "wellcommerce", "pl");
     Translator.add("channel.label.name", "Nazwa", "wellcommerce", "pl");
@@ -160,6 +171,8 @@
     Translator.add("common.label.line2", "Druga linia adresu", "wellcommerce", "pl");
     Translator.add("common.label.province", "Prowincja", "wellcommerce", "pl");
     Translator.add("common.label.postal_code", "Kod pocztowy", "wellcommerce", "pl");
+    Translator.add("common.label.state", "Wojew\u00f3dztwo", "wellcommerce", "pl");
+    Translator.add("common.label.city", "Miasto", "wellcommerce", "pl");
     Translator.add("common.label.country", "Pa\u0144stwo", "wellcommerce", "pl");
     Translator.add("common.label.meta_title", "Tytu\u0142 meta", "wellcommerce", "pl");
     Translator.add("common.label.meta_description", "Opis meta", "wellcommerce", "pl");
@@ -172,6 +185,7 @@
     Translator.add("company.heading.edit", "Edytuj firm\u0119", "wellcommerce", "pl");
     Translator.add("company.label.name", "Pe\u0142na nazwa", "wellcommerce", "pl");
     Translator.add("company.label.short_name", "Skr\u00f3cona nazwa", "wellcommerce", "pl");
+    Translator.add("company.label.addresses", "Addresses", "wellcommerce", "pl");
     Translator.add("currency.heading.index", "Waluty", "wellcommerce", "pl");
     Translator.add("currency.heading.add", "Dodaj walut\u0119", "wellcommerce", "pl");
     Translator.add("currency.heading.edit", "Edytuj walut\u0119", "wellcommerce", "pl");
@@ -473,6 +487,7 @@
     Translator.add("category.label.short_description", "Kr\u00f3tki opis", "wellcommerce", "pl");
     Translator.add("category.label.description", "Opis", "wellcommerce", "pl");
     Translator.add("category.label.category_add", "Dodaj kategori\u0119", "wellcommerce", "pl");
+    Translator.add("category.label.subcategory_add", "Dodaj podkategori\u0119", "wellcommerce", "pl");
     Translator.add("category.label.category_name", "Nazwa kategorii", "wellcommerce", "pl");
     Translator.add("category.label.tree", "Drzewko kategorii", "wellcommerce", "pl");
     Translator.add("category.heading.index", "Kategorie", "wellcommerce", "pl");

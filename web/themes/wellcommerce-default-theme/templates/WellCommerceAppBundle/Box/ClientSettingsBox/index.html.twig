@@ -11,34 +11,8 @@
         {% endfor %}
         <div class="row mtp20">
             <div class="col-sm-5 col-sm-offset-3">
-                <button type="submit" class="btn btn-primary">{% trans %}form.button.save{% endtrans %}</button>
+                <button type="submit" class="btn btn-primary">{% trans %}common.button.save{% endtrans %}</button>
             </div>
         </div>
     {{ macros.form_end(contactDetailsForm) }}
-</div>
-
-<div class="well-form">
-    <h4>Change password<small>{% trans %}form.help.required_fields{% endtrans %}</small></h4>
-
-    <form class="form-horizontal">
-        <div class="form-group requested">
-            <label class="col-sm-3 text-right" for="">Password</label>
-            <div class="col-sm-5">
-                <input type="password" class="form-control" />
-            </div>
-        </div>
-
-        <div class="form-group requested">
-            <label class="col-sm-3 text-right" for="">Repeat password</label>
-            <div class="col-sm-5">
-                <input type="password" class="form-control" />
-            </div>
-        </div>
-
-        <div class="row mtp20">
-            <div class="col-sm-5 col-sm-offset-3">
-                <button type="submit" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </form>
 </div>

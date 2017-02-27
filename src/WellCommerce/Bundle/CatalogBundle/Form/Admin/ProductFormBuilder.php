@@ -237,7 +237,6 @@ class ProductFormBuilder extends AbstractFormBuilder
         $stockData->addChild($this->getElement('text_field', [
             'name'   => 'stock',
             'label'  => 'common.label.stock',
-            'suffix' => 'product.label.pcs',
             'rules'  => [
                 $this->getRule('required'),
             ],

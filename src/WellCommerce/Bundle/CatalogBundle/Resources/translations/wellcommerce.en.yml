@@ -61,6 +61,7 @@ category:
         short_description: Short description
         description: Description
         category_add: Add category
+        subcategory_add: Add subcategory
         category_name: Category name
         tree: Categories tree
     heading:

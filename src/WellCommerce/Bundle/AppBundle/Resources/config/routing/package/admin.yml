@@ -26,6 +26,7 @@ admin.package.require:
     path: '/require,{id}'
     defaults:
         _controller: 'package.controller.admin:packageAction'
+        operation: 'require'
     options:
         expose: true
         require_admin_permission: package.add
@@ -34,6 +35,7 @@ admin.package.update:
     path: '/update,{id}'
     defaults:
         _controller: 'package.controller.admin:packageAction'
+        operation: 'update'
     options:
         expose: true
         require_admin_permission: package.edit
@@ -42,6 +44,7 @@ admin.package.remove:
     path: '/remove,{id}'
     defaults:
         _controller: 'package.controller.admin:packageAction'
+        operation: 'remove'
     options:
         expose: true
         require_admin_permission: package.delete

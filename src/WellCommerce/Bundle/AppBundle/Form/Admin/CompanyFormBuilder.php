@@ -51,37 +51,37 @@ class CompanyFormBuilder extends AbstractFormBuilder
 
         $addressData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'address_data',
-            'label' => 'address.label.addresses'
+            'label' => 'company.label.addresses'
         ]));
 
         $addressData->addChild($this->getElement('text_field', [
             'name'  => 'line1',
-            'label' => 'address.label.line1',
+            'label' => 'common.label.line1',
         ]));
 
         $addressData->addChild($this->getElement('text_field', [
             'name'  => 'line2',
-            'label' => 'address.label.line2',
+            'label' => 'common.label.line2',
         ]));
 
         $addressData->addChild($this->getElement('text_field', [
             'name'  => 'state',
-            'label' => 'address.label.state',
+            'label' => 'common.label.state',
         ]));
 
         $addressData->addChild($this->getElement('text_field', [
             'name'  => 'postalCode',
-            'label' => 'address.label.post_code',
+            'label' => 'common.label.postal_code',
         ]));
 
         $addressData->addChild($this->getElement('text_field', [
             'name'  => 'city',
-            'label' => 'address.label.city',
+            'label' => 'common.label.city',
         ]));
 
         $addressData->addChild($this->getElement('select', [
             'name'    => 'country',
-            'label'   => 'address.label.country',
+            'label'   => 'common.label.country',
             'options' => $this->get('country.repository')->all()
         ]));
 

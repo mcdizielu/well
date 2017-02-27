@@ -61,6 +61,7 @@ category:
         short_description: Krótki opis
         description: Opis
         category_add: Dodaj kategorię
+        subcategory_add: Dodaj podkategorię
         category_name: Nazwa kategorii
         tree: Drzewko kategorii
     heading:

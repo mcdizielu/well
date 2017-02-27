@@ -31,14 +31,15 @@ class Tree extends AbstractTree implements ElementInterface
     public function configureOptions(OptionsResolver $resolver)
     {
         parent::configureOptions($resolver);
-
+        
         $total = function (Options $options) {
             return count($options['items']);
         };
-
+        
         $resolver->setDefaults([
             'items'                            => [],
             'addLabel'                         => '',
+            'addSubItemLabel'                  => '',
             'add_item_prompt'                  => '',
             'total'                            => $total,
             'addable'                          => false,
@@ -61,8 +62,9 @@ class Tree extends AbstractTree implements ElementInterface
             'prevent_duplicates_on_all_levels' => false,
             'active'                           => 0,
         ]);
-
+        
         $resolver->setAllowedTypes('addLabel', 'string');
+        $resolver->setAllowedTypes('addSubItemLabel', 'string');
         $resolver->setAllowedTypes('selectable', 'bool');
         $resolver->setAllowedTypes('choosable', 'bool');
         $resolver->setAllowedTypes('clickable', 'bool');
@@ -85,7 +87,7 @@ class Tree extends AbstractTree implements ElementInterface
         $resolver->setAllowedTypes('prevent_duplicates', 'bool');
         $resolver->setAllowedTypes('prevent_duplicates_on_all_levels', 'bool');
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -93,6 +95,7 @@ class Tree extends AbstractTree implements ElementInterface
     {
         parent::prepareAttributesCollection($collection);
         $collection->add(new Attribute('sAddLabel', $this->getOption('addLabel')));
+        $collection->add(new Attribute('sAddSubItemLabel', $this->getOption('addSubItemLabel')));
         $collection->add(new Attribute('bSelectable', $this->getOption('selectable'), Attribute::TYPE_BOOLEAN));
         $collection->add(new Attribute('bChoosable', $this->getOption('choosable'), Attribute::TYPE_BOOLEAN));
         $collection->add(new Attribute('bClickable', $this->getOption('clickable'), Attribute::TYPE_BOOLEAN));

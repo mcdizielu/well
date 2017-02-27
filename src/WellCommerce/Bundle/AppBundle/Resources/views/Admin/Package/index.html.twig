@@ -20,7 +20,7 @@
             action: installPackage,
             img: '{{ asset('bundles/wellcommerceapp/images/icons/datagrid/_add.png') }}',
             condition: function (oR) {
-                return oR['localVersion'] === null;
+                return oR['localVersion'] === '';
             }
         });
 
@@ -35,7 +35,7 @@
             action: updatePackage,
             img: '{{ asset('bundles/wellcommerceapp/images/datagrid/update.png') }}',
             condition: function (oR) {
-                return oR['localVersion'] != null && oR['localVersion'] != oR['remoteVersion'];
+                return oR['localVersion'] != '' && oR['localVersion'] != oR['remoteVersion'];
             }
         });
 

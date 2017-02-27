@@ -1,9 +1,8 @@
 {% trans_default_domain "wellcommerce" %}
 <div class="well-form mbt60">
-    <h4>{% trans %}client.heading.wishlist{% endtrans %}</h4>
     {% if dataset.rows is empty %}
         <div class="alert alert-info" role="alert">
-            {% trans %}client.notice.empty_wishlist{% endtrans %}
+            {% trans %}client.flash.empty_wishlist{% endtrans %}
         </div>
     {% endif %}
 </div>

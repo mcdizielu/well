@@ -33,6 +33,7 @@ class CategoryTreeFormBuilder extends AbstractFormBuilder
             'label'              => 'category.label.tree',
             'add_item_prompt'    => 'category.label.category_name',
             'addLabel'           => 'category.label.category_add',
+            'addSubItemLabel'    => 'category.label.subcategory_add',
             'sortable'           => false,
             'selectable'         => false,
             'clickable'          => true,
@@ -41,13 +42,12 @@ class CategoryTreeFormBuilder extends AbstractFormBuilder
             'prevent_duplicates' => true,
             'items'              => $this->get('category.dataset.admin')->getResult('flat_tree'),
             'onClick'            => 'openCategoryEditor',
-            'onDuplicate'        => 'duplicateCategory',
             'onSaveOrder'        => 'changeOrder',
             'onAdd'              => 'addCategory',
             'onAfterAdd'         => 'openCategoryEditor',
             'onDelete'           => 'deleteCategory',
             'onAfterDelete'      => 'openCategoryEditor',
-            'active'             => (int)$this->getRequestHelper()->getAttributesBagParam('id')
+            'active'             => (int)$this->getRequestHelper()->getAttributesBagParam('id'),
         ]));
     }
 }

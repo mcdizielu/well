@@ -53,4 +53,5 @@
     Translator.add("user_management", "Uprawnienia do systemu", "admin_menu", "pl");
     Translator.add("user", "Administratorzy", "admin_menu", "pl");
     Translator.add("user_group", "Grupy administrator\u00f3w", "admin_menu", "pl");
+    Translator.add("variant", "Warianty", "admin_menu", "pl");
 })(Translator);
