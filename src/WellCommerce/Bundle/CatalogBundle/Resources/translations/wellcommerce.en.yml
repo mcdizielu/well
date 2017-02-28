@@ -196,6 +196,8 @@ product_status:
         name: Name
     comment:
         css_class: A symbol used for example in CSS templates. Alphanumeric characters permitted.
+    flash:
+        no_products: Brak produktów spełniających kryteria
 
 search:
     heading:

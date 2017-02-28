@@ -2,11 +2,11 @@
 <div class="box">
     <div class="list-group main-categories">
         {% for root in categoriesTree() %}
-            <a href="{{ root.route }}" class="list-group-item {% if root.id == active %}active{% endif %}">{{ root.name }}
+            <a href="{{ root.route }}" class="list-group-item {% if root.id in active %}active{% endif %}">{{ root.name }}
                 <small>({{ root.products_count }})</small>
                 <span class="triangle"></span>
             </a>
-            {% if root.id == active %}
+            {% if root.id in active %}
                 <ul>
                     {% for subcategory in categoriesTree(root.id) %}
                         <li>

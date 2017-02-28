@@ -196,6 +196,8 @@ product_status:
         name: Nazwa
     comment:
         css_class: Symbol wykorzystywany np. w szablonach CSS. Dozwolone znaki alfanumeryczne.
+    flash:
+        no_products: There are no products matching criteria
 
 search:
     heading:
