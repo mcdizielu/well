@@ -241,6 +241,14 @@ common:
     flashes:
         success: Sukces!
 
+pagination:
+    label:
+        results: "Wyniki"
+        of: "z"
+    button:
+        previous_page: "Poprzednia strona"
+        next_page: "Następna strona"
+
 company:
     heading:
         index: Firmy

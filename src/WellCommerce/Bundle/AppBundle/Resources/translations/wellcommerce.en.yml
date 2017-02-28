@@ -235,6 +235,14 @@ common:
     flashes:
         success: Success!
 
+pagination:
+    label:
+        results: "Results"
+        of: "of"
+    button:
+        previous_page: "Previous page"
+        next_page: "Next page"
+
 company:
     heading:
         index: Companies

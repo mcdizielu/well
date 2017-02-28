@@ -2,7 +2,7 @@
 
 <div class="pagination-wrap clearfix">
 	<span>
-		results {{ dataset.pagination.currentResult.rangeFrom }} - {{ dataset.pagination.currentResult.rangeTo }} of {{ dataset.pagination.totalRows }}
+		{% trans %}pagination.label.results{% endtrans %} {{ dataset.pagination.currentResult.rangeFrom }} - {{ dataset.pagination.currentResult.rangeTo }} {% trans %}pagination.label.of{% endtrans %} {{ dataset.pagination.totalRows }}
 	</span>
 
     <ul class="pagination pull-right">
