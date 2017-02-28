@@ -53,7 +53,7 @@
 	                    </div>
 	                    <div class="col-md-4 col-sm-5 col-xs-6 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
 	                        <div class="producer">
-	                            <h5>Producer</h5>
+	                            <h5>{% trans %}common.label.producer{% endtrans %}</h5>
 
 	                            <a href="{{ path('dynamic_' ~ product.producer.translate.getRoute().getId()) }}">{{ product.producer.translate.name }}</a>
 	                        </div>
@@ -100,7 +100,7 @@
     <div class="row">
         <div class="col-md-9 col-xs-12">
             <div class="description-block">
-                <h2>Description</h2>
+                <h2>{% trans %}common.label.description{% endtrans %}</h2>
                 <p>{{ product.translate().description|raw }}</p>
             </div>
 

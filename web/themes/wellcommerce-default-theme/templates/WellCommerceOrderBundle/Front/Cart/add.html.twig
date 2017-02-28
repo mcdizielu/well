@@ -7,10 +7,10 @@
         <div class="modal-body">
             {% if addedQuantity > 0 %}
                 <div class="alert alert-success text-center mbt30">
-                    <strong>"{{ product.translate().name }}"</strong> {% trans %}cart.flash.added{% endtrans %}
+                    <strong>"{{ product.translate().name }}"</strong> {% trans %}order.cart.flash.added{% endtrans %}
                 </div>
 
-                <h5 class="text-center">{% trans %}cart.heading.recommendations{% endtrans %}</h5>
+                <h5 class="text-center">{% trans %}order.cart.heading.recommendations{% endtrans %}</h5>
 
                 <div class="products-grid">
                     <div class="row">
@@ -46,10 +46,10 @@
 
         <div class="modal-footer">
             <button type="button" class="btn btn-link dark nopadding notransform pull-left" data-dismiss="modal">
-                <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> Back to shopping
+                <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span> {% trans %}order.cart.button.back_to_shopping{% endtrans %}
             </button>
             {% if addedQuantity > 0 %}
-                <button type="button" class="btn btn-primary" onclick="window.location.href = '{{ path('front.cart.index') }}';">Go to cart<span class="cart-qty">{{ order.productTotal.quantity }}</span></button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href = '{{ path('front.cart.index') }}';">{% trans %}order.cart.button.go_to_cart{% endtrans %}<span class="cart-qty">{{ order.productTotal.quantity }}</span></button>
             {% endif %}
         </div>
     </div>

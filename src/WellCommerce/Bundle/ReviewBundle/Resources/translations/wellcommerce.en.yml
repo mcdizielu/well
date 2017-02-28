@@ -17,3 +17,6 @@ review:
         first_review: Be first to submit a review
     flash:
         success: Opinion added succesfull.
+    tip:
+        help1: 'Help others decide - add rating and review'
+        help2: 'Your rating will help others decide to choose the right product'

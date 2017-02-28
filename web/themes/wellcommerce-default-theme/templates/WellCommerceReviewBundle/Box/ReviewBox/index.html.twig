@@ -4,9 +4,9 @@
 	<h2>{% trans %}review.heading.index{% endtrans %}</h2>
 
 	<div id="add-opinion-alert" class="alert alert-success">
-		<button class="btn btn-success btn-lg pull-right">Add opinion</button>
-		<strong>Help others decide - add rating and review</strong><br />
-		Your rating will help others decide to choose the right product
+		<button class="btn btn-success btn-lg pull-right">{% trans %}review.button.add_opinion{% endtrans %}</button>
+		<strong>{% trans %}review.tip.help1{% endtrans %}</strong><br />
+        {% trans %}review.tip.help2{% endtrans %}
 	</div>
 
 	<!-- OPINION ADDED ALERT
@@ -18,7 +18,7 @@
 	<div class="well product-opinions collapse">
 		{{ macros.form_begin(form, 'form-horizontal') }}
 			<div class="form-group">
-				<label for="nick" class="col-sm-3 control-label">{% trans %}product_review.label.rating{% endtrans %}</label>
+				<label for="nick" class="col-sm-3 control-label">{% trans %}review.label.rating{% endtrans %}</label>
 				<div class="col-md-6 col-sm-10">
 					<div class="stars"></div>
 				</div>
@@ -28,7 +28,7 @@
 			{{ macros.element(form.children.get('review')) }}
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-md-6 col-sm-10">
-					<button type="submit" class="btn btn-primary">{% trans %}product_review.button.add_opinion{% endtrans %}</button>
+					<button type="submit" class="btn btn-primary">{% trans %}review.button.add_opinion{% endtrans %}</button>
 				</div>
 			</div>
 		{{ macros.form_end(form) }}

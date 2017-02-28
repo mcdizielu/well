@@ -13,6 +13,9 @@ order:
         contact_details: Contact details
         cart: Cart
         methods: "Payment & shipping methods"
+        coupon: Coupon
+        choose_shipping_method: Choose a shipping method
+        choose_payment_method: Choose a payment method
     button:
         confirm: Go to confirmation
         add_product: Add product
@@ -69,6 +72,7 @@ order:
             add: Add to cart
             go_to_cart: Go to cart
             back_to_shopping: Back to shopping
+            place_order: Place an order
         link:
             checkout: Go to checkout
         heading:

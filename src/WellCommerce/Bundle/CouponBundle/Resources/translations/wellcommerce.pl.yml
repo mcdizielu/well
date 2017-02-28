@@ -3,6 +3,8 @@ coupon:
         index: Kupony
         add: Dodaj kupon
         edit: Edytuj kupon
+        code: Kod kuponu
+        discount: Rabat
     fieldset:
         discount_settings: Konfiguracja rabatów
     label:

@@ -1,14 +1,15 @@
+{% trans_default_domain "wellcommerce" %}
 {% if order.coupon != null %}
     {% set coupon = order.coupon %}
     <div class="col-lg-7 col-xs-6">
         <div class="coupon">
-            <h4>Coupon code</h4>
+            <h4>{% trans %}coupon.heading.code{% endtrans %}</h4>
             <div class="form-group">
                 <div class="input-group">
                     <input type="text" value="{{ coupon.code }}" class="form-control" disabled>
 
                     <div class="input-group-addon">
-                        <button type="submit" class="btn btn-primary btn-sm" id="remove_coupon">Remove</button>
+                        <button type="submit" class="btn btn-primary btn-sm" id="remove_coupon">{% trans %}coupon.label.remove{% endtrans %}</button>
                     </div>
                 </div>
             </div>
@@ -17,7 +18,7 @@
     <div class="col-lg-5 col-xs-6">
         <div class="row">
             <div class="col-xs-6 text-right">
-                <h4><br/><br/>Discount</h4>
+                <h4><br/><br/>{% trans %}coupon.heading.discount{% endtrans %}</h4>
             </div>
             <div class="col-xs-6">
                 {% if coupon.modifierType == '-' %}
@@ -31,13 +32,13 @@
 {% else %}
     <div class="col-lg-7 col-xs-6">
         <div class="coupon">
-            <h4>Coupon code</h4>
+            <h4>{% trans %}coupon.heading.code{% endtrans %}</h4>
             <div class="form-group">
                 <div class="input-group">
                     <input type="text" value="" class="form-control" id="coupon_code">
 
                     <div class="input-group-addon">
-                        <button type="submit" class="btn btn-primary btn-sm" id="use_coupon">Accept</button>
+                        <button type="submit" class="btn btn-primary btn-sm" id="use_coupon">{% trans %}coupon.label.accept{% endtrans %}</button>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-sm-10 col-sm-offset-2">
             <div class="col-sm-9 col-xs-6 text-right">
-                <span class="text-sm">{% trans %}order.label.product_total{% endtrans %}</span>
+                <span class="text-sm">{% trans %}order.label.product_total.gross_price{% endtrans %}</span>
             </div>
             <div class="col-sm-3 col-xs-6">
                 <span class="text-sm addition">{{ format_price(order.productTotal.grossPrice, order.currency) }}</span>

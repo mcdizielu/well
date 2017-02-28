@@ -15,6 +15,9 @@ order:
         cart: Koszyk
         comments: Twoje uwagi
         methods: "Płatność i wysyłka"
+        coupon: Kupon
+        choose_shipping_method: "Wybierz formę dostawy"
+        choose_payment_method: "Wybierz formę płatności"
     button:
         confirm: Przejdź do potwierdzenia
         add_product: Dodaj produkt
@@ -71,10 +74,11 @@ order:
             not_added: nie został dodany do koszyka z powodu zbyt niskiego stanu magazynowego
         button:
             add: Dodaj do koszyka
-        link:
-            checkout: Przejdź do zamówienia
             go_to_cart: Przejdź do koszyka
             back_to_shopping: Wróć do sklepu
+            place_order: Złóż zamówienie
+        link:
+            checkout: Przejdź do zamówienia
         heading:
             index: Koszyk
             recommendations: Polecamy Ci również
@@ -91,19 +95,19 @@ order:
         payment_method:
             label: Metoda płatności
 
-    address:
-        heading:
-            billing_address: Adres płatnika
-            shipping_address: Adres dostawy
-        label:
-            copy_address: Adres dostawy jest taki sam jak adres płatnika
-            addresses: Adresy
-            line1: Ulica
-            line2: Nr. budynku, nr. lokalu
-            province: Prowincja
-            postal_code: Kod pocztowy
-            country: Państwo
-            city: Miejscowość
+address:
+    heading:
+        billing_address: Adres płatnika
+        shipping_address: Adres dostawy
+    label:
+        copy_address: Adres dostawy jest taki sam jak adres płatnika
+        addresses: Adresy
+        line1: Ulica
+        line2: Nr. budynku, nr. lokalu
+        province: Prowincja
+        postal_code: Kod pocztowy
+        country: Państwo
+        city: Miejscowość
 
 order_status:
     heading:

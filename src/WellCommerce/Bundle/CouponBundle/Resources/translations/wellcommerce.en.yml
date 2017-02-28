@@ -3,6 +3,8 @@ coupon:
         index: Coupons
         add: Add a coupon
         edit: Edit a coupon
+        code: Code
+        discount: Discount
     fieldset:
         discount_settings: Discounts configuration
     label:
@@ -13,6 +15,8 @@ coupon:
         modifier_type_percent: '%'
         modifier_type_subtract: '-'
         minimum_order_value: "Minimal order value"
+        accept: Use
+        remove: Remove
         exclude_promotions: "Exclude promotions"
     error:
         not_found: Coupon code is invalid

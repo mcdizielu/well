@@ -19,6 +19,10 @@ review:
     flash:
         success: Opinia dodana prawidłowo.
         error: Opinia nie została dodana. Formularz zawiera błędy.
+    tip:
+        help1: 'Pomóż innym zdecydować'
+        help2: 'Twoja opinia i recenzja produktu pomoże innym klientom w podjęciu decyzji'
+
 report:
     flash:
         success: Raport opinii został wysłany.
