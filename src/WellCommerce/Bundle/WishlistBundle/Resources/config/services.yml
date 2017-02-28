@@ -29,5 +29,4 @@ services:
         class: WellCommerce\Bundle\WishlistBundle\Twig\WishlistExtension
         tags:
             - { name: twig.extension }
-        arguments:
-            - '@wishlist.repository'
+        arguments: ['@product.dataset.front', '@wishlist.repository']

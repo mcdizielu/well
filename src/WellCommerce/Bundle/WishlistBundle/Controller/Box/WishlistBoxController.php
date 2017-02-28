@@ -14,10 +14,6 @@ namespace WellCommerce\Bundle\WishlistBundle\Controller\Box;
 
 use Symfony\Component\HttpFoundation\Response;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
-use WellCommerce\Bundle\WishlistBundle\Entity\Wishlist;
-use WellCommerce\Bundle\WishlistBundle\Repository\WishlistRepositoryInterface;
-use WellCommerce\Component\DataSet\Conditions\Condition\In;
-use WellCommerce\Component\DataSet\Conditions\ConditionsCollection;
 use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 
 /**
@@ -29,31 +25,6 @@ class WishlistBoxController extends AbstractBoxController
 {
     public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
-        $dataset = $this->get('product.dataset.front')->getResult('array', [
-            'order_by'   => 'name',
-            'order_dir'  => 'asc',
-            'conditions' => $this->createConditions(),
-        ]);
-        
-        return $this->displayTemplate('index', [
-            'dataset' => $dataset,
-        ]);
-    }
-    
-    private function createConditions(): ConditionsCollection
-    {
-        /** @var WishlistRepositoryInterface $repository */
-        $repository = $this->getManager()->getRepository();
-        $wishlist   = $repository->getClientWishlistCollection($this->getAuthenticatedClient());
-        $productIds = [];
-        
-        $wishlist->map(function (Wishlist $wishlist) use (&$productIds) {
-            $productIds[] = $wishlist->getProduct()->getId();
-        });
-        
-        $conditions = new ConditionsCollection();
-        $conditions->add(new In('id', $productIds));
-        
-        return $conditions;
+        return $this->displayTemplate('index');
     }
 }
