@@ -24,3 +24,10 @@ services:
         autowire: true
         tags:
             - { name: layout_box.configurator }
+
+    wishlist.twig.extension:
+        class: WellCommerce\Bundle\WishlistBundle\Twig\WishlistExtension
+        tags:
+            - { name: twig.extension }
+        arguments:
+            - '@wishlist.repository'
