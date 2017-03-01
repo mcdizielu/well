@@ -81,7 +81,6 @@ final class TraitGenerator
     {
         $property = PhpProperty::create($property);
         $property->setVisibility('private');
-        $property->setType('string');
         $property->setValue(null);
         
         $this->trait->setProperty($property);
@@ -107,7 +106,6 @@ final class TraitGenerator
         $method->setVisibility('public');
         
         $parameter = new PhpParameter($variableName);
-        $parameter->setType('string');
         
         $method->addParameter($parameter);
         
