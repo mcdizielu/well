@@ -68,7 +68,7 @@ final class EnvironmentHelper implements EnvironmentHelperInterface
     
     public function getFreePort()
     {
-        return rand(4444, 65525);
+        return 8080;
     }
     
     public function getProcessBuilder(array $arguments, $timeout = self::DEFAULT_PROCESS_TIMEOUT)
@@ -79,6 +79,7 @@ final class EnvironmentHelper implements EnvironmentHelperInterface
         $builder->setArguments($arguments);
         $builder->setTimeout($timeout);
         $builder->inheritEnvironmentVariables(true);
+        $builder->setEnv('COMPOSER_HOME', $this->kernel->getRootDir() . '/.composer');
         
         return $builder;
     }

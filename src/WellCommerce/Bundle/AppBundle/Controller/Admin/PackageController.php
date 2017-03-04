@@ -73,6 +73,6 @@ class PackageController extends AbstractAdminController
     
     protected function getHelper(): EnvironmentHelperInterface
     {
-        return $this->get('environment.helper');
+        return $this->get('environment_helper');
     }
 }

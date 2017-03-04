@@ -22,7 +22,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\HttpKernel\Kernel;
-use WellCommerce\Bundle\CoreBundle\Entity\Package;
+use WellCommerce\Bundle\AppBundle\Entity\Package;
 use Zend\Log\Logger;
 use Zend\Log\Writer\Stream;
 
@@ -110,6 +110,7 @@ abstract class AbstractPackageCommand extends ContainerAwareCommand
             $this->getComposer(),
             $this->composerOperation,
             $package,
+            '--prefer-dist'
         ];
     }
     
@@ -137,6 +138,8 @@ abstract class AbstractPackageCommand extends ContainerAwareCommand
      */
     protected function getComposer()
     {
+        putenv('COMPOSER_HOME='.$this->getContainer()->get('kernel')->getRootDir() . '/.composer');
+        
         return $this->getEnvironmentHelper()->getComposerPhar();
     }
     
