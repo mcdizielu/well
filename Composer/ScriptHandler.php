@@ -37,4 +37,13 @@ class ScriptHandler extends SensioScriptHandler
         
         static::executeCommand($event, $consoleDir, 'wellcommerce:doctrine:enhance', $options['process-timeout']);
     }
+    
+    public static function populateEnvironment(Event $event)
+    {
+        $secret = hash('sha1', uniqid(mt_rand(), true));
+        putenv("SYMFONY_SECRET={$secret}");
+        
+        $io = $event->getIO();
+        $io->write('SYMFONY_SECRET=' . getenv('SYMFONY_SECRET'));
+    }
 }
