@@ -40,10 +40,14 @@ class ScriptHandler extends SensioScriptHandler
     
     public static function populateEnvironment(Event $event)
     {
-        $secret = hash('sha1', uniqid(mt_rand(), true));
+        $secret            = hash('sha1', uniqid(mt_rand(), true));
+        $searchIndexPrefix = sprintf('wellcommerce_%s_', hash('sha1', uniqid(mt_rand(), true)));
+        
         putenv("SYMFONY_SECRET={$secret}");
+        putenv("SEARCH_INDEX_PREFIX={$searchIndexPrefix}");
         
         $io = $event->getIO();
         $io->write('SYMFONY_SECRET=' . getenv('SYMFONY_SECRET'));
+        $io->write('SEARCH_INDEX_PREFIX=' . getenv('SEARCH_INDEX_PREFIX'));
     }
 }

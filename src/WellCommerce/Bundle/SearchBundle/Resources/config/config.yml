@@ -18,7 +18,7 @@ well_commerce_search:
                 options:
                     app_id: "%algolia_id%"
                     app_key: "%algolia_key%"
-                    index_prefix: "%search_engine_index_prefix%"
+                    index_prefix: "%search_index_prefix%"
                     query_min_length: 3
                     result_limit: 100
                     query_builder_class: WellCommerce\Component\Search\Adapter\Algolia\AlgoliaQueryBuilder
@@ -27,7 +27,7 @@ well_commerce_search:
                 options:
                     number_of_shards: 2
                     number_of_replicas: 0
-                    index_prefix: "%search_engine_index_prefix%"
+                    index_prefix: "%search_index_prefix%"
                     query_min_length: 3
                     result_limit: 100
                     query_builder_class: WellCommerce\Component\Search\Adapter\ElasticSearch\ElasticSearchQueryBuilder

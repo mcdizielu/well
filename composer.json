@@ -133,6 +133,7 @@
     "incenteev-parameters": {
       "file": "app/config/parameters.yml",
       "env-map": {
+        "search_index_prefix": "SEARCH_INDEX_PREFIX",
         "secret": "SYMFONY_SECRET",
         "database_name": "SYMFONY_DATABASE_NAME",
         "database_user": "SYMFONY_DATABASE_USER",

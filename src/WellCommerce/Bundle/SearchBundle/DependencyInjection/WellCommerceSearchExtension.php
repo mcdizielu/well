@@ -29,7 +29,7 @@ class WellCommerceSearchExtension extends AbstractExtension
         
         $adapters = $configuration['search_engine']['adapters'];
         $index    = $configuration['search_engine']['index'];
-        $adapter  = $adapters[$container->getParameter('search_engine_adapter')] ?? current($adapters);
+        $adapter  = $adapters[$container->getParameter('search_adapter')] ?? current($adapters);
         
         $this->processTypes($index['types'], $container);
         $this->processAdapterConfiguration($adapter, $container);
