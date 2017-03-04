@@ -15,6 +15,7 @@ imports:
     - { resource: "@WellCommerceCmsBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceCouponBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceGeneratorBundle/Resources/config/config.yml" }
+    - { resource: "@WellCommerceOAuthBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceOrderBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceReviewBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceShowcaseBundle/Resources/config/config.yml" }
