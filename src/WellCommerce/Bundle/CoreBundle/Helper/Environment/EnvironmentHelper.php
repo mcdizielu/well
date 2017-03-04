@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\CoreBundle\Helper\Environment;
 
 use Symfony\Component\HttpKernel\KernelInterface;
+use Symfony\Component\Process\PhpExecutableFinder;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\ProcessBuilder;
 
@@ -46,19 +47,22 @@ final class EnvironmentHelper implements EnvironmentHelperInterface
     
     public function getPhpBinary()
     {
-        $binaryPath = $this->kernel->getContainer()->getParameter('php_binary_path');
+        if ($this->kernel->getContainer()->hasParameter('php_binary_path')) {
+            return $this->kernel->getContainer()->hasParameter('php_binary_path');
+        }
         
-        if (null === $binaryPath) {
+        $phpFinder = new PhpExecutableFinder();
+        if (!$phpPath = $phpFinder->find(true)) {
             $process = new Process('whereis php');
             $process->run();
             $output = $process->getOutput();
             $lines  = explode(PHP_EOL, $output);
             if (count($lines) > 0) {
-                $binaryPath = current($lines);
+                $phpPath = current($lines);
             }
         }
         
-        return $binaryPath;
+        return $phpPath;
     }
     
     public function getCwd()
