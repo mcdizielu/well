@@ -104,7 +104,7 @@ final class ElasticSearchAdapter implements AdapterInterface
         return sprintf('%s%s', $this->options['index_prefix'], $locale);
     }
     
-    public function createIndex(string $locale)
+    public function createIndex(string $locale, string $type)
     {
         return $this->getClient()->indices()->create([
             'index' => $this->getIndexName($locale),
@@ -117,7 +117,7 @@ final class ElasticSearchAdapter implements AdapterInterface
         ]);
     }
     
-    public function removeIndex(string $locale)
+    public function removeIndex(string $locale, string $type)
     {
         if (false === $this->hasIndex($locale)) {
             return false;
@@ -128,10 +128,10 @@ final class ElasticSearchAdapter implements AdapterInterface
         ]);
     }
     
-    public function flushIndex(string $locale)
+    public function flushIndex(string $locale, string $type)
     {
         if (false === $this->hasIndex($locale)) {
-            return $this->createIndex($locale);
+            return $this->createIndex($locale, $type);
         }
         
         return $this->getClient()->indices()->flush([
@@ -141,10 +141,6 @@ final class ElasticSearchAdapter implements AdapterInterface
     
     public function getStats(string $locale)
     {
-        if (false === $this->hasIndex($locale)) {
-            $this->createIndex($locale);
-        }
-        
         return $this->getClient()->indices()->stats([
             'index' => $this->getIndexName($locale),
         ]);

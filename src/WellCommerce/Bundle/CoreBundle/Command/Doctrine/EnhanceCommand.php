@@ -15,6 +15,7 @@ namespace WellCommerce\Bundle\CoreBundle\Command\Doctrine;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 use WellCommerce\Bundle\CoreBundle\Helper\Environment\EnvironmentHelperInterface;
 use WellCommerce\Component\DoctrineEnhancer\TraitGenerator\TraitGenerator;
 use WellCommerce\Component\DoctrineEnhancer\TraitGenerator\TraitGeneratorEnhancerCollection;
@@ -51,12 +52,22 @@ final class EnhanceCommand extends Command
     
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $generatedTraits = [];
+        
+        $io = new SymfonyStyle($input, $output);
+        $io->newLine();
+        
         foreach ($this->collection as $traitClass => $enhancers) {
             $generator = new TraitGenerator($traitClass, $enhancers);
             $generator->generate();
             
-            $output->write('<info>Generated trait: ' . $traitClass . '</info>.', true);
+            $generatedTraits[] = [
+                sprintf('<fg=green;options=bold>%s</>', '\\' === DIRECTORY_SEPARATOR ? 'OK' : "\xE2\x9C\x94"),
+                $traitClass,
+            ];
         }
+        
+        $io->table(['', 'Generated trait'], $generatedTraits);
         
         $this->runProcess([
             'app/console',
