@@ -12,7 +12,7 @@ monolog:
             handler:      nested
         nested:
             type:  stream
-            path:  %prod_log_path%
+            path:  "%kernel.logs_dir%/%kernel.environment%.log"
             level: debug
         console:
             type:  console

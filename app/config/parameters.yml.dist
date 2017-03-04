@@ -13,32 +13,14 @@ parameters:
     mailer_password:           ""
     mailer_bcc:                ""
 
-    prod_log_path:     "%kernel.logs_dir%/%kernel.environment%.log"
-
     locale:            en
     secret:            870773bfa775d367fb77df62112586d2762767d8
-
-    debug_toolbar:          true
-    debug_redirects:        false
 
     doctrine.server_version: 5.6
 
     fallback_theme: wellcommerce-default-theme
     fallback_hostname: localhost
 
-    developer_mode.ip: 127.0.0.1
-
     php_binary_path: ~
 
-    search_engine: lucene
-
-    facebook:
-        app_id: ~
-        app_secret: ~
-        page_token: ~
-
-    pdo.db_options:
-        db_table:    session
-        db_id_col:   session_id
-        db_data_col: session_value
-        db_time_col: session_time
+    search_engine: elasticsearch
