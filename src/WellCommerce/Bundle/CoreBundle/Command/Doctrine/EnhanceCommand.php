@@ -53,10 +53,9 @@ final class EnhanceCommand extends Command
     {
         foreach ($this->collection as $traitClass => $enhancers) {
             $generator = new TraitGenerator($traitClass, $enhancers);
-            $code      = $generator->generate();
+            $generator->generate();
             
-            $output->write('<info>' . $traitClass . '</info>.', true);
-            $output->write($code, true);
+            $output->write('<info>Generated trait: ' . $traitClass . '</info>.', true);
         }
         
         $this->runProcess([
