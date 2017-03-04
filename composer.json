@@ -98,17 +98,19 @@
   },
   "scripts": {
     "post-install-cmd": [
+      "WellCommerce\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::populateEnvironment",
       "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
       "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
       "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
       "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-      "WellCommerce\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::updateWellCommerce"
+      "WellCommerce\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::updateApplication"
     ],
     "post-update-cmd": [
+      "WellCommerce\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::populateEnvironment",
       "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
       "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
       "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-      "WellCommerce\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::updateWellCommerce",
+      "WellCommerce\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::updateApplication",
       "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
       "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
     ],
@@ -116,7 +118,7 @@
       "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap"
     ],
     "post-create-project-cmd": [
-      "WellCommerce\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::installWellCommerce"
+      "WellCommerce\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::installApplication"
     ]
   },
   "config": {
@@ -130,6 +132,7 @@
     "incenteev-parameters": {
       "file": "app/config/parameters.yml",
       "env-map": {
+        "secret": "SYMFONY_SECRET",
         "database_name": "SYMFONY_DATABASE_NAME",
         "database_user": "SYMFONY_DATABASE_USER",
         "database_host": "SYMFONY_DATABASE_HOST",

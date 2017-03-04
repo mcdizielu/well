@@ -22,6 +22,7 @@ imports:
     - { resource: "@WellCommerceWishlistBundle/Resources/config/config.yml" }
 
 parameters:
+    fallback_theme: "wellcommerce-default-theme"
     fixtures_load_order:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadAdminMenuData: 0
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadThemeData: 10

@@ -81,7 +81,7 @@ abstract class AbstractTestCase extends KernelTestCase
     
     private function setCurrentShop()
     {
-        $shop = $this->container->get('shop.repository')->resolve(0, $this->container->getParameter('fallback_hostname'));
+        $shop = $this->container->get('shop.repository')->resolve(0, 'localhost');
         $this->container->get('shop.storage')->setCurrentShop($shop);
     }
 }
