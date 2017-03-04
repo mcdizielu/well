@@ -9,7 +9,7 @@ parameters:
     locale:            en
     secret:            ~
 
-    search_adapter: elasticsearch
+    search_adapter: algolia
     search_index_prefix: wellcommerce_
 
     algolia_id: "C2VGT4PGWH"
