@@ -80,24 +80,19 @@ final class SearchManager implements SearchManagerInterface
         return $this->adapter->addDocument($document);
     }
     
-    public function createIndex(string $locale)
+    public function createIndex(string $locale, string $type)
     {
-        $this->adapter->createIndex($locale);
+        $this->adapter->createIndex($locale, $type);
     }
     
-    public function flushIndex(string $locale)
+    public function flushIndex(string $locale, string $type)
     {
-        $this->adapter->flushIndex($locale);
+        $this->adapter->flushIndex($locale, $type);
     }
     
-    public function optimizeIndex(string $locale)
+    public function removeIndex(string $locale, string $type)
     {
-        $this->adapter->optimizeIndex($locale);
-    }
-    
-    public function removeIndex(string $locale)
-    {
-        $this->adapter->removeIndex($locale);
+        $this->adapter->removeIndex($locale, $type);
     }
     
     public function getType(string $type): TypeInterface

@@ -32,13 +32,11 @@ interface SearchManagerInterface
     
     public function removeDocument(DocumentInterface $document);
     
-    public function createIndex(string $locale);
+    public function createIndex(string $locale, string $type);
     
-    public function flushIndex(string $locale);
+    public function flushIndex(string $locale, string $type);
     
-    public function optimizeIndex(string $locale);
-    
-    public function removeIndex(string $locale);
+    public function removeIndex(string $locale, string $type);
     
     public function getType(string $type): TypeInterface;
     

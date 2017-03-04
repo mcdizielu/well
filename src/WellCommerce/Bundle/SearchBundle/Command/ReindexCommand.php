@@ -70,7 +70,7 @@ final class ReindexCommand extends ContainerAwareCommand
             null,
             InputOption::VALUE_REQUIRED,
             'Batch size',
-            100
+            1
         );
         
         $this->addOption(
@@ -111,8 +111,8 @@ final class ReindexCommand extends ContainerAwareCommand
         $output->writeln(sprintf('<comment>Locale:</comment> %s', $locale));
         
         $output->writeln('<info>Flushing index</info>');
-        $this->manager->removeIndex($locale);
-        $this->manager->createIndex($locale);
+        $this->manager->removeIndex($locale, $this->type->getName());
+        $this->manager->createIndex($locale, $this->type->getName());
         
         $progress = new ProgressBar($output, $totalEntities);
         $progress->setFormat('verbose');

@@ -22,19 +22,17 @@ use WellCommerce\Component\Search\Request\SearchRequestInterface;
  */
 interface AdapterInterface
 {
-    public function search(SearchRequestInterface $request) : array;
-
-    public function createIndex(string $locale);
-
-    public function removeIndex(string $locale);
-
-    public function flushIndex(string $locale);
-
-    public function optimizeIndex(string $locale);
-
+    public function search(SearchRequestInterface $request): array;
+    
+    public function createIndex(string $locale, string $type);
+    
+    public function removeIndex(string $locale, string $type);
+    
+    public function flushIndex(string $locale, string $type);
+    
     public function addDocument(DocumentInterface $document);
-
+    
     public function updateDocument(DocumentInterface $document);
-
+    
     public function removeDocument(DocumentInterface $document);
 }

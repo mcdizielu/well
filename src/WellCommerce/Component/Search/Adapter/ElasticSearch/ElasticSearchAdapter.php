@@ -137,18 +137,6 @@ final class ElasticSearchAdapter implements AdapterInterface
         return $this->getClient()->indices()->flush([
             'index' => $this->getIndexName($locale),
         ]);
-        
-    }
-    
-    public function optimizeIndex(string $locale)
-    {
-        if (false === $this->hasIndex($locale)) {
-            $this->createIndex($locale);
-        }
-        
-        return $this->getClient()->indices()->optimize([
-            'index' => $this->getIndexName($locale),
-        ]);
     }
     
     public function getStats(string $locale)

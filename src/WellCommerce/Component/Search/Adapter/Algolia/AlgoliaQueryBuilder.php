@@ -10,30 +10,34 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Component\Search\Adapter\ZendLucene;
+namespace WellCommerce\Component\Search\Adapter\Algolia;
 
 use Doctrine\Common\Collections\Collection;
 use WellCommerce\Component\Search\Adapter\AbstractQueryBuilder;
-use ZendSearch\Lucene\Index\Term as IndexTerm;
-use ZendSearch\Lucene\Search\Query\Wildcard;
+use WellCommerce\Component\Search\Model\FieldInterface;
 
 /**
- * Class ZendLuceneQueryBuilder
+ * Class AlgoliaQueryBuilder
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class ZendLuceneQueryBuilder extends AbstractQueryBuilder
+final class AlgoliaQueryBuilder extends AbstractQueryBuilder
 {
     protected function createMultiFieldSearch(Collection $fields)
     {
-        return $this->getPhrase();
+        $attributesToRetrieve = [];
+        
+        $this->request->getType()->getFields()->map(function (FieldInterface $field) use (&$attributesToRetrieve) {
+            $attributesToRetrieve[] = $field->getName();
+        });
+        
+        return implode(',', $attributesToRetrieve);
     }
-
+    
     protected function createSimpleSearch(string $phrase)
     {
-        $term  = new IndexTerm($phrase);
-        $query = new Wildcard($term);
-
-        return $query;
+        $attributesToRetrieve = [];
+        
+        return $attributesToRetrieve;
     }
 }
