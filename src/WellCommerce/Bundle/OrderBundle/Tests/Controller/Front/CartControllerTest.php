@@ -14,7 +14,6 @@ namespace WellCommerce\Bundle\OrderBundle\Tests\Controller\Front;
 
 use Doctrine\Common\Collections\Collection;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
-use WellCommerce\Bundle\CatalogBundle\Entity\Variant;
 use WellCommerce\Bundle\CoreBundle\Test\Controller\Front\AbstractFrontControllerTestCase;
 
 /**
@@ -50,17 +49,16 @@ class CartControllerTest extends AbstractFrontControllerTestCase
         
         $collection->map(function (Product $product) {
             if ($product->getVariants()->count()) {
-                $product->getVariants()->map(function (Variant $variant) use ($product) {
-                    $url = $this->generateUrl('front.cart.add', [
-                        'id'       => $product->getId(),
-                        'variant'  => $variant->getId(),
-                        'quantity' => 1,
-                    ]);
-                    
-                    $this->client->request('GET', $url);
-                    $this->assertTrue($this->client->getResponse()->isSuccessful());
-                    $this->assertJson($this->client->getResponse()->getContent());
-                });
+                $variant = $product->getVariants()->first();
+                $url     = $this->generateUrl('front.cart.add', [
+                    'id'       => $product->getId(),
+                    'variant'  => $variant->getId(),
+                    'quantity' => 1,
+                ]);
+                
+                $this->client->request('GET', $url);
+                $this->assertTrue($this->client->getResponse()->isSuccessful());
+                $this->assertJson($this->client->getResponse()->getContent());
             }
         });
     }
