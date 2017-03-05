@@ -89,7 +89,7 @@
 
             <div class="additional text-center">
                 {% if app.user and is_granted('ROLE_CLIENT') %}
-                <a href="{{ path('front.wishlist.add', {"id": product.id}) }}">Add to wishlist</a><br />
+                <a href="{{ path('front.wishlist.add', {"id": product.id}) }}">{% trans %}wishlist.button.add{% endtrans %}</a><br />
                 {% endif %}
             </div>
         </div>

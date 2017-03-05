@@ -16,8 +16,8 @@ use Doctrine\Common\Persistence\ObjectManager;
 use WellCommerce\Bundle\AppBundle\Entity\Shop;
 use WellCommerce\Bundle\CatalogBundle\Entity\Category;
 use WellCommerce\Bundle\CatalogBundle\Entity\CategoryTranslation;
-use WellCommerce\Bundle\StandardEditionBundle\DataFixtures\AbstractDataFixture;
 use WellCommerce\Bundle\CoreBundle\Helper\Helper;
+use WellCommerce\Bundle\StandardEditionBundle\DataFixtures\AbstractDataFixture;
 
 /**
  * Class LoadCategoryData
@@ -26,16 +26,15 @@ use WellCommerce\Bundle\CoreBundle\Helper\Helper;
  */
 class LoadCategoryData extends AbstractDataFixture
 {
-    public static $samples
-        = [
-            'Smart TVs',
-            'Streaming devices',
-            'Accessories',
-            'DVD & Blue-ray players',
-            'Audio players',
-            'Projectors',
-            'Home theater',
-        ];
+    public static $samples = [
+        'Smart TVs',
+        'Streaming devices',
+        'Accessories',
+        'DVD & Blue-ray players',
+        'Audio players',
+        'Projectors',
+        'Home theater',
+    ];
     
     /**
      * {@inheritDoc}

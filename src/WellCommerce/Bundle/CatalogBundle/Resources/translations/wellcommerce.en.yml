@@ -37,6 +37,10 @@ attribute_value:
         index: Attribute values
         add: Add values
         edit: Edit values
+    fieldset:
+        attributes: Attributes
+    label:
+        attributes: Attributes
 
 availability:
     heading:
@@ -88,6 +92,18 @@ producer:
         deliverers: Deliverers
     label:
         deliverers: Deliverers
+
+layered_navigation:
+    label:
+        price: Filter by price
+        brand: Filter by brand
+
+layout_box:
+    layered_navigation:
+        tip: Configure the display settings
+        enable_price_filter: Enable price filter
+        enable_brand_filter: Enable brand filter
+        enable_attribute_filter: Enable attribute filter
 
 product:
     form:
@@ -154,9 +170,6 @@ product:
             width: Width
             height: Height
             depth: Depth
-        layered_navigation:
-            price: Filter by price
-            brand: Filter by brand
         short_description: Short description
         description: Description
     button:

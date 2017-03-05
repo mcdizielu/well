@@ -11,3 +11,7 @@ client:
         wishlist: Schowek
     flash:
         empty_wishlist: Twoja lista życzeń jest pusta
+
+wishlist:
+    button:
+        add: Dodaj do schowka

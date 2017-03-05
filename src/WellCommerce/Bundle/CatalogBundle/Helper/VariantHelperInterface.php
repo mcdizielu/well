@@ -27,4 +27,6 @@ interface VariantHelperInterface
     public function getAttributes(Product $product): array;
     
     public function getVariantOptions(Variant $variant): array;
+    
+    public function sortOptions(array &$options);
 }

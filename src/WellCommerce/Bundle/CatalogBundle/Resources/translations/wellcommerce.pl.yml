@@ -37,6 +37,10 @@ attribute_value:
         index: Wartości atrybutów
         add: Dodaj wartości
         edit: Edytuj wartości
+    fieldset:
+        attributes: Atrybuty
+    label:
+        attributes: Atrybuty
 
 availability:
     heading:
@@ -78,6 +82,18 @@ deliverer:
         index: Dostawcy
         add: Dodaj dostawcę
         edit: Edytuj dostawcę
+
+layered_navigation:
+    label:
+        price: Filtruj po cenie
+        brand: Filtruj po marce
+
+layout_box:
+    layered_navigation:
+        tip: Ustawienia wyświetlania dla boksu
+        enable_price_filter: Włącz filtrowanie po cenie
+        enable_brand_filter: Włącz filtrowanie po marce
+        enable_attribute_filter: Włącz filtrowanie po cechach
 
 producer:
     heading:
@@ -152,9 +168,6 @@ product:
             width: Szerokość
             height: Wysokość
             depth: Głębokość
-        layered_navigation:
-            price: Filtruj po cenie
-            brand: Filtruj po marce
         short_description: Krótki opis
         description: Opis
     button:

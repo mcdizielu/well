@@ -42,6 +42,8 @@ class AttributeDataSet extends AbstractDataSet
         $queryBuilder = $this->repository->getQueryBuilder();
         $queryBuilder->groupBy('attribute.id');
         $queryBuilder->leftJoin('attribute.translations', 'attribute_translation');
+        $queryBuilder->leftJoin('attribute.groups', 'attribute_groups');
+        $queryBuilder->leftJoin('attribute_groups.translations', 'attribute_groups_translation');
         
         return $queryBuilder;
     }

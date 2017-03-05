@@ -39,7 +39,24 @@ final class LayeredNavigationBoxConfigurator extends AbstractLayoutBoxConfigurat
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => 'product.layered_navigation.tip',
+            'tip' => 'layout_box.layered_navigation.tip',
         ]));
+    
+        $fieldset->addChild($builder->getElement('checkbox', [
+            'name'    => 'enable_price_filter',
+            'label'   => 'layout_box.layered_navigation.enable_price_filter',
+        ]))->setValue($this->getValue($defaults, '[enable_price_filter]', true));
+    
+    
+        $fieldset->addChild($builder->getElement('checkbox', [
+            'name'    => 'enable_brand_filter',
+            'label'   => 'layout_box.layered_navigation.enable_brand_filter',
+        ]))->setValue($this->getValue($defaults, '[enable_brand_filter]', true));
+    
+    
+        $fieldset->addChild($builder->getElement('checkbox', [
+            'name'    => 'enable_attribute_filter',
+            'label'   => 'layout_box.layered_navigation.enable_attribute_filter',
+        ]))->setValue($this->getValue($defaults, '[enable_attribute_filter]', true));
     }
 }

@@ -126,4 +126,9 @@ class VariantHelper implements VariantHelperInterface
         
         return $options;
     }
+    
+    public function sortOptions(array &$options)
+    {
+        ksort($options);
+    }
 }

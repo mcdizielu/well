@@ -30,7 +30,7 @@ class AttributeValueFormBuilder extends AbstractFormBuilder
     {
         $groupData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'main_data',
-            'label' => 'attribute_value.label.group'
+            'label' => 'common.fieldset.general'
         ]));
 
         $languageData = $groupData->addChild($this->getElement('language_fieldset', [
@@ -49,12 +49,12 @@ class AttributeValueFormBuilder extends AbstractFormBuilder
 
         $attributesData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'attributes_data',
-            'label' => 'attribute_group.fieldset.attribute'
+            'label' => 'attribute_value.fieldset.attributes'
         ]));
 
         $attributesData->addChild($this->getElement('multi_select', [
             'name'        => 'attributes',
-            'label'       => 'attribute_group.label.attribute',
+            'label'       => 'attribute_value.label.attributes',
             'options'     => $this->get('attribute.dataset.admin')->getResult('select'),
             'transformer' => $this->getRepositoryTransformer('collection', $this->get('attribute.repository'))
         ]));

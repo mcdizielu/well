@@ -13,17 +13,6 @@ form:
         image_id: ID obrazka
     button:
         delete_selected: "Delete selected"
-    file_selector:
-        photo: Zdjęcie
-        main: Główne
-        cancel: Anuluj wybór
-        select_from_library: "Wybierz z biblioteki"
-        add_from_disk: "Dodaj z dysku"
-        expand: Rozwiń
-        collapse: Zwiń
-        filename: Plik
-        extension: Rozszerzenie
-        preview: Podgląd
 
 channel:
     heading:

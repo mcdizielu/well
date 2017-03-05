@@ -60,7 +60,7 @@ class CartController extends AbstractFrontController
         $order            = $this->getOrderProvider()->getCurrentOrder();
         $previousQuantity = $this->getManager()->getCartQuantity($product, $variant, $order);
         
-        if ($variants->count() && false === $variants->contains($variant)) {
+        if ($variants->count() && (null === $variant || false === $variants->contains($variant))) {
             return $this->redirectToRoute('front.product.view', ['id' => $product->getId()]);
         }
         

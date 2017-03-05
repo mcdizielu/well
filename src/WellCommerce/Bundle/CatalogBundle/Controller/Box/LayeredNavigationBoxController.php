@@ -48,6 +48,7 @@ class LayeredNavigationBoxController extends AbstractBoxController
             'producers'  => $producers,
             'category'   => $category,
             'attributes' => $attributes,
+            'settings'   => $boxSettings,
         ]);
     }
     

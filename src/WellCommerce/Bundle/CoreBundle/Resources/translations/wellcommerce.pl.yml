@@ -1,0 +1,54 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+file_selector:
+    photo: Zdjęcie
+    main: Główne
+    cancel: Anuluj wybór
+    select_from_library: "Wybierz z biblioteki"
+    add_from_disk: "Dodaj z dysku"
+    expand: Rozwiń
+    collapse: Zwiń
+    filename: Plik
+    extension: Rozszerzenie
+    preview: Podgląd
+
+product_variants_editor:
+    label:
+        set_for_this_product: 'Attributes group for this product'
+        set_for_this_product_suffix: 'suggested groups are highlighted'
+        id: 'ID'
+        stock: 'Stock'
+        modifier_type: 'Modifier type'
+        modifier: 'Modifier value'
+        price: 'Price'
+        available_attributes: 'Attributes available in this group:'
+        choose_attribute: '(choose an attribute)'
+    button:
+        add_attribute: 'Add new attribute'
+        save_attribute: 'Save attribute'
+        add_value: 'Add new value'
+        save_value: 'Save value'
+        add_variant: 'Add new variant'
+        save_variant: 'Save changes'
+        auto_generate: 'Auto-generate variants'
+    variant_editor:
+        base_net_price: 'Net price'
+        base_gross_price: 'Gross price'
+        modifier_type: 'Modifier type'
+        modifier_value: 'Modifier value'
+        net_price: 'Variant net price'
+        gross_price: 'Variant gross price'
+        stock: 'Stock'
+        symbol: 'SKU'
+        status: 'Status'
+        availability: 'Availability'
+        weight: 'Weight'
+        photos: 'Choose photos'
+        enabled: 'Enabled'
+        disabled: 'Disabled'

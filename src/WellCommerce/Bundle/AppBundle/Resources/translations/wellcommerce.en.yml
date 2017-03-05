@@ -13,17 +13,6 @@ form:
         image_id: Image ID
     button:
         delete_selected: "Delete selected"
-    file_selector:
-        photo: Photo
-        main: Main
-        cancel: Cancel selection
-        select_from_library: "Select from library"
-        add_from_disk: "Add from disk"
-        expand: Expand
-        collapse: Collapse
-        filename: Filename
-        extension: Extension
-        preview: Preview
 
 channel:
     heading:

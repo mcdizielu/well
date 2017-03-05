@@ -11,3 +11,7 @@ client:
         wishlist: Wishlist
     flash:
         empty_wishlist: Your wishlist is empty
+
+wishlist:
+    button:
+        add: Add to wishlist

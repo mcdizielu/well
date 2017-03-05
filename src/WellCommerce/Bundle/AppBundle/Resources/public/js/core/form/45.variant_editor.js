@@ -122,7 +122,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
             jModifierType.append('<option' + ((gThis.m_oOptions.aoSuffixes[i] == oVariant.modifier_type) ? ' selected="selected"' : '') + ' value="' + gThis.m_oOptions.aoSuffixes[i] + '">' + gThis.m_oOptions.aoSuffixes[i] + '</option>');
         }
 
-        jSpecification.append($('<div class="field-select"/>').append('<label for="' + gThis.GetId() + '__modifier_type">' + GTranslation('form.product_variants_editor.variant_editor_modifier_type') + '</label>').append($('<span class="field"/>').append(jModifierType)));
+        jSpecification.append($('<div class="field-select"/>').append('<label for="' + gThis.GetId() + '__modifier_type">' + GTranslation('product_variants_editor.variant_editor.modifier_type') + '</label>').append($('<span class="field"/>').append(jModifierType)));
         jModifierType.GSelect();
 
         var jModifierValue = $('<input type="text" id="' + gThis.GetId() + '__modifier_value"/>').focus(function () {
@@ -131,7 +131,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
             $(this).closest('.field').removeClass('focus');
         });
 
-        jSpecification.append($('<div class="field-text"/>').append('<label for="' + gThis.GetId() + '__modifier_value">' + GTranslation('form.product_variants_editor.variant_editor_modifier_value') + '</label>').append($('<span class="field"/>').append(jModifierValue)));
+        jSpecification.append($('<div class="field-text"/>').append('<label for="' + gThis.GetId() + '__modifier_value">' + GTranslation('product_variants_editor.variant_editor.modifier_value') + '</label>').append($('<span class="field"/>').append(jModifierValue)));
 
         jModifierValue.val(oVariant.modifier_value).keypress(fHandler).blur(fHandler).blur(gThis.Validation);
 
@@ -159,7 +159,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
             $(this).closest('.field').removeClass('focus');
         });
 
-        jSpecification.append($('<div class="field-text"/>').append('<label for="' + gThis.GetId() + '__stock">' + GTranslation('form.product_variants_editor.variant_editor_stock') + '</label>').append($('<span class="field"/>').append(jStock)));
+        jSpecification.append($('<div class="field-text"/>').append('<label for="' + gThis.GetId() + '__stock">' + GTranslation('product_variants_editor.variant_editor.stock') + '</label>').append($('<span class="field"/>').append(jStock)));
         jStock.val(oVariant.stock);
 
         jStock.keypress(function (eEvent) {
@@ -176,7 +176,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
             $(this).closest('.field').removeClass('focus');
         });
 
-        jSpecification.append($('<div class="field-text"/>').append('<label for="' + gThis.GetId() + '__symbol">Symbol</label>').append($('<span class="field"/>').append(jSymbol)));
+        jSpecification.append($('<div class="field-text"/>').append('<label for="' + gThis.GetId() + '__symbol">' + GTranslation('product_variants_editor.variant_editor.symbol') + '</label>').append($('<span class="field"/>').append(jSymbol)));
         jSymbol.val(oVariant.symbol);
 
         jSymbol.keypress(function (eEvent) {
@@ -192,9 +192,9 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
         }).blur(function () {
             $(this).closest('.field').removeClass('focus');
         });
-        jStatusType.append('<option' + ((1 == oVariant.status) ? ' selected="selected"' : '') + ' value="' + 1 + '">Aktywny</option>');
-        jStatusType.append('<option' + ((0 == oVariant.status) ? ' selected="selected"' : '') + ' value="' + 0 + '">Nieaktywny</option>');
-        jSpecification.append($('<div class="field-select"/>').append('<label for="' + gThis.GetId() + '__status">Status</label>').append($('<span class="field"/>').append(jStatusType)));
+        jStatusType.append('<option' + ((1 == oVariant.status) ? ' selected="selected"' : '') + ' value="' + 1 + '">' + GTranslation('product_variants_editor.variant_editor.enabled') + '</option>');
+        jStatusType.append('<option' + ((0 == oVariant.status) ? ' selected="selected"' : '') + ' value="' + 0 + '">' + GTranslation('product_variants_editor.variant_editor.disabled') + '</option>');
+        jSpecification.append($('<div class="field-select"/>').append('<label for="' + gThis.GetId() + '__status">' + GTranslation('product_variants_editor.variant_editor.status') + '</label>').append($('<span class="field"/>').append(jStatusType)));
         jStatusType.GSelect();
 
         var jAvailability = $('<select id="' + gThis.GetId() + '__availability"/>').focus(function () {
@@ -205,7 +205,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
         for (var i in gThis.m_oOptions.aoAvailability) {
             jAvailability.append('<option' + ((i == oVariant.availability) ? ' selected="selected"' : '') + ' value="' + i + '">' + gThis.m_oOptions.aoAvailability[i] + '</option>');
         }
-        jSpecification.append($('<div class="field-select"/>').append('<label for="' + gThis.GetId() + '__status">Dostępność</label>').append($('<span class="field"/>').append(jAvailability)));
+        jSpecification.append($('<div class="field-select"/>').append('<label for="' + gThis.GetId() + '__status">' + GTranslation('product_variants_editor.variant_editor.availability') + '</label>').append($('<span class="field"/>').append(jAvailability)));
         jAvailability.GSelect();
 
         var jWeight = $('<input type="text" id="' + gThis.GetId() + '__weight"/>').focus(function () {
@@ -213,7 +213,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
         }).blur(function () {
             $(this).closest('.field').removeClass('focus');
         });
-        jSpecification.append($('<div class="field-text"/>').append('<label for="' + gThis.GetId() + '__weight">Waga</label>').append($('<span class="field"/>').append(jWeight)));
+        jSpecification.append($('<div class="field-text"/>').append('<label for="' + gThis.GetId() + '__weight">' + GTranslation('product_variants_editor.variant_editor.weight') + '</label>').append($('<span class="field"/>').append(jWeight)));
         jWeight.val(oVariant.weight);
 
         jWeight.keypress(function (eEvent) {
@@ -225,7 +225,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
         });
 
         var jPhoto = $('<div class="attribute-photos" />');
-        jPhoto.append('<h3>Choose photo</h3><input type="hidden" id="' + gThis.GetId() + '__photo" value="' + oVariant.photo + '" />');
+        jPhoto.append('<h3>' + GTranslation('product_variants_editor.variant_editor.photos') + '</h3><input type="hidden" id="' + gThis.GetId() + '__photo" value="' + oVariant.photo + '" />');
         for (var i = 0; i < gThis.m_oOptions.aoPhotos.length; i++) {
             jPhoto.append('<img' + ((gThis.m_oOptions.aoPhotos[i].id == oVariant.photo) ? ' class="selected"' : '') + ' id="' + gThis.m_oOptions.aoPhotos[i].id + '" src="' + gThis.m_oOptions.aoPhotos[i].thumb + '" />');
         }
@@ -271,7 +271,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
             $(this).closest('.field').removeClass('focus');
         });
 
-        jSelect.append('<option value="">' + GTranslation('form.product_variants_editor.choose_attribute') + '</option>');
+        jSelect.append('<option value="">' + GTranslation('product_variants_editor.label.choose_attribute') + '</option>');
         var j = 0;
         for (var i = 0; i < gThis.m_aoAttributes.length; i++) {
             if ($.inArray(gThis.m_aoAttributes[i].id, asExistingAttributes) != -1) {
@@ -412,11 +412,11 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
         gThis.m_jVariantEditorOptions = $('<ul class="options"/>');
         gThis.m_jVariantEditorWrapper.append(gThis.m_jVariantEditorOptions);
         var jAdd = $('<a class="add button" href="#"/>');
-        jAdd.append('<span><img src="' + gThis._GetImage('AddIcon') + '" alt=""/>' + GTranslation('form.product_variants_editor.add_variant') + '</span>');
+        jAdd.append('<span><img src="' + gThis._GetImage('AddIcon') + '" alt=""/>' + GTranslation('product_variants_editor.button.add_variant') + '</span>');
         var jSave = $('<a class="save button" href="#"/>');
-        jSave.append('<span><img src="' + gThis._GetImage('SaveIcon') + '" alt=""/>' + GTranslation('form.product_variants_editor.save_variant') + '</span>');
+        jSave.append('<span><img src="' + gThis._GetImage('SaveIcon') + '" alt=""/>' + GTranslation('product_variants_editor.button.save_variant') + '</span>');
         var jGenerate = $('<a class="add button" href="#"/>');
-        jGenerate.append('<span><img src="' + gThis._GetImage('AddIcon') + '" alt=""/>' + GTranslation('form.product_variants_editor.variant_editor_auto_generate') + '</span>');
+        jGenerate.append('<span><img src="' + gThis._GetImage('AddIcon') + '" alt=""/>' + GTranslation('product_variants_editor.button.auto_generate') + '</span>');
         if (gThis.m_oOptions.bAllowGenerate == 1) {
             gThis.m_jVariantEditorOptions.append($('<li/>').append(jGenerate));
         }
@@ -512,7 +512,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
 
     gThis._PrepareSetSelect = function () {
         jSetSelectField = $('<div class="field-select"/>');
-        jSetSelectField.append('<label for="' + gThis.GetId() + '__set">' + GTranslation('form.product_variants_editor.set_for_this_product') + ' <small>' + GTranslation('form.product_variants_editor.set_for_this_product_suffix') + '</small></label>');
+        jSetSelectField.append('<label for="' + gThis.GetId() + '__set">' + GTranslation('product_variants_editor.label.set_for_this_product') + ' <small>' + GTranslation('product_variants_editor.label.set_for_this_product_suffix') + '</small></label>');
         gThis.m_jSetSelectNode = $('<span class="repetition"/>');
         jSetSelectField.append(gThis.m_jSetSelectNode);
         gThis._CreateSetSelectNode([]);
@@ -572,7 +572,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
         gThis.m_jSetEditor = $('<ul class="set-editor"/>');
         gThis.m_jSetEditor.css('display', 'none');
         gThis.m_jSetEditorLabel = $('<h3/>');
-        gThis.m_jSetEditorLabel.append('<span>' + GTranslation('form.product_variants_editor.availble_attributes') + '</span>');
+        gThis.m_jSetEditorLabel.append('<span>' + GTranslation('product_variants_editor.label.available_attributes') + '</span>');
         gThis.m_jSetEditorLabel.css('display', 'none');
         gThis.m_jNode.append(gThis.m_jSetEditorLabel);
         gThis.m_jNode.append(gThis.m_jSetEditor);
@@ -589,7 +589,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
                 var jValue = $('<li><input type="checkbox" data-attribute="' + gThis.m_aoAttributes[i].id + '" class="generate" value="' + oValue.id + '" /> ' + oValue.name + '</li>');
                 jUl.append(jValue);
             }
-            var jSaveValue = $('<a class="save" href="#"/>').append('<img src="' + gThis._GetImage('SaveIcon') + '" alt="' + GTranslation('form.product_variants_editor.save_value') + '" title="' + GTranslation('form.product_variants_editor.save_value') + '"/>');
+            var jSaveValue = $('<a class="save" href="#"/>').append('<img src="' + gThis._GetImage('SaveIcon') + '" alt="' + GTranslation('product_variants_editor.button.save_value') + '" title="' + GTranslation('product_variants_editor.button.save_value') + '"/>');
             var jValueField = $('<input class="value" type="text"/>').focus(function () {
                 $(this).closest('.field').addClass('focus');
             }).blur(function () {
@@ -604,7 +604,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
             });
             jValueField.get(0).sAttributeId = gThis.m_aoAttributes[i].id;
             var jValueFieldWrapper = $('<span class="field-text"/>').append($('<span class="field">').append(jValueField)).hide();
-            var jAddValue = $('<a class="add" href="#"/>').append('<img src="' + gThis._GetImage('AddIcon') + '" alt="' + GTranslation('form.product_variants_editor.add_value') + '" title="' + GTranslation('form.product_variants_editor.add_value') + '"/>');
+            var jAddValue = $('<a class="add" href="#"/>').append('<img src="' + gThis._GetImage('AddIcon') + '" alt="' + GTranslation('product_variants_editor.button.add_value') + '" title="' + GTranslation('product_variants_editor.button.add_value') + '"/>');
             jAddValue.click(function () {
                 $(this).closest('li').find('.add').hide();
                 $(this).closest('li').find('.field-text').show();
@@ -628,7 +628,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
             jAttribute.append(jUl);
             gThis.m_jSetEditor.append(jAttribute);
         }
-        var jSaveAttribute = $('<a class="save" href="#"/>').append('<img src="' + gThis._GetImage('SaveIcon') + '" alt="' + GTranslation('form.product_variants_editor.save_attribute') + '" title="' + GTranslation('form.product_variants_editor.save_attribute') + '"/>');
+        var jSaveAttribute = $('<a class="save" href="#"/>').append('<img src="' + gThis._GetImage('SaveIcon') + '" alt="' + GTranslation('product_variants_editor.button.save_attribute') + '" title="' + GTranslation('product_variants_editor.button.save_attribute') + '"/>');
         var jAttributeField = $('<input class="attribute" type="text"/>').focus(function () {
             $(this).closest('.field').addClass('focus');
         }).blur(function () {
@@ -642,7 +642,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
             }
         });
         var jAttributeFieldWrapper = $('<span class="field-text"/>').append($('<span class="field">').append(jAttributeField)).hide();
-        var jAddAttribute = $('<a class="add" href="#"/>').append('<img src="' + gThis._GetImage('AddIcon') + '" alt="' + GTranslation('form.product_variants_editor.add_attribute') + '" title="' + GTranslation('form.product_variants_editor.add_attribute') + '"/>');
+        var jAddAttribute = $('<a class="add" href="#"/>').append('<img src="' + gThis._GetImage('AddIcon') + '" alt="' + GTranslation('product_variants_editor.button.add_attribute') + '" title="' + GTranslation('product_variants_editor.button.add_attribute') + '"/>');
         jAddAttribute.click(function () {
             $(this).closest('h4').find('.add').hide();
             $(this).closest('h4').find('.field-text').show();
@@ -875,7 +875,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
 
         var column_modifier = new GF_Datagrid_Column({
             id: 'modifier',
-            caption: GTranslation('form.product_variants_editor.modifier'),
+            caption: GTranslation('product_variants_editor.label.modifier'),
             appearance: {
                 width: 70
             }
@@ -956,7 +956,6 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
             gThis.m_jField.append('<input value="' + oVariant['stock'] + '" name="' + gThis.GetName() + '[' + oVariant.id + '][stock]" type="hidden"/>');
             gThis.m_jField.append('<input value="' + oVariant['symbol'] + '" name="' + gThis.GetName() + '[' + oVariant.id + '][symbol]" type="hidden"/>');
             gThis.m_jField.append('<input value="' + oVariant['status'] + '" name="' + gThis.GetName() + '[' + oVariant.id + '][status]" type="hidden"/>');
-            ;
             gThis.m_jField.append('<input value="' + oVariant['weight'] + '" name="' + gThis.GetName() + '[' + oVariant.id + '][weight]" type="hidden"/>');
             gThis.m_jField.append('<input value="' + oVariant['availability'] + '" name="' + gThis.GetName() + '[' + oVariant.id + '][availability]" type="hidden"/>');
             gThis.m_jField.append('<input value="' + oVariant['photo'] + '" name="' + gThis.GetName() + '[' + oVariant.id + '][photo]" type="hidden"/>');
@@ -1004,7 +1003,7 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
     };
 
     gThis.ProcessVariant = function (oRow) {
-        oRow.status = (oRow.status == 1) ? 'Aktywny' : 'Nieaktywny';
+        oRow.status = (oRow.status == 1) ? GTranslation('common.label.yes') : GTranslation('common.label.no');
         oRow.modifier_value = (!isNaN(parseFloat(oRow.modifier_value))) ? parseFloat(oRow.modifier_value).toFixed(2) : '0.00';
         switch (oRow.modifier_type) {
             case '%':
