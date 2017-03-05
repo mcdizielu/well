@@ -70,6 +70,11 @@ final class SearchManager implements SearchManagerInterface
         return $this->adapter->addDocument($document);
     }
     
+    public function addDocuments(Collection $documents, string $locale, string $type)
+    {
+        return $this->adapter->addDocuments($documents, $locale, $type);
+    }
+    
     public function updateDocument(DocumentInterface $document)
     {
         return $this->adapter->addDocument($document);

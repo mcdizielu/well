@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Component\Search\Adapter\ElasticSearch;
 
+use Doctrine\Common\Collections\Collection;
 use Elasticsearch\Client;
 use Elasticsearch\ClientBuilder;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -74,6 +75,13 @@ final class ElasticSearchAdapter implements AdapterInterface
         ];
         
         $this->getClient()->index($params);
+    }
+    
+    public function addDocuments(Collection $documents, string $locale, string $type)
+    {
+        $documents->map(function (DocumentInterface $document) {
+            $this->addDocument($document);
+        });
     }
     
     public function removeDocument(DocumentInterface $document)

@@ -25,7 +25,7 @@ class ReindexAction implements ConsoleActionInterface
     {
         return [
             'wellcommerce:search:reindex' => [
-                '--batch' => 10,
+                '--batch' => 150,
             ],
         ];
     }

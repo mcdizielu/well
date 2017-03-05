@@ -39,6 +39,10 @@
     <div class="btns text-center">
         <button class="btn btn-default" onclick="$('#search').submit();return false;">See all results</button>
     </div>
+	<div class="text-right">
+		<img style="position: relative; margin: 10px; width: 100px; top: -75px;" src="{{ asset('themes/wellcommerce-default-theme/assets/img/Algolia_logo_bg-white.jpg') }}" alt="Algolia" title="Search powered by Algolia"/>
+	</div>
+
 {% else %}
     <div class="btns text-center">
         <div class="alert alert-warning nomargin">{% trans %}search.flash.no_results{% endtrans %}</div>

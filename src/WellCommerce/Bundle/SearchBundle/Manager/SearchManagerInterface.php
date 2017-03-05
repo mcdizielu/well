@@ -28,6 +28,8 @@ interface SearchManagerInterface
     
     public function addDocument(DocumentInterface $document);
     
+    public function addDocuments(Collection $documents, string $locale, string $type);
+    
     public function updateDocument(DocumentInterface $document);
     
     public function removeDocument(DocumentInterface $document);

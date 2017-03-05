@@ -13,6 +13,7 @@
 namespace WellCommerce\Component\Search\Adapter\Algolia;
 
 use AlgoliaSearch\Client;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use WellCommerce\Component\Search\Adapter\AdapterInterface;
 use WellCommerce\Component\Search\Adapter\QueryBuilderInterface;
@@ -68,6 +69,24 @@ final class AlgoliaSearchAdapter implements AdapterInterface
         $index     = $this->getClient()->initIndex($indexName);
         
         $index->addObject($this->createDocumentBody($document), $document->getIdentifier());
+    }
+    
+    public function addDocuments(Collection $documents, string $locale, string $type)
+    {
+        $request = [];
+        
+        $documents->map(function (DocumentInterface $document) use (&$request) {
+            $body             = $this->createDocumentBody($document);
+            $body['objectID'] = $document->getIdentifier();
+            $request[]        = $body;
+        });
+        
+        $indexName = $this->getIndexName($locale, $type);
+        $index     = $this->getClient()->initIndex($indexName);
+        
+        if (!empty($request)) {
+            $index->addObjects($request);
+        }
     }
     
     public function removeDocument(DocumentInterface $document)

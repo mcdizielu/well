@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Component\Search\Adapter;
 
+use Doctrine\Common\Collections\Collection;
 use WellCommerce\Component\Search\Model\DocumentInterface;
 use WellCommerce\Component\Search\Request\SearchRequestInterface;
 
@@ -31,6 +32,8 @@ interface AdapterInterface
     public function flushIndex(string $locale, string $type);
     
     public function addDocument(DocumentInterface $document);
+    
+    public function addDocuments(Collection $documents, string $locale, string $type);
     
     public function updateDocument(DocumentInterface $document);
     

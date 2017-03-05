@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\SearchBundle\Command;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Tools\Pagination\Paginator;
@@ -70,7 +71,7 @@ final class ReindexCommand extends ContainerAwareCommand
             null,
             InputOption::VALUE_REQUIRED,
             'Batch size',
-            1
+            150
         );
         
         $this->addOption(
@@ -114,18 +115,21 @@ final class ReindexCommand extends ContainerAwareCommand
         $this->manager->removeIndex($locale, $this->type->getName());
         $this->manager->createIndex($locale, $this->type->getName());
         
-        $progress = new ProgressBar($output, $totalEntities);
+        $progress = new ProgressBar($output, count($iterations));
         $progress->setFormat('verbose');
         $progress->setRedrawFrequency($this->batchSize);
         $progress->start();
         
         foreach ($iterations as $iteration) {
-            $entities = $this->getEntities($iteration);
+            $entities  = $this->getEntities($iteration);
+            $documents = new ArrayCollection();
             foreach ($entities as $entity) {
                 $document = $this->type->createDocument($entity, $locale);
-                $this->manager->addDocument($document);
-                $progress->advance();
+                $documents->add($document);
             }
+            
+            $this->manager->addDocuments($documents, $locale, $this->type->getName());
+            $progress->advance();
         }
         
         $progress->finish();
