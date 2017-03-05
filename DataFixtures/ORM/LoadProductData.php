@@ -132,6 +132,9 @@ class LoadProductData extends AbstractDataFixture
             $translation->setSlug(Helper::urlize($name));
             $translation->setShortDescription($shortDescription);
             $translation->setDescription($description);
+            $translation->getMeta()->setTitle($name);
+            $translation->getMeta()->setKeywords($shortDescription);
+            $translation->getMeta()->setDescription($description);
         }
         
         $product->mergeNewTranslations();

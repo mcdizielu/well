@@ -38,6 +38,7 @@ class LoadProductStatusData extends AbstractDataFixture
             $bestseller->translate($locale->getCode())->setName('Bestsellers');
             $bestseller->translate($locale->getCode())->setSlug($locale->getCode() . '/' . 'bestseller');
             $bestseller->translate($locale->getCode())->setCssClass('bestseller');
+            $bestseller->translate($locale->getCode())->getMeta()->setTitle('Bestselling products');
         }
         
         $bestseller->mergeNewTranslations();
@@ -50,6 +51,7 @@ class LoadProductStatusData extends AbstractDataFixture
             $featured->translate($locale->getCode())->setName('Featured');
             $featured->translate($locale->getCode())->setSlug($locale->getCode() . '/' . 'featured');
             $featured->translate($locale->getCode())->setCssClass('featured');
+            $featured->translate($locale->getCode())->getMeta()->setTitle('Featured products');
         }
         $featured->mergeNewTranslations();
         $manager->persist($featured);
@@ -61,6 +63,7 @@ class LoadProductStatusData extends AbstractDataFixture
             $novelty->translate($locale->getCode())->setName('New products');
             $novelty->translate($locale->getCode())->setSlug($locale->getCode() . '/' . 'novelty');
             $novelty->translate($locale->getCode())->setCssClass('novelty');
+            $novelty->translate($locale->getCode())->getMeta()->setTitle('New products');
         }
         
         $novelty->mergeNewTranslations();
@@ -73,47 +76,48 @@ class LoadProductStatusData extends AbstractDataFixture
             $promotion->translate($locale->getCode())->setName('Promotions');
             $promotion->translate($locale->getCode())->setSlug($locale->getCode() . '/' . 'promotion');
             $promotion->translate($locale->getCode())->setCssClass('promotion');
+            $promotion->translate($locale->getCode())->getMeta()->setTitle('Promotions & special offers');
         }
         
         $promotion->mergeNewTranslations();
         $manager->persist($promotion);
         $this->addReference('product_status_promotion', $promotion);
-    
+        
         $manager->flush();
         
         $this->createLayoutBoxes($manager, [
-            'bestsellers'     => [
+            'bestsellers'       => [
                 'type'     => 'ProductStatus',
                 'name'     => 'Bestsellers',
                 'settings' => [
                     'status' => $this->getReference('product_status_bestseller')->getId(),
                 ],
             ],
-            'new_products'        => [
+            'new_products'      => [
                 'type'     => 'ProductStatus',
                 'name'     => 'New arrivals',
                 'settings' => [
                     'status' => $this->getReference('product_status_novelty')->getId(),
                 ],
             ],
-            'featured_products'       => [
+            'featured_products' => [
                 'type'     => 'ProductStatus',
                 'name'     => 'Featured products',
                 'settings' => [
                     'status' => $this->getReference('product_status_featured')->getId(),
                 ],
             ],
-            'promotions'      => [
+            'promotions'        => [
                 'type'     => 'ProductStatus',
                 'name'     => 'Promotions',
                 'settings' => [
                     'status' => $this->getReference('product_status_promotion')->getId(),
                 ],
             ],
-            'dynamic_status' => [
+            'dynamic_status'    => [
                 'type' => 'ProductStatus',
                 'name' => 'Dynamic product status box',
-            ]
+            ],
         ]);
         
         $manager->flush();

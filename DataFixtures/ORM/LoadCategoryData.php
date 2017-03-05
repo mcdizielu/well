@@ -82,7 +82,12 @@ class LoadCategoryData extends AbstractDataFixture
                 /** @var CategoryTranslation $translation */
                 $translation = $category->translate($locale->getCode());
                 $translation->setName($name);
+                $translation->setShortDescription($shortDescription = $this->getFakerGenerator()->text(100));
+                $translation->setDescription($description = $this->getFakerGenerator()->text(200));
                 $translation->setSlug(Helper::urlize($name));
+                $translation->getMeta()->setTitle($name);
+                $translation->getMeta()->setKeywords($shortDescription);
+                $translation->getMeta()->setDescription($description);
             }
             $category->mergeNewTranslations();
             $manager->persist($category);
