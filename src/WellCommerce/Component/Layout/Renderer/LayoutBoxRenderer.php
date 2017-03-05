@@ -63,6 +63,7 @@ final class LayoutBoxRenderer implements LayoutBoxRendererInterface
             $collection->add($name, $value);
         }
         
+        $collection->add('identifier', $box->getIdentifier());
         $collection->add('name', $box->getBoxName());
         $collection->add('content', $box->getBoxContent());
         
