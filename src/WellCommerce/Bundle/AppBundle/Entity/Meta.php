@@ -52,4 +52,9 @@ class Meta
     {
         $this->description = $description;
     }
+    
+    public function isEmpty(): bool
+    {
+        return mb_strlen($this->title) === 0 && mb_strlen($this->description) === 0 && mb_strlen($this->keywords) === 0;
+    }
 }

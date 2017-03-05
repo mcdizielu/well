@@ -49,6 +49,14 @@ class LoadShopData extends AbstractDataFixture
         $shop->setDefaultCountry('US');
         $shop->setDefaultCurrency($currency->getCode());
         $shop->setClientGroup($this->getReference('client_group'));
+        
+        foreach ($this->getLocales() as $locale) {
+            $shop->translate($locale->getCode())->getMeta()->setTitle('WellCommerce');
+            $shop->translate($locale->getCode())->getMeta()->setKeywords('e-commerce, open-source, symfony, framework, shop');
+            $shop->translate($locale->getCode())->getMeta()->setDescription('Modern e-commerce engine built on top of Symfony 3 full-stack framework');
+        }
+        
+        $shop->mergeNewTranslations();
         $manager->persist($shop);
         $manager->flush();
         

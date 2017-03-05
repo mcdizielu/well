@@ -37,9 +37,10 @@ class NewsController extends AbstractFrontController
             'label' => $news->translate()->getTopic(),
         ]));
         
+        $this->getMetadataHelper()->setMetadata($news->translate()->getMeta());
+        
         return $this->displayTemplate('view', [
-            'news'     => $news,
-            'metadata' => $news->translate()->getMeta(),
+            'news' => $news,
         ]);
     }
     

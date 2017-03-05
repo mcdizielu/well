@@ -23,16 +23,16 @@ use WellCommerce\Component\Breadcrumb\Model\Breadcrumb;
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class CategoryController extends AbstractFrontController
+class CategoryController extends AbstractFrontController
 {
     public function indexAction(Category $category): Response
     {
         $this->addBreadcrumbs($category);
         $this->getCategoryStorage()->setCurrentCategory($category);
+        $this->getMetadataHelper()->setMetadata($category->translate()->getMeta());
         
         return $this->displayTemplate('index', [
             'category' => $category,
-            'metadata' => $category->translate()->getMeta(),
         ]);
     }
     

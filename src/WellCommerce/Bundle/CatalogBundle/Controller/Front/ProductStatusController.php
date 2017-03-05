@@ -31,10 +31,10 @@ class ProductStatusController extends AbstractFrontController
         ]));
         
         $this->getProductStatusStorage()->setCurrentProductStatus($status);
+        $this->getMetadataHelper()->setMetadata($status->translate()->getMeta());
         
         return $this->displayTemplate('index', [
-            'status'   => $status,
-            'metadata' => $status->translate()->getMeta(),
+            'status' => $status,
         ]);
     }
 }

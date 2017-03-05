@@ -31,3 +31,13 @@ services:
 
     country.repository:
         class: WellCommerce\Bundle\AppBundle\Repository\CountryRepository
+
+    metadata.helper:
+        class: WellCommerce\Bundle\AppBundle\Helper\MetadataHelper
+        arguments: ['@shop.storage']
+
+    twig.extension.metadata:
+        class: WellCommerce\Bundle\AppBundle\Twig\MetadataExtension
+        arguments: ['@metadata.helper']
+        tags:
+            - { name: twig.extension }

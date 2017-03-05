@@ -14,6 +14,7 @@ namespace WellCommerce\Bundle\AppBundle\Entity;
 
 use Knp\DoctrineBehaviors\Model\Blameable\Blameable;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
+use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 use WellCommerce\Bundle\CoreBundle\Entity\MailerConfiguration;
@@ -28,6 +29,7 @@ class Shop implements EntityInterface
     use Identifiable;
     use Timestampable;
     use Blameable;
+    use Translatable;
     
     protected $name            = '';
     protected $url             = '';
@@ -137,5 +139,10 @@ class Shop implements EntityInterface
     public function setTheme(Theme $theme = null)
     {
         $this->theme = $theme;
+    }
+    
+    public function translate($locale = null, $fallbackToDefault = true): ShopTranslation
+    {
+        return $this->doTranslate($locale, $fallbackToDefault);
     }
 }

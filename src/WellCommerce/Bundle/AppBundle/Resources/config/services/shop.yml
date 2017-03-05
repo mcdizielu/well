@@ -23,7 +23,7 @@ services:
             - { name: doctrine.event_subscriber }
 
     twig.extension.shop:
-        class: WellCommerce\Bundle\AppBundle\Twig\Extension\ShopExtension
+        class: WellCommerce\Bundle\AppBundle\Twig\ShopExtension
         tags:
             - { name: twig.extension }
         arguments: ['@shop.storage', '@shop.dataset.admin']

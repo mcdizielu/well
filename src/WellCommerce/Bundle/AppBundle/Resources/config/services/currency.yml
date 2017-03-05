@@ -14,7 +14,7 @@ services:
             - [setContainer, ['@service_container']]
 
     twig.extension.currency:
-        class: WellCommerce\Bundle\AppBundle\Twig\Extension\CurrencyExtension
+        class: WellCommerce\Bundle\AppBundle\Twig\CurrencyExtension
         tags:
             - { name: twig.extension }
         arguments: ['@currency.helper', '@currency.dataset.front']

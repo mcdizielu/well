@@ -42,10 +42,10 @@ class PageController extends AbstractFrontController
         ]));
         
         $this->getPageRequestStorage()->setCurrentPage($page);
+        $this->getMetadataHelper()->setMetadata($page->translate()->getMeta());
         
         return $this->displayTemplate('index', [
             'page'     => $page,
-            'metadata' => $page->translate()->getMeta(),
         ]);
     }
     

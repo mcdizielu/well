@@ -12,6 +12,7 @@
 namespace WellCommerce\Bundle\CoreBundle\Controller\Front;
 
 use WellCommerce\Bundle\AppBundle\Entity\Client;
+use WellCommerce\Bundle\AppBundle\Helper\MetadataHelper;
 use WellCommerce\Bundle\CatalogBundle\Request\Storage\CategoryStorageInterface;
 use WellCommerce\Bundle\CatalogBundle\Request\Storage\ProducerStorageInterface;
 use WellCommerce\Bundle\CatalogBundle\Request\Storage\ProductStatusStorageInterface;
@@ -49,6 +50,11 @@ abstract class AbstractFrontController extends AbstractController
     protected function getOrderProvider(): OrderProviderInterface
     {
         return $this->get('order.provider.front');
+    }
+    
+    protected function getMetadataHelper(): MetadataHelper
+    {
+        return $this->get('metadata.helper');
     }
     
     protected function getAuthenticatedClient(): Client

@@ -231,7 +231,13 @@
     Translator.add("currency.button.sync", "Synchronizuj kursy walutowe", "wellcommerce", "pl");
     Translator.add("currency.label.code", "Kod", "wellcommerce", "pl");
     Translator.add("currency.comment.enabled", "Waluta b\u0119dzie widoczna w sklepie", "wellcommerce", "pl");
+    Translator.add("dashboard.heading.index", "Dashboard", "wellcommerce", "pl");
     Translator.add("dashboard.heading.carts", "Koszyki", "wellcommerce", "pl");
+    Translator.add("dashboard.heading.last_opinions", "Ostatnie opinie", "wellcommerce", "pl");
+    Translator.add("dashboard.heading.last_orders", "Ostatnie zam\u00f3wienia", "wellcommerce", "pl");
+    Translator.add("dashboard.heading.new_customers", "Nowi klienci", "wellcommerce", "pl");
+    Translator.add("dashboard.heading.bestsellers", "Bestsellery", "wellcommerce", "pl");
+    Translator.add("dashboard.heading.customers_online", "Klienci online", "wellcommerce", "pl");
     Translator.add("dictionary.heading.index", "T\u0142umaczenia", "wellcommerce", "pl");
     Translator.add("dictionary.heading.add", "Dodaj t\u0142umaczenie", "wellcommerce", "pl");
     Translator.add("dictionary.heading.edit", "Edytuj t\u0142umaczenie", "wellcommerce", "pl");
@@ -337,12 +343,6 @@
     Translator.add("user_group.heading.add", "Dodaj grup\u0119 administrator\u00f3w", "wellcommerce", "pl");
     Translator.add("user_group.heading.edit", "Edytuj grup\u0119 administrator\u00f3w", "wellcommerce", "pl");
     Translator.add("user_group.label.permissions", "Uprawnienia", "wellcommerce", "pl");
-    Translator.add("admin.heading.last_opinions", "Ostatnie opinie", "wellcommerce", "pl");
-    Translator.add("admin.heading.last_orders", "Ostatnie zam\u00f3wienia", "wellcommerce", "pl");
-    Translator.add("admin.heading.new_customers", "Nowi klienci", "wellcommerce", "pl");
-    Translator.add("admin.heading.bestsellers", "Bestsellery", "wellcommerce", "pl");
-    Translator.add("admin.heading.customers_online", "Klienci online", "wellcommerce", "pl");
-    Translator.add("admin.heading.dashboard", "Dashboard", "wellcommerce", "pl");
     Translator.add("admin.label.content", "Tre\u015b\u0107", "wellcommerce", "pl");
     Translator.add("admin.label.customer", "Zamawiaj\u0105cy", "wellcommerce", "pl");
     Translator.add("admin.label.sum", "Suma", "wellcommerce", "pl");
@@ -544,6 +544,8 @@
     Translator.add("deliverer.heading.index", "Dostawcy", "wellcommerce", "pl");
     Translator.add("deliverer.heading.add", "Dodaj dostawc\u0119", "wellcommerce", "pl");
     Translator.add("deliverer.heading.edit", "Edytuj dostawc\u0119", "wellcommerce", "pl");
+    Translator.add("layered_navigation.label.price", "Filtruj po cenie", "wellcommerce", "pl");
+    Translator.add("layered_navigation.label.brand", "Filtruj po marce", "wellcommerce", "pl");
     Translator.add("layout_box.layered_navigation.tip", "Ustawienia wy\u015bwietlania dla boksu", "wellcommerce", "pl");
     Translator.add("layout_box.layered_navigation.enable_price_filter", "W\u0142\u0105cz filtrowanie po cenie", "wellcommerce", "pl");
     Translator.add("layout_box.layered_navigation.enable_brand_filter", "W\u0142\u0105cz filtrowanie po marce", "wellcommerce", "pl");
@@ -607,8 +609,6 @@
     Translator.add("product.label.dimension.width", "Szeroko\u015b\u0107", "wellcommerce", "pl");
     Translator.add("product.label.dimension.height", "Wysoko\u015b\u0107", "wellcommerce", "pl");
     Translator.add("product.label.dimension.depth", "G\u0142\u0119boko\u015b\u0107", "wellcommerce", "pl");
-    Translator.add("product.label.layered_navigation.price", "Filtruj po cenie", "wellcommerce", "pl");
-    Translator.add("product.label.layered_navigation.brand", "Filtruj po marce", "wellcommerce", "pl");
     Translator.add("product.label.short_description", "Kr\u00f3tki opis", "wellcommerce", "pl");
     Translator.add("product.label.description", "Opis", "wellcommerce", "pl");
     Translator.add("product.button.filter", "Filtrowanie wynik\u00f3w", "wellcommerce", "pl");
@@ -724,6 +724,7 @@
     Translator.add("layout_box.showcase.tip", "Wybierz status dla kt\u00f3rego b\u0119d\u0105 wy\u015bwietlane produkty w boksie", "wellcommerce", "pl");
     Translator.add("layout_box.showcase.limit", "Element\u00f3w w slajdzie", "wellcommerce", "pl");
     Translator.add("client.flash.empty_wishlist", "Twoja lista \u017cycze\u0144 jest pusta", "wellcommerce", "pl");
+    Translator.add("wishlist.button.add", "Dodaj do schowka", "wellcommerce", "pl");
     Translator.add("form.file_selector.photo", "Zdj\u0119cie", "wellcommerce", "pl");
     Translator.add("form.file_selector.main", "G\u0142\u00f3wne", "wellcommerce", "pl");
     Translator.add("form.file_selector.cancel", "Anuluj wyb\u00f3r", "wellcommerce", "pl");
@@ -734,4 +735,12 @@
     Translator.add("form.file_selector.filename", "Plik", "wellcommerce", "pl");
     Translator.add("form.file_selector.extension", "Rozszerzenie", "wellcommerce", "pl");
     Translator.add("form.file_selector.preview", "Podgl\u0105d", "wellcommerce", "pl");
+    Translator.add("admin.heading.last_opinions", "Ostatnie opinie", "wellcommerce", "pl");
+    Translator.add("admin.heading.last_orders", "Ostatnie zam\u00f3wienia", "wellcommerce", "pl");
+    Translator.add("admin.heading.new_customers", "Nowi klienci", "wellcommerce", "pl");
+    Translator.add("admin.heading.bestsellers", "Bestsellery", "wellcommerce", "pl");
+    Translator.add("admin.heading.customers_online", "Klienci online", "wellcommerce", "pl");
+    Translator.add("admin.heading.dashboard", "Dashboard", "wellcommerce", "pl");
+    Translator.add("product.label.layered_navigation.price", "Filtruj po cenie", "wellcommerce", "pl");
+    Translator.add("product.label.layered_navigation.brand", "Filtruj po marce", "wellcommerce", "pl");
 })(Translator);

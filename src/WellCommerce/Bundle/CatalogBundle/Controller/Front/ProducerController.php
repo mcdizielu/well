@@ -32,9 +32,10 @@ class ProducerController extends AbstractFrontController
         
         $this->getProducerStorage()->setCurrentProducer($producer);
         
+        $this->getMetadataHelper()->setMetadata($producer->translate()->getMeta());
+        
         return $this->displayTemplate('index', [
             'producer' => $producer,
-            'metadata' => $producer->translate()->getMeta(),
         ]);
     }
 }

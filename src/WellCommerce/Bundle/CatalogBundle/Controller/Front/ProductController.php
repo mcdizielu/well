@@ -34,10 +34,10 @@ class ProductController extends AbstractFrontController
         
         $this->addBreadcrumbs($product);
         $this->getProductStorage()->setCurrentProduct($product);
+        $this->getMetadataHelper()->setMetadata($product->translate()->getMeta());
         
         return $this->displayTemplate('index', [
             'product'  => $product,
-            'metadata' => $product->translate()->getMeta(),
         ]);
     }
     

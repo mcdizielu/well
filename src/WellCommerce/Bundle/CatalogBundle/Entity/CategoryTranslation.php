@@ -41,7 +41,7 @@ class CategoryTranslation extends AbstractTranslation implements RoutableSubject
     
     public function getShortDescription(): string
     {
-        return (string)$this->shortDescription;
+        return $this->shortDescription;
     }
     
     public function setShortDescription(string $shortDescription)
@@ -51,7 +51,7 @@ class CategoryTranslation extends AbstractTranslation implements RoutableSubject
     
     public function getDescription(): string
     {
-        return (string)$this->description;
+        return $this->description;
     }
     
     public function setDescription(string $description)

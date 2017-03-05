@@ -30,7 +30,7 @@ services:
         arguments: ['@kernel', '@admin_menu.repository']
 
     twig.extension.admin:
-        class: WellCommerce\Bundle\AppBundle\Twig\Extension\AdminExtension
+        class: WellCommerce\Bundle\AppBundle\Twig\AdminExtension
         tags:
             - { name: twig.extension }
         arguments: ['@admin_menu.provider']
