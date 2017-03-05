@@ -262,7 +262,13 @@ currency:
 
 dashboard:
     heading:
+        index: Dashboard
         carts: Koszyki
+        last_opinions: Ostatnie opinie
+        last_orders: Ostatnie zamówienia
+        new_customers: Nowi klienci
+        bestsellers: Bestsellery
+        customers_online: Klienci online
 
 dictionary:
     heading:
@@ -435,13 +441,6 @@ user_group:
         permissions: Uprawnienia
 
 admin:
-    heading:
-        last_opinions: Ostatnie opinie
-        last_orders: Ostatnie zamówienia
-        new_customers: Nowi klienci
-        bestsellers: Bestsellery
-        customers_online: Klienci online
-        dashboard: Dashboard
     label:
         content: Treść
         customer: Zamawiający

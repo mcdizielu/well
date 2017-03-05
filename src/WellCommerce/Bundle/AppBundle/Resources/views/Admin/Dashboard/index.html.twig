@@ -1,7 +1,7 @@
 {% extends 'WellCommerceAppBundle:Admin:layout.html.twig' %}
 {% trans_default_domain "wellcommerce" %}
 {% block content %}
-    <h2>{% trans %}admin.heading.dashboard{% endtrans %}</h2>
+    <h2>{% trans %}dashboard.heading.index{% endtrans %}</h2>
 
     <div class="block" id="desktop">
         {{ sales_report('admin.dashboard.index') }}
@@ -9,7 +9,7 @@
         <div class="layout-four-columns">
             <div class="column">
                 <div class="box simple">
-                    <h3>{% trans %}admin.heading.last_opinions{% endtrans %}</h3>
+                    <h3>{% trans %}dashboard.heading.last_opinions{% endtrans %}</h3>
                     <table cellspacing="0" class="full-size">
                         <thead>
                         <tr>
@@ -34,7 +34,7 @@
 
             <div class="column">
                 <div class="box simple">
-                    <h3>{% trans %}admin.heading.last_orders{% endtrans %}</h3>
+                    <h3>{% trans %}dashboard.heading.last_orders{% endtrans %}</h3>
                     <table cellspacing="0" class="full-size">
                         <thead>
                         <tr>
@@ -60,7 +60,7 @@
             <!-- begin: New customers -->
             <div class="column">
                 <div class="box simple">
-                    <h3>{% trans %}admin.heading.new_customers{% endtrans %}</h3>
+                    <h3>{% trans %}dashboard.heading.new_customers{% endtrans %}</h3>
                     <table cellspacing="0" class="full-size">
                         <thead>
                         <tr>

@@ -257,7 +257,13 @@ currency:
 
 dashboard:
     heading:
+        index: Dashboard
         carts: Carts
+        last_opinions: Last opinions
+        last_orders: Last orders
+        new_customers: New customers
+        bestsellers: Bestsellers
+        customers_online: Customers online
 
 dictionary:
     heading:
@@ -430,13 +436,6 @@ user_group:
         permissions: Permissions
 
 admin:
-    heading:
-        last_opinions: Last opinions
-        last_orders: Last orders
-        new_customers: New customers
-        bestsellers: Bestsellers
-        customers_online: Customers online
-        dashboard: Dashboard
     label:
         content: Content
         customer: Customer
