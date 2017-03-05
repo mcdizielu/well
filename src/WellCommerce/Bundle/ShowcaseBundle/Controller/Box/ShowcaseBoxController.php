@@ -31,7 +31,7 @@ class ShowcaseBoxController extends AbstractBoxController
     public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
         $categories = [];
-        $collection = $this->getCategories();
+        $collection = $this->getCategories($boxSettings);
         $status     = $boxSettings->getParam('status');
         $collection->map(function (Category $category) use (&$categories, $status, $boxSettings) {
             $conditions = $this->createConditionsCollection($status, $category->getId());
@@ -68,12 +68,25 @@ class ShowcaseBoxController extends AbstractBoxController
         return $conditions;
     }
     
-    private function getCategories(): Collection
+    private function getCategories(LayoutBoxSettingsCollection $boxSettings): Collection
     {
-        $criteria = new Criteria();
+        $categories = $this->getCategoryIdentifiers($boxSettings);
+        $criteria   = new Criteria();
         $criteria->where($criteria->expr()->isNull('parent'));
         $criteria->andWhere($criteria->expr()->eq('enabled', true));
+        if (!empty($categories)) {
+            $criteria->andWhere($criteria->expr()->in('id', $categories));
+        }
         
         return $this->get('category.repository')->matching($criteria);
+    }
+    
+    private function getCategoryIdentifiers(LayoutBoxSettingsCollection $boxSettings): array
+    {
+        $categories = $boxSettings->getParam('categories', []);
+        
+        return array_filter($categories, function ($k) {
+            return is_int($k);
+        }, ARRAY_FILTER_USE_KEY);
     }
 }

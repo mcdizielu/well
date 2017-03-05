@@ -92,7 +92,7 @@ class LayoutBoxSubscriber extends AbstractEventSubscriber
     private function mergeUnmodifiedSettings(array $oldSettings, array $newSettings): array
     {
         foreach ($newSettings as $key => &$setting) {
-            if (is_array($setting) && array_key_exists('unmodified', $setting)) {
+            if (is_array($setting) && array_key_exists('unmodified', $setting) && isset($setting[0])) {
                 $setting[0] = (0 !== (int)$setting[0]) ? $setting[0] : $oldSettings[$key][0];
             }
         }
