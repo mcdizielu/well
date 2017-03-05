@@ -37,6 +37,7 @@ final class LoadShowcaseData extends AbstractDataFixture
                 'name'     => 'Showcase',
                 'settings' => [
                     'status' => $this->getReference('product_status_featured')->getId(),
+                    'limit'  => 10,
                 ],
             ],
         ]);
