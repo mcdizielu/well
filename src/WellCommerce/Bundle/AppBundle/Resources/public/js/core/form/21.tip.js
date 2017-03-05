@@ -33,7 +33,7 @@ var GFormTip = GCore.ExtendClass(GFormField, function () {
     gThis._PrepareNode = function () {
         gThis.m_jNode = $('<div/>').addClass(gThis._GetClass('Field')).addClass(gThis.m_oOptions.sDirection);
         gThis.m_jNode.append('<div class="' + gThis._GetClass('Arrow') + '"/>');
-        gThis.m_jNode.append($('<div class="long"/>').append('<p>' + gThis.m_oOptions.sTip + '</p>'));
+        gThis.m_jNode.append($('<div class="long"/>').append('<p>' + GTranslation(gThis.m_oOptions.sTip) + '</p>'));
         if (gThis.m_oOptions.bRetractable) {
             gThis.m_jNode.addClass(gThis._GetClass('Retractable'));
             if (gThis.m_oOptions.sDefaultState == 'retracted') {

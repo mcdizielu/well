@@ -8,4 +8,6 @@
 
 layout_box:
     showcase:
+        status: Status
         tip: Wybierz status dla którego będą wyświetlane produkty w boksie
+        limit: Elementów w slajdzie

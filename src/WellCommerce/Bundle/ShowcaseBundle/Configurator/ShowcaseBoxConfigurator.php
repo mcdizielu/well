@@ -49,12 +49,15 @@ final class ShowcaseBoxConfigurator extends AbstractLayoutBoxConfigurator
             'tip' => 'layout_box.showcase.tip',
         ]));
         
-        $status = $fieldset->addChild($builder->getElement('select', [
+        $fieldset->addChild($builder->getElement('select', [
             'name'    => 'status',
-            'label'   => 'showcase.label.status',
+            'label'   => 'layout_box.showcase.status',
             'options' => $this->dataSet->getResult('select'),
-        ]));
+        ]))->setValue($this->getValue($defaults, '[status]'));
         
-        $status->setValue($this->getPropertyAccessor()->getValue($defaults, '[status]'));
+        $fieldset->addChild($builder->getElement('text_field', [
+            'name'  => 'limit',
+            'label' => 'layout_box.showcase.limit',
+        ]))->setValue($this->getValue($defaults, '[limit]', 10));
     }
 }

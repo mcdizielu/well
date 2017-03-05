@@ -8,4 +8,6 @@
 
 layout_box:
     showcase:
-        tip: Choose a status to display the products in the showcase box
+        status: Status
+        tip: Choose the status of products to be displayed in the box
+        limit: Items per slide

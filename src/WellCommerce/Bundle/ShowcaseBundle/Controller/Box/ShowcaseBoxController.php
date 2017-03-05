@@ -33,10 +33,11 @@ class ShowcaseBoxController extends AbstractBoxController
         $categories = [];
         $collection = $this->getCategories();
         $status     = $boxSettings->getParam('status');
-        $collection->map(function (Category $category) use (&$categories, $status) {
+        $collection->map(function (Category $category) use (&$categories, $status, $boxSettings) {
             $conditions = $this->createConditionsCollection($status, $category->getId());
-            $limit      = 10;
-            $dataset    = $this->get('product.dataset.front')->getResult('array', [
+            $limit      = $boxSettings->getParam('limit', 10);
+            
+            $dataset = $this->get('product.dataset.front')->getResult('array', [
                 'limit'      => $limit,
                 'order_by'   => 'hierarchy',
                 'order_dir'  => 'asc',

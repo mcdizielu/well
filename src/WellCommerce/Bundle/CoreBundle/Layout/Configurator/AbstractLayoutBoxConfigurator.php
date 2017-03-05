@@ -76,6 +76,15 @@ abstract class AbstractLayoutBoxConfigurator implements LayoutBoxConfiguratorInt
         return $form->getChildren()->get('required_data')->getChildren()->get('boxType');
     }
     
+    protected function getValue(array $defaults, string $path, $defaultValue = null)
+    {
+        if (null !== $value = $this->getPropertyAccessor()->getValue($defaults, $path)) {
+            return $value;
+        }
+        
+        return $defaultValue;
+    }
+    
     public function getController(): BoxControllerInterface
     {
         return $this->controller;
