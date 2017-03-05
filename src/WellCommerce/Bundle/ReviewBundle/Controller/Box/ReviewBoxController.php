@@ -60,9 +60,10 @@ class ReviewBoxController extends AbstractBoxController
         }
         
         return $this->displayTemplate('index', [
-            'form'    => $form,
-            'product' => $product,
-            'reviews' => $this->getRepository()->getProductReviews($product),
+            'form'        => $form,
+            'product'     => $product,
+            'reviews'     => $this->getRepository()->getProductReviews($product),
+            'boxSettings' => $boxSettings,
         ]);
     }
     
@@ -89,13 +90,14 @@ class ReviewBoxController extends AbstractBoxController
             
             $this->getFlashHelper()->addSuccess('report.flash.success');
             
-            return $this->getRouterHelper()->redirectTo('dynamic_' . $currentRoute);
+            return $this->redirectToRoute('dynamic_' . $currentRoute);
         }
+        
+        return $this->redirectToRoute('front.home_page.index');
     }
     
     public function recommendationAction(int $id, bool $like = true): JsonResponse
     {
-        
         try {
             $cookie      = $this->getRequestHelper()->getCurrentRequest()->cookies->get('likedReviews');
             $reviewLiked = unserialize($cookie);
@@ -118,8 +120,8 @@ class ReviewBoxController extends AbstractBoxController
             }
             
             $reviewRecommendationFactory = $this->get('review_recommendation.manager');
+            $reviewRecommendation        = $reviewRecommendationFactory->initResource();
             
-            $reviewRecommendation = $reviewRecommendationFactory->initResource();
             if ($like == true) {
                 $reviewRecommendation->setLiked(true);
             } else {

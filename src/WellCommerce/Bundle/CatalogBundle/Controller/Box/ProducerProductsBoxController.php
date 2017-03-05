@@ -25,17 +25,14 @@ use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
  */
 class ProducerProductsBoxController extends AbstractBoxController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function indexAction(LayoutBoxSettingsCollection $boxSettings) : Response
+    public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
         $dataset       = $this->get('product.dataset.front');
         $requestHelper = $this->getRequestHelper();
         $limit         = $requestHelper->getAttributesBagParam('limit', $boxSettings->getParam('per_page', 12));
         $conditions    = $this->getCurrentProducerConditions();
         $conditions    = $this->get('layered_navigation.helper')->addLayeredNavigationConditions($conditions);
-
+        
         $products = $dataset->getResult('array', [
             'limit'      => $limit,
             'page'       => $requestHelper->getAttributesBagParam('page', 1),
@@ -43,20 +40,18 @@ class ProducerProductsBoxController extends AbstractBoxController
             'order_dir'  => $requestHelper->getAttributesBagParam('orderDir', 'asc'),
             'conditions' => $conditions,
         ]);
-
+        
         return $this->displayTemplate('index', [
-            'dataset' => $products,
+            'dataset'     => $products,
+            'boxSettings' => $boxSettings,
         ]);
     }
-
-    /**
-     * @return ConditionsCollection
-     */
-    protected function getCurrentProducerConditions() : ConditionsCollection
+    
+    protected function getCurrentProducerConditions(): ConditionsCollection
     {
         $conditions = new ConditionsCollection();
         $conditions->add(new Eq('producerId', $this->getProducerStorage()->getCurrentProducerIdentifier()));
-
+        
         return $conditions;
     }
 }

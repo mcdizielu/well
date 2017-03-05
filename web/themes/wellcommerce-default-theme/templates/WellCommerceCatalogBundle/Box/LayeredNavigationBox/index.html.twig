@@ -1,9 +1,9 @@
 {% trans_default_domain "wellcommerce" %}
 {% set activeProducers = app.request.get('producers')|split('_') %}
 {% set activeAttributes = app.request.get('attributes')|split('_') %}
-{% set displayPrice = settings.param('enable_price_filter', true) %}
-{% set displayBrand = settings.param('enable_brand_filter', true) %}
-{% set displayAttributes = settings.param('enable_attribute_filter', true) %}
+{% set displayPrice = boxSettings.param('enable_price_filter', true) %}
+{% set displayBrand = boxSettings.param('enable_brand_filter', true) %}
+{% set displayAttributes = boxSettings.param('enable_attribute_filter', true) %}
 
 <div class="box">
     <div class="panel panel-default filters">

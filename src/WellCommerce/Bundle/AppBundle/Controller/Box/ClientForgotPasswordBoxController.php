@@ -17,6 +17,7 @@ use WellCommerce\Bundle\AppBundle\Exception\ResetPasswordException;
 use WellCommerce\Bundle\AppBundle\Manager\ClientManager;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
 use WellCommerce\Component\Form\Elements\FormInterface;
+use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 
 /**
  * Class ClientForgotPasswordBoxController
@@ -25,7 +26,7 @@ use WellCommerce\Component\Form\Elements\FormInterface;
  */
 class ClientForgotPasswordBoxController extends AbstractBoxController
 {
-    public function resetAction()
+    public function resetAction(LayoutBoxSettingsCollection $boxSettings)
     {
         $form = $this->formBuilder->createForm();
         
@@ -55,11 +56,12 @@ class ClientForgotPasswordBoxController extends AbstractBoxController
         }
         
         return $this->displayTemplate('reset', [
-            'form' => $form,
+            'form'        => $form,
+            'boxSettings' => $boxSettings,
         ]);
     }
     
-    public function changeAction()
+    public function changeAction(LayoutBoxSettingsCollection $boxSettings)
     {
         $hash   = $this->getRequestHelper()->getAttributesBagParam('hash');
         $client = $this->getManager()->getRepository()->findOneBy(['clientDetails.resetPasswordHash' => $hash]);
@@ -87,7 +89,8 @@ class ClientForgotPasswordBoxController extends AbstractBoxController
         
         
         return $this->displayTemplate('change', [
-            'form' => $form,
+            'form'        => $form,
+            'boxSettings' => $boxSettings,
         ]);
     }
     

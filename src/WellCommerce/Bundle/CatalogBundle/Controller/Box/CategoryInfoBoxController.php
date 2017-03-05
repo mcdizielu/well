@@ -23,10 +23,11 @@ use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
  */
 final class CategoryInfoBoxController extends AbstractBoxController
 {
-    public function indexAction(LayoutBoxSettingsCollection $boxSettings) : Response
+    public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
         return $this->displayTemplate('index', [
-            'category' => $this->getCategoryStorage()->getCurrentCategory()
+            'category'    => $this->getCategoryStorage()->getCurrentCategory(),
+            'boxSettings' => $boxSettings,
         ]);
     }
 }

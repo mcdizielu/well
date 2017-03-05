@@ -43,7 +43,8 @@ class ClientAddressBookBoxController extends AbstractBoxController
         }
         
         return $this->displayTemplate('index', [
-            'form' => $addressBookForm,
+            'form'        => $addressBookForm,
+            'boxSettings' => $boxSettings,
         ]);
     }
 }

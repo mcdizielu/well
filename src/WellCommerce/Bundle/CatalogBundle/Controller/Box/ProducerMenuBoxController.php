@@ -23,16 +23,14 @@ use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
  */
 class ProducerMenuBoxController extends AbstractBoxController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function indexAction(LayoutBoxSettingsCollection $boxSettings) : Response
+    public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
         $producers = $this->get('producer.dataset.front')->getResult('array', [], ['pagination' => false]);
-
+        
         return $this->displayTemplate('index', [
             'producers'      => $producers,
-            'activeProducer' => $this->getProducerStorage()->getCurrentProducerIdentifier()
+            'activeProducer' => $this->getProducerStorage()->getCurrentProducerIdentifier(),
+            'boxSettings'    => $boxSettings,
         ]);
     }
 }

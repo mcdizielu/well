@@ -25,6 +25,8 @@ abstract class AbstractBoxController extends AbstractFrontController implements 
 {
     public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
-        return $this->displayTemplate('index');
+        return $this->displayTemplate('index', [
+            'boxSettings' => $boxSettings,
+        ]);
     }
 }

@@ -44,6 +44,7 @@ class ClientSettingsBoxController extends AbstractBoxController
         
         return $this->displayTemplate('index', [
             'contactDetailsForm' => $contactDetailsForm,
+            'boxSettings'        => $boxSettings,
         ]);
     }
 }

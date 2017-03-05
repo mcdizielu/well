@@ -55,7 +55,8 @@ class ShowcaseBoxController extends AbstractBoxController
         });
         
         return $this->displayTemplate('index', [
-            'showcase' => $categories,
+            'showcase'    => $categories,
+            'boxSettings' => $boxSettings,
         ]);
     }
     

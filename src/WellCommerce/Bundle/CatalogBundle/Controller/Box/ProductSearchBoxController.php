@@ -41,7 +41,8 @@ class ProductSearchBoxController extends AbstractBoxController
         ]);
         
         return $this->displayTemplate('index', [
-            'dataset' => $products,
+            'dataset'     => $products,
+            'boxSettings' => $boxSettings,
         ]);
     }
 }

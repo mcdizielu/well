@@ -29,7 +29,8 @@ class PageBoxController extends AbstractBoxController
         $page = $this->getPageRequestStorage()->getCurrentPage();
         
         return $this->displayTemplate('index', [
-            'page' => $page,
+            'page'        => $page,
+            'boxSettings' => $boxSettings,
         ]);
     }
     

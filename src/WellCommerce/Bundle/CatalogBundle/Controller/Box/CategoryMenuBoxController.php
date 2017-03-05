@@ -28,7 +28,8 @@ final class CategoryMenuBoxController extends AbstractBoxController
     public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
         return $this->displayTemplate('index', [
-            'active' => $this->getActiveCategories(),
+            'active'      => $this->getActiveCategories(),
+            'boxSettings' => $boxSettings,
         ]);
     }
     

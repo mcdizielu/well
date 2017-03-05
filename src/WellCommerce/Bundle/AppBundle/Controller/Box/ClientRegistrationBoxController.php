@@ -45,7 +45,8 @@ class ClientRegistrationBoxController extends AbstractBoxController
         }
         
         return $this->displayTemplate('index', [
-            'form' => $form,
+            'form'        => $form,
+            'boxSettings' => $boxSettings,
         ]);
     }
 }

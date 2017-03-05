@@ -45,10 +45,10 @@ class LayeredNavigationBoxController extends AbstractBoxController
         }
         
         return $this->displayTemplate('index', [
-            'producers'  => $producers,
-            'category'   => $category,
-            'attributes' => $attributes,
-            'settings'   => $boxSettings,
+            'producers'   => $producers,
+            'category'    => $category,
+            'attributes'  => $attributes,
+            'boxSettings' => $boxSettings,
         ]);
     }
     

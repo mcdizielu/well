@@ -12,9 +12,7 @@
 
 namespace WellCommerce\Bundle\WishlistBundle\Controller\Box;
 
-use Symfony\Component\HttpFoundation\Response;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
-use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 
 /**
  * Class WishlistBoxController
@@ -23,8 +21,4 @@ use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
  */
 class WishlistBoxController extends AbstractBoxController
 {
-    public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
-    {
-        return $this->displayTemplate('index');
-    }
 }

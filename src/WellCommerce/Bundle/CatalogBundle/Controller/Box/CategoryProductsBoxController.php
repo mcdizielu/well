@@ -25,14 +25,14 @@ use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
  */
 final class CategoryProductsBoxController extends AbstractBoxController
 {
-    public function indexAction(LayoutBoxSettingsCollection $boxSettings) : Response
+    public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
         $dataset       = $this->get('product.dataset.front');
         $requestHelper = $this->getRequestHelper();
         $limit         = $requestHelper->getAttributesBagParam('limit', $boxSettings->getParam('per_page', 12));
         $conditions    = $this->getCurrentCategoryConditions();
         $conditions    = $this->get('layered_navigation.helper')->addLayeredNavigationConditions($conditions);
-
+        
         $products = $dataset->getResult('array', [
             'limit'      => $limit,
             'page'       => $requestHelper->getAttributesBagParam('page', 1),
@@ -42,10 +42,11 @@ final class CategoryProductsBoxController extends AbstractBoxController
         ]);
         
         return $this->displayTemplate('index', [
-            'dataset' => $products,
+            'dataset'     => $products,
+            'boxSettings' => $boxSettings,
         ]);
     }
-
+    
     private function getCurrentCategoryConditions()
     {
         $conditions = new ConditionsCollection();

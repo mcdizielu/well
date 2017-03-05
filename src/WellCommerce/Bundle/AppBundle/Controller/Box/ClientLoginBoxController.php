@@ -24,23 +24,24 @@ use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
  */
 class ClientLoginBoxController extends AbstractBoxController
 {
-    public function indexAction(LayoutBoxSettingsCollection $boxSettings) : Response
+    public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
         $form = $this->createForm();
-
+        
         return $this->displayTemplate('index', [
-            'form'     => $form,
-            'elements' => $form->getChildren(),
-            'error'    => $this->get('security.authentication_utils')->getLastAuthenticationError()
+            'form'        => $form,
+            'elements'    => $form->getChildren(),
+            'error'       => $this->get('security.authentication_utils')->getLastAuthenticationError(),
+            'boxSettings' => $boxSettings,
         ]);
     }
-
-    protected function createForm() : FormInterface
+    
+    protected function createForm(): FormInterface
     {
         return $this->get('client_login.form_builder.front')->createForm(null, [
             'name'         => 'login',
             'ajax_enabled' => false,
-            'action'       => $this->getRouterHelper()->generateUrl('front.client.login_check')
+            'action'       => $this->getRouterHelper()->generateUrl('front.client.login_check'),
         ]);
     }
 }

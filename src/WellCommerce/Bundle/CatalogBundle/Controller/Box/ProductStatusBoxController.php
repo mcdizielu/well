@@ -44,8 +44,9 @@ class ProductStatusBoxController extends AbstractBoxController
         ]);
         
         return $this->displayTemplate('index', [
-            'dataset' => $products,
-            'status'  => $status,
+            'dataset'     => $products,
+            'status'      => $status,
+            'boxSettings' => $boxSettings,
         ]);
     }
     
