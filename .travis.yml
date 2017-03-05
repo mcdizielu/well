@@ -21,7 +21,7 @@ before_script:
     - phpenv config-rm xdebug.ini
     - if [[ $TRAVIS_PHP_VERSION = 7.* ]] ; then echo "zend.enable_gc = 0" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi;
     - if [[ $TRAVIS_PHP_VERSION = 7.* ]] ; then echo "apc.enabled = 1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini; fi;
-    - if [[ $TRAVIS_PHP_VERSION = 7.* ]] ; then echo "memory_limit=4096M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi;
+    - if [[ $TRAVIS_PHP_VERSION = 7.* ]] ; then echo "memory_limit=7000M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi;
 
     - cp app/config/parameters.yml.travis app/config/parameters.yml
 
