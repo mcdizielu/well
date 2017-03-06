@@ -1,36 +1,34 @@
 <?php
 /*
  * WellCommerce Open-Source E-Commerce Platform
- *
+ * 
  * This file is part of the WellCommerce package.
  *
  * (c) Adam Piotrowski <adam@wellcommerce.org>
- *
+ * 
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\CatalogBundle\DataSet\Front;
+namespace WellCommerce\Bundle\CatalogBundle\Tests\DataSet\Front;
 
-use Doctrine\ORM\QueryBuilder;
-use WellCommerce\Component\DataSet\Configurator\DataSetConfiguratorInterface;
-use WellCommerce\Component\Search\Storage\SearchResultStorage;
+use WellCommerce\Bundle\CoreBundle\Test\DataSet\AbstractDataSetTestCase;
 
 /**
- * Class ProductSearchDataSet
+ * Class ProductDataSetTest
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class ProductSearchDataSet extends ProductDataSet
+class ProductSearchDataSetTest extends AbstractDataSetTestCase
 {
-    public function getIdentifier(): string
+    protected function get ()
     {
-        return 'front.product_search';
+        return $this->container->get('product_search.dataset.front');
     }
     
-    public function configureOptions(DataSetConfiguratorInterface $configurator)
+    protected function getColumns ()
     {
-        $configurator->setColumns([
+        return [
             'id'                 => 'product.id',
             'sku'                => 'product.sku',
             'barcode'            => 'product.barcode',
@@ -63,26 +61,6 @@ class ProductSearchDataSet extends ProductDataSet
             'hierarchy'          => 'product.hierarchy',
             'isStatusValid'      => 'IF_ELSE(:date BETWEEN IF_NULL(distinction.validFrom, :date) AND IF_NULL(distinction.validTo, :date), 1, 0)',
             'score'              => 'FIELD(product.id, :identifiers)',
-        ]);
-        
-        $configurator->setColumnTransformers([
-            'route' => $this->manager->createTransformer('route'),
-        ]);
-    }
-    
-    protected function createQueryBuilder(): QueryBuilder
-    {
-        $identifiers  = $this->getSearchResultStorage()->getResult();
-        $queryBuilder = parent::createQueryBuilder();
-        $expression   = $queryBuilder->expr()->in('product.id', ':identifiers');
-        $queryBuilder->andWhere($expression);
-        $queryBuilder->setParameter('identifiers', $identifiers);
-        
-        return $queryBuilder;
-    }
-    
-    private function getSearchResultStorage(): SearchResultStorage
-    {
-        return $this->get('search.result.storage');
+        ];
     }
 }
