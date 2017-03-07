@@ -19,6 +19,7 @@ order:
     button:
         confirm: Go to confirmation
         add_product: Add product
+        change_status: Change status
     label:
         id: ID
         number: Order no.
@@ -111,11 +112,11 @@ order_status:
         add: Add a new order status
         edit: Edit an order status
     label:
-        order_status_group: Order status group
-        default_comment: Default comment for order
-        colour: Status colour
+        order_status_group: Group
+        default_comment: "Default order's comment"
+        colour: Colour
     comment:
-        enabled: Order status will be visible.
+        enabled: Status will be visible.
 
 order_status_group:
     heading:

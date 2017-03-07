@@ -76,15 +76,15 @@
         }
 
         var changeStatusMultiOrder = new GF_Action({
-            img: '{{ asset('images/datagrid/change-status.png') }}',
-            caption: 'Zmień status',
+            img: '{{ asset('bundles/wellcommerceapp/images/datagrid/change-status.png') }}',
+            caption: GTranslation('order.button.change_status'),
             action: changeStatusMulti,
             values: {{ statuses|json_encode|raw }}
         });
 
         var action_changeStatus = new GF_Action({
-            img: '{{ asset('images/datagrid/change-status.png') }}',
-            caption: 'Zmień status',
+            img: '{{ asset('bundles/wellcommerceapp/images/datagrid/change-status.png') }}',
+            caption: GTranslation('order.button.change_status'),
             action: changeStatus,
             values: {{ statuses|json_encode|raw }}
         });

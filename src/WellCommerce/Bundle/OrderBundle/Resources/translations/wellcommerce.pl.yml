@@ -21,6 +21,7 @@ order:
     button:
         confirm: Przejdź do potwierdzenia
         add_product: Dodaj produkt
+        change_status: Zmień status
     label:
         id: ID
         number: Numer zamówienia
