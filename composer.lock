@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b929e1eede40424232c3bec5f9a46242",
+    "content-hash": "1bcdd91182870132bed98bb6a6188a5d",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -724,12 +724,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "e64d917c29fd8bb4ac13e122ec6de9721c4cf0e7"
+                "reference": "0da649fce4838f7a6121c501c9a86d4b8921b648"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/e64d917c29fd8bb4ac13e122ec6de9721c4cf0e7",
-                "reference": "e64d917c29fd8bb4ac13e122ec6de9721c4cf0e7",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/0da649fce4838f7a6121c501c9a86d4b8921b648",
+                "reference": "0da649fce4838f7a6121c501c9a86d4b8921b648",
                 "shasum": ""
             },
             "require": {
@@ -785,7 +785,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2017-01-20 09:27:09"
+            "time": "2017-03-06 14:38:51"
         },
         {
             "name": "doctrine/collections",
@@ -1525,12 +1525,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "d7101c827c8dbf0f05767c62f834e50f62d26b45"
+                "reference": "2f6667c72584148a53f15baef91888fd5f4a2c58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/d7101c827c8dbf0f05767c62f834e50f62d26b45",
-                "reference": "d7101c827c8dbf0f05767c62f834e50f62d26b45",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/2f6667c72584148a53f15baef91888fd5f4a2c58",
+                "reference": "2f6667c72584148a53f15baef91888fd5f4a2c58",
                 "shasum": ""
             },
             "require": {
@@ -1591,7 +1591,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2017-03-01 08:40:41"
+            "time": "2017-03-07 13:39:33"
         },
         {
             "name": "doctrine/orm",
@@ -3794,7 +3794,7 @@
         },
         {
             "name": "react/stream",
-            "version": "v0.4.6",
+            "version": "0.4.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/stream.git",
@@ -3834,7 +3834,7 @@
                 "pipe",
                 "stream"
             ],
-            "time": "2017-01-25T14:44:14+00:00"
+            "time": "2017-01-25 14:44:14"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -5178,12 +5178,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-eventmanager.git",
-                "reference": "d0cb906b79bc5b73c7e39e500371b5652ef133b8"
+                "reference": "42d2abcdfc56ee2005e9271ac7666d88db7b91b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-eventmanager/zipball/d0cb906b79bc5b73c7e39e500371b5652ef133b8",
-                "reference": "d0cb906b79bc5b73c7e39e500371b5652ef133b8",
+                "url": "https://api.github.com/repos/zendframework/zend-eventmanager/zipball/42d2abcdfc56ee2005e9271ac7666d88db7b91b9",
+                "reference": "42d2abcdfc56ee2005e9271ac7666d88db7b91b9",
                 "shasum": ""
             },
             "require": {
@@ -5224,7 +5224,7 @@
                 "events",
                 "zf2"
             ],
-            "time": "2016-12-19 21:48:17"
+            "time": "2017-03-05 07:56:37"
         },
         {
             "name": "zendframework/zend-http",
@@ -5232,25 +5232,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-http.git",
-                "reference": "bad5d957e902e44fb1821e9a40ab00d8f8b531fc"
+                "reference": "c8e3397418b8aaa02696d033f9a299732630e26e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-http/zipball/bad5d957e902e44fb1821e9a40ab00d8f8b531fc",
-                "reference": "bad5d957e902e44fb1821e9a40ab00d8f8b531fc",
+                "url": "https://api.github.com/repos/zendframework/zend-http/zipball/c8e3397418b8aaa02696d033f9a299732630e26e",
+                "reference": "c8e3397418b8aaa02696d033f9a299732630e26e",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5 || ^7.0",
-                "zendframework/zend-loader": "^2.5",
-                "zendframework/zend-stdlib": "^2.5 || ^3.0",
-                "zendframework/zend-uri": "^2.5",
-                "zendframework/zend-validator": "^2.5"
+                "php": "^5.6 || ^7.0",
+                "zendframework/zend-loader": "^2.5.1",
+                "zendframework/zend-stdlib": "^3.1 || ^2.7.7",
+                "zendframework/zend-uri": "^2.5.2",
+                "zendframework/zend-validator": "^2.8.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.0",
+                "malukenho/docheader": "^0.1.5",
+                "phpunit/phpunit": "^6.0.8 || ^5.7.15",
                 "zendframework/zend-coding-standard": "~1.0.0",
-                "zendframework/zend-config": "^2.5"
+                "zendframework/zend-config": "^3.1 || ^2.6"
             },
             "type": "library",
             "extra": {
@@ -5274,7 +5275,7 @@
                 "http",
                 "zf2"
             ],
-            "time": "2017-03-03 11:46:04"
+            "time": "2017-03-07 20:11:07"
         },
         {
             "name": "zendframework/zend-hydrator",

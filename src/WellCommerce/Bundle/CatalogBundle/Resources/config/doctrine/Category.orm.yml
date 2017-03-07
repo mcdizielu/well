@@ -44,6 +44,13 @@ WellCommerce\Bundle\CatalogBundle\Entity\Category:
                 parent_id:
                     referencedColumnName: id
                     onDelete: CASCADE
+        photo:
+            targetEntity: WellCommerce\Bundle\AppBundle\Entity\Media
+            fetch: LAZY
+            joinColumns:
+                photo_id:
+                    referencedColumnName: id
+                    onDelete: 'SET NULL'
     oneToMany:
         children:
             targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\Category

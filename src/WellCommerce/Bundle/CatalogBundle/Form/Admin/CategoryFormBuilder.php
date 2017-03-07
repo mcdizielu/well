@@ -109,6 +109,23 @@ class CategoryFormBuilder extends AbstractFormBuilder
             'name'  => 'description',
             'label' => 'common.label.description',
         ]));
+    
+        $mediaData = $form->addChild($this->getElement('nested_fieldset', [
+            'name'  => 'media_data',
+            'label' => 'common.fieldset.photos'
+        ]));
+    
+        $mediaData->addChild($this->getElement('image', [
+            'name'         => 'photo',
+            'label'        => 'form.media_data.image_id',
+            'load_route'   => $this->getRouterHelper()->generateUrl('admin.media.grid'),
+            'upload_url'   => $this->getRouterHelper()->generateUrl('admin.media.add'),
+            'repeat_min'   => 0,
+            'repeat_max'   => 1,
+            'transformer'  => $this->getRepositoryTransformer('media_entity', $this->get('media.repository')),
+            'session_id'   => $this->getRequestHelper()->getSessionId(),
+            'session_name' => $this->getRequestHelper()->getSessionName(),
+        ]));
         
         $this->addMetadataFieldset($form, $this->get('category.repository'));
         

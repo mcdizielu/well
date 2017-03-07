@@ -17,6 +17,7 @@ use Doctrine\Common\Collections\Collection;
 use Knp\DoctrineBehaviors\Model\Blameable\Blameable;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
+use WellCommerce\Bundle\AppBundle\Entity\Media;
 use WellCommerce\Bundle\AppBundle\Entity\ShopCollectionAwareTrait;
 use WellCommerce\Bundle\CatalogBundle\Entity\Extra\CategoryExtraTrait;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
@@ -43,6 +44,11 @@ class Category implements EntityInterface
     protected $productsCount = 0;
     protected $childrenCount = 0;
     protected $symbol        = '';
+    
+    /**
+     * @var Media
+     */
+    protected $photo;
     
     /**
      * @var null|Category
@@ -74,6 +80,16 @@ class Category implements EntityInterface
     public function setSymbol(string $symbol)
     {
         $this->symbol = $symbol;
+    }
+    
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+    
+    public function setPhoto(Media $photo = null)
+    {
+        $this->photo = $photo;
     }
     
     public function getParent()
