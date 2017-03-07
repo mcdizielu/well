@@ -378,6 +378,7 @@
     Translator.add("order.heading.choose_payment_method", "Wybierz form\u0119 p\u0142atno\u015bci", "wellcommerce", "pl");
     Translator.add("order.button.confirm", "Przejd\u017a do potwierdzenia", "wellcommerce", "pl");
     Translator.add("order.button.add_product", "Dodaj produkt", "wellcommerce", "pl");
+    Translator.add("order.button.change_status", "Zmie\u0144 status", "wellcommerce", "pl");
     Translator.add("order.label.id", "ID", "wellcommerce", "pl");
     Translator.add("order.label.number", "Numer zam\u00f3wienia", "wellcommerce", "pl");
     Translator.add("order.label.client", "Klient", "wellcommerce", "pl");

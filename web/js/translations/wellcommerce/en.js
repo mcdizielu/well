@@ -374,6 +374,7 @@
     Translator.add("order.heading.choose_payment_method", "Choose a payment method", "wellcommerce", "en");
     Translator.add("order.button.confirm", "Go to confirmation", "wellcommerce", "en");
     Translator.add("order.button.add_product", "Add product", "wellcommerce", "en");
+    Translator.add("order.button.change_status", "Change status", "wellcommerce", "en");
     Translator.add("order.label.id", "ID", "wellcommerce", "en");
     Translator.add("order.label.number", "Order no.", "wellcommerce", "en");
     Translator.add("order.label.client", "Client", "wellcommerce", "en");

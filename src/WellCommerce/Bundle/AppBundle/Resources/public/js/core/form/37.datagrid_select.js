@@ -33,7 +33,7 @@ var oDefaults = {
     bAdvancedEditor: false
 };
 
-var GFormDatagridSelect = GCore.ExtendClass(GFormField, function () {
+var GFormDataGridSelect = GCore.ExtendClass(GFormField, function () {
 
     var gThis = this;
 
@@ -117,9 +117,9 @@ var GFormDatagridSelect = GCore.ExtendClass(GFormField, function () {
     gThis._PrepareNode = function () {
         gThis.m_jNode = $('<div/>').addClass(gThis._GetClass('Field'));
         var jLabel = $('<label/>');
-        jLabel.text(GTranslation(gThis.m_oOptions.sLabel));
+        jLabel.text(gThis.m_oOptions.sLabel);
         if ((gThis.m_oOptions.sComment != undefined) && (gThis.m_oOptions.sComment.length)) {
-            jLabel.append(' <small>' + GTranslation(gThis.m_oOptions.sComment) + '</small>');
+            jLabel.append(' <small>' + gThis.m_oOptions.sComment + '</small>');
         }
         gThis.m_jNode.append(jLabel);
         if (gThis.m_bRepeatable) {
@@ -194,12 +194,17 @@ var GFormDatagridSelect = GCore.ExtendClass(GFormField, function () {
         }
     };
 
-    gThis._ProcessRecord = function (oRecord) {
-        return oRecord;
+    gThis._ProcessRecord = function (oRow) {
+        return oRow;
+    };
+
+    gThis._LoadedRecord = function (dDg) {
+        dDg.m_jBody.find('.show-thumb').mouseenter(GTooltip.ShowThumbForThis).mouseleave(GTooltip.HideThumbForThis);
     };
 
     gThis._ProcessSelectedRecord = function (oRecord) {
         oRecord = gThis.m_fProcessRecords(oRecord);
+
         return oRecord;
     };
 
@@ -212,8 +217,8 @@ var GFormDatagridSelect = GCore.ExtendClass(GFormField, function () {
     };
 
     gThis._InitDatagrid = function () {
-
         gThis.m_fProcessRecords = gThis._ProcessRecord;
+        gThis.m_fLoadedRecords = gThis._LoadedRecord;
         gThis.m_fLoadRecords = gThis.m_oOptions.fLoadRecords;
 
         var aoColumns = gThis._InitOptions(gThis.m_oOptions.aoColumns);
@@ -227,22 +232,18 @@ var GFormDatagridSelect = GCore.ExtendClass(GFormField, function () {
                 persistent: false
             },
             event_handlers: {
-                load: gThis.m_fLoadRecords,
+                load: function (oRequest) {
+                    gThis.m_gDatagrid.MakeRequest(Routing.generate(gThis.m_oOptions.sLoadRoute), oRequest, GF_Datagrid.ProcessIncomingData);
+                },
                 process: gThis.m_fProcessRecords,
                 select: gThis._OnSelect,
-                deselect: gThis._OnDeselect//,
-                //selection_changed: gThis._OnChange
+                deselect: gThis._OnDeselect,
+                loaded: gThis.m_fLoadedRecords,
             },
             columns: aoColumns
         };
 
-        try {
-            gThis.m_gDatagrid = new GF_Datagrid(gThis.m_jDatagrid, oOptions);
-        }
-        catch (xException) {
-            GException.Handle(xException);
-        }
-
+        gThis.m_gDatagrid = new GF_Datagrid(gThis.m_jDatagrid, oOptions);
     };
 
     gThis._Deselect = function (iDg, mId) {
@@ -265,12 +266,7 @@ var GFormDatagridSelect = GCore.ExtendClass(GFormField, function () {
             }
         }, []);
 
-        if (gThis.m_oOptions.aoSelectedColumns == undefined) {
-            var aoColumns = gThis._InitOptions(gThis.m_oOptions.aoColumns);
-        }
-        else {
-            var aoColumns = gThis._InitOptions(gThis.m_oOptions.aoSelectedColumns);
-        }
+        var aoColumns = gThis._InitOptions(gThis.m_oOptions.aoSelectedColumns);
 
         var gActionDeselect = new GF_Action({
             img: gThis._GetImage('DeselectIcon'),
@@ -289,7 +285,17 @@ var GFormDatagridSelect = GCore.ExtendClass(GFormField, function () {
                 load: function (oRequest, sResponseHandler) {
                     if (gThis.m_bFirstLoad) {
                         gThis.m_bFirstLoad = false;
-                        gThis._LoadSelected(oRequest, sResponseHandler);
+
+                        oRequest.where = [{
+                            column: gThis.m_oOptions.sKey,
+                            value:  gThis.m_oOptions.sValue,
+                            operator: 'IN'
+                        }];
+
+                        gThis.m_gSelectedDatagrid.MakeRequest(Routing.generate(gThis.m_oOptions.sLoadRoute), oRequest, function (eEvent) {
+                            gThis.m_gDataProvider.ChangeData(eEvent.rows);
+                            gThis.m_gSelectedDatagrid.LoadData();
+                        });
                     }
                     else {
                         gThis.m_gDataProvider.Load(oRequest, sResponseHandler);
@@ -312,25 +318,6 @@ var GFormDatagridSelect = GCore.ExtendClass(GFormField, function () {
             ]
         };
 
-        try {
-            gThis.m_gSelectedDatagrid = new GF_Datagrid(gThis.m_jSelectedDatagrid, oOptions);
-        }
-        catch (xException) {
-            GException.Handle(xException);
-        }
-
+        gThis.m_gSelectedDatagrid = new GF_Datagrid(gThis.m_jSelectedDatagrid, oOptions);
     };
-
-    gThis._LoadSelected = function (oRequest, sResponseHandler) {
-        oRequest.where = [{
-            column: gThis.m_oOptions.sKey,
-            value: gThis.m_oOptions.asDefaults,
-            operator: 'IN'
-        }];
-        gThis.m_fLoadRecords(oRequest, GCallback(function (eEvent) {
-            gThis.m_gDataProvider.ChangeData(eEvent.rows);
-            gThis.m_gSelectedDatagrid.LoadData();
-        }));
-    };
-
 }, oDefaults);
