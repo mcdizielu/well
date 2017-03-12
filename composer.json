@@ -38,6 +38,7 @@
     "wellcommerce/cms-bundle": "dev-master",
     "wellcommerce/core-bundle": "dev-master",
     "wellcommerce/coupon-bundle": "dev-master",
+    "wellcommerce/feature-bundle": "dev-master",
     "wellcommerce/generator-bundle": "dev-master",
     "wellcommerce/oauth-bundle": "dev-master",
     "wellcommerce/order-bundle": "dev-master",

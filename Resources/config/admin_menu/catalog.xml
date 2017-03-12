@@ -55,6 +55,42 @@
     </item>
 
     <item>
+        <identifier>product_feature</identifier>
+        <css_class/>
+        <name>product_feature</name>
+        <route_name/>
+        <parent>catalog</parent>
+        <hierarchy>20</hierarchy>
+    </item>
+
+    <item>
+        <identifier>feature_group</identifier>
+        <css_class/>
+        <name>feature_group</name>
+        <route_name>admin.feature_group.index</route_name>
+        <parent>product_feature</parent>
+        <hierarchy>10</hierarchy>
+    </item>
+
+    <item>
+        <identifier>feature</identifier>
+        <css_class/>
+        <name>feature</name>
+        <route_name>admin.feature.index</route_name>
+        <parent>product_feature</parent>
+        <hierarchy>20</hierarchy>
+    </item>
+
+    <item>
+        <identifier>feature_set</identifier>
+        <css_class/>
+        <name>feature_set</name>
+        <route_name>admin.feature_set.index</route_name>
+        <parent>product_feature</parent>
+        <hierarchy>30</hierarchy>
+    </item>
+
+    <item>
         <identifier>category</identifier>
         <css_class/>
         <name>category</name>
