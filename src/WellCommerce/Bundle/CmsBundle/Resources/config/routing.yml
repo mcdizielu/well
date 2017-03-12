@@ -12,7 +12,6 @@ _admin_contact:
 
 _front_contact:
     resource: "@WellCommerceCmsBundle/Resources/config/routing/contact/front.yml"
-    prefix: /contact
 
 _admin_news:
     resource: "@WellCommerceCmsBundle/Resources/config/routing/news/admin.yml"

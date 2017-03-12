@@ -10,6 +10,8 @@ services:
     contact.layout_box.controller:
         class: WellCommerce\Bundle\CmsBundle\Controller\Box\ContactBoxController
         arguments: ['@contact.manager', '@contact.form_builder.front']
+        calls:
+            - [setContainer, ['@service_container']]
 
     contact.layout_box.configurator:
         class: WellCommerce\Bundle\CmsBundle\Configurator\ContactBoxConfigurator

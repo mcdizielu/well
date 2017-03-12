@@ -56,6 +56,5 @@ class ContactBoxController extends AbstractBoxController
             'form'        => $form,
             'boxSettings' => $boxSettings,
         ]);
-        
     }
 }

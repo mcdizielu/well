@@ -7,7 +7,7 @@
 # please view the LICENSE file that was distributed with this source code.
 
 front.contact.index:
-    path: /
+    path: /contact
     options:
         breadcrumb:
             label: contact_ticket.index.contact

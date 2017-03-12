@@ -1,5 +1,21 @@
-<h2 class="box-heading text-left">{{ page.name }}</h2>
-<hr>
+{% import "WellCommerceAppBundle:Front/Form:macros.html.twig" as macros %}
 <div>
-    {{ page.content|raw }}
+    {{ macros.form_begin(form, 'contact') }}
+    <div class="form-group">
+        {{ macros.element(form.getChildren().get('name')) }}
+    </div>
+    <div class="form-group">
+        {{ macros.element(form.getChildren().get('surname')) }}
+    </div>
+    <div class="form-group">
+        {{ macros.element(form.getChildren().get('email')) }}
+    </div>
+    <div class="form-group">
+        {{ macros.element(form.getChildren().get('phone')) }}
+    </div>
+    <div class="form-group">
+        {{ macros.element(form.getChildren().get('content')) }}
+    </div>
+    <button type="submit" class="btn btn-lg btn-primary">Wyślij</button>
+    {{ macros.form_end(form) }}
 </div>

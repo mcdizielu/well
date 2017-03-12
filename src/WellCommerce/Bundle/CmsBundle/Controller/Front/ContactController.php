@@ -12,6 +12,8 @@
 
 namespace WellCommerce\Bundle\CmsBundle\Controller\Front;
 
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use WellCommerce\Bundle\CoreBundle\Controller\Front\AbstractFrontController;
 
 /**
@@ -21,4 +23,8 @@ use WellCommerce\Bundle\CoreBundle\Controller\Front\AbstractFrontController;
  */
 class ContactController extends AbstractFrontController
 {
+    public function indexAction(Request $request): Response
+    {
+        return $this->displayTemplate('index');
+    }
 }
