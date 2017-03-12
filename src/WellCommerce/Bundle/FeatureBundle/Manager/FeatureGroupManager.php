@@ -81,6 +81,6 @@ class FeatureGroupManager extends AbstractManager
             }
         }
         
-        return rand(0, 66565);
+        return '';
     }
 }
