@@ -1,0 +1,38 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+services:
+    feature.product_mapping.enhancer:
+        class: WellCommerce\Bundle\FeatureBundle\Enhancer\ProductMappingEnhancer
+        tags:
+            - { name: doctrine.mapping.enhancer }
+
+    feature.subscriber:
+        class: WellCommerce\Bundle\FeatureBundle\EventListener\FeatureSubscriber
+        tags:
+            - { name: kernel.event_subscriber }
+        calls:
+            - [setContainer, ['@service_container']]
+
+    feature.doctrine.event_subscriber:
+        class: WellCommerce\Bundle\FeatureBundle\EventListener\FeatureDoctrineEventSubscriber
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+
+    form.feature_collection.data_transformer:
+        class: WellCommerce\Bundle\FeatureBundle\Form\DataTransformer\FeatureCollectionToArrayTransformer
+        tags:
+            - { name: form.data_transformer, alias: feature_collection }
+        arguments: ['@doctrine.helper']
+        shared: false
+
+    form.element.feature_editor:
+        class: WellCommerce\Bundle\FeatureBundle\Form\Elements\FeatureEditor
+        tags:
+            - { name: form.element, alias: feature_editor }
+        shared: false
