@@ -12,12 +12,18 @@
 
 namespace WellCommerce\Bundle\CatalogBundle\Controller\Front;
 
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use WellCommerce\Bundle\CoreBundle\Controller\Front\AbstractFrontController;
 use WellCommerce\Bundle\SearchBundle\Manager\SearchManagerInterface;
 use WellCommerce\Component\Breadcrumb\Model\Breadcrumb;
 use WellCommerce\Component\DataSet\Conditions\ConditionsCollection;
+use WellCommerce\Component\Form\Elements\FormInterface;
+use WellCommerce\Component\Form\FormBuilderInterface;
+use WellCommerce\Component\Search\Model\FieldInterface;
+use WellCommerce\Component\Search\Model\TypeInterface;
 use WellCommerce\Component\Search\Request\SearchRequestInterface;
 
 /**
@@ -44,6 +50,41 @@ class ProductSearchController extends AbstractFrontController
         ]);
     }
     
+    public function advancedSearchAction(Request $request)
+    {
+        /** @var FormBuilderInterface $builder */
+        $type    = $this->getSearchManager()->getType($request->get('_type'));
+        $fields  = $type->getFields();
+        $builder = $this->get('advanced_search.form_builder.front');
+        $form    = $builder->createForm();
+        
+        $fields->map(function (FieldInterface $field) use ($builder, $form) {
+            $options = $field->getAdvancedOptions();
+            $name    = $field->getName();
+            
+            if (in_array($options['field']['type'], ['select', 'multi_select'])) {
+                $element = $builder->getElement($options['field']['type'], [
+                    'name'    => $name,
+                    'label'   => $options['field']['label'],
+                    'options' => $this->get($options['field']['dataset'])->getResult('select'),
+                ]);
+            } else {
+                $element = $builder->getElement($options['field']['type'], [
+                    'name'  => $name,
+                    'label' => $options['field']['label'],
+                ]);
+            }
+            
+            $form->addChild($element);
+        });
+        
+        if ($form->handleRequest()->isSubmitted()) {
+            return $this->redirectToAction('index', $this->prepareSearchParameters($fields, $form->getValue()));
+        }
+        
+        return $this->displayTemplate('advanced', ['form' => $form]);
+    }
+    
     public function quickSearchAction(SearchRequestInterface $searchRequest): JsonResponse
     {
         $identifiers = $this->getSearchManager()->search($searchRequest);
@@ -68,6 +109,19 @@ class ProductSearchController extends AbstractFrontController
             'liveSearchContent' => $liveSearchContent,
             'total'             => count($identifiers),
         ]);
+    }
+    
+    private function prepareSearchParameters(Collection $fields, array $formData): array
+    {
+        $params = [];
+        
+        $fields->map(function (FieldInterface $field) use (&$params, $formData) {
+            if (isset($formData[$field->getName()])) {
+                $params[$field->getName()] = $formData[$field->getName()];
+            }
+        });
+        
+        return $params;
     }
     
     private function getSearchManager(): SearchManagerInterface

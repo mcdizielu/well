@@ -34,6 +34,14 @@ front.product_search.index:
         producers: '[\d+_]+'
         attributes: '[\d+_]+'
 
+front.product_search.advanced:
+    path: /advanced
+    defaults:
+        _controller: 'product_search.controller.front:advancedSearchAction'
+        _type: 'product'
+    options:
+        expose: true
+
 front.product_search.quick:
     path: '/quick'
     defaults:

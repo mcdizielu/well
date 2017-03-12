@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\SearchBundle;
 
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
 use WellCommerce\Bundle\SearchBundle\DependencyInjection\Compiler\SearchTypePass;
 
 /**
@@ -22,7 +22,7 @@ use WellCommerce\Bundle\SearchBundle\DependencyInjection\Compiler\SearchTypePass
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class WellCommerceSearchBundle extends Bundle
+class WellCommerceSearchBundle extends AbstractWellCommerceBundle
 {
     public function build(ContainerBuilder $container)
     {

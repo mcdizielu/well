@@ -42,12 +42,13 @@ class Form extends AbstractContainer implements FormInterface
         parent::configureOptions($resolver);
         
         $resolver->setDefaults([
-            'label'             => '',
-            'action'            => '',
-            'ajax_enabled'      => true,
-            'method'            => FormInterface::FORM_METHOD,
-            'tabs'              => FormInterface::TABS_VERTICAL,
-            'validation_groups' => FormValidatorInterface::DEFAULT_VALIDATOR_GROUPS,
+            'label'                 => '',
+            'action'                => '',
+            'ajax_enabled'          => true,
+            'method'                => FormInterface::FORM_METHOD,
+            'tabs'                  => FormInterface::TABS_VERTICAL,
+            'validation_groups'     => FormValidatorInterface::DEFAULT_VALIDATOR_GROUPS,
+            'additional_javascript' => [],
         ]);
         
         $resolver->setNormalizer('name', function (Options $options, $value) {
@@ -59,6 +60,7 @@ class Form extends AbstractContainer implements FormInterface
         $resolver->setAllowedTypes('ajax_enabled', 'bool');
         $resolver->setAllowedTypes('tabs', 'integer');
         $resolver->setAllowedTypes('validation_groups', ['null', 'array']);
+        $resolver->setAllowedTypes('additional_javascript', ['array']);
     }
     
     /**
@@ -123,6 +125,16 @@ class Form extends AbstractContainer implements FormInterface
     public function getValidationGroups()
     {
         return $this->options['validation_groups'];
+    }
+    
+    public function registerAdditionalJavascript(string $path)
+    {
+        $this->options['additional_javascript'][$path] = $path;
+    }
+    
+    public function getAdditionalJavascript(): array
+    {
+        return $this->options['additional_javascript'];
     }
     
     /**

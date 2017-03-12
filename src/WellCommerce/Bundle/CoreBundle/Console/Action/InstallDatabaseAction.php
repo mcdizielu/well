@@ -22,9 +22,10 @@ class InstallDatabaseAction implements ConsoleActionInterface
     public function getCommandsToExecute()
     {
         return [
-            'doctrine:database:create' => ['--if-not-exists' => true],
-            'doctrine:schema:drop'     => ['--force' => true],
-            'doctrine:schema:create'   => [],
+            'wellcommerce:doctrine:enhance' => [],
+            'doctrine:database:create'      => ['--if-not-exists' => true],
+            'doctrine:schema:drop'          => ['--force' => true],
+            'doctrine:schema:create'        => [],
         ];
     }
 }

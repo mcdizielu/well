@@ -25,17 +25,17 @@ final class Field implements FieldInterface
      * @var string
      */
     private $name;
-
+    
     /**
      * @var array
      */
     private $options;
-
+    
     /**
      * @var string
      */
     private $value;
-
+    
     /**
      * Field constructor.
      *
@@ -50,41 +50,46 @@ final class Field implements FieldInterface
         $this->name    = $name;
     }
     
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }
     
-    public function getValue() : string
+    public function getValue(): string
     {
         return $this->value;
     }
-
+    
     public function setValue(string $value)
     {
         $this->value = $value;
     }
     
-    public function isIndexable() : bool
+    public function isIndexable(): bool
     {
         return $this->options['indexable'];
     }
     
-    public function getBoost() : float
+    public function getBoost(): float
     {
         return $this->options['boost'];
     }
-
-    public function getFuzziness() : float
+    
+    public function getFuzziness(): float
     {
         return $this->options['fuzziness'];
     }
-
-    public function getValueExpression() : string
+    
+    public function getValueExpression(): string
     {
         return $this->options['value_expression'];
     }
-
+    
+    public function getAdvancedOptions(): array
+    {
+        return $this->options['advanced'];
+    }
+    
     private function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setRequired([
@@ -92,15 +97,17 @@ final class Field implements FieldInterface
             'boost',
             'fuzziness',
             'value_expression',
+            'advanced',
         ]);
         
         $resolver->setDefault('indexable', true);
         $resolver->setDefault('boost', 1);
         $resolver->setDefault('fuzziness', 1);
-
+        
         $resolver->setAllowedTypes('indexable', 'bool');
         $resolver->setAllowedTypes('boost', ['float', 'int']);
         $resolver->setAllowedTypes('fuzziness', ['float', 'int']);
         $resolver->setAllowedTypes('value_expression', 'string');
+        $resolver->setAllowedTypes('advanced', 'array');
     }
 }

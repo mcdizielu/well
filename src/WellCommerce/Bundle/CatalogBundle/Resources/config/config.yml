@@ -245,28 +245,60 @@ well_commerce_search:
                             boost: 1
                             fuzziness: 2
                             value_expression: resource.getSku()
+                            advanced:
+                                enabled: true
+                                field:
+                                    type: 'text_field'
+                                    label: 'product_search.label.sku'
                         name:
                             indexable: true
                             boost: 1
                             fuzziness: 2
                             value_expression: resource.translate(locale).getName()
+                            advanced:
+                                enabled: true
+                                field:
+                                    type: 'text_field'
+                                    label: 'product_search.label.name'
                         short_description:
                             indexable: true
                             boost: 0.5
                             fuzziness: 0
                             value_expression: resource.translate(locale).getShortDescription()
+                            advanced:
+                                enabled: true
+                                field:
+                                    type: 'text_field'
+                                    label: 'product_search.label.short_description'
                         description:
                             indexable: true
                             boost: 0.5
                             fuzziness: 0
                             value_expression: resource.translate(locale).getDescription()
+                            advanced:
+                                enabled: true
+                                field:
+                                    type: 'text_field'
+                                    label: 'product_search.label.description'
                         producer:
                             indexable: true
                             boost: 0.5
                             fuzziness: 2
                             value_expression: resource.getProducer().translate(locale).getName()
+                            advanced:
+                                enabled: true
+                                field:
+                                    type: 'select'
+                                    label: 'product_search.label.producer'
+                                    dataset: 'producer.dataset.front'
                         category:
                             indexable: true
                             boost: 0.5
                             fuzziness: 2
                             value_expression: resource.getCategories().first().translate(locale).getName()
+                            advanced:
+                                enabled: true
+                                field:
+                                    type: 'select'
+                                    label: 'product_search.label.category'
+                                    dataset: 'category.dataset.front'

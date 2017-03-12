@@ -27,10 +27,10 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode    = $treeBuilder->root('well_commerce_search');
         $this->processConfiguration($rootNode);
-
+        
         return $treeBuilder;
     }
-
+    
     //@formatter:off
     protected function processConfiguration(ArrayNodeDefinition $node)
     {
@@ -72,6 +72,20 @@ class Configuration implements ConfigurationInterface
                                                         ->floatNode('boost')->defaultValue(1)->isRequired()->end()
                                                         ->floatNode('fuzziness')->defaultValue(1)->isRequired()->end()
                                                         ->scalarNode('value_expression')->isRequired()->end()
+                                                        ->arrayNode('advanced')
+                                                            ->children()
+                                                                ->booleanNode('enabled')->defaultValue(true)->isRequired()->end()
+                                                                ->arrayNode('field')
+                                                                    ->children()
+                                                                        ->enumNode('type')
+                                                                            ->values(['text_field', 'checkbox', 'select', 'multi_select'])
+                                                                        ->end()
+                                                                        ->scalarNode('label')->defaultValue('')->end()
+                                                                        ->scalarNode('dataset')->defaultValue(null)->end()
+                                                                    ->end()
+                                                                ->end()
+                                                            ->end()
+                                                        ->end()
                                                     ->end()
                                                 ->end()
                                             ->end()
