@@ -41,18 +41,18 @@ final class ProductStatusBoxConfigurator extends AbstractLayoutBoxConfigurator
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
     {
         $fieldset = $this->getFieldset($builder, $form);
+        $accessor = $this->getPropertyAccessor();
         
         $fieldset->addChild($builder->getElement('tip', [
             'tip' => 'layout_box.product_status.tip',
         ]));
         
         $statuses   = $this->dataSet->getResult('select');
-        $statusKeys = array_keys($statuses);
-        
+      
         $fieldset->addChild($builder->getElement('select', [
             'name'    => 'status',
             'label'   => 'product.label.statuses',
             'options' => $statuses,
-        ]))->setValue(current($statusKeys));
+        ]))->setValue($accessor->getValue($defaults, '[status]'));
     }
 }
