@@ -145,6 +145,8 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
     });
 
     gThis.SetValue = function (mValue, sRepetition) {
+        console.log('SetValue: ' + mValue);
+
         if (gThis.m_jField == undefined) {
             return;
         }
@@ -159,6 +161,8 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
     };
 
     gThis.Populate = function (mValue) {
+        console.log('Populate:' + mValue);
+
         if (gThis.m_bRepeatable) {
             gThis.m_jField.empty();
             gThis.m_oOptions.asDefaults = GCore.Duplicate(mValue);
@@ -171,7 +175,10 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
             return;
         }
 
-        gThis._UpdateDatagridSelection(mValue.photos);
+        if (gThis.m_bRepeatable) {
+            gThis._UpdateDatagridSelection(mValue.photos);
+        }
+
         gThis.SetValue(mValue);
     };
 
@@ -265,6 +272,7 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
         }
         else {
             gThis.m_jSelectedFiles.empty();
+            gThis.m_jField.val(0);
         }
     };
 
@@ -272,7 +280,9 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
         if (gThis.m_bRepeatable) {
             gThis.m_jField.empty();
         }
-        gThis.SetValue(asIds);
+        if(asIds.length){
+            gThis.SetValue(asIds);
+        }
     };
 
     gThis.OnReset = function () {
@@ -284,9 +294,11 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
             gThis._InitFilesDatagrid();
             gThis._InitUploader();
             if (gThis.m_bRepeatable) {
+                console.log('OnShow m_bRepeatable' + gThis.m_oOptions.asDefaults);
                 gThis.Populate(gThis.m_oOptions.asDefaults);
             }
             else {
+                console.log('OnShow' + gThis.m_oOptions.sDefault);
                 gThis.Populate(gThis.m_oOptions.sDefault);
             }
             gThis.m_bShown = true;

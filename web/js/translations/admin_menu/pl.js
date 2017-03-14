@@ -54,4 +54,8 @@
     Translator.add("user", "Administratorzy", "admin_menu", "pl");
     Translator.add("user_group", "Grupy administrator\u00f3w", "admin_menu", "pl");
     Translator.add("variant", "Warianty", "admin_menu", "pl");
+    Translator.add("product_feature", "Cechy produkt\u00f3w", "admin_menu", "pl");
+    Translator.add("feature_group", "Grupy cech", "admin_menu", "pl");
+    Translator.add("feature", "Cechy", "admin_menu", "pl");
+    Translator.add("feature_set", "Zestawy cech", "admin_menu", "pl");
 })(Translator);

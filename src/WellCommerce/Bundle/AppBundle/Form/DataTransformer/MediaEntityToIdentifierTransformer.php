@@ -31,12 +31,17 @@ class MediaEntityToIdentifierTransformer extends EntityToIdentifierTransformer
      */
     public function reverseTransform($modelData, PropertyPathInterface $propertyPath, $value)
     {
+        $unmodified = intval($value['unmodified']);
+        if ($unmodified === 1) {
+            return;
+        }
+        
         $item = null;
         if (isset($value[0])) {
             $id   = $value[0];
             $item = $this->getRepository()->find($id);
         }
-
+        
         $this->propertyAccessor->setValue($modelData, $propertyPath, $item);
     }
 }
