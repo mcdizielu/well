@@ -44,6 +44,7 @@ class CategoryDataSet extends AbstractDataSet
             'slug'           => 'category_translation.slug',
             'shop'           => 'category_shops.id',
             'route'          => 'IDENTITY(category_translation.route)',
+            'photo'          => 'photos.path',
         ]);
         
         $configurator->setColumnTransformers([
@@ -62,6 +63,7 @@ class CategoryDataSet extends AbstractDataSet
         $queryBuilder->groupBy('category.id');
         $queryBuilder->leftJoin('category.translations', 'category_translation');
         $queryBuilder->leftJoin('category.shops', 'category_shops');
+        $queryBuilder->leftJoin('category.photo', 'photos');
         $queryBuilder->where($queryBuilder->expr()->eq('category.enabled', true));
         $queryBuilder->andWhere($queryBuilder->expr()->eq('category_shops.id', $this->getShopStorage()->getCurrentShopIdentifier()));
         
