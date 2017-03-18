@@ -19,15 +19,15 @@ namespace WellCommerce\Bundle\AppBundle\Entity;
  */
 class MinimumOrderAmount
 {
-    protected $value    = 0;
+    protected $value    = 0.00;
     protected $currency = '';
     
-    public function getValue(): int
+    public function getValue(): float
     {
         return $this->value;
     }
     
-    public function setValue(int $value)
+    public function setValue(float $value)
     {
         $this->value = $value;
     }

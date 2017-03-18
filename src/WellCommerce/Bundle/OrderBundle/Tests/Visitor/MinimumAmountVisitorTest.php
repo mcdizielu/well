@@ -46,6 +46,7 @@ class MinimumAmountVisitorTest extends AbstractTestCase
         $client = new Client();
         $client->getMinimumOrderAmount()->setCurrency($currency);
         $client->getMinimumOrderAmount()->setValue($clientValue);
+        $client->setClientGroup($clientGroup);
         
         $order->setShop($shop);
         $order->setClient($client);
@@ -63,6 +64,8 @@ class MinimumAmountVisitorTest extends AbstractTestCase
             [100, 101, 102, 100],
             [102, 0, 0, 102],
             [0, 0, 0, 0],
+            [100.11, 100.12, 100.13, 100.11],
+            [0, 100.12, 100.13, 100.12],
         ];
     }
 }
