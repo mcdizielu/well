@@ -150,6 +150,7 @@
     Translator.add("common.fieldset.meta", "Ustawienia znacznik\u00f3w meta", "wellcommerce", "pl");
     Translator.add("common.fieldset.categories", "Kategorie", "wellcommerce", "pl");
     Translator.add("common.fieldset.description", "Opis", "wellcommerce", "pl");
+    Translator.add("common.fieldset.minimum_order_amount", "Minimalna kwota zam\u00f3wienia", "wellcommerce", "pl");
     Translator.add("common.label.id", "ID", "wellcommerce", "pl");
     Translator.add("common.label.name", "Nazwa", "wellcommerce", "pl");
     Translator.add("common.label.currency", "Waluta", "wellcommerce", "pl");
@@ -160,6 +161,7 @@
     Translator.add("common.label.group", "Grupa", "wellcommerce", "pl");
     Translator.add("common.label.symbol", "Symbol", "wellcommerce", "pl");
     Translator.add("common.label.discount", "Rabat", "wellcommerce", "pl");
+    Translator.add("common.label.discount_expression", "Wz\u00f3r wyliczaj\u0105cy rabat", "wellcommerce", "pl");
     Translator.add("common.label.created_at", "Utworzenie", "wellcommerce", "pl");
     Translator.add("common.label.updated_at", "Ostatnia aktualizacja", "wellcommerce", "pl");
     Translator.add("common.label.valid_from", "Wa\u017cny od", "wellcommerce", "pl");
@@ -214,6 +216,8 @@
     Translator.add("common.label.meta_keywords", "S\u0142owa kluczowe meta", "wellcommerce", "pl");
     Translator.add("common.label.yes", "Tak", "wellcommerce", "pl");
     Translator.add("common.label.no", "Nie", "wellcommerce", "pl");
+    Translator.add("common.label.minimum_order_amount.value", "Kwota brutto", "wellcommerce", "pl");
+    Translator.add("common.label.minimum_order_amount.currency", "Waluta", "wellcommerce", "pl");
     Translator.add("common.flashes.success", "Sukces!", "wellcommerce", "pl");
     Translator.add("pagination.label.results", "Wyniki", "wellcommerce", "pl");
     Translator.add("pagination.label.of", "z", "wellcommerce", "pl");
@@ -417,6 +421,7 @@
     Translator.add("order.description.product_total", "Warto\u015b\u0107 produkt\u00f3w", "wellcommerce", "pl");
     Translator.add("order.description.shipping_cost", "Koszty wysy\u0142ki", "wellcommerce", "pl");
     Translator.add("order.error.no_methods", "Nie ma dost\u0119pnych form wysy\u0142ki i p\u0142atno\u015bci dla tego zam\u00f3wienia", "wellcommerce", "pl");
+    Translator.add("order.error.minimum_order_value_not_met", "Kwota minimalna dla zam\u00f3wienia nie zosta\u0142a osi\u0105gni\u0119ta", "wellcommerce", "pl");
     Translator.add("order.notice.empty_order_list", "Nie z\u0142o\u017cy\u0142e\u015b jeszcze \u017cadnych zam\u00f3wie\u0144", "wellcommerce", "pl");
     Translator.add("order.cart.flash.added", "zosta\u0142 dodany do koszyka", "wellcommerce", "pl");
     Translator.add("order.cart.flash.empty", "Koszyk jest pusty.", "wellcommerce", "pl");
@@ -474,6 +479,7 @@
     Translator.add("payment_method.fieldset.shipping_methods", "Formy wysy\u0142ki", "wellcommerce", "pl");
     Translator.add("payment_method.fieldset.processor_configuration", "Konfiguracja procesora", "wellcommerce", "pl");
     Translator.add("payment_method.fieldset.order_statuses", "Statusy zam\u00f3wienia", "wellcommerce", "pl");
+    Translator.add("payment_method.fieldset.client_groups", "Grupy klient\u00f3w", "wellcommerce", "pl");
     Translator.add("payment_method.label.processor", "Typ procesora p\u0142atno\u015bci", "wellcommerce", "pl");
     Translator.add("payment_method.label.shipping_methods", "Dozwolone formy wysy\u0142ki", "wellcommerce", "pl");
     Translator.add("payment_method.label.payment_pending_order_status", "Oczekuje na p\u0142atno\u015b\u0107", "wellcommerce", "pl");
@@ -483,6 +489,8 @@
     Translator.add("payment_method.label.bank_transfer.account", "Numer rachunku", "wellcommerce", "pl");
     Translator.add("payment_method.label.bank_transfer.sort_number", "Sort code banku", "wellcommerce", "pl");
     Translator.add("payment_method.label.bank_transfer.title", "Tytu\u0142 przelewu", "wellcommerce", "pl");
+    Translator.add("payment_method.label.client_groups", "Grupy klient\u00f3w", "wellcommerce", "pl");
+    Translator.add("payment_method.tip.client_groups", "Ustaw widoczno\u015b\u0107 tylko dla wybranych grup klient\u00f3w", "wellcommerce", "pl");
     Translator.add("sales_report.heading.sales", "Podsumowanie sprzeda\u017cy", "wellcommerce", "pl");
     Translator.add("sales_report.label.sales", "Sprzeda\u017c", "wellcommerce", "pl");
     Translator.add("sales_report.label.clients", "Klienci", "wellcommerce", "pl");
@@ -496,8 +504,11 @@
     Translator.add("shipping_method.label.calculator", "Rodzaj kalkulacji koszt\u00f3w", "wellcommerce", "pl");
     Translator.add("shipping_method.label.costs", "Koszty wysy\u0142ki", "wellcommerce", "pl");
     Translator.add("shipping_method.label.options_provider", "Service opcji wysy\u0142ki", "wellcommerce", "pl");
+    Translator.add("shipping_method.label.client_groups", "Grupy klient\u00f3w", "wellcommerce", "pl");
     Translator.add("shipping_method.fieldset.costs", "Ustawienia koszt\u00f3w wysy\u0142ki", "wellcommerce", "pl");
     Translator.add("shipping_method.fieldset.countries", "Pa\u0144stwa", "wellcommerce", "pl");
+    Translator.add("shipping_method.fieldset.client_groups", "Grupy klient\u00f3w", "wellcommerce", "pl");
+    Translator.add("shipping_method.tip.client_groups", "Ustaw widoczno\u015b\u0107 tylko dla wybranych grup klient\u00f3w", "wellcommerce", "pl");
     Translator.add("attribute.heading.index", "Atrybuty", "wellcommerce", "pl");
     Translator.add("attribute.heading.add", "Dodawanie nowego atrubutu", "wellcommerce", "pl");
     Translator.add("attribute.heading.edit", "Edycja atrybutu", "wellcommerce", "pl");
