@@ -22,6 +22,7 @@ WellCommerce\Bundle\FeatureBundle\Entity\ProductFeature:
         product:
             targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\Product
             fetch: LAZY
+            inversedBy: features
             joinColumns:
                 product_id:
                     referencedColumnName: id
