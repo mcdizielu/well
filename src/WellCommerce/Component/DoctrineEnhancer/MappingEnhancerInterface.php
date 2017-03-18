@@ -28,5 +28,5 @@ interface MappingEnhancerInterface
     
     public function getSupportedEntityClass(): string;
     
-    public function getSupportedEntityExtraTraitClass(): string;
+    public function getExtraTraitClass(): string;
 }

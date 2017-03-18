@@ -27,7 +27,7 @@ class TraitGeneratorEnhancerCollection extends ArrayCollection
      */
     public function add(MappingEnhancerInterface $enhancer)
     {
-        $this->items[$enhancer->getSupportedEntityExtraTraitClass()][] = $enhancer;
+        $this->items[$enhancer->getExtraTraitClass()][] = $enhancer;
     }
 
     /**

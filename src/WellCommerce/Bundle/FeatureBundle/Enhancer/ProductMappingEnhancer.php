@@ -55,7 +55,7 @@ final class ProductMappingEnhancer extends AbstractMappingEnhancer
         return Product::class;
     }
     
-    public function getSupportedEntityExtraTraitClass(): string
+    public function getExtraTraitClass(): string
     {
         return ProductExtraTrait::class;
     }
