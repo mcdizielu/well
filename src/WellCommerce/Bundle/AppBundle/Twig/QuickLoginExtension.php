@@ -57,10 +57,10 @@ final class QuickLoginExtension extends \Twig_Extension
 
     public function createQuickLoginForm()
     {
-        return $this->builder->createForm([
+        return $this->builder->createForm(null, [
             'name'         => 'login',
             'ajax_enabled' => false,
             'action'       => $this->routerHelper->generateUrl('front.client.login_check')
-        ], null);
+        ]);
     }
 }

@@ -79,6 +79,12 @@ services:
             - { name: order.visitor, alias: summary }
         arguments: ['@currency.helper']
 
+    minimum_value.order.visitor:
+        class: WellCommerce\Bundle\OrderBundle\Visitor\MinimumAmountVisitor
+        tags:
+            - { name: order.visitor, alias: minimum_value }
+        arguments: ['@currency.helper']
+
     order.subscriber:
         class: WellCommerce\Bundle\OrderBundle\EventListener\OrderSubscriber
         tags:

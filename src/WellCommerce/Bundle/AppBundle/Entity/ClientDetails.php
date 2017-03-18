@@ -22,19 +22,19 @@ class ClientDetails
     protected $password              = '';
     protected $passwordConfirm       = null;
     protected $username              = '';
-    protected $discount              = 0.00;
+    protected $discount              = null;
     protected $conditionsAccepted    = false;
     protected $newsletterAccepted    = false;
     protected $resetPasswordHash     = null;
     protected $legacyPassword        = null;
     protected $legacyPasswordEncoder = null;
     
-    public function getDiscount(): float
+    public function getDiscount()
     {
         return $this->discount;
     }
     
-    public function setDiscount(float $discount)
+    public function setDiscount($discount)
     {
         $this->discount = $discount;
     }

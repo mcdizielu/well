@@ -157,6 +157,7 @@ common:
         categories: Kategorie
         description: Opis
         prices: Ceny
+        minimum_order_amount: Minimalna kwota zamówienia
     label:
         id: ID
         name: Nazwa
@@ -168,6 +169,7 @@ common:
         group: Grupa
         symbol: Symbol
         discount: Rabat
+        discount_expression: Wzór wyliczający rabat
         created_at: Utworzenie
         updated_at: Ostatnia aktualizacja
         valid_from: Ważny od
@@ -227,6 +229,9 @@ common:
         meta_keywords: Słowa kluczowe meta
         yes: Tak
         no: Nie
+        minimum_order_amount:
+            value: Kwota brutto
+            currency: Waluta
     flashes:
         success: Sukces!
 

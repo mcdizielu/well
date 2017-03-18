@@ -17,7 +17,8 @@ parameters:
         client_discount: 600
         client_group_discount: 700
         summary: 800
-        confirmation: 900
+        minimum_value: 900
+        confirmation: 1000
 
 well_commerce_api:
     request_handler:

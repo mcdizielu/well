@@ -66,13 +66,19 @@ class Client implements EntityInterface, \Serializable, UserInterface, Equatable
      */
     protected $clientGroup;
     
+    /**
+     * @var MinimumOrderAmount
+     */
+    protected $minimumOrderAmount;
+    
     public function __construct()
     {
-        $this->orders          = new ArrayCollection();
-        $this->clientDetails   = new ClientDetails();
-        $this->contactDetails  = new ClientContactDetails();
-        $this->billingAddress  = new ClientBillingAddress();
-        $this->shippingAddress = new ClientShippingAddress();
+        $this->orders             = new ArrayCollection();
+        $this->clientDetails      = new ClientDetails();
+        $this->contactDetails     = new ClientContactDetails();
+        $this->billingAddress     = new ClientBillingAddress();
+        $this->shippingAddress    = new ClientShippingAddress();
+        $this->minimumOrderAmount = new MinimumOrderAmount();
     }
     
     public function getPassword()
@@ -193,5 +199,15 @@ class Client implements EntityInterface, \Serializable, UserInterface, Equatable
     public function setClientGroup(ClientGroup $clientGroup = null)
     {
         $this->clientGroup = $clientGroup;
+    }
+    
+    public function getMinimumOrderAmount(): MinimumOrderAmount
+    {
+        return $this->minimumOrderAmount;
+    }
+    
+    public function setMinimumOrderAmount(MinimumOrderAmount $minimumOrderAmount)
+    {
+        $this->minimumOrderAmount = $minimumOrderAmount;
     }
 }

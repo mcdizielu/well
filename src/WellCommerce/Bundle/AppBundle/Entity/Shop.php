@@ -37,6 +37,11 @@ class Shop implements EntityInterface
     protected $defaultCurrency = '';
     
     /**
+     * @var MinimumOrderAmount
+     */
+    protected $minimumOrderAmount;
+    
+    /**
      * @var MailerConfiguration
      */
     protected $mailerConfiguration;
@@ -59,6 +64,7 @@ class Shop implements EntityInterface
     public function __construct()
     {
         $this->mailerConfiguration = new MailerConfiguration();
+        $this->minimumOrderAmount  = new MinimumOrderAmount();
     }
     
     public function getName(): string
@@ -139,6 +145,16 @@ class Shop implements EntityInterface
     public function setTheme(Theme $theme = null)
     {
         $this->theme = $theme;
+    }
+    
+    public function getMinimumOrderAmount(): MinimumOrderAmount
+    {
+        return $this->minimumOrderAmount;
+    }
+    
+    public function setMinimumOrderAmount(MinimumOrderAmount $minimumOrderAmount)
+    {
+        $this->minimumOrderAmount = $minimumOrderAmount;
     }
     
     public function translate($locale = null, $fallbackToDefault = true): ShopTranslation

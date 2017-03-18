@@ -31,7 +31,12 @@ class AddressController extends AbstractFrontController
     public function indexAction(Request $request): Response
     {
         $order = $this->getOrderProvider()->getCurrentOrder();
-        $form  = $this->formBuilder->createForm($order, [
+        
+        if (!$order->isConfirmable()) {
+            return $this->redirectToRoute('front.cart.index');
+        }
+        
+        $form = $this->formBuilder->createForm($order, [
             'validation_groups' => $this->getValidationGroupsForRequest($request),
         ]);
         

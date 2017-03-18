@@ -52,3 +52,11 @@ admin.client.delete_group:
     options:
         expose: true
         require_admin_permission: client.delete
+
+admin.client.details:
+    path: '/details/{id}'
+    defaults:
+        _controller: 'client.controller.admin:detailsAction'
+    options:
+        expose: true
+        require_admin_permission: client.edit

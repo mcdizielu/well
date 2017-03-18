@@ -42,6 +42,7 @@ front.address.index:
     defaults:
         _controller: 'address.controller.front:indexAction'
     options:
+        expose: true
         breadcrumb:
             label: order.heading.address
 

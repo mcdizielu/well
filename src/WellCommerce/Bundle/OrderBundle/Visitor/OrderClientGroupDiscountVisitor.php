@@ -12,8 +12,8 @@
 
 namespace WellCommerce\Bundle\OrderBundle\Visitor;
 
+use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use WellCommerce\Bundle\AppBundle\Entity\Client;
-use WellCommerce\Bundle\AppBundle\Entity\ClientGroup;
 use WellCommerce\Bundle\AppBundle\Helper\CurrencyHelperInterface;
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractContainerAware;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
@@ -50,28 +50,43 @@ class OrderClientGroupDiscountVisitor extends AbstractContainerAware implements 
     
     public function visitOrder(Order $order)
     {
-        $client = $order->getClient();
+        $modifierValue = 0;
         
-        if ($client instanceof Client && null === $order->getCoupon()) {
-            $clientGroup   = $client->getClientGroup();
-            $modifierValue = $this->getDiscountForClientGroup($clientGroup);
+        if (null === $order->getCoupon()) {
+            $discount      = $this->evaluateDiscount($order);
+            $modifierValue = round($discount / 100, 2);
+        }
+        
+        if ($modifierValue > 0) {
+            $modifier = $this->orderModifierProvider->getOrderModifier($order, 'client_group_discount');
+            $modifier->setCurrency($order->getCurrency());
+            $modifier->setGrossAmount($order->getProductTotal()->getGrossPrice() * $modifierValue);
+            $modifier->setNetAmount($order->getProductTotal()->getNetPrice() * $modifierValue);
+            $modifier->setTaxAmount($order->getProductTotal()->getTaxAmount() * $modifierValue);
             
-            if ($modifierValue > 0) {
-                $modifier = $this->orderModifierProvider->getOrderModifier($order, 'client_group_discount');
-                $modifier->setCurrency($order->getCurrency());
-                $modifier->setGrossAmount($order->getProductTotal()->getGrossPrice() * $modifierValue);
-                $modifier->setNetAmount($order->getProductTotal()->getNetPrice() * $modifierValue);
-                $modifier->setTaxAmount($order->getProductTotal()->getTaxAmount() * $modifierValue);
-            }
         } else {
             $order->removeModifier('client_group_discount');
         }
     }
     
-    private function getDiscountForClientGroup(ClientGroup $clientGroup = null): float
+    private function evaluateDiscount(Order $order): float
     {
-        if (null !== $clientGroup) {
-            return round((float)$clientGroup->getDiscount() / 100, 2);
+        $client = $order->getClient();
+        
+        if ($client instanceof Client) {
+            $clientGroup = $client->getClientGroup();
+            $language    = new ExpressionLanguage();
+            
+            try {
+                $expression = $clientGroup->getDiscount();
+                
+                return (float)$language->evaluate($expression, [
+                    'order' => $order,
+                ]);
+            } catch (\Exception $exception) {
+                return 0;
+            }
+            
         }
         
         return 0;

@@ -19,6 +19,7 @@ use WellCommerce\Bundle\AppBundle\Entity\ClientBillingAddress;
 use WellCommerce\Bundle\AppBundle\Entity\ClientContactDetails;
 use WellCommerce\Bundle\AppBundle\Entity\ClientDetails;
 use WellCommerce\Bundle\AppBundle\Entity\ClientShippingAddress;
+use WellCommerce\Bundle\AppBundle\Entity\MinimumOrderAmount;
 use WellCommerce\Bundle\AppBundle\Entity\Shop;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
@@ -93,6 +94,11 @@ class Order implements EntityInterface
     protected $productTotal;
     
     /**
+     * @var MinimumOrderAmount
+     */
+    protected $minimumOrderAmount;
+    
+    /**
      * @var Collection
      */
     protected $products;
@@ -139,6 +145,7 @@ class Order implements EntityInterface
         $this->contactDetails     = new ClientContactDetails();
         $this->billingAddress     = new ClientBillingAddress();
         $this->shippingAddress    = new ClientShippingAddress();
+        $this->minimumOrderAmount = new MinimumOrderAmount();
     }
     
     public function getClient()
@@ -399,5 +406,30 @@ class Order implements EntityInterface
     public function setPaymentMethod(PaymentMethod $paymentMethod = null)
     {
         $this->paymentMethod = $paymentMethod;
+    }
+    
+    public function getMinimumOrderAmount(): MinimumOrderAmount
+    {
+        return $this->minimumOrderAmount;
+    }
+    
+    public function setMinimumOrderAmount(MinimumOrderAmount $minimumOrderAmount)
+    {
+        $this->minimumOrderAmount = $minimumOrderAmount;
+    }
+    
+    public function hasMinimumValue(): bool
+    {
+        return $this->getSummary()->getGrossAmount() >= $this->minimumOrderAmount->getValue();
+    }
+    
+    public function hasMethods(): bool
+    {
+        return $this->shippingMethod instanceof ShippingMethod && $this->paymentMethod instanceof PaymentMethod;
+    }
+    
+    public function isConfirmable(): bool
+    {
+        return !$this->isEmpty() && $this->hasMinimumValue() && $this->hasMethods();
     }
 }

@@ -29,7 +29,7 @@ class ConfirmationController extends AbstractFrontController
         $order = $this->getOrderProvider()->getCurrentOrder();
         $order->setConfirmed(true);
         
-        if ($order->isEmpty()) {
+        if (!$order->isConfirmable()) {
             return $this->redirectToRoute('front.cart.index');
         }
         

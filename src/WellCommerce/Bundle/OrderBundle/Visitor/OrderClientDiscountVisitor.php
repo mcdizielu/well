@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\OrderBundle\Visitor;
 
+use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use WellCommerce\Bundle\AppBundle\Entity\Client;
 use WellCommerce\Bundle\AppBundle\Helper\CurrencyHelperInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
@@ -48,25 +49,43 @@ class OrderClientDiscountVisitor implements OrderVisitorInterface
     
     public function visitOrder(Order $order)
     {
-        $client = $order->getClient();
+        $modifierValue = 0;
         
-        if ($client instanceof Client && null === $order->getCoupon()) {
-            $modifierValue = $this->getDiscountForClient($client);
-            
-            if ($modifierValue > 0) {
-                $modifier = $this->orderModifierProvider->getOrderModifier($order, 'client_discount');
-                $modifier->setCurrency($order->getCurrency());
-                $modifier->setGrossAmount($order->getProductTotal()->getGrossPrice() * $modifierValue);
-                $modifier->setNetAmount($order->getProductTotal()->getNetPrice() * $modifierValue);
-                $modifier->setTaxAmount($order->getProductTotal()->getTaxAmount() * $modifierValue);
-            }
+        if (null === $order->getCoupon()) {
+            $discount      = $this->evaluateDiscount($order);
+            $modifierValue = round($discount / 100, 2);
+        }
+        
+        if ($modifierValue > 0) {
+            $modifier = $this->orderModifierProvider->getOrderModifier($order, 'client_discount');
+            $modifier->setCurrency($order->getCurrency());
+            $modifier->setGrossAmount($order->getProductTotal()->getGrossPrice() * $modifierValue);
+            $modifier->setNetAmount($order->getProductTotal()->getNetPrice() * $modifierValue);
+            $modifier->setTaxAmount($order->getProductTotal()->getTaxAmount() * $modifierValue);
         } else {
             $order->removeModifier('client_discount');
         }
     }
     
-    protected function getDiscountForClient(Client $client): float
+    private function evaluateDiscount(Order $order): float
     {
-        return round((float)$client->getClientDetails()->getDiscount() / 100, 2);
+        $client = $order->getClient();
+        
+        if ($client instanceof Client) {
+            $language = new ExpressionLanguage();
+            
+            try {
+                $expression = $client->getClientDetails()->getDiscount();
+                
+                return (float)$language->evaluate($expression, [
+                    'order' => $order,
+                ]);
+            } catch (\Exception $exception) {
+                return 0;
+            }
+            
+        }
+        
+        return 0;
     }
 }

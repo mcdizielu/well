@@ -35,6 +35,9 @@ WellCommerce\Bundle\OrderBundle\Entity\Order:
         contactDetails:
             class: WellCommerce\Bundle\AppBundle\Entity\ClientContactDetails
             columnPrefix: contact_details_
+        minimumOrderAmount:
+            class: WellCommerce\Bundle\AppBundle\Entity\MinimumOrderAmount
+            columnPrefix: minimum_order_amount_
     fields:
         confirmed:
             type: boolean
