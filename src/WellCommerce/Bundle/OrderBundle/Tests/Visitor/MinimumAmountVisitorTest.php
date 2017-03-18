@@ -26,7 +26,7 @@ use WellCommerce\Bundle\OrderBundle\Entity\Order;
 class MinimumAmountVisitorTest extends AbstractTestCase
 {
     /**
-     * @dataProvider expressionProvider
+     * @dataProvider valueProvider
      */
     public function testMinimumValue($clientValue, $clientGroupValue, $shopValue, $expectedValue)
     {
@@ -57,7 +57,7 @@ class MinimumAmountVisitorTest extends AbstractTestCase
         $this->assertEquals($currency, $order->getMinimumOrderAmount()->getCurrency());
     }
     
-    public function expressionProvider()
+    public function valueProvider()
     {
         return [
             [0, 0, 100, 100],
