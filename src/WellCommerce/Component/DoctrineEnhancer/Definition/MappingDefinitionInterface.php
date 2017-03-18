@@ -25,6 +25,7 @@ interface MappingDefinitionInterface
     const CLASS_METADATA_METHOD_MANY_TO_MANY = 'mapManyToMany';
     const CLASS_METADATA_METHOD_MANY_TO_ONE  = 'mapManyToOne';
     const CLASS_METADATA_METHOD_ONE_TO_MANY  = 'mapOneToMany';
+    const CLASS_METADATA_METHOD_EMBEDDABLE   = 'mapEmbedded';
     
     public function configureOptions(OptionsResolver $resolver);
     

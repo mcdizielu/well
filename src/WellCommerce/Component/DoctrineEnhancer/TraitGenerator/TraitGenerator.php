@@ -80,7 +80,7 @@ final class TraitGenerator
     private function addProperty(string $property)
     {
         $property = PhpProperty::create($property);
-        $property->setVisibility('private');
+        $property->setVisibility('protected');
         $property->setValue(null);
         
         $this->trait->setProperty($property);

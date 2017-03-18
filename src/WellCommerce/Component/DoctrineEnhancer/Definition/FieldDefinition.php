@@ -31,13 +31,17 @@ final class FieldDefinition extends AbstractMappingDefinition
             'nullable',
             'columnName',
             'options',
+            'precision',
+            'scale',
         ]);
         
         $resolver->setDefaults([
-            'length'   => 50,
-            'unique'   => false,
-            'nullable' => true,
-            'options'  => [],
+            'length'    => 50,
+            'unique'    => false,
+            'nullable'  => true,
+            'options'   => [],
+            'precision' => 15,
+            'scale'     => 2,
         ]);
         
         $resolver->setAllowedTypes('fieldName', 'string');
@@ -46,6 +50,8 @@ final class FieldDefinition extends AbstractMappingDefinition
         $resolver->setAllowedTypes('unique', 'boolean');
         $resolver->setAllowedTypes('nullable', 'boolean');
         $resolver->setAllowedTypes('columnName', 'string');
+        $resolver->setAllowedTypes('precision', 'numeric');
+        $resolver->setAllowedTypes('scale', 'numeric');
         $resolver->setAllowedTypes('options', 'array');
     }
     
