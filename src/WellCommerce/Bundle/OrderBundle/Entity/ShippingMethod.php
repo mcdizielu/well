@@ -64,11 +64,17 @@ class ShippingMethod implements EntityInterface
      */
     protected $paymentMethods;
     
+    /**
+     * @var Collection
+     */
+    protected $clientGroups;
+    
     public function __construct()
     {
         $this->costs          = new ArrayCollection();
         $this->paymentMethods = new ArrayCollection();
         $this->shops          = new ArrayCollection();
+        $this->clientGroups    = new ArrayCollection();
     }
     
     public function getCalculator(): string
@@ -134,6 +140,16 @@ class ShippingMethod implements EntityInterface
     public function setTax(Tax $tax = null)
     {
         $this->tax = $tax;
+    }
+    
+    public function getClientGroups(): Collection
+    {
+        return $this->clientGroups;
+    }
+    
+    public function setClientGroups(Collection $clientGroups)
+    {
+        $this->clientGroups = $clientGroups;
     }
     
     public function translate($locale = null, $fallbackToDefault = true): ShippingMethodTranslation

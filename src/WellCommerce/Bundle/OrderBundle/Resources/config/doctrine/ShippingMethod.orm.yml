@@ -44,6 +44,21 @@ WellCommerce\Bundle\OrderBundle\Entity\ShippingMethod:
             mappedBy: shippingMethod
             orphanRemoval: true
     manyToMany:
+        clientGroups:
+            targetEntity: WellCommerce\Bundle\AppBundle\Entity\ClientGroup
+            fetch: LAZY
+            joinTable:
+                name: shipping_method_client_group
+                joinColumns:
+                    -
+                        name: shipping_method_id
+                        onDelete: CASCADE
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    -
+                        name: client_group_id
+                        onDelete: CASCADE
+                        referencedColumnName: id
         paymentMethods:
             targetEntity: WellCommerce\Bundle\OrderBundle\Entity\PaymentMethod
             fetch: LAZY

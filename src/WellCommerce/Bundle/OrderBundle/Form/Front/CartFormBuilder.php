@@ -18,6 +18,7 @@ use WellCommerce\Bundle\OrderBundle\Entity\PaymentMethod;
 use WellCommerce\Bundle\OrderBundle\Entity\ShippingMethod;
 use WellCommerce\Bundle\OrderBundle\Entity\ShippingMethodCost;
 use WellCommerce\Bundle\OrderBundle\Provider\Front\OrderProviderInterface;
+use WellCommerce\Bundle\OrderBundle\Provider\PaymentMethodProviderInterface;
 use WellCommerce\Bundle\OrderBundle\Provider\ShippingMethodOptionsProviderInterface;
 use WellCommerce\Bundle\OrderBundle\Provider\ShippingMethodProviderInterface;
 use WellCommerce\Component\Form\Elements\ElementInterface;
@@ -127,22 +128,21 @@ class CartFormBuilder extends AbstractFormBuilder
      */
     private function addPaymentMethods(Order $order, ElementInterface $radioGroup)
     {
-        $order = $this->getOrderProvider()->getCurrentOrder();
+        $paymentMethods = $this->getPaymentMethodProvider()->getPaymentMethodsForOrder($order);
         
-        if ($order->getShippingMethod() instanceof ShippingMethod) {
-            $collection = $order->getShippingMethod()->getPaymentMethods();
-            
-            $collection->map(function (PaymentMethod $paymentMethod) use ($radioGroup) {
-                if ($paymentMethod->isEnabled()) {
-                    $radioGroup->addOptionToSelect($paymentMethod->getId(), $paymentMethod->translate()->getName());
-                }
-            });
-        }
+        $paymentMethods->map(function (PaymentMethod $paymentMethod) use ($radioGroup) {
+            $radioGroup->addOptionToSelect($paymentMethod->getId(), $paymentMethod->translate()->getName());
+        });
     }
     
     private function getShippingMethodProvider(): ShippingMethodProviderInterface
     {
         return $this->get('shipping_method.provider');
+    }
+    
+    private function getPaymentMethodProvider(): PaymentMethodProviderInterface
+    {
+        return $this->get('payment_method.provider');
     }
     
     private function getOrderProvider(): OrderProviderInterface

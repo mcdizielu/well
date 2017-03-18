@@ -14,8 +14,10 @@ namespace WellCommerce\Bundle\OrderBundle\Provider;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use WellCommerce\Bundle\AppBundle\Entity\Client;
 use WellCommerce\Bundle\AppBundle\Entity\Shop;
 use WellCommerce\Bundle\AppBundle\Storage\ShopStorageInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Security\SecurityHelperInterface;
 use WellCommerce\Bundle\OrderBundle\Calculator\ShippingCalculatorInterface;
 use WellCommerce\Bundle\OrderBundle\Calculator\ShippingSubjectInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\ShippingMethod;
@@ -46,17 +48,20 @@ final class ShippingMethodProvider implements ShippingMethodProviderInterface
     private $shopStorage;
     
     /**
-     * ShippingMethodProvider constructor.
-     *
-     * @param ShippingMethodRepositoryInterface $repository
-     * @param Collection                        $calculators
-     * @param ShopStorageInterface              $shopStorage
+     * @var SecurityHelperInterface
      */
-    public function __construct(ShippingMethodRepositoryInterface $repository, Collection $calculators, ShopStorageInterface $shopStorage)
-    {
-        $this->repository  = $repository;
-        $this->calculators = $calculators;
-        $this->shopStorage = $shopStorage;
+    private $securityHelper;
+    
+    public function __construct(
+        ShippingMethodRepositoryInterface $repository,
+        Collection $calculators,
+        ShopStorageInterface $shopStorage,
+        SecurityHelperInterface $securityHelper
+    ) {
+        $this->repository     = $repository;
+        $this->calculators    = $calculators;
+        $this->shopStorage    = $shopStorage;
+        $this->securityHelper = $securityHelper;
     }
     
     public function getCosts(ShippingSubjectInterface $subject): Collection
@@ -109,13 +114,14 @@ final class ShippingMethodProvider implements ShippingMethodProviderInterface
         $methods = $this->repository->getShippingMethods();
         $country = $subject->getCountry();
         $shop    = $this->getCurrentShop($subject);
+        $client  = $this->securityHelper->getCurrentClient();
         
-        return $methods->filter(function (ShippingMethod $method) use ($country, $shop) {
+        return $methods->filter(function (ShippingMethod $method) use ($country, $shop, $client) {
             if (strlen($country) && count($method->getCountries()) && !in_array($country, $method->getCountries())) {
                 return false;
             }
             
-            return $method->getShops()->contains($shop);
+            return $method->getShops()->contains($shop) && $this->isShippingMethodAvailableForClient($method, $client);
         });
     }
     
@@ -126,5 +132,17 @@ final class ShippingMethodProvider implements ShippingMethodProviderInterface
         }
         
         return $subject->getShop();
+    }
+    
+    private function isShippingMethodAvailableForClient(ShippingMethod $method, Client $client = null)
+    {
+        $clientGroups = $method->getClientGroups();
+        $clientGroup  = null !== $client ? $client->getClientGroup() : null;
+        
+        if ($clientGroups->count()) {
+            return $clientGroups->contains($clientGroup);
+        }
+        
+        return true;
     }
 }

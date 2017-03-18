@@ -15,7 +15,7 @@ services:
 
     shipping_method.provider:
         class: WellCommerce\Bundle\OrderBundle\Provider\ShippingMethodProvider
-        arguments: ['@shipping_method.repository', '@shipping_method.calculator.collection', '@shop.storage']
+        arguments: ['@shipping_method.repository', '@shipping_method.calculator.collection', '@shop.storage', '@security.helper']
 
     shipping_method_cost.doctrine.event_subscriber:
         class: WellCommerce\Bundle\OrderBundle\EventListener\ShippingMethodEventSubscriber

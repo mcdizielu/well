@@ -37,6 +37,21 @@ WellCommerce\Bundle\OrderBundle\Entity\PaymentMethod:
                     referencedColumnName: id
                     onDelete: 'SET NULL'
     manyToMany:
+        clientGroups:
+            targetEntity: WellCommerce\Bundle\AppBundle\Entity\ClientGroup
+            fetch: LAZY
+            joinTable:
+                name: payment_method_client_group
+                joinColumns:
+                    -
+                        name: payment_method_id
+                        onDelete: CASCADE
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    -
+                        name: client_group_id
+                        onDelete: CASCADE
+                        referencedColumnName: id
         shippingMethods:
             targetEntity: WellCommerce\Bundle\OrderBundle\Entity\ShippingMethod
             fetch: LAZY

@@ -66,6 +66,7 @@ order:
         shipping_cost: Koszty wysyłki
     error:
         no_methods: Nie ma dostępnych form wysyłki i płatności dla tego zamówienia
+        minimum_order_value_not_met: Kwota minimalna dla zamówienia nie została osiągnięta
     notice:
         empty_order_list: Nie złożyłeś jeszcze żadnych zamówień
     cart:
@@ -160,6 +161,7 @@ payment_method:
         shipping_methods: Formy wysyłki
         processor_configuration: Konfiguracja procesora
         order_statuses: Statusy zamówienia
+        client_groups: Grupy klientów
     label:
         processor: Typ procesora płatności
         shipping_methods: Dozwolone formy wysyłki
@@ -171,6 +173,9 @@ payment_method:
             account: Numer rachunku
             sort_number: Sort code banku
             title: Tytuł przelewu
+        client_groups: Grupy klientów
+    tip:
+        client_groups: Ustaw widoczność tylko dla wybranych grup klientów
 
 sales_report:
     heading:
@@ -192,6 +197,10 @@ shipping_method:
         calculator: Rodzaj kalkulacji kosztów
         costs: Koszty wysyłki
         options_provider: Service opcji wysyłki
+        client_groups: Grupy klientów
     fieldset:
         costs: Ustawienia kosztów wysyłki
         countries: Państwa
+        client_groups: Grupy klientów
+    tip:
+        client_groups: Ustaw widoczność tylko dla wybranych grup klientów

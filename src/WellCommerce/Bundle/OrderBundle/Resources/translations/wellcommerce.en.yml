@@ -64,6 +64,7 @@ order:
         empty_order_list: You have not placed any orders
     error:
         no_methods: There are no available shipping & payment methods for this order
+        minimum_order_value_not_met: Minimum order value was not met
     cart:
         flash:
             added: was added to cart
@@ -156,6 +157,7 @@ payment_method:
         shipping_methods: Allowed shipping methods
         processor_configuration: Processor configuration
         order_statuses: Order statuses
+        client_groups: Client groups
     label:
         processor: Payment processor
         shipping_methods: Allowed shipping methods
@@ -168,6 +170,9 @@ payment_method:
             account_owner: Account owner
             sort_number: Sort code
             title: 'Transfer title'
+        client_groups: Client groups
+    tip:
+        client_groups: Restrict the visibility for a group of clients
 
 sales_report:
     heading:
@@ -189,6 +194,10 @@ shipping_method:
         calculator: Type of costs calculation
         costs: Shipping costs
         options_provider: Options provider service
+        client_groups: Client groups
     fieldset:
         costs: Shipping costs settings
         countries: Countries
+        client_groups: Client groups
+    tip:
+        client_groups: Restrict the visibility for a group of clients

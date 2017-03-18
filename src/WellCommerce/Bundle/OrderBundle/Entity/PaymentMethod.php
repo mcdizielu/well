@@ -68,63 +68,58 @@ class PaymentMethod implements EntityInterface
      */
     protected $shippingMethods;
     
+    /**
+     * @var Collection
+     */
+    protected $clientGroups;
+    
     public function __construct()
     {
         $this->shippingMethods = new ArrayCollection();
         $this->shops           = new ArrayCollection();
+        $this->clientGroups    = new ArrayCollection();
     }
     
-    /**
-     * {@inheritdoc}
-     */
     public function getProcessor(): string
     {
         return $this->processor;
     }
     
-    /**
-     * {@inheritdoc}
-     */
     public function setProcessor(string $processor)
     {
         $this->processor = $processor;
     }
     
-    /**
-     * {@inheritdoc}
-     */
     public function getShippingMethods(): Collection
     {
         return $this->shippingMethods;
     }
     
-    /**
-     * {@inheritdoc}
-     */
     public function setShippingMethods(Collection $shippingMethods)
     {
         $this->shippingMethods = $shippingMethods;
     }
     
-    /**
-     * {@inheritdoc}
-     */
     public function getConfiguration(): array
     {
         return $this->configuration;
     }
     
-    /**
-     * {@inheritdoc}
-     */
     public function setConfiguration(array $configuration)
     {
         $this->configuration = $configuration;
     }
     
-    /**
-     * {@inheritdoc}
-     */
+    public function getClientGroups(): Collection
+    {
+        return $this->clientGroups;
+    }
+    
+    public function setClientGroups(Collection $clientGroups)
+    {
+        $this->clientGroups = $clientGroups;
+    }
+    
     public function getPaymentPendingOrderStatus()
     {
         return $this->paymentPendingOrderStatus;

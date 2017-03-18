@@ -73,3 +73,6 @@ services:
     payment_method.datagrid.filter:
         class: WellCommerce\Bundle\OrderBundle\DataGrid\PaymentMethodFilter
         arguments: ["@payment_method.repository"]
+
+    payment_method.provider:
+        class: WellCommerce\Bundle\OrderBundle\Provider\PaymentMethodProvider

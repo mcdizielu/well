@@ -81,6 +81,22 @@ class ShippingMethodFormBuilder extends AbstractFormBuilder
             'label'   => 'shipping_method.label.options_provider',
             'options' => $this->getOptionProviders()
         ]));
+    
+        $clientGroupData = $form->addChild($this->getElement('nested_fieldset', [
+            'name'  => 'client_group_data',
+            'label' => 'shipping_method.fieldset.client_groups'
+        ]));
+    
+        $clientGroupData->addChild($this->getElement('tip', [
+            'tip' => 'shipping_method.tip.client_groups',
+        ]));
+        
+        $clientGroupData->addChild($this->getElement('multi_select', [
+            'name'        => 'clientGroups',
+            'label'       => 'shipping_method.label.client_groups',
+            'options'     => $this->get('client_group.dataset.admin')->getResult('select'),
+            'transformer' => $this->getRepositoryTransformer('collection', $this->get('client_group.repository')),
+        ]));
         
         $costsData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'costs_data',
