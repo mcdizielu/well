@@ -147,6 +147,7 @@ class Shop implements EntityInterface
         $this->theme = $theme;
     }
     
+<<<<<<< HEAD
     public function getMinimumOrderAmount(): MinimumOrderAmount
     {
         return $this->minimumOrderAmount;
@@ -157,6 +158,8 @@ class Shop implements EntityInterface
         $this->minimumOrderAmount = $minimumOrderAmount;
     }
     
+=======
+>>>>>>> 4e64260a06f6be84dadd7750bb170f90f1966e4e
     public function translate($locale = null, $fallbackToDefault = true): ShopTranslation
     {
         return $this->doTranslate($locale, $fallbackToDefault);

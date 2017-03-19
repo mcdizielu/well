@@ -184,6 +184,8 @@ class ShopFormBuilder extends AbstractFormBuilder
         
         $this->addMetadataFieldset($form, $this->get('shop.repository'));
         
+        $this->addMetadataFieldset($form, $this->get('shop.repository'));
+        
         $form->addFilter($this->getFilter('no_code'));
         $form->addFilter($this->getFilter('trim'));
         $form->addFilter($this->getFilter('secure'));
