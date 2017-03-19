@@ -1,6 +1,6 @@
 <?php
 
-namespace WellCommerce\Extra;
+namespace WellCommerce\Bundle\CatalogBundle\Entity\Extra;
 
 trait ProductExtraTrait
 {

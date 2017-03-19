@@ -23,7 +23,7 @@ use WellCommerce\Bundle\AppBundle\Entity\Media;
 use WellCommerce\Bundle\AppBundle\Entity\Price;
 use WellCommerce\Bundle\AppBundle\Entity\ShopCollectionAwareTrait;
 use WellCommerce\Bundle\AppBundle\Entity\Tax;
-use WellCommerce\Extra\ProductExtraTrait;
+use WellCommerce\Bundle\CatalogBundle\Entity\Extra\ProductExtraTrait;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Sortable;
