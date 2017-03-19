@@ -35,6 +35,12 @@
   "extra": {
     "branch-alias": {
       "dev-master": "0.7.x-dev"
+    },
+    "enhancer-traits": {
+      "WellCommerce\\Extra\\AvailabilityExtraTrait": "src/WellCommerce/Extra/AvailabilityExtraTrait.php",
+      "WellCommerce\\Extra\\CategoryExtraTrait": "src/WellCommerce/Extra/CategoryExtraTrait.php",
+      "WellCommerce\\Extra\\ProductExtraTrait": "src/WellCommerce/Extra/ProductExtraTrait.php",
+      "WellCommerce\\Extra\\VariantExtraTrait": "src/WellCommerce/Extra/VariantExtraTrait.php"
     }
   }
 }

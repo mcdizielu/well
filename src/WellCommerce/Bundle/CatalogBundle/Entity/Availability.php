@@ -15,7 +15,7 @@ namespace WellCommerce\Bundle\CatalogBundle\Entity;
 use Knp\DoctrineBehaviors\Model\Blameable\Blameable;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
-use WellCommerce\Bundle\CatalogBundle\Entity\Extra\AvailabilityExtraTrait;
+use WellCommerce\Extra\AvailabilityExtraTrait;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 

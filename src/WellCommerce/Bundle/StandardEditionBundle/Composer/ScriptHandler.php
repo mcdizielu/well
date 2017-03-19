@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\StandardEditionBundle\Composer;
 
+use Composer\Package\Package;
 use Composer\Script\Event;
 use Sensio\Bundle\DistributionBundle\Composer\ScriptHandler as SensioScriptHandler;
 
@@ -32,9 +33,17 @@ class ScriptHandler extends SensioScriptHandler
     
     public static function updateApplication(Event $event)
     {
-        $options    = static::getOptions($event);
-        $consoleDir = static::getConsoleDir($event, 'Update WellCommerce');
+        $options       = static::getOptions($event);
+        $consoleDir    = static::getConsoleDir($event, 'Update WellCommerce');
+        $composer      = $event->getComposer();
+        $installedRepo = $composer->getRepositoryManager()->getLocalRepository();
         
+        /** @var Package $package */
+        foreach ($installedRepo->getCanonicalPackages() as $package) {
+            echo $package->getName() . PHP_EOL;
+            echo $package->getType() . PHP_EOL;
+        }
+        die();
         static::executeCommand($event, $consoleDir, 'wellcommerce:doctrine:enhance', $options['process-timeout']);
     }
     

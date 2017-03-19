@@ -44,6 +44,7 @@ doctrine:
         auto_generate_proxy_classes: false
         entity_managers:
             default:
+                class_metadata_factory_name:  WellCommerce\Bundle\CoreBundle\Doctrine\Metadata\ClassMetadataFactory
                 default_repository_class: WellCommerce\Bundle\CoreBundle\Doctrine\Repository\EntityRepository
                 query_cache_driver:
                     type: service

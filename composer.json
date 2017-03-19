@@ -26,18 +26,13 @@
   "autoload": {
     "psr-4": {
       "WellCommerce\\Bundle\\": "src/WellCommerce/Bundle",
-      "WellCommerce\\Component\\": "src/WellCommerce/Component"
+      "WellCommerce\\Component\\": "src/WellCommerce/Component",
+      "WellCommerce\\Extra\\": "src/WellCommerce/Extra"
     },
     "files": [
       "app/AppKernel.php"
     ]
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "http://packages.wellcommerce.org/"
-    }
-  ],
   "require": {
     "php": "^7.0",
     "ext-gd": "*",
@@ -117,6 +112,9 @@
     ],
     "build-bootstrap": [
       "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap"
+    ],
+    "update-application": [
+      "WellCommerce\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::updateApplication"
     ],
     "post-create-project-cmd": [
       "WellCommerce\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::installApplication"
