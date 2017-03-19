@@ -12,7 +12,6 @@
 
 namespace WellCommerce\Bundle\FeatureBundle\Enhancer;
 
-use WellCommerce\Bundle\CatalogBundle\Entity\Extra\ProductExtraTrait;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\FeatureBundle\Entity\FeatureSet;
 use WellCommerce\Bundle\FeatureBundle\Entity\ProductFeature;
@@ -20,6 +19,7 @@ use WellCommerce\Component\DoctrineEnhancer\AbstractMappingEnhancer;
 use WellCommerce\Component\DoctrineEnhancer\Definition\ManyToOneDefinition;
 use WellCommerce\Component\DoctrineEnhancer\Definition\MappingDefinitionCollection;
 use WellCommerce\Component\DoctrineEnhancer\Definition\OneToManyDefinition;
+use WellCommerce\Extra\CatalogBundle\Entity\ProductExtraTrait;
 
 /**
  * Class ProductMappingEnhancer
