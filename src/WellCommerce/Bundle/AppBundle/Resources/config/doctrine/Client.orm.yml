@@ -1,0 +1,48 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+WellCommerce\Bundle\AppBundle\Entity\Client:
+    type: entity
+    table: client
+    repositoryClass: WellCommerce\Bundle\AppBundle\Repository\ClientRepository
+    indexes:
+        IDX_client_username:
+            columns: [client_details_username]
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    embedded:
+        clientDetails:
+            class: WellCommerce\Bundle\AppBundle\Entity\ClientDetails
+            columnPrefix: client_details_
+        billingAddress:
+            class: WellCommerce\Bundle\AppBundle\Entity\ClientBillingAddress
+            columnPrefix: billing_address_
+        shippingAddress:
+            class: WellCommerce\Bundle\AppBundle\Entity\ClientShippingAddress
+            columnPrefix: shipping_address_
+        contactDetails:
+            class: WellCommerce\Bundle\AppBundle\Entity\ClientContactDetails
+            columnPrefix: contact_details_
+    oneToMany:
+        orders:
+            targetEntity: WellCommerce\Bundle\OrderBundle\Entity\Order
+            fetch: EXTRA_LAZY
+            mappedBy: client
+    manyToOne:
+        clientGroup:
+            targetEntity: WellCommerce\Bundle\AppBundle\Entity\ClientGroup
+            fetch: LAZY
+            inversedBy: clients
+            joinColumns:
+                client_group_id:
+                    referencedColumnName: id
+                    onDelete: 'SET NULL'
+            orphanRemoval: false

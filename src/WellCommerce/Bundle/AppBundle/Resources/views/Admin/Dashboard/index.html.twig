@@ -1,0 +1,124 @@
+{% extends 'WellCommerceAppBundle:Admin:layout.html.twig' %}
+{% trans_default_domain "wellcommerce" %}
+{% block content %}
+    <h2>{% trans %}dashboard.heading.index{% endtrans %}</h2>
+
+    <div class="block" id="desktop">
+        {{ sales_report('admin.dashboard.index') }}
+
+        <div class="layout-four-columns">
+            <div class="column">
+                <div class="box simple">
+                    <h3>{% trans %}dashboard.heading.last_opinions{% endtrans %}</h3>
+                    <table cellspacing="0" class="full-size">
+                        <thead>
+                        <tr>
+                            <th>{% trans %}user.label.username{% endtrans %}</th>
+                            <th>{% trans %}admin.label.content{% endtrans %}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for review in reviews %}
+                            <tr>
+                                <th scope="row"><a title="{{ review.nick }} - {{ review.review }}" href="{{ path('admin.review.edit',{"id": review.id}) }}">{{ review.nick }}</a></th>
+                                <td>
+                                    <div style="max-width:170px;">{{ review.review }}</div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <p class="more"><a class="btnMore" href="{{ path('admin.review.index') }}"><span>{% trans %}admin.button.show_all{% endtrans %}</span></a></p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="box simple">
+                    <h3>{% trans %}dashboard.heading.last_orders{% endtrans %}</h3>
+                    <table cellspacing="0" class="full-size">
+                        <thead>
+                        <tr>
+                            <th>{% trans %}order.label.number{% endtrans %}</th>
+                            <th>{% trans %}admin.label.sum{% endtrans %}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for order in orders %}
+                            <tr>
+                                <th scope="row"><a href="{{ path('admin.order.edit', {"id": order.id}) }}">{{ order.number }}</a></th>
+                                <td>
+                                    {{ format_price(order.summary.grossAmount, order.currency) }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <p class="more"><a class="btnMore" href="{{ path('admin.order.index') }}"><span>{% trans %}admin.button.show_all{% endtrans %}</span></a></p>
+                </div>
+            </div>
+
+            <!-- begin: New customers -->
+            <div class="column">
+                <div class="box simple">
+                    <h3>{% trans %}dashboard.heading.new_customers{% endtrans %}</h3>
+                    <table cellspacing="0" class="full-size">
+                        <thead>
+                        <tr>
+                            <th>{% trans %}admin.label.firstname{% endtrans %}</th>
+                            <th abbr="Sztuk">{% trans %}admin.label.lastname{% endtrans %}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for client in clients %}
+                            <tr>
+                                <th scope="row"><a href="{{ path('admin.client.edit', {"id": client.id}) }}">{{ client.contactDetails.firstName }}</a></th>
+                                <td>
+                                    {{ client.contactDetails.lastName }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <p class="more"><a class="btnMore" href="{{ path('admin.client.index') }}"><span>{% trans %}admin.button.show_all{% endtrans %}</span></a></p>
+                </div>
+            </div>
+            <!-- end: New customers -->
+
+            <!-- begin: Most popular -->
+            <div class="column" style="width: 434px;">
+                <div class="box simple">
+                    <h3>{% trans %}dashboard.heading.carts{% endtrans %}</h3>
+                    <table cellspacing="0" class="full-size">
+                        <thead>
+                        <tr>
+                            <th>{% trans %}admin.label.client{% endtrans %}</th>
+                            <th>{% trans %}order.label.summary.gross_amount{% endtrans %}</th>
+                            <th>{% trans %}common.label.created_at{% endtrans %}</th>
+                            <th>{% trans %}common.label.updated_at{% endtrans %}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for cart in carts %}
+                            <tr>
+                                <th scope="row">{{ cart.client.contactDetails.firstName }} {{ cart.client.contactDetails.lastName }}</th>
+                                <td>
+                                    {{ format_price(cart.summary.grossAmount, cart.currency) }}
+                                </td>
+                                <td>
+                                    {{ cart.createdAt|date('Y-m-d H:i:s') }}
+                                </td>
+                                <td>
+                                    {{ cart.updatedAt|date('Y-m-d H:i:s') }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- end: Most popular -->
+
+        </div>
+        <!-- end: Four columns -->
+    </div>
+{% endblock %}

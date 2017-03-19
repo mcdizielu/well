@@ -1,0 +1,70 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+front.client.login:
+    path: /login
+    defaults:
+        _controller: 'client.controller.front:loginAction'
+    options:
+        allow_page_redirect: 'true'
+
+front.client.login_check:
+    path: /login_check
+
+front.client.logout:
+    path: /logout
+
+front.client_settings.index:
+    path: /settings/index
+    defaults:
+        _controller: 'client_settings.controller.front:indexAction'
+    options:
+        breadcrumb:
+            label: client.heading.settings
+
+front.client_order.index:
+    path: /order/index
+    defaults:
+        _controller: 'client_order.controller.front:indexAction'
+    options:
+        allow_page_redirect: 'true'
+        breadcrumb:
+            label: client.heading.orders
+
+front.client_order.view:
+    path: '/order/view/{id}'
+    defaults:
+        _controller: 'client_order.controller.front:viewAction'
+        id: 'null'
+
+front.client_password.reset:
+    path: /password/reset
+    defaults:
+        _controller: 'client_forgot_password.controller.front:resetAction'
+    options:
+        breadcrumb:
+            label: client.heading.reset_password
+
+front.client_password.change:
+    path: '/password/change/{hash}'
+    defaults:
+        _controller: 'client_forgot_password.controller.front:changeAction'
+        phrase: 'null'
+    options:
+        breadcrumb:
+            label: client.heading.change_password
+    requirements:
+        hash: '[^,]+'
+
+front.client_address_book.index:
+    path: /address/index
+    defaults:
+        _controller: 'client_address_book.controller.front:indexAction'
+    options:
+        breadcrumb:
+            label: client.heading.address_book

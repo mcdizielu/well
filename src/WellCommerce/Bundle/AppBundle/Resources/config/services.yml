@@ -1,0 +1,43 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+imports:
+    - { resource: 'services/api.yml' }
+    - { resource: 'services/admin.yml' }
+    - { resource: 'services/client.yml' }
+    - { resource: 'services/currency.yml' }
+    - { resource: 'services/media.yml' }
+    - { resource: 'services/layout_box.yml' }
+    - { resource: 'services/locale.yml' }
+    - { resource: 'services/shop.yml' }
+    - { resource: 'services/theme.yml' }
+
+services:
+    web.home_page.controller.front:
+        class: WellCommerce\Bundle\AppBundle\Controller\Front\HomePageController
+        calls:
+            - [setContainer, ['@service_container']]
+
+    exception.subscriber:
+        class: WellCommerce\Bundle\AppBundle\EventListener\ExceptionSubscriber
+        arguments: ['@kernel', '@templating.helper']
+        tags:
+            - { name: kernel.event_subscriber }
+
+    country.repository:
+        class: WellCommerce\Bundle\AppBundle\Repository\CountryRepository
+
+    metadata.helper:
+        class: WellCommerce\Bundle\AppBundle\Helper\MetadataHelper
+        arguments: ['@shop.storage']
+
+    twig.extension.metadata:
+        class: WellCommerce\Bundle\AppBundle\Twig\MetadataExtension
+        arguments: ['@metadata.helper']
+        tags:
+            - { name: twig.extension }

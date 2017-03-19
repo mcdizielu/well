@@ -1,0 +1,60 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+imports:
+    - { resource: "app/" }
+
+parameters:
+    upload_dir: "%kernel.root_dir%/../web/media"
+    knp.doctrine_behaviors.blameable_subscriber.user_entity: WellCommerce\Bundle\AppBundle\Entity\User
+    knp.doctrine_behaviors.blameable_subscriber.class: WellCommerce\Bundle\AppBundle\EventListener\BlameableSubscriber
+    number_formatter_locale: ~
+
+well_commerce_app:
+    locale_copier:
+        entities:
+            WellCommerce\Bundle\AppBundle\Entity\ClientGroupTranslation:
+                properties:
+                    - name
+            WellCommerce\Bundle\AppBundle\Entity\DictionaryTranslation:
+                properties:
+                    - value
+            WellCommerce\Bundle\AppBundle\Entity\LayoutBoxTranslation:
+                properties:
+                    - name
+            WellCommerce\Bundle\AppBundle\Entity\TaxTranslation:
+                properties:
+                    - name
+
+liip_imagine:
+    loaders:
+        default:
+            filesystem:
+                data_root: "%kernel.root_dir%/../web/media/images"
+    filter_sets:
+        smallest:
+            filters:
+                thumbnail: { size: [60, 60], mode: inset }
+        small:
+            filters:
+                thumbnail: { size: [120, 120], mode: inset }
+        normal:
+            filters:
+                thumbnail: { size: [175, 175], mode: inset }
+        medium:
+            filters:
+                thumbnail: { size: [240, 240], mode: inset }
+        large:
+            filters:
+                thumbnail: { size: [600, 600], mode: inset }
+        largest:
+            filters:
+                thumbnail: { size: [1200, 1200], mode: inset }
+        original:
+            filters:
+              strip: ~
