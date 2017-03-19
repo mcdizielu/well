@@ -35,15 +35,7 @@ class ScriptHandler extends SensioScriptHandler
     {
         $options       = static::getOptions($event);
         $consoleDir    = static::getConsoleDir($event, 'Update WellCommerce');
-        $composer      = $event->getComposer();
-        $installedRepo = $composer->getRepositoryManager()->getLocalRepository();
         
-        /** @var Package $package */
-        foreach ($installedRepo->getCanonicalPackages() as $package) {
-            echo $package->getName() . PHP_EOL;
-            echo $package->getType() . PHP_EOL;
-        }
-        die();
         static::executeCommand($event, $consoleDir, 'wellcommerce:doctrine:enhance', $options['process-timeout']);
     }
     
