@@ -16,12 +16,12 @@ WellCommerce\Bundle\AppBundle\Entity\ClientGroup:
                 strategy: AUTO
     fields:
         discount:
-            type: decimal
-            scale: 2
-            length: null
-            unique: false
-            nullable: false
-            precision: 15
+            type: string
+            nullable: true
+    embedded:
+        minimumOrderAmount:
+            class: WellCommerce\Bundle\AppBundle\Entity\MinimumOrderAmount
+            columnPrefix: minimum_order_amount_
     oneToMany:
         clients:
             targetEntity: WellCommerce\Bundle\AppBundle\Entity\Client

@@ -31,6 +31,9 @@ WellCommerce\Bundle\AppBundle\Entity\Client:
         contactDetails:
             class: WellCommerce\Bundle\AppBundle\Entity\ClientContactDetails
             columnPrefix: contact_details_
+        minimumOrderAmount:
+            class: WellCommerce\Bundle\AppBundle\Entity\MinimumOrderAmount
+            columnPrefix: minimum_order_amount_
     oneToMany:
         orders:
             targetEntity: WellCommerce\Bundle\OrderBundle\Entity\Order

@@ -32,7 +32,12 @@ class ClientGroup implements EntityInterface
     use Timestampable;
     use Blameable;
     
-    protected $discount = 0.00;
+    protected $discount = null;
+    
+    /**
+     * @var MinimumOrderAmount
+     */
+    protected $minimumOrderAmount;
     
     /**
      * @var Collection
@@ -46,16 +51,17 @@ class ClientGroup implements EntityInterface
     
     public function __construct()
     {
-        $this->clients = new ArrayCollection();
-        $this->pages   = new ArrayCollection();
+        $this->clients            = new ArrayCollection();
+        $this->pages              = new ArrayCollection();
+        $this->minimumOrderAmount = new MinimumOrderAmount();
     }
     
-    public function getDiscount(): float
+    public function getDiscount()
     {
         return $this->discount;
     }
     
-    public function setDiscount(float $discount)
+    public function setDiscount($discount)
     {
         $this->discount = $discount;
     }
@@ -88,6 +94,16 @@ class ClientGroup implements EntityInterface
     public function addPage(Page $page)
     {
         $this->pages->add($page);
+    }
+    
+    public function getMinimumOrderAmount(): MinimumOrderAmount
+    {
+        return $this->minimumOrderAmount;
+    }
+    
+    public function setMinimumOrderAmount(MinimumOrderAmount $minimumOrderAmount)
+    {
+        $this->minimumOrderAmount = $minimumOrderAmount;
     }
     
     public function translate($locale = null, $fallbackToDefault = true): ClientGroupTranslation

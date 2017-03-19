@@ -151,6 +151,7 @@ common:
         categories: Categories
         description: Description
         prices: Prices
+        minimum_order_amount: Minimum order amount
     label:
         id: ID
         name: Name
@@ -162,6 +163,7 @@ common:
         group: Group
         symbol: Symbol
         discount: Discount
+        discount_expression: Discount expression
         created_at: Created at
         updated_at: Updated at
         valid_from: Valid from
@@ -221,6 +223,9 @@ common:
         meta_keywords: Meta keywords
         yes: Yes
         no: No
+        minimum_order_amount:
+            value: Gross value
+            currency: Currency
     flashes:
         success: Success!
 

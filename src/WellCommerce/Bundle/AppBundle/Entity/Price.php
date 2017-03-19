@@ -24,7 +24,6 @@ class Price
     protected $taxAmount    = 0;
     protected $taxRate      = 0;
     protected $currency     = '';
-    protected $exchangeRate = 0;
     
     public function getNetAmount(): float
     {

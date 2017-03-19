@@ -76,9 +76,29 @@ class ClientFormBuilder extends AbstractFormBuilder
             'comment' => 'client.label.accept_newsletter',
         ]));
         
-        $clientDetailsData->addChild($this->getElement('text_field', [
-            'name'    => 'clientDetails.discount',
-            'label'   => 'common.label.discount',
+        $discountSettings = $form->addChild($this->getElement('nested_fieldset', [
+            'name'  => 'discount_data',
+            'label' => 'common.fieldset.discount_settings',
+        ]));
+        
+        $discountSettings->addChild($this->getElement('tip', [
+            'tip' => 'common.tip.discount_expression',
+        ]));
+        
+        $discountSettings->addChild($this->getElement('text_field', [
+            'name'   => 'clientDetails.discount',
+            'label'  => 'common.label.discount',
+            'suffix' => '%',
+        ]));
+        
+        $minimumOrderAmount = $form->addChild($this->getElement('nested_fieldset', [
+            'name'  => 'minimumOrderAmount',
+            'label' => 'common.fieldset.minimum_order_amount',
+        ]));
+        
+        $minimumOrderAmount->addChild($this->getElement('text_field', [
+            'name'    => 'minimumOrderAmount.value',
+            'label'   => 'common.label.minimum_order_amount.value',
             'suffix'  => '%',
             'filters' => [
                 $this->getFilter('comma_to_dot_changer'),
@@ -87,6 +107,15 @@ class ClientFormBuilder extends AbstractFormBuilder
                 $this->getRule('required'),
             ],
             'default' => 0,
+        ]));
+        
+        $minimumOrderAmount->addChild($this->getElement('select', [
+            'name'    => 'minimumOrderAmount.currency',
+            'label'   => 'common.label.minimum_order_amount.currency',
+            'options' => $this->get('currency.dataset.admin')->getResult('select', ['order_by' => 'code'], [
+                'label_column' => 'code',
+                'value_column' => 'code',
+            ]),
         ]));
         
         if ($this->getRouterHelper()->getCurrentAction() === 'addAction') {

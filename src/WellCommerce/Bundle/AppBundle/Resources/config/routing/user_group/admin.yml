@@ -7,14 +7,14 @@
 # please view the LICENSE file that was distributed with this source code.
 
 admin.user_group.index:
-    path: /admin/user/group/index
+    path: /index
     defaults:
         _controller: 'user_group.controller.admin:indexAction'
     options:
         require_admin_permission: user_group.index
 
 admin.user_group.grid:
-    path: /admin/user/group/grid
+    path: /grid
     condition: "request.isXmlHttpRequest()"
     defaults:
         _controller: 'user_group.controller.admin:gridAction'
@@ -23,14 +23,14 @@ admin.user_group.grid:
         require_admin_permission: user_group.index
 
 admin.user_group.add:
-    path: /admin/user/group/add
+    path: /add
     defaults:
         _controller: 'user_group.controller.admin:addAction'
     options:
         require_admin_permission: user_group.add
 
 admin.user_group.edit:
-    path: '/admin/user/group/edit/{id}'
+    path: '/edit/{id}'
     defaults:
         _controller: 'user_group.controller.admin:editAction'
     options:
@@ -38,7 +38,7 @@ admin.user_group.edit:
         require_admin_permission: user_group.edit
 
 admin.user_group.delete:
-    path: '/admin/user/group/delete/{id}'
+    path: '/delete/{id}'
     defaults:
         _controller: 'user_group.controller.admin:deleteAction'
     options:
@@ -46,7 +46,7 @@ admin.user_group.delete:
         require_admin_permission: user_group.delete
 
 admin.user_group.delete_group:
-    path: '/admin/user/group/delete_group'
+    path: '/delete_group'
     defaults:
         _controller: 'user_group.controller.admin:deleteGroupAction'
     options:

@@ -33,19 +33,6 @@ class ClientGroupFormBuilder extends AbstractFormBuilder
             'label' => 'common.fieldset.general',
         ]));
         
-        $requiredData->addChild($this->getElement('text_field', [
-            'name'    => 'discount',
-            'label'   => 'common.label.discount',
-            'comment' => 'client.comment.discount',
-            'suffix'  => '%',
-            'filters' => [
-                $this->getFilter('comma_to_dot_changer'),
-            ],
-            'rules'   => [
-                $this->getRule('required'),
-            ],
-        ]));
-        
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
             'label'       => 'common.fieldset.translations',
@@ -58,6 +45,48 @@ class ClientGroupFormBuilder extends AbstractFormBuilder
             'rules' => [
                 $this->getRule('required'),
             ],
+        ]));
+        
+        $discountSettings = $form->addChild($this->getElement('nested_fieldset', [
+            'name'  => 'discount_data',
+            'label' => 'common.fieldset.discount_settings',
+        ]));
+        
+        $discountSettings->addChild($this->getElement('tip', [
+            'tip' => 'common.tip.discount_expression',
+        ]));
+        
+        $discountSettings->addChild($this->getElement('text_field', [
+            'name'   => 'discount',
+            'label'  => 'common.label.discount',
+            'suffix' => '%',
+        ]));
+        
+        $minimumOrderAmount = $form->addChild($this->getElement('nested_fieldset', [
+            'name'  => 'minimumOrderAmount',
+            'label' => 'common.fieldset.minimum_order_amount',
+        ]));
+        
+        $minimumOrderAmount->addChild($this->getElement('text_field', [
+            'name'    => 'minimumOrderAmount.value',
+            'label'   => 'common.label.minimum_order_amount.value',
+            'suffix'  => '%',
+            'filters' => [
+                $this->getFilter('comma_to_dot_changer'),
+            ],
+            'rules'   => [
+                $this->getRule('required'),
+            ],
+            'default' => 0,
+        ]));
+        
+        $minimumOrderAmount->addChild($this->getElement('select', [
+            'name'    => 'minimumOrderAmount.currency',
+            'label'   => 'common.label.minimum_order_amount.currency',
+            'options' => $this->get('currency.dataset.admin')->getResult('select', ['order_by' => 'code'], [
+                'label_column' => 'code',
+                'value_column' => 'code',
+            ]),
         ]));
         
         $form->addFilter($this->getFilter('no_code'));

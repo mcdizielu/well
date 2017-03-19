@@ -56,4 +56,11 @@ class ClientController extends AbstractAdminController
             'form' => $form,
         ]);
     }
+    
+    public function detailsAction(Client $client): Response
+    {
+        $data = $this->get('serializer')->serialize($client, 'json', ['group' => 'client']);
+        
+        return new Response($data);
+    }
 }

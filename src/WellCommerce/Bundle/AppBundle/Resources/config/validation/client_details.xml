@@ -57,15 +57,5 @@
                 <option name="message">client_details.password_empty</option>
             </constraint>
         </property>
-        <property name="discount">
-            <constraint name="Range">
-                <option name="min">0</option>
-                <option name="max">100</option>
-                <option name="groups">
-                    <value>Default</value>
-                    <value>client_registration</value>
-                </option>
-            </constraint>
-        </property>
     </class>
 </constraint-mapping>

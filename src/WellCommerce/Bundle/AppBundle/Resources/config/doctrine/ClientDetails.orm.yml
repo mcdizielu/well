@@ -10,10 +10,8 @@ WellCommerce\Bundle\AppBundle\Entity\ClientDetails:
     type: embeddable
     fields:
         discount:
-            type: decimal
-            scale: 2
-            nullable: false
-            precision: 15
+            type: string
+            nullable: true
         password:
             type: string
             length: 64

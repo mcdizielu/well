@@ -13,6 +13,9 @@ WellCommerce\Bundle\AppBundle\Entity\Shop:
         mailerConfiguration:
             class: WellCommerce\Bundle\CoreBundle\Entity\MailerConfiguration
             columnPrefix: mailer_configuration_
+        minimumOrderAmount:
+            class: WellCommerce\Bundle\AppBundle\Entity\MinimumOrderAmount
+            columnPrefix: minimum_order_amount_
     fields:
         name:
             type: string

@@ -154,6 +154,35 @@ class ShopFormBuilder extends AbstractFormBuilder
             'name'  => 'mailerConfiguration.bcc',
             'label' => 'shop.label.mailer_configuration.bcc',
         ]));
+    
+        $minimumOrderAmount = $form->addChild($this->getElement('nested_fieldset', [
+            'name'  => 'minimumOrderAmount',
+            'label' => 'common.fieldset.minimum_order_amount',
+        ]));
+    
+        $minimumOrderAmount->addChild($this->getElement('text_field', [
+            'name'    => 'minimumOrderAmount.value',
+            'label'   => 'common.label.minimum_order_amount.value',
+            'suffix'  => '%',
+            'filters' => [
+                $this->getFilter('comma_to_dot_changer'),
+            ],
+            'rules'   => [
+                $this->getRule('required'),
+            ],
+            'default' => 0,
+        ]));
+    
+        $minimumOrderAmount->addChild($this->getElement('select', [
+            'name'    => 'minimumOrderAmount.currency',
+            'label'   => 'common.label.minimum_order_amount.currency',
+            'options' => $this->get('currency.dataset.admin')->getResult('select', ['order_by' => 'code'], [
+                'label_column' => 'code',
+                'value_column' => 'code',
+            ]),
+        ]));
+        
+        $this->addMetadataFieldset($form, $this->get('shop.repository'));
         
         $this->addMetadataFieldset($form, $this->get('shop.repository'));
         
