@@ -36,6 +36,9 @@
   "extra": {
     "branch-alias": {
       "dev-master": "0.7.x-dev"
+    },
+    "enhancer-traits": {
+      "WellCommerce\\Extra\\OrderBundle\\Entity\\OrderExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/OrderExtraTrait.php"
     }
   }
 }

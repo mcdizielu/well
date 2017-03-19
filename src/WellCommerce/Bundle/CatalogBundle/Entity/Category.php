@@ -19,7 +19,7 @@ use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
 use WellCommerce\Bundle\AppBundle\Entity\Media;
 use WellCommerce\Bundle\AppBundle\Entity\ShopCollectionAwareTrait;
-use WellCommerce\Bundle\CatalogBundle\Entity\Extra\CategoryExtraTrait;
+use WellCommerce\Extra\CatalogBundle\Entity\CategoryExtraTrait;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Sortable;

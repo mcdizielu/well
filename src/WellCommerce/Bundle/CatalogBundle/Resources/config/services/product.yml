@@ -89,8 +89,3 @@ services:
         arguments: ['@product.manager']
         calls:
             - [setContainer, ['@service_container']]
-
-    product_mapping.enhancer:
-        class: WellCommerce\Bundle\CatalogBundle\Enhancer\ProductMappingEnhancer
-        tags:
-            - { name: doctrine.mapping.enhancer }

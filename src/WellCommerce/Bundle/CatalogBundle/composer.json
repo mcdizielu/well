@@ -37,10 +37,10 @@
       "dev-master": "0.7.x-dev"
     },
     "enhancer-traits": {
-      "WellCommerce\\Extra\\AvailabilityExtraTrait": "src/WellCommerce/Bundle/CatalogBundle/Entity/Extra/AvailabilityExtraTrait.php",
-      "WellCommerce\\Extra\\CategoryExtraTrait": "src/WellCommerce/Bundle/CatalogBundle/Entity/Extra/CategoryExtraTrait.php",
-      "WellCommerce\\Extra\\ProductExtraTrait": "src/WellCommerce/Bundle/CatalogBundle/Entity/Extra/ProductExtraTrait.php",
-      "WellCommerce\\Extra\\VariantExtraTrait": "src/WellCommerce/Bundle/CatalogBundle/Entity/Extra/VariantExtraTrait.php"
+      "WellCommerce\\Extra\\CatalogBundle\\Entity\\AvailabilityExtraTrait": "src/WellCommerce/Extra/CatalogBundle/Entity/AvailabilityExtraTrait.php",
+      "WellCommerce\\Extra\\CatalogBundle\\Entity\\CategoryExtraTrait": "src/WellCommerce/Extra/CatalogBundle/Entity/CategoryExtraTrait.php",
+      "WellCommerce\\Extra\\CatalogBundle\\Entity\\ProductExtraTrait": "src/WellCommerce/Extra/CatalogBundle/Entity/ProductExtraTrait.php",
+      "WellCommerce\\Extra\\CatalogBundle\\Entity\\VariantExtraTrait": "src/WellCommerce/Extra/CatalogBundle/Entity/VariantExtraTrait.php"
     }
   }
 }
