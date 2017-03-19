@@ -79,3 +79,10 @@ services:
     console.action_executor:
         class: WellCommerce\Bundle\CoreBundle\Console\Executor\ConsoleActionExecutor
         arguments: ['@kernel']
+
+    doctrine_enhancer.cache_warmer:
+        class: WellCommerce\Bundle\CoreBundle\CacheWarmer\DoctrineEnhancerCacheWarmer
+        arguments: ['@doctrine.trait_generator.enhancer_collection']
+        public: false
+        tags:
+            - { name: kernel.cache_warmer, priority: 1000 }
