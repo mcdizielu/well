@@ -39,7 +39,7 @@
       "dev-master": "0.7.x-dev"
     },
     "enhancer-traits": {
-      "WellCommerce\\Extra\\AppBundle\\Entity\\ClientExtraTrait": "src/WellCommerce/Extra/AppBundle/Entity/ClientExtraTrait.php",
+      "WellCommerce\\Extra\\AppBundle\\Entity\\ClientExtraTrait": "src/WellCommerce/Extra/AppBundle/Entity/ClientExtraTrait.php"
     }
   }
 }
