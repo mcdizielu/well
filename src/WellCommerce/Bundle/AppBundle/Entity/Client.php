@@ -21,6 +21,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
+use WellCommerce\Extra\AppBundle\Entity\ClientExtraTrait;
 
 /**
  * Class Client
@@ -35,6 +36,7 @@ class Client implements EntityInterface, \Serializable, UserInterface, Equatable
     use Timestampable;
     use Blameable;
     use ShopAwareTrait;
+    use ClientExtraTrait;
     
     /**
      * @var Collection
