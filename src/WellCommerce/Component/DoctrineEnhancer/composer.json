@@ -31,7 +31,7 @@
   },
   "require": {
     "php": "^7.0",
-    "wellcommerce/collections": "^0.7@dev",
+    "wellcommerce/collections": "^0.9@dev",
     "gossi/php-code-generator": "^0.4.1",
     "doctrine/orm": "v2.5.4"
   },
