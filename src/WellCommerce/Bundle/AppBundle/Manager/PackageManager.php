@@ -14,7 +14,6 @@ namespace WellCommerce\Bundle\AppBundle\Manager;
 
 use ComposerRevisions\Revisions;
 use Packagist\Api\Result\Package as RemotePackage;
-use Symfony\Component\HttpFoundation\Request;
 use WellCommerce\Bundle\AppBundle\Entity\Package;
 use WellCommerce\Bundle\CoreBundle\Helper\Package\PackageHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Manager\AbstractManager;
@@ -26,10 +25,7 @@ use WellCommerce\Bundle\CoreBundle\Manager\AbstractManager;
  */
 final class PackageManager extends AbstractManager
 {
-    /**
-     * Searches for all packages of particular type and adds them to Smuggler
-     */
-    public function syncPackages($type)
+    public function syncPackages(string $type)
     {
         $searchResults = $this->getHelper()->getPackages(['type' => $type]);
         
@@ -62,18 +58,6 @@ final class PackageManager extends AbstractManager
         $package->setVendor($vendor);
         $this->setPackageVersions($package);
         $this->getDoctrineHelper()->getEntityManager()->persist($package);
-    }
-    
-    public function getConsoleCommandArguments(Request $request)
-    {
-        $package   = $request->attributes->get('id');
-        $operation = $request->attributes->get('operation');
-        
-        return [
-            'app/console',
-            'wellcommerce:package:' . $operation,
-            '--package=' . $package,
-        ];
     }
     
     public function changePackageStatus(Package $package)
