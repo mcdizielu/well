@@ -30,12 +30,12 @@
   },
   "require": {
     "php": "^7.0",
-    "wellcommerce/collections": "^0.7@dev",
+    "wellcommerce/collections": "^0.9@dev",
     "symfony/http-foundation": "v3.2.2"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.7.x-dev"
+      "dev-master": "0.9.x-dev"
     }
   }
 }

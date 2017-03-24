@@ -31,12 +31,12 @@
     }
   },
   "require": {
-    "wellcommerce/core-bundle": "^0.7@dev",
-    "wellcommerce/api-bundle": "^0.7@dev"
+    "wellcommerce/core-bundle": "^0.9@dev",
+    "wellcommerce/api-bundle": "^0.9@dev"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.7.x-dev"
+      "dev-master": "0.9.x-dev"
     },
     "enhancer-traits": {
       "WellCommerce\\Extra\\AppBundle\\Entity\\ClientExtraTrait": "src/WellCommerce/Extra/AppBundle/Entity/ClientExtraTrait.php"

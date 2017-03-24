@@ -31,13 +31,13 @@
   "require": {
     "php": "^7.0",
     "elasticsearch/elasticsearch": "v2.3.0",
-    "wellcommerce/collections": "^0.7@dev",
+    "wellcommerce/collections": "^0.9@dev",
     "symfony/options-resolver": "v3.2.2",
     "algolia/algoliasearch-client-php": "^1.16"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.7.x-dev"
+      "dev-master": "0.9.x-dev"
     }
   }
 }

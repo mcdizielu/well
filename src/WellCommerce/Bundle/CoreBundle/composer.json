@@ -61,18 +61,18 @@
     "emanueleminotto/twig-cache-bundle": "^1.0",
     "friendsofsymfony/jsrouting-bundle": "^2.0@dev",
     "symfony-cmf/routing": "1.4.0",
-    "wellcommerce/breadcrumb": "^0.7@dev",
-    "wellcommerce/collections": "^0.7@dev",
-    "wellcommerce/datagrid": "^0.7@dev",
-    "wellcommerce/dataset": "^0.7@dev",
-    "wellcommerce/doctrine-enhancer": "^0.7@dev",
-    "wellcommerce/form": "^0.7@dev",
-    "wellcommerce/layout": "^0.7@dev",
-    "wellcommerce/serializer": "^0.7@dev"
+    "wellcommerce/breadcrumb": "^0.9@dev",
+    "wellcommerce/collections": "^0.9@dev",
+    "wellcommerce/datagrid": "^0.9@dev",
+    "wellcommerce/dataset": "^0.9@dev",
+    "wellcommerce/doctrine-enhancer": "^0.9@dev",
+    "wellcommerce/form": "^0.9@dev",
+    "wellcommerce/layout": "^0.9@dev",
+    "wellcommerce/serializer": "^0.9@dev"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.7.x-dev"
+      "dev-master": "0.9.x-dev"
     }
   }
 }

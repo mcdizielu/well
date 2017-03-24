@@ -30,13 +30,13 @@
     }
   },
   "require": {
-    "wellcommerce/app-bundle": "^0.7@dev",
-    "wellcommerce/catalog-bundle": "^0.7@dev",
+    "wellcommerce/app-bundle": "^0.9@dev",
+    "wellcommerce/catalog-bundle": "^0.9@dev",
     "expalmer/php-bad-words": "0.1.3"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.7.x-dev"
+      "dev-master": "0.9.x-dev"
     }
   }
 }

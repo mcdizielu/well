@@ -33,12 +33,12 @@
     }
   },
   "require": {
-    "wellcommerce/core-bundle": "^0.7@dev",
-    "wellcommerce/search": "^0.7@dev"
+    "wellcommerce/core-bundle": "^0.9@dev",
+    "wellcommerce/search": "^0.9@dev"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.7.x-dev"
+      "dev-master": "0.9.x-dev"
     }
   }
 }

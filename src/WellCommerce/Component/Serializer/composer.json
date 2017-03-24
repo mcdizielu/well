@@ -34,11 +34,11 @@
     "symfony/property-access": "v3.2.2",
     "symfony/options-resolver": "v3.2.2",
     "doctrine/orm": "2.5.4",
-    "wellcommerce/collections": "^0.7@dev"
+    "wellcommerce/collections": "^0.9@dev"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.7.x-dev"
+      "dev-master": "0.9.x-dev"
     }
   }
 }

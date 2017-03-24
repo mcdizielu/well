@@ -30,12 +30,12 @@
     }
   },
   "require": {
-    "wellcommerce/app-bundle": "^0.7@dev",
-    "wellcommerce/catalog-bundle": "^0.7@dev"
+    "wellcommerce/app-bundle": "^0.9@dev",
+    "wellcommerce/catalog-bundle": "^0.9@dev"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.7.x-dev"
+      "dev-master": "0.9.x-dev"
     },
     "enhancer-traits": {
       "WellCommerce\\Extra\\OrderBundle\\Entity\\OrderExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/OrderExtraTrait.php"
