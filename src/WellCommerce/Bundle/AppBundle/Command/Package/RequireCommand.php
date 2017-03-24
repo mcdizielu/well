@@ -12,7 +12,6 @@
 
 namespace WellCommerce\Bundle\AppBundle\Command\Package;
 
-use Symfony\Component\Console\Input\InputInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Package\PackageHelperInterface;
 
 /**
@@ -22,34 +21,13 @@ use WellCommerce\Bundle\CoreBundle\Helper\Package\PackageHelperInterface;
  */
 class RequireCommand extends AbstractPackageCommand
 {
-    /**
-     * @var string
-     */
     protected $composerOperation = PackageHelperInterface::ACTION_REQUIRE;
-
-    /**
-     * {@inheritdoc}
-     */
+    
     protected function configure()
     {
         parent::configure();
         $this->setDescription('Install WellCommerce package');
         $this->setName('wellcommerce:package:require');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function getCommandArguments(InputInterface $input)
-    {
-        $package = $this->getPackageInformation($input->getOption('package'));
-        $version = PackageHelperInterface::DEFAULT_BRANCH_VERSION;
-
-        return [
-            $this->getComposer(),
-            $this->composerOperation,
-            sprintf('%s:%s', $package, $version),
-        ];
     }
 }
 

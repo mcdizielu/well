@@ -3,11 +3,6 @@
 {% block content %}
     <h2>{% trans %}package.heading.index{% endtrans %}</h2>
 
-    <ul class="possibilities">
-        <li><a href="{{ path('admin.package.sync') }}" class="button"
-               title="{% trans %}package.button.sync{% endtrans %}"><span>{% trans %}package.button.sync{% endtrans %}</span></a></li>
-    </ul>
-
     <script>
         var installPackage = function (dg, id) {
             return window.location.href = Routing.generate('admin.package.require', {

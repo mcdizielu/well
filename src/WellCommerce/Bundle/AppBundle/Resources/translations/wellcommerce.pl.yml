@@ -325,10 +325,14 @@ media:
 package:
     heading:
         index: Moduły
-        require: Pobierz moduł
+        require: Zainstaluj moduł
+        update: Aktualizuj moduł
+        remove: Odinstaluj moduł
     button:
-        sync: Synchronizuj moduły
-        run: Rozpocznij pobieranie
+        sync: Synchronizuj
+        require: Zainstaluj moduł
+        update: Aktualizuj moduł
+        remove: Odinstaluj moduł
     label:
         id: ID
         name: Nazwa
@@ -338,14 +342,15 @@ package:
         remote_version: Wersja zdalna
         created_at: Zainstalowany
         updated_at: Zaktualizowany
-        output: Status instalacji
+        output: Konsola
     fieldset:
         information: Informacje
-        progress: Postęp pobierania
+        progress: Postęp operacji
     flash:
         sync:
             success: Synchronizacja zakończona sukcesem.
-
+        operation:
+            sucess: Operacja zakończona powodzeniem
 price:
     sell_price:
         net:    Cena sprzedaży netto

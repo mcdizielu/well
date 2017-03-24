@@ -320,10 +320,14 @@ media:
 package:
     heading:
         index: Packages
-        require: Require package
+        require: Install package
+        update: Update package
+        remove: Uninstall package
     button:
         sync: Synchronize packages
-        run: Install package
+        require: Install package
+        update: Update package
+        remove: Uninstall package
     label:
         id: ID
         name: Name
@@ -333,13 +337,15 @@ package:
         remote_version: Remote version
         created_at: Installed at
         updated_at: Updated at
-        output: Install status
+        output: Console output
     fieldset:
-        information: Informations
-        progress: Download progress
+        information: Information
+        progress: Progress
     flash:
         sync:
             success: Package synchronization succeeded.
+        operation:
+            success: Operation successful
 
 price:
     sell_price:

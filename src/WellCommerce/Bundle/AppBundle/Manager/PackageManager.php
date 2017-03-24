@@ -13,7 +13,6 @@
 namespace WellCommerce\Bundle\AppBundle\Manager;
 
 use ComposerRevisions\Revisions;
-use Doctrine\ORM\EntityNotFoundException;
 use Packagist\Api\Result\Package as RemotePackage;
 use Symfony\Component\HttpFoundation\Request;
 use WellCommerce\Bundle\AppBundle\Entity\Package;
@@ -67,32 +66,20 @@ final class PackageManager extends AbstractManager
     
     public function getConsoleCommandArguments(Request $request)
     {
-        $port      = (int)$request->attributes->get('port');
         $package   = $request->attributes->get('id');
         $operation = $request->attributes->get('operation');
         
         return [
             'app/console',
             'wellcommerce:package:' . $operation,
-            '--port=' . $port,
             '--package=' . $package,
         ];
     }
     
-    public function changePackageStatus(Request $request)
+    public function changePackageStatus(Package $package)
     {
-        $id         = $request->attributes->get('id');
-        $em         = $this->getDoctrineHelper()->getEntityManager();
-        $repository = $this->getRepository();
-        $package    = $repository->find($id);
-        
-        if (null === $package) {
-            throw new EntityNotFoundException($repository->getMetaData()->getName(), $id);
-        }
-        
         $this->setPackageVersions($package);
-        
-        $em->flush();
+        $this->updateResource($package);
     }
     
     protected function setPackageVersions(Package $package)

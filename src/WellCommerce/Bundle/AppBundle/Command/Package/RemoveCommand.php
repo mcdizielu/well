@@ -21,14 +21,8 @@ use WellCommerce\Bundle\CoreBundle\Helper\Package\PackageHelperInterface;
  */
 class RemoveCommand extends AbstractPackageCommand
 {
-    /**
-     * @var string
-     */
     protected $composerOperation = PackageHelperInterface::ACTION_REMOVE;
-
-    /**
-     * {@inheritdoc}
-     */
+    
     protected function configure()
     {
         parent::configure();

@@ -51,6 +51,6 @@ services:
 
     doctrine.enhance.command:
         class: WellCommerce\Bundle\CoreBundle\Command\Doctrine\EnhanceCommand
-        arguments: ['@environment_helper', '@doctrine.trait_generator.enhancer_collection']
+        arguments: ['@process.helper', '@doctrine.trait_generator.enhancer_collection']
         tags:
             - { name: console.command }

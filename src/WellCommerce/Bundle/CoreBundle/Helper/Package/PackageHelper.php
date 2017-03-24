@@ -13,6 +13,8 @@
 namespace WellCommerce\Bundle\CoreBundle\Helper\Package;
 
 use Packagist\Api\Client;
+use Packagist\Api\Result\Package as PackagistPackage;
+use Symfony\Component\Filesystem\Filesystem;
 
 /**
  * Class PackageHelper
@@ -26,19 +28,11 @@ class PackageHelper implements PackageHelperInterface
      */
     protected $client;
     
-    /**
-     * Constructor
-     *
-     * @param Client $client
-     */
     public function __construct(Client $client)
     {
-        $this->client = $client;
+        $this->client             = $client;
     }
     
-    /**
-     * {@inheritdoc}
-     */
     public function getPackages(array $criteria)
     {
         $this->client->setPackagistUrl(self::PACKAGIST_URL);
@@ -46,10 +40,7 @@ class PackageHelper implements PackageHelperInterface
         return $this->client->all($criteria);
     }
     
-    /**
-     * {@inheritdoc}
-     */
-    public function getPackage($name)
+    public function getPackage(string $name): PackagistPackage
     {
         return $this->client->get($name);
     }

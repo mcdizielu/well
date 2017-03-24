@@ -21,14 +21,8 @@ use WellCommerce\Bundle\CoreBundle\Helper\Package\PackageHelperInterface;
  */
 class UpdateCommand extends AbstractPackageCommand
 {
-    /**
-     * @var string
-     */
     protected $composerOperation = PackageHelperInterface::ACTION_UPDATE;
-
-    /**
-     * {@inheritdoc}
-     */
+    
     protected function configure()
     {
         parent::configure();

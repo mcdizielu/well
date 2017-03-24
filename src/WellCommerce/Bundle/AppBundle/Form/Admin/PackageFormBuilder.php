@@ -31,10 +31,8 @@ class PackageFormBuilder extends AbstractFormBuilder
     public function buildForm(FormInterface $packageForm)
     {
         $router    = $this->getRouterHelper();
-        $helper    = $this->get('environment_helper');
         $package   = $this->getRequestHelper()->getAttributesBagParam('id');
         $operation = $this->getRequestHelper()->getAttributesBagParam('operation');
-        $port      = $helper->getFreePort();
         $versions  = $this->getPackageVersions($package);
         
         $packageData = $packageForm->addChild($this->getElement('nested_fieldset', [
@@ -63,14 +61,13 @@ class PackageFormBuilder extends AbstractFormBuilder
         ]));
         
         $packageRequiredData->addChild($this->getElement('console_output', [
-            'name'        => 'console_output',
-            'label'       => 'package.label.console_output',
-            'port'        => $port,
-            'console_url' => $router->generateUrl(
-                'admin.package.console', [
+            'name'         => 'console_output',
+            'label'        => 'package.label.console_output',
+            'button_label' => 'package.button.' . $operation,
+            'run_url'  => $router->generateUrl(
+                'admin.package.run', [
                     'id'        => $package,
                     'operation' => $operation,
-                    'port'      => $port,
                 ]
             ),
         ]));

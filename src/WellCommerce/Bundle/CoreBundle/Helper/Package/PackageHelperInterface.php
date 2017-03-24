@@ -12,6 +12,8 @@
 
 namespace WellCommerce\Bundle\CoreBundle\Helper\Package;
 
+use Packagist\Api\Result\Package;
+
 /**
  * Class PackageHelperInterface
  *
@@ -36,12 +38,5 @@ interface PackageHelperInterface
      */
     public function getPackages(array $criteria);
     
-    /**
-     * Returns information about package
-     *
-     * @param string $name
-     *
-     * @return \Packagist\Api\Result\Package
-     */
-    public function getPackage($name);
+    public function getPackage(string $name): Package;
 }

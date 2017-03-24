@@ -273,8 +273,12 @@
     Translator.add("media.button.add_from_disk", "Dodaj z dysku", "wellcommerce", "pl");
     Translator.add("package.heading.index", "Modu\u0142y", "wellcommerce", "pl");
     Translator.add("package.heading.require", "Pobierz modu\u0142", "wellcommerce", "pl");
+    Translator.add("package.heading.update", "Aktualizuj modu\u0142", "wellcommerce", "pl");
+    Translator.add("package.heading.remove", "Odinstaluj modu\u0142", "wellcommerce", "pl");
     Translator.add("package.button.sync", "Synchronizuj modu\u0142y", "wellcommerce", "pl");
-    Translator.add("package.button.run", "Rozpocznij pobieranie", "wellcommerce", "pl");
+    Translator.add("package.button.require", "Zainstaluj modu\u0142", "wellcommerce", "pl");
+    Translator.add("package.button.update", "Aktualizuj modu\u0142", "wellcommerce", "pl");
+    Translator.add("package.button.remove", "Odinstaluj modu\u0142", "wellcommerce", "pl");
     Translator.add("package.label.id", "ID", "wellcommerce", "pl");
     Translator.add("package.label.name", "Nazwa", "wellcommerce", "pl");
     Translator.add("package.label.full_name", "Pe\u0142na nazwa", "wellcommerce", "pl");
@@ -776,6 +780,7 @@
     Translator.add("form.file_selector.filename", "Plik", "wellcommerce", "pl");
     Translator.add("form.file_selector.extension", "Rozszerzenie", "wellcommerce", "pl");
     Translator.add("form.file_selector.preview", "Podgl\u0105d", "wellcommerce", "pl");
+    Translator.add("package.button.run", "Rozpocznij pobieranie", "wellcommerce", "pl");
     Translator.add("admin.heading.last_opinions", "Ostatnie opinie", "wellcommerce", "pl");
     Translator.add("admin.heading.last_orders", "Ostatnie zam\u00f3wienia", "wellcommerce", "pl");
     Translator.add("admin.heading.new_customers", "Nowi klienci", "wellcommerce", "pl");

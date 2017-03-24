@@ -16,7 +16,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use WellCommerce\Bundle\CoreBundle\Helper\Environment\EnvironmentHelperInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Process\ProcessHelperInterface;
 use WellCommerce\Component\DoctrineEnhancer\TraitGenerator\TraitGenerator;
 use WellCommerce\Component\DoctrineEnhancer\TraitGenerator\TraitGeneratorEnhancerCollection;
 
@@ -28,20 +28,20 @@ use WellCommerce\Component\DoctrineEnhancer\TraitGenerator\TraitGeneratorEnhance
 final class EnhanceCommand extends Command
 {
     /**
-     * @var EnvironmentHelperInterface
+     * @var ProcessHelperInterface
      */
-    private $environmentHelper;
+    private $processHelper;
     
     /**
      * @var TraitGeneratorEnhancerCollection
      */
     private $collection;
     
-    public function __construct(EnvironmentHelperInterface $environmentHelper, TraitGeneratorEnhancerCollection $collection)
+    public function __construct(ProcessHelperInterface $processHelper, TraitGeneratorEnhancerCollection $collection)
     {
         parent::__construct();
-        $this->environmentHelper = $environmentHelper;
-        $this->collection        = $collection;
+        $this->processHelper = $processHelper;
+        $this->collection    = $collection;
     }
     
     protected function configure()
@@ -83,7 +83,7 @@ final class EnhanceCommand extends Command
     
     private function runProcess(array $arguments, OutputInterface $output)
     {
-        $process = $this->environmentHelper->getProcess($arguments, 360);
+        $process = $this->processHelper->createProcess($arguments);
         $process->run();
         $output->write($process->getOutput());
     }

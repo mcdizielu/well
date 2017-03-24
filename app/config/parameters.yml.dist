@@ -12,5 +12,7 @@ parameters:
     search_adapter: algolia
     search_index_prefix: wellcommerce_
 
+    php_bin_path: ~
+
     algolia_id: "C2VGT4PGWH"
     algolia_key: "b48fb9f6a4eee57f10e3079af095533b"

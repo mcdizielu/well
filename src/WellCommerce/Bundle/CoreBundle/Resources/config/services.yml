@@ -28,9 +28,9 @@ services:
         class: WellCommerce\Bundle\CoreBundle\Helper\Request\RequestHelper
         arguments: ['@request_stack','%locale%']
 
-    environment_helper:
-        class: WellCommerce\Bundle\CoreBundle\Helper\Environment\EnvironmentHelper
-        arguments: ['@kernel']
+    process.helper:
+        class: WellCommerce\Bundle\CoreBundle\Helper\Process\ProcessHelper
+        arguments: ['%php_bin_path%', '%kernel.root_dir%/../']
 
     validator.helper:
         class: WellCommerce\Bundle\CoreBundle\Helper\Validator\ValidatorHelper
@@ -74,7 +74,7 @@ services:
 
     package.helper:
         class: WellCommerce\Bundle\CoreBundle\Helper\Package\PackageHelper
-        arguments: ['@knp.packagist_api.client']
+        arguments: ['@knp.packagist_api.client', '%kernel.root_dir%/installer']
 
     console.action_executor:
         class: WellCommerce\Bundle\CoreBundle\Console\Executor\ConsoleActionExecutor

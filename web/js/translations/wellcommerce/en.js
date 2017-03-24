@@ -271,8 +271,12 @@
     Translator.add("media.button.add_from_disk", "Add from disk", "wellcommerce", "en");
     Translator.add("package.heading.index", "Packages", "wellcommerce", "en");
     Translator.add("package.heading.require", "Require package", "wellcommerce", "en");
+    Translator.add("package.heading.update", "Update package", "wellcommerce", "en");
+    Translator.add("package.heading.remove", "Uninstall package", "wellcommerce", "en");
     Translator.add("package.button.sync", "Synchronize packages", "wellcommerce", "en");
-    Translator.add("package.button.run", "Install package", "wellcommerce", "en");
+    Translator.add("package.button.require", "Install package", "wellcommerce", "en");
+    Translator.add("package.button.update", "Update package", "wellcommerce", "en");
+    Translator.add("package.button.remove", "Uninstall package", "wellcommerce", "en");
     Translator.add("package.label.id", "ID", "wellcommerce", "en");
     Translator.add("package.label.name", "Name", "wellcommerce", "en");
     Translator.add("package.label.full_name", "Full name", "wellcommerce", "en");
@@ -753,6 +757,7 @@
     Translator.add("form.file_selector.filename", "Filename", "wellcommerce", "en");
     Translator.add("form.file_selector.extension", "Extension", "wellcommerce", "en");
     Translator.add("form.file_selector.preview", "Preview", "wellcommerce", "en");
+    Translator.add("package.button.run", "Install package", "wellcommerce", "en");
     Translator.add("admin.heading.last_opinions", "Last opinions", "wellcommerce", "en");
     Translator.add("admin.heading.last_orders", "Last orders", "wellcommerce", "en");
     Translator.add("admin.heading.new_customers", "New customers", "wellcommerce", "en");

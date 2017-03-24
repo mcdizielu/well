@@ -49,18 +49,12 @@ admin.package.remove:
         expose: true
         require_admin_permission: package.delete
 
-admin.package.sync:
-    path: /sync
+admin.package.run:
+    path: '/run/{id},{operation}'
     defaults:
-        _controller: 'package.controller.admin:syncAction'
+        _controller: 'package.controller.admin:runAction'
     options:
         expose: true
         require_admin_permission: package.index
-
-admin.package.console:
-    path: '/console/{id},{port},{operation}'
-    defaults:
-        _controller: 'package.controller.admin:consoleAction'
-    options:
-        expose: true
-        require_admin_permission: package.index
+    requirements:
+        operation: 'require|update|remove'
