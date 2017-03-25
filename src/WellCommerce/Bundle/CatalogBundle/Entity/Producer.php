@@ -21,6 +21,7 @@ use WellCommerce\Bundle\AppBundle\Entity\Media;
 use WellCommerce\Bundle\AppBundle\Entity\ShopCollectionAwareTrait;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\CatalogBundle\Entity\ProducerExtraTrait;
 
 /**
  * Class Producer
@@ -34,6 +35,7 @@ class Producer implements EntityInterface
     use Timestampable;
     use Blameable;
     use ShopCollectionAwareTrait;
+    use ProducerExtraTrait;
     
     /**
      * @var Media
