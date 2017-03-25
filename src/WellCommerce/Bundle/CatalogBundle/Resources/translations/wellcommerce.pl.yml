@@ -210,7 +210,7 @@ product_status:
     comment:
         css_class: Symbol wykorzystywany np. w szablonach CSS. Dozwolone znaki alfanumeryczne.
     flash:
-        no_products: There are no products matching criteria
+        no_products: Brak produktów spełniających kryteria
 
 search:
     heading:
