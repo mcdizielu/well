@@ -1,7 +1,6 @@
 WellCommerce\Bundle\OrderBundle\Entity\OrderStatusHistory:
     type: entity
     table: orders_status_history
-    repositoryClass: WellCommerce\Bundle\OrderBundle\Repository\OrderStatusHistoryRepository
     id:
         id:
             type: integer
