@@ -40,7 +40,7 @@ class CategoryTreeFormBuilder extends AbstractFormBuilder
             'deletable'          => true,
             'addable'            => true,
             'prevent_duplicates' => true,
-            'items'              => $this->get('category.dataset.admin')->getResult('flat_tree'),
+            'items'              => $this->get('category.dataset.admin')->getResult('flat_tree', ['limit' => 10000]),
             'onClick'            => 'openCategoryEditor',
             'onSaveOrder'        => 'changeOrder',
             'onAdd'              => 'addCategory',

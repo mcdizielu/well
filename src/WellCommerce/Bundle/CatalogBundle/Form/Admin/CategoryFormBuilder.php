@@ -84,7 +84,7 @@ class CategoryFormBuilder extends AbstractFormBuilder
             'selectable'  => false,
             'sortable'    => false,
             'clickable'   => false,
-            'items'       => $this->get('category.dataset.admin')->getResult('flat_tree'),
+            'items'       => $this->get('category.dataset.admin')->getResult('flat_tree', ['limit' => 10000]),
             'restrict'    => $this->getRequestHelper()->getAttributesBagParam('id'),
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('category.repository')),
         ]));
