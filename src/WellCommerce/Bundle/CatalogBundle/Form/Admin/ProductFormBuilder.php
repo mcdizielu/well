@@ -137,7 +137,7 @@ class ProductFormBuilder extends AbstractFormBuilder
             'selectable'  => true,
             'sortable'    => false,
             'clickable'   => false,
-            'items'       => $this->get('category.dataset.admin')->getResult('flat_tree'),
+            'items'       => $this->get('category.dataset.admin')->getResult('flat_tree', ['limit' => 10000]),
             'transformer' => $this->getRepositoryTransformer('collection', $this->get('category.repository')),
         ]));
         
