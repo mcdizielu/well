@@ -78,9 +78,9 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
         if ((gThis.m_oOptions.sComment != undefined) && (gThis.m_oOptions.sComment.length)) {
             jLabel.append(' <small>' + GTranslation(gThis.m_oOptions.sComment) + '</small>');
         }
-        gThis.m_jSwfUpload = $('<div class="' + gThis._GetClass('AddFiles') + '"><a href="#" class="button expand"><span id="' + gThis.GetId() + '__upload"><img src="' + gThis._GetImage('ChooseIcon') + '" alt=""/>' + GTranslation('form.file_selector.add_from_disk') + '</span></a></div>');
+        gThis.m_jSwfUpload = $('<div class="' + gThis._GetClass('AddFiles') + '"><a href="#" class="button expand"><span id="' + gThis.GetId() + '__upload"><img src="' + gThis._GetImage('ChooseIcon') + '" alt=""/>' + GTranslation('file_selector.add_from_disk') + '</span></a></div>');
         gThis.m_jNode.append(gThis.m_jSwfUpload);
-        gThis.m_jChooseButton = $('<a href="#" class="button expand"><span><img src="' + gThis._GetImage('ChooseIcon') + '" alt=""/>' + GTranslation('form.file_selector.select_from_library') + '</span></a>');
+        gThis.m_jChooseButton = $('<a href="#" class="button expand"><span><img src="' + gThis._GetImage('ChooseIcon') + '" alt=""/>' + GTranslation('file_selector.select_from_library') + '</span></a>');
         gThis.m_jNode.append($('<span class="browse-pictures" style="float: right;margin-right: 5px;"/>').append(gThis.m_jChooseButton));
         gThis.m_jQueue = $('<ul class="' + gThis._GetClass('Queue') + '" id="' + gThis.GetId() + '__queue"/>');
         gThis.m_jNode.append(gThis.m_jQueue);
@@ -89,9 +89,9 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
         if (gThis.m_bRepeatable) {
             var jTable = $('<table class="' + gThis._GetClass('SelectedTable') + '" cellspacing="0"/>');
             var jThead = $('<thead/>');
-            jThead.append('<th>' + GTranslation('form.file_selector.photo') + '</th>');
-            jThead.append('<th>' + GTranslation('form.file_selector.main') + '</th>');
-            jThead.append('<th>' + GTranslation('form.file_selector.cancel') + '</th>');
+            jThead.append('<th>' + GTranslation('file_selector.photo') + '</th>');
+            jThead.append('<th>' + GTranslation('file_selector.main') + '</th>');
+            jThead.append('<th>' + GTranslation('file_selector.cancel') + '</th>');
             gThis.m_jSelectedFiles = $('<tbody/>');
             jTable.append(jThead);
             jTable.append(gThis.m_jSelectedFiles);
@@ -137,9 +137,9 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
         gThis.m_jFilesDatagrid.slideToggle(250);
         gThis.m_jChooseButton.toggleClass('expand');
         if (gThis.m_jChooseButton.hasClass('expand')) {
-            gThis.m_jChooseButton.find('span').html('<img src="' + gThis._GetImage('ChooseIcon') + '" alt=""/>' + GTranslation('form.file_selector.select_from_library'));
+            gThis.m_jChooseButton.find('span').html('<img src="' + gThis._GetImage('ChooseIcon') + '" alt=""/>' + GTranslation('file_selector.select_from_library'));
         } else {
-            gThis.m_jChooseButton.find('span').html('<img src="' + gThis._GetImage('ChooseIcon') + '" alt=""/>' + GTranslation('form.file_selector.collapse'));
+            gThis.m_jChooseButton.find('span').html('<img src="' + gThis._GetImage('ChooseIcon') + '" alt=""/>' + GTranslation('file_selector.collapse'));
         }
         return false;
     });
@@ -429,7 +429,7 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
 
         var column_name = new GF_Datagrid_Column({
             id: 'name',
-            caption: GTranslation('form.file_selector.filename'),
+            caption: GTranslation('file_selector.filename'),
             filter: {
                 type: GF_Datagrid.FILTER_INPUT
             }
@@ -437,12 +437,12 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
 
         var column_extension = new GF_Datagrid_Column({
             id: 'extension',
-            caption: GTranslation('form.file_selector.extension')
+            caption: GTranslation('file_selector.extension')
         });
 
         var column_thumb = new GF_Datagrid_Column({
             id: 'preview',
-            caption: GTranslation('form.file_selector.preview'),
+            caption: GTranslation('file_selector.preview'),
             appearance: {
                 width: 30,
                 no_title: true
