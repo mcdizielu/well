@@ -14,6 +14,7 @@ namespace WellCommerce\Bundle\OrderBundle\EventListener;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Event\EntityEvent;
 use WellCommerce\Bundle\CoreBundle\Helper\Mailer\MailerHelper;
+use WellCommerce\Bundle\CoreBundle\Helper\Translator\TranslatorHelperInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderStatusHistory;
 
 /**
@@ -29,13 +30,14 @@ final class OrderStatusHistorySubscriber implements EventSubscriberInterface
     private $mailerHelper;
     
     /**
-     * OrderStatusHistorySubscriber constructor.
-     *
-     * @param MailerHelper $mailerHelper
+     * @var TranslatorHelperInterface
      */
-    public function __construct(MailerHelper $mailerHelper)
+    private $translatorHelper;
+    
+    public function __construct(MailerHelper $mailerHelper, TranslatorHelperInterface $translatorHelper)
     {
-        $this->mailerHelper = $mailerHelper;
+        $this->mailerHelper     = $mailerHelper;
+        $this->translatorHelper = $translatorHelper;
     }
     
     public static function getSubscribedEvents()
@@ -53,8 +55,8 @@ final class OrderStatusHistorySubscriber implements EventSubscriberInterface
             if ($history->isNotify()) {
                 $this->mailerHelper->sendEmail([
                     'recipient'     => $order->getContactDetails()->getEmail(),
-                    'subject'       => sprintf('Zmiana statusu zamówienia %s', $order->getNumber()),
-                    'template'      => 'WellCommerceAppBundle:Email:order_status.html.twig',
+                    'subject'       => $this->translatorHelper->trans('order_status_history.email.status_changed'),
+                    'template'      => 'WellCommerceOrderBundle:Email:order_status_change.html.twig',
                     'parameters'    => [
                         'history' => $history,
                         'order'   => $order,

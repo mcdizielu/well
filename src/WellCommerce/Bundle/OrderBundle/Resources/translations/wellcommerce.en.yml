@@ -139,6 +139,8 @@ order_status_history:
         client_not_notified: Client not notified
         created_by: Created by
         no_history: Order status history is empty
+    email:
+        status_changed: "Your order status has been changed"
     button:
         change: Save
 

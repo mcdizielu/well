@@ -145,6 +145,8 @@ order_status_history:
         no_history: Brak informacji o zmianach statusów zamówienia
     button:
         change: Zapisz
+    email:
+        status_changed: "Status zamówienia został zmieniony"
 
 payment:
     heading:
