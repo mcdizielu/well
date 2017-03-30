@@ -99,7 +99,7 @@ services:
 
     order_status_history.subscriber:
         class: WellCommerce\Bundle\OrderBundle\EventListener\OrderStatusHistorySubscriber
-        arguments: ['@mailer.helper']
+        arguments: ['@mailer.helper', '@translator.helper']
         tags:
             - { name: kernel.event_subscriber }
 
