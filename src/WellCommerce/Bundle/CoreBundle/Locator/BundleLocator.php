@@ -52,6 +52,10 @@ final class BundleLocator
     
     private function getComposer(): Composer
     {
-        return Factory::create(new NullIO());
+        putenv('COMPOSER_HOME=' . $this->kernel->getRootDir() . '/.composer');
+        
+        $composerJson = $this->kernel->getRootDir() . '/../composer.json';
+        
+        return Factory::create(new NullIO(), $composerJson);
     }
 }
