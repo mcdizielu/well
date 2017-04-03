@@ -86,3 +86,10 @@ services:
         public: false
         tags:
             - { name: kernel.cache_warmer, priority: 1000 }
+
+    bundle.cache_warmer:
+        class: WellCommerce\Bundle\CoreBundle\CacheWarmer\BundleCacheWarmer
+        arguments: ['@kernel']
+        public: false
+        tags:
+            - { name: kernel.cache_warmer, priority: 1001 }

@@ -13,6 +13,7 @@
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
+use WellCommerce\Bundle\CoreBundle\Loader\BundleLoader;
 use WellCommerce\Bundle\StandardEditionBundle\WellCommerceStandardEditionBundle;
 
 /**
@@ -24,9 +25,11 @@ class AppKernel extends Kernel
 {
     public function registerBundles()
     {
+        $loader  = new BundleLoader($this);
         $bundles = new ArrayCollection();
         
         WellCommerceStandardEditionBundle::registerBundles($bundles, $this->getEnvironment());
+        $loader->registerBundles($bundles, $this->getEnvironment());
         
         return $bundles->toArray();
     }
