@@ -37,7 +37,6 @@ before_script:
 
 script:
     - phpunit -c phpunit.xml.dist
-    - bin/security-checker security:check composer.lock
 
 notifications:
     email: false
