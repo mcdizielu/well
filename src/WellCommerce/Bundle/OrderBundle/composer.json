@@ -38,7 +38,8 @@
       "dev-master": "0.9.x-dev"
     },
     "enhancer-traits": {
-      "WellCommerce\\Extra\\OrderBundle\\Entity\\OrderExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/OrderExtraTrait.php"
+      "WellCommerce\\Extra\\OrderBundle\\Entity\\OrderExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/OrderExtraTrait.php",
+      "WellCommerce\\Extra\\OrderBundle\\Entity\\OrderStatusExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/OrderStatusExtraTrait.php"
     }
   }
 }

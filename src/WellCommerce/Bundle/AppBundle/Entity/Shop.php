@@ -18,6 +18,7 @@ use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 use WellCommerce\Bundle\CoreBundle\Entity\MailerConfiguration;
+use WellCommerce\Extra\AppBundle\Entity\ShopExtraTrait;
 
 /**
  * Class Shop
@@ -30,6 +31,7 @@ class Shop implements EntityInterface
     use Timestampable;
     use Blameable;
     use Translatable;
+    use ShopExtraTrait;
     
     protected $name            = '';
     protected $url             = '';

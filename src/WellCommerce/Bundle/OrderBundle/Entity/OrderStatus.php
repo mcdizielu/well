@@ -17,6 +17,7 @@ use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\OrderBundle\Entity\OrderStatusExtraTrait;
 
 /**
  * Class OrderStatus
@@ -30,6 +31,7 @@ class OrderStatus implements EntityInterface
     use Timestampable;
     use Blameable;
     use Translatable;
+    use OrderStatusExtraTrait;
     
     protected $colour = '#fff';
     
