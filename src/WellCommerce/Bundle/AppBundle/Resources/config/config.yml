@@ -58,3 +58,10 @@ liip_imagine:
         original:
             filters:
               strip: ~
+
+ikadoc_kc_finder:
+    base_path : "%kernel.root_dir%/../vendor/sunhater/kcfinder"
+    config:
+        disabled : false
+        uploadURL: "/uploads/"
+        uploadDir: "%kernel.root_dir%/../web/uploads/"

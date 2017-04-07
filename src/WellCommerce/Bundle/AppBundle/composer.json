@@ -32,7 +32,9 @@
   },
   "require": {
     "wellcommerce/core-bundle": "^0.9@dev",
-    "wellcommerce/api-bundle": "^0.9@dev"
+    "wellcommerce/api-bundle": "^0.9@dev",
+    "sunhater/kcfinder": "dev-master",
+    "ikadoc/kcfinder-bundle": "^1.1"
   },
   "extra": {
     "branch-alias": {

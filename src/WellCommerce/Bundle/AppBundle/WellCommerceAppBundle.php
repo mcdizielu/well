@@ -13,11 +13,10 @@
 namespace WellCommerce\Bundle\AppBundle;
 
 use Doctrine\Common\Collections\Collection;
+use Ikadoc\KCFinderBundle\IkadocKCFinderBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use WellCommerce\Bundle\ApiBundle\WellCommerceApiBundle;
 use WellCommerce\Bundle\AppBundle\DependencyInjection\Compiler;
 use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
-use WellCommerce\Bundle\CoreBundle\WellCommerceCoreBundle;
 
 /**
  * Class WellCommerceAppBundle
@@ -35,6 +34,7 @@ final class WellCommerceAppBundle extends AbstractWellCommerceBundle
     
     public static function registerBundles(Collection $bundles, string $environment)
     {
+        $bundles->add(new IkadocKCFinderBundle);
         $bundles->add(new self);
     }
 }

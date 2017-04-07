@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fd6aa0df7f2e883a9c7f77a3c4dc250",
+    "content-hash": "5d448c3684ce82ee1dac588a2fdb49d1",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
-            "version": "1.16.0",
+            "version": "1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/algolia/algoliasearch-client-php.git",
-                "reference": "4a055ef86a68175d65385d67e546aed7d87b537d"
+                "reference": "470c5cc20ae879e0a5f692227b416c26d10a6fba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/4a055ef86a68175d65385d67e546aed7d87b537d",
-                "reference": "4a055ef86a68175d65385d67e546aed7d87b537d",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/470c5cc20ae879e0a5f692227b416c26d10a6fba",
+                "reference": "470c5cc20ae879e0a5f692227b416c26d10a6fba",
                 "shasum": ""
             },
             "require": {
@@ -55,7 +55,7 @@
             ],
             "description": "Algolia Search API Client for PHP",
             "homepage": "https://github.com/algolia/algoliasearch-client-php",
-            "time": "2017-02-28T10:20:54+00:00"
+            "time": "2017-04-03T07:54:23+00:00"
         },
         {
             "name": "asm89/twig-cache-extension",
@@ -179,12 +179,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Transliterator.git",
-                "reference": "02fa32d26934f99cb8a3eff2fe065a1fd53f847b"
+                "reference": "826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/02fa32d26934f99cb8a3eff2fe065a1fd53f847b",
-                "reference": "02fa32d26934f99cb8a3eff2fe065a1fd53f847b",
+                "url": "https://api.github.com/repos/Behat/Transliterator/zipball/826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c",
+                "reference": "826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c",
                 "shasum": ""
             },
             "require": {
@@ -215,7 +215,7 @@
                 "slug",
                 "transliterator"
             ],
-            "time": "2016-10-21 08:46:05"
+            "time": "2017-04-04 11:38:05"
         },
         {
             "name": "cache/adapter-bundle",
@@ -647,12 +647,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "a5aa33d1a2db8a285436adcbe057f765a29ef021"
+                "reference": "a6fa6ca64eb21ec1a37dc7e0b5df578457f2fa16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/a5aa33d1a2db8a285436adcbe057f765a29ef021",
-                "reference": "a5aa33d1a2db8a285436adcbe057f765a29ef021",
+                "url": "https://api.github.com/repos/composer/composer/zipball/a6fa6ca64eb21ec1a37dc7e0b5df578457f2fa16",
+                "reference": "a6fa6ca64eb21ec1a37dc7e0b5df578457f2fa16",
                 "shasum": ""
             },
             "require": {
@@ -716,7 +716,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2017-03-30 07:33:35"
+            "time": "2017-04-06 07:14:25"
         },
         {
             "name": "composer/semver",
@@ -786,12 +786,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/spdx-licenses.git",
-                "reference": "7fc8d83fc28dd5aa039d5b2a936a7ccf62dd4c51"
+                "reference": "2603a0d7ddc00a015deb576fa5297ca43dee6b1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/7fc8d83fc28dd5aa039d5b2a936a7ccf62dd4c51",
-                "reference": "7fc8d83fc28dd5aa039d5b2a936a7ccf62dd4c51",
+                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/2603a0d7ddc00a015deb576fa5297ca43dee6b1c",
+                "reference": "2603a0d7ddc00a015deb576fa5297ca43dee6b1c",
                 "shasum": ""
             },
             "require": {
@@ -839,7 +839,7 @@
                 "spdx",
                 "validator"
             ],
-            "time": "2017-01-03 08:35:48"
+            "time": "2017-04-03 19:08:52"
         },
         {
             "name": "doctrine/annotations",
@@ -2414,6 +2414,55 @@
                 "stream"
             ],
             "time": "2016-04-13 16:32:01"
+        },
+        {
+            "name": "ikadoc/kcfinder-bundle",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Bilbous/KCFinderBundle.git",
+                "reference": "058483d78a6e409eb64e22307ec623a019e0288a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Bilbous/KCFinderBundle/zipball/058483d78a6e409eb64e22307ec623a019e0288a",
+                "reference": "058483d78a6e409eb64e22307ec623a019e0288a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/dependency-injection": "~2.2|~3.0",
+                "symfony/framework-bundle": "~2.2|~3.0"
+            },
+            "require-dev": {
+                "symfony/yaml": "^2.0.5|~3.0",
+                "twig/twig": "~1.12"
+            },
+            "suggest": {
+                "twig/twig": "Allows to use Twig templates"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Ikadoc\\KCFinderBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yannick Cenatiempo",
+                    "email": "ycenatiempo@gmail.com"
+                }
+            ],
+            "description": "Provides a KCFinder integration for CKEditor for your Symfony Project.",
+            "keywords": [
+                "CKEditor",
+                "kcfinder"
+            ],
+            "time": "2016-03-17T15:15:52+00:00"
         },
         {
             "name": "imagine/imagine",
@@ -4030,6 +4079,61 @@
             "time": "2017-03-31 14:50:32"
         },
         {
+            "name": "sunhater/kcfinder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sunhater/kcfinder.git",
+                "reference": "b645d2a81e647d63780c238b130593e32b4d95a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sunhater/kcfinder/zipball/b645d2a81e647d63780c238b130593e32b4d95a9",
+                "reference": "b645d2a81e647d63780c238b130593e32b4d95a9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "ext-curl": "*",
+                "ext-exif": "*",
+                "ext-fileinfo": "*",
+                "ext-gmagick": "*",
+                "ext-http": "*",
+                "ext-imagick": "*",
+                "ext-sockets": "*",
+                "ext-zip": "*"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+",
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Pavel Tzonkov",
+                    "email": "sunhater@sunhater.com",
+                    "homepage": "http://sunhater.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "KCFinder web file manager",
+            "homepage": "http://kcfinder.sunhater.com",
+            "keywords": [
+                "explorer",
+                "file",
+                "file explorer",
+                "file manager",
+                "finder",
+                "kcfinder",
+                "manager"
+            ],
+            "time": "2014-09-27 18:47:34"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "5.x-dev",
             "source": {
@@ -5376,7 +5480,8 @@
         "friendsofsymfony/jsrouting-bundle": 20,
         "knplabs/packagist-api": 20,
         "zendframework/zend-json": 20,
-        "zendframework/zendsearch": 20
+        "zendframework/zendsearch": 20,
+        "sunhater/kcfinder": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

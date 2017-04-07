@@ -1,12 +1,5 @@
 /*
- * WellCommerce Open-Source E-Commerce Platform
- *
- * This file is part of the WellCommerce package.
- *
- * (c) Adam Piotrowski <adam@wellcommerce.org>
- *
- * For the full copyright and license information,
- * please view the LICENSE file that was distributed with this source code.
+ * RICH TEXT EDITOR
  */
 
 var oDefaults = {
@@ -39,18 +32,21 @@ var oDefaults = {
     sLanguage: 'pl'
 };
 
-var GFormRichTextEditor = GCore.ExtendClass(GFormTextArea, function () {
+var GFormRichTextEditor = GCore.ExtendClass(GFormTextArea, function() {
 
     var gThis = this;
 
-    gThis.OnShow = function () {
+    gThis.OnShow = function() {
         if (gThis.m_bShown) {
             return;
         }
         var iDelay = 500;
         gThis.m_bShown = true;
+        CKEDITOR.config.filebrowserBrowseUrl = Routing.generate('KCFinder_browse',{"file": "browse.php"});
+        CKEDITOR.config.filebrowserUploadUrl = Routing.generate('KCFinder_browse',{"file": "upload.php"});
         var editor = CKEDITOR.replace(gThis.GetId());
-        editor.on('change', function (evt) {
+
+        editor.on( 'change', function( evt ) {
             $('#' + gThis.GetId()).val(evt.editor.getData());
         });
     };

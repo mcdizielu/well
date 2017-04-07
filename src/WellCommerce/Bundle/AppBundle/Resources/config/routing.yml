@@ -86,6 +86,15 @@ front.home_page.index:
     defaults:
         _controller: 'web.home_page.controller.front:indexAction'
 
+KCFinder_browse:
+    path:  /admin/kcfinder/{file}
+    options:
+        expose: true
+    defaults:
+        _controller: "IkadocKCFinderBundle:Proxy:proxy"
+    requirements:
+        file: "favico\\.ico|browse\\.php|js_localize\\.php|upload\\.php|css/index\\.php|js/index\\.php|themes/[^\\.]*/css\\.php|themes/[^\\.]*/js\\.php|themes/[^\\.]*/img/[^\\.]*\\.(png|gif|jpg)"
+
 root:
     path: /admin
     defaults:
