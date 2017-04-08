@@ -9,6 +9,7 @@
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */
+
 namespace WellCommerce\Bundle\CatalogBundle\Form\Admin;
 
 use Doctrine\Common\Collections\Collection;
@@ -199,7 +200,7 @@ class ProductFormBuilder extends AbstractFormBuilder
             'transformer'     => $this->getRepositoryTransformer('entity', $this->get('tax.repository')),
         ]));
         
-        $sellPriceAmount = $sellPriceSettings->addChild($this->getElement('price_editor', [
+        $sellPriceSettings->addChild($this->getElement('price_editor', [
             'name'      => 'sellPrice.grossAmount',
             'label'     => 'product.label.sell_price.gross_amount',
             'filters'   => [
@@ -235,9 +236,9 @@ class ProductFormBuilder extends AbstractFormBuilder
         ]));
         
         $stockData->addChild($this->getElement('text_field', [
-            'name'   => 'stock',
-            'label'  => 'common.label.stock',
-            'rules'  => [
+            'name'  => 'stock',
+            'label' => 'common.label.stock',
+            'rules' => [
                 $this->getRule('required'),
             ],
         ]));
@@ -314,7 +315,7 @@ class ProductFormBuilder extends AbstractFormBuilder
             'label' => 'product.form.fieldset.photos',
         ]));
         
-        $mediaData->addChild($this->getElement('image', [
+        $photoField = $mediaData->addChild($this->getElement('image', [
             'name'         => 'productPhotos',
             'label'        => 'product.label.photos',
             'load_route'   => $this->getRouterHelper()->generateUrl('admin.media.grid'),
@@ -354,12 +355,10 @@ class ProductFormBuilder extends AbstractFormBuilder
                 'name'                  => 'variants',
                 'label'                 => 'product.label.variants',
                 'suffixes'              => ['+', '-', '%'],
-                'price_field'           => $sellPriceAmount,
-                'vat_field'             => $sellPriceTax,
                 'vat_values'            => $vatValues,
                 'attribute_group_field' => $attributeGroupField,
                 'category_field'        => $categoriesField,
-                'availability_field'    => $availabilityField,
+                'photo_field'           => $photoField,
                 'availability'          => $availabilityField->getOption('options'),
                 'transformer'           => $this->getRepositoryTransformer('variant_collection', $this->get('variant.repository')),
             ]));

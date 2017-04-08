@@ -58,6 +58,7 @@ class VariantManager extends AbstractManager
         $variant->setSymbol($value['symbol']);
         $variant->setWeight($value['weight']);
         $variant->setHierarchy($value['hierarchy']);
+        $variant->setPhoto($this->get('media.repository')->find($value['photo']));
         $variant->setOptions($variantOptions);
         
         return $variant;

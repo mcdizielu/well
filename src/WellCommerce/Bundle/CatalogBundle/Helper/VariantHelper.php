@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\CatalogBundle\Helper;
 
+use WellCommerce\Bundle\AppBundle\Entity\Media;
 use WellCommerce\Bundle\AppBundle\Helper\CurrencyHelperInterface;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CatalogBundle\Entity\Variant;
@@ -98,7 +99,17 @@ class VariantHelper implements VariantHelperInterface
             'stock'              => $variant->getStock(),
             'symbol'             => $variant->getSymbol(),
             'options'            => $this->getVariantOptions($variant),
+            'photo'              => $this->getPhoto($variant->getPhoto()),
         ];
+    }
+    
+    protected function getPhoto(Media $media = null): string
+    {
+        if ($media instanceof Media) {
+            return $media->getPath();
+        }
+        
+        return '';
     }
     
     protected function getVariantOptionsKey(Variant $variant): string

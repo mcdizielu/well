@@ -224,23 +224,43 @@ var GFormVariantEditor = GCore.ExtendClass(GFormField, function () {
             }
         });
 
-        var jPhoto = $('<div class="attribute-photos" />');
-        jPhoto.append('<h3>' + GTranslation('product_variants_editor.variant_editor.photos') + '</h3><input type="hidden" id="' + gThis.GetId() + '__photo" value="' + oVariant.photo + '" />');
-        for (var i = 0; i < gThis.m_oOptions.aoPhotos.length; i++) {
-            jPhoto.append('<img' + ((gThis.m_oOptions.aoPhotos[i].id == oVariant.photo) ? ' class="selected"' : '') + ' id="' + gThis.m_oOptions.aoPhotos[i].id + '" src="' + gThis.m_oOptions.aoPhotos[i].thumb + '" />');
-        }
-        jSpecification.append(jPhoto);
+        m_jPhotoDataGridSelect = gThis.m_gForm.GetField(gThis.m_oOptions.sPhotoField);
+        var aoDefaultPhotos = m_jPhotoDataGridSelect.m_oOptions.sValue.photos;
+        var aoCurrentPhotos = m_jPhotoDataGridSelect.GetValue();
+        var aoPhotos = $.extend( {}, aoDefaultPhotos, aoCurrentPhotos);
+        var oRequest = {};
 
-        jPhoto.find('img').click(function () {
-            if ($(this).hasClass('selected')) {
-                jPhoto.find('img').removeClass('selected');
-                var photoid = 0;
-            } else {
-                jPhoto.find('img').removeClass('selected');
-                $(this).addClass('selected');
-                var photoid = $(this).attr('id');
+        oRequest.id = 0;
+        oRequest.starting_from = 0;
+        oRequest.limit = 50;
+        oRequest.order_by = 'id';
+        oRequest.order_dir = 'desc';
+        oRequest.where = [{
+            column: 'id',
+            value: aoPhotos,
+            operator: 'IN'
+        }];
+
+        GF_Ajax_Request(Routing.generate(gThis.m_oOptions.sGetPhotosRoute), oRequest, function(oResponse){
+            var jPhoto = $('<div class="attribute-photos" />');
+            jPhoto.append('<h3>' + GTranslation('product_variants_editor.variant_editor.photos') + '</h3><input type="hidden" id="' + gThis.GetId() + '__photo" value="' + oVariant.photo + '" />');
+            for (var i = 0; i < oResponse.rows.length; i++) {
+                jPhoto.append('<img' + ((oResponse.rows[i].id == oVariant.photo) ? ' class="selected"' : '') + ' id="' + oResponse.rows[i].id + '" src="' + oResponse.rows[i].preview + '" />');
             }
-            $('#' + gThis.GetId() + '__photo').val(photoid);
+
+            jSpecification.append(jPhoto);
+
+            jPhoto.find('img').click(function () {
+                if ($(this).hasClass('selected')) {
+                    jPhoto.find('img').removeClass('selected');
+                    var photoid = 0;
+                } else {
+                    jPhoto.find('img').removeClass('selected');
+                    $(this).addClass('selected');
+                    var photoid = $(this).attr('id');
+                }
+                $('#' + gThis.GetId() + '__photo').val(photoid);
+            });
         });
 
         var asExistingAttributes = [];

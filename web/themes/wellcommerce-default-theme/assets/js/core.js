@@ -338,6 +338,15 @@ var GProductAddCartForm = function(oOptions) {
             var variant = gThis.m_oOptions.aoVariants[checkedVariant];
             gThis.m_oOptions.oVariant.val(variant.id);
             gThis.m_oOptions.oPrice.text(variant.finalPriceGross);
+
+            var photo = gThis.m_oOptions.oThumbnails.find("[data-photo='" + gThis.m_oOptions.sDefaultPhoto + "']").attr('src');
+            if(variant.photo != ''){
+                var photo = gThis.m_oOptions.oThumbnails.find("[data-photo='" + variant.photo + "']").attr('src');
+            }
+
+            $(".mainphoto").find('a').attr("href", photo);
+            $(".mainphoto").find('img').attr("src", photo);
+
             gThis.m_gForm.find('button[type="submit"]').show();
         }else{
             gThis.m_oOptions.oVariant.val(0);

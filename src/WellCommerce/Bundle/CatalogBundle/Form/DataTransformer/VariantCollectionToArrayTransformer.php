@@ -14,6 +14,7 @@ namespace WellCommerce\Bundle\CatalogBundle\Form\DataTransformer;
 
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\PropertyAccess\PropertyPathInterface;
+use WellCommerce\Bundle\AppBundle\Entity\Media;
 use WellCommerce\Bundle\CatalogBundle\Entity\Availability;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CatalogBundle\Entity\Variant;
@@ -41,9 +42,6 @@ class VariantCollectionToArrayTransformer extends CollectionToArrayTransformer
         $this->variantManager = $variantManager;
     }
     
-    /**
-     * {@inheritdoc}
-     */
     public function transform($modelData)
     {
         $values = [];
@@ -61,11 +59,20 @@ class VariantCollectionToArrayTransformer extends CollectionToArrayTransformer
                     'weight'       => $variant->getWeight(),
                     'availability' => $this->transformAvailability($variant->getAvailability()),
                     'attributes'   => $this->transformOptions($variant->getOptions()),
+                    'photo'        => $this->transformPhoto($variant->getPhoto()),
                 ];
             });
         }
         
         return $values;
+    }
+    
+    public function reverseTransform($modelData, PropertyPathInterface $propertyPath, $values)
+    {
+        if ($modelData instanceof Product && null !== $values) {
+            $collection = $this->variantManager->getAttributesCollectionForProduct($modelData, $values);
+            $modelData->setVariants($collection);
+        }
     }
     
     private function transformAvailability(Availability $availability = null)
@@ -77,7 +84,7 @@ class VariantCollectionToArrayTransformer extends CollectionToArrayTransformer
         return null;
     }
     
-    public function transformOptions(Collection $collection = null): array
+    private function transformOptions(Collection $collection = null): array
     {
         if (null === $collection) {
             return [];
@@ -91,14 +98,12 @@ class VariantCollectionToArrayTransformer extends CollectionToArrayTransformer
         return $values;
     }
     
-    /**
-     * {@inheritdoc}
-     */
-    public function reverseTransform($modelData, PropertyPathInterface $propertyPath, $values)
+    private function transformPhoto(Media $photo = null)
     {
-        if ($modelData instanceof Product && null !== $values) {
-            $collection = $this->variantManager->getAttributesCollectionForProduct($modelData, $values);
-            $modelData->setVariants($collection);
+        if (null !== $photo) {
+            return $photo->getId();
         }
+        
+        return null;
     }
 }

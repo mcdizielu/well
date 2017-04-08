@@ -15,10 +15,10 @@
 
 		            <div class="thumbnails">
 			            {% for photo in product.productPhotos if photo.mainPhoto == 1 %}
-			                <a href="{{ image(photo.photo.path, 'large') }}"><img src="{{ image(photo.photo.path, 'large') }}" /></a>
+			                <a href="{{ image(photo.photo.path, 'large') }}"><img src="{{ image(photo.photo.path, 'large') }}" data-photo="{{ photo.photo.path }}" /></a>
 						{% endfor %}
 		                {% for photo in product.productPhotos if photo.mainPhoto == 0 %}
-		                    <a href="{{ image(photo.photo.path, 'large') }}"><img src="{{ image(photo.photo.path, 'large') }}" /></a>
+		                    <a href="{{ image(photo.photo.path, 'large') }}"><img src="{{ image(photo.photo.path, 'large') }}" data-photo="{{ photo.photo.path }}"/></a>
 		                {% endfor %}
 		            </div>
 	        </div>
@@ -121,6 +121,8 @@
             oQuantity: $('#quantity', $(this)),
             oPrice: $('#price', $(this)),
             oBasketModal: $('#basket-modal'),
+            oThumbnails: $('.thumbnails'),
+            sDefaultPhoto: '{{ product.photo.path }}',
             oCartPreview: $('#topCart'),
             sAttributesSelectClass: '.attribute',
             aoVariants: {{ variants|raw }}
