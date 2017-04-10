@@ -5892,10 +5892,8 @@ form {
 }
 
 .view-order .statusChange .field-checkbox {
-    display: inline;
     width: 160px;
     padding-top: 2px;
-    float: left;
 }
 
 .view-order .statusChange .field-checkbox label {
