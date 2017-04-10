@@ -9,12 +9,14 @@
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */
+
 namespace WellCommerce\Bundle\OrderBundle\Entity;
 
 use Knp\DoctrineBehaviors\Model\Blameable\Blameable;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\OrderBundle\Entity\OrderStatusHistoryExtraTrait;
 
 /**
  * Class OrderStatus
@@ -27,6 +29,7 @@ class OrderStatusHistory implements EntityInterface
     use Timestampable;
     use Blameable;
     use OrderAwareTrait;
+    use OrderStatusHistoryExtraTrait;
     
     protected $comment = '';
     protected $notify  = false;
