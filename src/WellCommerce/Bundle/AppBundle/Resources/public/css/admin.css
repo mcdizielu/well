@@ -5912,6 +5912,17 @@ form {
     float: right;
 }
 
+.view-order .statusChange fieldset {
+    border: 0px!important;
+    padding: 0!important;
+    margin: 0!important;
+    padding-top: 10px!important;
+}
+
+.view-order .statusChange fieldset legend {
+    display: none;
+}
+
 .view-order fieldset .field + span.required {
     display: block;
     margin: 4px 0 0;

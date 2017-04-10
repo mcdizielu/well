@@ -29,21 +29,26 @@ class OrderStatusHistoryFormBuilder extends AbstractFormBuilder
     public function buildForm(FormInterface $form)
     {
         $orderStatuses = $this->get('order_status.dataset.admin')->getResult('select');
-        
-        $form->addChild($this->getElement('select', [
+    
+        $requiredData = $form->addChild($this->getElement('nested_fieldset', [
+            'name'  => 'status_data',
+            'label' => 'common.fieldset.general'
+        ]));
+    
+        $requiredData->addChild($this->getElement('select', [
             'name'        => 'orderStatus',
             'label'       => 'order_status_history.label.order_status',
             'options'     => $orderStatuses,
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('order_status.repository'))
         ]));
-
-        $form->addChild($this->getElement('text_area', [
+    
+        $requiredData->addChild($this->getElement('text_area', [
             'name'  => 'comment',
             'rows'  => 10,
             'label' => 'order_status_history.label.comment'
         ]));
-
-        $form->addChild($this->getElement('checkbox', [
+    
+        $requiredData->addChild($this->getElement('checkbox', [
             'name'    => 'notify',
             'label'   => 'order_status_history.label.nofity',
             'default' => 1
