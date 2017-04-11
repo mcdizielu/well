@@ -13,5 +13,32 @@
         onTaxAdd = function(oRequest){
             console.log(oRequest);
         };
+        $(document).ready(function() {
+            var id = $('#main_data__producer').val();
+            $("#main_data__producer_collection").attr('disabled', 'disabled');
+            GF_Ajax_Request(Routing.generate('admin.producer_collection.get_collections_by_producer_id.ajax.index'), {
+                producerId: id
+            }, function(oData) {
+                $('#admin_product').get(0).GetField('producer_collection').ExchangeOptions(oData);
+                {% if resource.producerCollection is not empty and resource.producerCollection.id is not empty %}
+                var collectionId = {{ resource.producerCollection.id }};
+                $('#main_data__producer_collection').find('option[value='+collectionId+']').attr('selected', 'selected').trigger('change');
+                $("#main_data__producer_collection").attr('enabled', 'enabled');
+                {% endif %}
+            });
+
+
+            $("#main_data__producer").change(function() {
+                var id = $(this).val();
+                $("#main_data__producer_collection").attr('disabled', 'disabled');
+                GF_Ajax_Request(Routing.generate('admin.producer_collection.get_collections_by_producer_id.ajax.index'), {
+                    producerId: id
+                }, function(oData) {
+                    console.log(oData);
+                    $('#admin_product').get(0).GetField('producer_collection').ExchangeOptions(oData);
+                    $("#main_data__producer_collection").attr('enabled', 'enabled');
+                });
+            });
+        });
     </script>
 {% endblock %}

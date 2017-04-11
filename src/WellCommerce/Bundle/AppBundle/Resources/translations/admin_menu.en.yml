@@ -33,6 +33,7 @@ news: News
 order: Orders
 payment_method: 'Payment methods'
 producer: Producers
+producer_collection: Producer collections
 product: Products
 product_status: 'Product statuses'
 product_review: 'Product reviews'

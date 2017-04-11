@@ -178,6 +178,8 @@ common:
         hierarchy: Hierarchy
         password: Password
         producer: Producer
+        producer_collection: Producer collection
+        none: none
         tax: Tax
         stock: Stock
         categories: Categories

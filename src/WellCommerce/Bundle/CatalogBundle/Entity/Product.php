@@ -122,6 +122,11 @@ class Product implements EntityInterface
      */
     protected $unit;
     
+    /**
+     * @var ProducerCollection
+     */
+    protected $producerCollection;
+    
     public function __construct()
     {
         $this->categories    = new ArrayCollection();
@@ -354,5 +359,21 @@ class Product implements EntityInterface
     public function setUnit(Unit $unit = null)
     {
         $this->unit = $unit;
+    }
+    
+    /**
+     * @return ProducerCollection
+     */
+    public function getProducerCollection()
+    {
+        return $this->producerCollection;
+    }
+    
+    /**
+     * @param ProducerCollection $producerCollection
+     */
+    public function setProducerCollection(ProducerCollection $producerCollection)
+    {
+        $this->producerCollection = $producerCollection;
     }
 }

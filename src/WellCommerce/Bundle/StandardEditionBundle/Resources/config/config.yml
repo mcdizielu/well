@@ -43,20 +43,21 @@ parameters:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadDelivererData: 140
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadAvailabilityData: 150
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadProducerData: 160
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadAttributeData: 170
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadCategoryData: 180
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadProductStatusData: 190
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadProductData: 200
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadShippingMethodData: 220
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadPaymentMethodData: 230
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadPageData: 240
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadNewsData: 250
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadSearchData: 260
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadReviewData: 270
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadShowcaseData: 280
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadLayeredNavigationData: 290
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadShowcaseData: 280
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadWishlistData: 280
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadProducerCollectionData: 170
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadAttributeData: 180
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadCategoryData: 190
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadProductStatusData: 200
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadProductData: 210
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadShippingMethodData: 230
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadPaymentMethodData: 240
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadPageData: 250
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadNewsData: 260
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadSearchData: 270
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadReviewData: 280
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadShowcaseData: 290
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadLayeredNavigationData: 300
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadShowcaseData: 290
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadWishlistData: 290
     fixtures_product_limit: 100
     enabled_fixtures:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadAdminMenuData: true
@@ -77,6 +78,7 @@ parameters:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadDelivererData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadAvailabilityData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadProducerData: true
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadProducerCollectionData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadAttributeData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadCategoryData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadProductStatusData: true

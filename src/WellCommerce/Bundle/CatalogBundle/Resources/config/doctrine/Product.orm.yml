@@ -59,6 +59,14 @@ WellCommerce\Bundle\CatalogBundle\Entity\Product:
                 producer_id:
                     referencedColumnName: id
                     onDelete: 'SET NULL'
+        producerCollection:
+            targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\ProducerCollection
+            fetch: LAZY
+            inversedBy: products
+            joinColumns:
+                producer_collection_id:
+                    referencedColumnName: id
+                    onDelete: 'SET NULL'
         unit:
             targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\Unit
             fetch: LAZY

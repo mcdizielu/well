@@ -93,6 +93,12 @@ producer:
     label:
         deliverers: Deliverers
 
+producer_collection:
+    heading:
+        index: Producer collections
+        add: Add a producer collection
+        edit: Edit a producer collection
+
 layered_navigation:
     label:
         price: Filter by price
