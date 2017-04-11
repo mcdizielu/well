@@ -1,0 +1,25 @@
+WellCommerce\Bundle\CatalogBundle\Entity\ProducerCollectionTranslation:
+    type: entity
+    table: producer_collection_translation
+    embedded:
+        meta:
+            class: WellCommerce\Bundle\AppBundle\Entity\Meta
+    fields:
+        name:
+            type: string
+            length: 255
+        slug:
+            type: string
+            length: 255
+            unique: true
+    oneToOne:
+        route:
+            targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\ProducerCollectionRoute
+            cascade:
+                - remove
+                - persist
+            fetch: LAZY
+            joinColumns:
+                route_id:
+                    referencedColumnName: id
+                    onDelete: CASCADE

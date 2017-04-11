@@ -166,6 +166,30 @@ well_commerce_core:
                 producers: "[\\d+_]+"
                 attributes: "[\\d+_]+"
             pattern: "{page},{limit},{orderBy},{orderDir},{priceFrom},{priceTo},{view},{producers},{attributes}"
+        producer_collection:
+            entity: WellCommerce\Bundle\CatalogBundle\Entity\ProducerCollectionRoute
+            defaults:
+                _controller: producer_collection.controller.front:indexAction
+                limit: 24
+                page: 1
+                orderBy: hierarchy
+                orderDir: asc
+                priceFrom: 0
+                priceTo: 9999
+                view: grid
+                producers: ~
+                attributes: ~
+            requirements:
+                limit: "\\d{1,10}"
+                page: "\\d{1,10}"
+                orderBy: "hierarchy|name|finalPrice"
+                orderDir: "asc|desc"
+                priceFrom: "\\d{1,10}"
+                priceTo: "\\d{1,10}"
+                view: "grid|list"
+                producers: "[\\d+_]+"
+                attributes: "[\\d+_]+"
+            pattern: "{page},{limit},{orderBy},{orderDir},{priceFrom},{priceTo},{view},{producers},{attributes}"
 
 well_commerce_app:
     locale_copier:

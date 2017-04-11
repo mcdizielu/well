@@ -38,6 +38,10 @@ _admin_producer:
     resource: "@WellCommerceCatalogBundle/Resources/config/routing/producer/admin.yml"
     prefix: /admin/catalog/producer
 
+_admin_producer_collection:
+    resource: "@WellCommerceCatalogBundle/Resources/config/routing/producer_collection/admin.yml"
+    prefix: /admin/catalog/producer/collection
+
 _admin_product:
     resource: "@WellCommerceCatalogBundle/Resources/config/routing/product/admin.yml"
     prefix: /admin/catalog/product

@@ -184,6 +184,8 @@ common:
         hierarchy: Kolejność
         password: Hasło
         producer: Producent
+        producer_collection: Kolekcja producenta
+        none: brak
         tax: Podatek
         stock: Stan magazynowy
         categories: Kategorie

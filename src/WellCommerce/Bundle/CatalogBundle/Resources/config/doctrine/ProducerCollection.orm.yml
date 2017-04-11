@@ -1,0 +1,30 @@
+WellCommerce\Bundle\CatalogBundle\Entity\ProducerCollection:
+    type: entity
+    table: producer_collection
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    oneToMany:
+        products:
+            targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\Product
+            fetch: LAZY
+            mappedBy: producerCollection
+    manyToOne:
+        producer:
+            targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\Producer
+            fetch: LAZY
+            inversedBy: collections
+            joinColumns:
+                producer_id:
+                    referencedColumnName: id
+                    onDelete: 'SET NULL'
+        photo:
+            targetEntity: WellCommerce\Bundle\AppBundle\Entity\Media
+            fetch: LAZY
+            joinColumns:
+                photo_id:
+                    referencedColumnName: id
+                    onDelete: 'SET NULL'
+

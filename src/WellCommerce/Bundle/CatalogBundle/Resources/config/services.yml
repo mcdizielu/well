@@ -10,6 +10,7 @@ imports:
     - { resource: 'services/category.yml' }
     - { resource: 'services/layered_navigation.yml' }
     - { resource: 'services/producer.yml' }
+    - { resource: 'services/producer_collection.yml' }
     - { resource: 'services/product.yml' }
     - { resource: 'services/product_status.yml' }
     - { resource: 'services/product_search.yml' }

@@ -17,30 +17,24 @@ use Doctrine\Common\Collections\Collection;
 use Knp\DoctrineBehaviors\Model\Blameable\Blameable;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
+use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 use WellCommerce\Bundle\AppBundle\Entity\Media;
 use WellCommerce\Bundle\AppBundle\Entity\ShopCollectionAwareTrait;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
-use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
-use WellCommerce\Extra\CatalogBundle\Entity\ProducerExtraTrait;
+
 
 /**
- * Class Producer
+ * Class ProducerCollection
  *
- * @author  Adam Piotrowski <adam@wellcommerce.org>
+ * @author  Rafał Martonik <rafal@wellcommerce.org>
  */
-class Producer implements EntityInterface
+class ProducerCollection implements EntityInterface
 {
     use Identifiable;
     use Translatable;
     use Timestampable;
     use Blameable;
     use ShopCollectionAwareTrait;
-    use ProducerExtraTrait;
-    
-    /**
-     * @var Media
-     */
-    protected $photo;
     
     /**
      * @var Collection
@@ -48,41 +42,24 @@ class Producer implements EntityInterface
     protected $products;
     
     /**
-     * @var Collection
+     * @var Media
      */
-    protected $deliverers;
+    protected $photo;
     
     /**
-     * @var Collection
+     * @var Producer
      */
-    protected $collections;
+    protected $producer;
     
     public function __construct()
     {
-        $this->products    = new ArrayCollection();
-        $this->deliverers  = new ArrayCollection();
-        $this->shops       = new ArrayCollection();
-        $this->collections = new ArrayCollection();
+        $this->products = new ArrayCollection();
+        $this->shops    = new ArrayCollection();
     }
     
     public function getProducts(): Collection
     {
         return $this->products;
-    }
-    
-    public function getDeliverers(): Collection
-    {
-        return $this->deliverers;
-    }
-    
-    public function setDeliverers(Collection $collection)
-    {
-        $this->deliverers = $collection;
-    }
-    
-    public function getCollections(): Collection
-    {
-        return $this->collections;
     }
     
     public function getPhoto()
@@ -95,8 +72,19 @@ class Producer implements EntityInterface
         $this->photo = $photo;
     }
     
-    public function translate($locale = null, $fallbackToDefault = true): ProducerTranslation
+    public function getProducer()
+    {
+        return $this->producer;
+    }
+    
+    public function setProducer(Producer $producer = null)
+    {
+        $this->producer = $producer;
+    }
+    
+    public function translate($locale = null, $fallbackToDefault = true): ProducerCollectionTranslation
     {
         return $this->doTranslate($locale, $fallbackToDefault);
     }
+    
 }

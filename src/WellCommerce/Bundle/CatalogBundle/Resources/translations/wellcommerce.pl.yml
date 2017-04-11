@@ -105,6 +105,12 @@ producer:
     label:
         deliverers: Dostawcy
 
+producer_collection:
+    heading:
+        index: Kolekcje producentów
+        add: Dodaj kolekcję producenta
+        edit: Edytuj kolekcję producenta
+
 product:
     form:
         fieldset:

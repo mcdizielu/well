@@ -14,6 +14,7 @@ namespace WellCommerce\Bundle\CoreBundle\Controller\Front;
 use WellCommerce\Bundle\AppBundle\Entity\Client;
 use WellCommerce\Bundle\AppBundle\Helper\MetadataHelper;
 use WellCommerce\Bundle\CatalogBundle\Request\Storage\CategoryStorageInterface;
+use WellCommerce\Bundle\CatalogBundle\Request\Storage\ProducerCollectionStorageInterface;
 use WellCommerce\Bundle\CatalogBundle\Request\Storage\ProducerStorageInterface;
 use WellCommerce\Bundle\CatalogBundle\Request\Storage\ProductStatusStorageInterface;
 use WellCommerce\Bundle\CatalogBundle\Request\Storage\ProductStorageInterface;
@@ -45,6 +46,11 @@ abstract class AbstractFrontController extends AbstractController
     protected function getProducerStorage(): ProducerStorageInterface
     {
         return $this->get('producer.storage');
+    }
+
+    protected function getProducerCollectionStorage(): ProducerCollectionStorageInterface
+    {
+        return $this->get('producer_collection.storage');
     }
     
     protected function getOrderProvider(): OrderProviderInterface
