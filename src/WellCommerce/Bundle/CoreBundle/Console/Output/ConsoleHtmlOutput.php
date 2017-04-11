@@ -11,10 +11,13 @@ class ConsoleHtmlOutput
 {
     public function write($message)
     {
-        if (strlen($message)) {
-            echo '<span style="color: #D7D7D7;font: 11px Courier New;line-height: 1.6em;">' . $message . '</span><br />';
-            ob_flush();
-            flush();
+        $messages = explode(PHP_EOL, $message);
+        foreach ($messages as $message) {
+            if (strlen($message)) {
+                echo '<span style="color: #D7D7D7;font: 11px Courier New;line-height: 1.6em;">' . $message . '</span><br />';
+            }
         }
+        ob_flush();
+        flush();
     }
 }
