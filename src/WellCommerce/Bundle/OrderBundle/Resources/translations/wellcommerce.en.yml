@@ -16,10 +16,12 @@ order:
         coupon: Coupon
         choose_shipping_method: Choose a shipping method
         choose_payment_method: Choose a payment method
+        client_orders: "Client orders"
     button:
         confirm: Go to confirmation
         add_product: Add product
         change_status: Change status
+        show_order: Show order
     label:
         id: ID
         number: Order no.
@@ -143,6 +145,17 @@ order_status_history:
         status_changed: "Your order status has been changed"
     button:
         change: Save
+
+order_note:
+    heading:
+        add: Add note for order
+        list: Order notes
+    label:
+        content: Content
+        created_by: Created by
+        no_history: There are no notes for this order
+    button:
+        save: Add
 
 payment:
     heading:

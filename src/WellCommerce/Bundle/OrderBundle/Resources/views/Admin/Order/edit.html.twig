@@ -63,6 +63,22 @@
                 <p class="information">{% trans %}order_note.label.no_history{% endtrans %}</p>
             {% endif %}
         </fieldset>
+
+        {% if resource.client is not null and resource.client.orders.count %}
+            <fieldset class="no-margin">
+                <legend><span>{% trans %}order.heading.client_orders{% endtrans %} ({{ resource.client.orders.count }})</span></legend>
+                    <ul class="changes-detailed">
+                        {% for order in resource.client.orders %}
+                            <li>
+                                <h4><span>#{{ order.number }} - {{ order.createdAt|date }}</span></h4>
+                                <p><strong>{% trans %}order.label.summary.gross_amount{% endtrans %}:</strong> {{ format_price(order.summary.grossAmount, order.currency, order.currency) }}</p>
+                                <p>{{ format_billing_address(order.billingAddress) }}</p>
+                                <p class="author"><a href="{{ path('admin.order.edit', {"id": order.id}) }}"><strong>{% trans %}order.button.show_order{% endtrans %}</strong></a></p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+            </fieldset>
+        {% endif %}
     </div>
 
     <script type="text/javascript">
@@ -70,7 +86,7 @@
         $(document).ready(function(){
             $('.view-order').GTabs();
             {% if resource.comment != '' %}
-            GWarning('{{ resource.commend }}');
+            GWarning('{{ resource.comment }}');
             {% endif %}
         });
 
