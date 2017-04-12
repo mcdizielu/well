@@ -148,6 +148,17 @@ order_status_history:
     email:
         status_changed: "Status zamówienia został zmieniony"
 
+order_note:
+    heading:
+        add: Dodaj notatkę do zamówienia
+        list: Notatki do zamówienia
+    label:
+        content: Treść
+        created_by: Utworzona przez
+        no_history:  Nie ma żadnych notatek do zamówienia
+    button:
+        save: Dodaj
+
 payment:
     heading:
         initialize: Płatność

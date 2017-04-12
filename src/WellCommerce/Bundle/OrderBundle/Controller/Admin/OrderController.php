@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use WellCommerce\Bundle\CoreBundle\Controller\Admin\AbstractAdminController;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
+use WellCommerce\Bundle\OrderBundle\Entity\OrderNote;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderStatus;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderStatusHistory;
 use WellCommerce\Component\Form\Elements\FormInterface;
@@ -58,6 +59,8 @@ class OrderController extends AbstractAdminController
         
         $orderStatusHistory     = $this->createOrderStatusHistoryResource($resource);
         $orderStatusHistoryForm = $this->createOrderStatusHistoryForm($orderStatusHistory);
+        $orderNote              = $this->createOrderNoteResource($resource);
+        $orderNoteForm          = $this->createOrderNoteForm($orderNote);
         
         if ($orderStatusHistoryForm->handleRequest()->isSubmitted()) {
             if ($orderStatusHistoryForm->isValid()) {
@@ -73,9 +76,24 @@ class OrderController extends AbstractAdminController
             ]);
         }
         
+        if ($orderNoteForm->handleRequest()->isSubmitted()) {
+            if ($orderNoteForm->isValid()) {
+                $this->get('order_note.manager')->createResource($orderNote);
+            }
+            
+            return $this->jsonResponse([
+                'valid'      => $orderNoteForm->isValid(),
+                'next'       => false,
+                'continue'   => false,
+                'redirectTo' => $this->getRedirectToActionUrl('edit', ['id' => $resource->getId()]),
+                'error'      => $orderNoteForm->getError(),
+            ]);
+        }
+        
         return $this->displayTemplate('edit', [
             'form'                   => $form,
             'orderStatusHistoryForm' => $orderStatusHistoryForm,
+            'orderNoteForm'          => $orderNoteForm,
             'resource'               => $resource,
         ]);
     }
@@ -143,6 +161,22 @@ class OrderController extends AbstractAdminController
         return $this->get('order_status_history.form_builder.admin')->createForm($orderStatusHistory, [
             'class' => 'statusChange',
         ]);
+    }
+    
+    protected function createOrderNoteForm(OrderNote $orderNote): FormInterface
+    {
+        return $this->get('order_note.form_builder.admin')->createForm($orderNote, [
+            'class' => 'statusChange',
+        ]);
+    }
+    
+    protected function createOrderNoteResource(Order $order): OrderNote
+    {
+        /** @var $orderNote OrderNote */
+        $orderNote = $this->get('order_note.factory')->create();
+        $orderNote->setOrder($order);
+        
+        return $orderNote;
     }
     
     protected function createOrderStatusHistoryResource(Order $order): OrderStatusHistory

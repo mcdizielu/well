@@ -11,11 +11,18 @@
 
         <fieldset class="no-margin">
             <legend><span>{% trans %}common.fieldset.general{% endtrans %}</span></legend>
+            {% if resource.comment != '' %}
+                <p class="information" style="color: #ff0000;font-weight: 700;">{{ resource.comment }}</p>
+            {% endif %}
             {{ render_form(form) }}
             <div class="layout-two-columns">
                 <div class="column">
                     <h3><span><strong>{% trans %}order_status_history.heading.add{% endtrans %}</strong></span></h3>
                     {{ render_form(orderStatusHistoryForm) }}
+                </div>
+                <div class="column">
+                    <h3><span><strong>{% trans %}order_note.heading.add{% endtrans %}</strong></span></h3>
+                    {{ render_form(orderNoteForm) }}
                 </div>
             </div>
         </fieldset>
@@ -38,12 +45,33 @@
                 <p class="information">{% trans %}order_status_history.label.no_history{% endtrans %}</p>
             {% endif %}
         </fieldset>
+
+        <fieldset class="no-margin">
+            <legend><span>{% trans %}order_note.heading.list{% endtrans %} ({{ resource.orderNotes.count() }})</span></legend>
+
+            {% if resource.orderNotes.count() > 0 %}
+                <ul class="changes-detailed">
+                    {% for note in resource.orderNotes %}
+                        <li>
+                            <h4><span>{{ note.createdAt|date }}</span></h4>
+                            {% if note.content != '' %}<p>{% trans %}order_note.label.content{% endtrans %}: <strong>{{ note.content }}</strong></p>{% endif %}
+                            {% if note.createdBy is not null %}<p class="author">{% trans %}order_note.label.created_by{% endtrans %}: <strong>{{ note.createdBy.firstName }} {{ note.createdBy.lastName }}</strong></p>{% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="information">{% trans %}order_note.label.no_history{% endtrans %}</p>
+            {% endif %}
+        </fieldset>
     </div>
 
     <script type="text/javascript">
 
         $(document).ready(function(){
             $('.view-order').GTabs();
+            {% if resource.comment != '' %}
+            GWarning('{{ resource.commend }}');
+            {% endif %}
         });
 
         var RecalculateOrder = function(eEvent){

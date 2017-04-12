@@ -1,11 +1,14 @@
-<form id="{{ form.getName() }}" method="{{ form.getOption('method') }}" action="{{ form.getOption('action') }}">
-    <input type="hidden" name="{{ form.getName() }}_submitted" value="1"/>
-</form>
-{% for script in form.additionalJavascript %}
-    <script src="{{ asset(script) }}"></script>
-{% endfor %}
 <script type="text/javascript">
     GCore.OnLoad(function () {
         $('#{{ form.getName() }}').GForm({{ render_form_javascript(form) }});
     });
 </script>
+
+<form id="{{ form.getName() }}" method="{{ form.getOption('method') }}" action="{{ form.getOption('action') }}">
+    <input type="hidden" name="{{ form.getName() }}_submitted" value="1"/>
+
+</form>
+{% for script in form.additionalJavascript %}
+    <script src="{{ asset(script) }}"></script>
+{% endfor %}
+

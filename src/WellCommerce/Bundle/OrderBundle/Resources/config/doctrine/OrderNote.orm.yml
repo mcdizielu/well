@@ -1,0 +1,19 @@
+WellCommerce\Bundle\OrderBundle\Entity\OrderNote:
+    type: entity
+    table: orders_note
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        content:
+            type: text
+            nullable: false
+    manyToOne:
+        order:
+            targetEntity: WellCommerce\Bundle\OrderBundle\Entity\Order
+            joinColumn:
+                name: order_id
+                referencedColumnName: id
+                onDelete: CASCADE

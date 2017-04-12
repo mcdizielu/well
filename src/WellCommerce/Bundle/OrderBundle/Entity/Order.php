@@ -9,6 +9,7 @@
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */
+
 namespace WellCommerce\Bundle\OrderBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -116,6 +117,11 @@ class Order implements EntityInterface
     /**
      * @var Collection
      */
+    protected $orderNotes;
+    
+    /**
+     * @var Collection
+     */
     protected $modifiers;
     
     /**
@@ -139,6 +145,7 @@ class Order implements EntityInterface
         $this->modifiers          = new ArrayCollection();
         $this->payments           = new ArrayCollection();
         $this->orderStatusHistory = new ArrayCollection();
+        $this->orderNotes         = new ArrayCollection();
         $this->productTotal       = new OrderProductTotal();
         $this->summary            = new OrderSummary();
         $this->clientDetails      = new ClientDetails();
@@ -321,6 +328,11 @@ class Order implements EntityInterface
     public function getOrderStatusHistory(): Collection
     {
         return $this->orderStatusHistory;
+    }
+    
+    public function getOrderNotes(): Collection
+    {
+        return $this->orderNotes;
     }
     
     public function getComment(): string

@@ -93,6 +93,12 @@ WellCommerce\Bundle\OrderBundle\Entity\Order:
                 - persist
             fetch: LAZY
             mappedBy: order
+        orderNotes:
+            targetEntity: WellCommerce\Bundle\OrderBundle\Entity\OrderNote
+            cascade:
+                - persist
+            fetch: LAZY
+            mappedBy: order
         modifiers:
             indexBy: name
             orderBy: { 'hierarchy': 'ASC' }
