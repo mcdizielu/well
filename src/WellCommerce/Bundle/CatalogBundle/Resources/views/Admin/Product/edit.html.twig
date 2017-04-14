@@ -4,41 +4,17 @@
     <h2>{% trans %}product.heading.edit{% endtrans %} &raquo; {{ resource.translate().name }}</h2>
     <ul class="possibilities">
         <li><a href="{{ path('admin.product.index') }}" class="button return"><span></span></a></li>
-        <li><a href="{{ path('dynamic_' ~ resource.translate.route.id) }}" class="button show" target="_blank"><span>{% trans %}product.button.show_in_shop{% endtrans %}</span></a></li>
-        <li><a href="#{{ form.getName() }}" rel="submit" class="button"><span>{% trans %}common.button.save_and_finish{% endtrans %}</span></a></li>
-        <li><a href="#{{ form.getName() }}" rel="submit[continue]" class="button"><span>{% trans %}common.button.save_and_continue{% endtrans %}</span></a></li>
+        <li><a href="{{ path('dynamic_' ~ resource.translate.route.id) }}" class="button show" target="_blank"><span>{% trans %}
+                    product.button.show_in_shop{% endtrans %}</span></a></li>
+        <li><a href="#{{ form.getName() }}" rel="submit" class="button"><span>{% trans %}common.button.save_and_finish{% endtrans %}</span></a>
+        </li>
+        <li><a href="#{{ form.getName() }}" rel="submit[continue]" class="button"><span>{% trans %}
+                    common.button.save_and_continue{% endtrans %}</span></a></li>
     </ul>
     {{ render_form(form) }}
     <script type="text/javascript">
-        onTaxAdd = function(oRequest){
-            console.log(oRequest);
-        };
-        $(document).ready(function() {
-            var id = $('#main_data__producer').val();
-            $("#main_data__producer_collection").attr('disabled', 'disabled');
-            GF_Ajax_Request(Routing.generate('admin.producer_collection.get_collections_by_producer_id.ajax.index'), {
-                producerId: id
-            }, function(oData) {
-                $('#admin_product').get(0).GetField('producer_collection').ExchangeOptions(oData);
-                {% if resource.producerCollection is not empty and resource.producerCollection.id is not empty %}
-                var collectionId = {{ resource.producerCollection.id }};
-                $('#main_data__producer_collection').find('option[value='+collectionId+']').attr('selected', 'selected').trigger('change');
-                $("#main_data__producer_collection").attr('enabled', 'enabled');
-                {% endif %}
-            });
-
-
-            $("#main_data__producer").change(function() {
-                var id = $(this).val();
-                $("#main_data__producer_collection").attr('disabled', 'disabled');
-                GF_Ajax_Request(Routing.generate('admin.producer_collection.get_collections_by_producer_id.ajax.index'), {
-                    producerId: id
-                }, function(oData) {
-                    console.log(oData);
-                    $('#admin_product').get(0).GetField('producer_collection').ExchangeOptions(oData);
-                    $("#main_data__producer_collection").attr('enabled', 'enabled');
-                });
-            });
-        });
+      onTaxAdd = function(oRequest) {
+        console.log(oRequest);
+      };
     </script>
 {% endblock %}

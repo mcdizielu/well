@@ -12,6 +12,10 @@
 
 namespace WellCommerce\Component\Form\Dependencies;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use WellCommerce\Component\Form\Elements\ElementInterface;
+use WellCommerce\Component\Form\Elements\Form;
+
 /**
  * Class ExchangeOptions
  *
@@ -19,9 +23,34 @@ namespace WellCommerce\Component\Form\Dependencies;
  */
 class ExchangeOptions extends AbstractDependency
 {
-    /**
-     * {@inheritdoc}
-     */
+    
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setRequired([
+            'field',
+            'form',
+            'load_options_route',
+        ]);
+        
+        $resolver->setAllowedTypes('field', ElementInterface::class);
+        $resolver->setAllowedTypes('form', Form::class);
+        $resolver->setAllowedTypes('load_options_route', 'string');
+    }
+    
+    public function renderJs()
+    {
+        $javascriptType = $this->getJavascriptType();
+        $fieldName      = $this->getField()->getName();
+        $formName       = $this->getForm()->getName();
+        
+        return sprintf("new GFormDependency(GFormDependency.%s, '%s.%s', '%s')",
+            $javascriptType,
+            $formName,
+            $fieldName,
+            $this->options['load_options_route']
+        );
+    }
+    
     public function getJavascriptType()
     {
         return 'EXCHANGE_OPTIONS';

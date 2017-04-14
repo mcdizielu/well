@@ -23,13 +23,13 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ProducerCollectionController extends AbstractAdminController
 {
-    public function ajaxGetCollectionsByProducer(Request $request) : Response
+    public function ajaxGetCollectionsByProducer(Request $request): Response
     {
         if (!$request->isXmlHttpRequest()) {
             return $this->redirectToAction('index');
         }
         
-        $producerId                   = (int)$request->request->get('producerId');
+        $producerId                   = (int)$request->request->get('value');
         $producerCollectionOptions    = [];
         $producerCollections          = $this->getManager()->getRepository()->findBy(['producer' => $producerId]);
         $producerCollectionOptions[0] = [

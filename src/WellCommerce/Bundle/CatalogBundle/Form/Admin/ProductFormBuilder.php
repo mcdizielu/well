@@ -117,7 +117,7 @@ class ProductFormBuilder extends AbstractFormBuilder
             'label' => 'product.label.barcode',
         ]));
         
-        $mainData->addChild($this->getElement('select', [
+        $producer = $mainData->addChild($this->getElement('select', [
             'name'        => 'producer',
             'label'       => 'common.label.producer',
             'options'     => $this->get('producer.dataset.admin')->getResult('select'),
@@ -125,9 +125,16 @@ class ProductFormBuilder extends AbstractFormBuilder
         ]));
         
         $mainData->addChild($this->getElement('select', [
-            'name'        => 'producer_collection',
-            'label'       => $this->trans('common.label.producer_collection'),
-            'transformer' => $this->getRepositoryTransformer('entity', $this->get('producer_collection.repository')),
+            'name'         => 'producer_collection',
+            'label'        => $this->trans('common.label.producer_collection'),
+            'transformer'  => $this->getRepositoryTransformer('entity', $this->get('producer_collection.repository')),
+            'dependencies' => [
+                $this->getDependency('exchange_options', [
+                    'field'              => $producer,
+                    'load_options_route' => 'admin.producer_collection.get_collections_by_producer_id.ajax.index',
+                    'form'               => $form,
+                ]),
+            ],
         ]));
         
         $this->addMetadataFieldset($form, $this->get('product.repository'));

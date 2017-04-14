@@ -23,11 +23,11 @@ use WellCommerce\Bundle\AppBundle\Entity\Media;
 use WellCommerce\Bundle\AppBundle\Entity\Price;
 use WellCommerce\Bundle\AppBundle\Entity\ShopCollectionAwareTrait;
 use WellCommerce\Bundle\AppBundle\Entity\Tax;
-use WellCommerce\Extra\CatalogBundle\Entity\ProductExtraTrait;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Sortable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\CatalogBundle\Entity\ProductExtraTrait;
 
 /**
  * Class Product
@@ -361,18 +361,12 @@ class Product implements EntityInterface
         $this->unit = $unit;
     }
     
-    /**
-     * @return ProducerCollection
-     */
     public function getProducerCollection()
     {
         return $this->producerCollection;
     }
     
-    /**
-     * @param ProducerCollection $producerCollection
-     */
-    public function setProducerCollection(ProducerCollection $producerCollection)
+    public function setProducerCollection(ProducerCollection $producerCollection = null)
     {
         $this->producerCollection = $producerCollection;
     }

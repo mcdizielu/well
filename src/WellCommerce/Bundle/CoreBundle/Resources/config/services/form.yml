@@ -325,6 +325,12 @@ services:
             - { name: form.dependency, alias: show }
         shared: false
 
+    form.dependency.exchange_options:
+        class: WellCommerce\Component\Form\Dependencies\ExchangeOptions
+        tags:
+            - { name: form.dependency, alias: exchange_options }
+        shared: false
+
     form.rule.required:
         class: WellCommerce\Component\Form\Rules\Required
         tags:
