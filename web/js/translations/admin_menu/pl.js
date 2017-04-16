@@ -27,6 +27,7 @@
     Translator.add("order", "Zam\u00f3wienia", "admin_menu", "pl");
     Translator.add("payment_method", "Formy p\u0142atno\u015bci", "admin_menu", "pl");
     Translator.add("producer", "Producenci", "admin_menu", "pl");
+    Translator.add("producer_collection", "Kolekcje producent\u00f3w", "admin_menu", "pl");
     Translator.add("product", "Produkty", "admin_menu", "pl");
     Translator.add("product_status", "Statusy produkt\u00f3w", "admin_menu", "pl");
     Translator.add("product_review", "Opinie dla produkt\u00f3w", "admin_menu", "pl");

@@ -27,6 +27,7 @@
     Translator.add("order", "Orders", "admin_menu", "en");
     Translator.add("payment_method", "Payment methods", "admin_menu", "en");
     Translator.add("producer", "Producers", "admin_menu", "en");
+    Translator.add("producer_collection", "Producer collections", "admin_menu", "en");
     Translator.add("product", "Products", "admin_menu", "en");
     Translator.add("product_status", "Product statuses", "admin_menu", "en");
     Translator.add("product_review", "Product reviews", "admin_menu", "en");

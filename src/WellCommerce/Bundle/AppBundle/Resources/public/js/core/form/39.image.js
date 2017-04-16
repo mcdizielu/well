@@ -42,7 +42,7 @@ var oDefaults = {
     asDefaults: [],
     aoRules: [],
     sComment: '',
-    sUploadUrl: '',
+    sUploadRoute: '',
     sSessionId: '',
     sSessionName: '',
     asFileTypes: [],
@@ -161,8 +161,6 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
     };
 
     gThis.Populate = function (mValue) {
-        console.log('Populate:' + mValue);
-
         if (gThis.m_bRepeatable) {
             gThis.m_jField.empty();
             gThis.m_oOptions.asDefaults = GCore.Duplicate(mValue);
@@ -318,7 +316,7 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
             runtimes: 'html5',
             browse_button: gThis.GetId() + '__upload',
             container: document.getElementById(gThis.GetId() + '__queue'),
-            url: gThis.m_oOptions.sUploadUrl,
+            url: Routing.generate(gThis.m_oOptions.sUploadRoute),
             filters: {
                 max_file_size: '10mb',
                 mime_types: [{
@@ -484,7 +482,7 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
     };
 
     gThis.LoadFiles = function (oRequest) {
-        gThis.m_gFilesDatagrid.MakeRequest(gThis.m_oOptions.sLoadRoute, oRequest, gThis._DefaultsLoaded);
+        gThis.m_gFilesDatagrid.MakeRequest(Routing.generate(gThis.m_oOptions.sLoadRoute), oRequest, gThis._DefaultsLoaded);
     };
 
     gThis._DefaultsLoaded = function (oData) {
@@ -517,7 +515,7 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
                         gThis._LoadDefaults(GCore.Duplicate(true, oRequest));
                         gThis.m_bLoadedDefaults = true;
                     }
-                    gThis.m_gFilesDatagrid.MakeRequest(gThis.m_oOptions.sLoadRoute, oRequest, GF_Datagrid.ProcessIncomingData);
+                    gThis.m_gFilesDatagrid.MakeRequest(Routing.generate(gThis.m_oOptions.sLoadRoute), oRequest, GF_Datagrid.ProcessIncomingData);
                 },
                 loaded: gThis._OnDataLoaded,
                 process: gThis._ProcessFile,

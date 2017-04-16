@@ -27,6 +27,7 @@ admin.media.add:
     defaults:
         _controller: 'media.controller.admin:addAction'
     options:
+        expose: true
         require_admin_permission: media.add
 
 admin.media.edit:

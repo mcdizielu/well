@@ -331,8 +331,6 @@ class ProductFormBuilder extends AbstractFormBuilder
         $photoField = $mediaData->addChild($this->getElement('image', [
             'name'         => 'productPhotos',
             'label'        => 'product.label.photos',
-            'load_route'   => $this->getRouterHelper()->generateUrl('admin.media.grid'),
-            'upload_url'   => $this->getRouterHelper()->generateUrl('admin.media.add'),
             'repeat_min'   => 0,
             'repeat_max'   => ElementInterface::INFINITE,
             'transformer'  => $this->getRepositoryTransformer('product_photo_collection', $this->get('media.repository')),

@@ -148,10 +148,10 @@ var GFormTextField = GCore.ExtendClass(GFormField, function () {
     };
 
     gThis._InitializeEvents = function (sRepetition) {
-        if (gThis.m_jField == undefined) {
+        if (gThis.m_jField === undefined) {
             return;
         }
-        if (gThis.m_bRepeatable && (sRepetition == undefined)) {
+        if (gThis.m_bRepeatable && (sRepetition === undefined)) {
             return;
         }
         var jField = gThis._GetField(sRepetition);
