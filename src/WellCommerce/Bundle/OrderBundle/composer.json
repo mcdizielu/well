@@ -40,7 +40,8 @@
     "enhancer-traits": {
       "WellCommerce\\Extra\\OrderBundle\\Entity\\OrderExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/OrderExtraTrait.php",
       "WellCommerce\\Extra\\OrderBundle\\Entity\\OrderStatusExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/OrderStatusExtraTrait.php",
-      "WellCommerce\\Extra\\OrderBundle\\Entity\\OrderStatusHistoryExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/OrderStatusHistoryExtraTrait.php"
+      "WellCommerce\\Extra\\OrderBundle\\Entity\\OrderStatusHistoryExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/OrderStatusHistoryExtraTrait.php",
+      "WellCommerce\\Extra\\OrderBundle\\Entity\\InvoiceExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/InvoiceExtraTrait.php"
     }
   }
 }

@@ -1,0 +1,16 @@
+{% extends 'WellCommerceAppBundle:Admin:layout.html.twig' %}
+{% trans_default_domain "wellcommerce" %}
+{% block content %}
+    <h2>{% trans %}invoice.heading.index{% endtrans %}</h2>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.GF_Datagrid_Col_createdAt .GF_Datagrid_filter_between .from').datepicker({dateFormat: 'yy-mm-dd 00:00:00'});
+        $('.GF_Datagrid_Col_createdAt .GF_Datagrid_filter_between .to').datepicker({dateFormat: 'yy-mm-dd 23:59:59'});
+        $('.GF_Datagrid_Col_date .GF_Datagrid_filter_between .from').datepicker({dateFormat: 'yy-mm-dd 00:00:00'});
+        $('.GF_Datagrid_Col_date .GF_Datagrid_filter_between .to').datepicker({dateFormat: 'yy-mm-dd 23:59:59'});
+        $('.GF_Datagrid_Col_dueDate .GF_Datagrid_filter_between .from').datepicker({dateFormat: 'yy-mm-dd 00:00:00'});
+        $('.GF_Datagrid_Col_dueDate .GF_Datagrid_filter_between .to').datepicker({dateFormat: 'yy-mm-dd 23:59:59'});
+      });
+    </script>
+    {{ datagrid_renderer(datagrid) }}
+{% endblock %}

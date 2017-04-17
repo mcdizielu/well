@@ -1,0 +1,88 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+WellCommerce\Bundle\InvoiceBundle\Entity\Invoice:
+    type: entity
+    table: invoice
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    embedded:
+        billingAddress:
+            class: WellCommerce\Bundle\AppBundle\Entity\ClientBillingAddress
+            columnPrefix: billing_address_
+    fields:
+        guid:
+            type: string
+            length: 64
+            nullable: false
+        number:
+            type: string
+            length: 32
+            nullable: false
+        currency:
+            type: string
+            length: 4
+            nullable: false
+        currencyRate:
+            type: float
+            column: currency_rate
+            nullable: false
+        shippingMethodName:
+            type: string
+            length: 255
+            column: shipping_method_name
+            nullable: false
+        paymentMethodName:
+            type: string
+            length: 255
+            column: payment_method_name
+            nullable: false
+        date:
+            type: date
+            nullable: false
+        dueDate:
+            type: date
+            column: due_date
+            nullable: false
+        paid:
+            type: boolean
+            nullable: false
+        amountDue:
+            type: decimal
+            scale: 2
+            nullable: false
+            precision: 15
+            column: amount_due
+        amountPaid:
+            type: decimal
+            scale: 2
+            nullable: false
+            precision: 15
+            column: amount_paid
+        signature:
+            type: text
+            nullable: false
+    oneToMany:
+        items:
+            targetEntity: WellCommerce\Bundle\InvoiceBundle\Entity\InvoiceItem
+            cascade:
+                - persist
+            fetch: LAZY
+            mappedBy: invoice
+            orphanRemoval: true
+    manyToOne:
+        order:
+            targetEntity: WellCommerce\Bundle\OrderBundle\Entity\Order
+            inversedBy: invoices
+            joinColumn:
+                name: order_id
+                referencedColumnName: id
+                onDelete: CASCADE

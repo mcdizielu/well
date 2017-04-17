@@ -9,6 +9,7 @@
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */
+
 namespace WellCommerce\Bundle\CoreBundle\Helper;
 
 use Knp\DoctrineBehaviors\Model\Sluggable\Transliterator;
@@ -30,5 +31,14 @@ class Helper
     public static function urlize(string $text, string $delimiter = '-'): string
     {
         return Transliterator::urlize($text, $delimiter);
+    }
+    
+    public static function generateGuid(): string
+    {
+        mt_srand((double)microtime() * 10000);
+        $charid = strtoupper(md5(uniqid(rand(), true)));
+        $guid   = substr($charid, 0, 32);
+        
+        return $guid;
     }
 }

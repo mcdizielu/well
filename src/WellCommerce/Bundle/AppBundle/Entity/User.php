@@ -77,6 +77,11 @@ class User implements \Serializable, EquatableInterface, UserInterface, EntityIn
         $this->lastName = $lastName;
     }
     
+    public function getFullName(): string
+    {
+        return sprintf('%s %s', $this->firstName, $this->lastName);
+    }
+    
     public function getUsername()
     {
         return $this->username;

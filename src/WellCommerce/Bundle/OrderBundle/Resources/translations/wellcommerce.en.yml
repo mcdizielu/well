@@ -17,6 +17,7 @@ order:
         choose_shipping_method: Choose a shipping method
         choose_payment_method: Choose a payment method
         client_orders: "Client orders"
+        invoices: Invoices
     button:
         confirm: Go to confirmation
         add_product: Add product
