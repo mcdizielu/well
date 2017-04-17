@@ -114,9 +114,6 @@
     "build-bootstrap": [
       "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap"
     ],
-    "update-application": [
-      "WellCommerce\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::updateApplication"
-    ],
     "post-create-project-cmd": [
       "WellCommerce\\Bundle\\StandardEditionBundle\\Composer\\ScriptHandler::installApplication"
     ]

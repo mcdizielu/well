@@ -647,12 +647,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "a6fa6ca64eb21ec1a37dc7e0b5df578457f2fa16"
+                "reference": "2c03dab4c38caa498e87fe3300360497ce1bb381"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/a6fa6ca64eb21ec1a37dc7e0b5df578457f2fa16",
-                "reference": "a6fa6ca64eb21ec1a37dc7e0b5df578457f2fa16",
+                "url": "https://api.github.com/repos/composer/composer/zipball/2c03dab4c38caa498e87fe3300360497ce1bb381",
+                "reference": "2c03dab4c38caa498e87fe3300360497ce1bb381",
                 "shasum": ""
             },
             "require": {
@@ -716,7 +716,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2017-04-06 07:14:25"
+            "time": "2017-04-10 16:47:30"
         },
         {
             "name": "composer/semver",
@@ -3032,12 +3032,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "3266b6e257992887035c8952918607f5b858aaf8"
+                "reference": "4cdd014b809867f4c040523011d2c3607d55e6b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/3266b6e257992887035c8952918607f5b858aaf8",
-                "reference": "3266b6e257992887035c8952918607f5b858aaf8",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/4cdd014b809867f4c040523011d2c3607d55e6b4",
+                "reference": "4cdd014b809867f4c040523011d2c3607d55e6b4",
                 "shasum": ""
             },
             "require": {
@@ -3102,7 +3102,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-03-20 10:21:06"
+            "time": "2017-04-10 07:58:43"
         },
         {
             "name": "nesbot/carbon",
