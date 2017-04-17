@@ -1,0 +1,61 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+admin.invoice.index:
+    path: /index
+    defaults:
+        _controller: 'invoice.controller.admin:indexAction'
+    options:
+        require_admin_permission: invoice.index
+
+admin.invoice.grid:
+    path: /grid
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'invoice.controller.admin:gridAction'
+    options:
+        expose: true
+        require_admin_permission: invoice.index
+
+admin.invoice.add:
+    path: /add/{order}
+    defaults:
+        _controller: 'invoice.controller.admin:addAction'
+    options:
+        require_admin_permission: invoice.add
+
+admin.invoice.print:
+    path: /print/{guid}
+    defaults:
+        _controller: 'invoice.controller.admin:printAction'
+    options:
+        require_admin_permission: invoice.index
+
+admin.invoice.edit:
+    path: '/edit/{id}'
+    defaults:
+        _controller: 'invoice.controller.admin:editAction'
+    options:
+        expose: true
+        require_admin_permission: invoice.edit
+
+admin.invoice.delete:
+    path: '/delete/{id}'
+    defaults:
+        _controller: 'invoice.controller.admin:deleteAction'
+    options:
+        expose: true
+        require_admin_permission: invoice.delete
+
+admin.invoice.delete_group:
+    path: '/delete_group'
+    defaults:
+        _controller: 'invoice.controller.admin:deleteGroupAction'
+    options:
+        expose: true
+        require_admin_permission: invoice.delete
