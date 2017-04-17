@@ -30,6 +30,9 @@ wellcommerce_coupon:
 wellcommerce_oauth:
     resource: "@WellCommerceOAuthBundle/Resources/config/routing.yml"
 
+wellcommerce_invoice:
+    resource: "@WellCommerceInvoiceBundle/Resources/config/routing.yml"
+
 wellcommerce_order:
     resource: "@WellCommerceOrderBundle/Resources/config/routing.yml"
 

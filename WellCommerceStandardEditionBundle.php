@@ -30,6 +30,7 @@ final class WellCommerceStandardEditionBundle extends AbstractWellCommerceBundle
         \WellCommerce\Bundle\SearchBundle\WellCommerceSearchBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\GeneratorBundle\WellCommerceGeneratorBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\OrderBundle\WellCommerceOrderBundle::registerBundles($bundles, $environment);
+        \WellCommerce\Bundle\InvoiceBundle\WellCommerceInvoiceBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\CatalogBundle\WellCommerceCatalogBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\CouponBundle\WellCommerceCouponBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\OAuthBundle\WellCommerceOAuthBundle::registerBundles($bundles, $environment);
