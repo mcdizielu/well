@@ -85,6 +85,7 @@
     "wellcommerce/core-bundle": "self.version",
     "wellcommerce/coupon-bundle": "self.version",
     "wellcommerce/generator-bundle": "self.version",
+    "wellcommerce/invoice-bundle": "self.version",
     "wellcommerce/oauth-bundle": "self.version",
     "wellcommerce/order-bundle": "self.version",
     "wellcommerce/review-bundle": "self.version",

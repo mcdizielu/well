@@ -39,6 +39,7 @@
     "wellcommerce/core-bundle": "^0.9@dev",
     "wellcommerce/coupon-bundle": "^0.9@dev",
     "wellcommerce/feature-bundle": "^0.9@dev",
+    "wellcommerce/invoice-bundle": "^0.9@dev",
     "wellcommerce/generator-bundle": "^0.9@dev",
     "wellcommerce/oauth-bundle": "^0.9@dev",
     "wellcommerce/order-bundle": "^0.9@dev",
