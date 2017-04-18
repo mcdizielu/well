@@ -53,6 +53,7 @@ class InvoiceManager extends AbstractManager
         $order->getProducts()->map(function (OrderProduct $orderProduct) use ($invoice) {
             $invoiceItem = $this->createInvoiceItem($orderProduct);
             $invoiceItem->setInvoice($invoice);
+            $invoice->getItems()->add($invoiceItem);
             $this->getEntityManager()->persist($invoiceItem);
         });
     }
