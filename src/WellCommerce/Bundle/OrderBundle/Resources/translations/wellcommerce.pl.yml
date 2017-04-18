@@ -19,6 +19,7 @@ order:
         choose_shipping_method: "Wybierz formę dostawy"
         choose_payment_method: "Wybierz formę płatności"
         client_orders: "Zamówienia klienta"
+        invoices: Faktury
     button:
         confirm: Przejdź do potwierdzenia
         add_product: Dodaj produkt

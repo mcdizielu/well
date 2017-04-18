@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d448c3684ce82ee1dac588a2fdb49d1",
+    "content-hash": "22e766ad7d10794d1434a8dcc9d0eb5b",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -647,12 +647,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "2c03dab4c38caa498e87fe3300360497ce1bb381"
+                "reference": "8491a21d41fdb22a892f4184861cb314f185317e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/2c03dab4c38caa498e87fe3300360497ce1bb381",
-                "reference": "2c03dab4c38caa498e87fe3300360497ce1bb381",
+                "url": "https://api.github.com/repos/composer/composer/zipball/8491a21d41fdb22a892f4184861cb314f185317e",
+                "reference": "8491a21d41fdb22a892f4184861cb314f185317e",
                 "shasum": ""
             },
             "require": {
@@ -716,7 +716,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2017-04-10 16:47:30"
+            "time": "2017-04-13 22:28:24"
         },
         {
             "name": "composer/semver",
@@ -1254,12 +1254,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "bdb5af6b2b155173cc50c7804cb0422c37594e0e"
+                "reference": "7338c504a198af0ee2020c62d694ba080d2775f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/bdb5af6b2b155173cc50c7804cb0422c37594e0e",
-                "reference": "bdb5af6b2b155173cc50c7804cb0422c37594e0e",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/7338c504a198af0ee2020c62d694ba080d2775f5",
+                "reference": "7338c504a198af0ee2020c62d694ba080d2775f5",
                 "shasum": ""
             },
             "require": {
@@ -1327,7 +1327,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2017-03-26 16:00:39"
+            "time": "2017-04-13 11:13:40"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
