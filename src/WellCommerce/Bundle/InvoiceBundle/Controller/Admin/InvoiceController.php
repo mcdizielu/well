@@ -64,6 +64,17 @@ class InvoiceController extends AbstractAdminController
         ]);
     }
     
+    public function editAction(int $id): Response
+    {
+        $invoice = $this->getManager()->getRepository()->find($id);
+        
+        if ($invoice instanceof Invoice) {
+            return $this->redirectToAction('print', ['guid' => $invoice->getGuid()]);
+        }
+        
+        return $this->redirectToAction('index');
+    }
+    
     public function printAction(string $guid): Response
     {
         $invoice = $this->getManager()->getRepository()->findOneBy(['guid' => $guid]);

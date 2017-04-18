@@ -18,6 +18,12 @@ use WellCommerce\Component\DataGrid\Column\ColumnCollection;
 use WellCommerce\Component\DataGrid\Column\Options\Appearance;
 use WellCommerce\Component\DataGrid\Column\Options\Filter;
 use WellCommerce\Component\DataGrid\Column\Options\Sorting;
+use WellCommerce\Component\DataGrid\Configuration\EventHandler\ClickRowEventHandler;
+use WellCommerce\Component\DataGrid\Configuration\EventHandler\DeleteGroupEventHandler;
+use WellCommerce\Component\DataGrid\Configuration\EventHandler\DeleteRowEventHandler;
+use WellCommerce\Component\DataGrid\Configuration\EventHandler\LoadEventHandler;
+use WellCommerce\Component\DataGrid\DataGridInterface;
+use WellCommerce\Component\DataGrid\Options\OptionsInterface;
 
 /**
  * Class InvoiceDataGrid
@@ -114,6 +120,35 @@ class InvoiceDataGrid extends AbstractDataGrid
                 'width' => 40,
                 'align' => Appearance::ALIGN_CENTER,
             ]),
+        ]));
+    }
+    
+    public function configureOptions(OptionsInterface $options)
+    {
+        parent::configureOptions($options);
+        
+        $eventHandlers = $options->getEventHandlers();
+        
+        $eventHandlers->add(new LoadEventHandler([
+            'function' => $this->getJavascriptFunctionName('load'),
+            'route'    => $this->getActionUrl('grid'),
+        ]));
+        
+        $eventHandlers->add(new ClickRowEventHandler([
+            'function' => $this->getJavascriptFunctionName('click'),
+            'route'    => $this->getActionUrl('edit'),
+        ]));
+        
+        $eventHandlers->add(new DeleteRowEventHandler([
+            'function'   => $this->getJavascriptFunctionName('delete'),
+            'row_action' => DataGridInterface::ACTION_DELETE,
+            'route'      => $this->getActionUrl('delete'),
+        ]));
+        
+        $eventHandlers->add(new DeleteGroupEventHandler([
+            'function'     => $this->getJavascriptFunctionName('delete_group'),
+            'group_action' => DataGridInterface::ACTION_DELETE_GROUP,
+            'route'        => $this->getActionUrl('delete_group'),
         ]));
     }
     
