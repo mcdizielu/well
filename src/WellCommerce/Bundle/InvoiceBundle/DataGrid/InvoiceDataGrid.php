@@ -125,8 +125,6 @@ class InvoiceDataGrid extends AbstractDataGrid
     
     public function configureOptions(OptionsInterface $options)
     {
-        parent::configureOptions($options);
-        
         $eventHandlers = $options->getEventHandlers();
         
         $eventHandlers->add(new LoadEventHandler([
