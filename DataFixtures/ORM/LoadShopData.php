@@ -49,6 +49,8 @@ class LoadShopData extends AbstractDataFixture
         $shop->setDefaultCountry('US');
         $shop->setDefaultCurrency($currency->getCode());
         $shop->setClientGroup($this->getReference('client_group'));
+        $shop->getMinimumOrderAmount()->setCurrency($currency);
+        $shop->getMinimumOrderAmount()->setValue(0);
         
         foreach ($this->getLocales() as $locale) {
             $shop->translate($locale->getCode())->getMeta()->setTitle('WellCommerce');
