@@ -15,6 +15,7 @@ namespace WellCommerce\Bundle\InvoiceBundle;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
+use WellCommerce\Bundle\InvoiceBundle\DependencyInjection\Compiler\RegisterInvoiceProcessorPass;
 
 /**
  * Class WellCommerceInvoiceBundle
@@ -26,6 +27,7 @@ final class WellCommerceInvoiceBundle extends AbstractWellCommerceBundle
     public function build(ContainerBuilder $container)
     {
         parent::build($container);
+        $container->addCompilerPass(new RegisterInvoiceProcessorPass());
     }
     
     public static function registerBundles(Collection $bundles, string $environment)

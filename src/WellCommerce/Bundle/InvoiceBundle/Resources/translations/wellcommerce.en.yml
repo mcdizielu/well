@@ -15,6 +15,10 @@ invoice:
         signature: Authorized signature
         created_at: Created at
         created_by: Created by
+        maturity: Default maturity
+        processor: Processor
     button:
         add: Issue an invoice
         print: Print invoice
+    fieldset:
+        settings: Invoice settings

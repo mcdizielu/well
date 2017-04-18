@@ -13,6 +13,7 @@ WellCommerce\Bundle\OrderBundle\Entity\OrderNote:
     manyToOne:
         order:
             targetEntity: WellCommerce\Bundle\OrderBundle\Entity\Order
+            inversedBy: order
             joinColumn:
                 name: order_id
                 referencedColumnName: id

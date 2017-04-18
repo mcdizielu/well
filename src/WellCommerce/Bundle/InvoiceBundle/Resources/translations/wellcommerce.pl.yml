@@ -15,6 +15,10 @@ invoice:
         signature: Osoba upoważniona
         created_at: Data utworzenia
         created_by: Utworzona przez
+        maturity: Domyślny termin płatności
+        processor: Generator
     button:
         add: Wystaw fakturę
         print: Drukuj fakturę
+    fieldset:
+        settings: Ustawienia faktur

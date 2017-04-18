@@ -55,6 +55,7 @@
     Translator.add("user", "Users", "admin_menu", "en");
     Translator.add("user_group", "Users groups", "admin_menu", "en");
     Translator.add("variant", "Variants", "admin_menu", "en");
+    Translator.add("invoice", "Invoices", "admin_menu", "en");
     Translator.add("product_feature", "Features", "admin_menu", "en");
     Translator.add("feature_group", "Groups", "admin_menu", "en");
     Translator.add("feature", "Features", "admin_menu", "en");

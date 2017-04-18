@@ -87,6 +87,11 @@
                 {% for invoice in resource.invoices %}
                     <li>
                         <h4><span>#{{ invoice.number }} - {{ invoice.createdAt|date }}</span></h4>
+                        <p>{{ format_billing_address(invoice.billingAddress) }}</p>
+                        <p><strong>{% trans %}invoice.label.date{% endtrans %}:</strong> {{ invoice.date|date }}</p>
+                        <p><strong>{% trans %}invoice.label.due_date{% endtrans %}:</strong> {{ invoice.dueDate|date }}</p>
+                        <p><strong>{% trans %}invoice.label.amount_due{% endtrans %}:</strong> {{ format_price(invoice.amountDue, invoice.currency, invoice.currency) }}</p>
+                        <p><strong>{% trans %}invoice.label.amount_paid{% endtrans %}:</strong> {{ format_price(invoice.amountPaid, invoice.currency, invoice.currency) }}</p>
                         <p class="author"><a href="{{ path('admin.invoice.print', {"guid": invoice.guid}) }}"><strong>{% trans %}invoice.button.print{% endtrans %}</strong></a></p>
                     </li>
                 {% endfor %}

@@ -37,6 +37,16 @@ final class ShopMappingEnhancer extends AbstractMappingEnhancer
                 'default' => 7,
             ],
         ]));
+        
+        $collection->add(new FieldDefinition([
+            'fieldName'  => 'invoiceProcessor',
+            'type'       => 'string',
+            'nullable'   => false,
+            'columnName' => 'invoice_processor',
+            'options'    => [
+                'default' => 'invoice.processor.generic',
+            ],
+        ]));
     }
     
     public function getSupportedEntityClass(): string

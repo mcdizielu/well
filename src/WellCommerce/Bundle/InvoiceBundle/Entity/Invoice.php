@@ -38,6 +38,8 @@ class Invoice implements EntityInterface
     use ShopAwareTrait;
     use InvoiceExtraTrait;
     
+    const DEFAULT_PROCESSOR = 'generic';
+    
     protected $guid               = '';
     protected $number             = '';
     protected $currency           = '';
@@ -50,6 +52,7 @@ class Invoice implements EntityInterface
     protected $amountDue          = 0.00;
     protected $amountPaid         = 0.00;
     protected $signature          = '';
+    protected $processor          = self::DEFAULT_PROCESSOR;
     
     /**
      * @var Collection
@@ -206,5 +209,15 @@ class Invoice implements EntityInterface
     public function setSignature(string $signature)
     {
         $this->signature = $signature;
+    }
+    
+    public function getProcessor(): string
+    {
+        return $this->processor;
+    }
+    
+    public function setProcessor(string $processor)
+    {
+        $this->processor = $processor;
     }
 }

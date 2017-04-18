@@ -15,8 +15,11 @@ namespace WellCommerce\Bundle\InvoiceBundle\Controller\Admin;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use WellCommerce\Bundle\CoreBundle\Controller\Admin\AbstractAdminController;
+use WellCommerce\Bundle\InvoiceBundle\Entity\Invoice;
+use WellCommerce\Bundle\InvoiceBundle\Manager\InvoiceManager;
+use WellCommerce\Bundle\InvoiceBundle\Processor\InvoiceProcessorCollection;
+use WellCommerce\Bundle\InvoiceBundle\Processor\InvoiceProcessorInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
-use WellCommerce\Bundle\OrderBundle\Manager\InvoiceManager;
 
 /**
  * Class InvoiceController
@@ -40,17 +43,17 @@ class InvoiceController extends AbstractAdminController
         }
         
         $this->getOrderProvider()->setCurrentOrder($order);
-        $invoice = $this->manager->prepareInvoiceForOrder($order);
-        $form    = $this->formBuilder->createForm($invoice);
+        $invoice    = $this->manager->prepareInvoiceForOrder($order);
+        $form       = $this->formBuilder->createForm($invoice);
+        $redirectTo = null;
         
         if ($form->handleRequest()->isSubmitted()) {
             if ($form->isValid()) {
+                $this->getInvoiceProcessor($invoice)->save($invoice);
                 $this->getManager()->createResource($invoice);
+                $redirectTo = $this->getRouterHelper()->generateUrl('admin.order.edit', ['id' => $orderId]);
+                $this->getFlashHelper()->addSuccess('invoice.flash.success');
             }
-            
-            $redirectTo = $this->getRouterHelper()->generateUrl('admin.order.edit', ['id' => $orderId]);
-            
-            $this->getFlashHelper()->addSuccess('invoice.flash.success');
             
             return $this->createFormDefaultJsonResponse($form, $redirectTo);
         }
@@ -63,5 +66,19 @@ class InvoiceController extends AbstractAdminController
     
     public function printAction(string $guid): Response
     {
+        $invoice = $this->getManager()->getRepository()->findOneBy(['guid' => $guid]);
+        if ($invoice instanceof Invoice) {
+            return $this->getInvoiceProcessor($invoice)->download($invoice);
+        }
+        
+        return $this->redirectToAction('index');
+    }
+    
+    private function getInvoiceProcessor(Invoice $invoice): InvoiceProcessorInterface
+    {
+        /** @var InvoiceProcessorCollection $collection */
+        $collection = $this->get('invoice.processor.collection');
+        
+        return $collection->get($invoice->getProcessor());
     }
 }

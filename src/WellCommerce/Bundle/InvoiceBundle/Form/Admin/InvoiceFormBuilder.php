@@ -38,16 +38,6 @@ class InvoiceFormBuilder extends AbstractFormBuilder
         ]));
         
         $requiredData->addChild($this->getElement('text_field', [
-            'name'  => 'number',
-            'label' => 'invoice.label.number',
-        ]));
-    
-        $requiredData->addChild($this->getElement('checkbox', [
-            'name'  => 'paid',
-            'label' => 'invoice.label.paid',
-        ]));
-        
-        $requiredData->addChild($this->getElement('text_field', [
             'name'  => 'amountDue',
             'label' => 'invoice.label.amount_due',
             'rules' => [
@@ -61,6 +51,11 @@ class InvoiceFormBuilder extends AbstractFormBuilder
             'rules' => [
                 $this->getRule('required'),
             ],
+        ]));
+    
+        $requiredData->addChild($this->getElement('checkbox', [
+            'name'  => 'paid',
+            'label' => 'invoice.label.paid',
         ]));
         
         $requiredData->addChild($this->getElement('date', [

@@ -40,6 +40,10 @@ WellCommerce\Bundle\InvoiceBundle\Entity\Invoice:
             length: 255
             column: shipping_method_name
             nullable: false
+        processor:
+            type: string
+            length: 64
+            nullable: false
         paymentMethodName:
             type: string
             length: 255

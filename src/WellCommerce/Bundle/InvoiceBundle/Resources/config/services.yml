@@ -16,3 +16,23 @@ services:
         class: WellCommerce\Bundle\InvoiceBundle\Enhancer\ShopMappingEnhancer
         tags:
             - { name: doctrine.mapping.enhancer }
+
+    invoice.processor.collection:
+        class: WellCommerce\Bundle\InvoiceBundle\Processor\InvoiceProcessorCollection
+
+    invoice.processor.generic:
+        class: WellCommerce\Bundle\InvoiceBundle\Processor\GenericInvoiceProcessor
+        tags:
+            - { name: invoice.processor }
+
+    invoice.subscriber:
+        class: WellCommerce\Bundle\InvoiceBundle\EventListener\InvoiceSubscriber
+        tags:
+            - { name: kernel.event_subscriber }
+        calls:
+            - [setContainer, ['@service_container']]
+
+    invoice.doctrine.subscriber:
+        class: WellCommerce\Bundle\InvoiceBundle\EventListener\InvoiceDoctrineSubscriber
+        tags:
+            - { name: doctrine.event_subscriber, connection: default, priority: -10 }
