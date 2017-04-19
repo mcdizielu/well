@@ -13,6 +13,13 @@ front.client.login:
     options:
         allow_page_redirect: 'true'
 
+front.client.registration:
+    path: /registration
+    defaults:
+        _controller: 'client.controller.front:registrationAction'
+    options:
+        allow_page_redirect: 'true'
+
 front.client.login_check:
     path: /login_check
 

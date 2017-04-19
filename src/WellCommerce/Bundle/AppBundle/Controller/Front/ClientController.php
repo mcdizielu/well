@@ -31,7 +31,11 @@ class ClientController extends AbstractFrontController
         
         return $this->displayTemplate('login');
     }
-    
+
+    public function registrationAction(){
+        return $this->displayTemplate('registration');
+    }
+
     public function loginCheckAction()
     {
     }

@@ -1,0 +1,232 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+attribute:
+    heading:
+        index: Атрибуты
+        add: Добавление нового атрибута
+        edit: Изменение атрибута
+    label:
+        groups: Группы
+        values: Значения
+    fieldset:
+        groups: Группы
+        values: Значения
+
+attribute_group:
+    heading:
+        index: Группы атрибутов
+        add: Добавление новой группы
+        edit: Изменение группы
+    flash:
+        empty_group: Группы пуста
+        new_group: Новая группа
+    fieldset:
+        attributes: Атрибуты
+    label:
+        attributes: Атрибуты
+        group: Группа
+
+attribute_value:
+    heading:
+        index: Значения атрибутов
+        add: Добавление нового значения атрибуту
+        edit: Изменение значения атрибута
+    fieldset:
+        attributes: Атрибуты
+    label:
+        attributes: Атрибуты
+
+availability:
+    heading:
+        index: Сроки поставок
+        add: Добавление нового срока поставки
+        edit: Изменение срока поставки
+
+category:
+    form:
+        fieldset:
+            general: Основное
+            meta: Мета
+            shops: Магазины
+            description: Описание
+    label:
+        shops: Доступна в магазинах
+        hierarchy: Структура подчиненности
+        enabled: Включена
+        name: Имя
+        slug: Псевдоним
+        parent: Родительская категория
+        short_description: Короткое описание
+        description: Описание
+        category_add: Добавить
+        subcategory_add: Добавить дочернюю
+        category_name: Имя категории
+        tree: Структура подчиненности
+    heading:
+        index: Категории
+        add: Добавление новой категории
+        edit: Изменение категории
+    comment:
+        enabled: Отображать в магазине
+    flash:
+        empty_category: Текущая категория пуста.
+
+deliverer:
+    heading:
+        index: Службы доставок
+        add: Добавление службы доставки
+        edit: Изменение службы доставки
+
+producer:
+    heading:
+        index: Производители
+        add: Добавление нового производителя
+        edit: Изменение производителя
+    fieldset:
+        deliverers: Службы доставок
+    label:
+        deliverers: Службы доставок
+
+producer_collection:
+    heading:
+        index: Коллекции производителей
+        add: Добавление новой коллекции производителей
+        edit: Изменение коллекции производителей
+
+layered_navigation:
+    label:
+        price: Отбор по цене
+        brand: Отбор по брэнду
+
+layout_box:
+    layered_navigation:
+        tip: Настройка параметров отображения
+        enable_price_filter: Включить отбор по цене
+        enable_brand_filter: Включить отбор по брэнду
+        enable_attribute_filter: Включить отбор по атрибутам
+
+product:
+    form:
+        fieldset:
+            general: Основные
+            meta: Meta
+            categories: Категории
+            prices: Цены
+            stock: Настройки запасов
+            photos: Галерея
+            statuses: Статусы
+            variants: Варианты
+            shops: Магазины
+            description: Описание
+    comment:
+        enabled: Включить видимость продукта
+        track_stock: Включение контроля остатков, количество товаров будет обновляться автоматически. Товары с количеством равным 0 будут недоступны для заказа.
+    heading:
+        index: Товары
+        add: Добавление нового товара
+        edit: Изменение товара
+    label:
+        id: ID
+        name: Имя
+        slug: Псевдоним
+        enabled: Включен
+        sku: Артикул
+        barcode: Штрихкод
+        statuses: Статусы товара
+        shops: Доступен в магазинах
+        categories: Категории
+        gross_amount: Общая цена
+        stock: Наличие
+        weight: Вес
+        producer: Производитель
+        currency: Валюта
+        manufactured_by: по
+        shipping_cost: Стоимость доставки
+        availability: Срок поставки
+        attributes: Атрибуты
+        add_tax_prompt: Добавить налог
+        photos: Галерея
+        quantity: Количество
+        unit: Единица измерения
+        package_size: Количество в упаковке
+        track_stock: Контролировать остаток
+        pcs: шт.
+        buy_price:
+            settings: Настройка стоимости покупки
+            currency: Валюта
+            tax: Налог
+            gross_amount: Общая стоимость
+            discounted_gross_amount: Спец цена
+        sell_price:
+            settings: Настройки стоимости продажи
+            currency: Валюта
+            tax: Налог
+            gross_amount: Цена
+            discounted_gross_amount: Цена со скидкой
+            discount_valid_from: Действительна с
+            discount_valid_to: Действительна до
+        dimension:
+            width: Ширина
+            height: Высота
+            depth: Глубина
+        short_description: Короткое описание
+        description: Описание
+    button:
+        filter: Результат отбора
+        show_in_shop: Показать в магазине
+    heading:
+        recommendations: 'Вас также может заинтересовать'
+    options:
+        label:
+            order: Сортировать по
+            view: Посмотреть, как
+            limit: Показать на странице
+            grid_view: Сетка
+            list_view: Список
+        order_by:
+            name:
+                asc: Наименованию
+                desc: Наименованию - обратно
+            final_price:
+                asc: Цене - дешевле
+                desc: Цене - дороже
+            score:
+                asc: Рэйтингу
+        limit:  Показать на странице
+        view_type:
+            list: Список
+            grid: Сетка
+
+product_status:
+    heading:
+        index: Статусы товаров
+        add: Добавление нового статуса товара
+        edit: Изменение статуса товара
+    label:
+        css_class: CSS класс
+        id: Id
+        name: Имя
+    comment:
+        css_class: Класс используемый, в шаблонах CSS.
+    flash:
+        no_products: Товаров подходящих под запрос не найдено.
+
+search:
+    heading:
+        index: Результат поиска
+    label:
+        phrase: Введите поисковый запрос
+    flash:
+        no_results: По запросу товаров не найдено
+
+unit:
+    heading:
+        index: Единицы измерения
+        add: Добавление новой единицы измерения
+        edit: Изменение единицы измерения

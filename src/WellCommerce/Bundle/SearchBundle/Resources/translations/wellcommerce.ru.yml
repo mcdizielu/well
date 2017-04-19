@@ -1,0 +1,7 @@
+search:
+    heading:
+        index: Результаты поиска
+    label:
+        phrase: Введите поисковый запрос
+    flash:
+        no_results: По запросу товаров не найдено

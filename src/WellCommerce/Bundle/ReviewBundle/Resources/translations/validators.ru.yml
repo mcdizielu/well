@@ -1,0 +1,15 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+review:
+    error:
+        nick:
+            not_blank: Псевдоним обязателен для заполнения
+        content:
+            not_blank: "Содержание не может быть пустым"
+            bad_words: "Текст содержания содержит ненормативную лексику"

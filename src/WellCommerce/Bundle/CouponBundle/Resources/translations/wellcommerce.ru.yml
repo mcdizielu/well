@@ -1,0 +1,26 @@
+coupon:
+    heading:
+        index: Купоны
+        add: Добавить
+        edit: Изменить
+        code: Код
+        discount: Скидка
+    fieldset:
+        discount_settings: Настройки скидки
+    label:
+        client_usage_limit: Использовать лимит для клиента
+        global_usage_limit: Использовать лимит всех
+        modifier_type: Тип модификатора
+        modifier_value: Значение модификатора
+        modifier_type_percent: '%'
+        modifier_type_subtract: '-'
+        minimum_order_value: "Минимальная сумма заказа"
+        accept: Использовать
+        remove: Удалить
+        exclude_promotions: "Исключить акции"
+    error:
+        not_found: Код купона недействителен
+        future_coupon: Купон еще не активирован
+        coupon_expired: Купон просрочен
+        minimum_order_value: "Стоимость товаров в корзине недостаточна для использования купона."
+        only_promotion_products: "Купон нельзя использовать в акциях"

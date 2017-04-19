@@ -1,0 +1,218 @@
+order:
+    form:
+        fieldset:
+            products: Товары
+    heading:
+        index: Заказы
+        edit: Изменение заказа
+        address: Адреса доставки и платежей
+        confirm: Подтверждение
+        confirmation: Подтверждение
+        order_total: Итоги по заказу
+        products: Товары
+        contact_details: Контактная информация
+        cart: Корзина
+        methods: "Способы оплаты и доставки"
+        coupon: Купон
+        choose_shipping_method: Выберете способ доставки
+        choose_payment_method: Выберете способ оплаты
+        client_orders: "Клиентские заказы"
+    button:
+        confirm: Перейти к подтверждению
+        add_product: Добавить товар
+        change_status: Изменить статус
+        show_order: Показать заказ
+    label:
+        id: ID
+        number: Номер заказа.
+        client: Клиент
+        product_total:
+            net_price: Базовая цена товара
+            tax_amount: Сумма налога
+            gross_price: Общая цена товара
+        summary:
+            net_amount: Итого базовая стоимость
+            tax_amount: Итого сумма налогов
+            gross_amount: Итого общая стоимость
+        shipping_total: Стоимость доставки
+        order_total: Итого
+        variant: Вариант
+        weight: Вес
+        quantity: Количество
+        stock: Наличие на складе
+        tax_rate: Налоговая ставка
+        current_status: Статус
+        created_at: Создан
+        comment: Комментарий
+        shipping_method: Способ доставки
+        payment_method: Способ оплаты
+        product_name: Товар
+        tax_value: Сумма налога
+        gross_amount: Цена
+        gross_total: Сумма
+        currency: Валюта
+        products: Товары
+        variant_options: Выбранные варианты
+        accept_conditions: Я принимаю условия магазина
+        issue_invoice: Пожалуйста, вышлите мне счет
+        shipping_cost: Стоимость доставки
+        coupon:
+            code: Код купона
+            modifier: Модификатор купона
+    description:
+        product_total: Общая стоимость товаров
+        shipping_cost: Стоимость доставки
+    notice:
+        empty_order_list: У вас пока нет заказов.
+    error:
+        no_methods: Нет доступных способов доставки и оплаты для этого заказа.
+        minimum_order_value_not_met: Сумма заказа меньше минимально допустимой.
+    cart:
+        flash:
+            added: Добавлено в корзину
+            empty: Корзина пуста.
+            not_added: Не было добавлено в корзину, потому что на складе недостаточно товаров.
+        button:
+            add: Купить
+            go_to_cart: Перейти в корзину
+            back_to_shopping: Вернуться к покупкам
+            place_order: Оформить заказ
+        link:
+            checkout: Перейти к оформлению заказа
+        heading:
+            index: Корзина
+            recommendations: 'Вам также может понравиться'
+        table:
+            heading:
+                product: Товар
+                price: Цена
+                quantity: Количество
+                total: Итог
+        error:
+            no_available_methods: У этой корзины нет доступных способов доставки или оплаты.
+        shipping_method:
+            label: Способ доставки
+        payment_method:
+            label: Способ оплаты
+
+address:
+    heading:
+        billing_address: Адрес для выставления счетов
+        shipping_address: Адрес доставки
+    label:
+        copy_address: Адрес доставки совпадает с адресом для выставления счета.
+        addresses: Адреса
+        line1: Адрес
+        line2: Адрес (дополнительно)
+        province: Округ
+        postal_code: Индекс
+        country: Страна
+        city: Город
+
+order_status:
+    heading:
+        index: Статус заказа
+        add: Добавление нового статуса заказа
+        edit: Изменение статуса заказа
+    label:
+        order_status_group: Группа
+        default_comment: "Комментарий к заказу по умолчанию"
+        colour: Цвет
+    comment:
+        enabled: Статус будет виден.
+
+order_status_group:
+    heading:
+        index: Группы статусов заказов
+        add: Добавление новой группы статусов заказов
+        edit: Изменение группы статусов заказов
+    label:
+        name: Название группы статуса заказа
+
+order_status_history:
+    heading:
+        add: Изменить статус заказа
+        view: История изменения статусов заказа
+    label:
+        order_status: Статус заказа
+        comment: Комментарий
+        nofity: Отправить уведомление
+        client_notified: Клиент уведомлен
+        client_not_notified: Клиент не уведомлен
+        created_by: Создан
+        no_history: История статуса заказа пуста
+    email:
+        status_changed: "Статус заказа изменен"
+    button:
+        change: Сохранить
+
+order_note:
+    heading:
+        add: Добавление примечания к заказу
+        list: Примечания к заказу
+    label:
+        content: Содержание
+        created_by: Создан
+        no_history: Для этого заказа нет заметок
+    button:
+        save: Добавить
+
+payment:
+    heading:
+        initialize: Оплата
+    flash:
+        thank_you: "Благодарим за размещение заказа. Ниже приведены данные заказа.:"
+
+payment_method:
+    heading:
+        index: Способы оплаты
+        add: Добавление нового способа оплаты
+        edit: Изменение способа оплаты
+    fieldset:
+        shipping_methods: Доступные способы доставки
+        processor_configuration: Настройки обработчика
+        order_statuses: Статусы заказа
+        client_groups: Группы клиентов
+    label:
+        processor: Обработчик оплаты
+        shipping_methods: Доступные способы доставки
+        payment_pending_order_status: Ожидает оплаты
+        payment_success_order_status: Оплачен
+        payment_failure_order_status: Оплата не удалась
+        bank_transfer:
+            tip: 'Ваш заказ будет обработан после получения платежа на следующий банковский счет'
+            account_number: Номер счета
+            account_owner: Владелец счета
+            sort_number: Код
+            title: Заголовок
+        client_groups: Группы клиентов
+    tip:
+        client_groups: Ограничить видимость для группы клиентов
+
+sales_report:
+    heading:
+        sales: Сводка продаж
+    label:
+        sales: Продажи
+        clients: Клиенты
+        orders: Заказы
+        today: Сегодня
+        current_month: За текущий месяц
+        current_period: За указанный период
+
+shipping_method:
+    heading:
+        index: Способы доставки
+        add: Добавление нового способа доставки
+        edit: Изменение способа доставки
+    label:
+        calculator: Вид расчета стоимости
+        costs: Стоимость доставки
+        options_provider: Служба поставщика опций
+        client_groups: Группы клиентов
+    fieldset:
+        costs: Настройки стоимости доставки
+        countries: Страны
+        client_groups: Группы клиентов
+    tip:
+        client_groups: Ограничить видимость для группы клиентов

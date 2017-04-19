@@ -1,0 +1,59 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+feature:
+    heading:
+        index: Дополнительные свойства товаров
+        add: Создание нового свойства
+        edit: Изменение свойства
+    label:
+        groups: Группы
+        values: Значения
+        field_type:
+            choose: Выберете тип поля
+            text_field: Текстовое поле (input)
+            text_area: Текстовый блок (textarea)
+            checkbox: Флажок (checkbox)
+    fieldset:
+        groups: Группы
+        values: Значения
+
+feature_group:
+    heading:
+        index: Группы свойств товаров
+        add: Создание новой группы
+        edit: Изменение группы
+    fieldset:
+        features: Свойства товаров
+        sets: Наборы
+    label:
+        features: Особенности товаров
+        group: Группы
+        sets: Наборы
+
+feature_set:
+    heading:
+        index: Наборы свойств
+        add: Создание нового набора свойств
+        edit: Изменение набора
+    fieldset:
+        groups: Группы
+    label:
+        groups: Группы
+
+product:
+    fieldset:
+        features: Дополнительные свойства
+
+feature_editor:
+    label:
+        choose_set: Выбор набора
+        group: Группа
+        feature: Свойство товара
+        value: Значение
+

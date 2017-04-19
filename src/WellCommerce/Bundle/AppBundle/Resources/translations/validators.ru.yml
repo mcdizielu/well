@@ -1,0 +1,41 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+client:
+    conditions_not_accepted: Необходимо принять условия магазина.
+    email_not_unique: 'Пользователь с таким email уже зарегистрирован.'
+    password_not_valid: 'Пароль указан неверно.'
+    vatid_not_valid: ИНН указан неверно
+    company_name_not_valid: Название компании указано неверно.
+    first_name_empty: Имя не может быть пустым.
+client_shipping_address:
+    first_name_empty: Поле "Имя" не может быть пустым.
+    last_name_empty: Поле "Фамилия" не может быть пустым.
+    line1_empty: Поле "Адрес" не может быть пустым.
+    line2_empty: Поле "Адрес" не может быть пустым.
+    postal_code_empty: Поле "Индекс" не может быть пустым.
+    city_empty: Поле "Город" не может быть пустым.
+client_billing_address:
+    first_name_empty: Поле "Имя" не может быть пустым.
+    last_name_empty: Поле "Фамилия" не может быть пустым.
+    line1_empty: Поле "Адрес" не может быть пустым.
+    line2_empty: Поле "Адрес" не может быть пустым.
+    postal_code_empty: Поле "Индекс" не может быть пустым.
+    city_empty: Поле "Город" не может быть пустым.
+    company_name_empty: Поле "Компания" не может быть пустым.
+    vatid_empty: Поле "ИНН" не может быть пустым.
+client_details:
+    password_empty: Поле "Пароль" не может быть пустым.
+    username_empty: E-mail адрес не может быть пустым.
+    username_not_valid: E-mail адрес указан не верно.
+client_contact_details:
+    first_name_empty: Поле "Имя" не может быть пустым.
+    last_name_empty: Поле "Фамилия" не может быть пустым.
+    email_empty: E-mail адрес не может быть пустым.
+    email_not_valid: E-mail адрес указан не верно.
+    phone_empty: Поле "Телефон" не может быть пустым.

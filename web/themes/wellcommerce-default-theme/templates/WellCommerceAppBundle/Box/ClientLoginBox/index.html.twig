@@ -38,7 +38,12 @@
         <ul>
             <li>{% trans %}client.benefits.line1{% endtrans %}</li>
             <li>{% trans %}client.benefits.line2{% endtrans %}</li>
-            <li>{% trans %}client.benefits.line3{% endtrans %}s</li>
+            <li>{% trans %}client.benefits.line3{% endtrans %}</li>
         </ul>
+
+        <br>
+        <div class="text-right">
+            <b><a href="{{ path('front.client.registration') }}" class="text-muted">{% trans %}client.button.go_to_registration{% endtrans %} <span class="glyphicon glyphicon-arrow-right"></span></a></b>
+        </div>
     </div>
 </div>
