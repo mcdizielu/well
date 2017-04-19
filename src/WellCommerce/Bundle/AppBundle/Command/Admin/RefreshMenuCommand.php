@@ -61,8 +61,6 @@ final class RefreshMenuCommand extends ContainerAwareCommand
             $output->writeln(sprintf('<info>Reimporting %s</info>', $file->getRealPath()));
             $this->importFile($file);
         }
-        
-        $this->em->flush();
     }
     
     private function importFile(SplFileInfo $file)
@@ -91,6 +89,7 @@ final class RefreshMenuCommand extends ContainerAwareCommand
         $item->setParent($parent);
         
         $this->em->persist($item);
+        $this->em->flush();
     }
     
     /**
