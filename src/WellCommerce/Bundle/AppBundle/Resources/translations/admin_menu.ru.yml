@@ -1,0 +1,63 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+attribute_group: 'Группы атрибутов'
+attribute: 'Атрибуты'
+attribute_value: 'Значения атрибутов'
+availability: Сроки поставок
+catalog: Каталог
+category: Категории
+coupon: Купоны
+client: Клиенты
+client_group: 'Группы клиентов'
+cms: Контент
+configuration: Настройки
+contact: Контакты
+crm: CRM
+currency: Валюты
+dashboard: Инфо
+deliverer: Доставки
+dictionary: Словари
+integration: Интеграция
+layout: Внешний вид
+layout_box: Шаблоны
+locale: Языки
+localization: Локализация
+media: 'Галерея'
+news: Новости
+order: Заказы
+payment_method: 'Способы оплаты'
+producer: Производители
+producer_collection: 'Колекция производителей'
+product: Товары
+product_status: 'Статусы товаров'
+product_review: 'Отзывы'
+promotion: Акции
+promotions: Акции
+reports: Отчеты
+review: Отзывы
+routing: 'Настройка маршрутизации'
+sales: Продажи
+shipping_method: 'Способы доставки'
+tax: Налоговые ставки
+theme: Темы оформления
+package: Пакеты
+channel: Каналы
+distribution: 'Управление приложением'
+multi_store: 'Магазины'
+company: Компании
+shop: Магазины
+unit: Единицы измерения
+order_status: 'Статусы заказов'
+order_status_group: 'Группы статусов заказов'
+sales_report: 'Продажи'
+page: Страници
+user_management: 'Пользователи'
+user: Пользователи
+user_group: 'Группы пользователей'
+variant: Варианты

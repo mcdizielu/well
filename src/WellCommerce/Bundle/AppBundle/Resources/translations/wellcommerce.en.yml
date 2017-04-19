@@ -95,6 +95,7 @@ client:
         register: 'Sign up'
         reset_password: 'Confirm password reset'
         change_password: 'Change password'
+        go_to_registration: 'Go to registration'
     flash:
         registration:
             error: Form contains invalid data.

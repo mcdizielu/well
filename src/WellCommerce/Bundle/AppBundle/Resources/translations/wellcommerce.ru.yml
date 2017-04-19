@@ -1,0 +1,469 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+form:
+    help:
+        required_fields: '* обязательные поля'
+    media_data:
+        image_id: Идентификатор изображения
+    button:
+        delete_selected: "Удалить выбранное"
+
+channel:
+    heading:
+        index: Канал
+        add: Создание нового канала
+    label:
+        name: Имя
+        url: URL
+
+client:
+    label:
+        username: Имя пользователя или e-mail
+        password: Пароль
+        confirm_password: Подтвердите пароль
+        new_password: Новый пароль
+        accept_conditions: Принимаю условия магазина
+        accept_newsletter: Подписаться на рассылку
+        last_active: Последняя активность
+        cart: Корзина
+        contact_details:
+            first_name: Имя
+            last_name: Фамилия
+            phone: Телефон
+            secondary_phone: Дополнительный телефон
+            email: E-mail
+        address:
+            first_name: Имя
+            last_name: Фамилия
+            line1: Адрес
+            line2: Адрес (дополнительно)
+            province: Округ
+            postal_code: Индекс
+            company: Компания
+            country: Страна
+            city: Город
+            copy_address: Shipping address same as billing address
+            state: Область
+            vat_id: ИНН
+            company_name: Компания
+            company_address: Адрес
+        client_discount: Скидка
+        client_group_discount: Скидка для группы клиентов
+        create_account: Создать аккаунт
+        conditions_accepted: Я ознакомлен и согласен с Политикой конфиденциальности
+    benefits:
+        headline: Если вы являетесь нашим зарегистрированным клиентом
+        line1: Вы покупаете быстро и легко
+        line2: Вы можете отслеживать ход выполнения ваших заказов
+        line3: Вы получите информацию о проводимых акциях
+    heading:
+        index: Клиенты
+        add: Создание нового клиента
+        edit: Изменить клиента
+        login: 'Вход'
+        register: 'Зарегистрироваться'
+        create_account: 'Создать аккаунт'
+        client_details: 'Настройки'
+        contact_details: 'Контакты'
+        footer_links: 'Ваш аккаунт'
+        contact_details: Контакты
+        billing_address: Платежный адрес
+        shipping_address: Адрес доставки
+        reset_password: Сбросить пароль
+        change_password: Изменить пароль
+        orders: Заказы
+        address_book: Адреса
+        settings: Настройки
+        wishlist: Список желаний
+        terms_conditions: "Правила и условия покупки"
+    link:
+        login: 'Вход'
+        register: 'Зарегистрироваться'
+        logout: Выход
+        orders: Заказы
+        address_book: Адреса
+        settings: Настройки
+        password_forgotten: 'Сбросить пароль'
+    button:
+        login: 'Вход'
+        register: 'Регистрация'
+        reset_password: 'Подтвердить сброс пароля'
+        change_password: 'Изменить пароль'
+        go_to_registration: 'Перейти к регистрации'
+    flash:
+        registration:
+            error: Форма содержит недопустимые данные.
+            success: Регистрация завершена. Теперь вы можете войти в свой аккаунт.
+        reset_password:
+            wrong_email: Указан неправильный адрес электронной почты.
+            email_not_found: Такой e-mail не зарегистрирован.
+            success: На указанный E-mail отправлено сообщение с инструкциями для сброса пароля.
+        change_password:
+            success: Пароль изменен.
+    comment:
+        discount: Введите процент скидки, т.е. 10 для 10%
+    email:
+        heading:
+            reset_password: Инструкция по сбросу пароля
+            registration_ok: Регистрация пользователя завершена.
+            register: Регистрация пользователя
+        body:
+            reset_password_instructions: Выполняется процедура восстановления пароля.
+            confirm_password_reset: Перейдите на сайт, для установки нового пароля.
+
+client_group:
+    heading:
+        index: Группы клиентов
+        add: Создание новой группы
+        edit: Изменение группы
+    label:
+        total_clients: Всего клиентов
+
+common:
+    error:
+        404: "400 Не найдено. Извините, страница, которую вы ищете, не найдена"
+        500: "500 Внутренняя ошибка сервера. Извините, что-то пошло не так."
+    button:
+        add: Добавить
+        save: 'Сохранить'
+        save_and_finish: 'Сохранить и закрыть'
+        save_and_continue: 'Сохранить и продолжить'
+        save_and_add_another: 'Сохранить и добавить другое'
+        back: Return
+    help:
+        required_fields: '* обязательные поля'
+    fieldset:
+        required_data: Основные настройки
+        general_settings: Основные настройки
+        translations: Переводы
+        shops: Магазины
+        prices: Цены
+        discount_settings: Настройки скидки
+        general: Основное
+        photos: Галерея
+        meta: Мета
+        categories: Категории
+        description: Описание
+        minimum_order_amount: Минимальная сумма заказа
+    label:
+        id: ID
+        name: Имя
+        currency: Валюта
+        short_description: Короткое описание
+        description: Описание
+        code: Код
+        slug: Псевдоним
+        group: Группа
+        symbol: Символ
+        discount: Скидка
+        discount_expression: Выражение скидки
+        created_at: Создан
+        updated_at: Обновлен
+        valid_from: Действителен с
+        valid_to: Действителен до
+        enabled: Включен
+        preview: Предпросмотр
+        extension: Расширение
+        mime: MIME
+        size: Размер
+        publish: Опубликован
+        featured: Избранные
+        hierarchy: Сортировка
+        password: Пароль
+        producer: Производитель
+        producer_collection: Коллекция производителей
+        none: Отсутствует
+        tax: Налог
+        stock: Количество на складе
+        categories: Категории
+        sku: Артикул
+        default_order_status: Статус заказа по умолчанию
+        url: URL адрес
+        shop: Магазин
+        shops: Доступно для продажи в магазинах
+        meta:
+            title: Заголовок (title)
+            keywords: Ключевые слова (keywords)
+            description: Описание (description)
+        dimension:
+            width: Ширина
+            height: Высота
+            depth: Грубина
+            length: Длина
+            weight: Вес
+        secondary_phone: Дополнительный телефон
+        email: E-mail
+        price: Цена
+        discounted_price: Цена со скидкой
+        gross_price: Общая стоимость
+        net_price: Базовая стоимость
+        tax_rate: Налоговая ставка
+        first_name: Имя
+        last_name: Фамилия
+        client_group: Группы клиента
+        address: Адрес
+        line1: Адрес
+        line2: Адрес
+        province: Округ
+        postal_code: Индекс
+        state: Область
+        country: Страна
+        city: Город
+        phone: Телефон
+        secondary_phone: Secondary phone
+        meta_title: Заголовок (title)
+        meta_description: Описание (description)
+        meta_keywords: Ключевые слова (keywords)
+        yes: Да
+        no: Нет
+        minimum_order_amount:
+            value: Общее значение
+            currency: Валюта
+    flashes:
+        success: Успешно!
+
+pagination:
+    label:
+        results: "Результатов"
+        of: "из"
+    button:
+        previous_page: "Назад"
+        next_page: "Вперед"
+
+company:
+    heading:
+        index: Компании
+        add: Создание новой компании
+        edit: Изменение компании
+    label:
+        name: Полное наименование
+        short_name: Сокращенное наименование
+        addresses: Адрес
+
+currency:
+    heading:
+        index: Валюты
+        add: Создание новой валюты
+        edit: Изменение валюты
+    button:
+        sync: Обновить курсы валют
+    label:
+        code: Код
+        name: Валюта
+    comment:
+        enabled: Отображать валюту в магазине
+
+dashboard:
+    heading:
+        index: Информационная панель
+        carts: Корзины
+        last_opinions: Последние отзывы
+        last_orders: Последние заказы
+        new_customers: Новые клиенты
+        bestsellers: Хиты продаж
+        customers_online: Клиентов on-line
+
+dictionary:
+    heading:
+        index: Словари
+        add: Добавление нового словаря
+        edit: Изменение словаря
+    label:
+        id: ID
+        identifier: Идентификатор
+        translation: Перевод
+        locale: Язык
+        value: Значение
+    button:
+        add: Добавить
+        sync: Синхронизировать переводы
+
+layout_box:
+    heading:
+        index: Шаблоны
+        add: Добавление нового шаблона
+        edit: Изменение шаблона
+    label:
+        type: Тип
+        identifier: Идентификатор
+        name: Имя
+        content: Содержание
+        settings: Настройки
+
+locale:
+    heading:
+        index: Языки
+        add: Добавление нового языка
+        edit: Изменение языка
+    label:
+        code: Код
+        currency: Валюта по умолчанию
+        language: Язык
+        translations: Перевод
+    comment:
+        enabled: Язык будет отображаться в магазине
+
+media:
+    heading:
+        index: Галерея
+    button:
+        select_from_library: Выбрать из галереи
+        add_from_disk: Загрузить с диска
+
+package:
+    heading:
+        index: Пакеты
+        require: Установка пакета
+        update: Обновление пакета
+        remove: Удаление пакета
+    button:
+        sync: Синхронизировать пакеты
+        require: Установить пакет
+        update: Обновить пакет
+        remove: Удалить пакет
+    label:
+        id: ID
+        name: Имя
+        full_name: Полное имя
+        vendor: Поставщик
+        local_version: Текущая версия
+        remote_version: Доступная версия
+        created_at: Установлен
+        updated_at: Обновлен
+        output: Вывод в консоли
+    fieldset:
+        information: Информация
+        progress: Прогресс
+
+    flash:
+        sync:
+            success: Синхронизация пакетов успешно завершена.
+        operation:
+            success: Операция успешна выполнена.
+
+price:
+    sell_price:
+        net:    Базовая цена продажи
+        gross:  Общая цена продажи
+    buy_price:
+        net: Базовая цена покупки
+        gross: Общая цена покупки
+    discounted_price:
+        net: Базовая цена со скидкой
+        gross: Общая цена со скидкой
+        discount:   Скидка
+
+shop:
+    heading:
+        index: Магазины
+        add: Добавление нового магазина
+        edit: Изменение магазина
+    fieldset:
+        mailer_configuration: Настройки Mail
+        url_configuration: Настройки URL
+        cart_configuration: Настройки корзины
+    label:
+        company: Компания
+        url: URL
+        theme: Тема по умолчанию
+        default_country: Страна по умолчанию
+        default_currency: Валюта по умолчанию
+        mailer_configuration:
+            from: От кого (e-mail)
+            host: SMTP хост
+            port: SMTP порт
+            user: SMTP имя пользователя
+            pass: SMTP пароль
+            bcc: BCC
+
+tax:
+    heading:
+        index: Налоговые ставки
+        add: Добавление новой ставки
+        edit: Изменение ставки
+    label:
+        value: Ставка
+
+theme:
+    heading:
+        index: Темы оформления
+        add: Добавление новой темы
+        edit: Изменение темы
+    label:
+        folder: Директория
+    comment:
+        folder: Укажите директорию, содержащую вашу тему
+
+dataset:
+    label:
+        delete: Удалить
+        confirm_delete: Вы действительно хотите удалить?
+
+user:
+    heading:
+        index: Пользователи
+        add: Добавление нового пользователя
+        edit: Изменение пользователя
+    button:
+        add: Добавить
+        log_in: Вход
+        reset_password: Сбросить пароль
+    label:
+        id: ID
+        username: Имя пользователя
+        password: Пароль
+        email: E-mail
+        first_name: Имя
+        last_name: Фамилия
+        enabled: Включен
+        user_group: Группа
+        api_key: API ключ
+    fieldset:
+        api_access: API доступ
+    flash:
+        success:
+            reset_password: Ваш новый пароль был отправлен по электронной почте
+        error:
+            wrong_username: Неверное имя пользователя
+            blocked_account: Аккаунт заблокирован
+    email:
+        title:
+            register: Учетные данные пользователя
+            reset_password: Новые учетные данные для входа
+
+user_group:
+    heading:
+        index: Группы пользователей
+        add: Добавление новой группы
+        edit: Изменение группы
+    label:
+        permissions: Разрешения
+
+admin:
+    label:
+        content: Содержание
+        customer: Клиент
+        sum: Сумма
+        firstname: Имя
+        lastname: Фамилия
+        product: Товар
+        quantity: Количество
+        client: Клиент
+        cart: Корзина
+        global_context: Общий
+    user:
+        logout: Выход
+        help: Помощь
+    button:
+        show_all: Показать все
+        show_raports: Показать отчеты
+
+
+
+

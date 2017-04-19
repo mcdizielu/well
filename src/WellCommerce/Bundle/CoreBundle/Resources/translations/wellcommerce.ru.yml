@@ -1,0 +1,55 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+file_selector:
+    photo: Галерея
+    main: Главная
+    cancel: Отменить выбраное
+    select_from_library: "Выбрать из галереи"
+    add_from_disk: "Загрузить с диска"
+    expand: Расширенное
+    collapse: Свернуть
+    filename: Имя файла
+    extension: Расширение
+    preview: Предпросмотр
+
+product_variants_editor:
+    label:
+        set_for_this_product: 'Группа атрибутов'
+        set_for_this_product_suffix: 'Выберете категорию из списка'
+        id: 'ID'
+        stock: 'Stock'
+        modifier_type: 'Тип модификатора'
+        modifier: 'Значение модификатора'
+        price: 'Цена'
+        available_attributes: 'Атрибуты, доступные в этой группе:'
+        choose_attribute: '(выберите атрибут)'
+    button:
+        add_attribute: 'Добавить атрибут'
+        save_attribute: 'Сохранить атрибут'
+        add_value: 'Добавить новое значение'
+        save_value: 'Сохранить значение'
+        add_variant: 'Добавить новый вариант'
+        save_variant: 'Сохранить изменения'
+        auto_generate: 'Сгенерировать варианты'
+    variant_editor:
+        base_net_price: 'Базовая цена'
+        base_gross_price: 'Общая цена'
+        modifier_type: 'Тип модификатора'
+        modifier_value: 'Значение модификатора'
+        net_price: 'Базовая цена'
+        gross_price: 'Общая цена'
+        stock: 'Количество на складе'
+        symbol: 'Артикул'
+        status: 'Статус'
+        availability: 'Срок поставки'
+        weight: 'Вес'
+        photos: 'Выбрать изображение'
+        enabled: 'Включен'
+        disabled: 'Отключен'
+

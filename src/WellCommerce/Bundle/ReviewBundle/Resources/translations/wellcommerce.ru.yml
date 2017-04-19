@@ -1,0 +1,22 @@
+review:
+    heading:
+        index: Отзывы
+        edit: Изменить отзыв
+    label:
+        rating: Оценка
+        nick: Имя или псевдоним
+        review: Отзыв
+        created_at: Создан
+        product: Товар
+        id: ID
+        recommendation_exists: Отзыв уже дал оценку товару.
+        review_not_exists: Отзыв не существует.
+    button:
+        add_opinion: Оставить отзыв
+    link:
+        first_review: Оставте первый отзыв
+    flash:
+        success: Отзыв успешно добавлен.
+    tip:
+        help1: 'Помогите другим определиться - напишите отзыв и поставте свою оценку товару'
+        help2: 'Ваша оценка поможет другим решить, какой товар выбрать'

@@ -1,0 +1,56 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+contact:
+    heading:
+        index: Контакты
+        add: Добавить
+        edit: Изменить
+    email:
+        heading:
+            contact: Мы получили ваш запрос
+    label:
+        business_hours: Режим работы
+
+contact_details:
+    heading:
+        details: Детали контакта
+    label:
+        first_name: Имя
+        last_name: Фамилия
+
+news:
+    heading:
+        index: Новости
+        add: Добавить
+        edit: Изменить
+    label:
+        topic: Топик
+        summary: Резюме
+        content: Содержание
+
+page:
+    tip:
+        client_groups: Укажите какие группы клиентов будут иметь доступ к этой странице.
+    heading:
+        index: Страници
+        add: Добавить
+        edit: Изменить
+    label:
+        parent: Родительская категория
+        client_groups: Доступно для групп
+        section: Секция
+        redirect:
+            type: Тип редиректа
+            url: Переадресация по URL
+            route: Переадресация по маршруту
+            none: Отсутствует
+    fieldset:
+        redirect_settings: Настройки переадресации
+    comment:
+        publish: Проверьте, должна ли информация отображаться для клиентов.
