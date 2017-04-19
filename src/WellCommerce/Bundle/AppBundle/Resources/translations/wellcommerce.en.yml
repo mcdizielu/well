@@ -83,7 +83,7 @@ client:
         wishlist: Wishlist
         terms_conditions: "Terms & conditions"
     link:
-        login: 'Sign in or Sign up'
+        login: 'Sign in'
         register: 'Sign up'
         logout: Logout
         orders: Orders

@@ -87,7 +87,7 @@ client:
         wishlist: Lista życzeń
         terms_conditions: Regulamin i zgody marketingowe
     link:
-        login: 'Zaloguj lub zarejestruj się'
+        login: Logowanie
         register: Rejestracja
         logout: Wyloguj
         orders: Zamówienia
