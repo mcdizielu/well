@@ -13,6 +13,10 @@ WellCommerce\Bundle\CatalogBundle\Entity\Producer:
             targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\Product
             fetch: LAZY
             mappedBy: producer
+        collections:
+            targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\ProducerCollection
+            fetch: LAZY
+            mappedBy: producer
     manyToMany:
         deliverers:
             targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\Deliverer
