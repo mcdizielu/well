@@ -31,11 +31,16 @@ class ClientController extends AbstractFrontController
         
         return $this->displayTemplate('login');
     }
-
-    public function registrationAction(){
+    
+    public function registrationAction()
+    {
+        if ($this->getSecurityHelper()->getCurrentClient() instanceof Client) {
+            return $this->redirectToRoute('front.client_order.index');
+        }
+        
         return $this->displayTemplate('registration');
     }
-
+    
     public function loginCheckAction()
     {
     }
