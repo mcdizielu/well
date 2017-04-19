@@ -35,7 +35,6 @@ class LoadShopData extends AbstractDataFixture
         /**
          * @var $theme       \WellCommerce\Bundle\AppBundle\Entity\Theme
          * @var $company     \WellCommerce\Bundle\AppBundle\Entity\Company
-         * @var $orderStatus \WellCommerce\Bundle\OrderBundle\Entity\OrderStatus
          */
         $theme    = $this->getReference('theme');
         $company  = $this->getReference('company');
@@ -49,7 +48,7 @@ class LoadShopData extends AbstractDataFixture
         $shop->setDefaultCountry('US');
         $shop->setDefaultCurrency($currency->getCode());
         $shop->setClientGroup($this->getReference('client_group'));
-        $shop->getMinimumOrderAmount()->setCurrency($currency);
+        $shop->getMinimumOrderAmount()->setCurrency($currency->getCode());
         $shop->getMinimumOrderAmount()->setValue(0);
         
         foreach ($this->getLocales() as $locale) {
