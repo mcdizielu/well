@@ -1,0 +1,59 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+feature:
+    heading:
+        index: Cechy produktów
+        add: Dodaj cechę
+        edit: Edycja cechy
+    label:
+        groups: Grupy
+        values: Wartości
+        field_type:
+            choose: Wybierz typ pola
+            text_field: Pole input
+            text_area: Pole textarea
+            checkbox: Checkbox
+    fieldset:
+        groups: Grupy
+        values: Wartości
+
+feature_group:
+    heading:
+        index: Grupy cech
+        add: Dodaj grupę cech
+        edit: Edycja grupy cech
+    fieldset:
+        features: Cechy
+        sets: Zestawy
+    label:
+        features: Cechy
+        group: Grupa
+        sets: Zestawy
+
+feature_set:
+    heading:
+        index: Zestawy cech
+        add: Dodaj zestaw cech
+        edit: Eycja zestawu cech
+    fieldset:
+        groups: Grupy
+    label:
+        groups: Grupy
+
+product:
+    fieldset:
+        features: Cechy
+
+feature_editor:
+    label:
+        choose_set: Wybierz zestaw cech
+        group: Grupa
+        feature: Cecha
+        value: Wartość
+

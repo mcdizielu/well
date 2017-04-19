@@ -1,0 +1,62 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+admin.feature_group.index:
+    path: /index
+    defaults:
+        _controller: 'feature_group.controller.admin:indexAction'
+    options:
+        require_admin_permission: feature_group.index
+
+admin.feature_group.grid:
+    path: /grid
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'feature_group.controller.admin:gridAction'
+    options:
+        expose: true
+        require_admin_permission: attribute_value.index
+
+admin.feature_group.add:
+    path: /add
+    defaults:
+        _controller: 'feature_group.controller.admin:addAction'
+    options:
+        require_admin_permission: feature_group.add
+
+admin.feature_group.edit:
+    path: '/edit/{id}'
+    defaults:
+        _controller: 'feature_group.controller.admin:editAction'
+    options:
+        expose: true
+        require_admin_permission: feature_group.edit
+
+admin.feature_group.delete:
+    path: '/delete/{id}'
+    defaults:
+        _controller: 'feature_group.controller.admin:deleteAction'
+    options:
+        expose: true
+        require_admin_permission: feature_group.delete
+
+admin.feature_group.delete_group:
+    path: '/delete_group'
+    defaults:
+        _controller: 'feature_group.controller.admin:deleteGroupAction'
+    options:
+        expose: true
+        require_admin_permission: feature_group.delete
+
+admin.feature_group.ajax.index:
+    path: /ajax/index
+    defaults:
+        _controller: 'feature_group.controller.admin:ajaxIndexAction'
+    options:
+        expose: true
+        require_admin_permission: feature_group.index

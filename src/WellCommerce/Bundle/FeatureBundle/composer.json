@@ -1,0 +1,42 @@
+{
+  "name": "wellcommerce/feature-bundle",
+  "type": "wellcommerce-bundle",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "description": "WellCommerce FeatureBundle",
+  "keywords": [
+    "symfony",
+    "e-commerce",
+    "open-source"
+  ],
+  "authors": [
+    {
+      "name": "Adam Piotrowski",
+      "email": "adam@wellcommerce.org"
+    },
+    {
+      "name": "WellCommerce Developers",
+      "email": "developers@wellcommerce.org"
+    }
+  ],
+  "support": {
+    "email": "support@wellcommerce.org",
+    "issues": "https://github.com/WellCommerce/FeatureBundle/issues",
+    "source": "https://github.com/WellCommerce/FeatureBundle/"
+  },
+  "autoload": {
+    "psr-4": {
+      "WellCommerce\\Bundle\\FeatureBundle\\": ""
+    }
+  },
+  "require": {
+    "php": "^7.0",
+    "wellcommerce/core-bundle": "^0.9@dev",
+    "wellcommerce/catalog-bundle": "^0.9@dev"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.9.x-dev"
+    }
+  }
+}
