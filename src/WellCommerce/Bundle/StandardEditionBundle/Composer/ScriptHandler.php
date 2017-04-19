@@ -45,8 +45,8 @@ class ScriptHandler extends SensioScriptHandler
         
         static::generateEnhancerTraits($event);
         
-        static::executeCommand($event, $consoleDir, 'wellcommerce:admin:menu-refresh', $options['process-timeout']);
         static::executeCommand($event, $consoleDir, 'wellcommerce:doctrine:enhance', $options['process-timeout']);
+        static::executeCommand($event, $consoleDir, 'wellcommerce:admin:menu-refresh', $options['process-timeout']);
     }
     
     public static function populateEnvironment(Event $event)
