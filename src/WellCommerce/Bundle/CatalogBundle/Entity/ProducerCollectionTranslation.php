@@ -30,7 +30,8 @@ class ProducerCollectionTranslation implements RoutableSubjectInterface, LocaleA
     use Translation;
     use RoutableTrait;
     
-    protected $name = '';
+    protected $name        = '';
+    protected $description = '';
     protected $meta;
     
     public function __construct()
@@ -46,6 +47,16 @@ class ProducerCollectionTranslation implements RoutableSubjectInterface, LocaleA
     public function setName(string $name)
     {
         $this->name = $name;
+    }
+    
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+    
+    public function setDescription(string $description)
+    {
+        $this->description = $description;
     }
     
     public function getMeta(): Meta

@@ -56,9 +56,7 @@ class ProducerCollectionFormBuilder extends AbstractFormBuilder
                 $this->getRule('required'),
             ],
         ]));
-        
-        $this->addMetadataFieldset($form, $this->get('producer_collection.repository'));
-        
+
         $languageData->addChild($this->getElement('slug_field', [
             'name'            => 'slug',
             'label'           => $this->trans('common.label.slug'),
@@ -69,6 +67,13 @@ class ProducerCollectionFormBuilder extends AbstractFormBuilder
                 $this->getRule('required'),
             ],
         ]));
+        
+        $languageData->addChild($this->getElement('rich_text_editor', [
+            'name'  => 'description',
+            'label' => 'common.label.description',
+        ]));
+        
+        $this->addMetadataFieldset($form, $this->get('producer_collection.repository'));
         
         $mediaData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'media_data',
