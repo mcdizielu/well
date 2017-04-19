@@ -26,7 +26,6 @@ imports:
 parameters:
     fallback_theme: "wellcommerce-default-theme"
     fixtures_load_order:
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadAdminMenuData: 0
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadThemeData: 10
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadCompanyData: 20
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadCurrencyData: 30
@@ -61,7 +60,6 @@ parameters:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadWishlistData: 290
     fixtures_product_limit: 100
     enabled_fixtures:
-        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadAdminMenuData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadThemeData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadCompanyData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadCurrencyData: true

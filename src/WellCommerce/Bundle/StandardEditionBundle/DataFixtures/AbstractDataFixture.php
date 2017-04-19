@@ -17,7 +17,6 @@ use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker\Factory as FakerFactory;
-use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use WellCommerce\Bundle\AppBundle\Entity\LayoutBox;
@@ -136,16 +135,6 @@ abstract class AbstractDataFixture extends AbstractFixture implements OrderedFix
     protected function getLocales(): array
     {
         return $this->container->get('locale.repository')->findAll();
-    }
-    
-    protected function importAdminMenuConfiguration($file)
-    {
-        $reflection = new \ReflectionClass($this);
-        $directory  = dirname($reflection->getFileName());
-        $locator    = new FileLocator($directory . '/../../Resources/config/admin_menu');
-        $importer   = $this->container->get('admin_menu.importer.xml');
-        
-        $importer->import($file, $locator);
     }
     
     protected function createLayoutBoxes(ObjectManager $manager, array $boxes)

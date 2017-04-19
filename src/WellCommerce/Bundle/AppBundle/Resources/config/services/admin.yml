@@ -20,10 +20,6 @@ services:
         arguments: ['@doctrine.helper']
         shared: false
 
-    admin_menu.importer.xml:
-        class: WellCommerce\Bundle\AppBundle\Importer\XmlImporter
-        arguments: ['@doctrine.helper', '@admin_menu.repository']
-
     admin_menu.provider:
         class: WellCommerce\Bundle\AppBundle\Provider\AdminMenuProvider
         public: false
