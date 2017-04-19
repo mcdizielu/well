@@ -12,6 +12,9 @@ WellCommerce\Bundle\CatalogBundle\Entity\ProducerCollectionTranslation:
             type: string
             length: 255
             unique: true
+        description:
+            type: text
+            nullable: true
     oneToOne:
         route:
             targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\ProducerCollectionRoute
