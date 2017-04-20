@@ -84,7 +84,7 @@ client:
         terms_conditions: "Правила и условия покупки"
     link:
         login: 'Вход'
-        register: 'Зарегистрироваться'
+        register: 'Регистрация'
         logout: Выход
         orders: Заказы
         address_book: Адреса
