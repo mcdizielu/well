@@ -1,0 +1,3 @@
+files:
+  - source: app/Resources/translations/wellcommerce.en.yml
+    translation: '%original_path%/wellcommerce.%two_letters_code%.yml'
