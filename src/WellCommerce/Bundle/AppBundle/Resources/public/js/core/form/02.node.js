@@ -136,7 +136,7 @@ var GFormNode = function(oOptions) {
   };
 
   gThis.BindChangeHandler = function(fHandler, oData) {
-    return gThis.m_jNode.unbind('change').bind('change', oData, fHandler);
+    return gThis.m_jNode.bind('change', oData, fHandler);
   };
 
   gThis.TriggerChangeHandler = function() {
