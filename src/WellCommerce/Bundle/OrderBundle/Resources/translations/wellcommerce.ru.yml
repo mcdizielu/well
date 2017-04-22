@@ -8,7 +8,7 @@ order:
         address: Адреса доставки и платежей
         confirm: Подтверждение
         confirmation: Подтверждение
-        order_total: Итоги по заказу
+        order_total: Сумма заказа
         products: Товары
         contact_details: Контактная информация
         cart: Корзина
@@ -18,7 +18,7 @@ order:
         choose_payment_method: Выберете способ оплаты
         client_orders: "Клиентские заказы"
     button:
-        confirm: Перейти к подтверждению
+        confirm: Подтвердить
         add_product: Добавить товар
         change_status: Изменить статус
         show_order: Показать заказ
@@ -29,7 +29,7 @@ order:
         product_total:
             net_price: Базовая цена товара
             tax_amount: Сумма налога
-            gross_price: Общая цена товара
+            gross_price: Стоимость товаров
         summary:
             net_amount: Итого базовая стоимость
             tax_amount: Итого сумма налогов
@@ -77,8 +77,9 @@ order:
             go_to_cart: Перейти в корзину
             back_to_shopping: Вернуться к покупкам
             place_order: Оформить заказ
+            back_to_adress_detail: Вернуться к контактной информации
         link:
-            checkout: Перейти к оформлению заказа
+            checkout: Оформить заказ
         heading:
             index: Корзина
             recommendations: 'Вам также может понравиться'
@@ -87,7 +88,7 @@ order:
                 product: Товар
                 price: Цена
                 quantity: Количество
-                total: Итог
+                total: Сумма
         error:
             no_available_methods: У этой корзины нет доступных способов доставки или оплаты.
         shipping_method:
@@ -160,6 +161,7 @@ order_note:
 payment:
     heading:
         initialize: Оплата
+        confirm: Подтверждение оплаты
     flash:
         thank_you: "Благодарим за размещение заказа. Ниже приведены данные заказа.:"
 

@@ -12,7 +12,10 @@
 
 namespace WellCommerce\Bundle\CmsBundle\Controller\Box;
 
+use Symfony\Component\HttpFoundation\Response;
+use WellCommerce\Bundle\CmsBundle\Request\NewsRequestStorage;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
+use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 
 /**
  * Class NewsBoxController
@@ -21,4 +24,21 @@ use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
  */
 class NewsBoxController extends AbstractBoxController
 {
+    public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
+    {
+        $news = $this->getNewsRequestStorage()->getCurrentNews();
+
+        return $this->displayTemplate('index', [
+            'news'        => $news,
+            'boxSettings' => $boxSettings,
+        ]);
+    }
+
+    private function getNewsRequestStorage(): NewsRequestStorage
+    {
+        /** @var $newsRequestStorage NewsRequestStorage  */
+
+        $newsRequestStorage = $this->get('news.request.storage');
+        return $newsRequestStorage;
+    }
 }

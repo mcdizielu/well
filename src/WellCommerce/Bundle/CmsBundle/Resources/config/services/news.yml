@@ -8,13 +8,25 @@
 
 services:
     news.layout_box.configurator:
-        class: WellCommerce\Bundle\CatalogBundle\Configurator\ProductInfoBoxConfigurator
+        class: WellCommerce\Bundle\CmsBundle\Configurator\NewsBoxConfigurator
+        autowire: true
+        tags:
+            - { name: layout_box.configurator }
+
+    news_feed.layout_box.configurator:
+        class: WellCommerce\Bundle\CmsBundle\Configurator\NewsFeedBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }
 
     news.controller.box:
         class: WellCommerce\Bundle\CmsBundle\Controller\Box\NewsBoxController
+        arguments: ['@news.manager']
+        calls:
+            - [setContainer, ['@service_container']]
+
+    news_feed.controller.box:
+        class: WellCommerce\Bundle\CmsBundle\Controller\Box\NewsFeedBoxController
         arguments: ['@news.manager']
         calls:
             - [setContainer, ['@service_container']]

@@ -10,28 +10,27 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Config\Loader\LoaderInterface;
-use Symfony\Component\HttpKernel\Kernel;
-use WellCommerce\Bundle\CoreBundle\Loader\BundleLoader;
-use WellCommerce\Bundle\StandardEditionBundle\WellCommerceStandardEditionBundle;
+use WellCommerce\Bundle\StandardEditionBundle\HttpKernel\AbstractWellcommerceKernel;
 
 /**
  * Class AppKernel
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class AppKernel extends Kernel
+class AppKernel extends AbstractWellcommerceKernel
 {
     public function registerBundles()
     {
-        $loader  = new BundleLoader($this);
-        $bundles = new ArrayCollection();
-        
-        WellCommerceStandardEditionBundle::registerBundles($bundles, $this->getEnvironment());
-        $loader->registerBundles($bundles, $this->getEnvironment());
-        
-        return $bundles->toArray();
+        $bundles = [
+            //add bundles
+        ];
+
+        if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
+            // add bundles in dev/test env.
+        }
+
+        return $bundles;
     }
     
     public function registerContainerConfiguration(LoaderInterface $loader)

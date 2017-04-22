@@ -3,7 +3,7 @@ coupon:
         index: Купоны
         add: Добавить
         edit: Изменить
-        code: Код
+        code: Промо Код
         discount: Скидка
     fieldset:
         discount_settings: Настройки скидки
@@ -15,7 +15,7 @@ coupon:
         modifier_type_percent: '%'
         modifier_type_subtract: '-'
         minimum_order_value: "Минимальная сумма заказа"
-        accept: Использовать
+        accept: Применить
         remove: Удалить
         exclude_promotions: "Исключить акции"
     error:

@@ -54,3 +54,11 @@ page:
         redirect_settings: Redirect configuration
     comment:
         publish: Check if information should be visible for clients
+
+news_feed:
+    flash:
+        empty: News feed is empty.
+    button:
+        read_more: Read more
+    layout_box:
+        per_page: Number of news per page

@@ -7,6 +7,9 @@
 # please view the LICENSE file that was distributed with this source code.
 
 front.news.index:
-    path: /
+    path: /feed,{page}
     defaults:
         _controller: 'news.controller.front:indexAction'
+        page: 1
+
+

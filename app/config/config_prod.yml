@@ -1,5 +1,7 @@
 imports:
-    - { resource: config.yml }
+    - { resource: parameters.yml }
+    - { resource: config.yml, ignore_errors: true }
+    - { resource: wellcommerce.yml }
 
 framework:
     profiler: false

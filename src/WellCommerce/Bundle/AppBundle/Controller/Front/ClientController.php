@@ -31,7 +31,7 @@ class ClientController extends AbstractFrontController
         
         return $this->displayTemplate('login');
     }
-    
+
     public function registrationAction()
     {
         if ($this->getSecurityHelper()->getCurrentClient() instanceof Client) {
@@ -40,7 +40,7 @@ class ClientController extends AbstractFrontController
         
         return $this->displayTemplate('registration');
     }
-    
+
     public function loginCheckAction()
     {
     }

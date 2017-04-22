@@ -78,6 +78,7 @@ order:
             go_to_cart: Go to cart
             back_to_shopping: Back to shopping
             place_order: Place an order
+            back_to_adress_detail: Back to address details
         link:
             checkout: Go to checkout
         heading:
@@ -161,6 +162,7 @@ order_note:
 payment:
     heading:
         initialize: Payment
+        confirm: Payment confirm
     flash:
         thank_you: "Thank you for placing an order. Below are the order's details:"
 

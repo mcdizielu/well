@@ -4,6 +4,7 @@ nbproject/*
 app/bootstrap.*
 app/cache/*
 app/config/parameters.yml
+app/config/config.yml
 app/logs/*
 app/sessions/*
 app/sql/*
@@ -12,3 +13,10 @@ app/lucene/*
 /vendor/
 *node_modules
 *.sh
+/web/media/cache/
+/web/themes/*
+/web/js/
+/web/bundles/
+!/web/themes/wellcommerce-default-theme
+/src/*
+!/src/WellCommerce

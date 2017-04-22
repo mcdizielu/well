@@ -25,9 +25,7 @@
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Bundle\\": "src/WellCommerce/Bundle",
-      "WellCommerce\\Component\\": "src/WellCommerce/Component",
-      "WellCommerce\\Extra\\": "src/WellCommerce/Extra"
+      "": "src/"
     },
     "files": [
       "app/AppKernel.php"

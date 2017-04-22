@@ -33,9 +33,9 @@ select {
 	.radius(0);
 }
 
-img {
+/*img {
 	max-width: 100%;
-}
+}*/
 
 .box {
 	margin: 0 0 30px;
@@ -79,7 +79,7 @@ img {
 	&:focus {
 		border-color: @brand-primary-color;
 		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 215, 0, .6);
-			   -moz-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 215, 0, .6);
+			   -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 215, 0, .6);
 				box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 215, 0, .6);
 	}
 }
@@ -1782,7 +1782,7 @@ footer {
 	}
 
 	.modal-body {
-		padding: 0px 30px;
+		padding: 0 30px;
 	}
 
 	h2 {
@@ -2267,7 +2267,6 @@ body {
 
 .sliding-search {
 	position: fixed;
-	z-index: 1050;
 	top: 0;
 	left: 0;
 	width: 100%;

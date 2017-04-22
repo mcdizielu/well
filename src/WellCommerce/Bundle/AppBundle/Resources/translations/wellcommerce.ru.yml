@@ -48,7 +48,7 @@ client:
             company: Компания
             country: Страна
             city: Город
-            copy_address: Shipping address same as billing address
+            copy_address: Адрес доставки совпадает с адресом для выставления счета.
             state: Область
             vat_id: ИНН
             company_name: Компания

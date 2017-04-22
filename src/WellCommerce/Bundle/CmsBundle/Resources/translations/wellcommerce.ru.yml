@@ -54,3 +54,11 @@ page:
         redirect_settings: Настройки переадресации
     comment:
         publish: Проверьте, должна ли информация отображаться для клиентов.
+
+news_feed:
+    flash:
+        empty: Лента новостей пуста.
+    button:
+        read_more: Подробнее
+    layout_box:
+        per_page: Количество новостей на страницу

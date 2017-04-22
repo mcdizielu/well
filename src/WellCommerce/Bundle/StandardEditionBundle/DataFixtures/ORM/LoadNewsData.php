@@ -14,6 +14,7 @@ namespace WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM;
 
 use Carbon\Carbon;
 use Doctrine\Common\Persistence\ObjectManager;
+use WellCommerce\Bundle\AppBundle\Entity\Shop;
 use WellCommerce\Bundle\CmsBundle\Entity\News;
 use WellCommerce\Bundle\CmsBundle\Entity\NewsTranslation;
 use WellCommerce\Bundle\StandardEditionBundle\DataFixtures\AbstractDataFixture;
@@ -39,6 +40,11 @@ class LoadNewsData extends AbstractDataFixture
                 'type' => 'News',
                 'name' => 'News',
             ],
+            'news_feed' => [
+                'type' => 'NewsFeed',
+                'name' => 'News Feed',
+                'settings'  => array('per_page' => 6)
+            ],
         ]);
         
         $manager->flush();
@@ -50,7 +56,10 @@ class LoadNewsData extends AbstractDataFixture
             $news = new News();
             $news->setStartDate(Carbon::now()->subMonth($i + 1));
             $news->setEndDate(Carbon::now()->subMonth($i + 2));
-            $news->addShop($this->getReference('shop'));
+
+            /** @var Shop $shop */
+            $shop = $this->getReference('shop');
+            $news->addShop($shop);
             $sentence = $this->getFakerGenerator()->unique()->sentence(3);
             $topic    = substr($sentence, 0, strlen($sentence) - 1);
             foreach ($this->getLocales() as $locale) {

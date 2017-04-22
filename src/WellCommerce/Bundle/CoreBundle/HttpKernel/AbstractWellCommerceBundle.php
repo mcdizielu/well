@@ -45,6 +45,16 @@ abstract class AbstractWellCommerceBundle extends Bundle
     
     public static function registerBundles(Collection $bundles, string $environment)
     {
-        
+        /**
+         *  http://php.net/manual/en/language.oop5.late-static-bindings.php
+         *  Now not need override this method in child class by default
+         *  late static binding returned called instanse an not this(self)
+         */
+
+        $bundles->add(new static());
+
+        if($environment === 'dev'){
+            // add bundles for dev
+        }
     }
 }
