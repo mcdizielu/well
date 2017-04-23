@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\AppBundle\Uploader;
+namespace WellCommerce\Bundle\AppBundle\Service\Media\Uploader;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use WellCommerce\Bundle\AppBundle\Entity\Media;

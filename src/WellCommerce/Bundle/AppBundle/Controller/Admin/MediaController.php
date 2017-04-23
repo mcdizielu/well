@@ -15,7 +15,7 @@ namespace WellCommerce\Bundle\AppBundle\Controller\Admin;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use WellCommerce\Bundle\AppBundle\Exception\InvalidMediaException;
-use WellCommerce\Bundle\AppBundle\Uploader\MediaUploaderInterface;
+use WellCommerce\Bundle\AppBundle\Service\Media\Uploader\MediaUploaderInterface;
 use WellCommerce\Bundle\CoreBundle\Controller\Admin\AbstractAdminController;
 
 /**

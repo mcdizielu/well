@@ -22,5 +22,5 @@ services:
         shared: false
 
     media.uploader:
-        class: WellCommerce\Bundle\AppBundle\Uploader\MediaUploader
+        class: WellCommerce\Bundle\AppBundle\Service\Media\Uploader\MediaUploader
         arguments: ['@media.manager', '%kernel.root_dir%/../web/media', '@validator.helper']
