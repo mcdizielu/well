@@ -31,14 +31,15 @@ class InvoiceDataSet extends AbstractDataSet
     public function configureOptions(DataSetConfiguratorInterface $configurator)
     {
         $configurator->setColumns([
-            'id'         => 'invoice.id',
-            'number'     => 'invoice.number',
-            'createdAt'  => 'invoice.createdAt',
-            'date'       => 'invoice.date',
-            'dueDate'    => 'invoice.dueDate',
-            'amountPaid' => 'invoice.amountPaid',
-            'amountDue'  => 'invoice.amountDue',
-            'shop'       => 'IDENTITY(invoice.shop)',
+            'id'          => 'invoice.id',
+            'number'      => 'invoice.number',
+            'orderNumber' => 'orders.number',
+            'createdAt'   => 'invoice.createdAt',
+            'date'        => 'invoice.date',
+            'dueDate'     => 'invoice.dueDate',
+            'amountPaid'  => 'invoice.amountPaid',
+            'amountDue'   => 'invoice.amountDue',
+            'shop'        => 'IDENTITY(invoice.shop)',
         ]);
         
         $configurator->setColumnTransformers([
@@ -51,6 +52,7 @@ class InvoiceDataSet extends AbstractDataSet
     protected function createQueryBuilder(): QueryBuilder
     {
         $queryBuilder = $this->repository->getQueryBuilder();
+        $queryBuilder->leftJoin('invoice.order', 'orders');
         $queryBuilder->groupBy('invoice.id');
         $queryBuilder->where($queryBuilder->expr()->eq('invoice.shop', $this->getShopStorage()->getCurrentShopIdentifier()));
         

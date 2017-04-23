@@ -61,6 +61,21 @@ class InvoiceDataGrid extends AbstractDataGrid
                 'align' => Appearance::ALIGN_CENTER,
             ]),
         ]));
+    
+        $collection->add(new Column([
+            'id'         => 'orderNumber',
+            'caption'    => 'invoice.label.order_number',
+            'filter'     => new Filter([
+                'type' => Filter::FILTER_INPUT,
+            ]),
+            'sorting'    => new Sorting([
+                'default_order' => Sorting::SORT_DIR_DESC,
+            ]),
+            'appearance' => new Appearance([
+                'width' => 40,
+                'align' => Appearance::ALIGN_CENTER,
+            ]),
+        ]));
         
         $collection->add(new Column([
             'id'         => 'date',

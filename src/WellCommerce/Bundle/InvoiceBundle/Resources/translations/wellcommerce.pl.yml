@@ -17,6 +17,7 @@ invoice:
         created_by: Utworzona przez
         maturity: Domyślny termin płatności
         processor: Generator
+        order_number: Nr. zamówienia
     button:
         add: Wystaw fakturę
         print: Drukuj fakturę

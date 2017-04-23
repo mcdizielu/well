@@ -17,6 +17,7 @@ invoice:
         created_by: Created by
         maturity: Default maturity
         processor: Processor
+        order_number: Order number
     button:
         add: Issue an invoice
         print: Print invoice
