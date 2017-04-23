@@ -8,7 +8,7 @@
 
 services:
     news.layout_box.configurator:
-        class:WellCommerce\Bundle\CmsBundle\Service\Layout\Configurator\NewsBoxConfigurator
+        class: WellCommerce\Bundle\CmsBundle\Service\Layout\Configurator\NewsBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }
