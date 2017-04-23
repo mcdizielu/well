@@ -10,28 +10,28 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\CmsBundle\Configurator;
+namespace WellCommerce\Bundle\CmsBundle\Service\Layout\Configurator;
 
-use WellCommerce\Bundle\CmsBundle\Controller\Box\NewsBoxController;
+use WellCommerce\Bundle\CmsBundle\Controller\Box\ContactBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
 
 /**
- * Class NewsBoxConfigurator
+ * Class ContactBoxConfigurator
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class NewsBoxConfigurator extends AbstractLayoutBoxConfigurator
+final class ContactBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    public function __construct(NewsBoxController $controller)
+    public function __construct(ContactBoxController $controller)
     {
         $this->controller = $controller;
     }
     
     public function getType(): string
     {
-        return 'News';
+        return 'Contact';
     }
     
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
@@ -39,7 +39,7 @@ final class NewsBoxConfigurator extends AbstractLayoutBoxConfigurator
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => 'layout_box.news.tip',
+            'tip' => 'contact.box.help',
         ]));
     }
 }

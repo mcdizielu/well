@@ -14,7 +14,7 @@ services:
             - [setContainer, ['@service_container']]
 
     contact.layout_box.configurator:
-        class: WellCommerce\Bundle\CmsBundle\Configurator\ContactBoxConfigurator
+        class: WellCommerce\Bundle\CmsBundle\Service\Layout\Configurator\ContactBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }

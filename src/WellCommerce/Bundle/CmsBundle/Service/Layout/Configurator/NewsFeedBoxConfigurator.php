@@ -6,7 +6,7 @@
  * Time: 18:37
  */
 
-namespace WellCommerce\Bundle\CmsBundle\Configurator;
+namespace WellCommerce\Bundle\CmsBundle\Service\Layout\Configurator;
 
 use WellCommerce\Bundle\CmsBundle\Controller\Box\NewsFeedBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
