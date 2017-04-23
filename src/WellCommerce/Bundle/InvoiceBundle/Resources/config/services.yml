@@ -21,7 +21,7 @@ services:
 
     invoice.processor.generic:
         class: WellCommerce\Bundle\InvoiceBundle\Processor\GenericInvoiceProcessor
-        arguments: ["@invoice.number.generator"]
+        arguments: ["@invoice.number.generator", "@knp_snappy.pdf"]
         tags:
             - { name: invoice.processor }
 

@@ -14,12 +14,17 @@ use WellCommerce\Bundle\InvoiceBundle\Generator\InvoiceNumberGeneratorInterface;
  */
 final class GenericInvoiceProcessor implements InvoiceProcessorInterface
 {
+    /**
+     * @var InvoiceNumberGeneratorInterface
+     */
     private $invoiceNumberGenerator;
     
-    public function __construct(InvoiceNumberGeneratorInterface $invoiceNumberGenerator, Pdf $pdf)
+    private $pdfGenerator;
+    
+    public function __construct(InvoiceNumberGeneratorInterface $invoiceNumberGenerator, Pdf $pdfGenerator)
     {
         $this->invoiceNumberGenerator = $invoiceNumberGenerator;
-        $this->pdf = $pdf;
+        $this->pdfGenerator           = $pdfGenerator;
     }
     
     public function getAlias(): string
@@ -39,6 +44,5 @@ final class GenericInvoiceProcessor implements InvoiceProcessorInterface
     
     public function download(Invoice $invoice): Response
     {
-        $snappy = $this->get('knp_snappy.pdf');
     }
 }
