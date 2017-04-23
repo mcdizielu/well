@@ -23,4 +23,9 @@ class NotFoundException extends \Exception
     {
         return new self(sprintf('LayoutBox with ID "%s" was not found.', $id));
     }
+    
+    public static function user(string $user): NotFoundException
+    {
+        return new self(sprintf('Client with e-mail "%s" was not found.', $user));
+    }
 }
