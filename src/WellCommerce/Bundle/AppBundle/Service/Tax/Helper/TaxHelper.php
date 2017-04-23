@@ -10,24 +10,16 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\AppBundle\Helper;
+namespace WellCommerce\Bundle\AppBundle\Service\Tax\Helper;
 
 /**
  * Class TaxHelper
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class TaxHelper
+final class TaxHelper implements TaxHelperInterface
 {
-    /**
-     * Calculates net price
-     *
-     * @param int|float $grossPrice
-     * @param int|float $taxRate
-     *
-     * @return float
-     */
-    public static function calculateNetPrice($grossPrice, $taxRate)
+    public function calculateNetPrice(float $grossPrice, float $taxRate): float
     {
         return round($grossPrice / (1 + $taxRate / 100), 2);
     }

@@ -17,6 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use WellCommerce\Bundle\AppBundle\Service\Currency\Helper\CurrencyHelperInterface;
 use WellCommerce\Bundle\AppBundle\Service\Shop\Storage\ShopStorageInterface;
+use WellCommerce\Bundle\AppBundle\Service\Tax\Helper\TaxHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Doctrine\DoctrineHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Flash\FlashHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Image\ImageHelperInterface;
@@ -109,6 +110,11 @@ abstract class AbstractContainerAware
     protected function getMailerHelper(): MailerHelperInterface
     {
         return $this->get('mailer.helper');
+    }
+    
+    protected function getTaxHelper(): TaxHelperInterface
+    {
+        return $this->get('tax.helper');
     }
     
     protected function getTemplatingHelper(): TemplatingHelperInterface

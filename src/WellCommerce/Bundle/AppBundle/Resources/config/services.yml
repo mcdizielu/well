@@ -15,6 +15,7 @@ imports:
     - { resource: 'services/layout_box.yml' }
     - { resource: 'services/locale.yml' }
     - { resource: 'services/shop.yml' }
+    - { resource: 'services/tax.yml' }
     - { resource: 'services/theme.yml' }
 
 services:

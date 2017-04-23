@@ -13,7 +13,6 @@
 namespace WellCommerce\Bundle\OrderBundle\Tests\Visitor;
 
 use WellCommerce\Bundle\AppBundle\Entity\Client;
-use WellCommerce\Bundle\AppBundle\Helper\TaxHelper;
 use WellCommerce\Bundle\CoreBundle\Test\AbstractTestCase;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
 
@@ -29,10 +28,11 @@ class OrderClientDiscountVisitorTest extends AbstractTestCase
      */
     public function testModifierValue($expression, $grossTotal, $expectedDiscount)
     {
-        $visitor = $this->container->get('client_discount.order.visitor');
-        $order   = new Order();
+        $taxHelper = $this->container->get('tax.helper');
+        $visitor   = $this->container->get('client_discount.order.visitor');
+        $order     = new Order();
         $order->getProductTotal()->setGrossPrice($grossTotal);
-        $order->getProductTotal()->setNetPrice($netTotal = TaxHelper::calculateNetPrice($grossTotal, 23));
+        $order->getProductTotal()->setNetPrice($netTotal = $taxHelper->calculateNetPrice($grossTotal, 23));
         $order->getProductTotal()->setTaxAmount($grossTotal - $netTotal);
         $order->setCurrency('EUR');
         
@@ -54,7 +54,7 @@ class OrderClientDiscountVisitorTest extends AbstractTestCase
             ['order.getProductTotal().getGrossPrice() / 10', 100, 10],
             ['(order.getProductTotal().getGrossPrice() / 10) + 1', 100, 11],
             ['order.getCurrency() in ["EUR"] ? 7 : 0', 100, 7],
-            ['order.getCurrency() not in ["EUR"] ? 0 : 1', 100, 1]
+            ['order.getCurrency() not in ["EUR"] ? 0 : 1', 100, 1],
         ];
     }
 }

@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\CatalogBundle\EventListener;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
-use WellCommerce\Bundle\AppBundle\Helper\TaxHelper;
+use WellCommerce\Bundle\AppBundle\Service\Tax\Helper\TaxHelperInterface;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CatalogBundle\Entity\Variant;
 
@@ -25,6 +25,16 @@ use WellCommerce\Bundle\CatalogBundle\Entity\Variant;
  */
 class ProductDoctrineEventSubscriber implements EventSubscriber
 {
+    /**
+     * @var TaxHelperInterface
+     */
+    private $taxHelper;
+    
+    public function __construct(TaxHelperInterface $taxHelper)
+    {
+        $this->taxHelper = $taxHelper;
+    }
+    
     public function getSubscribedEvents()
     {
         return [
@@ -64,8 +74,8 @@ class ProductDoctrineEventSubscriber implements EventSubscriber
         $grossAmount           = $sellPrice->getGrossAmount();
         $discountedGrossAmount = $sellPrice->getDiscountedGrossAmount();
         $taxRate               = $product->getSellPriceTax()->getValue();
-        $netAmount             = TaxHelper::calculateNetPrice($grossAmount, $taxRate);
-        $discountedNetAmount   = TaxHelper::calculateNetPrice($discountedGrossAmount, $taxRate);
+        $netAmount             = $this->taxHelper->calculateNetPrice($grossAmount, $taxRate);
+        $discountedNetAmount   = $this->taxHelper->calculateNetPrice($discountedGrossAmount, $taxRate);
         
         $sellPrice->setTaxRate($taxRate);
         $sellPrice->setTaxAmount($grossAmount - $netAmount);
@@ -81,8 +91,8 @@ class ProductDoctrineEventSubscriber implements EventSubscriber
         $grossAmount           = $this->calculateAttributePrice($variant, $sellPrice->getGrossAmount());
         $discountedGrossAmount = $this->calculateAttributePrice($variant, $sellPrice->getDiscountedGrossAmount());
         $taxRate               = $product->getSellPriceTax()->getValue();
-        $netAmount             = TaxHelper::calculateNetPrice($grossAmount, $taxRate);
-        $discountedNetAmount   = TaxHelper::calculateNetPrice($discountedGrossAmount, $taxRate);
+        $netAmount             = $this->taxHelper->calculateNetPrice($grossAmount, $taxRate);
+        $discountedNetAmount   = $this->taxHelper->calculateNetPrice($discountedGrossAmount, $taxRate);
         
         $productAttributeSellPrice = $variant->getSellPrice();
         $productAttributeSellPrice->setTaxRate($taxRate);
@@ -122,7 +132,7 @@ class ProductDoctrineEventSubscriber implements EventSubscriber
         $buyPrice    = $product->getBuyPrice();
         $grossAmount = $buyPrice->getGrossAmount();
         $taxRate     = $product->getBuyPriceTax()->getValue();
-        $netAmount   = TaxHelper::calculateNetPrice($grossAmount, $taxRate);
+        $netAmount   = $this->taxHelper->calculateNetPrice($grossAmount, $taxRate);
         
         $buyPrice->setTaxRate($taxRate);
         $buyPrice->setTaxAmount($grossAmount - $netAmount);

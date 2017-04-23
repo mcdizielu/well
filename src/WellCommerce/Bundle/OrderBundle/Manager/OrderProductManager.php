@@ -13,7 +13,6 @@
 namespace WellCommerce\Bundle\OrderBundle\Manager;
 
 use WellCommerce\Bundle\AppBundle\Entity\Price;
-use WellCommerce\Bundle\AppBundle\Helper\TaxHelper;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CatalogBundle\Entity\Variant;
 use WellCommerce\Bundle\CoreBundle\Manager\AbstractManager;
@@ -121,7 +120,7 @@ final class OrderProductManager extends AbstractManager implements OrderProductM
         $sellPrice   = $orderProduct->getSellPrice();
         $grossAmount = $productValues['gross_amount'];
         $taxRate     = $orderProduct->getSellPrice()->getTaxRate();
-        $netAmount   = TaxHelper::calculateNetPrice($grossAmount, $taxRate);
+        $netAmount   = $this->getTaxHelper()->calculateNetPrice($grossAmount, $taxRate);
         
         $sellPrice->setTaxRate($taxRate);
         $sellPrice->setTaxAmount($grossAmount - $netAmount);
@@ -150,7 +149,7 @@ final class OrderProductManager extends AbstractManager implements OrderProductM
         $sellPrice   = new Price();
         $grossAmount = $productValues['gross_amount'];
         $taxRate     = $product->getSellPriceTax()->getValue();
-        $netAmount   = TaxHelper::calculateNetPrice($grossAmount, $taxRate);
+        $netAmount   = $this->getTaxHelper()->calculateNetPrice($grossAmount, $taxRate);
         
         $sellPrice->setTaxRate($taxRate);
         $sellPrice->setTaxAmount($grossAmount - $netAmount);

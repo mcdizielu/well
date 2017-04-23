@@ -59,10 +59,10 @@ class OrderProductTotalVisitorTest extends AbstractTestCase
                 $this->assertEquals($quantityGrossAmount - $quantityTaxAmount, $quantityNetAmount, '', $delta);
                 
                 $summaryGrossAmount += $quantityGrossAmount;
-                $summaryNetAmount += $quantityNetAmount;
-                $summaryTaxAmount += $quantityTaxAmount;
-                $summaryQuantity += $quantity;
-                $summaryWeight += round($orderProduct->getWeight() * $quantity, 4);
+                $summaryNetAmount   += $quantityNetAmount;
+                $summaryTaxAmount   += $quantityTaxAmount;
+                $summaryQuantity    += $quantity;
+                $summaryWeight      += round($orderProduct->getWeight() * $quantity, 4);
             }
             
             $visitor->visitOrder($order);
@@ -76,10 +76,11 @@ class OrderProductTotalVisitorTest extends AbstractTestCase
     
     private function createOrderProduct(): OrderProduct
     {
+        $taxHelper   = $this->container->get('tax.helper');
         $faker       = $this->getFakerGenerator();
         $grossAmount = $faker->randomFloat(2);
         $taxRate     = array_rand([0, 8, 23]);
-        $netAmount   = TaxHelper::calculateNetPrice($grossAmount, $taxRate);
+        $netAmount   = $taxHelper->calculateNetPrice($grossAmount, $taxRate);
         $taxAmount   = $grossAmount - $netAmount;
         $sellPrice   = new DiscountablePrice();
         $sellPrice->setGrossAmount($grossAmount);

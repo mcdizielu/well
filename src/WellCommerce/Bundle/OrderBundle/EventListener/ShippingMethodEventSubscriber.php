@@ -14,8 +14,8 @@ namespace WellCommerce\Bundle\OrderBundle\EventListener;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
-use WellCommerce\Bundle\AppBundle\Helper\TaxHelper;
 use WellCommerce\Bundle\AppBundle\Repository\CountryRepository;
+use WellCommerce\Bundle\AppBundle\Service\Tax\Helper\TaxHelperInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\ShippingMethod;
 use WellCommerce\Bundle\OrderBundle\Entity\ShippingMethodCost;
 
@@ -32,13 +32,14 @@ final class ShippingMethodEventSubscriber implements EventSubscriber
     private $countryRepository;
     
     /**
-     * ShippingMethodEventSubscriber constructor.
-     *
-     * @param CountryRepository $countryRepository
+     * @var TaxHelperInterface
      */
-    public function __construct(CountryRepository $countryRepository)
+    private $taxHelper;
+    
+    public function __construct(CountryRepository $countryRepository, TaxHelperInterface $taxHelper)
     {
         $this->countryRepository = $countryRepository;
+        $this->taxHelper         = $taxHelper;
     }
     
     public function preUpdate(LifecycleEventArgs $args)
@@ -59,7 +60,7 @@ final class ShippingMethodEventSubscriber implements EventSubscriber
             $cost           = $entity->getCost();
             $grossAmount    = $cost->getGrossAmount();
             $taxRate        = $shippingMethod->getTax()->getValue();
-            $netAmount      = TaxHelper::calculateNetPrice($grossAmount, $taxRate);
+            $netAmount      = $this->taxHelper->calculateNetPrice($grossAmount, $taxRate);
             
             $cost->setTaxRate($taxRate);
             $cost->setTaxAmount($grossAmount - $netAmount);

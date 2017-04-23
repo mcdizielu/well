@@ -19,7 +19,7 @@ services:
 
     shipping_method_cost.doctrine.event_subscriber:
         class: WellCommerce\Bundle\OrderBundle\EventListener\ShippingMethodEventSubscriber
-        arguments: ['@country.repository']
+        arguments: ['@country.repository', '@tax.helper']
         tags:
             - { name: doctrine.event_subscriber, connection: default }
 

@@ -24,6 +24,7 @@ services:
 
     product.doctrine.event_subscriber:
         class: WellCommerce\Bundle\CatalogBundle\EventListener\ProductDoctrineEventSubscriber
+        arguments: ["@tax.helper"]
         tags:
             - { name: doctrine.event_subscriber, connection: default }
 

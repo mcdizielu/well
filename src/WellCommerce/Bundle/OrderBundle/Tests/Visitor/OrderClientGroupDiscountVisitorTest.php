@@ -14,7 +14,6 @@ namespace WellCommerce\Bundle\OrderBundle\Tests\Visitor;
 
 use WellCommerce\Bundle\AppBundle\Entity\Client;
 use WellCommerce\Bundle\AppBundle\Entity\ClientGroup;
-use WellCommerce\Bundle\AppBundle\Helper\TaxHelper;
 use WellCommerce\Bundle\CoreBundle\Test\AbstractTestCase;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
 
@@ -30,10 +29,11 @@ class OrderClientGroupDiscountVisitorTest extends AbstractTestCase
      */
     public function testModifierValue($expression, $grossTotal, $expectedDiscount)
     {
-        $visitor = $this->container->get('client_group_discount.order.visitor');
-        $order   = new Order();
+        $taxHelper = $this->container->get('tax.helper');
+        $visitor   = $this->container->get('client_group_discount.order.visitor');
+        $order     = new Order();
         $order->getProductTotal()->setGrossPrice($grossTotal);
-        $order->getProductTotal()->setNetPrice($netTotal = TaxHelper::calculateNetPrice($grossTotal, 23));
+        $order->getProductTotal()->setNetPrice($netTotal = $taxHelper->calculateNetPrice($grossTotal, 23));
         $order->getProductTotal()->setTaxAmount($grossTotal - $netTotal);
         $order->setCurrency('EUR');
         
