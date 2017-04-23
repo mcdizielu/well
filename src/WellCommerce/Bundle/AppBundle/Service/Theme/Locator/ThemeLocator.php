@@ -13,9 +13,10 @@
 namespace WellCommerce\Bundle\AppBundle\Service\Theme\Locator;
 
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
-use WellCommerce\Bundle\AppBundle\Storage\ThemeStorageInterface;
+use WellCommerce\Bundle\AppBundle\Service\Theme\Storage\ThemeStorageInterface;
 
 /**
  * Class ThemeLocator
@@ -182,6 +183,7 @@ final class ThemeLocator implements ThemeLocatorInterface
         $finder      = new Finder();
         $directories = $finder->directories()->in($this->themesDir)->sortByName()->depth('== 1');
         
+        /** @var SplFileInfo $directory */
         foreach ($directories as $directory) {
             $name           = $directory->getRelativePath();
             $folders[$name] = $name;

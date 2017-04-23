@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\AppBundle\Storage;
+namespace WellCommerce\Bundle\AppBundle\Service\Theme\Storage;
 
 use WellCommerce\Bundle\AppBundle\Entity\Theme;
 

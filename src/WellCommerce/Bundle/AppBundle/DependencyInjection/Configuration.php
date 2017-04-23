@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\AppBundle\DependencyInjection;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
-use WellCommerce\Bundle\AppBundle\Copier\LocaleCopier;
+use WellCommerce\Bundle\AppBundle\Service\Locale\Copier\LocaleCopier;
 
 /**
  * Class Configuration

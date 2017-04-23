@@ -27,10 +27,10 @@ class DashboardController extends AbstractController
     public function indexAction(): Response
     {
         return $this->displayTemplate('index', [
-            'reviews'      => $this->getReviews(),
-            'orders'       => $this->getOrders(),
-            'clients'      => $this->getClients(),
-            'carts'        => $this->getCarts(),
+            'reviews' => $this->getReviews(),
+            'orders'  => $this->getOrders(),
+            'clients' => $this->getClients(),
+            'carts'   => $this->getCarts(),
         ]);
     }
     
