@@ -33,7 +33,7 @@ services:
         class: WellCommerce\Bundle\AppBundle\Repository\CountryRepository
 
     metadata.helper:
-        class: WellCommerce\Bundle\AppBundle\Helper\MetadataHelper
+        class: WellCommerce\Bundle\AppBundle\Service\Metadata\Helper\MetadataHelper
         arguments: ['@shop.storage']
 
     twig.extension.metadata:

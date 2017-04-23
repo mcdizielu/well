@@ -1,16 +1,16 @@
 <?php
 
-namespace WellCommerce\Bundle\AppBundle\Helper;
+namespace WellCommerce\Bundle\AppBundle\Service\Metadata\Helper;
 
 use WellCommerce\Bundle\AppBundle\Entity\Meta;
 use WellCommerce\Bundle\AppBundle\Service\Shop\Storage\ShopStorageInterface;
 
 /**
- * Class MetadataStorage
+ * Class MetadataHelper
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class MetadataHelper
+final class MetadataHelper implements MetadataHelperInterface
 {
     /**
      * @var Meta

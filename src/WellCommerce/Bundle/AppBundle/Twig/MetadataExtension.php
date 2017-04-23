@@ -13,7 +13,7 @@
 namespace WellCommerce\Bundle\AppBundle\Twig;
 
 use WellCommerce\Bundle\AppBundle\Entity\Meta;
-use WellCommerce\Bundle\AppBundle\Helper\MetadataHelper;
+use WellCommerce\Bundle\AppBundle\Service\Metadata\Helper\MetadataHelperInterface;
 
 /**
  * Class MetadataExtension
@@ -23,11 +23,11 @@ use WellCommerce\Bundle\AppBundle\Helper\MetadataHelper;
 class MetadataExtension extends \Twig_Extension
 {
     /**
-     * @var MetadataHelper
+     * @var MetadataHelperInterface
      */
     protected $metadataHelper;
     
-    public function __construct(MetadataHelper $metadataHelper)
+    public function __construct(MetadataHelperInterface $metadataHelper)
     {
         $this->metadataHelper = $metadataHelper;
     }
