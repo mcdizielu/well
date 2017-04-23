@@ -11,7 +11,7 @@ services:
         class: WellCommerce\Bundle\AppBundle\Storage\ThemeStorage
 
     theme.locator:
-        class: WellCommerce\Bundle\AppBundle\Locator\ThemeLocator
+        class: WellCommerce\Bundle\AppBundle\Service\Theme\Locator\ThemeLocator
         arguments: ['@kernel', '@theme.storage', '%fallback_theme%', '%kernel.root_dir%/../web/themes']
 
     theme.subscriber:
@@ -21,11 +21,11 @@ services:
             - { name: kernel.event_subscriber }
 
     theme.file_locator:
-        class: WellCommerce\Bundle\AppBundle\Locator\FileLocator
+        class: WellCommerce\Bundle\AppBundle\Service\Theme\Locator\FileLocator
         arguments: ['@theme.locator', ['%kernel.root_dir%/Resources']]
 
     theme.templating_locator:
-        class: WellCommerce\Bundle\AppBundle\Locator\TemplateLocator
+        class: WellCommerce\Bundle\AppBundle\Service\Theme\Locator\TemplateLocator
         arguments: ['@theme.file_locator', '%kernel.cache_dir%']
 
     theme.template_paths.cache_warmer:

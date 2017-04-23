@@ -21,14 +21,14 @@ use Symfony\Component\Config\FileLocatorInterface;
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  *
- * Created on base of the LiipAppBundle <https://github.com/liip/LiipAppBundle>
+ * Created on base of the LiipThemeBundle <https://github.com/liip/LiipThemeBundle>
  *
  * Special thanks goes to its authors and contributors
  */
 class TemplatePathsCacheWarmer extends BaseTemplatePathsCacheWarmer
 {
     /**
-     * @var \WellCommerce\Bundle\AppBundle\Locator\TemplateLocator
+     * @var \WellCommerce\Bundle\AppBundle\Service\Theme\Locator\TemplateLocator
      */
     protected $locator;
     
