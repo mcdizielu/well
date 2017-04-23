@@ -8,19 +8,19 @@
 
 services:
     category_menu.layout_box.configurator:
-        class: WellCommerce\Bundle\CatalogBundle\Configurator\CategoryMenuBoxConfigurator
+        class: WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator\CategoryMenuBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }
 
     category_info.layout_box.configurator:
-        class: WellCommerce\Bundle\CatalogBundle\Configurator\CategoryInfoBoxConfigurator
+        class: WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator\CategoryInfoBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }
 
     category_products.layout_box.configurator:
-        class: WellCommerce\Bundle\CatalogBundle\Configurator\CategoryProductsBoxConfigurator
+        class: WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator\CategoryProductsBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }

@@ -10,36 +10,39 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\CatalogBundle\Configurator;
+namespace WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator;
 
-use WellCommerce\Bundle\CatalogBundle\Controller\Box\CategoryInfoBoxController;
-use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
+use WellCommerce\Bundle\CatalogBundle\Controller\Box\ProducerCollectionMenuBoxController;
+use \WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
 
 /**
- * Class CategoryInfoBoxConfigurator
+ * Class ProducerCollectionMenuBoxConfigurator
  *
- * @author  Adam Piotrowski <adam@wellcommerce.org>
+ * @author  Rafał Martonik <rafal@wellcommerce.org>
  */
-final class CategoryInfoBoxConfigurator extends AbstractLayoutBoxConfigurator
+final class ProducerCollectionMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    public function __construct(CategoryInfoBoxController $controller)
+    public function __construct(ProducerCollectionMenuBoxController $controller)
     {
         $this->controller = $controller;
     }
     
     public function getType(): string
     {
-        return 'CategoryInfo';
+        return 'ProducerCollectionMenu';
     }
     
+    /**
+     * {@inheritdoc}
+     */
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
     {
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => 'Choose categories which should be not visible in box.',
+            'tip' => 'producer.box.info',
         ]));
     }
 }

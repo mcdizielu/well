@@ -10,39 +10,36 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\CatalogBundle\Configurator;
+namespace WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator;
 
-use WellCommerce\Bundle\CatalogBundle\Controller\Box\ProducerCollectionMenuBoxController;
-use \WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
+use WellCommerce\Bundle\CatalogBundle\Controller\Box\ProductSearchBoxController;
+use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
 
 /**
- * Class ProducerCollectionMenuBoxConfigurator
+ * Class ProductSearchBoxConfigurator
  *
- * @author  Rafał Martonik <rafal@wellcommerce.org>
+ * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class ProducerCollectionMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
+final class ProductSearchBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    public function __construct(ProducerCollectionMenuBoxController $controller)
+    public function __construct(ProductSearchBoxController $controller)
     {
         $this->controller = $controller;
     }
     
     public function getType(): string
     {
-        return 'ProducerCollectionMenu';
+        return 'ProductSearch';
     }
     
-    /**
-     * {@inheritdoc}
-     */
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
     {
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => 'producer.box.info',
+            'tip' => 'layout_box.search.tip',
         ]));
     }
 }

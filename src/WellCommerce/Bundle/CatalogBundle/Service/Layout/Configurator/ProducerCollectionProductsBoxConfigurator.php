@@ -10,25 +10,25 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\CatalogBundle\Configurator;
+namespace WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator;
 
-use WellCommerce\Bundle\CatalogBundle\Controller\Box\ProducerProductsBoxController;
+use WellCommerce\Bundle\CatalogBundle\Controller\Box\ProducerCollectionProductsBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 
 /**
- * Class ProducerProductsBoxConfigurator
+ * Class ProducerCollectionProductsBoxConfigurator
  *
- * @author  Adam Piotrowski <adam@wellcommerce.org>
+ * @author Rafał Martonik <rafal@wellcommerce.org>
  */
-final class ProducerProductsBoxConfigurator extends AbstractLayoutBoxConfigurator
+final class ProducerCollectionProductsBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    public function __construct(ProducerProductsBoxController $controller)
+    public function __construct(ProducerCollectionProductsBoxController $controller)
     {
         $this->controller = $controller;
     }
     
     public function getType(): string
     {
-        return 'ProducerProducts';
+        return 'ProducerCollectionProducts';
     }
 }

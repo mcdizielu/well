@@ -8,7 +8,7 @@
 
 services:
     producer_collection_menu.layout_box.configurator:
-        class: WellCommerce\Bundle\CatalogBundle\Configurator\ProducerCollectionProductsBoxConfigurator
+        class: WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator\ProducerCollectionProductsBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }
@@ -20,7 +20,7 @@ services:
             - [setContainer, ['@service_container']]
 
     producer_collection_products.layout_box.configurator:
-        class: WellCommerce\Bundle\CatalogBundle\Configurator\ProducerCollectionMenuBoxConfigurator
+        class: WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator\ProducerCollectionMenuBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }

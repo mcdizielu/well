@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Exception\ValidatorException;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
-use WellCommerce\Bundle\CatalogBundle\Exception\ProductNotFoundException;
+use WellCommerce\Bundle\CatalogBundle\Exception\NotFoundException;
 use WellCommerce\Bundle\CoreBundle\Controller\Admin\AbstractAdminController;
 
 /**
@@ -70,7 +70,7 @@ class ProductController extends AbstractAdminController
     {
         $product = $this->manager->getRepository()->find($id);
         if (!$product instanceof Product) {
-            throw new ProductNotFoundException($id);
+            throw NotFoundException::product($id);
         }
         
         return $product;

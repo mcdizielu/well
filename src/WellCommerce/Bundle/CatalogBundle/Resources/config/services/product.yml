@@ -8,7 +8,7 @@
 
 services:
     product_info.layout_box.configurator:
-        class: WellCommerce\Bundle\CatalogBundle\Configurator\ProductInfoBoxConfigurator
+        class: WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator\ProductInfoBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }

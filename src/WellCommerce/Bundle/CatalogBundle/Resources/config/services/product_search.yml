@@ -8,7 +8,7 @@
 
 services:
     product_search.layout_box.configurator:
-        class: WellCommerce\Bundle\CatalogBundle\Configurator\ProductSearchBoxConfigurator
+        class: WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator\ProductSearchBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }

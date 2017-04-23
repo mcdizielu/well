@@ -10,28 +10,28 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\CatalogBundle\Configurator;
+namespace WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator;
 
-use WellCommerce\Bundle\CatalogBundle\Controller\Box\ProducerMenuBoxController;
+use WellCommerce\Bundle\CatalogBundle\Controller\Box\CategoryInfoBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
 
 /**
- * Class ProducerMenuBoxConfigurator
+ * Class CategoryInfoBoxConfigurator
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class ProducerMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
+final class CategoryInfoBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    public function __construct(ProducerMenuBoxController $controller)
+    public function __construct(CategoryInfoBoxController $controller)
     {
         $this->controller = $controller;
     }
     
     public function getType(): string
     {
-        return 'ProducerMenu';
+        return 'CategoryInfo';
     }
     
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
@@ -39,7 +39,7 @@ final class ProducerMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => 'producer.box.info',
+            'tip' => 'Choose categories which should be not visible in box.',
         ]));
     }
 }

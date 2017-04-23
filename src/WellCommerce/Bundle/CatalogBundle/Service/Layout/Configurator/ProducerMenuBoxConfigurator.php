@@ -10,28 +10,28 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\CatalogBundle\Configurator;
+namespace WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator;
 
-use WellCommerce\Bundle\CatalogBundle\Controller\Box\ProductInfoBoxController;
+use WellCommerce\Bundle\CatalogBundle\Controller\Box\ProducerMenuBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
 
 /**
- * Class ProductInfoBoxConfigurator
+ * Class ProducerMenuBoxConfigurator
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class ProductInfoBoxConfigurator extends AbstractLayoutBoxConfigurator
+final class ProducerMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    public function __construct(ProductInfoBoxController $controller)
+    public function __construct(ProducerMenuBoxController $controller)
     {
         $this->controller = $controller;
     }
     
     public function getType(): string
     {
-        return 'ProductInfo';
+        return 'ProducerMenu';
     }
     
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
@@ -39,7 +39,7 @@ final class ProductInfoBoxConfigurator extends AbstractLayoutBoxConfigurator
         $fieldset = $this->getFieldset($builder, $form);
         
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => 'layout_box.product.info.tip',
+            'tip' => 'producer.box.info',
         ]));
     }
 }
