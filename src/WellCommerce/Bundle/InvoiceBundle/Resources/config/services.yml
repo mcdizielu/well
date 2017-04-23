@@ -7,11 +7,6 @@
 # please view the LICENSE file that was distributed with this source code.
 
 services:
-    invoice.order_mapping.enhancer:
-        class: WellCommerce\Bundle\InvoiceBundle\Enhancer\OrderMappingEnhancer
-        tags:
-            - { name: doctrine.mapping.enhancer }
-
     invoice.shop_mapping.enhancer:
         class: WellCommerce\Bundle\InvoiceBundle\Enhancer\ShopMappingEnhancer
         tags:
@@ -20,8 +15,13 @@ services:
     invoice.processor.collection:
         class: WellCommerce\Bundle\InvoiceBundle\Processor\InvoiceProcessorCollection
 
+    invoice.number.generator:
+        class: WellCommerce\Bundle\InvoiceBundle\Generator\InvoiceNumberGenerator
+        arguments: ["@doctrine.helper", '"INV/"~nextId~"/"~month~"/"~year~"/"~orderNumber']
+
     invoice.processor.generic:
         class: WellCommerce\Bundle\InvoiceBundle\Processor\GenericInvoiceProcessor
+        arguments: ["@invoice.number.generator"]
         tags:
             - { name: invoice.processor }
 

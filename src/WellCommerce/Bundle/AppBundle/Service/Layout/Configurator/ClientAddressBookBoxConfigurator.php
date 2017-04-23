@@ -10,25 +10,25 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\AppBundle\Configurator;
+namespace WellCommerce\Bundle\AppBundle\Service\Layout\Configurator;
 
-use WellCommerce\Bundle\AppBundle\Controller\Box\ClientForgotPasswordBoxController;
+use WellCommerce\Bundle\AppBundle\Controller\Box\ClientAddressBookBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 
 /**
- * Class ClientForgotPasswordBoxConfigurator
+ * Class ClientAddressBookBoxConfigurator
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class ClientForgotPasswordBoxConfigurator extends AbstractLayoutBoxConfigurator
+final class ClientAddressBookBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    public function __construct(ClientForgotPasswordBoxController $controller)
+    public function __construct(ClientAddressBookBoxController $controller)
     {
         $this->controller = $controller;
     }
     
     public function getType(): string
     {
-        return 'ClientForgotPassword';
+        return 'ClientAddressBook';
     }
 }

@@ -19,7 +19,7 @@ services:
             - [setContainer, ['@service_container']]
 
     client_login.layout_box.configurator:
-        class: WellCommerce\Bundle\AppBundle\Configurator\ClientLoginBoxConfigurator
+        class: WellCommerce\Bundle\AppBundle\Service\Layout\Configurator\ClientLoginBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }
@@ -31,7 +31,7 @@ services:
             - [setContainer, ['@service_container']]
 
     client_menu.layout_box.configurator:
-        class: WellCommerce\Bundle\AppBundle\Configurator\ClientMenuBoxConfigurator
+        class: WellCommerce\Bundle\AppBundle\Service\Layout\Configurator\ClientMenuBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }
@@ -43,7 +43,7 @@ services:
             - [setContainer, ['@service_container']]
 
     client_order.configurator:
-        class: WellCommerce\Bundle\AppBundle\Configurator\ClientOrderBoxConfigurator
+        class: WellCommerce\Bundle\AppBundle\Service\Layout\Configurator\ClientOrderBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }
@@ -61,7 +61,7 @@ services:
             - [setContainer, ['@service_container']]
 
     client_settings.configurator:
-        class: WellCommerce\Bundle\AppBundle\Configurator\ClientSettingsBoxConfigurator
+        class: WellCommerce\Bundle\AppBundle\Service\Layout\Configurator\ClientSettingsBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }
@@ -73,7 +73,7 @@ services:
             - [setContainer, ['@service_container']]
 
     client_registration.layout_box.configurator:
-        class: WellCommerce\Bundle\AppBundle\Configurator\ClientRegistrationBoxConfigurator
+        class: WellCommerce\Bundle\AppBundle\Service\Layout\Configurator\ClientRegistrationBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }
@@ -91,7 +91,7 @@ services:
             - [setContainer, ['@service_container']]
 
     client_forgot_password.layout_box.configurator:
-        class: WellCommerce\Bundle\AppBundle\Configurator\ClientForgotPasswordBoxConfigurator
+        class: WellCommerce\Bundle\AppBundle\Service\Layout\Configurator\ClientForgotPasswordBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }
@@ -109,7 +109,7 @@ services:
             - [setContainer, ['@service_container']]
 
     client_address_book.layout_box.configurator:
-        class: WellCommerce\Bundle\AppBundle\Configurator\ClientAddressBookBoxConfigurator
+        class: WellCommerce\Bundle\AppBundle\Service\Layout\Configurator\ClientAddressBookBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }

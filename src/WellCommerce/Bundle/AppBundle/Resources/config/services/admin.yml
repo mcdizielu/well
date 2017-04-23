@@ -13,6 +13,12 @@ services:
         calls:
             - [setContainer, ['@service_container']]
 
+    system_configuration.controller.admin:
+        class: WellCommerce\Bundle\AppBundle\Controller\Admin\SystemConfigurationController
+        arguments: ['@system_configuration.manager', '@system_configuration.form_builder.admin']
+        calls:
+            - [setContainer, ['@service_container']]
+
     form.user_group_permission.data_transformer:
         class: WellCommerce\Bundle\AppBundle\Form\DataTransformer\UserGroupPermissionToArrayTransformer
         tags:
@@ -21,7 +27,7 @@ services:
         shared: false
 
     admin_menu.provider:
-        class: WellCommerce\Bundle\AppBundle\Provider\AdminMenuProvider
+        class: WellCommerce\Bundle\AppBundle\Service\Admin\Provider\AdminMenuProvider
         public: false
         arguments: ['@kernel', '@admin_menu.repository']
 

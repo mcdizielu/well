@@ -10,25 +10,25 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\AppBundle\Configurator;
+namespace WellCommerce\Bundle\AppBundle\Service\Layout\Configurator;
 
-use WellCommerce\Bundle\AppBundle\Controller\Box\ClientSettingsBoxController;
+use WellCommerce\Bundle\AppBundle\Controller\Box\ClientMenuBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 
 /**
- * Class ClientSettingsBoxConfigurator
+ * Class ClientMenuBoxConfigurator
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class ClientSettingsBoxConfigurator extends AbstractLayoutBoxConfigurator
+final class ClientMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    public function __construct(ClientSettingsBoxController $controller)
+    public function __construct(ClientMenuBoxController $controller)
     {
         $this->controller = $controller;
     }
     
     public function getType(): string
     {
-        return 'ClientSettings';
+        return 'ClientMenu';
     }
 }

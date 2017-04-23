@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\AppBundle\Configurator;
+namespace WellCommerce\Bundle\AppBundle\Service\Layout\Configurator;
 
 use WellCommerce\Bundle\AppBundle\Controller\Box\ClientLoginBoxController;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;

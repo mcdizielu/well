@@ -27,10 +27,10 @@ services:
             - [setContainer, ['@service_container']]
 
     currency.importer.ecb:
-        class: WellCommerce\Bundle\AppBundle\Importer\EcbRatesImporter
+        class: WellCommerce\Bundle\AppBundle\Service\Currency\Importer\EcbRatesImporter
         arguments: ['@currency.repository', '@currency_rate.repository', '@doctrine.helper']
 
     currency.helper:
-        class: WellCommerce\Bundle\AppBundle\Helper\CurrencyHelper
+        class: WellCommerce\Bundle\AppBundle\Service\Currency\Helper\CurrencyHelper
         arguments: ['@request.helper', '@currency_rate.repository', '%number_formatter_locale%']
 
