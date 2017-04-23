@@ -53,6 +53,8 @@ final class WellCommerceCoreBundle extends AbstractWellCommerceBundle
         $bundles->add(new \Knp\DoctrineBehaviors\Bundle\DoctrineBehaviorsBundle());
         $bundles->add(new \Cache\AdapterBundle\CacheAdapterBundle());
         $bundles->add(new \EmanueleMinotto\TwigCacheBundle\TwigCacheBundle());
+        $bundles->add(new \Knp\Bundle\SnappyBundle\KnpSnappyBundle());
+        
         $bundles->add(new self());
         
         if (in_array($environment, ['dev', 'test'])) {

@@ -73,7 +73,9 @@
     "algolia/algoliasearch-client-php": "^1.16",
     "composer/composer": "^1.4",
     "sunhater/kcfinder": "dev-master",
-    "ikadoc/kcfinder-bundle": "^1.1"
+    "ikadoc/kcfinder-bundle": "^1.1",
+    "profburial/wkhtmltopdf-binaries": "^0.12.1",
+    "knplabs/knp-snappy-bundle": "^1.4"
   },
   "replace": {
     "wellcommerce/api-bundle": "self.version",

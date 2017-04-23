@@ -62,6 +62,8 @@
     "friendsofsymfony/jsrouting-bundle": "^2.0@dev",
     "symfony-cmf/routing": "1.4.0",
     "composer/composer": "^1.4",
+    "profburial/wkhtmltopdf-binaries": "^0.12.1",
+    "knplabs/knp-snappy-bundle": "^1.4",
     "wellcommerce/breadcrumb": "^0.9@dev",
     "wellcommerce/collections": "^0.9@dev",
     "wellcommerce/datagrid": "^0.9@dev",
