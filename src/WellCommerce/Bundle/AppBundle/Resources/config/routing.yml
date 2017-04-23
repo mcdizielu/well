@@ -62,6 +62,10 @@ _admin_user:
     resource: "@WellCommerceAppBundle/Resources/config/routing/user/admin.yml"
     prefix: /admin/user
 
+_admin_system_configuration:
+    resource: "@WellCommerceAppBundle/Resources/config/routing/system_configuration/admin.yml"
+    prefix: /admin/system/configuration
+
 _admin_user_group:
     resource: "@WellCommerceAppBundle/Resources/config/routing/user_group/admin.yml"
     prefix: /admin/user/group

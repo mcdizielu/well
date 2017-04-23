@@ -1,0 +1,31 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+WellCommerce\Bundle\AppBundle\Entity\SystemConfiguration:
+    type: entity
+    table: system_configuration
+    cache:
+        usage : NONSTRICT_READ_WRITE
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        paramName:
+            type: string
+            nullable: false
+            column: param_name
+        paramValue:
+            type: string
+            nullable: false
+            column: param_value
+        nodeName:
+            type: string
+            nullable: true
+            column: node_name

@@ -11,7 +11,7 @@
  */
 namespace WellCommerce\Bundle\AppBundle\Twig;
 
-use WellCommerce\Bundle\AppBundle\Provider\AdminMenuProvider;
+use WellCommerce\Bundle\AppBundle\Service\Admin\Provider\AdminMenuProvider;
 
 /**
  * Class AdminExtension

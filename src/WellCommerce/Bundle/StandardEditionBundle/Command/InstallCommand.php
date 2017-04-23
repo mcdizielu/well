@@ -15,6 +15,7 @@ namespace WellCommerce\Bundle\StandardEditionBundle\Command;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use WellCommerce\Bundle\AppBundle\Console\Action\LoadSystemDefaultsAction;
 use WellCommerce\Bundle\AppBundle\Console\Action\RefreshAdminMenuAction;
 use WellCommerce\Bundle\CoreBundle\Console\Action\ClearCacheAction;
 use WellCommerce\Bundle\CoreBundle\Console\Action\InstallAssetsAction;
@@ -58,6 +59,7 @@ class InstallCommand extends Command
             new ClearCacheAction(),
             new InstallDatabaseAction(),
             new InstallFixturesAction(),
+            new LoadSystemDefaultsAction(),
             new RefreshAdminMenuAction(),
             new ReindexAction(),
             new InstallAssetsAction(),

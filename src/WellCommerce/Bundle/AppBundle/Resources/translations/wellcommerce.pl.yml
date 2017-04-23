@@ -471,6 +471,19 @@ admin:
     button:
         show_all: Pokaż wszystkie
 
+system_configuration:
+    heading:
+        edit: Konfiguracja systemu
+    fieldset:
+        general: Podstawowa konfiguracja
+        algolia: Ustawienia Algolia
+    label:
+        algolia_id: Application ID
+        algolia_key: API Key
+        wkhtmlbinary: WKHTML binary
+    tip:
+        wkhtmlbinary: "WKHTML is used to render HTML into PDF. Please choose a binary for your platform. Default binary is determined during the installation process."
+        algolia: "You need to configure the Algolia client. For that you need your Application ID and API Key. You can find both of them on your Algolia account. Indexes provided by default credentials are purged on a daily basis."
 
 
 

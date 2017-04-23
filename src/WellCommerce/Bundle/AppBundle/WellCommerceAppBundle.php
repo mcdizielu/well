@@ -30,6 +30,7 @@ final class WellCommerceAppBundle extends AbstractWellCommerceBundle
         parent::build($container);
         $container->addCompilerPass(new Compiler\ThemeCompilerPass());
         $container->addCompilerPass(new Compiler\LayoutBoxConfiguratorPass());
+        $container->addCompilerPass(new Compiler\RegisterSystemConfiguratorPass());
     }
     
     public static function registerBundles(Collection $bundles, string $environment)

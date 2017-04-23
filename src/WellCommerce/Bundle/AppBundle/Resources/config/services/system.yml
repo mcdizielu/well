@@ -1,0 +1,18 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+services:
+    system.configurator.collection:
+        class: Doctrine\Common\Collections\ArrayCollection
+        shared: false
+
+    generic.system.configurator:
+        class: WellCommerce\Bundle\AppBundle\Service\System\Configuration\GenericSystemConfigurator
+        arguments: ["@kernel", "@system_configuration.manager"]
+        tags:
+            - { name: system.configurator }

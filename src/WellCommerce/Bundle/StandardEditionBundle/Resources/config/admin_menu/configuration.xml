@@ -10,6 +10,15 @@
     </item>
 
     <item>
+        <identifier>system_configuration</identifier>
+        <css_class/>
+        <name>system_configuration</name>
+        <route_name>admin.system_configuration.index</route_name>
+        <parent>configuration</parent>
+        <hierarchy>0</hierarchy>
+    </item>
+
+    <item>
         <identifier>localization</identifier>
         <css_class/>
         <name>localization</name>
