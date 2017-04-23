@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\AppBundle\Importer;
+namespace WellCommerce\Bundle\AppBundle\Service\Currency\Importer;
 
 /**
  * Interface ExchangeRatesImporterInterface
@@ -20,7 +20,7 @@ namespace WellCommerce\Bundle\AppBundle\Importer;
 interface ExchangeRatesImporterInterface
 {
     /**
-     * Imports currency exchange-rates
+     * Imports the currency exchange rates
      */
     public function importExchangeRates();
 }

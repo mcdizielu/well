@@ -11,7 +11,7 @@
  */
 namespace WellCommerce\Bundle\AppBundle\Twig;
 
-use WellCommerce\Bundle\AppBundle\Helper\CurrencyHelperInterface;
+use WellCommerce\Bundle\AppBundle\Service\Currency\Helper\CurrencyHelperInterface;
 use WellCommerce\Component\DataSet\DataSetInterface;
 
 /**

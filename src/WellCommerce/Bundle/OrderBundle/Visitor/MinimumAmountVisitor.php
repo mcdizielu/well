@@ -15,7 +15,7 @@ namespace WellCommerce\Bundle\OrderBundle\Visitor;
 use WellCommerce\Bundle\AppBundle\Entity\Client;
 use WellCommerce\Bundle\AppBundle\Entity\ClientGroup;
 use WellCommerce\Bundle\AppBundle\Entity\MinimumOrderAmount;
-use WellCommerce\Bundle\AppBundle\Helper\CurrencyHelperInterface;
+use WellCommerce\Bundle\AppBundle\Service\Currency\Helper\CurrencyHelperInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
 
 /**

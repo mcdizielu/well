@@ -14,7 +14,7 @@ namespace WellCommerce\Bundle\OrderBundle\Visitor;
 
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use WellCommerce\Bundle\AppBundle\Entity\Client;
-use WellCommerce\Bundle\AppBundle\Helper\CurrencyHelperInterface;
+use WellCommerce\Bundle\AppBundle\Service\Currency\Helper\CurrencyHelperInterface;
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractContainerAware;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
 use WellCommerce\Bundle\OrderBundle\Provider\OrderModifierProviderInterface;
