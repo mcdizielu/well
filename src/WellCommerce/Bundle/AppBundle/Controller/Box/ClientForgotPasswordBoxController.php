@@ -13,7 +13,7 @@
 namespace WellCommerce\Bundle\AppBundle\Controller\Box;
 
 use WellCommerce\Bundle\AppBundle\Entity\Client;
-use WellCommerce\Bundle\AppBundle\Exception\ResetPasswordException;
+use WellCommerce\Bundle\AppBundle\Exception\NotFoundException;
 use WellCommerce\Bundle\AppBundle\Manager\ClientManager;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
 use WellCommerce\Component\Form\Elements\FormInterface;
@@ -48,7 +48,7 @@ class ClientForgotPasswordBoxController extends AbstractBoxController
                     'configuration' => $client->getShop()->getMailerConfiguration(),
                 ]);
                 
-            } catch (ResetPasswordException $e) {
+            } catch (\Exception $e) {
                 $this->getFlashHelper()->addError($e->getMessage());
             }
             

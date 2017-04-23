@@ -13,7 +13,7 @@
 namespace WellCommerce\Bundle\AppBundle\Manager;
 
 use WellCommerce\Bundle\AppBundle\Entity\Client;
-use WellCommerce\Bundle\AppBundle\Exception\ResetPasswordException;
+use WellCommerce\Bundle\AppBundle\Exception\NotFoundException;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 use WellCommerce\Bundle\CoreBundle\Manager\AbstractManager;
 
@@ -45,7 +45,7 @@ class ClientManager extends AbstractManager
         $client = $this->getRepository()->findOneBy(['clientDetails.username' => $username]);
         
         if (!$client instanceof Client) {
-            throw new ResetPasswordException(sprintf('client.flash.reset_password.email_not_found', $username));
+            throw NotFoundException::user($username);
         }
         
         return $client;
