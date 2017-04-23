@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\ReviewBundle\Configurator;
+namespace WellCommerce\Bundle\ReviewBundle\Service\Layout\Configurator;
 
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Bundle\ReviewBundle\Controller\Box\ReviewBoxController;
