@@ -8,7 +8,7 @@
 
 services:
     showcase.layout_box.configurator:
-        class: WellCommerce\Bundle\ShowcaseBundle\Configurator\ShowcaseBoxConfigurator
+        class: WellCommerce\Bundle\ShowcaseBundle\Service\Layout\Configurator\ShowcaseBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }

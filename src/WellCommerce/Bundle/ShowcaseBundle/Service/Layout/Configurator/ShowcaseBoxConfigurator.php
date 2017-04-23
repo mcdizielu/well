@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\ShowcaseBundle\Configurator;
+namespace WellCommerce\Bundle\ShowcaseBundle\Service\Layout\Configurator;
 
 use WellCommerce\Bundle\CatalogBundle\DataSet\Admin\CategoryDataSet;
 use WellCommerce\Bundle\CatalogBundle\DataSet\Admin\ProductStatusDataSet;
