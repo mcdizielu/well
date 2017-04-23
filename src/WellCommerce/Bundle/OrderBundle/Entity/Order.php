@@ -112,6 +112,11 @@ class Order implements EntityInterface
     /**
      * @var Collection
      */
+    protected $invoices;
+    
+    /**
+     * @var Collection
+     */
     protected $orderStatusHistory;
     
     /**
@@ -388,6 +393,11 @@ class Order implements EntityInterface
     public function setIssueInvoice(bool $issueInvoice)
     {
         $this->issueInvoice = $issueInvoice;
+    }
+    
+    public function getInvoices(): Collection
+    {
+        return $this->invoices;
     }
     
     public function getShop(): Shop
