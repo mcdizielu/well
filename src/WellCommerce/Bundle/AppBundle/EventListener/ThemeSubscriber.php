@@ -13,7 +13,7 @@ namespace WellCommerce\Bundle\AppBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
-use WellCommerce\Bundle\AppBundle\Storage\ShopStorageInterface;
+use WellCommerce\Bundle\AppBundle\Service\Shop\Storage\ShopStorageInterface;
 use WellCommerce\Bundle\AppBundle\Storage\ThemeStorageInterface;
 
 /**

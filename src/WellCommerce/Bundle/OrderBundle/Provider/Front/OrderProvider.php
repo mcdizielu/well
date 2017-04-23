@@ -12,7 +12,7 @@
 
 namespace WellCommerce\Bundle\OrderBundle\Provider\Front;
 
-use WellCommerce\Bundle\AppBundle\Storage\ShopStorageInterface;
+use WellCommerce\Bundle\AppBundle\Service\Shop\Storage\ShopStorageInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Request\RequestHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Security\SecurityHelperInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;

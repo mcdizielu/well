@@ -16,7 +16,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use WellCommerce\Bundle\AppBundle\Entity\Client;
 use WellCommerce\Bundle\AppBundle\Entity\Shop;
-use WellCommerce\Bundle\AppBundle\Storage\ShopStorageInterface;
+use WellCommerce\Bundle\AppBundle\Service\Shop\Storage\ShopStorageInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Security\SecurityHelperInterface;
 use WellCommerce\Bundle\OrderBundle\Calculator\ShippingCalculatorInterface;
 use WellCommerce\Bundle\OrderBundle\Calculator\ShippingSubjectInterface;

@@ -12,7 +12,7 @@
 namespace WellCommerce\Bundle\AppBundle\Twig;
 
 use WellCommerce\Bundle\AppBundle\Entity\Shop;
-use WellCommerce\Bundle\AppBundle\Storage\ShopStorageInterface;
+use WellCommerce\Bundle\AppBundle\Service\Shop\Storage\ShopStorageInterface;
 use WellCommerce\Component\DataSet\DataSetInterface;
 
 /**

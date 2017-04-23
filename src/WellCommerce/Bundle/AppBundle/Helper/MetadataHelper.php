@@ -3,7 +3,7 @@
 namespace WellCommerce\Bundle\AppBundle\Helper;
 
 use WellCommerce\Bundle\AppBundle\Entity\Meta;
-use WellCommerce\Bundle\AppBundle\Storage\ShopStorageInterface;
+use WellCommerce\Bundle\AppBundle\Service\Shop\Storage\ShopStorageInterface;
 
 /**
  * Class MetadataStorage

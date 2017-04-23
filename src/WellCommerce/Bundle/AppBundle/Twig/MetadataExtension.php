@@ -9,11 +9,11 @@
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */
+
 namespace WellCommerce\Bundle\AppBundle\Twig;
 
 use WellCommerce\Bundle\AppBundle\Entity\Meta;
 use WellCommerce\Bundle\AppBundle\Helper\MetadataHelper;
-use WellCommerce\Bundle\AppBundle\Storage\ShopStorageInterface;
 
 /**
  * Class MetadataExtension
@@ -23,7 +23,7 @@ use WellCommerce\Bundle\AppBundle\Storage\ShopStorageInterface;
 class MetadataExtension extends \Twig_Extension
 {
     /**
-     * @var ShopStorageInterface
+     * @var MetadataHelper
      */
     protected $metadataHelper;
     

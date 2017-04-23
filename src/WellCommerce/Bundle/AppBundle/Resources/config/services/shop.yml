@@ -8,7 +8,7 @@
 
 services:
     shop.storage:
-        class: WellCommerce\Bundle\AppBundle\Storage\ShopStorage
+        class: WellCommerce\Bundle\AppBundle\Service\Shop\Storage\ShopStorage
 
     shop.subscriber:
         class: WellCommerce\Bundle\AppBundle\EventListener\ShopSubscriber
