@@ -20,7 +20,7 @@ services:
             - [setContainer, ['@service_container']]
 
     wishlist.configurator:
-        class: WellCommerce\Bundle\WishlistBundle\Configurator\WishlistBoxConfigurator
+        class: WellCommerce\Bundle\WishlistBundle\Service\Layout\Configurator\WishlistBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }
