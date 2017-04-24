@@ -24,6 +24,10 @@ services:
         class: WellCommerce\Bundle\CoreBundle\Helper\Image\ImageHelper
         arguments: ['@liip_imagine.cache.manager', '@liip_imagine.filter.configuration']
 
+    pdf.helper:
+        class: WellCommerce\Bundle\CoreBundle\Helper\Pdf\PdfHelper
+        arguments: ['@knp_snappy.pdf', '@system_configuration.manager']
+
     request.helper:
         class: WellCommerce\Bundle\CoreBundle\Helper\Request\RequestHelper
         arguments: ['@request_stack','%locale%']

@@ -2,8 +2,8 @@
 
 namespace WellCommerce\Bundle\InvoiceBundle\Processor;
 
-use Knp\Snappy\Pdf;
 use Symfony\Component\HttpFoundation\Response;
+use WellCommerce\Bundle\CoreBundle\Helper\Pdf\PdfHelperInterface;
 use WellCommerce\Bundle\InvoiceBundle\Entity\Invoice;
 use WellCommerce\Bundle\InvoiceBundle\Generator\InvoiceNumberGeneratorInterface;
 
@@ -19,12 +19,15 @@ final class GenericInvoiceProcessor implements InvoiceProcessorInterface
      */
     private $invoiceNumberGenerator;
     
-    private $pdfGenerator;
+    /**
+     * @var PdfHelperInterface
+     */
+    private $pdfHelper;
     
-    public function __construct(InvoiceNumberGeneratorInterface $invoiceNumberGenerator, Pdf $pdfGenerator)
+    public function __construct(InvoiceNumberGeneratorInterface $invoiceNumberGenerator, PdfHelperInterface $pdfHelper)
     {
         $this->invoiceNumberGenerator = $invoiceNumberGenerator;
-        $this->pdfGenerator           = $pdfGenerator;
+        $this->pdfHelper              = $pdfHelper;
     }
     
     public function getAlias(): string
