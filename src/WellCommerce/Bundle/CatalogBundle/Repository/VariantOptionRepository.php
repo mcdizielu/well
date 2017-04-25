@@ -28,9 +28,9 @@ class VariantOptionRepository extends EntityRepository implements VariantOptionR
         $queryBuilder->select('attribute_translation.name AS attributeName, value_translation.name AS valueName, IDENTITY(variant_option.attributeValue) AS value');
         $queryBuilder->leftJoin('variant_option.variant', 'variants');
         $queryBuilder->leftJoin('variant_option.attribute', 'attributes');
-        $queryBuilder->leftJoin('attributes.translations', 'attribute_translation');
+        $queryBuilder->leftJoin('attributes.translations', 'attribute_translation', Expr\Join::WITH, 'attribute_translation.locale = :locale');
         $queryBuilder->leftJoin('variant_option.attributeValue', 'attribute_values');
-        $queryBuilder->leftJoin('attribute_values.translations', 'value_translation');
+        $queryBuilder->leftJoin('attribute_values.translations', 'value_translation', Expr\Join::WITH, 'value_translation.locale = :locale');
         $queryBuilder->leftJoin('variants.product', 'products');
         $queryBuilder->innerJoin('products.categories', 'categories', Expr\Join::WITH, 'categories.id = :category');
         $queryBuilder->groupBy('attribute_translation.name');
