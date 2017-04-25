@@ -22,7 +22,7 @@ use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\EntityRepository;
  */
 class VariantOptionRepository extends EntityRepository implements VariantOptionRepositoryInterface
 {
-    public function getVariantOptionsForCategory(Category $category)
+    public function getVariantOptionsForCategory(Category $category, string $locale)
     {
         $queryBuilder = $this->getQueryBuilder();
         $queryBuilder->select('attribute_translation.name AS attributeName, value_translation.name AS valueName, IDENTITY(variant_option.attributeValue) AS value');
@@ -37,6 +37,7 @@ class VariantOptionRepository extends EntityRepository implements VariantOptionR
         $queryBuilder->addGroupBy('value_translation.name');
         $queryBuilder->addGroupBy('variant_option.attributeValue');
         $queryBuilder->setParameter('category', $category->getId());
+        $queryBuilder->setParameter('locale', $locale);
         
         return $queryBuilder->getQuery()->getResult();
     }

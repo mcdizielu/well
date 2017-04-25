@@ -55,7 +55,7 @@ class LayeredNavigationBoxController extends AbstractBoxController
     private function getAttributesForCategory(Category $category): array
     {
         $helper     = $this->get('variant.helper');
-        $attributes = $this->get('variant_option.repository')->getVariantOptionsForCategory($category);
+        $attributes = $this->get('variant_option.repository')->getVariantOptionsForCategory($category, $this->getRequestHelper()->getCurrentLocale());
         $filter     = [];
         
         foreach ($attributes as $option) {
