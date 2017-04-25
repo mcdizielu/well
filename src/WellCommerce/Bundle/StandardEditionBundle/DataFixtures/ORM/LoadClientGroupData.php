@@ -29,6 +29,7 @@ class LoadClientGroupData extends AbstractDataFixture
             return;
         }
         
+        $currency    = $this->randomizeSamples('currency', LoadCurrencyData::$samples);
         $clientGroup = new ClientGroup();
         $clientGroup->setDiscount(10);
         foreach ($this->getLocales() as $locale) {
@@ -36,6 +37,10 @@ class LoadClientGroupData extends AbstractDataFixture
         }
         
         $clientGroup->mergeNewTranslations();
+        
+        $clientGroup->getMinimumOrderAmount()->setValue(0);
+        $clientGroup->getMinimumOrderAmount()->setCurrency($currency->getCode());
+        
         $manager->persist($clientGroup);
         $manager->flush();
         

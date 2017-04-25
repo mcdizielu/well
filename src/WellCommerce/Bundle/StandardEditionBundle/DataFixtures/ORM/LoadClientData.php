@@ -69,6 +69,7 @@ class LoadClientData extends AbstractDataFixture
     
     private function createDemoClient(ObjectManager $manager)
     {
+        $currency       = $this->randomizeSamples('currency', LoadCurrencyData::$samples);
         $email          = 'demo@wellcommerce.org';
         $fakerGenerator = $this->getFakerGenerator();
         $firstName      = $fakerGenerator->firstName;
@@ -116,6 +117,9 @@ class LoadClientData extends AbstractDataFixture
         $client->setShippingAddress($shippingAddress);
         
         $client->setShop($this->getReference('shop'));
+        
+        $client->getMinimumOrderAmount()->setValue(0);
+        $client->getMinimumOrderAmount()->setCurrency($currency->getCode());
         
         $manager->persist($client);
     }
