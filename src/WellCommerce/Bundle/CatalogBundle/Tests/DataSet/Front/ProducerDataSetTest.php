@@ -25,14 +25,17 @@ class ProducerDataSetTest extends AbstractDataSetTestCase
     {
         return $this->container->get('producer.dataset.front');
     }
-
+    
     protected function getColumns()
     {
         return [
-            'id'       => 'producer.id',
-            'name'     => 'producer_translation.name',
-            'route'    => 'IDENTITY(producer_translation.route)',
-            'products' => 'COUNT(producer_products.id)',
+            'id'        => 'producer.id',
+            'enabled'   => 'producer.enabled',
+            'hierarchy' => 'producer.hierarchy',
+            'name'      => 'producer_translation.name',
+            'route'     => 'IDENTITY(producer_translation.route)',
+            'shop'      => 'producer_shops.id',
+            'products'  => 'COUNT(producer_products.id)',
         ];
     }
 }

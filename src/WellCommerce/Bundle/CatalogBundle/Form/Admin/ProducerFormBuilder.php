@@ -32,7 +32,7 @@ class ProducerFormBuilder extends AbstractFormBuilder
             'name'  => 'required_data',
             'label' => 'common.fieldset.general'
         ]));
-
+        
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [
             'name'        => 'translations',
             'label'       => 'common.fieldset.translations',
@@ -57,7 +57,20 @@ class ProducerFormBuilder extends AbstractFormBuilder
                 $this->getRule('required')
             ],
         ]));
-
+    
+        $requiredData->addChild($this->getElement('checkbox', [
+            'name'    => 'enabled',
+            'label'   => 'common.label.enabled',
+        ]));
+        
+        $requiredData->addChild($this->getElement('text_field', [
+            'name'  => 'hierarchy',
+            'label' => 'common.label.hierarchy',
+            'rules' => [
+                $this->getRule('required'),
+            ],
+        ]));
+        
         $this->addMetadataFieldset($form, $this->get('producer.repository'));
 
         $mediaData = $form->addChild($this->getElement('nested_fieldset', [

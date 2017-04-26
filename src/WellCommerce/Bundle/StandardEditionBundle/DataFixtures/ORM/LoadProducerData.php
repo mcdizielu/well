@@ -15,8 +15,8 @@ namespace WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM;
 use Doctrine\Common\Persistence\ObjectManager;
 use WellCommerce\Bundle\CatalogBundle\Entity\Producer;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProducerTranslation;
-use WellCommerce\Bundle\StandardEditionBundle\DataFixtures\AbstractDataFixture;
 use WellCommerce\Bundle\CoreBundle\Helper\Helper;
+use WellCommerce\Bundle\StandardEditionBundle\DataFixtures\AbstractDataFixture;
 
 /**
  * Class LoadProducerData
@@ -55,10 +55,13 @@ class LoadProducerData extends AbstractDataFixture
     private function addProducers(ObjectManager $manager)
     {
         $shop = $this->getReference('shop');
+        $i    = 0;
         
         foreach (self::$samples as $name) {
             $producer = new Producer();
             $producer->addShop($shop);
+            $producer->setEnabled(true);
+            $producer->setHierarchy($i++);
             foreach ($this->getLocales() as $locale) {
                 /** @var ProducerTranslation $translation */
                 $translation = $producer->translate($locale->getCode());

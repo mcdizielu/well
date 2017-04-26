@@ -19,7 +19,9 @@ use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
 use WellCommerce\Bundle\AppBundle\Entity\Media;
 use WellCommerce\Bundle\AppBundle\Entity\ShopCollectionAwareTrait;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Sortable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 use WellCommerce\Extra\CatalogBundle\Entity\ProducerExtraTrait;
 
@@ -36,6 +38,8 @@ class Producer implements EntityInterface
     use Blameable;
     use ShopCollectionAwareTrait;
     use ProducerExtraTrait;
+    use Sortable;
+    use Enableable;
     
     /**
      * @var Media

@@ -35,11 +35,13 @@ class ProducerDataSet extends BaseDataSet
     public function configureOptions(DataSetConfiguratorInterface $configurator)
     {
         $configurator->setColumns([
-            'id'       => 'producer.id',
-            'name'     => 'producer_translation.name',
-            'route'    => 'IDENTITY(producer_translation.route)',
-            'shop'     => 'producer_shops.id',
-            'products' => 'COUNT(producer_products.id)',
+            'id'        => 'producer.id',
+            'enabled'   => 'producer.enabled',
+            'hierarchy' => 'producer.hierarchy',
+            'name'      => 'producer_translation.name',
+            'route'     => 'IDENTITY(producer_translation.route)',
+            'shop'      => 'producer_shops.id',
+            'products'  => 'COUNT(producer_products.id)',
         ]);
         
         $configurator->setColumnTransformers([
@@ -61,6 +63,7 @@ class ProducerDataSet extends BaseDataSet
         $queryBuilder->leftJoin('producer.products', 'producer_products');
         $queryBuilder->leftJoin('producer.shops', 'producer_shops');
         $queryBuilder->where($queryBuilder->expr()->eq('producer_shops.id', $this->getShopStorage()->getCurrentShopIdentifier()));
+        $queryBuilder->andWhere($queryBuilder->expr()->eq('producer.enabled', true));
         
         return $queryBuilder;
     }
