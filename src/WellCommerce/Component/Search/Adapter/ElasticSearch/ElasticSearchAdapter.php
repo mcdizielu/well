@@ -15,9 +15,9 @@ namespace WellCommerce\Component\Search\Adapter\ElasticSearch;
 use Doctrine\Common\Collections\Collection;
 use Elasticsearch\Client;
 use Elasticsearch\ClientBuilder;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use WellCommerce\Component\Search\Adapter\AdapterInterface;
 use WellCommerce\Component\Search\Adapter\QueryBuilderInterface;
+use WellCommerce\Component\Search\Adapter\SearchAdapterConfiguratorInterface;
 use WellCommerce\Component\Search\Model\DocumentInterface;
 use WellCommerce\Component\Search\Model\FieldInterface;
 use WellCommerce\Component\Search\Request\SearchRequestInterface;
@@ -30,25 +30,18 @@ use WellCommerce\Component\Search\Request\SearchRequestInterface;
 final class ElasticSearchAdapter implements AdapterInterface
 {
     /**
-     * @var array
+     * @var SearchAdapterConfiguratorInterface
      */
-    private $options = [];
+    private $configurator;
     
     /**
      * @var Client
      */
     private $client;
     
-    /**
-     * ElasticSearchAdapter constructor.
-     *
-     * @param array $options
-     */
-    public function __construct(array $options = [])
+    public function __construct(SearchAdapterConfiguratorInterface $configurator)
     {
-        $resolver = new OptionsResolver();
-        $this->configureOptions($resolver);
-        $this->options = $resolver->resolve($options);
+        $this->configurator = $configurator;
     }
     
     public function search(SearchRequestInterface $request): array
@@ -56,7 +49,7 @@ final class ElasticSearchAdapter implements AdapterInterface
         $params = [
             'index' => $this->getIndexName($request->getLocale()),
             'type'  => $request->getType()->getName(),
-            "size"  => $this->options['result_limit'],
+            "size"  => $this->getOption('maxResults'),
             'body'  => $this->createQueryBuilder($request)->getQuery(),
         ];
         
@@ -109,7 +102,7 @@ final class ElasticSearchAdapter implements AdapterInterface
     
     public function getIndexName(string $locale): string
     {
-        return sprintf('%s%s', $this->options['index_prefix'], $locale);
+        return sprintf('%s%s', $this->getOption('indexPrefix'), $locale);
     }
     
     public function createIndex(string $locale, string $type)
@@ -118,8 +111,8 @@ final class ElasticSearchAdapter implements AdapterInterface
             'index' => $this->getIndexName($locale),
             'body'  => [
                 'settings' => [
-                    'number_of_shards'   => $this->options['number_of_shards'],
-                    'number_of_replicas' => $this->options['number_of_replicas'],
+                    'number_of_shards'   => $this->getOption('shards'),
+                    'number_of_replicas' => $this->getOption('replicas'),
                 ],
             ],
         ]);
@@ -156,33 +149,9 @@ final class ElasticSearchAdapter implements AdapterInterface
     
     private function createQueryBuilder(SearchRequestInterface $request): QueryBuilderInterface
     {
-        return new $this->options['query_builder_class']($request, $this->options['query_min_length']);
-    }
-    
-    private function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setRequired([
-            'index_prefix',
-            'query_min_length',
-            'result_limit',
-            'number_of_shards',
-            'number_of_replicas',
-            'query_builder_class',
-        ]);
-        
-        $resolver->setDefault('index_prefix', 'wellcommerce_');
-        $resolver->setDefault('query_min_length', 3);
-        $resolver->setDefault('result_limit', 100);
-        $resolver->setDefault('number_of_shards', 2);
-        $resolver->setDefault('number_of_replicas', 0);
-        $resolver->setDefault('query_builder_class', ElasticSearchQueryBuilder::class);
-        
-        $resolver->setAllowedTypes('index_prefix', 'string');
-        $resolver->setAllowedTypes('query_min_length', 'integer');
-        $resolver->setAllowedTypes('result_limit', 'integer');
-        $resolver->setAllowedTypes('number_of_shards', 'integer');
-        $resolver->setAllowedTypes('number_of_replicas', 'integer');
-        $resolver->setAllowedTypes('query_builder_class', 'string');
+        $queryBuilderClass = $this->getOption('builderClass');
+
+        return new $queryBuilderClass($request, $this->getOption('termMinLength'));
     }
     
     private function createDocumentBody(DocumentInterface $document): array
@@ -221,5 +190,10 @@ final class ElasticSearchAdapter implements AdapterInterface
         }
         
         return $identifiers;
+    }
+    
+    private function getOption(string $name)
+    {
+        return $this->configurator->getSearchAdapterOptions()[$name];
     }
 }

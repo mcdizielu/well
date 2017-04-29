@@ -36,3 +36,17 @@ services:
         tags:
             - { name: request.param_converter, converter: search_request, priority: 10 }
         arguments: ['@search.manager']
+
+    algolia.system.configurator:
+        class: WellCommerce\Bundle\SearchBundle\Service\System\Configuration\AlgoliaConfigurator
+        arguments: ["@kernel", "@system_configuration.manager"]
+        lazy: true
+        tags:
+            - { name: system.configurator, alias: 'algolia'}
+
+    elasticsearch.system.configurator:
+        class: WellCommerce\Bundle\SearchBundle\Service\System\Configuration\ElasticSearchConfigurator
+        arguments: ["@kernel", "@system_configuration.manager"]
+        lazy: true
+        tags:
+            - { name: system.configurator, alias: 'elastic_search'}

@@ -12,7 +12,13 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  */
 interface SystemConfiguratorInterface
 {
-    public function saveParameters(array $data);
+    public function getAlias(): string;
+
+    public function getParameter(string $name);
+
+    public function getParameters(): array;
+
+    public function saveParameters(array $parameters);
     
     public function getDefaults(): array;
     

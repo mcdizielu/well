@@ -37,7 +37,8 @@ class SystemConfigurationController extends AbstractController
         if ($form->handleRequest()->isSubmitted()) {
             $data = $form->getValue();
             $this->getConfigurators()->map(function (SystemConfiguratorInterface $configurator) use ($data) {
-                $configurator->saveParameters($data);
+                $parameters = $data[$configurator->getAlias()] ?? [];
+                $configurator->saveParameters($parameters);
             });
             
             $this->getFlashHelper()->addSuccess('system_configuration.flash.saved');
@@ -47,7 +48,7 @@ class SystemConfigurationController extends AbstractController
         
         return $this->displayTemplate('index', ['form' => $form]);
     }
-    
+
     private function getConfigurators(): Collection
     {
         return $this->get('system.configurator.collection');

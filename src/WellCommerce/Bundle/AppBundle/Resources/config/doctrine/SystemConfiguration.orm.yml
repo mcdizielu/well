@@ -17,15 +17,10 @@ WellCommerce\Bundle\AppBundle\Entity\SystemConfiguration:
             generator:
                 strategy: AUTO
     fields:
-        paramName:
+        name:
             type: string
             nullable: false
-            column: param_name
-        paramValue:
-            type: string
+            column: name
+        parameters:
+            type: json_array
             nullable: false
-            column: param_value
-        nodeName:
-            type: string
-            nullable: true
-            column: node_name

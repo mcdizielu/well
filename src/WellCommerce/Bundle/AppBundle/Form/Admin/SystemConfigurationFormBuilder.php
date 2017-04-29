@@ -31,13 +31,13 @@ class SystemConfigurationFormBuilder extends AbstractFormBuilder
     
     public function buildForm(FormInterface $form)
     {
-        $form->addFilter($this->getFilter('no_code'));
-        $form->addFilter($this->getFilter('trim'));
-        $form->addFilter($this->getFilter('secure'));
-        
         $this->getConfigurators()->map(function (SystemConfiguratorInterface $configurator) use ($form) {
             $configurator->addFormFields($this, $form);
         });
+        
+        $form->addFilter($this->getFilter('no_code'));
+        $form->addFilter($this->getFilter('trim'));
+        $form->addFilter($this->getFilter('secure'));
     }
     
     private function getConfigurators(): Collection

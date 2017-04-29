@@ -22,23 +22,23 @@ use WellCommerce\Bundle\CoreBundle\Manager\AbstractManager;
  */
 final class SystemConfigurationManager extends AbstractManager
 {
-    public function getConfiguration(string $paramName)
+    public function getConfiguration(string $name)
     {
-        return $this->getRepository()->findOneBy(['paramName' => $paramName]);
+        return $this->getRepository()->findOneBy(['name' => $name]);
     }
     
-    public function updateParameter(string $paramName, string $paramValue)
+    public function saveParameters(string $name, array $parameters)
     {
-        $configuration = $this->getConfiguration($paramName);
+        $configuration = $this->getConfiguration($name);
         if (!$configuration instanceof SystemConfiguration) {
             /** @var SystemConfiguration $configuration */
             $configuration = $this->initResource();
-            $configuration->setParamName($paramName);
+            $configuration->setName($name);
             $this->getEntityManager()->persist($configuration);
         }
-        
-        $configuration->setParamValue($paramValue);
-        
+
+        $configuration->setParameters($parameters);
+
         $this->getEntityManager()->flush();
     }
 }

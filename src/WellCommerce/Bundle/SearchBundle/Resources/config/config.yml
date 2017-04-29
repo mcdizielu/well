@@ -15,19 +15,7 @@ well_commerce_search:
         adapters:
             algolia:
                 class: WellCommerce\Component\Search\Adapter\Algolia\AlgoliaSearchAdapter
-                options:
-                    app_id: "%algolia_id%"
-                    app_key: "%algolia_key%"
-                    index_prefix: "%search_index_prefix%"
-                    query_min_length: 3
-                    result_limit: 100
-                    query_builder_class: WellCommerce\Component\Search\Adapter\Algolia\AlgoliaQueryBuilder
+                configurator: 'algolia.system.configurator'
             elasticsearch:
                 class: WellCommerce\Component\Search\Adapter\ElasticSearch\ElasticSearchAdapter
-                options:
-                    number_of_shards: 2
-                    number_of_replicas: 0
-                    index_prefix: "%search_index_prefix%"
-                    query_min_length: 3
-                    result_limit: 100
-                    query_builder_class: WellCommerce\Component\Search\Adapter\ElasticSearch\ElasticSearchQueryBuilder
+                configurator: 'elasticsearch.system.configurator'

@@ -11,8 +11,9 @@ services:
         class: Doctrine\Common\Collections\ArrayCollection
         shared: false
 
-    generic.system.configurator:
-        class: WellCommerce\Bundle\AppBundle\Service\System\Configuration\GenericSystemConfigurator
+    wkhtml.system.configurator:
+        class: WellCommerce\Bundle\AppBundle\Service\System\Configuration\WkhtmlSystemConfigurator
         arguments: ["@kernel", "@system_configuration.manager"]
+        lazy: true
         tags:
-            - { name: system.configurator }
+            - { name: system.configurator, alias: 'wkhtml' }

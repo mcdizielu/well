@@ -14,6 +14,7 @@ namespace WellCommerce\Bundle\SearchBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\DependencyInjection\Reference;
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractExtension;
 
 /**
@@ -51,7 +52,7 @@ class WellCommerceSearchExtension extends AbstractExtension
     private function processAdapterConfiguration(array $configuration, ContainerBuilder $container)
     {
         $definition = new Definition($configuration['class']);
-        $definition->addArgument($configuration['options']);
+        $definition->addArgument(new Reference($configuration['configurator']));
         $definition->setPublic(false);
         $container->setDefinition('search.adapter', $definition);
     }

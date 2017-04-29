@@ -18,37 +18,26 @@ class SystemConfiguration implements EntityInterface
     use Timestampable;
     use Blameable;
     
-    private $paramName  = '';
-    private $paramValue = '';
-    private $nodeName   = '';
+    private $name       = '';
+    private $parameters = [];
     
-    public function getParamName(): string
+    public function getName() : string
     {
-        return $this->paramName;
+        return $this->name;
     }
     
-    public function setParamName(string $paramName)
+    public function setName(string $name)
     {
-        $this->paramName = $paramName;
+        $this->name = $name;
     }
-    
-    public function getParamValue(): string
+
+    public function getParameters() : array
     {
-        return $this->paramValue;
+        return $this->parameters;
     }
-    
-    public function setParamValue(string $paramValue)
+
+    public function setParameters(array $parameters)
     {
-        $this->paramValue = $paramValue;
-    }
-    
-    public function getNodeName(): string
-    {
-        return $this->nodeName;
-    }
-    
-    public function setNodeName(string $nodeName)
-    {
-        $this->nodeName = $nodeName;
+        $this->parameters = $parameters;
     }
 }

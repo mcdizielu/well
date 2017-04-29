@@ -6,3 +6,11 @@ search:
     flash:
         no_results: Brak wyników wyszukiwania
 
+algolia:
+    fieldset:
+        settings: Ustawienia Algolia
+    label:
+        application_id: Application ID
+        api_key: API Key
+    tip:
+        about: "You need to configure the Algolia client. For that you need your Application ID and API Key. You can find both of them on your Algolia account. Indexes provided by default credentials are purged on a daily basis."

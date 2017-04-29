@@ -6,7 +6,6 @@ use Doctrine\Common\Collections\Collection;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use WellCommerce\Bundle\AppBundle\Manager\SystemConfigurationManager;
 use WellCommerce\Bundle\AppBundle\Service\System\Configuration\SystemConfiguratorInterface;
 
 /**
@@ -25,20 +24,8 @@ class LoadDefaultSystemConfigurationCommand extends ContainerAwareCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->getConfigurators()->map(function (SystemConfiguratorInterface $configurator) {
-            $this->loadDefaults($configurator);
+            $configurator->saveParameters($configurator->getDefaults());
         });
-    }
-    
-    private function loadDefaults(SystemConfiguratorInterface $configurator)
-    {
-        foreach ($configurator->getDefaults() as $paramName => $paramValue) {
-            $this->getManager()->updateParameter($paramName, $paramValue);
-        }
-    }
-    
-    private function getManager(): SystemConfigurationManager
-    {
-        return $this->getContainer()->get('system_configuration.manager');
     }
     
     private function getConfigurators(): Collection

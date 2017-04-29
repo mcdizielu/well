@@ -34,7 +34,8 @@ class RegisterSystemConfiguratorPass implements CompilerPassInterface
         $definition = $container->getDefinition('system.configurator.collection');
         
         foreach ($container->findTaggedServiceIds($tag) as $id => $attributes) {
-            $definition->addMethodCall('add', [
+            $definition->addMethodCall('set', [
+                $attributes[0]['alias'],
                 new Reference($id),
             ]);
         }
