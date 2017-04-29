@@ -100,6 +100,7 @@ client:
         registration:
             error: Форма содержит недопустимые данные.
             success: Регистрация завершена. Теперь вы можете войти в свой аккаунт.
+            pending: Ваша учетная запись была создана, но еще не активен.
         reset_password:
             wrong_email: Указан неправильный адрес электронной почты.
             email_not_found: Такой e-mail не зарегистрирован.
@@ -374,6 +375,7 @@ shop:
         theme: Тема по умолчанию
         default_country: Страна по умолчанию
         default_currency: Валюта по умолчанию
+        enable_client: Учетная запись клиента включена
         mailer_configuration:
             from: От кого (e-mail)
             host: SMTP хост
@@ -381,6 +383,8 @@ shop:
             user: SMTP имя пользователя
             pass: SMTP пароль
             bcc: BCC
+    comment:
+        enable_client: Аккаунт будет активен после регистрации
 
 tax:
     heading:

@@ -35,6 +35,12 @@ WellCommerce\Bundle\AppBundle\Entity\Shop:
             length: 16
             nullable: false
             column: default_currency
+        enableClient:
+            type: boolean
+            nullable: false
+            column: enable_client
+            options:
+                default: true
     manyToOne:
         company:
             targetEntity: WellCommerce\Bundle\AppBundle\Entity\Company

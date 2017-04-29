@@ -37,7 +37,8 @@ class Shop implements EntityInterface
     protected $url             = '';
     protected $defaultCountry  = '';
     protected $defaultCurrency = '';
-    
+    protected $enableClient    = true;
+
     /**
      * @var MinimumOrderAmount
      */
@@ -157,6 +158,16 @@ class Shop implements EntityInterface
     public function setMinimumOrderAmount(MinimumOrderAmount $minimumOrderAmount)
     {
         $this->minimumOrderAmount = $minimumOrderAmount;
+    }
+
+    public function isEnableClient(): bool
+    {
+        return $this->enableClient;
+    }
+
+    public function setEnableClient(bool $enableClient)
+    {
+        $this->enableClient = $enableClient;
     }
 
     public function translate($locale = null, $fallbackToDefault = true): ShopTranslation

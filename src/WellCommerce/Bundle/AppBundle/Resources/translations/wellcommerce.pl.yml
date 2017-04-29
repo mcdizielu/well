@@ -105,6 +105,7 @@ client:
         registration:
             error: Formularz zawiera niepoprawne dane.
             success: Twoje konto zostało założone. Możesz się teraz zalogować.
+            pending: Twoje konto zostało założone ale nie jest jeszcze aktywne.
         reset_password:
             wrong_email: Podano niepoprawny adres e-mail.
             email_not_found: Podany adres e-mail nie występuje w naszej bazie.
@@ -380,6 +381,7 @@ shop:
         theme: Domyślny szablon sklepu
         default_country: Domyślne państwo
         default_currency: Domyślna waluta
+        enable_client: Włącz konto klienta
         mailer_configuration:
             from: Nadawca (e-mail)
             host: Host SMTP
@@ -387,6 +389,8 @@ shop:
             user: Login SMTP
             pass: Hasło SMTP
             bcc: BCC
+    comment:
+        enable_client: Konto klienta będzie aktywne po rejestracji
 
 tax:
     heading:

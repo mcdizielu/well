@@ -100,6 +100,7 @@ client:
         registration:
             error: Form contains invalid data.
             success: Registration complete. Please sign-in now.
+            pending: Your account has been created but is not yet active.
         reset_password:
             wrong_email: Wrong e-mail adress was given.
             email_not_found: Such e-mail does not exists.
@@ -377,6 +378,7 @@ shop:
         theme: Default theme
         default_country: Default country
         default_currency: Default currency
+        enable_client: Client account enabled
         mailer_configuration:
             from: Sender (e-mail)
             host: SMTP host
@@ -384,6 +386,8 @@ shop:
             user: SMTP username
             pass: SMTP password
             bcc: BCC
+    comment:
+        enable_client: The account will be active after registration
 
 tax:
     heading:

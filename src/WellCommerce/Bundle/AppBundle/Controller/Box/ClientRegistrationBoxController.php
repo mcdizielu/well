@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\AppBundle\Controller\Box;
 
 use Symfony\Component\HttpFoundation\Response;
+use WellCommerce\Bundle\AppBundle\Entity\Client;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
 use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 
@@ -25,8 +26,8 @@ class ClientRegistrationBoxController extends AbstractBoxController
 {
     public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
-        $manager  = $this->getManager();
-        $resource = $manager->initResource();
+        /** @var Client $resource */
+        $resource = $this->getManager()->initResource();
         
         $form = $this->formBuilder->createForm($resource, [
             'validation_groups' => ['client_registration'],
@@ -34,10 +35,14 @@ class ClientRegistrationBoxController extends AbstractBoxController
         
         if ($form->handleRequest()->isSubmitted()) {
             if ($form->isValid()) {
-                $manager->createResource($resource);
-                
-                $this->getFlashHelper()->addSuccess('client.flash.registration.success');
-                
+                $this->getManager()->createResource($resource);
+
+                if ($resource->isEnabled()) {
+                    $this->getFlashHelper()->addSuccess('client.flash.registration.success');
+                } else {
+                    $this->getFlashHelper()->addSuccess('client.flash.registration.pending');
+                }
+
                 return $this->getRouterHelper()->redirectTo('front.client.login');
             }
             

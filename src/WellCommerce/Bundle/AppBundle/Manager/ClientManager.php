@@ -34,6 +34,7 @@ class ClientManager extends AbstractManager
         $client->getBillingAddress()->setCountry($shop->getDefaultCountry());
         $client->getShippingAddress()->setCountry($shop->getDefaultCountry());
         $client->setClientGroup($shop->getClientGroup());
+        $client->setEnabled($shop->isEnableClient());
         
         $this->dispatchEvent(self::POST_ENTITY_INIT_EVENT, $client);
         
