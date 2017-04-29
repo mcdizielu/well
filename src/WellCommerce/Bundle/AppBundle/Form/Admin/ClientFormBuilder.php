@@ -49,7 +49,12 @@ class ClientFormBuilder extends AbstractFormBuilder
             'options'     => $this->get('client_group.dataset.admin')->getResult('select'),
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('client_group.repository')),
         ]));
-        
+
+        $requiredData->addChild($this->getElement('checkbox', [
+            'name'  => 'enabled',
+            'label' => 'common.label.enabled',
+        ]));
+
         $clientDetailsData = $requiredData->addChild($this->getElement('nested_fieldset', [
             'name'  => 'clientDetails',
             'label' => 'client.heading.client_details',

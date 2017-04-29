@@ -16,8 +16,10 @@ use Doctrine\Common\Collections\Collection;
 use Knp\DoctrineBehaviors\Model\Blameable\Blameable;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Symfony\Component\Security\Core\Encoder\EncoderAwareInterface;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Security\Core\User\EquatableInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
@@ -28,11 +30,12 @@ use WellCommerce\Extra\AppBundle\Entity\ClientExtraTrait;
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class Client implements EntityInterface, \Serializable, UserInterface, EquatableInterface, EncoderAwareInterface
+class Client implements EntityInterface, \Serializable, UserInterface, EquatableInterface, EncoderAwareInterface, AdvancedUserInterface
 {
     const ROLE_CLIENT = 'ROLE_CLIENT';
     
     use Identifiable;
+    use Enableable;
     use Timestampable;
     use Blameable;
     use ShopAwareTrait;
@@ -111,12 +114,12 @@ class Client implements EntityInterface, \Serializable, UserInterface, Equatable
     
     public function serialize()
     {
-        return serialize([$this->id, $this->getUsername(), $this->getPassword()]);
+        return serialize([$this->id, $this->getUsername(), $this->getPassword(), $this->isEnabled()]);
     }
     
     public function unserialize($serialized)
     {
-        list($this->id, $username, $password) = unserialize($serialized);
+        list($this->id, $username, $password, $enabled) = unserialize($serialized);
         if (!$this->clientDetails instanceof ClientDetails) {
             $this->clientDetails = new ClientDetails();
         }
@@ -211,5 +214,20 @@ class Client implements EntityInterface, \Serializable, UserInterface, Equatable
     public function setMinimumOrderAmount(MinimumOrderAmount $minimumOrderAmount)
     {
         $this->minimumOrderAmount = $minimumOrderAmount;
+    }
+
+    public function isAccountNonExpired()
+    {
+        return true;
+    }
+
+    public function isAccountNonLocked()
+    {
+        return true;
+    }
+
+    public function isCredentialsNonExpired()
+    {
+        return true;
     }
 }
