@@ -41,14 +41,7 @@ final class SearchManager implements SearchManagerInterface
      * @var AdapterInterface
      */
     private $adapter;
-    
-    /**
-     * SearchManager constructor.
-     *
-     * @param Collection          $types
-     * @param SearchResultStorage $storage
-     * @param AdapterInterface    $adapter
-     */
+
     public function __construct(Collection $types, SearchResultStorage $storage, AdapterInterface $adapter)
     {
         $this->types   = $types;

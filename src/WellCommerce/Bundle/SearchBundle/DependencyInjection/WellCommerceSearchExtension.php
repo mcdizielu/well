@@ -35,6 +35,7 @@ class WellCommerceSearchExtension extends AbstractExtension
         $this->processTypes($index['types'], $container);
         $this->processAdapterConfiguration($adapter, $container);
         $container->setParameter('quick_search', $configuration['search_engine']['quick_search']);
+        $container->setParameter('search_adapters', array_keys($adapters));
     }
     
     private function processTypes(array $types, ContainerBuilder $container)
