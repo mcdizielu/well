@@ -50,7 +50,8 @@ class LoadShopData extends AbstractDataFixture
         $shop->setClientGroup($this->getReference('client_group'));
         $shop->getMinimumOrderAmount()->setCurrency($currency->getCode());
         $shop->getMinimumOrderAmount()->setValue(0);
-        
+        $shop->setEnableClient(true);
+
         foreach ($this->getLocales() as $locale) {
             $shop->translate($locale->getCode())->getMeta()->setTitle('WellCommerce');
             $shop->translate($locale->getCode())->getMeta()->setKeywords('e-commerce, open-source, symfony, framework, shop');

@@ -58,6 +58,7 @@ parameters:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadLayeredNavigationData: 300
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadShowcaseData: 290
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadWishlistData: 290
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadSitemapData: 300
     fixtures_product_limit: 100
     enabled_fixtures:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadThemeData: true
@@ -91,3 +92,4 @@ parameters:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadShowcaseData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadLayeredNavigationData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadWishlistData: true
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadSitemapData: true

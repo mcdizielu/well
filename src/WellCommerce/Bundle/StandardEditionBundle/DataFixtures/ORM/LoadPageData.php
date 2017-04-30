@@ -15,8 +15,8 @@ namespace WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM;
 use Doctrine\Common\Persistence\ObjectManager;
 use WellCommerce\Bundle\CmsBundle\Entity\Page;
 use WellCommerce\Bundle\CmsBundle\Entity\PageTranslation;
-use WellCommerce\Bundle\StandardEditionBundle\DataFixtures\AbstractDataFixture;
 use WellCommerce\Bundle\CoreBundle\Helper\Helper;
+use WellCommerce\Bundle\StandardEditionBundle\DataFixtures\AbstractDataFixture;
 
 /**
  * Class LoadPageData
@@ -49,7 +49,11 @@ class LoadPageData extends AbstractDataFixture
         
         $aboutUs = $this->createPage('About us', 0, null);
         $this->setReference('page_about_us', $aboutUs);
-        $this->createPage('News feed', 10, $aboutUs);
+        
+        $newsFeed = $this->createPage('News feed', 10, $aboutUs);
+        $newsFeed->setRedirectRoute('front.news.index');
+        $newsFeed->setRedirectType(1);
+        
         $this->createPage('Stores', 20, $aboutUs);
         $this->createPage('Brands', 30, $aboutUs);
         $this->createPage('Our brand', 40, $aboutUs);
@@ -60,10 +64,17 @@ class LoadPageData extends AbstractDataFixture
         $this->setReference('page_help', $aboutUs);
         $this->createPage('Conditions', 10, $help);
         $this->createPage('Returns, warranty', 20, $help);
-        $this->createPage('Shipping', 30, $help);
+        
+        $contactUs = $this->createPage('Contact us', 30, $help);
+        $contactUs->setRedirectRoute('front.contact.index');
+        $contactUs->setRedirectType(1);
+        
         $this->createPage('Availability & delivery times', 40, $help);
-        $this->createPage('Payment', 50, $help);
-        $this->createPage('Site map', 60, $help);
+        $this->createPage('Payment & Shipping', 50, $help);
+        
+        $sitemap = $this->createPage('Site map', 60, $help);
+        $sitemap->setRedirectRoute('front.sitemap.index');
+        $sitemap->setRedirectType(1);
         
         $this->createLayoutBoxes($manager, [
             'page' => [
