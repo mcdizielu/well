@@ -30,7 +30,9 @@
     }
   },
   "require": {
-    "wellcommerce/app-bundle": "^0.9@dev"
+    "wellcommerce/app-bundle": "^0.9@dev",
+    "league/oauth2-facebook": "^2.0",
+    "league/oauth2-google": "^2.0"
   },
   "extra": {
     "branch-alias": {
