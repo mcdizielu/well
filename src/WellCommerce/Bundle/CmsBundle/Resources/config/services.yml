@@ -10,3 +10,16 @@ imports:
     - { resource: 'services/contact.yml' }
     - { resource: 'services/news.yml' }
     - { resource: 'services/page.yml' }
+    - { resource: 'services/sitemap.yml' }
+
+services:
+    html.layout_box.configurator:
+        class: WellCommerce\Bundle\CmsBundle\Service\Layout\Configurator\HtmlBoxConfigurator
+        autowire: true
+        tags:
+            - { name: layout_box.configurator }
+
+    html.controller.box:
+        class: WellCommerce\Bundle\CmsBundle\Controller\Box\HtmlBoxController
+        calls:
+            - [setContainer, ['@service_container']]
