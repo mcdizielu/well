@@ -27,7 +27,7 @@ services:
 
     twig.extension.page:
         class: WellCommerce\Bundle\CmsBundle\Twig\PageExtension
-        arguments: ['@page.dataset.front']
+        arguments: ['@page.dataset.front', '@router.helper']
         tags:
             - { name: twig.extension }
 

@@ -81,3 +81,7 @@ page:
         redirect_settings: Ustawienia przekierowań
     comment:
         publish: Informacja będzie widoczna w sklepie
+
+sitemap:
+    heading:
+        index: Mapa strony

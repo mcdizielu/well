@@ -31,19 +31,22 @@ class PageDataSet extends AbstractDataSet
     public function configureOptions(DataSetConfiguratorInterface $configurator)
     {
         $configurator->setColumns([
-            'id'        => 'page.id',
-            'createdAt' => 'page.createdAt',
-            'parent'    => 'IDENTITY(page.parent)',
-            'children'  => 'page_translation.name',
-            'name'      => 'page_translation.name',
-            'content'   => 'page_translation.content',
-            'slug'      => 'page_translation.slug',
-            'locale'    => 'page_translation.locale',
-            'route'     => 'IDENTITY(page_translation.route)',
-            'publish'   => 'page.publish',
-            'section'   => 'page.section',
-            'shop'      => 'page_shops.id',
-            'hierarchy' => 'page.hierarchy',
+            'id'            => 'page.id',
+            'createdAt'     => 'page.createdAt',
+            'parent'        => 'IDENTITY(page.parent)',
+            'children'      => 'page_translation.name',
+            'name'          => 'page_translation.name',
+            'content'       => 'page_translation.content',
+            'slug'          => 'page_translation.slug',
+            'locale'        => 'page_translation.locale',
+            'route'         => 'IDENTITY(page_translation.route)',
+            'publish'       => 'page.publish',
+            'section'       => 'page.section',
+            'shop'          => 'page_shops.id',
+            'hierarchy'     => 'page.hierarchy',
+            'redirectType'  => 'page.redirectType',
+            'redirectUrl'   => 'page.redirectUrl',
+            'redirectRoute' => 'page.redirectRoute',
         ]);
         
         $configurator->setColumnTransformers([

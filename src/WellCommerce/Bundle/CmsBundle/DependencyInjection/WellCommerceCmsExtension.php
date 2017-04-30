@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\CmsBundle\DependencyInjection;
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractExtension;
 
 /**
@@ -21,4 +22,10 @@ use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractExtension;
  */
 class WellCommerceCmsExtension extends AbstractExtension
 {
+    protected function processExtensionConfiguration(array $configuration, ContainerBuilder $container)
+    {
+        parent::processExtensionConfiguration($configuration, $container);
+        
+        $container->setParameter('route_redirects', $configuration['route_redirects']);
+    }
 }

@@ -57,3 +57,12 @@ well_commerce_core:
             entity: WellCommerce\Bundle\CmsBundle\Entity\PageRoute
             defaults:
                 _controller: page.controller.front:indexAction
+
+well_commerce_cms:
+    route_redirects:
+        news:
+            route: "front.news.index"
+        contact:
+            route: "front.contact.index"
+        sitemap:
+            route: "front.sitemap.index"

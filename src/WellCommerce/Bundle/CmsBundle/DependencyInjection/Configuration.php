@@ -11,6 +11,7 @@
 
 namespace WellCommerce\Bundle\CmsBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -24,8 +25,26 @@ final class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $treeBuilder->root('well_commerce_cms');
-
+        $rootNode    = $treeBuilder->root('well_commerce_cms');
+        $this->processConfiguration($rootNode);
+        
         return $treeBuilder;
     }
+    
+    //@formatter:off
+    protected function processConfiguration(ArrayNodeDefinition $node)
+    {
+        $node
+            ->children()
+                ->arrayNode('route_redirects')
+                    ->useAttributeAsKey('name')
+                    ->prototype('array')
+                        ->children()
+                            ->scalarNode('route')->isRequired()->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
+    }
+    //@formatter:on
 }

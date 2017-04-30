@@ -21,6 +21,9 @@ _front_news:
     resource: "@WellCommerceCmsBundle/Resources/config/routing/news/front.yml"
     prefix: /news
 
+_front_sitemap:
+    resource: "@WellCommerceCmsBundle/Resources/config/routing/sitemap/front.yml"
+
 _admin_page:
     resource: "@WellCommerceCmsBundle/Resources/config/routing/page/admin.yml"
     prefix: /admin/cms/page

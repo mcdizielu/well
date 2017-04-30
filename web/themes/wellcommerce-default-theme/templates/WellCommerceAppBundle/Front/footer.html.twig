@@ -10,7 +10,7 @@
                             <h3>{{ page.name }}</h3>
                             <ul>
                                 {% for childPage in page.children %}
-                                    <li><a href="{{ childPage.route }}">{{ childPage.name }}</a></li>
+                                    <li><a href="{{ getPageUrl(childPage) }}">{{ childPage.name }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
