@@ -1,6 +1,24 @@
 {% trans_default_domain "wellcommerce" %}
 {% import "WellCommerceAppBundle:Front/Form:macros.html.twig" as macros %}
 <div class="well-form">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="btn-group btn-group-justified" role="group">
+                {% if currentShop().facebookConnectEnabled == true %}
+                    <div class="btn-group btn-group-oauth" role="group">
+                        <a href="{{ path('front.oauth.connect', {"provider": "facebook"}) }}" class="btn btn-fb"><i class="fa fa-facebook"></i></a>
+                    </div>
+                {% endif %}
+                {% if currentShop().googleConnectEnabled == true %}
+                    <div class="btn-group btn-group-oauth" role="group">
+                        <a href="{{ path('front.oauth.connect', {"provider": "google"}) }}" class="btn btn-google"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="well-form">
     <h4>{% trans %}client.heading.register{% endtrans %}<small>{% trans %}form.help.required_fields{% endtrans %}</small></h4>
 
     {% include 'WellCommerceAppBundle:Front/Common:flashes.html.twig' %}
