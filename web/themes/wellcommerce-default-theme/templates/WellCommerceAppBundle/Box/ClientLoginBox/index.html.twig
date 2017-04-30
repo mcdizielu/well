@@ -25,9 +25,16 @@
 					<div class="btn-group" role="group">
 	                    <button type="submit" class="btn btn-primary pull-right">{% trans %}client.button.login{% endtrans %}</button>
 					</div>
-					<div class="btn-group btn-group-fb" role="group">
-	                    <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i></a>
+                    {% if currentShop().facebookConnectEnabled == true %}
+					<div class="btn-group btn-group-oauth" role="group">
+	                    <a href="{{ path('front.oauth.connect', {"provider": "facebook"}) }}" class="btn btn-fb"><i class="fa fa-facebook"></i></a>
 					</div>
+                    {% endif %}
+                    {% if currentShop().googleConnectEnabled == true %}
+                    <div class="btn-group btn-group-oauth" role="group">
+                        <a href="{{ path('front.oauth.connect', {"provider": "google"}) }}" class="btn btn-google"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                    {% endif %}
 				</div>
 			</div>
         </div>

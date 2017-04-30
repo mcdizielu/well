@@ -1743,7 +1743,7 @@ a.button-green span img, span.button-green span img {
 }
 
 .GForm .field-tip + fieldset.GFormNode, .GForm > .GBlock > fieldset > legend + fieldset.GFormNode {
-    margin-top: 0;
+    margin-top: 10px;
     padding-top: 0;
     border-top-width: 0;
 }

@@ -1,0 +1,17 @@
+oauth:
+    fieldset:
+        settings: Integracje OAuth
+    facebook:
+        fieldset:
+            settings: Facebook Connect
+        label:
+            enabled: Włączony
+            app_id: Application ID
+            app_secret: Application Secret
+    google:
+        fieldset:
+            settings: Google Connect
+        label:
+            enabled: Włączony
+            app_id: Application ID
+            app_secret: Application Secret

@@ -1,17 +1,52 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
 
 services:
-    oauth.controller.facebook:
-        class: WellCommerce\Bundle\OAuthBundle\Controller\FacebookController
-        arguments: ['@facebook.client.manager']
+    oauth.shop_mapping.enhancer:
+        class: WellCommerce\Bundle\OAuthBundle\Enhancer\ShopMappingEnhancer
+        tags:
+            - { name: doctrine.mapping.enhancer }
+
+    oauth.authenticator:
+        class: WellCommerce\Bundle\OAuthBundle\Security\OAuthAuthenticator
+        arguments: ['@oauth.provider.collection', '@request.helper']
+
+    oauth.provider.collection:
+        class: Doctrine\Common\Collections\ArrayCollection
+        shared: false
+
+    oauth.controller.front:
+        class: WellCommerce\Bundle\OAuthBundle\Controller\Front\OAuthController
         calls:
             - [setContainer, ['@service_container']]
 
-    oauth.authentificator.facebook:
-        class: WellCommerce\Bundle\OAuthBundle\Security\FacebookAuthenticator
-        arguments: ["@facebook.client.manager", "@router.helper", "%facebook%"]
-
-    facebook.client.manager:
-        class: WellCommerce\Bundle\OAuthBundle\Manager\FacebookClientManager
-        arguments: ["@client.factory","@client.repository"]
+    oauth.provider.facebook:
+        class: WellCommerce\Bundle\OAuthBundle\Provider\FacebookProvider
         calls:
             - [setContainer, ['@service_container']]
+        tags:
+            - { name: oauth.provider, alias: 'facebook' }
+
+    oauth.provider.google:
+        class: WellCommerce\Bundle\OAuthBundle\Provider\GoogleProvider
+        calls:
+            - [setContainer, ['@service_container']]
+        tags:
+            - { name: oauth.provider, alias: 'google' }
+
+    oauth.subscriber:
+        class: WellCommerce\Bundle\OAuthBundle\EventListener\OAuthSubscriber
+        tags:
+            - { name: kernel.event_subscriber }
+        calls:
+            - [setContainer, ['@service_container']]
+
+    oauth.doctrine.subscriber:
+        class: WellCommerce\Bundle\OAuthBundle\EventListener\OAuthDoctrineSubscriber
+        tags:
+            - { name: doctrine.event_subscriber, connection: default, priority: -10 }

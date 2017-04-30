@@ -6,8 +6,3 @@
 # For the full copyright and license information,
 # please view the LICENSE file that was distributed with this source code.
 
-parameters:
-    facebook:
-        app_id: null
-        app_secret: null
-        page_token: null

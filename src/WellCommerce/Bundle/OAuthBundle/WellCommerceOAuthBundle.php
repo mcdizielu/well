@@ -13,7 +13,9 @@
 namespace WellCommerce\Bundle\OAuthBundle;
 
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
+use WellCommerce\Bundle\OAuthBundle\DependencyInjection\Compiler\RegisterOAuthProviderPass;
 
 /**
  * Class WellCommerceOAuthBundle
@@ -22,6 +24,12 @@ use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
  */
 final class WellCommerceOAuthBundle extends AbstractWellCommerceBundle
 {
+    public function build(ContainerBuilder $container)
+    {
+        parent::build($container);
+        $container->addCompilerPass(new RegisterOAuthProviderPass());
+    }
+
     public static function registerBundles(Collection $bundles, string $environment)
     {
         $bundles->add(new self());

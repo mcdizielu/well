@@ -75,7 +75,9 @@
     "sunhater/kcfinder": "dev-master",
     "ikadoc/kcfinder-bundle": "^1.1",
     "profburial/wkhtmltopdf-binaries": "^0.12.1",
-    "knplabs/knp-snappy-bundle": "^1.4"
+    "knplabs/knp-snappy-bundle": "^1.4",
+    "league/oauth2-facebook": "^2.0",
+    "league/oauth2-google": "^2.0"
   },
   "replace": {
     "wellcommerce/api-bundle": "self.version",

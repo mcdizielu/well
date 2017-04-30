@@ -42,7 +42,7 @@ security:
                 target: front.client.login
             guard:
                 authenticators:
-                    - oauth.authentificator.facebook
+                    - oauth.authenticator
 
     access_control:
         - { path: ^/admin/user/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
