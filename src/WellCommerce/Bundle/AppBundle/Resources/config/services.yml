@@ -43,3 +43,8 @@ services:
         arguments: ['@metadata.helper']
         tags:
             - { name: twig.extension }
+
+    twig.extension.php:
+        class: Umpirsky\Twig\Extension\PhpFunctionExtension
+        tags:
+            - { name: twig.extension }
