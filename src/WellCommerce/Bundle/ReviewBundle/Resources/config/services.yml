@@ -31,7 +31,19 @@ services:
         arguments:
             - '@review_recommendation.repository'
 
-    review.doctrine.event_subscriber:
-        class: WellCommerce\Bundle\ReviewBundle\EventListener\ReviewEventSubscriber
+    review.subscriber:
+        class: WellCommerce\Bundle\ReviewBundle\EventListener\ReviewSubscriber
         tags:
-            - { name: doctrine.event_subscriber, connection: default }
+            - { name: kernel.event_subscriber }
+        calls:
+            - [setContainer, ['@service_container']]
+
+    review.product_mapping.enhancer:
+        class: WellCommerce\Bundle\ReviewBundle\Enhancer\ProductMappingEnhancer
+        tags:
+            - { name: doctrine.mapping.enhancer }
+
+    review.doctrine.subscriber:
+        class: WellCommerce\Bundle\ReviewBundle\EventListener\ReviewDoctrineSubscriber
+        tags:
+            - { name: doctrine.event_subscriber, connection: default, priority: -10 }

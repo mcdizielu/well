@@ -12,6 +12,7 @@ review:
         content: Zostaw tutaj swój komentarz
         recommendation_exists: Recenzja została już oceniona.
         review_not_exists: Recenzja nie istnieje.
+        enable_reviews: Włącz opinie
     button:
         add_opinion: Wyślij opinię
     link:

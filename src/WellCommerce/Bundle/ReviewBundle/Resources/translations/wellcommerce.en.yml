@@ -11,6 +11,7 @@ review:
         id: ID
         recommendation_exists: Review has already been assessed.
         review_not_exists: Review not exists.
+        enable_reviews: Enable reviews
     button:
         add_opinion: Submit review
     link:

@@ -1,5 +1,6 @@
 {% trans_default_domain "wellcommerce" %}
 {% import "WellCommerceAppBundle:Front/Form:macros_horizontal.html.twig" as macros %}
+{% if product.enableReviews %}
 <div class="description-block">
 	<h2>{% trans %}review.heading.index{% endtrans %}</h2>
 
@@ -69,3 +70,4 @@
 		});
 	});
 </script>
+{% endif %}

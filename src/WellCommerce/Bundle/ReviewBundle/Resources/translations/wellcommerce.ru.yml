@@ -11,6 +11,7 @@ review:
         id: ID
         recommendation_exists: Отзыв уже дал оценку товару.
         review_not_exists: Отзыв не существует.
+        enable_reviews: Включите отзывов
     button:
         add_opinion: Оставить отзыв
     link:

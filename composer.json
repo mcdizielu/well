@@ -77,7 +77,8 @@
     "profburial/wkhtmltopdf-binaries": "^0.12.1",
     "knplabs/knp-snappy-bundle": "^1.4",
     "league/oauth2-facebook": "^2.0",
-    "league/oauth2-google": "^2.0"
+    "league/oauth2-google": "^2.0",
+    "umpirsky/twig-php-function": "^0.2.0"
   },
   "replace": {
     "wellcommerce/api-bundle": "self.version",
