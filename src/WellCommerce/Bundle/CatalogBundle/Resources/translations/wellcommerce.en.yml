@@ -103,6 +103,7 @@ layered_navigation:
     label:
         price: Filter by price
         brand: Filter by brand
+        status: Filter by status
 
 layout_box:
     layered_navigation:
@@ -110,6 +111,7 @@ layout_box:
         enable_price_filter: Enable price filter
         enable_brand_filter: Enable brand filter
         enable_attribute_filter: Enable attribute filter
+        enable_status_filter: Enable status filter
 
 product:
     form:

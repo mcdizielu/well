@@ -103,6 +103,7 @@ layered_navigation:
     label:
         price: Отбор по цене
         brand: Отбор по брэнду
+        status: Cтатус
 
 layout_box:
     layered_navigation:
@@ -110,6 +111,7 @@ layout_box:
         enable_price_filter: Включить отбор по цене
         enable_brand_filter: Включить отбор по брэнду
         enable_attribute_filter: Включить отбор по атрибутам
+        enable_status_filter: Включить отбор no статус
 
 product:
     form:

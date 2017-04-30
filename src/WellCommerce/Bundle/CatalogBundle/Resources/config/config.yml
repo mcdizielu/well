@@ -102,6 +102,7 @@ well_commerce_core:
                 producers: ~
                 attributes: ~
                 categories: ~
+                statuses: ~
             requirements:
                 limit: "\\d{1,10}"
                 page: "\\d{1,10}"
@@ -113,7 +114,8 @@ well_commerce_core:
                 producers: "[\\d+_]+"
                 attributes: "[\\d+_]+"
                 categories: "[\\d+_]+"
-            pattern: "{page},{limit},{orderBy},{orderDir},{priceFrom},{priceTo},{view},{producers},{attributes},{categories}"
+                statuses: "[\\d+_]+"
+            pattern: "{page},{limit},{orderBy},{orderDir},{priceFrom},{priceTo},{view},{producers},{attributes},{categories},{statuses}"
         producer:
             entity: WellCommerce\Bundle\CatalogBundle\Entity\ProducerRoute
             defaults:
@@ -256,6 +258,11 @@ well_commerce_catalog:
             condition: WellCommerce\Component\DataSet\Conditions\Condition\In
             enabled: true
             column: filteredCategory
+        statuses:
+            type: array
+            condition: WellCommerce\Component\DataSet\Conditions\Condition\In
+            enabled: true
+            column: status
 
 well_commerce_search:
     search_engine:

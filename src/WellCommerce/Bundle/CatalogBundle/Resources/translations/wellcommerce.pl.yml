@@ -87,6 +87,7 @@ layered_navigation:
     label:
         price: Filtruj po cenie
         brand: Filtruj po marce
+        status: Filtruj po statusie
 
 layout_box:
     layered_navigation:
@@ -94,6 +95,7 @@ layout_box:
         enable_price_filter: Włącz filtrowanie po cenie
         enable_brand_filter: Włącz filtrowanie po marce
         enable_attribute_filter: Włącz filtrowanie po cechach
+        enable_status_filter: Włącz filtrowanie po statusach
 
 producer:
     heading:
