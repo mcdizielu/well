@@ -1,0 +1,18 @@
+<header>
+    <div class="tools">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 hidden-sm hidden-xs left">
+                    {% include 'WellCommerceAppBundle:Front/Common:currency_switcher.html.twig' %}
+                    {% include 'WellCommerceAppBundle:Front/Common:locale_switcher.html.twig' %}
+                </div>
+
+				<div class="col-md-6 hidden-sm hidden-xs text-right right">
+					<span class="push-search btn btn-default btn-sm"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+                    {% include 'WellCommerceAppBundle:Front/Common:nav.html.twig' %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'WellCommerceAppBundle:Front:nav.html.twig' %}
+</header>

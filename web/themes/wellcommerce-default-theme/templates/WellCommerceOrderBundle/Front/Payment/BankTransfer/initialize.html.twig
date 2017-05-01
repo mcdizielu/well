@@ -1,0 +1,32 @@
+{% extends 'WellCommerceAppBundle:Front:layout.html.twig' %}
+{% trans_default_domain "wellcommerce" %}
+{% block content %}
+    {% include 'WellCommerceAppBundle:Front:breadcrumbs.html.twig' %}
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="cart">
+                <div class="alert alert-info mtp30">
+                    <p><strong>{% trans %}payment.flash.thank_you{% endtrans %}</strong></p>
+                    <p>{% trans %}order.label.order_no{% endtrans %}: <strong>{{ payment.order.number }}</strong></p>
+                    <p>{% trans %}order.label.payment_method{% endtrans %}: <strong>{{ payment.order.paymentMethod.translate.name }}</strong></p>
+                    <p>{% trans %}order.label.order_total{% endtrans %}: <strong>{{ format_price(payment.order.summary.grossAmount, payment.order.currency) }}</strong></p>
+                    <br />
+                    <p><strong>{% trans %}payment_method.bank_transfer.tip{% endtrans %}:</strong></p>
+                    {% if payment.configuration is not empty %}
+                    <p>{% trans %}payment_method.label.bank_transfer.account_number{% endtrans %}: {{ payment.configuration.bank_transfer_account_number }}</p>
+                    <p>{% trans %}payment_method.label.bank_transfer.account_owner{% endtrans %}: {{ payment.configuration.bank_transfer_account_owner }}</p>
+                    <p>{% trans %}payment_method.label.bank_transfer.sort_number{% endtrans %}: {{ payment.configuration.bank_transfer_sort_number }}</p>
+                    {% endif %}
+                    <p>{% trans %}payment_method.label.bank_transfer.title{% endtrans %}: {{ payment.order.number }}</p>
+                </div>
+                <div class="clearfix">
+                    <a href="{{ path('front.home_page.index') }}" class="btn btn-link btn-light btn-lg notransform nopadding">{% trans %}order.cart.button.back_to_shopping{% endtrans %}</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            {% include 'WellCommerceAppBundle:Front/Common:sidebar_contact.html.twig' %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% trans_default_domain "wellcommerce" %}
+<div class="table-responsive">
+    <table class="table products-table mbt60">
+        <thead>
+        <tr>
+            <th class="text-center" colspan="2">{% trans %}order.cart.table.heading.product{% endtrans %}</th>
+            <th class="text-center">{% trans %}order.cart.table.heading.price{% endtrans %}</th>
+            <th class="text-center">{% trans %}order.cart.table.heading.quantity{% endtrans %}</th>
+            <th class="text-center">{% trans %}order.cart.table.heading.total{% endtrans %}</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for item in currentOrderProducts().rows %}
+            <tr>
+                <td><img src="{{ image(item.photo, 'small') }}" alt="{{ item.name }}"/></td>
+                <td>
+                    <a href="{{ item.route }}">{{ item.name }}</a>
+                    {% for attribute, value in item.options %}
+                    <br /><small><strong>{{ attribute }}:</strong> {{ value }}</small>
+                    {% endfor %}
+                </td>
+                <td class="text-center">
+                    <span class="price">
+                        {{ format_price(item.grossAmount, item.currency) }}
+                    </span>
+                </td>
+                <td class="text-center">
+                    {% if confirmation == true %}
+                        <input type="text" class="form-control" value="{{ item.quantity }}" disabled/>
+                    {% else %}
+                        <input type="number" class="form-control quantity-spinner" value="{{ item.quantity }}" data-id="{{ item.id }}"/>
+                    {% endif %}
+                </td>
+                <td class="text-center">
+                    <span class="price">
+                        {{ format_price(item.grossAmount, item.currency, null, null, item.quantity) }}
+                    </span>
+                </td>
+                <td class="text-center">
+                    {% if confirmation == false %}
+                    <a href="{{ path('front.cart.delete',{"id": item.id}) }}" class="btn btn-link btn-remove" title="Remove this product">
+						<span>
+							<span class="glyphicon glyphicon-menu-left"></span>
+							<span class="glyphicon glyphicon-menu-right"></span>
+						</span>
+                    </a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,10 @@
+{% include 'WellCommerceAppBundle:Email:header.html.twig' %}
+{% trans_default_domain "wellcommerce" %}
+<p><strong>{% trans %}order_status_history.email.status_changed{% endtrans %}</strong></p>
+<p>{% trans %}order_status_history.email.new_status{% endtrans %}: {{ history.orderStatus.translate.name }}</p>
+{% if history.comment != '' %}
+    <p>
+        {{ history.comment|raw }}
+    </p>
+{% endif %}
+{% include 'WellCommerceAppBundle:Email:footer.html.twig' %}

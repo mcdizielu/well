@@ -1,0 +1,52 @@
+{% trans_default_domain "wellcommerce" %}
+<li class="dropdown" id="cart-preview">
+    <span class="push-search btn btn-link hidden-md hidden-lg"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+    {% if hasCurrentOrder() %}
+    <a href="{{ path('front.cart.index') }}" class="dropdown-toggle cartQty" data-target="#" data-toggle="dropdown" role="button" aria-expanded="true">
+        <span class="hidden-xs">{% trans %}order.cart.heading.index{% endtrans %}</span><span class="cart-qty">{{ getCurrentOrder().productTotal.quantity }}</span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+        <li>
+            <table>
+                <tbody>
+                {% for item in currentOrderProducts().rows %}
+                    <tr>
+                        <td>
+                            <a href="{{ path('front.cart.delete',{"id": item.id }) }}" class="delete" title="Remove item">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ item.route }}">{{ item.name }}</a>
+                            {% for attribute, value in item.options %}
+                                <br /><small><strong>{{ attribute }}:</strong> {{ value }}</small>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {{ item.quantity|number_format(0) }}
+                        </td>
+                        <td class="text-right">
+                            {{ format_price(item.grossAmount, item.currency, null, null, item.quantity) }}
+                        </td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="3">
+                        <a href="{{ path('front.cart.index') }}">
+                            {% trans %}order.cart.link.checkout{% endtrans %} <span class="glyphicon glyphicon-menu-right"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <span>{{ format_price(getCurrentOrder().productTotal.grossPrice) }}</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+    {% else %}
+    <a href="#" class="dropdown-toggle cartQty" data-target="#" role="button" aria-expanded="true">
+        <span class="hidden-xs">{% trans %}order.cart.heading.index{% endtrans %}</span><span class="cart-qty">0</span>
+    </a>
+    {% endif %}
+</li>

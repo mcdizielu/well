@@ -1,0 +1,29 @@
+{% extends 'WellCommerceAppBundle:Front:layout.html.twig' %}
+{% import "WellCommerceAppBundle:Front/Form:macros.html.twig" as macros %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-lg-3 col-sm-6 col-xs-12">
+                {% include 'WellCommerceAppBundle:Front:breadcrumbs.html.twig' %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 hidden-xs">
+            {{ layout_box('category_menu') }}
+        </div>
+
+        <div class="col-sm-9 col-xs-12">
+            {{ macros.form_begin(form) }}
+                {% for element in form.children %}
+                    {{ macros.element(element) }}
+                {% endfor %}
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-md-6 col-sm-10">
+                        <button type="submit" class="btn btn-primary">{% trans %}product_search.button.search{% endtrans %}</button>
+                    </div>
+                </div>
+            {{ macros.form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
