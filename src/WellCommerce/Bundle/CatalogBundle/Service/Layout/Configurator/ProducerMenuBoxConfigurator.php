@@ -44,22 +44,24 @@ final class ProducerMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
     {
         $fieldset = $this->getFieldset($builder, $form);
-        $accessor = $this->getPropertyAccessor();
 
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => 'producer_menu.tip.layout_box_configuration',
+            'tip' => 'layout_box.tip.producer_menu',
         ]));
 
-        $exclude = $fieldset->addChild($builder->getElement('tree', [
+        $fieldset->addChild($builder->getElement('tree', [
             'name'       => 'producers',
-            'label'      => 'producer_menu.label.producers',
+            'label'      => 'layout_box.label.producer_menu.producers',
             'choosable'  => false,
             'selectable' => true,
             'sortable'   => false,
             'clickable'  => false,
             'items'      => $this->dataSet->getResult('flat_tree'),
-        ]));
+        ]))->setValue($this->getValue($defaults, '[producers]', []));
 
-        $exclude->setValue($accessor->getValue($defaults, '[producers]'));
+        $fieldset->addChild($builder->getElement('text_field', [
+            'name'  => 'limit',
+            'label' => 'layout_box.label.producer_menu.limit',
+        ]))->setValue($this->getValue($defaults, '[limit]', 10));
     }
 }
