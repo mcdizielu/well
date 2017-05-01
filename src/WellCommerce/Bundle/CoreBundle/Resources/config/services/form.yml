@@ -217,6 +217,12 @@ services:
             - { name: form.element, alias: datagrid_select }
         shared: false
 
+    form.element.product_select:
+        class: WellCommerce\Component\Form\Elements\Optioned\ProductSelect
+        tags:
+            - { name: form.element, alias: product_select }
+        shared: false
+
     form.element.radio_group:
         class: WellCommerce\Component\Form\Elements\Optioned\RadioGroup
         tags:
