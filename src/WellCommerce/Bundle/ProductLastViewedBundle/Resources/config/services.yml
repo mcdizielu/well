@@ -1,0 +1,27 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+services:
+    last_viewed.layout_box.configurator:
+        class: WellCommerce\Bundle\ProductLastViewedBundle\Service\Layout\Configurator\LastViewedBoxConfigurator
+        autowire: true
+        tags:
+            - { name: layout_box.configurator }
+
+    last_viewed.layout_box.controller:
+        class: WellCommerce\Bundle\ProductLastViewedBundle\Controller\Box\LastViewedBoxController
+        calls:
+            - [setContainer, ['@service_container']]
+
+    last_viewed.subscriber:
+        class: WellCommerce\Bundle\ProductLastViewedBundle\EventListener\LastViewedSubscriber
+        tags:
+            - { name: kernel.event_subscriber }
+        calls:
+            - [setContainer, ['@service_container']]
+

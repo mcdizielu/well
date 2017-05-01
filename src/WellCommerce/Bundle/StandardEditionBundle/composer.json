@@ -43,6 +43,7 @@
     "wellcommerce/generator-bundle": "^0.9@dev",
     "wellcommerce/oauth-bundle": "^0.9@dev",
     "wellcommerce/order-bundle": "^0.9@dev",
+    "wellcommerce/product-last-viewed-bundle": "^0.9@dev",
     "wellcommerce/review-bundle": "^0.9@dev",
     "wellcommerce/search-bundle": "^0.9@dev",
     "wellcommerce/showcase-bundle": "^0.9@dev",

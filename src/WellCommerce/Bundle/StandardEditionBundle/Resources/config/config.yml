@@ -20,6 +20,7 @@ imports:
     - { resource: "@WellCommerceOrderBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceReviewBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceShowcaseBundle/Resources/config/config.yml" }
+    - { resource: "@WellCommerceSimilarProductBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceWishlistBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceFeatureBundle/Resources/config/config.yml" }
 
@@ -59,6 +60,7 @@ parameters:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadShowcaseData: 290
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadWishlistData: 290
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadSitemapData: 300
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadSimilarProductData: 310
     fixtures_product_limit: 100
     enabled_fixtures:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadThemeData: true
@@ -93,3 +95,4 @@ parameters:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadLayeredNavigationData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadWishlistData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadSitemapData: true
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadSimilarProductData: true

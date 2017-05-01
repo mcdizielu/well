@@ -42,67 +42,14 @@ class SimilarProductSubscriber extends AbstractEventSubscriber
                 'label' => 'similar_product.fieldset.products',
             ]));
 
-            $similarProductData->addChild($builder->getElement('datagrid_select', [
-                'name'             => 'similarProducts',
-                'label'            => $this->trans('similar_product.fieldset.products'),
-                'key'              => 'id',
-                'columns'          => $this->getProductColumns(),
-                'selected_columns' => $this->getProductColumns(),
-                'load_route'       => 'admin.product.grid',
-                'repeat_min'       => 0,
-                'repeat_max'       => 50,
-                'transformer'      => $builder->getRepositoryTransformer('collection', $this->container->get('product.repository')),
+            $similarProductData->addChild($builder->getElement('product_select', [
+                'name'        => 'similarProducts',
+                'label'       => 'similar_product.fieldset.products',
+                'load_route'  => 'admin.product.grid',
+                'repeat_min'  => 0,
+                'repeat_max'  => 50,
+                'transformer' => $builder->getRepositoryTransformer('collection', $this->container->get('product.repository')),
             ]));
         }
-    }
-    
-    protected function getProductColumns(): array
-    {
-        return [
-            [
-                'id'         => 'id',
-                'caption'    => $this->trans('common.label.id'),
-                'sorting'    => [
-                    'default_order' => 'asc',
-                ],
-                'appearance' => [
-                    'width'   => 90,
-                    'visible' => false,
-                ],
-                'filter'     => [
-                    'type' => 2,
-                ],
-            ],
-            [
-                'id'         => 'name',
-                'caption'    => $this->trans('common.label.name'),
-                'appearance' => [
-                    'width' => 200,
-                ],
-                'filter'     => [
-                    'type' => 1,
-                ],
-            ],
-            [
-                'id'         => 'sku',
-                'caption'    => $this->trans('common.label.sku'),
-                'appearance' => [
-                    'width' => 0,
-                ],
-                'filter'     => [
-                    'type' => 1,
-                ],
-            ],
-            [
-                'id'         => 'barcode',
-                'caption'    => $this->trans('product.label.barcode'),
-                'appearance' => [
-                    'width' => 0,
-                ],
-                'filter'     => [
-                    'type' => 2,
-                ],
-            ],
-        ];
     }
 }

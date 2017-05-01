@@ -37,6 +37,7 @@ final class WellCommerceStandardEditionBundle extends AbstractWellCommerceBundle
         \WellCommerce\Bundle\CmsBundle\WellCommerceCmsBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\ReviewBundle\WellCommerceReviewBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\ShowcaseBundle\WellCommerceShowcaseBundle::registerBundles($bundles, $environment);
+        \WellCommerce\Bundle\SimilarProductBundle\WellCommerceSimilarProductBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\WishlistBundle\WellCommerceWishlistBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\FeatureBundle\WellCommerceFeatureBundle::registerBundles($bundles, $environment);
 

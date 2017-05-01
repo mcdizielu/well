@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\SimilarProductBundle\Controller\Box;
+namespace WellCommerce\Bundle\ProductLastViewedBundle\Controller\Box;
 
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,11 +21,11 @@ use WellCommerce\Component\DataSet\Conditions\ConditionsCollection;
 use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 
 /**
- * Class SimilarProductBoxController
+ * Class LastViewedBoxController
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class SimilarProductBoxController extends AbstractBoxController
+class LastViewedBoxController extends AbstractBoxController
 {
     public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
@@ -33,7 +33,7 @@ class SimilarProductBoxController extends AbstractBoxController
         $dataset = $this->get('product.dataset.front');
 
         $products = $dataset->getResult('array', [
-            'limit'      => $boxSettings->getParam('limit', 4),
+            'limit'      => $boxSettings->getParam('limit', 12),
             'page'       => 1,
             'order_by'   => 'hierarchy',
             'order_dir'  => 'asc',
