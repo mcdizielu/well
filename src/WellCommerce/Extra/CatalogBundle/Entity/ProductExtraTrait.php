@@ -10,6 +10,8 @@ trait ProductExtraTrait {
 
 	protected $features = null;
 
+	protected $similarProducts = null;
+
 	public function getEnableReviews() {
 		return $this->enableReviews;
 	}
@@ -22,6 +24,10 @@ trait ProductExtraTrait {
 		return $this->featureSet;
 	}
 
+	public function getSimilarProducts() {
+		return $this->similarProducts;
+	}
+
 	public function setEnableReviews($enableReviews) {
 		$this->enableReviews = $enableReviews;
 	}
@@ -32,5 +38,9 @@ trait ProductExtraTrait {
 
 	public function setFeatureSet($featureSet) {
 		$this->featureSet = $featureSet;
+	}
+
+	public function setSimilarProducts($similarProducts) {
+		$this->similarProducts = $similarProducts;
 	}
 }
