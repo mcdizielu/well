@@ -9,7 +9,7 @@
 services:
     producer_menu.layout_box.configurator:
         class: WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator\ProducerMenuBoxConfigurator
-        autowire: true
+        arguments: ['@producer_menu.layout_box.controller', '@producer.dataset.admin']
         tags:
             - { name: layout_box.configurator }
 

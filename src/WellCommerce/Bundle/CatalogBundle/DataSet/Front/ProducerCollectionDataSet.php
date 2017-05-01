@@ -13,10 +13,10 @@
 namespace WellCommerce\Bundle\CatalogBundle\DataSet\Front;
 
 use Doctrine\ORM\QueryBuilder;
-use WellCommerce\Bundle\CatalogBundle\DataSet\Admin\ProducerDataSet as BaseDataSet;
 use WellCommerce\Bundle\CatalogBundle\Entity\Producer;
 use WellCommerce\Bundle\CatalogBundle\Entity\ProducerTranslation;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
+use WellCommerce\Bundle\CoreBundle\DataSet\AbstractDataSet;
 use WellCommerce\Component\DataSet\Cache\CacheOptions;
 use WellCommerce\Component\DataSet\Configurator\DataSetConfiguratorInterface;
 
@@ -25,11 +25,13 @@ use WellCommerce\Component\DataSet\Configurator\DataSetConfiguratorInterface;
  *
  * @author Rafał Martonik <rafal@wellcommerce.org>
  */
-class ProducerCollectionDataSet extends BaseDataSet
+class ProducerCollectionDataSet extends AbstractDataSet
 {
-    /**
-     * {@inheritdoc}
-     */
+    public function getIdentifier(): string
+    {
+        return 'front.producer_collection';
+    }
+    
     public function configureOptions(DataSetConfiguratorInterface $configurator)
     {
         $configurator->setColumns([

@@ -14,6 +14,8 @@ namespace WellCommerce\Bundle\CatalogBundle\Controller\Box;
 
 use Symfony\Component\HttpFoundation\Response;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
+use WellCommerce\Component\DataSet\Conditions\Condition\In;
+use WellCommerce\Component\DataSet\Conditions\ConditionsCollection;
 use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
 
 /**
@@ -26,8 +28,10 @@ class ProducerMenuBoxController extends AbstractBoxController
     public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
         $producers = $this->get('producer.dataset.front')->getResult('array', [
-            'order_by'  => 'hierarchy',
-            'order_dir' => 'asc',
+            'limit'      => $boxSettings->getParam('limit', 10),
+            'order_by'   => 'hierarchy',
+            'order_dir'  => 'asc',
+            'conditions' => $this->createConditionsCollection($boxSettings->getParam('producers', [])),
         ]);
         
         return $this->displayTemplate('index', [
@@ -35,5 +39,16 @@ class ProducerMenuBoxController extends AbstractBoxController
             'activeProducer' => $this->getProducerStorage()->getCurrentProducerIdentifier(),
             'boxSettings'    => $boxSettings,
         ]);
+    }
+    
+    protected function createConditionsCollection(array $identifiers): ConditionsCollection
+    {
+        $conditions = new ConditionsCollection();
+        
+        if (count($identifiers)) {
+            $conditions->add(new In('id', $identifiers));
+        }
+        
+        return $conditions;
     }
 }

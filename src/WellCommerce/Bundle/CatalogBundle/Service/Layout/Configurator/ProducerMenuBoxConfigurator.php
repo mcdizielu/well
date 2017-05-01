@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\CatalogBundle\Service\Layout\Configurator;
 
 use WellCommerce\Bundle\CatalogBundle\Controller\Box\ProducerMenuBoxController;
+use WellCommerce\Bundle\CatalogBundle\DataSet\Admin\ProducerDataSet;
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
@@ -24,9 +25,15 @@ use WellCommerce\Component\Form\FormBuilderInterface;
  */
 final class ProducerMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
 {
-    public function __construct(ProducerMenuBoxController $controller)
+    /**
+     * @var ProducerDataSet
+     */
+    private $dataSet;
+
+    public function __construct(ProducerMenuBoxController $controller, ProducerDataSet $dataSet)
     {
         $this->controller = $controller;
+        $this->dataSet    = $dataSet;
     }
     
     public function getType(): string
@@ -37,9 +44,22 @@ final class ProducerMenuBoxConfigurator extends AbstractLayoutBoxConfigurator
     public function addFormFields(FormBuilderInterface $builder, FormInterface $form, $defaults)
     {
         $fieldset = $this->getFieldset($builder, $form);
-        
+        $accessor = $this->getPropertyAccessor();
+
         $fieldset->addChild($builder->getElement('tip', [
-            'tip' => 'producer.box.info',
+            'tip' => 'producer_menu.tip.layout_box_configuration',
         ]));
+
+        $exclude = $fieldset->addChild($builder->getElement('tree', [
+            'name'       => 'producers',
+            'label'      => 'producer_menu.label.producers',
+            'choosable'  => false,
+            'selectable' => true,
+            'sortable'   => false,
+            'clickable'  => false,
+            'items'      => $this->dataSet->getResult('flat_tree'),
+        ]));
+
+        $exclude->setValue($accessor->getValue($defaults, '[producers]'));
     }
 }
