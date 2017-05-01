@@ -1,0 +1,36 @@
+WellCommerce\Bundle\LastViewedBundle\Entity\LastViewed:
+    type: entity
+    table: last_viewed
+    cache:
+        usage: NONSTRICT_READ_WRITE
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        viewedCount:
+            type: integer
+            nullable: false
+            column: viewed_count
+            options:
+                default: 1
+        sessionId:
+            type: string
+            nullable: false
+            column: session_id
+    manyToOne:
+        product:
+            targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\Product
+            fetch: LAZY
+            joinColumns:
+                product_id:
+                    referencedColumnName: id
+                    onDelete: CASCADE
+        client:
+            targetEntity: WellCommerce\Bundle\AppBundle\Entity\Client
+            fetch: LAZY
+            joinColumns:
+                client_id:
+                    referencedColumnName: id
+                    onDelete: CASCADE

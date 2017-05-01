@@ -32,9 +32,9 @@ final class LoadSimilarProductData extends AbstractDataFixture
         }
         
         $this->createLayoutBoxes($manager, [
-            'similar_product' => [
-                'type'     => 'SimilarProduct',
-                'name'     => 'Similar products',
+            'last_viewed' => [
+                'type'     => 'LastViewed',
+                'name'     => 'Last viewed products',
                 'settings' => [
                     'limit' => 4,
                 ],

@@ -16,11 +16,11 @@ use Doctrine\Common\Persistence\ObjectManager;
 use WellCommerce\Bundle\StandardEditionBundle\DataFixtures\AbstractDataFixture;
 
 /**
- * Class LoadSimilarProductData
+ * Class LoadAlsoPurchasedData
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class LoadSimilarProductData extends AbstractDataFixture
+final class LoadAlsoPurchasedData extends AbstractDataFixture
 {
     /**
      * {@inheritDoc}
@@ -32,9 +32,9 @@ final class LoadSimilarProductData extends AbstractDataFixture
         }
         
         $this->createLayoutBoxes($manager, [
-            'similar_product' => [
-                'type'     => 'SimilarProduct',
-                'name'     => 'Similar products',
+            'also_purchased' => [
+                'type'     => 'AlsoPurchased',
+                'name'     => 'Also purchased products',
                 'settings' => [
                     'limit' => 4,
                 ],

@@ -15,6 +15,7 @@ services:
 
     last_viewed.layout_box.controller:
         class: WellCommerce\Bundle\LastViewedBundle\Controller\Box\LastViewedBoxController
+        arguments: ['@last_viewed.manager']
         calls:
             - [setContainer, ['@service_container']]
 

@@ -7,6 +7,7 @@
 # please view the LICENSE file that was distributed with this source code.
 
 imports:
+    - { resource: "@WellCommerceAlsoPurchasedBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceApiBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceCoreBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceAppBundle/Resources/config/config.yml" }
@@ -23,6 +24,7 @@ imports:
     - { resource: "@WellCommerceSimilarProductBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceWishlistBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceFeatureBundle/Resources/config/config.yml" }
+    - { resource: "@WellCommerceLastViewedBundle/Resources/config/config.yml" }
 
 parameters:
     fallback_theme: "wellcommerce-default-theme"
@@ -61,6 +63,8 @@ parameters:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadWishlistData: 290
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadSitemapData: 300
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadSimilarProductData: 310
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadLastViewedData: 320
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadAlsoPurchaseddData: 330
     fixtures_product_limit: 100
     enabled_fixtures:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadThemeData: true
@@ -96,3 +100,5 @@ parameters:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadWishlistData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadSitemapData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadSimilarProductData: true
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadLastViewedData: true
+        WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadAlsoPurchaseddData: true

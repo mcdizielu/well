@@ -32,6 +32,7 @@
   },
   "require": {
     "wellcommerce/composer-plugin": "^1.0@dev",
+    "wellcommerce/also-purchased-bundle": "^0.9@dev",
     "wellcommerce/api-bundle": "^0.9@dev",
     "wellcommerce/app-bundle": "^0.9@dev",
     "wellcommerce/catalog-bundle": "^0.9@dev",
@@ -41,6 +42,7 @@
     "wellcommerce/feature-bundle": "^0.9@dev",
     "wellcommerce/invoice-bundle": "^0.9@dev",
     "wellcommerce/generator-bundle": "^0.9@dev",
+    "wellcommerce/last-viewed-bundle": "^0.9@dev",
     "wellcommerce/oauth-bundle": "^0.9@dev",
     "wellcommerce/order-bundle": "^0.9@dev",
     "wellcommerce/product-last-viewed-bundle": "^0.9@dev",

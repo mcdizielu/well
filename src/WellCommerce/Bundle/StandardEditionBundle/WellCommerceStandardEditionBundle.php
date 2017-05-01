@@ -25,12 +25,14 @@ final class WellCommerceStandardEditionBundle extends AbstractWellCommerceBundle
     public static function registerBundles(Collection $bundles, string $environment)
     {
         \WellCommerce\Bundle\CoreBundle\WellCommerceCoreBundle::registerBundles($bundles, $environment);
+        \WellCommerce\Bundle\AlsoPurchasedBundle\WellCommerceAlsoPurchasedBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\ApiBundle\WellCommerceApiBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\AppBundle\WellCommerceAppBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\SearchBundle\WellCommerceSearchBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\GeneratorBundle\WellCommerceGeneratorBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\OrderBundle\WellCommerceOrderBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\InvoiceBundle\WellCommerceInvoiceBundle::registerBundles($bundles, $environment);
+        \WellCommerce\Bundle\LastViewedBundle\WellCommerceLastViewedBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\CatalogBundle\WellCommerceCatalogBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\CouponBundle\WellCommerceCouponBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\OAuthBundle\WellCommerceOAuthBundle::registerBundles($bundles, $environment);
@@ -40,7 +42,7 @@ final class WellCommerceStandardEditionBundle extends AbstractWellCommerceBundle
         \WellCommerce\Bundle\SimilarProductBundle\WellCommerceSimilarProductBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\WishlistBundle\WellCommerceWishlistBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\FeatureBundle\WellCommerceFeatureBundle::registerBundles($bundles, $environment);
-
+        
         $bundles->add(new self);
     }
 }
