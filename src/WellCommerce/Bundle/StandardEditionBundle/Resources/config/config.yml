@@ -20,7 +20,6 @@ imports:
     - { resource: "@WellCommerceOrderBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceReviewBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceShowcaseBundle/Resources/config/config.yml" }
-    - { resource: "@WellCommerceSimilarProductBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceWishlistBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceFeatureBundle/Resources/config/config.yml" }
 
