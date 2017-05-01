@@ -1,5 +1,10 @@
 {% trans_default_domain "wellcommerce" %}
 
+{% if showPagination is not defined %}
+    {% set showPagination = true %}
+{% endif %}
+
+{% if showPagination %}
 <div class="pagination-wrap clearfix">
 	<span>
 		{% trans %}pagination.label.results{% endtrans %} {{ dataset.pagination.currentResult.rangeFrom }} - {{ dataset.pagination.currentResult.rangeTo }} {% trans %}pagination.label.of{% endtrans %} {{ dataset.pagination.totalRows }}
@@ -21,3 +26,4 @@
         {% endif %}
     </ul>
 </div>
+{% endif %}

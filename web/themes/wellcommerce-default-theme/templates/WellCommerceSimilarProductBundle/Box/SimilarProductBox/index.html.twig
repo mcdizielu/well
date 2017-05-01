@@ -1,0 +1,12 @@
+{% trans_default_domain "wellcommerce" %}
+{% set viewType = boxSettings.param('view_type', 'grid') %}
+{% if dataset.pagination.totalRows > 0 %}
+    <div class="description-block">
+        <h2>{% trans %}similar_product.heading.index{% endtrans %}</h2>
+        {% if viewType == 'list' %}
+            {% include 'WellCommerceAppBundle:Front/Common:products_list.html.twig' with {'showPagination': false} %}
+        {% else %}
+            {% include 'WellCommerceAppBundle:Front/Common:products.html.twig' with {'showPagination': false} %}
+        {% endif %}
+    </div>
+{% endif %}

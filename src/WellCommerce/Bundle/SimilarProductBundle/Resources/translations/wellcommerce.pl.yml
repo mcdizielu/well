@@ -3,3 +3,5 @@ similar_product:
         layout_box_configuration: ''
     fieldset:
         products: Produkty podobne
+    heading:
+        index: Produkty podobne
