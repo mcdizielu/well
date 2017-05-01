@@ -10,3 +10,4 @@ front.sitemap.index:
     path: /{_locale}/sitemap
     defaults:
         _controller: 'sitemap.controller.front:indexAction'
+        _locale: '%locale%'
