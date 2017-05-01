@@ -21,12 +21,12 @@ use WellCommerce\Bundle\CoreBundle\Test\DataSet\AbstractDataSetTestCase;
  */
 class ProductSearchDataSetTest extends AbstractDataSetTestCase
 {
-    protected function get ()
+    protected function get()
     {
         return $this->container->get('product_search.dataset.front');
     }
     
-    protected function getColumns ()
+    protected function getColumns()
     {
         return [
             'id'                 => 'product.id',
@@ -61,6 +61,7 @@ class ProductSearchDataSetTest extends AbstractDataSetTestCase
             'hierarchy'          => 'product.hierarchy',
             'isStatusValid'      => 'IF_ELSE(:date BETWEEN IF_NULL(distinction.validFrom, :date) AND IF_NULL(distinction.validTo, :date), 1, 0)',
             'score'              => 'FIELD(product.id, :identifiers)',
+            'popularity'         => 'product.popularity',
         ];
     }
 }

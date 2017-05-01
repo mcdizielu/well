@@ -179,6 +179,7 @@ product:
             depth: Глубина
         short_description: Короткое описание
         description: Описание
+        popularity: Популярность
     button:
         filter: Результат отбора
         show_in_shop: Показать в магазине

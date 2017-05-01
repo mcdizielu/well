@@ -180,6 +180,7 @@ product:
             depth: Depth
         short_description: Short description
         description: Description
+        popularity: Popularity
     button:
         filter: Filter results
         show_in_shop: Show in shop

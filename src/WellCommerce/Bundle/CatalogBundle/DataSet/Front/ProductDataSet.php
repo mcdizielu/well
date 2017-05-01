@@ -71,6 +71,7 @@ class ProductDataSet extends AbstractDataSet
             'distinctions'         => 'product.id',
             'hierarchy'            => 'product.hierarchy',
             'isStatusValid'        => 'IF_ELSE(:date BETWEEN IF_NULL(distinction.validFrom, :date) AND IF_NULL(distinction.validTo, :date), 1, 0)',
+            'popularity'           => 'product.popularity',
         ]);
         
         $configurator->setColumnTransformers([

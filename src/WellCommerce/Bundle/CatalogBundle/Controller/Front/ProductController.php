@@ -34,10 +34,11 @@ class ProductController extends AbstractFrontController
         
         $this->addBreadcrumbs($product);
         $this->getProductStorage()->setCurrentProduct($product);
+        $this->updatePopularity($product);
         $this->getMetadataHelper()->setMetadata($product->translate()->getMeta());
         
         return $this->displayTemplate('index', [
-            'product'  => $product,
+            'product' => $product,
         ]);
     }
     
@@ -70,5 +71,11 @@ class ProductController extends AbstractFrontController
         $this->getBreadcrumbProvider()->add(new Breadcrumb([
             'label' => $product->translate()->getName(),
         ]));
+    }
+
+    private function updatePopularity(Product $product)
+    {
+        $product->increasePopularity();
+        $this->getEntityManager()->flush();
     }
 }

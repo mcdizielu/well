@@ -178,6 +178,7 @@ product:
             depth: Głębokość
         short_description: Krótki opis
         description: Opis
+        popularity: Popularność
     button:
         filter: Filtrowanie wyników
         show_in_shop: Pokaż w sklepie

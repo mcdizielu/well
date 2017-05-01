@@ -63,6 +63,7 @@ class ProductSearchDataSet extends ProductDataSet
             'hierarchy'          => 'product.hierarchy',
             'isStatusValid'      => 'IF_ELSE(:date BETWEEN IF_NULL(distinction.validFrom, :date) AND IF_NULL(distinction.validTo, :date), 1, 0)',
             'score'              => 'FIELD(product.id, :identifiers)',
+            'popularity'         => 'product.popularity',
         ]);
         
         $configurator->setColumnTransformers([

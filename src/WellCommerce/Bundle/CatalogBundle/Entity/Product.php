@@ -51,7 +51,8 @@ class Product implements EntityInterface
     protected $trackStock  = true;
     protected $weight      = 0.00;
     protected $packageSize = 1.00;
-    
+    protected $popularity  = 0;
+
     /**
      * @var Price
      */
@@ -369,5 +370,20 @@ class Product implements EntityInterface
     public function setProducerCollection(ProducerCollection $producerCollection = null)
     {
         $this->producerCollection = $producerCollection;
+    }
+
+    public function getPopularity(): int
+    {
+        return $this->popularity;
+    }
+
+    public function setPopularity(int $popularity)
+    {
+        $this->popularity = $popularity;
+    }
+
+    public function increasePopularity(int $increase = 1)
+    {
+        $this->popularity += $increase;
     }
 }

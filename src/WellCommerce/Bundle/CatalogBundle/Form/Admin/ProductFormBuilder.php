@@ -82,6 +82,14 @@ class ProductFormBuilder extends AbstractFormBuilder
                 $this->getRule('required'),
             ],
         ]));
+
+        $mainData->addChild($this->getElement('text_field', [
+            'name'  => 'popularity',
+            'label' => 'product.label.popularity',
+            'rules' => [
+                $this->getRule('required'),
+            ],
+        ]));
         
         $descriptionData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'description_data',

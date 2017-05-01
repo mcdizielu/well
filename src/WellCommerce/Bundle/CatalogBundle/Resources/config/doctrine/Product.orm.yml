@@ -35,6 +35,11 @@ WellCommerce\Bundle\CatalogBundle\Entity\Product:
             nullable: false
             options:
                 default: 0
+        popularity:
+            type: integer
+            nullable: false
+            options:
+                default: 0
         trackStock:
             type: boolean
             nullable: false
