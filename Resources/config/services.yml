@@ -1,0 +1,36 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+services:
+    similar_product.layout_box.configurator:
+        class: WellCommerce\Bundle\SimilarProductBundle\Service\Layout\Configurator\SimilarProductBoxConfigurator
+        autowire: true
+        tags:
+            - { name: layout_box.configurator }
+
+    similar_product.layout_box.controller:
+        class: WellCommerce\Bundle\SimilarProductBundle\Controller\Box\SimilarProductBoxController
+        calls:
+            - [setContainer, ['@service_container']]
+
+    similar_product.subscriber:
+        class: WellCommerce\Bundle\SimilarProductBundle\EventListener\SimilarProductSubscriber
+        tags:
+            - { name: kernel.event_subscriber }
+        calls:
+            - [setContainer, ['@service_container']]
+
+    similar_product.product_mapping.enhancer:
+        class: WellCommerce\Bundle\SimilarProductBundle\Enhancer\ProductMappingEnhancer
+        tags:
+            - { name: doctrine.mapping.enhancer }
+
+    similar_product.doctrine.subscriber:
+        class: WellCommerce\Bundle\SimilarProductBundle\EventListener\SimilarProductDoctrineSubscriber
+        tags:
+            - { name: doctrine.event_subscriber, connection: default, priority: -10 }
