@@ -211,6 +211,12 @@ services:
             - { name: form.element, alias: multi_select }
         shared: false
 
+    form.element.datagrid_select:
+        class: WellCommerce\Component\Form\Elements\Optioned\DataGridSelect
+        tags:
+            - { name: form.element, alias: datagrid_select }
+        shared: false
+
     form.element.radio_group:
         class: WellCommerce\Component\Form\Elements\Optioned\RadioGroup
         tags:
