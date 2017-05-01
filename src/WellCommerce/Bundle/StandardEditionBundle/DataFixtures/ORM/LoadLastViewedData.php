@@ -16,11 +16,11 @@ use Doctrine\Common\Persistence\ObjectManager;
 use WellCommerce\Bundle\StandardEditionBundle\DataFixtures\AbstractDataFixture;
 
 /**
- * Class LoadSimilarProductData
+ * Class LoadLastViewedData
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class LoadSimilarProductData extends AbstractDataFixture
+final class LoadLastViewedData extends AbstractDataFixture
 {
     /**
      * {@inheritDoc}
