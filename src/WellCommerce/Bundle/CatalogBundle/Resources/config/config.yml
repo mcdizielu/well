@@ -132,7 +132,7 @@ well_commerce_core:
             requirements:
                 limit: "\\d{1,10}"
                 page: "\\d{1,10}"
-                orderBy: "hierarchy|name|finalPrice"
+                orderBy: "hierarchy|name|finalPrice|popularity"
                 orderDir: "asc|desc"
                 priceFrom: "\\d{1,10}"
                 priceTo: "\\d{1,10}"
