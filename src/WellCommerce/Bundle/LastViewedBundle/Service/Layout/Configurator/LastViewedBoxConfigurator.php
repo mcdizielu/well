@@ -10,10 +10,10 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\ProductLastViewedBundle\Service\Layout\Configurator;
+namespace WellCommerce\Bundle\LastViewedBundle\Service\Layout\Configurator;
 
 use WellCommerce\Bundle\CoreBundle\Layout\Configurator\AbstractLayoutBoxConfigurator;
-use WellCommerce\Bundle\ProductLastViewedBundle\Controller\Box\LastViewedBoxController;
+use WellCommerce\Bundle\LastViewedBundle\Controller\Box\LastViewedBoxController;
 use WellCommerce\Component\Form\Elements\FormInterface;
 use WellCommerce\Component\Form\FormBuilderInterface;
 

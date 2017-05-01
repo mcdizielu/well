@@ -1,9 +1,9 @@
 {
-  "name": "wellcommerce/product-last-viewed-bundle",
+  "name": "wellcommerce/last-viewed-bundle",
   "type": "wellcommerce-bundle",
   "license": "MIT",
   "minimum-stability": "dev",
-  "description": "WellCommerce ProductLastViewedBundle",
+  "description": "WellCommerce LastViewedBundle",
   "keywords": [
     "wellcommerce",
     "e-commerce",
@@ -21,15 +21,16 @@
   ],
   "support": {
     "email": "support@wellcommerce.org",
-    "issues": "https://github.com/WellCommerce/ProductLastViewedBundle/issues",
-    "source": "https://github.com/WellCommerce/ProductLastViewedBundle/"
+    "issues": "https://github.com/WellCommerce/LastViewedBundle/issues",
+    "source": "https://github.com/WellCommerce/LastViewedBundle/"
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Bundle\\ProductLastViewedBundle\\": ""
+      "WellCommerce\\Bundle\\LastViewedBundle\\": ""
     }
   },
   "require": {
+    "wellcommerce/app-bundle": "^0.9@dev",
     "wellcommerce/catalog-bundle": "^0.9@dev"
   },
   "extra": {

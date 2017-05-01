@@ -1,1 +1,1 @@
-# ProductLastViewedBundle
+# LastViewedBundle

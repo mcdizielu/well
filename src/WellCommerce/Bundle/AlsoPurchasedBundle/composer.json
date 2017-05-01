@@ -1,9 +1,9 @@
 {
-  "name": "wellcommerce/product-also-purchased-bundle",
+  "name": "wellcommerce/also-purchased-bundle",
   "type": "wellcommerce-bundle",
   "license": "MIT",
   "minimum-stability": "dev",
-  "description": "WellCommerce ProductAlsoPurchasedBundle",
+  "description": "WellCommerce AlsoPurchasedBundle",
   "keywords": [
     "wellcommerce",
     "e-commerce",
@@ -21,12 +21,12 @@
   ],
   "support": {
     "email": "support@wellcommerce.org",
-    "issues": "https://github.com/WellCommerce/ProductAlsoPurchasedBundle/issues",
-    "source": "https://github.com/WellCommerce/ProductAlsoPurchasedBundle/"
+    "issues": "https://github.com/WellCommerce/AlsoPurchasedBundle/issues",
+    "source": "https://github.com/WellCommerce/AlsoPurchasedBundle/"
   },
   "autoload": {
     "psr-4": {
-      "WellCommerce\\Bundle\\ProductAlsoPurchasedBundle\\": ""
+      "WellCommerce\\Bundle\\AlsoPurchasedBundle\\": ""
     }
   },
   "require": {

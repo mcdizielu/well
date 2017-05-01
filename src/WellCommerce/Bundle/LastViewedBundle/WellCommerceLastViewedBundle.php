@@ -10,17 +10,17 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\ProductLastViewedBundle;
+namespace WellCommerce\Bundle\LastViewedBundle;
 
 use Doctrine\Common\Collections\Collection;
 use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
 
 /**
- * Class WellCommerceProductLastViewedBundle
+ * Class WellCommerceLastViewedBundle
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-final class WellCommerceProductLastViewedBundle extends AbstractWellCommerceBundle
+final class WellCommerceLastViewedBundle extends AbstractWellCommerceBundle
 {
     public static function registerBundles(Collection $bundles, string $environment)
     {

@@ -8,18 +8,18 @@
 
 services:
     last_viewed.layout_box.configurator:
-        class: WellCommerce\Bundle\ProductLastViewedBundle\Service\Layout\Configurator\LastViewedBoxConfigurator
+        class: WellCommerce\Bundle\LastViewedBundle\Service\Layout\Configurator\LastViewedBoxConfigurator
         autowire: true
         tags:
             - { name: layout_box.configurator }
 
     last_viewed.layout_box.controller:
-        class: WellCommerce\Bundle\ProductLastViewedBundle\Controller\Box\LastViewedBoxController
+        class: WellCommerce\Bundle\LastViewedBundle\Controller\Box\LastViewedBoxController
         calls:
             - [setContainer, ['@service_container']]
 
     last_viewed.subscriber:
-        class: WellCommerce\Bundle\ProductLastViewedBundle\EventListener\LastViewedSubscriber
+        class: WellCommerce\Bundle\LastViewedBundle\EventListener\LastViewedSubscriber
         tags:
             - { name: kernel.event_subscriber }
         calls:

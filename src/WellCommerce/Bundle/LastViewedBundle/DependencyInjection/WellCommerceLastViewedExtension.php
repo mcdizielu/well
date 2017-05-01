@@ -10,21 +10,15 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\ProductLastViewedBundle\EventListener;
+namespace WellCommerce\Bundle\LastViewedBundle\DependencyInjection;
 
-use WellCommerce\Bundle\CoreBundle\EventListener\AbstractEventSubscriber;
+use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractExtension;
 
 /**
- * Class LastViewedSubscriber
+ * Class WellCommerceLastViewedExtension
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class LastViewedSubscriber extends AbstractEventSubscriber
+class WellCommerceLastViewedExtension extends AbstractExtension
 {
-    public static function getSubscribedEvents()
-    {
-        return [
-
-        ];
-    }
 }

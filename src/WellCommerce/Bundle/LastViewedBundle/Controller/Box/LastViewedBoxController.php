@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\ProductLastViewedBundle\Controller\Box;
+namespace WellCommerce\Bundle\LastViewedBundle\Controller\Box;
 
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\Response;
