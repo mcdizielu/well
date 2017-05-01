@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use WellCommerce\Bundle\CatalogBundle\Entity\Category;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
+use WellCommerce\Bundle\CatalogBundle\Event\ProductViewedEvent;
 use WellCommerce\Bundle\CoreBundle\Controller\Front\AbstractFrontController;
 use WellCommerce\Component\Breadcrumb\Model\Breadcrumb;
 
@@ -36,6 +37,8 @@ class ProductController extends AbstractFrontController
         $this->getProductStorage()->setCurrentProduct($product);
         $this->updatePopularity($product);
         $this->getMetadataHelper()->setMetadata($product->translate()->getMeta());
+        
+        $this->getEventDispatcher()->dispatch(ProductViewedEvent::EVENT_NAME, new ProductViewedEvent($product));
         
         return $this->displayTemplate('index', [
             'product' => $product,
@@ -72,7 +75,7 @@ class ProductController extends AbstractFrontController
             'label' => $product->translate()->getName(),
         ]));
     }
-
+    
     private function updatePopularity(Product $product)
     {
         $product->increasePopularity();
