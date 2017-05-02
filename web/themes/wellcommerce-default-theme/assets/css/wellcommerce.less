@@ -1540,8 +1540,15 @@ footer {
 .product-details {
 	margin-bottom: 30px;
 
+	.mainphoto,
 	.thumbnails {
-	margin: 20px 0 0 -10px;
+		img {
+			max-width: 100%;
+		}
+	}
+
+	.thumbnails {
+		margin: 20px 0 0 -10px;
 
 		> a {
 			float: left;
@@ -2264,10 +2271,6 @@ body {
 				.transition(transform .58s);
 			}
 		}
-	}
-
-	main {
-
 	}
 }
 
