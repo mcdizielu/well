@@ -82,7 +82,7 @@ class TemplateEditorController extends AbstractAdminController
         }
         
         try {
-            $filesystem->dumpFile($fileName, $content);
+            $filesystem->dumpFile($path, $content);
         } catch (\Exception $e) {
             return $this->jsonResponse([
                 'error' => $e->getMessage(),
