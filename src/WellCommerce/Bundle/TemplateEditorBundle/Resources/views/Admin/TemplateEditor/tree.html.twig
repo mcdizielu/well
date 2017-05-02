@@ -1,0 +1,10 @@
+<ul class='jqueryFileTree'>
+    {% for file in finder %}
+        {% if file.isDir() %}
+            <li class="directory collapsed"><a rel="{{ dir }}{{ file.getFileName() }}/">{{ file.getFileName() }}</a></li>
+        {% endif %}
+        {% if file.isFile() %}
+            <li class="file ext_{{ file.extension }}"><a rel="{{ dir }}{{ file.getFileName() }}">{{ file.getFileName() }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>

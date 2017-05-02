@@ -1,0 +1,46 @@
+{% extends 'WellCommerceAppBundle:Admin:layout.html.twig' %}
+{% trans_default_domain "wellcommerce" %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/wellcommercetemplateeditor/js/monaco/dev/vs/loader.js') }}"></script>
+    <script src="{{ asset('bundles/wellcommercetemplateeditor/js/template_editor.js') }}"></script>
+    <script src="{{ asset('bundles/wellcommercetemplateeditor/js/jQueryFileTree.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('bundles/wellcommercetemplateeditor/css/template_editor.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('bundles/wellcommercetemplateeditor/css/jQueryFileTree.css') }}"/>
+{% endblock %}
+
+{% block content %}
+    <h2>{{ resource.name }}</h2>
+    <ul class="possibilities">
+        <li><a href="{{ path('admin.template_editor.index') }}" class="button return"><span></span></a></li>
+    </ul>
+    <div class="layout-two-columns" id="template-editor">
+        <div class="column narrow-collapsed">
+            <div class="block">
+                <div id="tree"></div>
+            </div>
+        </div>
+        <div class="column wide-collapsed">
+            <div class="block">
+                <div>
+                    <div id="editor"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $('#template-editor').GTemplateEditor({
+          sTreeNode: 'tree',
+          sEditorTheme: 'vs-dark',
+          sEditorNode: 'editor',
+          sListFilesRoute: 'admin.template_editor.file_list',
+          sGetFileRoute: 'admin.template_editor.file_content',
+          sSaveFileRoute: 'admin.template_editor.file_save',
+          sUploadFileRoute: 'admin.template_editor.file_upload',
+          sTheme: '{{ resource.folder }}',
+        })
+      })
+    </script>
+{% endblock %}

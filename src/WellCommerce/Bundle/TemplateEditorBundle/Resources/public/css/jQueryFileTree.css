@@ -1,0 +1,296 @@
+UL.jqueryFileTree {
+    font-family: Verdana, sans-serif;
+    font-size: 11px;
+    line-height: 18px;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+UL.jqueryFileTree LI {
+    list-style: none;
+    padding: 0;
+    padding-left: 20px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+UL.jqueryFileTree LI.directory {
+    background: url(/bundles/wellcommercetemplateeditor/images/directory.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.directory-locked {
+    background: url(/bundles/wellcommercetemplateeditor/images/directory-lock.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.expanded {
+    background: url(/bundles/wellcommercetemplateeditor/images/folder_open.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.file {
+    background: url(/bundles/wellcommercetemplateeditor/images/file.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.file-locked {
+    background: url(/bundles/wellcommercetemplateeditor/images/file-lock.png) left top no-repeat !important;
+}
+
+UL.jqueryFileTree LI.wait {
+    background: url(/bundles/wellcommercetemplateeditor/images/spinner.gif) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.selected > a {
+    font-weight: bold;
+}
+
+UL.jqueryFileTree LI.ext_3gp {
+    background: url(/bundles/wellcommercetemplateeditor/images/film.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_afp {
+    background: url(/bundles/wellcommercetemplateeditor/images/code.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_afpa {
+    background: url(/bundles/wellcommercetemplateeditor/images/code.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_asp {
+    background: url(/bundles/wellcommercetemplateeditor/images/code.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_aspx {
+    background: url(/bundles/wellcommercetemplateeditor/images/code.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_avi {
+    background: url(/bundles/wellcommercetemplateeditor/images/film.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_bat {
+    background: url(/bundles/wellcommercetemplateeditor/images/application.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_bmp {
+    background: url(/bundles/wellcommercetemplateeditor/images/picture.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_c {
+    background: url(/bundles/wellcommercetemplateeditor/images/code.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_cfm {
+    background: url(/bundles/wellcommercetemplateeditor/images/code.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_cgi {
+    background: url(/bundles/wellcommercetemplateeditor/images/code.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_com {
+    background: url(/bundles/wellcommercetemplateeditor/images/application.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_cpp {
+    background: url(/bundles/wellcommercetemplateeditor/images/code.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_css {
+    background: url(/bundles/wellcommercetemplateeditor/images/css.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_doc {
+    background: url(/bundles/wellcommercetemplateeditor/images/doc.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_exe {
+    background: url(/bundles/wellcommercetemplateeditor/images/application.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_gif {
+    background: url(/bundles/wellcommercetemplateeditor/images/picture.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_fla {
+    background: url(/bundles/wellcommercetemplateeditor/images/flash.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_h {
+    background: url(/bundles/wellcommercetemplateeditor/images/code.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_htm {
+    background: url(/bundles/wellcommercetemplateeditor/images/html.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_html {
+    background: url(/bundles/wellcommercetemplateeditor/images/html.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_jar {
+    background: url(/bundles/wellcommercetemplateeditor/images/java.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_jpg {
+    background: url(/bundles/wellcommercetemplateeditor/images/picture.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_jpeg {
+    background: url(/bundles/wellcommercetemplateeditor/images/picture.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_js {
+    background: url(/bundles/wellcommercetemplateeditor/images/script.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_lasso {
+    background: url(/bundles/wellcommercetemplateeditor/images/code.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_log {
+    background: url(/bundles/wellcommercetemplateeditor/images/txt.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_m4p {
+    background: url(/bundles/wellcommercetemplateeditor/images/music.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_mov {
+    background: url(/bundles/wellcommercetemplateeditor/images/film.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_mp3 {
+    background: url(/bundles/wellcommercetemplateeditor/images/music.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_mp4 {
+    background: url(/bundles/wellcommercetemplateeditor/images/film.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_mpg {
+    background: url(/bundles/wellcommercetemplateeditor/images/film.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_mpeg {
+    background: url(/bundles/wellcommercetemplateeditor/images/film.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_ogg {
+    background: url(/bundles/wellcommercetemplateeditor/images/music.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_ogv {
+    background: url(/bundles/wellcommercetemplateeditor/images/film.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_pcx {
+    background: url(/bundles/wellcommercetemplateeditor/images/picture.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_pdf {
+    background: url(/bundles/wellcommercetemplateeditor/images/pdf.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_php {
+    background: url(/bundles/wellcommercetemplateeditor/images/php.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_png {
+    background: url(/bundles/wellcommercetemplateeditor/images/picture.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_ppt {
+    background: url(/bundles/wellcommercetemplateeditor/images/ppt.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_psd {
+    background: url(/bundles/wellcommercetemplateeditor/images/psd.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_pl {
+    background: url(/bundles/wellcommercetemplateeditor/images/script.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_py {
+    background: url(/bundles/wellcommercetemplateeditor/images/script.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_rb {
+    background: url(/bundles/wellcommercetemplateeditor/images/ruby.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_rbx {
+    background: url(/bundles/wellcommercetemplateeditor/images/ruby.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_rhtml {
+    background: url(/bundles/wellcommercetemplateeditor/images/ruby.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_rpm {
+    background: url(/bundles/wellcommercetemplateeditor/images/linux.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_ruby {
+    background: url(/bundles/wellcommercetemplateeditor/images/ruby.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_sql {
+    background: url(/bundles/wellcommercetemplateeditor/images/db.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_swf {
+    background: url(/bundles/wellcommercetemplateeditor/images/flash.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_tif {
+    background: url(/bundles/wellcommercetemplateeditor/images/picture.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_tiff {
+    background: url(/bundles/wellcommercetemplateeditor/images/picture.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_txt {
+    background: url(/bundles/wellcommercetemplateeditor/images/txt.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_vb {
+    background: url(/bundles/wellcommercetemplateeditor/images/code.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_wav {
+    background: url(/bundles/wellcommercetemplateeditor/images/music.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_webm {
+    background: url(/bundles/wellcommercetemplateeditor/images/film.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_wmv {
+    background: url(/bundles/wellcommercetemplateeditor/images/film.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_xls {
+    background: url(/bundles/wellcommercetemplateeditor/images/xls.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_xml {
+    background: url(/bundles/wellcommercetemplateeditor/images/code.png) left top no-repeat;
+}
+
+UL.jqueryFileTree LI.ext_zip {
+    background: url(/bundles/wellcommercetemplateeditor/images/zip.png) left top no-repeat;
+}
+
+UL.jqueryFileTree A {
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 2px;
+    cursor: pointer;
+}
+
+UL.jqueryFileTree A:hover {
+    background: #BDF;
+}

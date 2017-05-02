@@ -50,6 +50,7 @@
     "wellcommerce/search-bundle": "^0.9@dev",
     "wellcommerce/showcase-bundle": "^0.9@dev",
     "wellcommerce/similar-product-bundle": "^0.9@dev",
+    "wellcommerce/template-editor-bundle": "^0.9@dev",
     "wellcommerce/wishlist-bundle": "^0.9@dev",
     "wellcommerce/wellcommerce-default-theme": "^0.9@dev"
   },

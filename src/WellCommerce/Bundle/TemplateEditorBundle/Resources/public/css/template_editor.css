@@ -1,0 +1,35 @@
+#keys ul {
+    list-style: none;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#keys ul li {
+    margin-bottom: 5px;
+}
+
+#content > h2 {
+    max-width: 945px;
+}
+
+#editor {
+    margin-bottom: -19px;
+    top: -17px;
+    left: -20px;
+    position: relative;
+    width: 833px;
+    height: 700px;
+}
+
+.layout-two-columns > .column.narrow-collapsed {
+    width: 347px;
+    margin-right: -1px;
+}
+
+.layout-two-columns > .column.wide-collapsed {
+    width: 834px;
+}
+
+.layout-two-columns .column.narrow-collapsed .block {
+    padding-bottom: 20px;
+}

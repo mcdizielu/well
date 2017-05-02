@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<items>
+    <item>
+        <identifier>template_editor</identifier>
+        <css_class/>
+        <name>template_editor</name>
+        <route_name>admin.template_editor.index</route_name>
+        <parent>layout</parent>
+        <hierarchy>30</hierarchy>
+    </item>
+</items>

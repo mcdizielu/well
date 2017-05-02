@@ -38,3 +38,6 @@ wellcommerce_order:
 
 wellcommerce_feature:
     resource: "@WellCommerceFeatureBundle/Resources/config/routing.yml"
+
+wellcommerce_template_editor:
+    resource: "@WellCommerceTemplateEditorBundle/Resources/config/routing.yml"

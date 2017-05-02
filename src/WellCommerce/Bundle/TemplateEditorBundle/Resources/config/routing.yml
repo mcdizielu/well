@@ -1,0 +1,67 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+admin.template_editor.index:
+    path: /admin/template/editor/index
+    defaults:
+        _controller: 'template_editor.controller.admin:indexAction'
+    options:
+        require_admin_permission: template_editor.index
+
+admin.template_editor.grid:
+    path: /admin/template/editor/grid
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'template_editor.controller.admin:gridAction'
+    options:
+        expose: true
+        require_admin_permission: template_editor.index
+
+admin.template_editor.edit:
+    path: '/admin/template/editor/edit/{id}'
+    defaults:
+        _controller: 'template_editor.controller.admin:editAction'
+    options:
+        expose: true
+        require_admin_permission: template_editor.edit
+
+admin.template_editor.file_list:
+    path: '/admin/template/editor/file/list/{theme}'
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'template_editor.controller.admin:listFilesAction'
+    options:
+        expose: true
+        require_admin_permission: template_editor.edit
+
+admin.template_editor.file_content:
+    path: '/admin/template/editor/file/content'
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'template_editor.controller.admin:getFileContentAction'
+    options:
+        expose: true
+        require_admin_permission: template_editor.edit
+
+admin.template_editor.file_save:
+    path: '/admin/template/editor/file/save'
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'template_editor.controller.admin:saveFileAction'
+    options:
+        expose: true
+        require_admin_permission: template_editor.edit
+
+admin.template_editor.file_upload:
+    path: '/admin/template/editor/file/upload'
+    condition: "request.isXmlHttpRequest()"
+    defaults:
+        _controller: 'template_editor.controller.admin:uploadFileAction'
+    options:
+        expose: true
+        require_admin_permission: template_editor.edit

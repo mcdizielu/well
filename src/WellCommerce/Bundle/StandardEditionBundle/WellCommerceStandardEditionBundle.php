@@ -42,6 +42,7 @@ final class WellCommerceStandardEditionBundle extends AbstractWellCommerceBundle
         \WellCommerce\Bundle\SimilarProductBundle\WellCommerceSimilarProductBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\WishlistBundle\WellCommerceWishlistBundle::registerBundles($bundles, $environment);
         \WellCommerce\Bundle\FeatureBundle\WellCommerceFeatureBundle::registerBundles($bundles, $environment);
+        \WellCommerce\Bundle\TemplateEditorBundle\WellCommerceTemplateEditorBundle::registerBundles($bundles, $environment);
         
         $bundles->add(new self);
     }

@@ -1,0 +1,20 @@
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+services:
+    template_editor.datagrid:
+        class: WellCommerce\Bundle\TemplateEditorBundle\DataGrid\TemplateEditorDataGrid
+        configurator: ['@datagrid.configurator', configure]
+        lazy: true
+        autowire: true
+
+    template_editor.controller.admin:
+        class: WellCommerce\Bundle\TemplateEditorBundle\Controller\Admin\TemplateEditorController
+        arguments: ['@theme.manager', null, '@template_editor.datagrid', '@theme.dataset.admin']
+        calls:
+            - [setContainer, ['@service_container']]

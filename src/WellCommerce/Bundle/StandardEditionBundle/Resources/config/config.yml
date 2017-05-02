@@ -25,6 +25,7 @@ imports:
     - { resource: "@WellCommerceWishlistBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceFeatureBundle/Resources/config/config.yml" }
     - { resource: "@WellCommerceLastViewedBundle/Resources/config/config.yml" }
+    - { resource: "@WellCommerceTemplateEditorBundle/Resources/config/config.yml" }
 
 parameters:
     fallback_theme: "wellcommerce-default-theme"
