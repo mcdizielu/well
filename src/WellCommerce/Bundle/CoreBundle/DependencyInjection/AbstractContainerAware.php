@@ -15,6 +15,7 @@ namespace WellCommerce\Bundle\CoreBundle\DependencyInjection;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\HttpKernel\KernelInterface;
 use WellCommerce\Bundle\AppBundle\Service\Currency\Helper\CurrencyHelperInterface;
 use WellCommerce\Bundle\AppBundle\Service\Shop\Storage\ShopStorageInterface;
 use WellCommerce\Bundle\AppBundle\Service\Tax\Helper\TaxHelperInterface;
@@ -23,11 +24,11 @@ use WellCommerce\Bundle\CoreBundle\Helper\Flash\FlashHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Image\ImageHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Mailer\MailerHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Request\RequestHelperInterface;
+use WellCommerce\Bundle\CoreBundle\Helper\Router\RouterHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Security\SecurityHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Templating\TemplatingHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Translator\TranslatorHelperInterface;
 use WellCommerce\Bundle\CoreBundle\Helper\Validator\ValidatorHelperInterface;
-use WellCommerce\Bundle\CoreBundle\Helper\Router\RouterHelperInterface;
 use WellCommerce\Component\Breadcrumb\Provider\BreadcrumbProviderInterface;
 
 /**
@@ -145,5 +146,10 @@ abstract class AbstractContainerAware
     protected function getBreadcrumbProvider(): BreadcrumbProviderInterface
     {
         return $this->get('breadcrumb.provider');
+    }
+    
+    protected function getKernel(): KernelInterface
+    {
+        return $this->get('kernel');
     }
 }

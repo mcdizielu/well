@@ -52,3 +52,11 @@ admin.theme.delete_group:
     options:
         expose: true
         require_admin_permission: theme.delete
+
+admin.theme.duplicate:
+    path: '/duplicate/{id}'
+    defaults:
+        _controller: 'theme.controller.admin:duplicateAction'
+    options:
+        expose: true
+        require_admin_permission: theme.duplicate
