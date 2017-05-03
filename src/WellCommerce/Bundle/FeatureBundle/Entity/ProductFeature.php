@@ -18,6 +18,7 @@ use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\FeatureBundle\Entity\ProductFeatureExtraTrait;
 
 /**
  * Class ProductFeature
@@ -28,6 +29,7 @@ class ProductFeature implements EntityInterface
 {
     use Identifiable;
     use Timestampable;
+    use ProductFeatureExtraTrait;
     
     /**
      * @var string

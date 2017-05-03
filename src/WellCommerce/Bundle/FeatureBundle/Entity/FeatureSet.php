@@ -19,6 +19,7 @@ use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\FeatureBundle\Entity\FeatureSetExtraTrait;
 
 /**
  * Class FeatureSet
@@ -31,6 +32,7 @@ class FeatureSet implements EntityInterface
     use Translatable;
     use Timestampable;
     use Blameable;
+    use FeatureSetExtraTrait;
     
     /**
      * @var Collection
