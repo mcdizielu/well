@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\FeatureBundle\Controller\Admin;
 
 use Doctrine\Common\Collections\Criteria;
+use Knp\DoctrineBehaviors\Model\Sluggable\Transliterator;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use WellCommerce\Bundle\CoreBundle\Controller\Admin\AbstractAdminController;
@@ -47,6 +48,10 @@ class FeatureSetController extends AbstractAdminController
                 'name'             => $set->translate()->getName(),
                 'current_category' => false,
             ];
+        });
+        
+        usort($sets, function ($a, $b) {
+            return strcasecmp(Transliterator::unaccent($a['name']), Transliterator::unaccent($b['name']));
         });
         
         return $sets;
