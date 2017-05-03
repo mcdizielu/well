@@ -52,8 +52,9 @@ class ThemeController extends AbstractAdminController
         $this->manager->createResource($targetTheme);
         
         $filesystem = new Filesystem();
-        $sourceDir  = $this->getKernel()->getRootDir() . '/../web/themes/' . $sourceTheme->getFolder();
-        $targetDir  = $this->getKernel()->getRootDir() . '/../web/themes/' . $targetTheme->getFolder();
+        $themesDir  = $this->getKernel()->getRootDir() . '/../web/themes/';
+        $sourceDir  = $themesDir . $sourceTheme->getFolder();
+        $targetDir  = $themesDir . $targetTheme->getFolder();
         $filesystem->mirror($sourceDir, $targetDir);
         
         return $targetTheme;
