@@ -20,6 +20,7 @@ use WellCommerce\Component\DataSet\Column\ColumnCollection;
 use WellCommerce\Component\DataSet\Column\ColumnInterface;
 use WellCommerce\Component\DataSet\Configurator\DataSetConfiguratorInterface;
 use WellCommerce\Component\DataSet\DataSetInterface;
+use WellCommerce\Component\DataSet\Event\DataSetQueryBuilderEvent;
 use WellCommerce\Component\DataSet\Manager\DataSetManagerInterface;
 use WellCommerce\Component\DataSet\QueryBuilder\DataSetQueryBuilder;
 use WellCommerce\Component\DataSet\Request\DataSetRequestInterface;
@@ -124,7 +125,11 @@ abstract class AbstractDataSet extends AbstractContainerAware implements DataSet
     
     protected function getQueryBuilder(DataSetRequestInterface $request): QueryBuilder
     {
-        $dataSetQueryBuilder = new DataSetQueryBuilder($this->createQueryBuilder());
+        $queryBuilder = $this->createQueryBuilder();
+        $eventName    = sprintf('%s.%s', $this->getIdentifier(), DataSetQueryBuilderEvent::EVENT_SUFFIX);
+        $this->getEventDispatcher()->dispatch($eventName, new DataSetQueryBuilderEvent($queryBuilder));
+        
+        $dataSetQueryBuilder = new DataSetQueryBuilder($queryBuilder);
         
         return $dataSetQueryBuilder->getQueryBuilder($this->columns, $request);
     }
