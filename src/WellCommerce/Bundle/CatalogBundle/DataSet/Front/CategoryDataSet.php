@@ -28,7 +28,7 @@ class CategoryDataSet extends AbstractDataSet
 {
     public function getIdentifier(): string
     {
-        return 'admin.category';
+        return 'front.category';
     }
     
     public function configureOptions(DataSetConfiguratorInterface $configurator)
