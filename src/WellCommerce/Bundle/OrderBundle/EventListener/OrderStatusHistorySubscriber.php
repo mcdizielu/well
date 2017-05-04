@@ -9,6 +9,7 @@
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */
+
 namespace WellCommerce\Bundle\OrderBundle\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -43,11 +44,11 @@ final class OrderStatusHistorySubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            'order_status_history.post_create' => ['onOrderStatusHistoryCreated', 0],
+            'order_status_history.pre_create' => ['onOrderStatusHistoryPreCreate', 0],
         ];
     }
     
-    public function onOrderStatusHistoryCreated(EntityEvent $event)
+    public function onOrderStatusHistoryPreCreate(EntityEvent $event)
     {
         $history = $event->getEntity();
         if ($history instanceof OrderStatusHistory) {

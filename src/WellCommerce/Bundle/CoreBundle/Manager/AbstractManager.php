@@ -65,33 +65,36 @@ abstract class AbstractManager extends AbstractContainerAware implements Manager
     {
         $this->dispatchEvent(self::PRE_ENTITY_CREATE_EVENT, $entity);
         $this->getEntityManager()->persist($entity);
-        $this->dispatchEvent(self::POST_ENTITY_CREATE_EVENT, $entity);
         
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+        
+        $this->dispatchEvent(self::POST_ENTITY_CREATE_EVENT, $entity);
     }
     
     public function updateResource(EntityInterface $entity, bool $flush = true)
     {
         $this->dispatchEvent(self::PRE_ENTITY_UPDATE_EVENT, $entity);
         $this->getEntityManager()->persist($entity);
-        $this->dispatchEvent(self::POST_ENTITY_UPDATE_EVENT, $entity);
         
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+        
+        $this->dispatchEvent(self::POST_ENTITY_UPDATE_EVENT, $entity);
     }
     
     public function removeResource(EntityInterface $entity, bool $flush = true)
     {
         $this->dispatchEvent(self::PRE_ENTITY_REMOVE_EVENT, $entity);
         $this->getEntityManager()->remove($entity);
-        $this->dispatchEvent(self::POST_ENTITY_REMOVE_EVENT, $entity);
         
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+        
+        $this->dispatchEvent(self::POST_ENTITY_REMOVE_EVENT, $entity);
     }
     
     protected function dispatchEvent(string $name, EntityInterface $entity)
