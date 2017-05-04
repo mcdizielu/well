@@ -42,12 +42,10 @@ class CollectionToArrayTransformer extends AbstractDataTransformer
     {
         $collection = new ArrayCollection();
         
-        if (is_array($value)) {
-            foreach ($value as $key => $val) {
-                if (is_int($key)) {
-                    $item = $this->getRepository()->find($val);
-                    $collection->add($item);
-                }
+        foreach ($value as $key => $val) {
+            if (is_int($key)) {
+                $item = $this->getRepository()->find($val);
+                $collection->add($item);
             }
         }
         
