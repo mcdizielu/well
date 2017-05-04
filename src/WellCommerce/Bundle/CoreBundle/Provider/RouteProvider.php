@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\CoreBundle\Provider;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Util\ClassUtils;
 use Symfony\Cmf\Component\Routing\RouteProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -97,14 +98,7 @@ final class RouteProvider implements RouteProviderInterface
     
     public function getRoutesByNames($names, $parameters = [])
     {
-        $collection = $this->repository->getCollection();
-        $routes     = [];
-        
-        $collection->map(function (Route $route) use (&$routes) {
-            $routes[] = $this->getRouteByName($route->getId());
-        });
-        
-        return $routes;
+        return new ArrayCollection();
     }
     
     /**
