@@ -109,7 +109,7 @@ class ModelDataMapper extends AbstractDataMapper
         if ($propertyPath instanceof PropertyPathInterface) {
             if ($this->propertyAccessor->isReadable($this->data, $propertyPath)) {
                 $value = $this->propertyAccessor->getValue($this->data, $propertyPath);
-                if (0 !== $value && empty($value)) {
+                if (0 != $value && empty($value)) {
                     $value = $element->getDefaultValue();
                 }
                 
