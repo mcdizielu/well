@@ -51,6 +51,8 @@ class ThemeFormBuilder extends AbstractFormBuilder
             'default' => reset($themeFolders)
         ]));
         
+        $this->addShopsFieldset($form);
+        
         $form->addFilter($this->getFilter('no_code'));
         $form->addFilter($this->getFilter('trim'));
         $form->addFilter($this->getFilter('secure'));

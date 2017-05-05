@@ -27,6 +27,7 @@ class Theme implements EntityInterface
     use Identifiable;
     use Timestampable;
     use Blameable;
+    use ShopCollectionAwareTrait;
     
     protected $name   = '';
     protected $folder = '';
