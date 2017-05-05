@@ -8,6 +8,7 @@ use WellCommerce\Bundle\CoreBundle\Entity\AbstractTranslation;
 use WellCommerce\Bundle\CoreBundle\Entity\RoutableSubjectInterface;
 use WellCommerce\Bundle\CoreBundle\Entity\RoutableTrait;
 use WellCommerce\Bundle\CoreBundle\Entity\Route;
+use WellCommerce\Extra\CatalogBundle\Entity\CategoryTranslationExtraTrait;
 
 /**
  * Class CategoryTranslation
@@ -18,6 +19,7 @@ class CategoryTranslation extends AbstractTranslation implements RoutableSubject
 {
     use Translation;
     use RoutableTrait;
+    use CategoryTranslationExtraTrait;
     
     protected $name             = '';
     protected $shortDescription = '';
