@@ -82,7 +82,7 @@ class ProductFormBuilder extends AbstractFormBuilder
                 $this->getRule('required'),
             ],
         ]));
-
+        
         $mainData->addChild($this->getElement('text_field', [
             'name'  => 'popularity',
             'label' => 'product.label.popularity',
@@ -128,7 +128,7 @@ class ProductFormBuilder extends AbstractFormBuilder
         $producer = $mainData->addChild($this->getElement('select', [
             'name'        => 'producer',
             'label'       => 'common.label.producer',
-            'options'     => $this->get('producer.dataset.admin')->getResult('select'),
+            'options'     => $this->get('producer.dataset.admin')->getResult('select', ['limit' => 10000]),
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('producer.repository')),
         ]));
         
