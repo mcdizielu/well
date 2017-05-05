@@ -50,7 +50,7 @@ class FeatureSetFormBuilder extends AbstractFormBuilder
         $groupsData->addChild($this->getElement('multi_select', [
             'name'        => 'groups',
             'label'       => 'feature_set.label.groups',
-            'options'     => $this->get('feature_group.dataset.admin')->getResult('select'),
+            'options'     => $this->get('feature_group.dataset.admin')->getResult('select', ['limit' => 10000]),
             'transformer' => $this->getRepositoryTransformer('collection', $this->get('feature_group.repository')),
         ]));
         

@@ -9,6 +9,7 @@
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */
+
 namespace WellCommerce\Bundle\FeatureBundle\Form\Admin;
 
 use WellCommerce\Bundle\CoreBundle\Form\AbstractFormBuilder;
@@ -49,7 +50,7 @@ class FeatureFormBuilder extends AbstractFormBuilder
             'options' => [
                 1 => $this->trans('feature.label.field_type.text_field'),
                 2 => $this->trans('feature.label.field_type.text_area'),
-                3 => $this->trans('feature.label.field_type.checkbox')
+                3 => $this->trans('feature.label.field_type.checkbox'),
             ],
         ]));
         
@@ -61,7 +62,7 @@ class FeatureFormBuilder extends AbstractFormBuilder
         $groupsData->addChild($this->getElement('multi_select', [
             'name'        => 'groups',
             'label'       => $this->trans('feature.label.groups'),
-            'options'     => $this->get('feature_group.dataset.admin')->getResult('select'),
+            'options'     => $this->get('feature_group.dataset.admin')->getResult('select', ['limit' => 10000]),
             'transformer' => $this->getRepositoryTransformer('collection', $this->get('feature_group.repository')),
         ]));
         
