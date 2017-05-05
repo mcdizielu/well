@@ -35,6 +35,7 @@
   "extra": {
     "branch-alias": {
       "dev-master": "0.9.x-dev"
-    }
+    },
+    "WellCommerce\\Extra\\CmsBundle\\Entity\\PageExtraTrait": "src/WellCommerce/Extra/CmsBundle/Entity/PageExtraTrait.php"
   }
 }

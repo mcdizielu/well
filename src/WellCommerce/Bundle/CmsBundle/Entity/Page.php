@@ -21,6 +21,7 @@ use WellCommerce\Bundle\AppBundle\Entity\ShopCollectionAwareTrait;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Sortable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\CmsBundle\Entity\PageExtraTrait;
 
 /**
  * Class Page
@@ -35,6 +36,7 @@ class Page implements EntityInterface
     use Timestampable;
     use Blameable;
     use ShopCollectionAwareTrait;
+    use PageExtraTrait;
     
     protected $publish       = true;
     protected $section       = '';
