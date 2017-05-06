@@ -12,9 +12,11 @@
 
 namespace WellCommerce\Bundle\CmsBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Knp\DoctrineBehaviors\Model\Blameable\Blameable;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
+use WellCommerce\Bundle\AppBundle\Entity\ShopCollectionAwareTrait;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
@@ -31,6 +33,12 @@ class Contact implements EntityInterface
     use Translatable;
     use Timestampable;
     use Blameable;
+    use ShopCollectionAwareTrait;
+    
+    public function __construct()
+    {
+        $this->shops = new ArrayCollection();
+    }
     
     public function translate($locale = null, $fallbackToDefault = true): ContactTranslation
     {

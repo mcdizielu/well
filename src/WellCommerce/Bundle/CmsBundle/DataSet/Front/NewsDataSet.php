@@ -50,8 +50,10 @@ class NewsDataSet extends BaseDataSet
         $queryBuilder = $this->repository->getQueryBuilder();
         $queryBuilder->leftJoin('news.translations', 'news_translation');
         $queryBuilder->leftJoin('news.photo', 'photos');
+        $queryBuilder->leftJoin('news.shops', 'news_shops');
         $queryBuilder->groupBy('news.id');
         $queryBuilder->andWhere($queryBuilder->expr()->eq('news.publish', true));
+        $queryBuilder->andWhere($queryBuilder->expr()->eq('news_shops.id', $this->getShopStorage()->getCurrentShopIdentifier()));
         
         return $queryBuilder;
     }

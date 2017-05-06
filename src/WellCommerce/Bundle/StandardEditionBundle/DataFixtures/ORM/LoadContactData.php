@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
+use WellCommerce\Bundle\AppBundle\Entity\Shop;
 use WellCommerce\Bundle\CmsBundle\Entity\Contact;
 use WellCommerce\Bundle\CmsBundle\Entity\ContactTranslation;
 use WellCommerce\Bundle\StandardEditionBundle\DataFixtures\AbstractDataFixture;
@@ -59,6 +60,11 @@ class LoadContactData extends AbstractDataFixture
         }
         
         $contact->mergeNewTranslations();
+    
+        /** @var Shop $shop */
+        $shop = $this->getReference('shop');
+        $contact->addShop($shop);
+        
         $manager->persist($contact);
     }
     
