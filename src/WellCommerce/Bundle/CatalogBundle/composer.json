@@ -42,6 +42,7 @@
       "WellCommerce\\Extra\\CatalogBundle\\Entity\\CategoryTranslationExtraTrait": "src/WellCommerce/Extra/CatalogBundle/Entity/CategoryTranslationExtraTrait.php",
       "WellCommerce\\Extra\\CatalogBundle\\Entity\\ProductExtraTrait": "src/WellCommerce/Extra/CatalogBundle/Entity/ProductExtraTrait.php",
       "WellCommerce\\Extra\\CatalogBundle\\Entity\\ProducerExtraTrait": "src/WellCommerce/Extra/CatalogBundle/Entity/ProducerExtraTrait.php",
+      "WellCommerce\\Extra\\CatalogBundle\\Entity\\UnitExtraTrait": "src/WellCommerce/Extra/CatalogBundle/Entity/UnitExtraTrait.php",
       "WellCommerce\\Extra\\CatalogBundle\\Entity\\VariantExtraTrait": "src/WellCommerce/Extra/CatalogBundle/Entity/VariantExtraTrait.php"
     }
   }

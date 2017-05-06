@@ -17,6 +17,7 @@ use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\CatalogBundle\Entity\UnitExtraTrait;
 
 /**
  * Class Unit
@@ -29,6 +30,7 @@ class Unit implements EntityInterface
     use Translatable;
     use Timestampable;
     use Blameable;
+    use UnitExtraTrait;
     
     public function translate($locale = null, $fallbackToDefault = true): UnitTranslation
     {
