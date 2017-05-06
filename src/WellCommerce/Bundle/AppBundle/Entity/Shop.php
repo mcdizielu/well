@@ -38,7 +38,7 @@ class Shop implements EntityInterface
     protected $defaultCountry  = '';
     protected $defaultCurrency = '';
     protected $enableClient    = true;
-
+    
     /**
      * @var MinimumOrderAmount
      */
@@ -63,6 +63,11 @@ class Shop implements EntityInterface
      * @var Theme
      */
     protected $theme;
+    
+    /**
+     * @var Media
+     */
+    protected $logo;
     
     public function __construct()
     {
@@ -149,7 +154,7 @@ class Shop implements EntityInterface
     {
         $this->theme = $theme;
     }
-
+    
     public function getMinimumOrderAmount(): MinimumOrderAmount
     {
         return $this->minimumOrderAmount;
@@ -159,17 +164,27 @@ class Shop implements EntityInterface
     {
         $this->minimumOrderAmount = $minimumOrderAmount;
     }
-
+    
     public function isEnableClient(): bool
     {
         return $this->enableClient;
     }
-
+    
     public function setEnableClient(bool $enableClient)
     {
         $this->enableClient = $enableClient;
     }
-
+    
+    public function getLogo()
+    {
+        return $this->logo;
+    }
+    
+    public function setLogo(Media $logo = null)
+    {
+        $this->logo = $logo;
+    }
+    
     public function translate($locale = null, $fallbackToDefault = true): ShopTranslation
     {
         return $this->doTranslate($locale, $fallbackToDefault);

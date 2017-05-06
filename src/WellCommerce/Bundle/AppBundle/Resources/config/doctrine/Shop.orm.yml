@@ -63,3 +63,10 @@ WellCommerce\Bundle\AppBundle\Entity\Shop:
                 client_group_id:
                     referencedColumnName: id
                     onDelete: 'SET NULL'
+        logo:
+            targetEntity: WellCommerce\Bundle\AppBundle\Entity\Media
+            fetch: LAZY
+            joinColumns:
+                photo_id:
+                    referencedColumnName: id
+                    onDelete: 'SET NULL'

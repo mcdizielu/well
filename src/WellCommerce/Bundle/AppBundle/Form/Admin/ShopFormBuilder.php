@@ -189,6 +189,21 @@ class ShopFormBuilder extends AbstractFormBuilder
         ]));
         
         $this->addMetadataFieldset($form, $this->get('shop.repository'));
+    
+        $mediaData = $form->addChild($this->getElement('nested_fieldset', [
+            'name'  => 'media_data',
+            'label' => 'common.fieldset.photos'
+        ]));
+    
+        $mediaData->addChild($this->getElement('image', [
+            'name'         => 'logo',
+            'label'        => 'form.media_data.image_id',
+            'repeat_min'   => 0,
+            'repeat_max'   => 1,
+            'transformer'  => $this->getRepositoryTransformer('media_entity', $this->get('media.repository')),
+            'session_id'   => $this->getRequestHelper()->getSessionId(),
+            'session_name' => $this->getRequestHelper()->getSessionName(),
+        ]));
         
         $form->addFilter($this->getFilter('no_code'));
         $form->addFilter($this->getFilter('trim'));
