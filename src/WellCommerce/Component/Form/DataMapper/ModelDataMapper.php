@@ -109,7 +109,7 @@ class ModelDataMapper extends AbstractDataMapper
         if ($propertyPath instanceof PropertyPathInterface) {
             if ($this->propertyAccessor->isReadable($this->data, $propertyPath)) {
                 $value = $this->propertyAccessor->getValue($this->data, $propertyPath);
-                if (null === $value || '' === $value) {
+                if ($this->isEmptyValue($value)) {
                     $value = $element->getDefaultValue();
                 }
                 
@@ -142,5 +142,14 @@ class ModelDataMapper extends AbstractDataMapper
                 }
             }
         }
+    }
+    
+    private function isEmptyValue($value): bool
+    {
+        if (is_array($value) && empty($value)) {
+            return true;
+        }
+        
+        return null === $value || '' === $value;
     }
 }

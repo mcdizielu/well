@@ -27,36 +27,36 @@ use WellCommerce\Component\Form\Elements\ElementInterface;
 class LanguageFieldset extends NestedFieldset implements FieldsetInterface
 {
     protected $locales;
-
+    
     public function __construct(array $locales)
     {
         parent::__construct();
         $this->locales = $locales;
     }
-
+    
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         parent::configureOptions($resolver);
-
+        
         $resolver->setRequired([
             'languages',
         ]);
-
+        
         $resolver->setDefaults([
             'languages' => $this->locales,
         ]);
-
+        
         $resolver->setNormalizer('property_path', function ($options) {
             return new PropertyPath($options['name']);
         });
-
+        
         $resolver->setAllowedTypes('languages', 'array');
         $resolver->setAllowedTypes('transformer', DataTransformerInterface::class);
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -65,7 +65,7 @@ class LanguageFieldset extends NestedFieldset implements FieldsetInterface
         parent::prepareAttributesCollection($collection);
         $collection->add(new Attribute('aoLanguages', $this->prepareLanguages(), Attribute::TYPE_ARRAY));
     }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -73,15 +73,18 @@ class LanguageFieldset extends NestedFieldset implements FieldsetInterface
     {
         $accessor = $this->getPropertyAccessor();
         $data     = $this->convertRepetitionsData($data);
-
+        
         $this->getChildren()->forAll(function (ElementInterface $child) use ($data, $accessor) {
             if (null !== $propertyPath = $child->getPropertyPath(true)) {
                 $value = $accessor->getValue($data, $propertyPath);
+                if (null === $value || '' === $value) {
+                    $value = $child->getDefaultValue();
+                }
                 $child->setValue($value);
             }
         });
     }
-
+    
     /**
      * Returns fieldset values
      *
@@ -90,16 +93,16 @@ class LanguageFieldset extends NestedFieldset implements FieldsetInterface
     public function getValue()
     {
         $values = [];
-
+        
         $this->getChildren()->forAll(function (ElementInterface $child) use (&$values) {
             foreach ($this->locales as $locale) {
                 $values[$locale['code']][$child->getName()] = $this->getChildValue($child, $locale['code']);
             }
         });
-
+        
         return $values;
     }
-
+    
     public function getError()
     {
         $errors = [];
@@ -108,13 +111,13 @@ class LanguageFieldset extends NestedFieldset implements FieldsetInterface
                 foreach ($fields as $field => $error) {
                     $errors[$locale][$field] = implode('.', $error);
                 }
-
+                
             }
         }
-
+        
         return $errors;
     }
-
+    
     /**
      * Prepares the languages
      *
@@ -126,10 +129,10 @@ class LanguageFieldset extends NestedFieldset implements FieldsetInterface
         foreach ($this->options['languages'] as $language) {
             $options[] = $this->prepareLanguage($language);
         }
-
+        
         return $options;
     }
-
+    
     /**
      * Prepares language to use it as element attribute
      *
@@ -142,14 +145,14 @@ class LanguageFieldset extends NestedFieldset implements FieldsetInterface
         $value = addslashes($language['code']);
         $label = addslashes($language['code']);
         $flag  = addslashes(sprintf('%s.png', substr($label, 0, 2)));
-
+        
         return [
             'sValue' => $value,
             'sLabel' => $label,
             'sFlag'  => $flag,
         ];
     }
-
+    
     /**
      * Flips language repetitions
      *
@@ -165,10 +168,10 @@ class LanguageFieldset extends NestedFieldset implements FieldsetInterface
                 $values[$fieldName][$locale] = $fieldValue;
             }
         }
-
+        
         return $values;
     }
-
+    
     /**
      * Returns child values
      *
@@ -181,11 +184,11 @@ class LanguageFieldset extends NestedFieldset implements FieldsetInterface
     {
         $accessor = $this->getPropertyAccessor();
         $value    = $child->getValue();
-
+        
         if (is_array($value)) {
             return $accessor->getValue($value, "[{$locale}]");
         }
-
+        
         return null;
     }
 }
