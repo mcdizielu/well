@@ -87,7 +87,7 @@ class MailerConfiguration
         $this->bcc = $bcc;
     }
     
-    public function getEncrypt(): mixed
+    public function getEncrypt()
     {
         return $this->encrypt;
     }
