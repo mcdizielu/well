@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Knp\DoctrineBehaviors\Model\Blameable\Blameable;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
@@ -31,6 +32,11 @@ class Theme implements EntityInterface
     
     protected $name   = '';
     protected $folder = '';
+    
+    public function __construct()
+    {
+        $this->shops = new ArrayCollection();
+    }
     
     public function getName(): string
     {
