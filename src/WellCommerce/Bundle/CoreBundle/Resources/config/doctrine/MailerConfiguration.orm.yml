@@ -20,6 +20,10 @@ WellCommerce\Bundle\CoreBundle\Entity\MailerConfiguration:
         port:
             type: integer
             nullable: true
+        encrypt:
+            type: string
+            length: 3
+            nullable: true
         user:
             type: string
             length: 64

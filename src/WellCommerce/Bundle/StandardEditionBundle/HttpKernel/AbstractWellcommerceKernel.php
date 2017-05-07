@@ -51,7 +51,7 @@ abstract class AbstractWellcommerceKernel extends Kernel
                         )
                     );
                 }
-                
+
                 if ($parentName == $name) {
                     throw new \LogicException(sprintf('Bundle "%s" can not extend itself.', $name));
                 }
@@ -79,13 +79,14 @@ abstract class AbstractWellcommerceKernel extends Kernel
         foreach ($topMostBundles as $name => $bundle) {
             $bundleMap = [$bundle];
             $hierarchy = [$name];
-            
+
             while (isset($directChildren[$name])) {
                 $name = $directChildren[$name];
                 array_unshift($bundleMap, $this->bundles[$name]);
                 $hierarchy[] = $name;
             }
-            
+
+
             foreach ($hierarchy as $hierarchyBundle) {
                 $this->bundleMap[$hierarchyBundle] = $bundleMap;
                 array_pop($bundleMap);

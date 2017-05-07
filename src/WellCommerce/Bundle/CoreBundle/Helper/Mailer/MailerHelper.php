@@ -156,7 +156,7 @@ final class MailerHelper implements MailerHelperInterface
     private function createMailer(): Mailer
     {
         $configuration = $this->options['configuration'];
-        $transport     = new \Swift_SmtpTransport($configuration->getHost(), $configuration->getPort(), 'tls');
+        $transport     = new \Swift_SmtpTransport($configuration->getHost(), $configuration->getPort(), $configuration->getEncrypt());
         $transport->setUsername($configuration->getUser());
         $transport->setPassword($configuration->getPass());
         $transport->setStreamOptions([
