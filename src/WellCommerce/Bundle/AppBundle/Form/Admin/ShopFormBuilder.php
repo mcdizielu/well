@@ -9,6 +9,7 @@
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */
+
 namespace WellCommerce\Bundle\AppBundle\Form\Admin;
 
 use WellCommerce\Bundle\CoreBundle\Form\AbstractFormBuilder;
@@ -96,13 +97,13 @@ class ShopFormBuilder extends AbstractFormBuilder
             'options'     => $this->get('client_group.dataset.admin')->getResult('select'),
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('client_group.repository')),
         ]));
-
+        
         $cartSettings->addChild($this->getElement('checkbox', [
             'name'    => 'enableClient',
             'label'   => 'shop.label.enable_client',
             'comment' => 'shop.comment.enable_client',
         ]));
-
+        
         $mailerConfiguration = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'mailer_configuration',
             'label' => 'shop.fieldset.mailer_configuration',
@@ -131,16 +132,16 @@ class ShopFormBuilder extends AbstractFormBuilder
                 $this->getRule('required'),
             ],
         ]));
-
+        
         $mailerConfiguration->addChild($this->getElement('select', [
-            'name'  => 'mailerConfiguration.encrypt',
-            'label' => 'shop.label.mailer_configuration.encrypt',
+            'name'    => 'mailerConfiguration.encrypt',
+            'label'   => 'shop.label.mailer_configuration.encrypt',
             'options' => [
-                '' => '---',
-                'tls'   => 'tls',
-                'ssl'   => 'ssl'
+                ''    => '---',
+                'tls' => 'tls',
+                'ssl' => 'ssl',
             ],
-            'rules' => [
+            'rules'   => [
                 $this->getRule('required'),
             ],
         ]));
@@ -173,12 +174,12 @@ class ShopFormBuilder extends AbstractFormBuilder
             'name'  => 'mailerConfiguration.bcc',
             'label' => 'shop.label.mailer_configuration.bcc',
         ]));
-
+        
         $minimumOrderAmount = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'minimumOrderAmount',
             'label' => 'common.fieldset.minimum_order_amount',
         ]));
-
+        
         $minimumOrderAmount->addChild($this->getElement('text_field', [
             'name'    => 'minimumOrderAmount.value',
             'label'   => 'common.label.minimum_order_amount.value',
@@ -191,7 +192,7 @@ class ShopFormBuilder extends AbstractFormBuilder
             ],
             'default' => 0,
         ]));
-
+        
         $minimumOrderAmount->addChild($this->getElement('select', [
             'name'    => 'minimumOrderAmount.currency',
             'label'   => 'common.label.minimum_order_amount.currency',
@@ -202,12 +203,12 @@ class ShopFormBuilder extends AbstractFormBuilder
         ]));
         
         $this->addMetadataFieldset($form, $this->get('shop.repository'));
-    
+        
         $mediaData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'media_data',
-            'label' => 'common.fieldset.photos'
+            'label' => 'common.fieldset.photos',
         ]));
-    
+        
         $mediaData->addChild($this->getElement('image', [
             'name'         => 'logo',
             'label'        => 'form.media_data.image_id',

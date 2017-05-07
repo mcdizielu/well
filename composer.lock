@@ -647,12 +647,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "e3a23c0047b462f1a443cdb56d3c310a9e4c3b37"
+                "reference": "b07b4c3428a57b68e385ae3db0474e6c5400789b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/e3a23c0047b462f1a443cdb56d3c310a9e4c3b37",
-                "reference": "e3a23c0047b462f1a443cdb56d3c310a9e4c3b37",
+                "url": "https://api.github.com/repos/composer/composer/zipball/b07b4c3428a57b68e385ae3db0474e6c5400789b",
+                "reference": "b07b4c3428a57b68e385ae3db0474e6c5400789b",
                 "shasum": ""
             },
             "require": {
@@ -716,7 +716,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2017-04-20 11:43:12"
+            "time": "2017-04-28 09:25:51"
         },
         {
             "name": "composer/semver",
@@ -1124,12 +1124,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "1b6c7dd1dc9d2ecbb7c0daa15d86a437c062e347"
+                "reference": "ba467d980d4c403eb13a899c5b9a7b8875f003c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/1b6c7dd1dc9d2ecbb7c0daa15d86a437c062e347",
-                "reference": "1b6c7dd1dc9d2ecbb7c0daa15d86a437c062e347",
+                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/ba467d980d4c403eb13a899c5b9a7b8875f003c2",
+                "reference": "ba467d980d4c403eb13a899c5b9a7b8875f003c2",
                 "shasum": ""
             },
             "require": {
@@ -1175,7 +1175,7 @@
             "keywords": [
                 "database"
             ],
-            "time": "2017-02-23 18:10:32"
+            "time": "2017-05-03 08:28:59"
         },
         {
             "name": "doctrine/dbal",
@@ -1254,12 +1254,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "32220c127a62700c57afec675c9c768f66988097"
+                "reference": "16aed4cc9efcaa23d918bd8d93c0a06d0e031dad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/32220c127a62700c57afec675c9c768f66988097",
-                "reference": "32220c127a62700c57afec675c9c768f66988097",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/16aed4cc9efcaa23d918bd8d93c0a06d0e031dad",
+                "reference": "16aed4cc9efcaa23d918bd8d93c0a06d0e031dad",
                 "shasum": ""
             },
             "require": {
@@ -1327,7 +1327,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2017-04-26 10:51:41"
+            "time": "2017-05-03 08:50:10"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -1716,12 +1716,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/migrations.git",
-                "reference": "305ea91fd6d067a5e10149ce6e85854ed334a2d2"
+                "reference": "c84f2ab852b8b91e8f791a8bf4b5a7c5be27d2d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/305ea91fd6d067a5e10149ce6e85854ed334a2d2",
-                "reference": "305ea91fd6d067a5e10149ce6e85854ed334a2d2",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/c84f2ab852b8b91e8f791a8bf4b5a7c5be27d2d1",
+                "reference": "c84f2ab852b8b91e8f791a8bf4b5a7c5be27d2d1",
                 "shasum": ""
             },
             "require": {
@@ -1782,7 +1782,7 @@
                 "database",
                 "migrations"
             ],
-            "time": "2017-04-18 13:27:46"
+            "time": "2017-05-03 08:50:47"
         },
         {
             "name": "doctrine/orm",
@@ -2390,12 +2390,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "b517bd912afa5aa1033ce434d7138641fd6c31ab"
+                "reference": "56bf6c1cc3e1b24691f10a09321516d4790cecbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b517bd912afa5aa1033ce434d7138641fd6c31ab",
-                "reference": "b517bd912afa5aa1033ce434d7138641fd6c31ab",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/56bf6c1cc3e1b24691f10a09321516d4790cecbd",
+                "reference": "56bf6c1cc3e1b24691f10a09321516d4790cecbd",
                 "shasum": ""
             },
             "require": {
@@ -2405,7 +2405,7 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0",
+                "phpunit/phpunit": "^4.0 || ^5.0",
                 "psr/log": "^1.0"
             },
             "suggest": {
@@ -2447,7 +2447,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-04-07 20:03:48"
+            "time": "2017-05-04 23:22:10"
         },
         {
             "name": "guzzlehttp/promises",
@@ -3189,12 +3189,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "2474325ee924134bb05848663b12531f6f2e9fbe"
+                "reference": "a34c6e15c97cc0a0f5e709fc663ebf329a0b9298"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/2474325ee924134bb05848663b12531f6f2e9fbe",
-                "reference": "2474325ee924134bb05848663b12531f6f2e9fbe",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a34c6e15c97cc0a0f5e709fc663ebf329a0b9298",
+                "reference": "a34c6e15c97cc0a0f5e709fc663ebf329a0b9298",
                 "shasum": ""
             },
             "require": {
@@ -3215,7 +3215,6 @@
                 "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
                 "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
                 "league/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
-                "league/flysystem-copy": "Allows you to use Copy.com storage",
                 "league/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
                 "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
                 "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
@@ -3264,7 +3263,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2017-04-25 15:24:43"
+            "time": "2017-05-06 21:49:29"
         },
         {
             "name": "league/oauth2-client",
@@ -3573,12 +3572,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "4cdd014b809867f4c040523011d2c3607d55e6b4"
+                "reference": "35c07a81de6200e5aa0629eacecd11fd925d19dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/4cdd014b809867f4c040523011d2c3607d55e6b4",
-                "reference": "4cdd014b809867f4c040523011d2c3607d55e6b4",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/35c07a81de6200e5aa0629eacecd11fd925d19dc",
+                "reference": "35c07a81de6200e5aa0629eacecd11fd925d19dc",
                 "shasum": ""
             },
             "require": {
@@ -3643,7 +3642,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-04-10 07:58:43"
+            "time": "2017-05-03 13:17:21"
         },
         {
             "name": "nesbot/carbon",
@@ -4975,12 +4974,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "160bb599e0a7525a252638cc5a8a0ebabe63ae00"
+                "reference": "cd4ffa87f4902527b1725587d368062c28eb98c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/160bb599e0a7525a252638cc5a8a0ebabe63ae00",
-                "reference": "160bb599e0a7525a252638cc5a8a0ebabe63ae00",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/cd4ffa87f4902527b1725587d368062c28eb98c2",
+                "reference": "cd4ffa87f4902527b1725587d368062c28eb98c2",
                 "shasum": ""
             },
             "require": {
@@ -5021,7 +5020,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2017-04-20 17:32:49"
+            "time": "2017-05-01 15:54:38"
         },
         {
             "name": "symfony-cmf/routing",

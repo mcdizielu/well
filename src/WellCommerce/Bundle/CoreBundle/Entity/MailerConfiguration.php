@@ -19,13 +19,13 @@ namespace WellCommerce\Bundle\CoreBundle\Entity;
  */
 class MailerConfiguration
 {
-    protected $from = '';
-    protected $host = '';
-    protected $port = 587;
+    protected $from    = '';
+    protected $host    = '';
+    protected $port    = 587;
     protected $encrypt = 'tls';
-    protected $user = '';
-    protected $pass = '';
-    protected $bcc  = '';
+    protected $user    = '';
+    protected $pass    = '';
+    protected $bcc     = '';
     
     public function getFrom(): string
     {
@@ -86,20 +86,18 @@ class MailerConfiguration
     {
         $this->bcc = $bcc;
     }
-
-    public function getEncrypt() : mixed
+    
+    public function getEncrypt(): mixed
     {
         return $this->encrypt;
     }
-
+    
     public function setEncrypt(string $encrypt = null)
     {
-        if(!$encrypt or ($encrypt != 'ssl' and $encrypt != 'tls')){
+        if (!in_array($encrypt, ['ssl', 'tls'])) {
             $encrypt = null;
         }
-
+        
         $this->encrypt = $encrypt;
     }
-
-
 }
