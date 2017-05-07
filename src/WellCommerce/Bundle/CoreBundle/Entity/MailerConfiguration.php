@@ -22,6 +22,7 @@ class MailerConfiguration
     protected $from = '';
     protected $host = '';
     protected $port = 587;
+    protected $encrypt = 'tls';
     protected $user = '';
     protected $pass = '';
     protected $bcc  = '';
@@ -85,4 +86,20 @@ class MailerConfiguration
     {
         $this->bcc = $bcc;
     }
+
+    public function getEncrypt() : mixed
+    {
+        return $this->encrypt;
+    }
+
+    public function setEncrypt(string $encrypt = null)
+    {
+        if(!$encrypt or ($encrypt != 'ssl' and $encrypt != 'tls')){
+            $encrypt = null;
+        }
+
+        $this->encrypt = $encrypt;
+    }
+
+
 }

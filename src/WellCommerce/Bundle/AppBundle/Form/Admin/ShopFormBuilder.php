@@ -131,6 +131,19 @@ class ShopFormBuilder extends AbstractFormBuilder
                 $this->getRule('required'),
             ],
         ]));
+
+        $mailerConfiguration->addChild($this->getElement('select', [
+            'name'  => 'mailerConfiguration.encrypt',
+            'label' => 'shop.label.mailer_configuration.encrypt',
+            'options' => [
+                '' => '---',
+                'tls'   => 'tls',
+                'ssl'   => 'ssl'
+            ],
+            'rules' => [
+                $this->getRule('required'),
+            ],
+        ]));
         
         $mailerConfiguration->addChild($this->getElement('text_field', [
             'name'  => 'mailerConfiguration.user',

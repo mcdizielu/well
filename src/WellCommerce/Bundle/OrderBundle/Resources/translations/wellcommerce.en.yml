@@ -57,6 +57,7 @@ order:
         accept_conditions: I accept the shop conditions
         issue_invoice: Please send me an invoice
         shipping_cost: Shipping costs
+        order_no: Order number
         coupon:
             code: Coupon code
             modifier: Coupon modifier
@@ -144,6 +145,7 @@ order_status_history:
         created_by: Created by
         no_history: Order status history is empty
     email:
+        new_status: "New status"
         status_changed: "Your order status has been changed"
     button:
         change: Save
@@ -219,3 +221,15 @@ shipping_method:
         client_groups: Client groups
     tip:
         client_groups: Restrict the visibility for a group of clients
+
+cash_on_delivery:
+    label:
+        in_progress: "Payment in progress"
+        approved: "Payment approved"
+        failed: "Payment failed"
+
+bank_transfer:
+    label:
+        in_progress: "Payment in progress"
+        approved: "Payment approved"
+        failed: "Payment failed"

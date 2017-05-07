@@ -56,6 +56,7 @@ order:
         accept_conditions: Я принимаю условия магазина
         issue_invoice: Пожалуйста, вышлите мне счет
         shipping_cost: Стоимость доставки
+        order_no: Номер заказа
         coupon:
             code: Код купона
             modifier: Модификатор купона
@@ -143,6 +144,7 @@ order_status_history:
         created_by: Создан
         no_history: История статуса заказа пуста
     email:
+        new_status: "Статус заказа изменен на"
         status_changed: "Статус заказа изменен"
     button:
         change: Сохранить
@@ -218,3 +220,15 @@ shipping_method:
         client_groups: Группы клиентов
     tip:
         client_groups: Ограничить видимость для группы клиентов
+
+cash_on_delivery:
+    label:
+        in_progress: "Платеж в обработке"
+        approved: "Платеж подтвержден"
+        failed: "Платеж не подвержден"
+
+bank_transfer:
+    label:
+        in_progress: "Платеж в обработке"
+        approved: "Платеж подтвержден"
+        failed: "Платеж не подвержден"

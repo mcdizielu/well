@@ -383,6 +383,7 @@ shop:
             from: Sender (e-mail)
             host: SMTP host
             port: SMTP port
+            encrypt: Encryption
             user: SMTP username
             pass: SMTP password
             bcc: BCC

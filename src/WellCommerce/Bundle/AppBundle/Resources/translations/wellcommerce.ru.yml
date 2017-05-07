@@ -380,6 +380,7 @@ shop:
             from: От кого (e-mail)
             host: SMTP хост
             port: SMTP порт
+            encrypt: Шифрование
             user: SMTP имя пользователя
             pass: SMTP пароль
             bcc: BCC
