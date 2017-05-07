@@ -101,9 +101,9 @@ class ClientForgotPasswordBoxController extends AbstractBoxController
     
     private function createChangePasswordForm(Client $client): FormInterface
     {
-        return $this->get('client_change_password.form_builder.front')->createForm([
+        return $this->get('client_change_password.form_builder.front')->createForm($client, [
             'name'              => 'change_password',
             'validation_groups' => ['client_password_change'],
-        ], $client);
+        ]);
     }
 }
