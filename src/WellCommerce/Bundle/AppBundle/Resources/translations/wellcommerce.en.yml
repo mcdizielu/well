@@ -341,6 +341,7 @@ package:
         remote_version: Remote version
         created_at: Installed at
         updated_at: Updated at
+        remote_updated_at: Remote updated at
         output: Console output
     fieldset:
         information: Information

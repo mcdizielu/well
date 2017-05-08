@@ -41,6 +41,31 @@ WellCommerce\Bundle\AppBundle\Entity\Shop:
             column: enable_client
             options:
                 default: true
+        line1:
+            type: string
+            length: 255
+            nullable: true
+        line2:
+            type: string
+            length: 255
+            nullable: true
+        postalCode:
+            type: string
+            length: 255
+            nullable: true
+            column: postal_code
+        state:
+            type: string
+            length: 255
+            nullable: true
+        city:
+            type: string
+            length: 255
+            nullable: true
+        country:
+            type: string
+            length: 3
+            nullable: true
     manyToOne:
         company:
             targetEntity: WellCommerce\Bundle\AppBundle\Entity\Company

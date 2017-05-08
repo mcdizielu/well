@@ -104,6 +104,42 @@ class ShopFormBuilder extends AbstractFormBuilder
             'comment' => 'shop.comment.enable_client',
         ]));
         
+        $addressData = $form->addChild($this->getElement('nested_fieldset', [
+            'name'  => 'address_data',
+            'label' => 'company.label.addresses',
+        ]));
+        
+        $addressData->addChild($this->getElement('text_field', [
+            'name'  => 'line1',
+            'label' => 'common.label.line1',
+        ]));
+        
+        $addressData->addChild($this->getElement('text_field', [
+            'name'  => 'line2',
+            'label' => 'common.label.line2',
+        ]));
+        
+        $addressData->addChild($this->getElement('text_field', [
+            'name'  => 'state',
+            'label' => 'common.label.state',
+        ]));
+        
+        $addressData->addChild($this->getElement('text_field', [
+            'name'  => 'postalCode',
+            'label' => 'common.label.postal_code',
+        ]));
+        
+        $addressData->addChild($this->getElement('text_field', [
+            'name'  => 'city',
+            'label' => 'common.label.city',
+        ]));
+        
+        $addressData->addChild($this->getElement('select', [
+            'name'    => 'country',
+            'label'   => 'common.label.country',
+            'options' => $this->get('country.repository')->all(),
+        ]));
+        
         $mailerConfiguration = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'mailer_configuration',
             'label' => 'shop.fieldset.mailer_configuration',

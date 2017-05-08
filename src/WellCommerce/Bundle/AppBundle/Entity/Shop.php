@@ -31,6 +31,7 @@ class Shop implements EntityInterface
     use Timestampable;
     use Blameable;
     use Translatable;
+    use AddressTrait;
     use ShopExtraTrait;
     
     protected $name            = '';

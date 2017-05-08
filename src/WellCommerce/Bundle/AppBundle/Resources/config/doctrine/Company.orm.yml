@@ -40,4 +40,4 @@ WellCommerce\Bundle\AppBundle\Entity\Company:
         country:
             type: string
             length: 3
-            nullable: tru
+            nullable: true

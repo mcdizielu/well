@@ -345,6 +345,7 @@ package:
         remote_version: Wersja zdalna
         created_at: Zainstalowany
         updated_at: Zaktualizowany
+        remote_updated_at: Ostatnia wersja
         output: Konsola
     fieldset:
         information: Informacje
