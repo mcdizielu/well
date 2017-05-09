@@ -355,7 +355,7 @@ var GFormLocalFile = GCore.ExtendClass(GFormFile, function() {
     var oOptions = {
       id: gThis.GetId(),
       mechanics: {
-        rows_per_page: 30,
+        rows_per_page: 100,
         key: 'path',
         only_one_selected: true,
         no_column_modification: true,
