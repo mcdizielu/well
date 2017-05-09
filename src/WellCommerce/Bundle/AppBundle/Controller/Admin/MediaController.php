@@ -124,6 +124,12 @@ class MediaController extends AbstractAdminController
         if ($request->files->has('file')) {
             $file = $request->files->get('file');
             if ($file instanceof UploadedFile) {
+                if (!$file->isValid()) {
+                    return $this->jsonResponse([
+                        'sError'   => 'File was not uploaded',
+                        'sMessage' => $file->getError(),
+                    ]);
+                }
                 $directory = $request->get('cwd');
                 $uploadDir = $this->getKernel()->getRootDir() . '/../' . $directory;
                 $file->move($uploadDir, $file->getClientOriginalName());
@@ -135,7 +141,8 @@ class MediaController extends AbstractAdminController
         }
         
         return $this->jsonResponse([
-            'error' => 'No file to upload',
+            'sError'   => 'File was not uploaded',
+            'sMessage' => 'No file to upload',
         ]);
     }
     

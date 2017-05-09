@@ -173,7 +173,7 @@ var GFormLocalFile = GCore.ExtendClass(GFormFile, function() {
       container: document.getElementById(gThis.GetId() + '__queue'),
       url: Routing.generate(gThis.m_oOptions.sUploadRoute),
       filters: {
-        max_file_size: '10mb',
+        max_file_size: '20mb',
         mime_types: [{
           title: "Files",
           extensions: gThis.m_oOptions.asFileTypes.join()
