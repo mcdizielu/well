@@ -39,7 +39,6 @@ class LoadShopData extends AbstractDataFixture
         $theme          = $this->getReference('theme');
         $company        = $this->getReference('company');
         $currency       = $this->randomizeSamples('currency', LoadCurrencyData::$samples);
-        $fakerGenerator = $this->getFakerGenerator();
         
         $shop = new Shop();
         $shop->setName('WellCommerce');
@@ -52,13 +51,6 @@ class LoadShopData extends AbstractDataFixture
         $shop->getMinimumOrderAmount()->setCurrency($currency->getCode());
         $shop->getMinimumOrderAmount()->setValue(0);
         $shop->setEnableClient(true);
-        
-        $shop->setLine1($fakerGenerator->address);
-        $shop->setLine2('');
-        $shop->setPostalCode($fakerGenerator->postcode);
-        $shop->setCity($fakerGenerator->city);
-        $shop->setCountry($fakerGenerator->countryCode);
-        $shop->setState('');
         
         foreach ($this->getLocales() as $locale) {
             $shop->translate($locale->getCode())->getMeta()->setTitle('WellCommerce');
