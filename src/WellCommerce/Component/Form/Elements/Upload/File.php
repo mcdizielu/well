@@ -71,4 +71,24 @@ class File extends AbstractField implements ElementInterface
         $collection->add(new Attribute('sUploadRoute', $this->getOption('upload_route')));
         $collection->add(new Attribute('oRepeat', $this->prepareRepetitions(), Attribute::TYPE_ARRAY));
     }
+    
+    protected function getTypeIcons(): array
+    {
+        return [
+            'cdup'      => 'images/icons/filetypes/cdup.png',
+            'unknown'   => 'images/icons/filetypes/unknown.png',
+            'directory' => 'images/icons/filetypes/directory.png',
+            'gif'       => 'images/icons/filetypes/image.png',
+            'png'       => 'images/icons/filetypes/image.png',
+            'jpg'       => 'images/icons/filetypes/image.png',
+            'bmp'       => 'images/icons/filetypes/image.png',
+            'txt'       => 'images/icons/filetypes/text.png',
+            'doc'       => 'images/icons/filetypes/text.png',
+            'rtf'       => 'images/icons/filetypes/text.png',
+            'odt'       => 'images/icons/filetypes/text.png',
+            'htm'       => 'images/icons/filetypes/document.png',
+            'html'      => 'images/icons/filetypes/document.png',
+            'php'       => 'images/icons/filetypes/document.png',
+        ];
+    }
 }

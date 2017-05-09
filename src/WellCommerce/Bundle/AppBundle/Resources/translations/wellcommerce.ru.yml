@@ -369,6 +369,7 @@ shop:
         mailer_configuration: Настройки Mail
         url_configuration: Настройки URL
         cart_configuration: Настройки корзины
+        logo: Logotip
     label:
         company: Компания
         url: URL

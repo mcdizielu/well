@@ -49,7 +49,6 @@ var oDefaults = {
     sFileTypesDescription: '',
     fDeleteHandler: GCore.NULL,
     fLoadFiles: GCore.NULL,
-    sSwfUploadUrl: '_js_libs/swfupload.swf',
     iLimit: 100,
     iWidth: 131,
     iHeight: 34,
@@ -292,11 +291,9 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
             gThis._InitFilesDatagrid();
             gThis._InitUploader();
             if (gThis.m_bRepeatable) {
-                console.log('OnShow m_bRepeatable' + gThis.m_oOptions.asDefaults);
                 gThis.Populate(gThis.m_oOptions.asDefaults);
             }
             else {
-                console.log('OnShow' + gThis.m_oOptions.sDefault);
                 gThis.Populate(gThis.m_oOptions.sDefault);
             }
             gThis.m_bShown = true;
@@ -358,10 +355,6 @@ var GFormImage = GCore.ExtendClass(GFormFile, function () {
         jLi.append('<p class="' + gThis._GetClass('Progress') + '"/>');
         jLi.append('<div class="' + gThis._GetClass('ProgressBar') + '"><div class="' + gThis._GetClass('ProgressBarIndicator') + '"></div>');
         gThis.m_jQueue.append(jLi);
-    };
-
-    gThis.OnDelete = function () {
-        gThis.m_jSwfUpload.swfupload('cancelUpload', sFid);
     };
 
     gThis.OnUploadProgress = function (oFile) {

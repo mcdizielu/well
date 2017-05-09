@@ -177,9 +177,6 @@ class ShopFormBuilder extends AbstractFormBuilder
                 'tls' => 'tls',
                 'ssl' => 'ssl',
             ],
-            'rules'   => [
-                $this->getRule('required'),
-            ],
         ]));
         
         $mailerConfiguration->addChild($this->getElement('text_field', [
@@ -241,18 +238,19 @@ class ShopFormBuilder extends AbstractFormBuilder
         $this->addMetadataFieldset($form, $this->get('shop.repository'));
         
         $mediaData = $form->addChild($this->getElement('nested_fieldset', [
-            'name'  => 'media_data',
-            'label' => 'common.fieldset.photos',
+            'name'  => 'logo_data',
+            'label' => 'shop.fieldset.logo',
         ]));
         
-        $mediaData->addChild($this->getElement('image', [
+        $mediaData->addChild($this->getElement('local_file', [
             'name'         => 'logo',
-            'label'        => 'form.media_data.image_id',
+            'label'        => 'local_file.label.selected',
             'repeat_min'   => 0,
             'repeat_max'   => 1,
-            'transformer'  => $this->getRepositoryTransformer('media_entity', $this->get('media.repository')),
             'session_id'   => $this->getRequestHelper()->getSessionId(),
             'session_name' => $this->getRequestHelper()->getSessionName(),
+            'file_source'  => 'web/themes/',
+            'file_types'   => ['png', 'jpg', 'jpeg'],
         ]));
         
         $form->addFilter($this->getFilter('no_code'));

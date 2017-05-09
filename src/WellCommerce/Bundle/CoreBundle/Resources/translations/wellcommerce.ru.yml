@@ -18,6 +18,15 @@ file_selector:
     extension: Расширение
     preview: Предпросмотр
 
+local_file:
+    label:
+        selected: Choosen file
+        path: Path
+        thumb: Type
+        name: Name
+        size: Size
+        mtime: Date
+
 product_variants_editor:
     label:
         set_for_this_product: 'Группа атрибутов'

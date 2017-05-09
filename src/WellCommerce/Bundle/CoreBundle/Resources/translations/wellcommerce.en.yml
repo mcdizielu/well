@@ -18,6 +18,15 @@ file_selector:
     extension: Extension
     preview: Preview
 
+local_file:
+    label:
+        selected: Choosen file
+        path: Path
+        thumb: Type
+        name: Name
+        size: Size
+        mtime: Date
+
 product_variants_editor:
     label:
         set_for_this_product: 'Attributes group for this product'

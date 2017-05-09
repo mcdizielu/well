@@ -373,6 +373,7 @@ shop:
         mailer_configuration: Mailer configuration
         url_configuration: URL configuration
         cart_configuration: Cart configuration
+        logo: Logo
     label:
         company: Company
         url: URL

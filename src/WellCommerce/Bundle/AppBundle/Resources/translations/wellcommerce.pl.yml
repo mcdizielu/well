@@ -376,6 +376,7 @@ shop:
         mailer_configuration: Ustawienia mailera
         url_configuration: Ustawienia adresów
         cart_configuration: Ustawienia koszyka
+        logo: Logo
     label:
         company: Firma
         url: Adres URL

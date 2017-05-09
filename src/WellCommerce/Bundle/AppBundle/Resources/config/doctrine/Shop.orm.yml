@@ -30,6 +30,11 @@ WellCommerce\Bundle\AppBundle\Entity\Shop:
             length: 3
             nullable: true
             column: default_country
+        logo:
+            type: string
+            length: 255
+            nullable: true
+            column: logo
         defaultCurrency:
             type: string
             length: 16
@@ -41,31 +46,6 @@ WellCommerce\Bundle\AppBundle\Entity\Shop:
             column: enable_client
             options:
                 default: true
-        line1:
-            type: string
-            length: 255
-            nullable: true
-        line2:
-            type: string
-            length: 255
-            nullable: true
-        postalCode:
-            type: string
-            length: 255
-            nullable: true
-            column: postal_code
-        state:
-            type: string
-            length: 255
-            nullable: true
-        city:
-            type: string
-            length: 255
-            nullable: true
-        country:
-            type: string
-            length: 3
-            nullable: true
     manyToOne:
         company:
             targetEntity: WellCommerce\Bundle\AppBundle\Entity\Company
@@ -86,12 +66,5 @@ WellCommerce\Bundle\AppBundle\Entity\Shop:
             fetch: LAZY
             joinColumns:
                 client_group_id:
-                    referencedColumnName: id
-                    onDelete: 'SET NULL'
-        logo:
-            targetEntity: WellCommerce\Bundle\AppBundle\Entity\Media
-            fetch: LAZY
-            joinColumns:
-                photo_id:
                     referencedColumnName: id
                     onDelete: 'SET NULL'

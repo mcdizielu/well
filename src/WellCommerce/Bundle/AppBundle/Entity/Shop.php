@@ -31,13 +31,13 @@ class Shop implements EntityInterface
     use Timestampable;
     use Blameable;
     use Translatable;
-    use AddressTrait;
     use ShopExtraTrait;
     
     protected $name            = '';
     protected $url             = '';
     protected $defaultCountry  = '';
     protected $defaultCurrency = '';
+    protected $logo            = '';
     protected $enableClient    = true;
     
     /**
@@ -64,11 +64,6 @@ class Shop implements EntityInterface
      * @var Theme
      */
     protected $theme;
-    
-    /**
-     * @var Media
-     */
-    protected $logo;
     
     public function __construct()
     {
@@ -176,18 +171,13 @@ class Shop implements EntityInterface
         $this->enableClient = $enableClient;
     }
     
-    public function getLogo()
+    public function getLogo(): string
     {
-        return $this->logo;
+        return null !== $this->logo ? $this->logo : '';
     }
     
-    public function setLogo(Media $logo = null)
+    public function setLogo(string $logo)
     {
         $this->logo = $logo;
-    }
-    
-    public function translate($locale = null, $fallbackToDefault = true): ShopTranslation
-    {
-        return $this->doTranslate($locale, $fallbackToDefault);
     }
 }

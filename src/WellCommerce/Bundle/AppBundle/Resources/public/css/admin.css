@@ -884,10 +884,6 @@ a.button-green span img, span.button-green span img {
     list-style: none;
 }
 
-.field-colour .upload-queue, .field-localfile .upload-queue, .column.wide-collapsed .upload-queue {
-    width: 475px;
-}
-
 .upload-queue li {
     margin: 0 0 10px;
 }
@@ -2027,13 +2023,19 @@ a.button-green span img, span.button-green span img {
     white-space: nowrap;
 }
 
+.GForm .field-localfile label {
+  text-align: left;
+}
+
 .GForm .field-localfile .filename, .GForm .field-colour .filename {
-    display: inline;
-    line-height: 22px;
-    margin: 0 10px 0 0;
-    float: left;
-    font-weight: bold;
-    max-width: 155px;
+  display: inline;
+  line-height: 22px;
+  margin: 0 10px 0 0;
+  float: left;
+  font-weight: bold;
+  max-width: 400px;
+  margin-left: 110px;
+  margin-top: 6px;
 }
 
 .GForm .field-localfile .filename .none, .GForm .field-colour .filename .none {
@@ -2043,7 +2045,7 @@ a.button-green span img, span.button-green span img {
 }
 
 .GForm .field-localfile .repetition, .GForm .field-colour .repetition {
-    width: 473px;
+    margin-left: 0px;
 }
 
 .GForm .field-localfile .repetition .add-pictures, .GForm .field-localfile .repetition .browse-pictures, .GForm .field-colour .repetition .add-pictures, .GForm .field-colour .repetition .browse-pictures {
@@ -2057,10 +2059,6 @@ a.button-green span img, span.button-green span img {
     margin-top: 10px;
 }
 
-.GForm .field-localfile .GF_Datagrid, .GForm .field-colour .GF_Datagrid {
-    width: 473px;
-}
-
 .GForm .field-localfile .GF_Datagrid tbody img, .GForm .field-colour .GF_Datagrid tbody img {
     vertical-align: middle;
 }
@@ -2068,13 +2066,6 @@ a.button-green span img, span.button-green span img {
 .GForm .field-localfile .GF_Datagrid .footer p.records-shown, .GForm .field-colour .GF_Datagrid .footer p.records-shown {
     margin-left: 170px !important;
     margin-right: 170px !important;
-}
-
-.GForm .field-layout-box-scheme-preview iframe {
-    width: 473px;
-    height: 100px;
-    margin-left: 195px;
-    border: none;
 }
 
 .GForm .field-border .side {

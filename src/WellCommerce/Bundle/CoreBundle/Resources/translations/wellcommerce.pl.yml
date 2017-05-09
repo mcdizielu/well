@@ -18,6 +18,15 @@ file_selector:
     extension: Rozszerzenie
     preview: Podgląd
 
+local_file:
+    label:
+        selected: Wybrany plik
+        path: Ścieżka
+        thumb: Typ
+        name: Nazwa
+        size: Rozmiar
+        mtime: Data
+
 product_variants_editor:
     label:
         set_for_this_product: 'Attributes group for this product'
