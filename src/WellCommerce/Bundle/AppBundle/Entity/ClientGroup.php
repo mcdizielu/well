@@ -19,6 +19,7 @@ use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
 use WellCommerce\Bundle\CmsBundle\Entity\Page;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\AppBundle\Entity\ClientGroupExtraTrait;
 
 /**
  * Class ClientGroup
@@ -31,6 +32,7 @@ class ClientGroup implements EntityInterface
     use Translatable;
     use Timestampable;
     use Blameable;
+    use ClientGroupExtraTrait;
     
     protected $discount = null;
     

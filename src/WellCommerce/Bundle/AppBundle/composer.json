@@ -43,6 +43,7 @@
     },
     "enhancer-traits": {
       "WellCommerce\\Extra\\AppBundle\\Entity\\ClientExtraTrait": "src/WellCommerce/Extra/AppBundle/Entity/ClientExtraTrait.php",
+      "WellCommerce\\Extra\\AppBundle\\Entity\\ClientGroupExtraTrait": "src/WellCommerce/Extra/AppBundle/Entity/ClientGroupExtraTrait.php",
       "WellCommerce\\Extra\\AppBundle\\Entity\\ShopExtraTrait": "src/WellCommerce/Extra/AppBundle/Entity/ShopExtraTrait.php"
     }
   }
