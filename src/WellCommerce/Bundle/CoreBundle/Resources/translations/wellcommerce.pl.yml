@@ -26,6 +26,15 @@ local_file:
         name: Nazwa
         size: Rozmiar
         mtime: Data
+    button:
+        create_folder: Stwórz folder
+        delete_file: Skasuj plik
+    flash:
+        create_folder: Podaj nazwę folderu
+        confirm_delete: Potwierdzam
+        cancel_delete: Anuluj
+        delete_warning: Czy na pewno chcesz skasować ten plik?
+        delete_warning_description: Operacja nie może zostać cofnięta
 
 product_variants_editor:
     label:

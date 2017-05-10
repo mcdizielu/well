@@ -26,6 +26,15 @@ local_file:
         name: Name
         size: Size
         mtime: Date
+    button:
+        create_folder: Create directory
+        delete_file: Delete file
+    flash:
+        create_folder: Enter name
+        confirm_delete: Confirm
+        cancel_delete: Cancel
+        delete_warning: Are you sure you want to delete this file?
+        delete_warning_description: Operation cannot be undone
 
 product_variants_editor:
     label:

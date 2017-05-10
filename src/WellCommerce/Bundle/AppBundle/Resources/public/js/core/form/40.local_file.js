@@ -51,7 +51,8 @@ var GFormLocalFile = GCore.ExtendClass(GFormFile, function() {
   gThis.m_gDataProvider;
   gThis.m_gFilesDatagrid;
   gThis.m_jSelectedFiles;
-  gThis.m_jSwfUpload;
+  gThis.m_jSwfUpload
+  gThis.m_jCreateFolderButton;
   gThis.m_jQueue;
   gThis.m_iUploadsInProgress = 0;
   gThis.m_iLockId = -1;
@@ -74,6 +75,8 @@ var GFormLocalFile = GCore.ExtendClass(GFormFile, function() {
     jRepetition.append(gThis.m_jSelectedFileName);
     gThis.m_jSwfUpload = $('<div class="' + gThis._GetClass('AddFiles') + '"><a href="#" class="button expand"><span id="' + gThis.GetId() + '__upload"><img src="' + gThis._GetImage('ChooseIcon') + '" alt=""/>' + GTranslation('file_selector.add_from_disk') + '</span></a></div>');
     jRepetition.append(gThis.m_jSwfUpload);
+    gThis.m_jCreateFolderButton = $('<a href="#" class="button expand"><span><img src="' + gThis._GetImage('ChooseIcon') + '" alt=""/>' + GTranslation('local_file.button.create_folder') + '</span></a>');
+    jRepetition.append($('<span class="browse-pictures" style="float: right;margin-right: 5px;"/>').append(gThis.m_jCreateFolderButton));
     gThis.m_jQueue = $('<ul class="' + gThis._GetClass('Queue') + '" id="' + gThis.GetId() + '__queue"/>');
     jRepetition.append(gThis.m_jQueue);
     gThis.m_jFilesDatagrid = $('<div/>');
@@ -108,6 +111,54 @@ var GFormLocalFile = GCore.ExtendClass(GFormFile, function() {
 
   gThis.Populate = function(mValue) {
     gThis.SetValue(mValue);
+  };
+
+  gThis._InitializeEvents = function () {
+      gThis.m_jCreateFolderButton.click(gThis._OnCreateFolder);
+  };
+
+  gThis._OnCreateFolder = function() {
+    GAlert.DestroyAll();
+    GPrompt(GTranslation('local_file.flash.create_folder'), function(sName) {
+      GCore.StartWaiting();
+
+      oRequest = {
+        cwd: gThis.m_sCWD,
+        name: sName
+      };
+
+      gThis.m_gFilesDatagrid.MakeRequest(Routing.generate(gThis.m_oOptions.sCreateFolderRoute), oRequest, function(oResponse) {
+        gThis._RefreshFiles();
+        GCore.StopWaiting();
+        GAlert.DestroyAll();
+      });
+    });
+
+    return false;
+  };
+
+  gThis._Delete = function(iDg, sId) {
+    var iAlertId = GWarning(GTranslation('local_file.flash.delete_warning'), GTranslation('local_file.flash.delete_warning_description'), {
+      bAutoExpand: true,
+      aoPossibilities: [
+        {mLink: function() {
+          GCore.StartWaiting();
+          GAlert.Destroy(iAlertId);
+          oRequest = {
+            file: sId
+          };
+          gThis.m_gFilesDatagrid.MakeRequest(Routing.generate(gThis.m_oOptions.sDeleteRoute), oRequest, function(oResponse) {
+            GCore.StopWaiting();
+            var oValue = gThis.GetValue();
+            if (sId == gThis.m_oOptions.sFilePath + oValue) {
+              gThis.m_gFilesDatagrid.ClearSelection();
+            }
+            gThis._RefreshFiles();
+          });
+        }, sCaption: GTranslation('local_file.flash.confirm_delete')},
+        {mLink: GAlert.DestroyThis, sCaption: GTranslation('local_file.flash.cancel_delete')}
+      ]
+    });
   };
 
   gThis._OnClickRow = function(gDg, sId) {
@@ -276,6 +327,16 @@ var GFormLocalFile = GCore.ExtendClass(GFormFile, function() {
       },
     });
 
+    var column_hierarchy = new GF_Datagrid_Column({
+      id: 'hierarchy',
+      caption: GTranslation('common.label.hierarchy'),
+      appearance: {
+        width: 70,
+        visible: false,
+        align: GF_Datagrid.ALIGN_LEFT,
+      },
+    });
+
     var column_thumb = new GF_Datagrid_Column({
       id: 'thumb',
       caption: GTranslation('local_file.label.thumb'),
@@ -317,6 +378,7 @@ var GFormLocalFile = GCore.ExtendClass(GFormFile, function() {
 
     return [
       column_path,
+      column_hierarchy,
       column_thumb,
       column_name,
       column_size,
@@ -348,6 +410,15 @@ var GFormLocalFile = GCore.ExtendClass(GFormFile, function() {
 
     var aoColumns = gThis._InitColumns();
 
+    var gActionDelete = new GF_Action({
+      img: gThis._GetImage('DeleteIcon'),
+      caption: GTranslation('local_file.button.delete_file'),
+      action: gThis._Delete,
+      condition: function(oRow) {
+        return !oRow.dir;
+      }
+    });
+
     gThis.m_gDataProvider = new GF_Datagrid_Data_Provider({
       key: 'path',
     }, []);
@@ -360,6 +431,7 @@ var GFormLocalFile = GCore.ExtendClass(GFormFile, function() {
         only_one_selected: true,
         no_column_modification: true,
         persistent: false,
+        default_sorting: 'hierarchy',
       },
       event_handlers: {
         load: function(oRequest, sResponseHandler) {
@@ -371,6 +443,9 @@ var GFormLocalFile = GCore.ExtendClass(GFormFile, function() {
         deselect: gThis._OnDeselect,
         click_row: gThis._OnClickRow,
       },
+      row_actions: [
+        gActionDelete
+      ],
       columns: aoColumns,
     };
 

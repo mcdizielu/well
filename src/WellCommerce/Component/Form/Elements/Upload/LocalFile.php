@@ -25,9 +25,11 @@ class LocalFile extends File
         ]);
         
         $resolver->setDefaults([
-            'file_types'   => ['jpg', 'jpeg', 'png', 'gif', 'csv', 'xml', 'txt', 'pdf'],
-            'load_route'   => 'admin.local_file.index',
-            'upload_route' => 'admin.local_file.upload',
+            'file_types'          => ['jpg', 'jpeg', 'png', 'gif', 'csv', 'xml', 'txt', 'pdf'],
+            'load_route'          => 'admin.local_file.index',
+            'upload_route'        => 'admin.local_file.upload',
+            'delete_route'        => 'admin.local_file.delete',
+            'create_folder_route' => 'admin.local_file.create_folder',
         ]);
         
         $resolver->setAllowedTypes('file_source', 'string');
@@ -41,5 +43,7 @@ class LocalFile extends File
         parent::prepareAttributesCollection($collection);
         $collection->add(new Attribute('oTypeIcons', $this->getTypeIcons(), Attribute::TYPE_ARRAY));
         $collection->add(new Attribute('sFilePath', $this->getOption('file_source')));
+        $collection->add(new Attribute('sDeleteRoute', $this->getOption('delete_route')));
+        $collection->add(new Attribute('sCreateFolderRoute', $this->getOption('create_folder_route')));
     }
 }

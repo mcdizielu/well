@@ -54,6 +54,22 @@ admin.media.delete_group:
         expose: true
         require_admin_permission: media.delete
 
+admin.local_file.delete:
+    path: /local/delete
+    defaults:
+        _controller: 'media.controller.admin:deleteLocalAction'
+    options:
+        expose: true
+        require_admin_permission: media.delete
+
+admin.local_file.create_folder:
+    path: /local/create_folder
+    defaults:
+        _controller: 'media.controller.admin:createLocalFolderAction'
+    options:
+        expose: true
+        require_admin_permission: media.add
+
 admin.local_file.index:
     path: /local/index
     defaults:
@@ -61,6 +77,7 @@ admin.local_file.index:
     options:
         expose: true
         require_admin_permission: media.index
+
 
 admin.local_file.upload:
     path: /local/add

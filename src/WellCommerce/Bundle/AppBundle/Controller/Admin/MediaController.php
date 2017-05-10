@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\AppBundle\Controller\Admin;
 
 use Carbon\Carbon;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -72,27 +73,30 @@ class MediaController extends AbstractAdminController
         $finder     = $this->createFinder($path, $extensions);
         $files      = [];
         $inRoot     = $rootPath === $path;
+        $hierarchy  = 0;
         
         if (!$inRoot) {
             $currentPath = explode('/', $path);
             array_pop($currentPath);
             
             $files[] = [
-                'dir'   => true,
-                'name'  => '..',
-                'path'  => implode('/', $currentPath),
-                'size'  => '',
-                'mtime' => '',
+                'dir'       => true,
+                'name'      => '..',
+                'path'      => implode('/', $currentPath),
+                'size'      => '',
+                'mtime'     => '',
+                'hierarchy' => $hierarchy++,
             ];
         }
         
         foreach ($finder as $file) {
             $files[] = [
-                'dir'   => $file->isDir(),
-                'name'  => $file->getFilename(),
-                'path'  => sprintf('%s/%s', $path, $file->getFilename()),
-                'size'  => $file->isDir() ? '' : $file->getSize(),
-                'mtime' => Carbon::createFromTimestamp($file->getMTime())->format('Y-m-d H:i:s'),
+                'dir'       => $file->isDir(),
+                'name'      => $file->getFilename(),
+                'path'      => sprintf('%s/%s', $path, $file->getFilename()),
+                'size'      => $file->isDir() ? '' : $file->getSize(),
+                'mtime'     => Carbon::createFromTimestamp($file->getMTime())->format('Y-m-d H:i:s'),
+                'hierarchy' => $hierarchy++,
             ];
         }
         
@@ -117,6 +121,38 @@ class MediaController extends AbstractAdminController
         });
         
         return $finder;
+    }
+    
+    public function deleteLocalAction(Request $request): JsonResponse
+    {
+        $file       = $this->getKernel()->getRootDir() . '/../' . trim($request->get('file'), '/');
+        $filesystem = new Filesystem();
+        
+        if ($filesystem->exists($file)) {
+            $filesystem->remove($file);
+        }
+        
+        return $this->jsonResponse([
+            'success' => true,
+        ]);
+    }
+    
+    public function createLocalFolderAction(Request $request): JsonResponse
+    {
+        $cwd        = trim($request->get('cwd'), '/');
+        $name       = trim($request->get('name'), '/');
+        $rootDir    = $this->getKernel()->getRootDir();
+        $directory  = sprintf('%s/../%s/%s', $rootDir, $cwd, $name);
+        $filesystem = new Filesystem();
+        if (false === $filesystem->exists($directory)) {
+            $filesystem->mkdir($directory);
+        }
+        
+        return $this->jsonResponse([
+            'sDirectory' => $directory,
+            'sCwd'       => $request->get('cwd'),
+            'sName'      => $request->get('name'),
+        ]);
     }
     
     public function uploadLocalAction(Request $request): JsonResponse
