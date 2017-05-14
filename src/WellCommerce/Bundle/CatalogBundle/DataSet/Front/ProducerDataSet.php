@@ -42,6 +42,7 @@ class ProducerDataSet extends BaseDataSet
             'route'     => 'IDENTITY(producer_translation.route)',
             'shop'      => 'producer_shops.id',
             'products'  => 'COUNT(producer_products.id)',
+            'photo'     => 'photos.path',
         ]);
         
         $configurator->setColumnTransformers([
@@ -62,6 +63,7 @@ class ProducerDataSet extends BaseDataSet
         $queryBuilder->leftJoin('producer.translations', 'producer_translation');
         $queryBuilder->leftJoin('producer.products', 'producer_products');
         $queryBuilder->leftJoin('producer.shops', 'producer_shops');
+        $queryBuilder->leftJoin('producer.photo', 'photos');
         $queryBuilder->where($queryBuilder->expr()->eq('producer_shops.id', $this->getShopStorage()->getCurrentShopIdentifier()));
         $queryBuilder->andWhere($queryBuilder->expr()->eq('producer.enabled', true));
         
