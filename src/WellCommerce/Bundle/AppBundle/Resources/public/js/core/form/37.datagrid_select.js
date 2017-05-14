@@ -145,9 +145,6 @@ var GFormDataGridSelect = GCore.ExtendClass(GFormField, function () {
     };
 
     gThis.Populate = function (mValue) {
-        if (!gThis.m_gDatagrid) {
-            return;
-        }
         if (gThis.m_bRepeatable) {
             gThis.m_jField.empty();
             gThis.m_oOptions.asDefaults = GCore.Duplicate(mValue);
@@ -155,7 +152,11 @@ var GFormDataGridSelect = GCore.ExtendClass(GFormField, function () {
         else {
             gThis.m_oOptions.sDefault = mValue;
         }
-        gThis._UpdateDatagridSelection(mValue);
+
+        if (gThis.m_gDatagrid) {
+            gThis._UpdateDatagridSelection(mValue);
+        }
+
         gThis.SetValue(mValue);
         if (gThis.m_bRepeatable) {
             gThis.m_gSelectedDatagrid.LoadData();
