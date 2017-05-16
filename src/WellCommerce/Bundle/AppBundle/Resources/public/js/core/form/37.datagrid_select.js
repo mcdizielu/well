@@ -158,7 +158,7 @@ var GFormDataGridSelect = GCore.ExtendClass(GFormField, function () {
         }
 
         gThis.SetValue(mValue);
-        if (gThis.m_bRepeatable) {
+        if (gThis.m_gDatagrid && gThis.m_bRepeatable) {
             gThis.m_gSelectedDatagrid.LoadData();
         }
     };
