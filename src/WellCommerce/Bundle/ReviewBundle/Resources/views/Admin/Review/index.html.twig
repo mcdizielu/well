@@ -32,16 +32,16 @@
         }
 
         var action_enableOpinion = new GF_Action({
-            caption: '{% trans %}common.label.enable{% endtrans %}',
+            caption: '{% trans %}review.button.enable{% endtrans %}',
             action: enableOpinion,
-            img: '{{ asset('images/icons/datagrid/on.png') }}',
+            img: '{{ asset('bundles/wellcommerceapp/images/icons/datagrid/on.png') }}',
             condition: function(oR) { return oR['enabled'] != '1'; }
         });
 
         var action_disableOpinion = new GF_Action({
-            caption: '{% trans %}common.label.disable{% endtrans %}',
+            caption: '{% trans %}review.button.disable{% endtrans %}',
             action: disableOpinion,
-            img: '{{ asset('images/icons/datagrid/off.png') }}',
+            img: '{{ asset('bundles/wellcommerceapp/images/icons/datagrid/off.png') }}',
             condition: function(oR) { return oR['enabled'] == '1'; }
         });
     </script>

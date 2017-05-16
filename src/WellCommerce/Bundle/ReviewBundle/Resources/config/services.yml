@@ -28,8 +28,6 @@ services:
         class: WellCommerce\Bundle\ReviewBundle\Twig\Extension\ReviewExtension
         tags:
             - { name: twig.extension }
-        arguments:
-            - '@review_recommendation.repository'
 
     review.subscriber:
         class: WellCommerce\Bundle\ReviewBundle\EventListener\ReviewSubscriber

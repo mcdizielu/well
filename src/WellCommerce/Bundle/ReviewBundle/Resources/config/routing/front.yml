@@ -11,9 +11,3 @@ product.review.report:
     defaults:
         _controller: 'review.layout_box.controller:reportAction'
 
-product.review.recommendations:
-    path: /review/recommendation/{id},{like}
-    defaults:
-        _controller: 'review.layout_box.controller:recommendationAction'
-    options:
-        expose: true

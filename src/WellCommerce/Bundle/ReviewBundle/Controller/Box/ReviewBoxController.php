@@ -12,9 +12,6 @@
 
 namespace WellCommerce\Bundle\ReviewBundle\Controller\Box;
 
-use Symfony\Component\Config\Definition\Exception\Exception;
-use Symfony\Component\HttpFoundation\Cookie;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
 use WellCommerce\Bundle\ReviewBundle\Entity\Review;
@@ -29,11 +26,11 @@ use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
  */
 class ReviewBoxController extends AbstractBoxController
 {
-    const RECOMMENDATION_COOKIE_EXPIRE = 86400 * 30 * 12 * 4;
-    
     public function indexAction(LayoutBoxSettingsCollection $boxSettings): Response
     {
-        $product = $this->getProductStorage()->getCurrentProduct();
+        /** @var ReviewRepositoryInterface $repository */
+        $repository = $this->manager->getRepository();
+        $product    = $this->getProductStorage()->getCurrentProduct();
         
         /** @var Review $resource */
         $resource = $this->getManager()->initResource();
@@ -62,108 +59,28 @@ class ReviewBoxController extends AbstractBoxController
         return $this->displayTemplate('index', [
             'form'        => $form,
             'product'     => $product,
-            'reviews'     => $this->getRepository()->getProductReviews($product),
+            'reviews'     => $repository->getProductReviews($product),
             'boxSettings' => $boxSettings,
         ]);
     }
     
-    public function reportAction(int $id)
+    public function reportAction(Review $review)
     {
-        $review = $this->getManager()->getRepository()->findOneBy([
-            'id'      => $id,
-            'enabled' => 1,
+        $currentRoute        = $review->getProduct()->translate()->getRoute()->getId();
+        $mailerConfiguration = $this->getShopStorage()->getCurrentShop()->getMailerConfiguration();
+        
+        $this->getMailerHelper()->sendEmail([
+            'recipient'     => $mailerConfiguration->getFrom(),
+            'subject'       => $this->trans('review.email.heading.report'),
+            'template'      => 'WellCommerceAppBundle:Email:report_review.html.twig',
+            'parameters'    => [
+                'review' => $review,
+            ],
+            'configuration' => $mailerConfiguration,
         ]);
         
-        if ($review instanceof Review) {
-            $currentRoute        = $review->getProduct()->translate()->getRoute()->getId();
-            $mailerConfiguration = $this->getShopStorage()->getCurrentShop()->getMailerConfiguration();
-            
-            $this->getMailerHelper()->sendEmail([
-                'recipient'     => $mailerConfiguration->getFrom(),
-                'subject'       => $this->trans('review.email.heading.report'),
-                'template'      => 'WellCommerceAppBundle:Email:report_review.html.twig',
-                'parameters'    => [
-                    'review' => $review,
-                ],
-                'configuration' => $mailerConfiguration,
-            ]);
-            
-            $this->getFlashHelper()->addSuccess('report.flash.success');
-            
-            return $this->redirectToRoute('dynamic_' . $currentRoute);
-        }
+        $this->getFlashHelper()->addSuccess('report.flash.success');
         
-        return $this->redirectToRoute('front.home_page.index');
-    }
-    
-    public function recommendationAction(int $id, bool $like = true): JsonResponse
-    {
-        try {
-            $cookie      = $this->getRequestHelper()->getCurrentRequest()->cookies->get('likedReviews');
-            $reviewLiked = unserialize($cookie);
-            
-            if (!is_array($reviewLiked)) {
-                $reviewLiked = [];
-            }
-            
-            if (in_array($id, $reviewLiked)) {
-                throw new Exception($this->trans('review.label.recommendation_exists'));
-            }
-            
-            $review = $this->getManager()->getRepository()->findOneBy([
-                'id'      => $id,
-                'enabled' => 1,
-            ]);
-            
-            if (null === $review) {
-                throw new Exception($this->trans('review.label.review_not_exists'));
-            }
-            
-            $reviewRecommendationFactory = $this->get('review_recommendation.manager');
-            $reviewRecommendation        = $reviewRecommendationFactory->initResource();
-            
-            if ($like == true) {
-                $reviewRecommendation->setLiked(true);
-            } else {
-                $reviewRecommendation->setUnliked(true);
-            }
-            $reviewRecommendation->setReview($review);
-            $this->getManager()->updateResource($reviewRecommendation);
-            $this->getManager()->updateResource($review);
-            $review->addRecommendation($reviewRecommendation);
-            
-            $reviewLikes = $reviewRecommendationFactory->getRepository()->findBy([
-                'review' => $review,
-                'liked'  => true,
-            ]);
-            
-            $reviewUnlikes = $reviewRecommendationFactory->getRepository()->findBy([
-                'review'  => $review,
-                'unliked' => true,
-            ]);
-            
-            $result = [
-                'success' => true,
-                'likes'   => count($reviewLikes),
-                'unlikes' => count($reviewUnlikes),
-            ];
-        } catch (Exception $e) {
-            $result = [
-                'error'   => true,
-                'message' => $e->getMessage(),
-            ];
-        }
-        
-        array_push($reviewLiked, $id);
-        
-        $response = $this->jsonResponse($result);
-        $response->headers->setCookie(new Cookie('likedReviews', serialize($reviewLiked), time() + static::RECOMMENDATION_COOKIE_EXPIRE));
-        
-        return $response;
-    }
-    
-    private function getRepository(): ReviewRepositoryInterface
-    {
-        return $this->getManager()->getRepository();
+        return $this->redirectToRoute('dynamic_' . $currentRoute);
     }
 }

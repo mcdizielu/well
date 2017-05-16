@@ -28,16 +28,9 @@ class ReviewDoctrineSubscriber implements EventSubscriber
     {
         return [
             'prePersist',
-            'postPersist',
         ];
     }
-
-    public function postPersist(LifecycleEventArgs $args)
-    {
-        $this->updateRatioAndLikes($args);
-    }
-
-
+    
     public function preUpdate(LifecycleEventArgs $args)
     {
         $this->onProductDataBeforeSave($args);
@@ -56,34 +49,6 @@ class ReviewDoctrineSubscriber implements EventSubscriber
             if (null === $entity->getEnableReviews()) {
                 $entity->setEnableReviews(true);
             }
-        }
-    }
-
-    private function updateRatioAndLikes(LifecycleEventArgs $args)
-    {
-        $reviewRecommendation = $args->getObject();
-
-        if ($reviewRecommendation instanceof ReviewRecommendation) {
-            $review                         = $reviewRecommendation->getReview();
-            $reviewRecommendationRepository = $args->getObjectManager()->getRepository(ReviewRecommendation::class);
-            $reviewLikes                    = $reviewRecommendationRepository->findBy([
-                'review' => $review,
-                'liked'  => true,
-            ]);
-
-            $reviewUnlikes = $reviewRecommendationRepository->findBy([
-                'review'  => $review,
-                'unliked' => true,
-            ]);
-
-            if (count($reviewUnlikes) > 0) {
-                $ratio = count($reviewLikes) / count($reviewUnlikes);
-            } else {
-                $ratio = 1;
-            }
-
-            $review->setRatio($ratio);
-            $review->setLikes(count($reviewLikes));
         }
     }
 }

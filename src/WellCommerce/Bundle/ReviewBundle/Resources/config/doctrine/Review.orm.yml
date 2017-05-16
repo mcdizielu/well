@@ -25,18 +25,6 @@ WellCommerce\Bundle\ReviewBundle\Entity\Review:
         rating:
             type: integer
             nullable: false
-        ratingLevel:
-            type: integer
-            nullable: false
-        ratio:
-            type: float
-            nullable: false
-        likes:
-            type: integer
-            nullable: false
-        ratingRecommendation:
-            type: integer
-            nullable: false
     manyToOne:
         product:
             targetEntity: WellCommerce\Bundle\CatalogBundle\Entity\Product
@@ -45,12 +33,3 @@ WellCommerce\Bundle\ReviewBundle\Entity\Review:
                 product_id:
                     referencedColumnName: id
                     onDelete: CASCADE
-    oneToMany:
-        recommendations:
-            targetEntity: WellCommerce\Bundle\ReviewBundle\Entity\ReviewRecommendation
-            cascade:
-                - remove
-                - persist
-            fetch: EXTRA_LAZY
-            mappedBy: review
-            orphanRemoval: true

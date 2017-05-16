@@ -12,8 +12,12 @@ review:
         recommendation_exists: Review has already been assessed.
         review_not_exists: Review not exists.
         enable_reviews: Enable reviews
+        rating_level:
+        rating_recommendation:
     button:
         add_opinion: Submit review
+        enable: Enable the review
+        disable: Disable the review
     link:
         first_review: Be first to submit a review
     flash:

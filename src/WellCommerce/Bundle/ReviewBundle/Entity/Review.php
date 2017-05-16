@@ -12,8 +12,6 @@
 
 namespace WellCommerce\Bundle\ReviewBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
@@ -31,28 +29,14 @@ class Review implements EntityInterface
     use Enableable;
     use Timestampable;
     
-    protected $nick                 = '';
-    protected $review               = '';
-    protected $rating               = 5;
-    protected $ratingLevel          = 5;
-    protected $ratingRecommendation = 5;
-    protected $ratio                = 0.00;
-    protected $likes                = 0;
+    protected $nick   = '';
+    protected $review = '';
+    protected $rating = 5;
     
     /**
      * @var Product
      */
     protected $product;
-    
-    /**
-     * @var Collection
-     */
-    protected $recommendations;
-    
-    public function __construct()
-    {
-        $this->recommendations = new ArrayCollection();
-    }
     
     public function getNick(): string
     {
@@ -79,41 +63,6 @@ class Review implements EntityInterface
         return $this->rating;
     }
     
-    public function setRating(int $rating)
-    {
-        $this->rating = $rating;
-    }
-    
-    public function getRatingLevel(): int
-    {
-        return $this->ratingLevel;
-    }
-    
-    public function setRatingLevel(int $ratingLevel)
-    {
-        $this->ratingLevel = $ratingLevel;
-    }
-    
-    public function getRatio(): float
-    {
-        return $this->ratio;
-    }
-    
-    public function setRatio(float $ratio)
-    {
-        $this->ratio = $ratio;
-    }
-    
-    public function getLikes(): int
-    {
-        return $this->likes;
-    }
-    
-    public function setLikes(int $likes)
-    {
-        $this->likes = $likes;
-    }
-    
     public function getProduct(): Product
     {
         return $this->product;
@@ -122,30 +71,5 @@ class Review implements EntityInterface
     public function setProduct(Product $product)
     {
         $this->product = $product;
-    }
-    
-    public function getRatingRecommendation(): int
-    {
-        return $this->ratingRecommendation;
-    }
-    
-    public function setRatingRecommendation(int $ratingRecommendation)
-    {
-        $this->ratingRecommendation = $ratingRecommendation;
-    }
-    
-    public function getRecommendations(): Collection
-    {
-        return $this->recommendations;
-    }
-    
-    public function setRecommendations(Collection $recommendations)
-    {
-        $this->recommendations = $recommendations;
-    }
-    
-    public function addRecommendation(ReviewRecommendation $recommendation)
-    {
-        $this->recommendations->add($recommendation);
     }
 }

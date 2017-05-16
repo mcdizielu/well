@@ -22,27 +22,10 @@ use WellCommerce\Bundle\ReviewBundle\Entity\Review;
  */
 final class ReviewExtension extends \Twig_Extension
 {
-    /**
-     * @var RepositoryInterface
-     */
-    protected $repository;
-    
-    /**
-     * ReviewExtension constructor.
-     *
-     * @param RepositoryInterface $repository
-     */
-    public function __construct(RepositoryInterface $repository)
-    {
-        $this->repository = $repository;
-    }
-    
     public function getFunctions()
     {
         return [
             new \Twig_SimpleFunction('productReviewAverage', [$this, 'getReviewAverage'], ['is_safe' => ['html']]),
-            new \Twig_SimpleFunction('getLikesCount', [$this, 'getLikesCount'], ['is_safe' => ['html']]),
-            new \Twig_SimpleFunction('getUnlikesCount', [$this, 'getUnlikesCount'], ['is_safe' => ['html']]),
         ];
     }
     
@@ -64,25 +47,5 @@ final class ReviewExtension extends \Twig_Extension
         });
         
         return ($reviewsTotal > 0) ? round($totalRating / $reviewsTotal, 2) : 0;
-    }
-    
-    public function getLikesCount(int $id)
-    {
-        $recommendations = $this->repository->findBy([
-            'review' => $id,
-            'liked'  => true,
-        ]);
-        
-        return count($recommendations);
-    }
-    
-    public function getUnlikesCount(int $id)
-    {
-        $recommendations = $this->repository->findBy([
-            'review'  => $id,
-            'unliked' => true,
-        ]);
-        
-        return count($recommendations);
     }
 }
