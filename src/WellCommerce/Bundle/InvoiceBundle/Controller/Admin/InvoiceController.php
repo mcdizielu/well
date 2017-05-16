@@ -85,6 +85,17 @@ class InvoiceController extends AbstractAdminController
         return $this->redirectToAction('index');
     }
     
+    public function sendAction(string $guid): Response
+    {
+        $invoice = $this->getManager()->getRepository()->findOneBy(['guid' => $guid]);
+        if ($invoice instanceof Invoice) {
+            $this->getInvoiceProcessor($invoice)->send($invoice);
+            $this->getFlashHelper()->addSuccess('invoice.flash.send_success');
+        }
+        
+        return $this->redirectToAction('index');
+    }
+    
     private function getInvoiceProcessor(Invoice $invoice): InvoiceProcessorInterface
     {
         /** @var InvoiceProcessorCollection $collection */

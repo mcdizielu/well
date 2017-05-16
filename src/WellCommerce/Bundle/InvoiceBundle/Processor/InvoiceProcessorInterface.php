@@ -19,4 +19,6 @@ interface InvoiceProcessorInterface
     public function void(Invoice $invoice);
     
     public function download(Invoice $invoice): Response;
+    
+    public function send(Invoice $invoice);
 }

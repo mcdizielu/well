@@ -36,6 +36,13 @@ admin.invoice.print:
     options:
         require_admin_permission: invoice.index
 
+admin.invoice.send:
+    path: /send/{guid}
+    defaults:
+        _controller: 'invoice.controller.admin:sendAction'
+    options:
+        require_admin_permission: invoice.index
+
 admin.invoice.edit:
     path: '/edit/{id}'
     defaults:

@@ -48,4 +48,8 @@ final class GenericInvoiceProcessor implements InvoiceProcessorInterface
     public function download(Invoice $invoice): Response
     {
     }
+    
+    public function send(Invoice $invoice)
+    {
+    }
 }
