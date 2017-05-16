@@ -9,6 +9,7 @@ use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CatalogBundle\Entity\Variant;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\OrderBundle\Entity\OrderProductExtraTrait;
 
 /**
  * Class OrderProduct
@@ -19,6 +20,7 @@ class OrderProduct implements EntityInterface
 {
     use Identifiable;
     use Timestampable;
+    use OrderProductExtraTrait;
     
     protected $quantity = 1;
     protected $weight   = 0.00;
