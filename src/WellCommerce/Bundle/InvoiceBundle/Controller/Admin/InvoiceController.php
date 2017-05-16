@@ -93,7 +93,7 @@ class InvoiceController extends AbstractAdminController
             $this->getFlashHelper()->addSuccess('invoice.flash.send_success');
         }
         
-        return $this->redirectToAction('index');
+        return $this->redirectToRoute('admin.order.edit', ['id' => $invoice->getOrder()->getId()]);
     }
     
     private function getInvoiceProcessor(Invoice $invoice): InvoiceProcessorInterface
