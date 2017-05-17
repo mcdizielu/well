@@ -3,6 +3,9 @@ WellCommerce\Bundle\AppBundle\Entity\Media:
     table: media
     cache:
         usage: NONSTRICT_READ_WRITE
+    indexes:
+        IDX_media_name:
+            columns: [name]
     id:
         id:
             type: integer
