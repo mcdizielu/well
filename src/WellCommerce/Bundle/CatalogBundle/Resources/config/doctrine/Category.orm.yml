@@ -12,6 +12,9 @@ WellCommerce\Bundle\CatalogBundle\Entity\Category:
         usage: NONSTRICT_READ_WRITE
     table: category
     repositoryClass: WellCommerce\Bundle\CatalogBundle\Repository\CategoryRepository
+    indexes:
+        IDX_category_symbol:
+            columns: [symbol]
     id:
         id:
             type: integer
