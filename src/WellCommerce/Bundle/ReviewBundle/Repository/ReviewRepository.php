@@ -9,6 +9,7 @@
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */
+
 namespace WellCommerce\Bundle\ReviewBundle\Repository;
 
 use Doctrine\Common\Collections\Collection;
@@ -29,8 +30,7 @@ class ReviewRepository extends EntityRepository implements ReviewRepositoryInter
         $criteria->where($criteria->expr()->eq('product', $product));
         $criteria->andWhere($criteria->expr()->eq('enabled', true));
         $criteria->orderBy([
-            'ratio' => 'desc',
-            'likes' => 'asc',
+            'createdAt' => 'desc',
         ]);
         
         return $this->matching($criteria);
