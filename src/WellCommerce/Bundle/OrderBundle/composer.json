@@ -32,7 +32,8 @@
   "require": {
     "wellcommerce/app-bundle": "^0.9@dev",
     "wellcommerce/catalog-bundle": "^0.9@dev",
-    "wellcommerce/invoice-bundle": "^0.9@dev"
+    "wellcommerce/invoice-bundle": "^0.9@dev",
+    "dvdoug/boxpacker": "^2.3"
   },
   "extra": {
     "branch-alias": {

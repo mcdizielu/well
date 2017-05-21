@@ -7,6 +7,10 @@ WellCommerce\Bundle\OrderBundle\Entity\ShippingMethod:
             type: integer
             generator:
                 strategy: AUTO
+    embedded:
+        boxDimension:
+            class: WellCommerce\Bundle\AppBundle\Entity\Dimension
+            columnPrefix: box_dimension_
     fields:
         calculator:
             type: string

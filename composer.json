@@ -80,7 +80,8 @@
     "league/oauth2-google": "^2.0",
     "umpirsky/twig-php-function": "^0.2.0",
     "debril/rss-atom-bundle": "^3.0",
-    "google/recaptcha": "^1.1"
+    "google/recaptcha": "^1.1",
+    "dvdoug/boxpacker": "^2.3"
   },
   "replace": {
     "wellcommerce/api-bundle": "self.version",

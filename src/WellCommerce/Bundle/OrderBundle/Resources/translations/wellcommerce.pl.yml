@@ -81,6 +81,7 @@ order:
             add: Dodaj do koszyka
             go_to_cart: Przejdź do koszyka
             back_to_shopping: Wróć do sklepu
+            back_to_address_details: Wróć do danych adresowych
             place_order: Złóż zamówienie
         link:
             checkout: Przejdź do zamówienia
@@ -223,5 +224,6 @@ shipping_method:
         costs: Ustawienia kosztów wysyłki
         countries: Państwa
         client_groups: Grupy klientów
+        box_dimension: Wymiary opakowania
     tip:
         client_groups: Ustaw widoczność tylko dla wybranych grup klientów

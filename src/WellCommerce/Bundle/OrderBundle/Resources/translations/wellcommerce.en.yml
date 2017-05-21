@@ -219,6 +219,7 @@ shipping_method:
         costs: Shipping costs settings
         countries: Countries
         client_groups: Client groups
+        box_dimension: Box dimensions
     tip:
         client_groups: Restrict the visibility for a group of clients
 

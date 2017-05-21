@@ -142,6 +142,35 @@ class ShippingMethodFormBuilder extends AbstractFormBuilder
             'options' => $this->get('country.repository')->all(),
         ]));
     
+        $dimensionData = $form->addChild($this->getElement('nested_fieldset', [
+            'name'  => 'box_dimension',
+            'label' => 'shipping_method.fieldset.box_dimension',
+        ]));
+    
+        $dimensionData->addChild($this->getElement('text_field', [
+            'name'    => 'boxDimension.width',
+            'label'   => 'common.label.dimension.width',
+            'filters' => [
+                $this->getFilter('comma_to_dot_changer'),
+            ],
+        ]));
+    
+        $dimensionData->addChild($this->getElement('text_field', [
+            'name'    => 'boxDimension.height',
+            'label'   => 'common.label.dimension.height',
+            'filters' => [
+                $this->getFilter('comma_to_dot_changer'),
+            ],
+        ]));
+    
+        $dimensionData->addChild($this->getElement('text_field', [
+            'name'    => 'boxDimension.depth',
+            'label'   => 'common.label.dimension.depth',
+            'filters' => [
+                $this->getFilter('comma_to_dot_changer'),
+            ],
+        ]));
+        
         $this->addShopsFieldset($form);
         
         $form->addFilter($this->getFilter('no_code'));

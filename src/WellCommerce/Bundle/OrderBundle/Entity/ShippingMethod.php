@@ -18,6 +18,7 @@ use Knp\DoctrineBehaviors\Model\Blameable\Blameable;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
 use WellCommerce\Bundle\AppBundle\Entity\Currency;
+use WellCommerce\Bundle\AppBundle\Entity\Dimension;
 use WellCommerce\Bundle\AppBundle\Entity\ShopCollectionAwareTrait;
 use WellCommerce\Bundle\AppBundle\Entity\Tax;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
@@ -43,6 +44,11 @@ class ShippingMethod implements EntityInterface
     protected $calculator      = '';
     protected $optionsProvider = '';
     protected $countries       = [];
+    
+    /**
+     * @var Dimension
+     */
+    protected $boxDimension;
     
     /**
      * @var Currency
@@ -74,7 +80,8 @@ class ShippingMethod implements EntityInterface
         $this->costs          = new ArrayCollection();
         $this->paymentMethods = new ArrayCollection();
         $this->shops          = new ArrayCollection();
-        $this->clientGroups    = new ArrayCollection();
+        $this->clientGroups   = new ArrayCollection();
+        $this->boxDimension   = new Dimension();
     }
     
     public function getCalculator(): string
@@ -150,6 +157,16 @@ class ShippingMethod implements EntityInterface
     public function setClientGroups(Collection $clientGroups)
     {
         $this->clientGroups = $clientGroups;
+    }
+    
+    public function getBoxDimension(): Dimension
+    {
+        return $this->boxDimension;
+    }
+    
+    public function setBoxDimension(Dimension $boxDimension)
+    {
+        $this->boxDimension = $boxDimension;
     }
     
     public function translate($locale = null, $fallbackToDefault = true): ShippingMethodTranslation
