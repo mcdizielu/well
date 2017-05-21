@@ -487,6 +487,8 @@ recaptcha:
     label:
         site_key: Site key
         secret_key: Secret key
+        enabled_for_guest: Włącz dla gości
+        enabled_for_client: Włącz dla klientów
 
 wkhtml:
     fieldset:

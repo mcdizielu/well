@@ -27,7 +27,7 @@ services:
 
     recaptcha.helper:
         class: WellCommerce\Bundle\AppBundle\Service\ReCaptcha\Helper\ReCaptchaHelper
-        arguments: ['@recaptcha.system.configurator']
+        arguments: ['@recaptcha.system.configurator', '@security.helper']
 
     twig.extension.recaptcha:
         class: WellCommerce\Bundle\AppBundle\Twig\ReCaptchaExtension

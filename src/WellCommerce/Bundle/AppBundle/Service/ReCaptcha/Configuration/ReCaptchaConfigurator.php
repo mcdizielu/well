@@ -26,9 +26,14 @@ class ReCaptchaConfigurator extends AbstractSystemConfigurator
         ]));
         
         $generalData->addChild($builder->getElement('checkbox', [
-            'name'  => 'enabled',
-            'label' => 'common.label.enabled',
-        ]))->setValue($this->getParameter('enabled'));
+            'name'  => 'enabledForGuest',
+            'label' => 'recaptcha.label.enabled_for_guest',
+        ]))->setValue($this->getParameter('enabledForGuest'));
+        
+        $generalData->addChild($builder->getElement('checkbox', [
+            'name'  => 'enabledForClient',
+            'label' => 'recaptcha.label.enabled_for_client',
+        ]))->setValue($this->getParameter('enabledForClient'));
         
         $generalData->addChild($builder->getElement('text_field', [
             'name'  => 'siteKey',
@@ -44,9 +49,10 @@ class ReCaptchaConfigurator extends AbstractSystemConfigurator
     public function getDefaults(): array
     {
         return [
-            'siteKey'   => '',
-            'secretKey' => '',
-            'enabled'   => false,
+            'siteKey'          => '',
+            'secretKey'        => '',
+            'enabledForGuest'  => true,
+            'enabledForClient' => false,
         ];
     }
 }
