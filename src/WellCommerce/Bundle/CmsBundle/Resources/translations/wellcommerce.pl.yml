@@ -16,6 +16,7 @@ contact:
             contact: Otrzymaliśmy Twoje zapytanie
     label:
         business_hours: Godziny otwarcia
+        topic: Temat wiadomości
 
 contact_details:
     heading:

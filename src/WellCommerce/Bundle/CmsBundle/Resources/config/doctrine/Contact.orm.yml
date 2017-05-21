@@ -16,3 +16,40 @@ WellCommerce\Bundle\CmsBundle\Entity\Contact:
             type: integer
             generator:
                 strategy: AUTO
+    fields:
+        line1:
+            type: string
+            length: 255
+            nullable: false
+            options:
+                default: ''
+        line2:
+            type: string
+            length: 255
+            nullable: false
+            options:
+                default: ''
+        postalCode:
+            type: string
+            length: 255
+            nullable: false
+            options:
+                default: ''
+        state:
+            type: string
+            length: 255
+            nullable: false
+            options:
+                default: ''
+        city:
+            type: string
+            length: 255
+            nullable: false
+            options:
+                default: ''
+        country:
+            type: string
+            length: 3
+            nullable: false
+            options:
+                default: ''

@@ -9,6 +9,7 @@
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */
+
 namespace WellCommerce\Bundle\CmsBundle\Form\Front;
 
 use WellCommerce\Bundle\CoreBundle\Form\AbstractFormBuilder;
@@ -47,11 +48,14 @@ class ContactFormBuilder extends AbstractFormBuilder
             'name'  => 'email',
             'label' => 'contact_ticket.label.email',
         ]));
-    
+        
         $form->addChild($this->getElement('select', [
             'name'        => 'contact',
             'label'       => 'contact_ticket.label.contact',
-            'options'     => $this->get('contact.dataset.front')->getResult('select', [], ['default_option' => '---']),
+            'options'     => $this->get('contact.dataset.front')->getResult('select', [], [
+                'default_option' => '---',
+                'label_column'   => 'topic',
+            ]),
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('contact.repository')),
         ]));
         

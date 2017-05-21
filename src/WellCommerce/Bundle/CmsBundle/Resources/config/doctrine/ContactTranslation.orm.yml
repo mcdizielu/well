@@ -14,6 +14,10 @@ WellCommerce\Bundle\CmsBundle\Entity\ContactTranslation:
             type: string
             length: 255
             nullable: false
+        topic:
+            type: string
+            length: 255
+            nullable: true
         email:
             type: string
             length: 255
@@ -26,28 +30,3 @@ WellCommerce\Bundle\CmsBundle\Entity\ContactTranslation:
             type: text
             nullable: true
             column: business_hours
-        line1:
-            type: string
-            length: 255
-            nullable: true
-        line2:
-            type: string
-            length: 255
-            nullable: true
-        postalCode:
-            type: string
-            length: 255
-            nullable: true
-            column: postal_code
-        state:
-            type: string
-            length: 255
-            nullable: true
-        city:
-            type: string
-            length: 255
-            nullable: true
-        country:
-            type: string
-            length: 3
-            nullable: true

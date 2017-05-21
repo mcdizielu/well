@@ -52,6 +52,14 @@ class ContactFormBuilder extends AbstractFormBuilder
                 $this->getRule('required'),
             ],
         ]));
+    
+        $languageData->addChild($this->getElement('text_field', [
+            'name'  => 'topic',
+            'label' => 'contact.label.topic',
+            'rules' => [
+                $this->getRule('required'),
+            ],
+        ]));
         
         $languageData->addChild($this->getElement('text_field', [
             'name'  => 'email',
@@ -79,38 +87,32 @@ class ContactFormBuilder extends AbstractFormBuilder
             'label' => 'common.label.address',
         ]));
         
-        $languageData = $addressData->addChild($this->getElement('language_fieldset', [
-            'name'        => 'translations',
-            'label'       => 'common.fieldset.translations',
-            'transformer' => $this->getRepositoryTransformer('translation', $this->get('contact.repository')),
-        ]));
-        
-        $languageData->addChild($this->getElement('text_field', [
+        $addressData->addChild($this->getElement('text_field', [
             'name'  => 'line1',
             'label' => 'address.label.line1',
         ]));
         
-        $languageData->addChild($this->getElement('text_field', [
+        $addressData->addChild($this->getElement('text_field', [
             'name'  => 'line2',
             'label' => 'address.label.line2',
         ]));
         
-        $languageData->addChild($this->getElement('text_field', [
+        $addressData->addChild($this->getElement('text_field', [
             'name'  => 'state',
             'label' => 'address.label.state',
         ]));
         
-        $languageData->addChild($this->getElement('text_field', [
+        $addressData->addChild($this->getElement('text_field', [
             'name'  => 'postalCode',
             'label' => 'address.label.post_code',
         ]));
         
-        $languageData->addChild($this->getElement('text_field', [
+        $addressData->addChild($this->getElement('text_field', [
             'name'  => 'city',
             'label' => 'address.label.city',
         ]));
         
-        $languageData->addChild($this->getElement('select', [
+        $addressData->addChild($this->getElement('select', [
             'name'    => 'country',
             'label'   => 'address.label.country',
             'options' => $this->get('country.repository')->all(),

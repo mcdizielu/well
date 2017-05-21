@@ -13,7 +13,6 @@
 namespace WellCommerce\Bundle\CmsBundle\Entity;
 
 use Knp\DoctrineBehaviors\Model\Translatable\Translation;
-use WellCommerce\Bundle\AppBundle\Entity\AddressTrait;
 use WellCommerce\Bundle\CoreBundle\Entity\AbstractTranslation;
 
 /**
@@ -24,9 +23,9 @@ use WellCommerce\Bundle\CoreBundle\Entity\AbstractTranslation;
 class ContactTranslation extends AbstractTranslation
 {
     use Translation;
-    use AddressTrait;
     
     protected $name          = '';
+    protected $topic         = '';
     protected $email         = '';
     protected $phone         = '';
     protected $businessHours = '';
@@ -39,6 +38,16 @@ class ContactTranslation extends AbstractTranslation
     public function setName(string $name)
     {
         $this->name = $name;
+    }
+    
+    public function getTopic(): string
+    {
+        return (string)$this->topic;
+    }
+    
+    public function setTopic(string $topic)
+    {
+        $this->topic = $topic;
     }
     
     public function getEmail(): string

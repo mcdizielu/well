@@ -54,6 +54,7 @@ class LoadContactData extends AbstractDataFixture
             /** @var ContactTranslation $translation */
             $translation = $contact->translate($locale->getCode());
             $translation->setName('Sales department');
+            $translation->setTopic('Payment & delivery times');
             $translation->setEmail('sales@domain.org');
             $translation->setBusinessHours($this->getBusinessHours());
             $translation->setPhone('555 123-345-678');

@@ -16,6 +16,7 @@ contact:
             contact: We have received your inquiry
     label:
         business_hours: Business hours
+        topic: Topic
 
 contact_details:
     heading:

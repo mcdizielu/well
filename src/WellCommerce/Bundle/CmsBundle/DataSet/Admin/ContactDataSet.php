@@ -31,8 +31,9 @@ class ContactDataSet extends AbstractDataSet
     public function configureOptions(DataSetConfiguratorInterface $configurator)
     {
         $configurator->setColumns([
-            'id'   => 'contact.id',
-            'name' => 'contact_translation.name',
+            'id'    => 'contact.id',
+            'name'  => 'contact_translation.name',
+            'topic' => 'contact_translation.topic',
         ]);
     }
     
