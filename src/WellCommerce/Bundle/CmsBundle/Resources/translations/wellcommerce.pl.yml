@@ -55,6 +55,14 @@ news_category:
         add: Dodaj kategorię
         edit: Edytuj kategorię
 
+news_feed:
+    flash:
+        empty: Lista newsów jest pusta
+    button:
+        read_more: Czytaj więcej
+    layout_box:
+        per_page: Ilość newsów na stronę
+
 page:
     tip:
         client_groups: Zaznacz grupy klientów które mogą widzieć stronę

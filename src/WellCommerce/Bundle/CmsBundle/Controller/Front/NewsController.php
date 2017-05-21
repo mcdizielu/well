@@ -28,11 +28,20 @@ class NewsController extends AbstractFrontController
 {
     public function indexAction(Request $request): Response
     {
+        $this->getBreadcrumbProvider()->add(new Breadcrumb([
+            'label' => $this->trans('news.heading.index'),
+        ]));
+        
         return $this->displayTemplate('index');
     }
     
     public function viewAction(News $news): Response
     {
+        $this->getBreadcrumbProvider()->add(new Breadcrumb([
+            'url'   => $this->getRouterHelper()->generateUrl('front.news.index'),
+            'label' => $this->trans('news.heading.index'),
+        ]));
+        
         $this->getBreadcrumbProvider()->add(new Breadcrumb([
             'label' => $news->translate()->getTopic(),
         ]));
