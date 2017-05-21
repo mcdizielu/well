@@ -12,4 +12,18 @@ front.news.index:
         _controller: 'news.controller.front:indexAction'
         page: 1
 
+front.news.atom:
+    path: /atom
+    defaults:
+        _controller: 'DebrilRssAtomBundle:Stream:index'
+        format: 'atom'
+        source: 'news_feed.provider'
+        id: null
 
+front.news.rss:
+    path: /rss
+    defaults:
+        _controller: 'DebrilRssAtomBundle:Stream:index'
+        format: 'rss'
+        source: 'news_feed.provider'
+        id: null

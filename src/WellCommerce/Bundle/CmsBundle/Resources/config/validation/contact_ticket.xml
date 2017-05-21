@@ -5,30 +5,20 @@
 
     <class name="WellCommerce\Bundle\CmsBundle\Entity\ContactTicket">
         <property name="name">
-            <constraint name="NotBlank">
-                <option name="message">contact_ticket.error.name.not_blank</option>
-            </constraint>
+            <constraint name="NotBlank" />
             <constraint name="NotNull" />
         </property>
         <property name="surname">
-            <constraint name="NotBlank">
-                <option name="message">contact_ticket.error.surname.not_blank</option>
-            </constraint>
+            <constraint name="NotBlank" />
             <constraint name="NotNull" />
         </property>
         <property name="email">
-            <constraint name="NotBlank">
-                <option name="message">contact_ticket.error.email.not_blank</option>
-            </constraint>
+            <constraint name="NotBlank" />
             <constraint name="NotNull" />
-            <constraint name="Email">
-                <option name="message">contact_ticket.error.email.not_valid</option>
-            </constraint>
+            <constraint name="Email" />
         </property>
         <property name="content">
-            <constraint name="NotBlank">
-                <option name="message">contact_ticket.error.content.not_blank</option>
-            </constraint>
+            <constraint name="NotBlank" />
             <constraint name="NotNull" />
         </property>
     </class>

@@ -45,3 +45,8 @@ services:
 
     news.request.storage:
         class: WellCommerce\Bundle\CmsBundle\Request\NewsRequestStorage
+
+    news_feed.provider:
+        class: WellCommerce\Bundle\CmsBundle\Service\Feed\NewsFeedProvider
+        calls:
+            - [setContainer, ['@service_container']]

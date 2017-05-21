@@ -33,3 +33,10 @@ WellCommerce\Bundle\CmsBundle\Entity\News:
                 photo_id:
                     referencedColumnName: id
                     onDelete: 'SET NULL'
+        category:
+            targetEntity: WellCommerce\Bundle\CmsBundle\Entity\NewsCategory
+            fetch: LAZY
+            joinColumns:
+                category_id:
+                    referencedColumnName: id
+                    onDelete: 'SET NULL'

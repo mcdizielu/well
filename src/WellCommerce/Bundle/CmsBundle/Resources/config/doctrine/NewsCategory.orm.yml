@@ -1,0 +1,10 @@
+WellCommerce\Bundle\CmsBundle\Entity\NewsCategory:
+    type: entity
+    cache:
+        usage: NONSTRICT_READ_WRITE
+    table: news_category
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: IDENTITY

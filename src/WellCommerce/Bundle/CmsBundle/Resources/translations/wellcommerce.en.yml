@@ -24,6 +24,20 @@ contact_details:
         first_name: First name
         last_name: Last name
 
+contact_ticket:
+    index:
+        contact: Contact us
+    flash:
+        success: The message was sent.
+        error: The message was not sent. The form contains errors.
+    label:
+        email: E-mail address
+        subject: Topic
+        content: Content
+        name: Firstname
+        surname: Surname
+        phone_number: Phone
+
 news:
     heading:
         index: News
@@ -33,6 +47,13 @@ news:
         topic: Topic
         summary: Summary
         content: Content
+        category: Category
+
+news_category:
+    heading:
+        index: News categories
+        add: Add a category
+        edit: Edit a category
 
 page:
     tip:

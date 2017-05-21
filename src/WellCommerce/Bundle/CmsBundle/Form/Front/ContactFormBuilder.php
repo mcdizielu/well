@@ -47,6 +47,11 @@ class ContactFormBuilder extends AbstractFormBuilder
             'name'  => 'email',
             'label' => 'contact_ticket.label.email',
         ]));
+    
+        $form->addChild($this->getElement('text_field', [
+            'name'  => 'subject',
+            'label' => 'contact_ticket.label.subject',
+        ]));
         
         $form->addChild($this->getElement('text_area', [
             'name'  => 'content',

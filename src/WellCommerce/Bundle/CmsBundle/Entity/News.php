@@ -46,6 +46,11 @@ class News implements EntityInterface
      */
     protected $photo;
     
+    /**
+     * @var NewsCategory
+     */
+    protected $category;
+    
     public function __construct()
     {
         $this->startDate = Carbon::now();
@@ -101,6 +106,16 @@ class News implements EntityInterface
     public function setPhoto(Media $photo = null)
     {
         $this->photo = $photo;
+    }
+    
+    public function getCategory()
+    {
+        return $this->category;
+    }
+    
+    public function setCategory(NewsCategory $category = null)
+    {
+        $this->category = $category;
     }
     
     public function translate($locale = null, $fallbackToDefault = true): NewsTranslation

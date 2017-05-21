@@ -78,7 +78,9 @@
     "knplabs/knp-snappy-bundle": "^1.4",
     "league/oauth2-facebook": "^2.0",
     "league/oauth2-google": "^2.0",
-    "umpirsky/twig-php-function": "^0.2.0"
+    "umpirsky/twig-php-function": "^0.2.0",
+    "debril/rss-atom-bundle": "^3.0",
+    "google/recaptcha": "^1.1"
   },
   "replace": {
     "wellcommerce/api-bundle": "self.version",

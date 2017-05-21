@@ -28,6 +28,15 @@
     </item>
 
     <item>
+        <identifier>news_category</identifier>
+        <css_class/>
+        <name>news_category</name>
+        <route_name>admin.news_category.index</route_name>
+        <parent>cms</parent>
+        <hierarchy>25</hierarchy>
+    </item>
+
+    <item>
         <identifier>contact</identifier>
         <css_class/>
         <name>contact</name>

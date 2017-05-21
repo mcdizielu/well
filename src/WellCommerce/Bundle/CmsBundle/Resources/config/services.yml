@@ -9,6 +9,7 @@
 imports:
     - { resource: 'services/contact.yml' }
     - { resource: 'services/news.yml' }
+    - { resource: 'services/news_category.yml' }
     - { resource: 'services/page.yml' }
     - { resource: 'services/sitemap.yml' }
 

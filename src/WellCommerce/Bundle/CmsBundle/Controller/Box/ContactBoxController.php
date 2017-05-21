@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\CmsBundle\Controller\Box;
 
 use Symfony\Component\HttpFoundation\Response;
+use WellCommerce\Bundle\AppBundle\Service\ReCaptcha\Helper\ReCaptchaHelper;
 use WellCommerce\Bundle\CmsBundle\Entity\ContactTicket;
 use WellCommerce\Bundle\CoreBundle\Controller\Box\AbstractBoxController;
 use WellCommerce\Component\Layout\Collection\LayoutBoxSettingsCollection;
@@ -32,19 +33,21 @@ class ContactBoxController extends AbstractBoxController
         
         if ($form->handleRequest()->isSubmitted()) {
             if ($form->isValid()) {
-                $this->getManager()->createResource($resource);
-                
-                $this->getMailerHelper()->sendEmail([
-                    'recipient'     => [$resource->getEmail()],
-                    'subject'       => $resource->getSubject(),
-                    'template'      => 'WellCommerceAppBundle:Email:contact.html.twig',
-                    'parameters'    => [
-                        'contact' => $resource,
-                    ],
-                    'configuration' => $this->getShopStorage()->getCurrentShop()->getMailerConfiguration(),
-                ]);
-                
-                $this->getFlashHelper()->addSuccess('contact_ticket.flash.success');
+                if ($this->getReCaptchaHelper()->isValid()) {
+                    $this->getManager()->createResource($resource);
+                    
+                    $this->getMailerHelper()->sendEmail([
+                        'recipient'     => [$resource->getEmail()],
+                        'subject'       => $resource->getSubject(),
+                        'template'      => 'WellCommerceCmsBundle:Email:contact.html.twig',
+                        'parameters'    => [
+                            'contact' => $resource,
+                        ],
+                        'configuration' => $this->getShopStorage()->getCurrentShop()->getMailerConfiguration(),
+                    ]);
+                    
+                    $this->getFlashHelper()->addSuccess('contact_ticket.flash.success');
+                }
                 
                 return $this->getRouterHelper()->redirectTo('front.contact.index');
             }
@@ -56,5 +59,10 @@ class ContactBoxController extends AbstractBoxController
             'form'        => $form,
             'boxSettings' => $boxSettings,
         ]);
+    }
+    
+    private function getReCaptchaHelper(): ReCaptchaHelper
+    {
+        return $this->get('recaptcha.helper');
     }
 }

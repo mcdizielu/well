@@ -9,7 +9,6 @@
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */
-
 namespace WellCommerce\Bundle\CmsBundle\DataGrid;
 
 use WellCommerce\Bundle\CoreBundle\DataGrid\AbstractDataGrid;
@@ -20,11 +19,11 @@ use WellCommerce\Component\DataGrid\Column\Options\Filter;
 use WellCommerce\Component\DataGrid\Column\Options\Sorting;
 
 /**
- * Class NewsDataGrid
+ * Class NewsCategoryDataGrid
  *
  * @author  Adam Piotrowski <adam@wellcommerce.org>
  */
-class NewsDataGrid extends AbstractDataGrid
+class NewsCategoryDataGrid extends AbstractDataGrid
 {
     public function configureColumns(ColumnCollection $collection)
     {
@@ -44,21 +43,13 @@ class NewsDataGrid extends AbstractDataGrid
         ]));
         
         $collection->add(new Column([
-            'id'      => 'topic',
-            'caption' => 'news.label.topic',
-        ]));
-        
-        $collection->add(new Column([
-            'id'      => 'category',
-            'caption' => 'news.label.category',
-            'filter'  => new Filter([
-                'type' => Filter::FILTER_INPUT,
-            ]),
+            'id'      => 'name',
+            'caption' => 'common.label.name',
         ]));
     }
     
     public function getIdentifier(): string
     {
-        return 'news';
+        return 'news_category';
     }
 }

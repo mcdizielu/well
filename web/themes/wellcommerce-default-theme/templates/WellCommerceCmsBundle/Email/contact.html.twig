@@ -1,0 +1,8 @@
+{% trans_default_domain "wellcommerce" %}
+{% include 'WellCommerceAppBundle:Email:header.html.twig' %}
+<p><strong>{% trans %}common.label.first_name{% endtrans %}:</strong> {{ contact.name }}</p>
+<p><strong>{% trans %}common.label.last_name{% endtrans %}:</strong> {{ contact.surname }}</p>
+<p><strong>{% trans %}common.label.email{% endtrans %}:</strong> {{ contact.email }}</p>
+<p><strong>{% trans %}common.label.phone{% endtrans %}:</strong> {{ contact.phone }}</p>
+<p><strong>{% trans %}common.label.content{% endtrans %}:</strong> {{ contact.content }}</p>
+{% include 'WellCommerceAppBundle:Email:footer.html.twig' %}

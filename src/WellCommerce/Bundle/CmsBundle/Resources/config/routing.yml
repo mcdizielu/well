@@ -17,6 +17,10 @@ _admin_news:
     resource: "@WellCommerceCmsBundle/Resources/config/routing/news/admin.yml"
     prefix: /admin/cms/news
 
+_admin_news_category:
+    resource: "@WellCommerceCmsBundle/Resources/config/routing/news_category/admin.yml"
+    prefix: /admin/cms/news/category
+
 _front_news:
     resource: "@WellCommerceCmsBundle/Resources/config/routing/news/front.yml"
     prefix: /news

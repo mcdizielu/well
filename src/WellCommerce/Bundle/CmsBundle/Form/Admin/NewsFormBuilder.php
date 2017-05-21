@@ -9,6 +9,7 @@
  * For the full copyright and license information,
  * please view the LICENSE file that was distributed with this source code.
  */
+
 namespace WellCommerce\Bundle\CmsBundle\Form\Admin;
 
 use WellCommerce\Bundle\CoreBundle\Form\AbstractFormBuilder;
@@ -54,6 +55,13 @@ class NewsFormBuilder extends AbstractFormBuilder
             'name'        => 'endDate',
             'label'       => 'common.label.valid_to',
             'transformer' => new DateTransformer('m/d/Y'),
+        ]));
+        
+        $requiredData->addChild($this->getElement('select', [
+            'name'        => 'category',
+            'label'       => 'news.label.category',
+            'options'     => $this->get('news_category.dataset.admin')->getResult('select', [], ['default_option' => '---']),
+            'transformer' => $this->getRepositoryTransformer('entity', $this->get('news_category.repository')),
         ]));
         
         $languageData = $requiredData->addChild($this->getElement('language_fieldset', [

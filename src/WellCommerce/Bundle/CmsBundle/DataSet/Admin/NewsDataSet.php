@@ -33,6 +33,7 @@ class NewsDataSet extends AbstractDataSet
         $configurator->setColumns([
             'id'        => 'news.id',
             'createdAt' => 'news.createdAt',
+            'updatedAt' => 'news.updatedAt',
             'startDate' => 'news.startDate',
             'endDate'   => 'news.endDate',
             'topic'     => 'news_translation.topic',
@@ -41,9 +42,11 @@ class NewsDataSet extends AbstractDataSet
             'slug'      => 'news_translation.slug',
             'locale'    => 'news_translation.locale',
             'route'     => 'IDENTITY(news_translation.route)',
+            'routeId'   => 'IDENTITY(news_translation.route)',
             'publish'   => 'news.publish',
             'featured'  => 'news.featured',
             'photo'     => 'photos.path',
+            'category'  => 'news_category_translation.name',
         ]);
     }
     
@@ -51,6 +54,8 @@ class NewsDataSet extends AbstractDataSet
     {
         $queryBuilder = $this->repository->getQueryBuilder();
         $queryBuilder->leftJoin('news.translations', 'news_translation');
+        $queryBuilder->leftJoin('news.category', 'news_category');
+        $queryBuilder->leftJoin('news_category.translations', 'news_category_translation');
         $queryBuilder->leftJoin('news.photo', 'photos');
         $queryBuilder->groupBy('news.id');
         
