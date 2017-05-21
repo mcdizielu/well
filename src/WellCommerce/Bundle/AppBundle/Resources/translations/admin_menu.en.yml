@@ -30,6 +30,7 @@ locale: Languages
 localization: Internationalization
 media: 'Media management'
 news: News
+news_category: News category
 order: Orders
 payment_method: 'Payment methods'
 producer: Producers

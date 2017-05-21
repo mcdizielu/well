@@ -1,5 +1,14 @@
 {% trans_default_domain "wellcommerce" %}
+
 {% if dataset.pagination.totalRows > 0 %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="pull-right">
+                <a href="{{ path('front.news.rss') }}">RSS</a> | <a href="{{ path('front.news.atom') }}">Atom</a>
+            </div>
+        </div>
+    </div>
+
     {% for news in dataset.rows %}
         <div class="media">
             <div class="media-left">
@@ -12,6 +21,11 @@
                 <p class="text-muted small">
                     <i class="fa fa-clock-o" aria-hidden="true"></i> {{ news.startDate.format('Y-d-m H:i:s') }}
                 </p>
+                {% if news.category is not empty %}
+                    <p class="text-muted small">
+                        {% trans %}news.label.category{% endtrans %}: {{ news.category }}
+                    </p>
+                {% endif %}
                 <p>{{ news.summary | raw }}</p>
                 <div class="text-right">
                     <br><br>
