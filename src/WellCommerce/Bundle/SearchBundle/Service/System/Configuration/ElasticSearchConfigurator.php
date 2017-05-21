@@ -26,7 +26,7 @@ class ElasticSearchConfigurator extends AbstractSystemConfigurator implements Se
     {
         return [
             'shards'        => 2,
-            'replicas'      => 2,
+            'replicas'      => 0,
             'indexPrefix'   => $this->kernel->getContainer()->getParameter('search_index_prefix'),
             'termMinLength' => 3,
             'maxResults'    => 100,
