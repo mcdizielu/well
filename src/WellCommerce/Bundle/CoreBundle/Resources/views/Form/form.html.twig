@@ -4,7 +4,7 @@
     });
 </script>
 
-<form id="{{ form.getName() }}" method="{{ form.getOption('method') }}" action="{{ form.getOption('action') }}">
+<form id="{{ form.getName() }}" method="{{ form.getOption('method') }}" action="{{ form.getOption('action') }}" {% if form.getOption('enctype') != '' %}enctype="{{ form.getOption('enctype') }}"{% endif %}>
     <input type="hidden" name="{{ form.getName() }}_submitted" value="1"/>
 
 </form>

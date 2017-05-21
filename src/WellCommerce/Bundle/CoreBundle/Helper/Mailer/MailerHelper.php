@@ -100,7 +100,16 @@ final class MailerHelper implements MailerHelperInterface
             $message->attach($this->createAttachment($file));
         }
         
+        foreach ($this->options['dynamic_attachments'] as $dynamicAttachment) {
+            $message->attach($this->createDynamicAttachment($dynamicAttachment));
+        }
+        
         return $message;
+    }
+    
+    private function createDynamicAttachment(array $dynamicAttachment): \Swift_Mime_Attachment
+    {
+        return new \Swift_Attachment($dynamicAttachment['data'], $dynamicAttachment['name'], $dynamicAttachment['type']);
     }
     
     private function createAttachment(string $path): \Swift_Mime_Attachment
@@ -127,6 +136,7 @@ final class MailerHelper implements MailerHelperInterface
             'parameters',
             'configuration',
             'attachments',
+            'dynamic_attachments',
         ]);
         
         $resolver->setDefault('bcc', function (Options $options) {
@@ -142,6 +152,7 @@ final class MailerHelper implements MailerHelperInterface
         });
         
         $resolver->setDefault('attachments', []);
+        $resolver->setDefault('dynamic_attachments', []);
         
         $resolver->setAllowedTypes('recipient', ['string', 'array']);
         $resolver->setAllowedTypes('bcc', ['string', 'array']);
@@ -150,6 +161,7 @@ final class MailerHelper implements MailerHelperInterface
         $resolver->setAllowedTypes('template', ['string']);
         $resolver->setAllowedTypes('parameters', ['array']);
         $resolver->setAllowedTypes('attachments', ['array']);
+        $resolver->setAllowedTypes('dynamic_attachments', ['array']);
         $resolver->setAllowedTypes('configuration', MailerConfiguration::class);
     }
     

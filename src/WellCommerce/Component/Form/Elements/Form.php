@@ -44,6 +44,7 @@ class Form extends AbstractContainer implements FormInterface
         $resolver->setDefaults([
             'label'                 => '',
             'action'                => '',
+            'enctype'               => '',
             'ajax_enabled'          => true,
             'method'                => FormInterface::FORM_METHOD,
             'tabs'                  => FormInterface::TABS_VERTICAL,
@@ -57,6 +58,7 @@ class Form extends AbstractContainer implements FormInterface
         
         $resolver->setAllowedTypes('action', 'string');
         $resolver->setAllowedTypes('method', 'string');
+        $resolver->setAllowedTypes('enctype', 'string');
         $resolver->setAllowedTypes('ajax_enabled', 'bool');
         $resolver->setAllowedTypes('tabs', 'integer');
         $resolver->setAllowedTypes('validation_groups', ['null', 'array']);

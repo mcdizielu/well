@@ -6,6 +6,7 @@
             class="{{ form.getOption('class') }} {{ class }}"
             action="{{ form.getOption('action') }}"
             method="{{ form.getOption('method') }}"
+            enctype="{{ form.getOption('enctype') }}"
         >
         <input type="hidden" name="{{ form.getOption('name') }}_submitted" value="1"/>
     {% endautoescape %}

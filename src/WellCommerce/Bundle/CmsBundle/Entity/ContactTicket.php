@@ -35,6 +35,11 @@ class ContactTicket implements EntityInterface
     protected $resourceType = null;
     protected $resourceId   = null;
     
+    /**
+     * @var Contact
+     */
+    protected $contact;
+    
     public function getName(): string
     {
         return $this->name;
@@ -113,5 +118,15 @@ class ContactTicket implements EntityInterface
     public function setResourceId($resourceId)
     {
         $this->resourceId = $resourceId;
+    }
+    
+    public function getContact()
+    {
+        return $this->contact;
+    }
+    
+    public function setContact(Contact $contact = null)
+    {
+        $this->contact = $contact;
     }
 }

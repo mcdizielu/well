@@ -37,6 +37,7 @@ contact_ticket:
         name: Firstname
         surname: Surname
         phone_number: Phone
+        contact: Contact
 
 news:
     heading:

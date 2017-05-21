@@ -40,3 +40,11 @@ WellCommerce\Bundle\CmsBundle\Entity\ContactTicket:
         resourceId:
             type: integer
             nullable: true
+    manyToOne:
+        contact:
+            targetEntity: WellCommerce\Bundle\CmsBundle\Entity\Contact
+            fetch: LAZY
+            joinColumns:
+                contact_id:
+                    referencedColumnName: id
+                    onDelete: 'SET NULL'

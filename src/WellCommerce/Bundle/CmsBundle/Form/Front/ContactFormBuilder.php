@@ -48,6 +48,13 @@ class ContactFormBuilder extends AbstractFormBuilder
             'label' => 'contact_ticket.label.email',
         ]));
     
+        $form->addChild($this->getElement('select', [
+            'name'        => 'contact',
+            'label'       => 'contact_ticket.label.contact',
+            'options'     => $this->get('contact.dataset.front')->getResult('select', [], ['default_option' => '---']),
+            'transformer' => $this->getRepositoryTransformer('entity', $this->get('contact.repository')),
+        ]));
+        
         $form->addChild($this->getElement('text_field', [
             'name'  => 'subject',
             'label' => 'contact_ticket.label.subject',
