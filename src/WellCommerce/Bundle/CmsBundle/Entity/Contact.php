@@ -16,6 +16,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Knp\DoctrineBehaviors\Model\Blameable\Blameable;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
+use WellCommerce\Bundle\AppBundle\Entity\AddressTrait;
 use WellCommerce\Bundle\AppBundle\Entity\ShopCollectionAwareTrait;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
@@ -34,6 +35,7 @@ class Contact implements EntityInterface
     use Timestampable;
     use Blameable;
     use ShopCollectionAwareTrait;
+    use AddressTrait;
     
     public function __construct()
     {
