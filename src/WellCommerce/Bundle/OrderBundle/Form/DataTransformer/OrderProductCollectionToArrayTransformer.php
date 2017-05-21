@@ -15,6 +15,7 @@ namespace WellCommerce\Bundle\OrderBundle\Form\DataTransformer;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\PropertyAccess\PropertyPathInterface;
+use WellCommerce\Bundle\CatalogBundle\Entity\ProductPhoto;
 use WellCommerce\Bundle\CoreBundle\Form\DataTransformer\CollectionToArrayTransformer;
 use WellCommerce\Bundle\CoreBundle\Helper\Image\ImageHelperInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\Order;
@@ -59,7 +60,8 @@ final class OrderProductCollectionToArrayTransformer extends CollectionToArrayTr
             $modelData->map(function (OrderProduct $orderProduct) use (&$values) {
                 
                 $variantId = $orderProduct->hasVariant() ? $orderProduct->getVariant()->getId() : 0;
-                $photoPath = $orderProduct->getProduct()->getPhoto()->getPath();
+                $photo     = $orderProduct->getProduct()->getPhoto();
+                $photoPath = $photo instanceof ProductPhoto ? $photo->getPath() : '';
                 $symbol    = $orderProduct->hasVariant() ? $orderProduct->getVariant()->getSymbol() : $orderProduct->getProduct()->getSku();
                 
                 $values[] = [
