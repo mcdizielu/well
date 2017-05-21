@@ -34,3 +34,9 @@ WellCommerce\Bundle\CmsBundle\Entity\ContactTicket:
         content:
             type: text
             nullable: false
+        resourceType:
+            type: string
+            nullable: true
+        resourceId:
+            type: integer
+            nullable: true

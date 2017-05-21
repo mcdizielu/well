@@ -26,12 +26,14 @@ class ContactTicket implements EntityInterface
     use Identifiable;
     use Timestampable;
     
-    protected $name    = '';
-    protected $surname = '';
-    protected $subject = '';
-    protected $phone   = '';
-    protected $email   = '';
-    protected $content = '';
+    protected $name         = '';
+    protected $surname      = '';
+    protected $subject      = '';
+    protected $phone        = '';
+    protected $email        = '';
+    protected $content      = '';
+    protected $resourceType = null;
+    protected $resourceId   = null;
     
     public function getName(): string
     {
@@ -91,5 +93,25 @@ class ContactTicket implements EntityInterface
     public function setContent(string $content)
     {
         $this->content = $content;
+    }
+    
+    public function getResourceType()
+    {
+        return $this->resourceType;
+    }
+    
+    public function setResourceType($resourceType)
+    {
+        $this->resourceType = $resourceType;
+    }
+    
+    public function getResourceId()
+    {
+        return $this->resourceId;
+    }
+    
+    public function setResourceId($resourceId)
+    {
+        $this->resourceId = $resourceId;
     }
 }
