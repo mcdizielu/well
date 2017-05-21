@@ -99,6 +99,11 @@ order:
             label: Metoda wysyłki
         payment_method:
             label: Metoda płatności
+    email:
+        order_created:
+            title: Potwierdzenie złożenia zamówienia
+            track_your_order: Możesz również śledzić status swojego zamówienia online
+            order_details: Oto szczegóły zamówienia
 
 address:
     heading:

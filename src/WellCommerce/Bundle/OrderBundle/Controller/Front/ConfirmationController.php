@@ -40,6 +40,16 @@ class ConfirmationController extends AbstractFrontController
                 $this->getManager()->updateResource($order);
                 $payment = $this->getPaymentForOrder($order);
                 
+                $this->getMailerHelper()->sendEmail([
+                    'recipient'     => $order->getContactDetails()->getEmail(),
+                    'subject'       => $this->trans('order.email.order_created.title'),
+                    'template'      => 'WellCommerceOrderBundle:Email:order_created.html.twig',
+                    'parameters'    => [
+                        'order' => $order,
+                    ],
+                    'configuration' => $this->getShopStorage()->getCurrentShop()->getMailerConfiguration(),
+                ]);
+                
                 return $this->redirectToRoute('front.payment.initialize', ['token' => $payment->getToken()]);
             }
             

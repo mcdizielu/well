@@ -1,0 +1,67 @@
+{% include 'WellCommerceAppBundle:Email:header.html.twig' %}
+{% trans_default_domain "wellcommerce" %}
+<h1 style="margin-top:0; font-size:18px; color:#231f20; border-bottom:1px solid #e3e3e3; padding-bottom:6px; text-transform:uppercase;">{% trans %}order.email.title{% endtrans %} {{ order.number }} ({{ order.createdAt|date("d/m/Y") }})</h1>
+
+<p style="margin-top:20px;"><strong style="color:#231f20;">{% trans %}order.email.order_details{% endtrans %}:</strong></p>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <thead>
+    <tr style="color:#787372; background:#ebebeb; font-size:11px; line-height:26px; text-align:left;">
+        <th style="border-bottom:1px solid #e1e1e1; border-right:1px solid #fff; padding-left:10px; font-weight:normal;">{% trans %}order.label.product_name{% endtrans %}</th>
+        <th style="border-bottom:1px solid #e1e1e1; border-right:1px solid #fff; padding-left:10px; font-weight:normal; width:60px">{% trans %}order.label.gross_amount{% endtrans %}</th>
+        <th style="border-bottom:1px solid #e1e1e1; border-right:1px solid #fff; padding-left:10px; font-weight:normal;">{% trans %}order.label.quantity{% endtrans %}</th>
+        <th style="border-bottom:1px solid #e1e1e1; border-right:1px solid #fff; padding-left:10px; font-weight:normal; width:85px">
+            {% trans %}order.label.gross_total{% endtrans %}
+        </th>
+    </tr>
+    </thead>
+    <tbody style="color:#231f20;">
+    {% for product in order.products %}
+        <tr style="font-size:11px; line-height:26px; text-align:left;">
+            <td>{{ product.getProduct().translate().getName() }}
+                {% if product.options is not empty %}
+                    {% for name, value in product.options %}
+                        - {{ value }}
+                    {% endfor %}
+                {% endif %}
+            </td>
+            <td>{{ format_price(product.sellPrice.grossAmount, order.currency, order.currency) }}</td>
+            <td>{{ product.quantity }}</td>
+            <td>{{ format_price(product.sellPrice.grossAmount, order.currency, order.currency, product.quantity) }} </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot style="color:#231f20;">
+    <tr style="background:#e2e2e2; line-height:30px;">
+        <td colspan="3" style="background:#e2e2e2; color:#231f20; font-weight:bold; font-size:11px; padding-right:10px; text-align:right;">
+            {% trans %}order.label.product_total.gross_price{% endtrans %}
+        </td>
+        <td style="background:#e2e2e2; color:#231f20; font-weight:bold; font-size:11px; padding-left:10px;">{{ format_price(order.productTotal.grossPrice, order.currency, order.currency) }}</td>
+    </tr>
+    <tr style="line-height:30px;">
+        <td colspan="3" style="background:#e2e2e2; color:#231f20; font-weight:bold; font-size:11px; padding-right:10px; text-align:right;">
+            {% trans %}order.label.shipping_cost{% endtrans %}
+        </td>
+        <td style="background:#e2e2e2; color:#231f20; font-weight:bold; font-size:11px; padding-left:10px;"> {{ format_price(order.getModifier('shipping_cost').grossAmount, order.currency, order.currency) }}</td>
+    </tr>
+    <tr style="line-height:30px;">
+        <td colspan="3" style="background:#e2e2e2; color:#231f20; font-weight:bold; font-size:11px; padding-right:10px; text-align:right;">
+            {% trans %}order.label.gross_total{% endtrans %}
+        </td>
+        <td style="background:#e2e2e2; color:#231f20; font-weight:bold; font-size:11px; padding-left:10px;">{{ format_price(order.summary.grossAmount, order.currency, order.currency) }}</td>
+    </tr>
+    </tfoot>
+</table>
+<p>
+    <b>{% trans %}order.label.payment_method{% endtrans %}:</b> {{ order.paymentMethod.translate.name }}<br/>
+    <b>{% trans %}order.label.shipping_method{% endtrans %}:</b> {{ order.shippingMethod.translate.name }}
+</p>
+
+{% if order.client is not null %}
+<p>
+    {% trans %}order.email.track_your_order{% endtrans %}:
+    <a href="{{ url('front.client_order.view',{"id": order.id}) }}">{{ url('front.client_order.view',{"id": order.id}) }}</a>
+</p>
+{% endif %}
+
+{% include 'WellCommerceAppBundle:Email:footer.html.twig' %}
