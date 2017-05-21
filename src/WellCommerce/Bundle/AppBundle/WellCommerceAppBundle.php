@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\AppBundle;
 
+use Debril\RssAtomBundle\DebrilRssAtomBundle;
 use Doctrine\Common\Collections\Collection;
 use Ikadoc\KCFinderBundle\IkadocKCFinderBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -36,6 +37,7 @@ final class WellCommerceAppBundle extends AbstractWellCommerceBundle
     public static function registerBundles(Collection $bundles, string $environment)
     {
         $bundles->add(new IkadocKCFinderBundle);
+        $bundles->add(new DebrilRssAtomBundle());
         $bundles->add(new self);
     }
 }

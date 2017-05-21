@@ -17,3 +17,21 @@ services:
         lazy: true
         tags:
             - { name: system.configurator, alias: 'wkhtml' }
+
+    recaptcha.system.configurator:
+        class: WellCommerce\Bundle\AppBundle\Service\ReCaptcha\Configuration\ReCaptchaConfigurator
+        arguments: ["@kernel", "@system_configuration.manager"]
+        lazy: true
+        tags:
+            - { name: system.configurator, alias: 'recaptcha' }
+
+    recaptcha.helper:
+        class: WellCommerce\Bundle\AppBundle\Service\ReCaptcha\Helper\ReCaptchaHelper
+        arguments: ['@recaptcha.system.configurator']
+
+    twig.extension.recaptcha:
+        class: WellCommerce\Bundle\AppBundle\Twig\ReCaptchaExtension
+        arguments: ['@recaptcha.helper']
+        tags:
+            - { name: twig.extension }
+

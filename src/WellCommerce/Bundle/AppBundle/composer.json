@@ -35,7 +35,9 @@
     "wellcommerce/api-bundle": "^0.9@dev",
     "sunhater/kcfinder": "dev-master",
     "ikadoc/kcfinder-bundle": "^1.1",
-    "umpirsky/twig-php-function": "^0.2.0"
+    "umpirsky/twig-php-function": "^0.2.0",
+    "debril/rss-atom-bundle": "^3.0",
+    "google/recaptcha": "^1.1"
   },
   "extra": {
     "branch-alias": {

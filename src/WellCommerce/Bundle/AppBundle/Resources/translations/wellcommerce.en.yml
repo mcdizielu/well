@@ -479,6 +479,13 @@ system_configuration:
     heading:
         edit: System configuration
 
+recaptcha:
+    fieldset:
+        settings: ReCaptcha configuration
+    label:
+        site_key: Site key
+        secret_key: Secret key
+
 wkhtml:
     fieldset:
         settings: WKHTML
