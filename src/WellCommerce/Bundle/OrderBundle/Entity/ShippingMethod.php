@@ -25,6 +25,7 @@ use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Sortable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\OrderBundle\Entity\ShippingMethodExtraTrait;
 
 /**
  * Class ShippingMethod
@@ -40,6 +41,7 @@ class ShippingMethod implements EntityInterface
     use Timestampable;
     use Blameable;
     use ShopCollectionAwareTrait;
+    use ShippingMethodExtraTrait;
     
     protected $calculator      = '';
     protected $optionsProvider = '';
