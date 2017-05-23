@@ -21,9 +21,9 @@ interface FieldInterface
 {
     public function getName(): string;
     
-    public function getValue(): string;
+    public function getValue();
     
-    public function setValue(string $value);
+    public function setValue($value);
     
     public function isIndexable(): bool;
     

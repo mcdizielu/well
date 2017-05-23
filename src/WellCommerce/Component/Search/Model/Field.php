@@ -55,12 +55,12 @@ final class Field implements FieldInterface
         return $this->name;
     }
     
-    public function getValue(): string
+    public function getValue()
     {
         return $this->value;
     }
     
-    public function setValue(string $value)
+    public function setValue($value)
     {
         $this->value = $value;
     }
