@@ -30,7 +30,7 @@ class OrderNoteFormBuilder extends AbstractFormBuilder
     public function buildForm(FormInterface $form)
     {
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
-            'name'  => 'status_data',
+            'name'  => 'note_data',
             'label' => 'common.fieldset.general',
         ]));
         

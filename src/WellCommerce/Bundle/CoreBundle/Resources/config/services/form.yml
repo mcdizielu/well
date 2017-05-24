@@ -55,6 +55,7 @@ services:
     form.handler:
         class: WellCommerce\Component\Form\Handler\FormHandler
         arguments: ['@event_dispatcher', '@form.data_mapper', '@form.validator', '@form.request_handler']
+        shared: false
 
     form.resolver.factory:
         class: WellCommerce\Component\Form\Resolver\FormResolverFactory
