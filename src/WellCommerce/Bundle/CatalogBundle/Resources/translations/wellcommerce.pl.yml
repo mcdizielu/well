@@ -68,6 +68,7 @@ category:
         subcategory_add: Dodaj podkategorię
         category_name: Nazwa kategorii
         tree: Drzewko kategorii
+        empty_parent: Ustaw jako główną
     heading:
         index: Kategorie
         add: Dodaj kategorię

@@ -12,6 +12,7 @@
 
 namespace WellCommerce\Bundle\CatalogBundle\Form\Admin;
 
+use WellCommerce\Bundle\CatalogBundle\Entity\Category;
 use WellCommerce\Bundle\CoreBundle\Form\AbstractFormBuilder;
 use WellCommerce\Component\Form\Elements\FormInterface;
 
@@ -29,6 +30,9 @@ class CategoryFormBuilder extends AbstractFormBuilder
     
     public function buildForm(FormInterface $form)
     {
+        /** @var Category $currentCategory */
+        $currentCategory = $this->get('category.storage')->getCurrentCategory();
+        
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
             'label' => 'common.fieldset.general',
@@ -85,8 +89,8 @@ class CategoryFormBuilder extends AbstractFormBuilder
             'selectable'  => false,
             'sortable'    => false,
             'clickable'   => false,
-            'items'       => $this->get('category.dataset.admin')->getResult('flat_tree', ['limit' => 10000]),
-            'restrict'    => $this->getRequestHelper()->getAttributesBagParam('id'),
+            'items'       => $this->getCategoryParentOptions($currentCategory),
+            'restrict'    => $currentCategory->getId(),
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('category.repository')),
         ]));
         
@@ -132,5 +136,23 @@ class CategoryFormBuilder extends AbstractFormBuilder
         
         $form->addFilter($this->getFilter('trim'));
         $form->addFilter($this->getFilter('secure'));
+    }
+    
+    protected function getCategoryParentOptions(Category $category): array
+    {
+        $options = $this->get('category.dataset.admin')->getResult('flat_tree', ['limit' => 10000]);
+        
+        if ($category->getParent() instanceof Category) {
+            array_push($options, [
+                'id'             => 0,
+                'hierarchy'      => 0,
+                'parent'         => null,
+                'children_count' => 0,
+                'products_count' => 0,
+                'name'           => $this->trans('category.label.empty_parent'),
+            ]);
+        }
+        
+        return $options;
     }
 }

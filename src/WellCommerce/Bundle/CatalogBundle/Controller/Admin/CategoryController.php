@@ -15,6 +15,7 @@ namespace WellCommerce\Bundle\CatalogBundle\Controller\Admin;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use WellCommerce\Bundle\CatalogBundle\Entity\Category;
 use WellCommerce\Bundle\CatalogBundle\Manager\CategoryManager;
 use WellCommerce\Bundle\CoreBundle\Controller\Admin\AbstractAdminController;
 use WellCommerce\Component\Form\Elements\FormInterface;
@@ -63,7 +64,12 @@ class CategoryController extends AbstractAdminController
     public function editAction(int $id): Response
     {
         $category = $this->getManager()->getRepository()->find($id);
-        $form     = $this->formBuilder->createForm($category);
+        if (!$category instanceof Category) {
+            return $this->redirectToAction('index');
+        }
+        
+        $this->get('category.storage')->setCurrentCategory($category);
+        $form = $this->formBuilder->createForm($category);
         
         if ($form->handleRequest()->isSubmitted()) {
             if ($form->isValid()) {
@@ -83,7 +89,7 @@ class CategoryController extends AbstractAdminController
     protected function createCategoryTreeForm(): FormInterface
     {
         return $this->get('category_tree.form_builder.admin')->createForm(null, [
-            'class' => 'category-select'
+            'class' => 'category-select',
         ]);
     }
     

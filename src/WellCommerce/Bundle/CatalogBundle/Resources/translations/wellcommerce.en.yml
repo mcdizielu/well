@@ -68,6 +68,7 @@ category:
         subcategory_add: Add subcategory
         category_name: Category name
         tree: Categories tree
+        empty_parent: Set as root category
     heading:
         index: Categories
         add: Create a new category
