@@ -18,7 +18,7 @@ class ElasticSearchConfiguratorTest extends AbstractTestCase
         $options      = $configurator->getSearchAdapterOptions();
 
         $this->assertEquals(2, $options['shards']);
-        $this->assertEquals(2, $options['replicas']);
+        $this->assertEquals(0, $options['replicas']);
         $this->assertEquals(3, $options['termMinLength']);
         $this->assertEquals(100, $options['maxResults']);
         $this->assertEquals(ElasticSearchQueryBuilder::class, $options['builderClass']);

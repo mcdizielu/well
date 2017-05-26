@@ -22,27 +22,27 @@ use WellCommerce\Bundle\CatalogBundle\Entity\Category;
 final class CategoryStorage implements CategoryStorageInterface
 {
     private $currentCategory;
-
+    
     public function setCurrentCategory(Category $category)
     {
         $this->currentCategory = $category;
     }
-
-    public function getCurrentCategory() : Category
+    
+    public function getCurrentCategory(): Category
     {
         return $this->currentCategory;
     }
-
-    public function getCurrentCategoryIdentifier() : int
+    
+    public function getCurrentCategoryIdentifier(): int
     {
         if ($this->hasCurrentCategory()) {
             return $this->getCurrentCategory()->getId();
         }
-
+        
         return 0;
     }
-
-    public function hasCurrentCategory() : bool
+    
+    public function hasCurrentCategory(): bool
     {
         return $this->currentCategory instanceof Category;
     }

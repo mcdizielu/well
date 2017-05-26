@@ -13,6 +13,7 @@
 namespace WellCommerce\Bundle\CatalogBundle\Form\Admin;
 
 use WellCommerce\Bundle\CatalogBundle\Entity\Category;
+use WellCommerce\Bundle\CatalogBundle\Request\Storage\CategoryStorageInterface;
 use WellCommerce\Bundle\CoreBundle\Form\AbstractFormBuilder;
 use WellCommerce\Component\Form\Elements\FormInterface;
 
@@ -89,7 +90,7 @@ class CategoryFormBuilder extends AbstractFormBuilder
             'sortable'    => false,
             'clickable'   => false,
             'items'       => $this->getCategoryParentOptions($currentCategory),
-            'restrict'    => $currentCategory->getId(),
+            'restrict'    => $currentCategory instanceof Category ? $currentCategory->getId() : 0,
             'transformer' => $this->getRepositoryTransformer('entity', $this->get('category.repository')),
         ]));
         
@@ -137,11 +138,11 @@ class CategoryFormBuilder extends AbstractFormBuilder
         $form->addFilter($this->getFilter('secure'));
     }
     
-    protected function getCategoryParentOptions(Category $category): array
+    protected function getCategoryParentOptions(Category $category = null): array
     {
         $options = $this->get('category.dataset.admin')->getResult('flat_tree', ['limit' => 10000]);
         
-        if ($category->getParent() instanceof Category) {
+        if ($category instanceof Category && $category->getParent() instanceof Category) {
             array_push($options, [
                 'id'             => 0,
                 'hierarchy'      => 0,
@@ -155,8 +156,15 @@ class CategoryFormBuilder extends AbstractFormBuilder
         return $options;
     }
     
-    protected function getCurrentCategory(): Category
+    protected function getCurrentCategory()
     {
-        return $this->get('category.storage')->getCurrentCategory();
+        /** @var CategoryStorageInterface $storage */
+        $storage = $this->get('category.storage');
+        
+        if ($storage->hasCurrentCategory()) {
+            return $storage->getCurrentCategory();
+        }
+        
+        return null;
     }
 }
