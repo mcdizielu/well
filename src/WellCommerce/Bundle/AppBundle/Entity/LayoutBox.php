@@ -12,6 +12,8 @@
 
 namespace WellCommerce\Bundle\AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Knp\DoctrineBehaviors\Model\Blameable\Blameable;
 use Knp\DoctrineBehaviors\Model\Timestampable\Timestampable;
 use Knp\DoctrineBehaviors\Model\Translatable\Translatable;
@@ -34,6 +36,16 @@ class LayoutBox implements EntityInterface, LayoutBoxInterface
     protected $boxType    = '';
     protected $identifier = '';
     protected $settings   = [];
+    
+    /**
+     * @var Collection
+     */
+    protected $clientGroups;
+    
+    public function __construct()
+    {
+        $this->clientGroups = new ArrayCollection();
+    }
     
     public function getBoxType(): string
     {
@@ -73,6 +85,16 @@ class LayoutBox implements EntityInterface, LayoutBoxInterface
     public function getBoxContent(): string
     {
         return $this->translate()->getContent();
+    }
+    
+    public function getClientGroups(): Collection
+    {
+        return $this->clientGroups;
+    }
+    
+    public function setClientGroups(Collection $clientGroups)
+    {
+        $this->clientGroups = $clientGroups;
     }
     
     public function translate($locale = null, $fallbackToDefault = true): LayoutBoxTranslation

@@ -22,3 +22,19 @@ WellCommerce\Bundle\AppBundle\Entity\LayoutBox:
             length: 255
             unique: true
             nullable: false
+    manyToMany:
+        clientGroups:
+            targetEntity: WellCommerce\Bundle\AppBundle\Entity\ClientGroup
+            fetch: LAZY
+            joinTable:
+                name: layout_box_client_group
+                joinColumns:
+                    -
+                        name: layout_box_id
+                        onDelete: CASCADE
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    -
+                        name: client_group_id
+                        onDelete: CASCADE
+                        referencedColumnName: id

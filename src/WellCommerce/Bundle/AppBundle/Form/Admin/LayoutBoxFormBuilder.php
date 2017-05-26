@@ -65,6 +65,13 @@ class LayoutBoxFormBuilder extends AbstractFormBuilder
             'label'   => 'layout_box.label.type',
             'default' => $this->getDefaultLayoutBoxType()
         ]));
+    
+        $requiredData->addChild($this->getElement('multi_select', [
+            'name'        => 'clientGroups',
+            'label'       => 'layout_box.label.client_groups',
+            'options'     => $this->get('client_group.dataset.admin')->getResult('select'),
+            'transformer' => $this->getRepositoryTransformer('collection', $this->get('client_group.repository')),
+        ]));
         
         $form->addFilter($this->getFilter('no_code'));
         $form->addFilter($this->getFilter('trim'));

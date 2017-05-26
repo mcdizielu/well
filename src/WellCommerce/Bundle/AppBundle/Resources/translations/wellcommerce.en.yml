@@ -300,6 +300,7 @@ layout_box:
         name: Name
         content: Content
         settings: Settings
+        client_groups: Visibility for groups
 
 locale:
     heading:

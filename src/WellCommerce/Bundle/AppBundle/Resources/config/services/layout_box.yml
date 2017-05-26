@@ -16,6 +16,6 @@ services:
 
     twig.extension.layout_box:
         class: WellCommerce\Bundle\AppBundle\Twig\LayoutBoxExtension
-        arguments: ['@layout_box.renderer', '@layout_box.repository']
+        arguments: ['@layout_box.renderer', '@layout_box.repository', '@security.helper']
         tags:
             - { name: twig.extension }

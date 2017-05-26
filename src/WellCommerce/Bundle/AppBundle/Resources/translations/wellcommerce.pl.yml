@@ -304,6 +304,7 @@ layout_box:
         name: Nazwa
         content: Treść
         settings: Ustawienia
+        client_groups: Widoczność dla grup
 
 locale:
     heading:
