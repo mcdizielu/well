@@ -30,8 +30,7 @@ class CategoryFormBuilder extends AbstractFormBuilder
     
     public function buildForm(FormInterface $form)
     {
-        /** @var Category $currentCategory */
-        $currentCategory = $this->get('category.storage')->getCurrentCategory();
+        $currentCategory = $this->getCurrentCategory();
         
         $requiredData = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'required_data',
@@ -154,5 +153,10 @@ class CategoryFormBuilder extends AbstractFormBuilder
         }
         
         return $options;
+    }
+    
+    protected function getCurrentCategory(): Category
+    {
+        return $this->get('category.storage')->getCurrentCategory();
     }
 }

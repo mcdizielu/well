@@ -17,6 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use WellCommerce\Bundle\CatalogBundle\Entity\Category;
 use WellCommerce\Bundle\CatalogBundle\Manager\CategoryManager;
+use WellCommerce\Bundle\CatalogBundle\Request\Storage\CategoryStorageInterface;
 use WellCommerce\Bundle\CoreBundle\Controller\Admin\AbstractAdminController;
 use WellCommerce\Component\Form\Elements\FormInterface;
 
@@ -68,7 +69,7 @@ class CategoryController extends AbstractAdminController
             return $this->redirectToAction('index');
         }
         
-        $this->get('category.storage')->setCurrentCategory($category);
+        $this->getCategoryStorage()->setCurrentCategory($category);
         $form = $this->formBuilder->createForm($category);
         
         if ($form->handleRequest()->isSubmitted()) {
@@ -105,5 +106,10 @@ class CategoryController extends AbstractAdminController
     protected function getManager(): CategoryManager
     {
         return parent::getManager();
+    }
+    
+    protected function getCategoryStorage(): CategoryStorageInterface
+    {
+        return $this->get('category.storage');
     }
 }
