@@ -176,7 +176,7 @@ class Shop implements EntityInterface
         return null !== $this->logo ? $this->logo : '';
     }
     
-    public function setLogo(string $logo)
+    public function setLogo(string $logo = null)
     {
         $this->logo = $logo;
     }
