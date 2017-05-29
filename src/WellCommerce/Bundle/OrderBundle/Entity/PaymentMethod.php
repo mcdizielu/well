@@ -22,6 +22,7 @@ use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Sortable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\OrderBundle\Entity\PaymentMethodExtraTrait;
 
 /**
  * Class PaymentMethod
@@ -37,6 +38,7 @@ class PaymentMethod implements EntityInterface
     use Timestampable;
     use Blameable;
     use ShopCollectionAwareTrait;
+    use PaymentMethodExtraTrait;
     
     /**
      * @var string
