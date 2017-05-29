@@ -44,7 +44,7 @@
       "WellCommerce\\Extra\\OrderBundle\\Entity\\OrderProductExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/OrderProductExtraTrait.php",
       "WellCommerce\\Extra\\OrderBundle\\Entity\\OrderStatusExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/OrderStatusExtraTrait.php",
       "WellCommerce\\Extra\\OrderBundle\\Entity\\OrderStatusHistoryExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/OrderStatusHistoryExtraTrait.php",
-      "WellCommerce\\Extra\\OrderBundle\\Entity\\PaymentMethodExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/PaymentMethodExtraTrait.php"
+      "WellCommerce\\Extra\\OrderBundle\\Entity\\PaymentMethodExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/PaymentMethodExtraTrait.php",
       "WellCommerce\\Extra\\OrderBundle\\Entity\\ShippingMethodExtraTrait": "src/WellCommerce/Extra/OrderBundle/Entity/ShippingMethodExtraTrait.php"
     }
   }
