@@ -15,3 +15,10 @@ WellCommerce\Bundle\AppBundle\Entity\ClientGroupTranslation:
             length: 255
             unique: false
             nullable: false
+        description:
+            type: string
+            length: 255
+            unique: false
+            nullable: false
+            options:
+                default: ''

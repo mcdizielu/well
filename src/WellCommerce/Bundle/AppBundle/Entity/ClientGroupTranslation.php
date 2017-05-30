@@ -24,7 +24,8 @@ class ClientGroupTranslation extends AbstractTranslation
 {
     use Translation;
     
-    protected $name = '';
+    protected $name        = '';
+    protected $description = '';
     
     public function getName(): string
     {
@@ -34,5 +35,15 @@ class ClientGroupTranslation extends AbstractTranslation
     public function setName(string $name)
     {
         $this->name = $name;
+    }
+    
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+    
+    public function setDescription(string $description)
+    {
+        $this->description = $description;
     }
 }

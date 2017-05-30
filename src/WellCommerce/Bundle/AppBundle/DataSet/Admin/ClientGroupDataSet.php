@@ -33,6 +33,7 @@ class ClientGroupDataSet extends AbstractDataSet
         $configurator->setColumns([
             'id'           => 'client_group.id',
             'name'         => 'client_group_translation.name',
+            'description'  => 'client_group_translation.description',
             'totalClients' => 'COUNT(client)',
         ]);
     }

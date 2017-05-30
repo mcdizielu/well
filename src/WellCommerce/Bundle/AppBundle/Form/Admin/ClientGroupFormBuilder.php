@@ -46,6 +46,11 @@ class ClientGroupFormBuilder extends AbstractFormBuilder
                 $this->getRule('required'),
             ],
         ]));
+    
+        $languageData->addChild($this->getElement('text_field', [
+            'name'  => 'description',
+            'label' => 'common.label.description',
+        ]));
         
         $discountSettings = $form->addChild($this->getElement('nested_fieldset', [
             'name'  => 'discount_data',

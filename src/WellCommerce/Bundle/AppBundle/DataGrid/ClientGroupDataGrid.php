@@ -47,10 +47,18 @@ class ClientGroupDataGrid extends AbstractDataGrid
             'id'         => 'name',
             'caption'    => 'common.label.name',
             'appearance' => new Appearance([
-                'width' => 290,
+                'width' => 100,
             ]),
         ]));
-
+    
+        $collection->add(new Column([
+            'id'         => 'description',
+            'caption'    => 'common.label.description',
+            'appearance' => new Appearance([
+                'width' => 180,
+            ]),
+        ]));
+        
         $collection->add(new Column([
             'id'         => 'totalClients',
             'caption'    => 'client_group.label.total_clients',
