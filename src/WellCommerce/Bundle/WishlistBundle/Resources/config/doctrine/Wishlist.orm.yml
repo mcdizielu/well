@@ -29,3 +29,4 @@ WellCommerce\Bundle\WishlistBundle\Entity\Wishlist:
             joinColumns:
                 product_id:
                     referencedColumnName: id
+                    onDelete: CASCADE
