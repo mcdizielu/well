@@ -30,22 +30,24 @@ final class ManyToManyDefinition extends AbstractMappingDefinition
             'fetch',
             'cascade',
             'mappedBy',
+            'inversedBy',
             'joinTable',
             'orderBy',
         ]);
         
         $resolver->setDefaults([
-            'fetch'     => ClassMetadataInfo::FETCH_EXTRA_LAZY,
-            'cascade'   => [
+            'fetch'      => ClassMetadataInfo::FETCH_EXTRA_LAZY,
+            'cascade'    => [
                 'remove',
                 'persist',
                 'refresh',
                 'merge',
                 'detach',
             ],
-            'mappedBy'  => null,
-            'joinTable' => [],
-            'orderBy'   => null,
+            'mappedBy'   => null,
+            'inversedBy' => null,
+            'joinTable'  => [],
+            'orderBy'    => null,
         ]);
         
         $resolver->setAllowedTypes('fieldName', 'string');
@@ -53,6 +55,7 @@ final class ManyToManyDefinition extends AbstractMappingDefinition
         $resolver->setAllowedTypes('fetch', 'integer');
         $resolver->setAllowedTypes('cascade', 'array');
         $resolver->setAllowedTypes('mappedBy', ['string', 'null']);
+        $resolver->setAllowedTypes('inversedBy', ['string', 'null']);
         $resolver->setAllowedTypes('joinTable', 'array');
         $resolver->setAllowedTypes('orderBy', ['string', 'null']);
     }
