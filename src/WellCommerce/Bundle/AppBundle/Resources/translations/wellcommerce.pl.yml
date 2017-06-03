@@ -384,6 +384,7 @@ shop:
         theme: Domyślny szablon sklepu
         default_country: Domyślne państwo
         default_currency: Domyślna waluta
+        default_client_group: Domyślna grupa klienta
         enable_client: Włącz konto klienta
         mailer_configuration:
             from: Nadawca (e-mail)

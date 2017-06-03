@@ -381,6 +381,7 @@ shop:
         theme: Default theme
         default_country: Default country
         default_currency: Default currency
+        default_client_group: Default client group
         enable_client: Client account enabled
         mailer_configuration:
             from: Sender (e-mail)
