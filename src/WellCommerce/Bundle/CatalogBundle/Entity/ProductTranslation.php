@@ -18,6 +18,7 @@ use WellCommerce\Bundle\CoreBundle\Entity\AbstractTranslation;
 use WellCommerce\Bundle\CoreBundle\Entity\RoutableSubjectInterface;
 use WellCommerce\Bundle\CoreBundle\Entity\RoutableTrait;
 use WellCommerce\Bundle\CoreBundle\Entity\Route;
+use WellCommerce\Extra\CatalogBundle\Entity\ProductTranslationExtraTrait;
 
 /**
  * Class ProductTranslation
@@ -28,6 +29,7 @@ class ProductTranslation extends AbstractTranslation implements RoutableSubjectI
 {
     use Translation;
     use RoutableTrait;
+    use ProductTranslationExtraTrait;
     
     protected $name             = '';
     protected $shortDescription = '';
