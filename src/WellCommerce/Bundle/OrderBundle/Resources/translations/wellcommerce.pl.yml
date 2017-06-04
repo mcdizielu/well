@@ -105,6 +105,9 @@ order:
             title: Potwierdzenie złożenia zamówienia
             track_your_order: Możesz również śledzić status swojego zamówienia online
             order_details: Oto szczegóły zamówienia
+    link:
+        view_order: Zobacz
+        repeat_order: Ponów
 
 address:
     heading:

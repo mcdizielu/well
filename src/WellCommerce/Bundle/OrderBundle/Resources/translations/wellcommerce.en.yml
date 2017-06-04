@@ -97,6 +97,14 @@ order:
             label: Shipping method
         payment_method:
             label: Payment method
+    email:
+        order_created:
+            title: Order confirmation
+            track_your_order: Track your order online
+            order_details: Order details
+    link:
+        view_order: Show order
+        repeat_order: Order again
 
 address:
     heading:

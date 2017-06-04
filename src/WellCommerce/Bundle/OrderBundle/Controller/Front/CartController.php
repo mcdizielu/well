@@ -28,6 +28,11 @@ use WellCommerce\Bundle\OrderBundle\Manager\OrderProductManager;
  */
 class CartController extends AbstractFrontController
 {
+    /**
+     * @var OrderProductManager
+     */
+    protected $manager;
+    
     public function indexAction(): Response
     {
         $order = $this->getOrderProvider()->getCurrentOrder();
@@ -37,7 +42,7 @@ class CartController extends AbstractFrontController
         
         if ($form->handleRequest()->isSubmitted()) {
             if ($form->isValid()) {
-                $this->getManager()->updateResource($order);
+                $this->manager->updateResource($order);
                 
                 return $this->getRouterHelper()->redirectTo('front.cart.index');
             }
@@ -58,14 +63,14 @@ class CartController extends AbstractFrontController
     {
         $variants         = $product->getVariants();
         $order            = $this->getOrderProvider()->getCurrentOrder();
-        $previousQuantity = $this->getManager()->getCartQuantity($product, $variant, $order);
+        $previousQuantity = $this->manager->getCartQuantity($product, $variant, $order);
         
         if ($variants->count() && (null === $variant || false === $variants->contains($variant))) {
             return $this->redirectToRoute('front.product.view', ['id' => $product->getId()]);
         }
         
         try {
-            $this->getManager()->addProductToOrder(
+            $this->manager->addProductToOrder(
                 $product,
                 $variant,
                 $quantity,
@@ -78,7 +83,7 @@ class CartController extends AbstractFrontController
         }
         
         $expectedQuantity = $previousQuantity + $quantity;
-        $currentQuantity  = $this->getManager()->getCartQuantity($product, $variant, $order);
+        $currentQuantity  = $this->manager->getCartQuantity($product, $variant, $order);
         $addedQuantity    = 0;
         if ($currentQuantity >= $expectedQuantity) {
             $addedQuantity = $currentQuantity - $previousQuantity;
@@ -116,7 +121,7 @@ class CartController extends AbstractFrontController
         $order   = $this->getOrderProvider()->getCurrentOrder();
         
         try {
-            $this->getManager()->changeOrderProductQuantity(
+            $this->manager->changeOrderProductQuantity(
                 $orderProduct,
                 $order,
                 $quantity
@@ -139,7 +144,7 @@ class CartController extends AbstractFrontController
     public function deleteAction(OrderProduct $orderProduct): Response
     {
         try {
-            $this->getManager()->deleteOrderProduct(
+            $this->manager->deleteOrderProduct(
                 $orderProduct,
                 $this->getOrderProvider()->getCurrentOrder()
             );
@@ -148,10 +153,5 @@ class CartController extends AbstractFrontController
         }
         
         return $this->redirectToAction('index');
-    }
-    
-    protected function getManager(): OrderProductManager
-    {
-        return parent::getManager();
     }
 }

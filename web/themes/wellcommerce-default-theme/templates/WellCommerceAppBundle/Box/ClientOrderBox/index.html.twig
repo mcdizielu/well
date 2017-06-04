@@ -10,10 +10,10 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Date</th>
-                <th>Summary</th>
-                <th>Payment method</th>
-                <th>Status</th>
+                <th>{% trans %}order.label.created_at{% endtrans %}</th>
+                <th>{% trans %}order.label.order_total{% endtrans %}</th>
+                <th>{% trans %}order.label.payment_method{% endtrans %}</th>
+                <th>{% trans %}order.label.current_status{% endtrans %}</th>
                 <th></th>
             </tr>
             </thead>
@@ -24,9 +24,12 @@
                 <td>{{ order.id }}</td>
                 <td>{{ order.createdAt|date }}</td>
                 <td><strong>{{ format_price(order.summary.grossAmount, order.currency, order.currency) }}</strong></td>
-                <td>{{ order.paymentMethod.translate().name }}</td>
-                <td>{{ order.currentStatus.translate().name }}</td>
-                <td><a href="{{ path('front.client_order.view',{"id": order.id}) }}" class="btn btn-link btn-light">Show details</a></td>
+                <td>{{ order.paymentMethod.translate.name }}</td>
+                <td>{{ order.currentStatus.translate.name }}</td>
+                <td>
+                    <a href="{{ path('front.client_order.view',{"id": order.id}) }}" class="btn btn-link btn-light">{% trans %}order.link.view_order{% endtrans %}</a>
+                    <a href="{{ path('front.client_order.repeat',{"id": order.id}) }}" class="btn btn-link btn-light">{% trans %}order.link.repeat_order{% endtrans %}</a>
+                </td>
             </tr>
             {% endfor %}
             </tbody>

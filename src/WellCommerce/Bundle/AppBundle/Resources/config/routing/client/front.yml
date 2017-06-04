@@ -49,6 +49,11 @@ front.client_order.view:
         _controller: 'client_order.controller.front:viewAction'
         id: 'null'
 
+front.client_order.repeat:
+    path: '/order/repeat/{id}'
+    defaults:
+        _controller: 'client_order.controller.front:repeatAction'
+
 front.client_password.reset:
     path: /password/reset
     defaults:
