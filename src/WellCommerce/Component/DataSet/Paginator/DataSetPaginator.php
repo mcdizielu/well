@@ -27,7 +27,7 @@ class DataSetPaginator implements DataSetPaginatorInterface
     /**
      * {@inheritdoc}
      */
-    public function getTotalRows(QueryBuilder $queryBuilder, ColumnCollection $columns) : int
+    public function getTotalRows(QueryBuilder $queryBuilder, ColumnCollection $columns): int
     {
         $builder = clone $queryBuilder;
         $having  = $builder->getDQLPart('having');
@@ -54,7 +54,9 @@ class DataSetPaginator implements DataSetPaginatorInterface
     protected function replaceHaving(Query\Expr\Andx $having, ColumnCollection $columns, QueryBuilder $queryBuilder)
     {
         foreach ($having->getParts() as $part) {
-            $this->replaceSingleHavingClause($part, $columns, $queryBuilder);
+            if ($part instanceof Query\Expr\Comparison) {
+                $this->replaceSingleHavingClause($part, $columns, $queryBuilder);
+            }
         }
         
         $queryBuilder->resetDQLPart('having');
@@ -77,7 +79,7 @@ class DataSetPaginator implements DataSetPaginatorInterface
         $queryBuilder->andWhere($expression);
     }
     
-    protected function getOperator(string $operator) : string
+    protected function getOperator(string $operator): string
     {
         $operators = [
             Query\Expr\Comparison::EQ  => 'eq',
