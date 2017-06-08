@@ -43,6 +43,7 @@ class Page implements EntityInterface
     protected $redirectType  = 1;
     protected $redirectUrl   = '';
     protected $redirectRoute = '';
+    protected $layout        = [];
     
     /**
      * @var Page|null
@@ -161,6 +162,16 @@ class Page implements EntityInterface
     public function setSection(string $section)
     {
         $this->section = $section;
+    }
+    
+    public function getLayout(): array
+    {
+        return $this->layout;
+    }
+    
+    public function setLayout(array $layout)
+    {
+        $this->layout = $layout;
     }
     
     public function translate($locale = null, $fallbackToDefault = true): PageTranslation

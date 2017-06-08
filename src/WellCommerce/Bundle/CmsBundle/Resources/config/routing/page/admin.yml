@@ -52,3 +52,19 @@ admin.page.delete_group:
     options:
         expose: true
         require_admin_permission: page.delete
+
+admin.page.edit_layout:
+    path: '/edit/layout/{id}'
+    defaults:
+        _controller: 'page.controller.admin:editLayoutAction'
+    options:
+        expose: true
+        require_admin_permission: page.edit
+
+admin.page.save_layout:
+    path: '/edit/layout/save/{id}'
+    defaults:
+        _controller: 'page.controller.admin:saveLayoutAction'
+    options:
+        expose: true
+        require_admin_permission: page.edit

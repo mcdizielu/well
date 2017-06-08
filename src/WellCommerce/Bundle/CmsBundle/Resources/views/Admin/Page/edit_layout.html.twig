@@ -1,0 +1,221 @@
+{% extends 'WellCommerceAppBundle:Admin:layout.html.twig' %}
+{% trans_default_domain "wellcommerce" %}
+{% block javascripts %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/wellcommercecms/css/gridster.css') }}"/>
+    <script type="text/javascript" src="{{ asset('bundles/wellcommercecms/js/gridster.js') }}"></script>
+{% endblock %}
+{% block content %}
+    <h2>{% trans %}page.heading.edit_layout{% endtrans %} &raquo; {{ resource.translate().name }}</h2>
+    <ul class="possibilities">
+        <li><a href="{{ path('admin.page.edit', {"id": resource.id}) }}" class="button return"><span></span></a></li>
+        <li><a href="{{ url('dynamic_' ~ resource.translate.route.id) }}" class="button" target="_blank"><span>{% trans %}
+                    page.button.layout.show_page{% endtrans %}</span></a></li>
+        <li><a href="#" class="button reset"><span>{% trans %}page.button.layout.reset_widgets{% endtrans %}</span></a></li>
+        <li><a href="#" class="button save"><span>{% trans %}page.button.layout.save_widgets{% endtrans %}</span></a></li>
+    </ul>
+
+    <div class="block">
+        <div class="field-select GFormNode" style="float: left;">
+            <span class="repetition">
+                <span class="field">
+                    <select id="widgets">
+                        {% for type, layoutBoxes in boxes %}
+                        <optgroup label="{{ type }}">
+                            {% for identifier, label in layoutBoxes %}
+                            <option data-identifier="{{ identifier }}">{{ label }} ({{ identifier }})</option>
+                            {% endfor %}
+                        </optgroup>
+                        {% endfor %}
+                    </select>
+                </span>
+            </span>
+        </div>
+        <a href="#" class="button add-widget"><span>{% trans %}page.button.layout.add_widget{% endtrans %}</span></a>
+    </div>
+
+    <div class="gridster block">
+        <ul></ul>
+    </div>
+
+    <script type="text/javascript">
+      var serialized = {{ resource.layout|json_encode|raw }};
+
+      $(document).ready(function() {
+        $('.gridster ul').gridster({
+          widget_margins: [10, 10],
+          widget_base_dimensions: [85, 180],
+          min_cols: 12,
+          max_cols: 12,
+          resize: {
+            enabled: true,
+            axes: ['x'],
+          },
+          serialize_params: function(w, wgd) {
+            return {
+              identifier: w.data('identifier'),
+              col: wgd.col,
+              row: wgd.row,
+              size_x: wgd.size_x,
+              size_y: wgd.size_y,
+            };
+          },
+        });
+
+        var gridster = $('.gridster ul').gridster().data('gridster');
+
+        var addWidget = function(oParams) {
+          var widget = gridster.add_widget('<li data-identifier="' + oParams.identifier + '">' +
+              '<h3>' + oParams.identifier + '</h3>' +
+              '<a href="#" class="remove-widget"><img src="{{ asset('bundles/wellcommerceapp/images/icons/datagrid/delete.png') }}"/></a>' +
+              '<a href="#" class="edit-widget"><img src="{{ asset('bundles/wellcommerceapp/images/icons/datagrid/edit.png') }}"/></a>' +
+              '</li>', oParams.size_x, oParams.size_y, oParams.col, oParams.row);
+
+          widget.find('.remove-widget').on('click', function() {
+            gridster.remove_widget($(this).closest('li'));
+          });
+        };
+
+        $.each(serialized, function(w, widget) {
+          addWidget(widget);
+        });
+
+        $('.add-widget').click(function() {
+
+          addWidget({
+            identifier: $(this).data('identifier'),
+            size_x: 2,
+            size_y: 1,
+            col: false,
+            row: false,
+          });
+
+          return false;
+        });
+
+        $('.save').click(function() {
+          oRequest = {
+            layout: gridster.serialize(),
+          };
+
+          GF_Ajax_Request(Routing.generate('admin.page.save_layout', {id: {{ resource.id }}}), oRequest, function(oData) {
+            GNotification(GTranslation('page.flash.layout_saved'));
+          });
+
+          return false;
+        });
+
+        $('.reset').click(function() {
+          gridster.remove_all_widgets();
+          return false;
+        });
+
+      });
+    </script>
+
+    <style>
+        #navigation-bar, #header {
+            display: none;
+        }
+
+        #content > h2 {
+            color: #efefef;
+        }
+
+        .gs-w h3 {
+            position: absolute;
+            top: 80px;
+            width: 100%;
+        }
+
+        .gridster {
+            position: relative;
+            top: 20px;
+            left: -38px;
+        }
+
+        .gridster .gs-w {
+            cursor: pointer;
+            background: #fff;
+            border: 1px solid #dfdfdf;
+        }
+
+        .gridster .player {
+            -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+            background: #BBB;
+        }
+
+        .gridster .gs-w.try {
+            background-image: url(../img/sprite.png);
+            background-repeat: no-repeat;
+            background-position: 37px -169px;
+        }
+
+        .gridster .preview-holder {
+            border: none !important;
+            border-radius: 0 !important;
+            background: red !important;
+        }
+
+        .gridster li {
+            font-size: 1em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100%;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            list-style: none;
+            font-weight: bold;
+        }
+
+        .gridster ul {
+            background-color: #fff;
+            margin: 25px;
+        }
+
+        .gridster-box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+        }
+
+        .block {
+            position: relative;
+            top: 20px;
+            height: 55px;
+        }
+
+        .gridster.block {
+            height: auto;
+            padding: 0px;
+            left: 0px;
+            min-height: 250px;
+        }
+
+        .remove-widget {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+        }
+
+        .edit-widget {
+            position: absolute;
+            left: 25px;
+            top: 5px;
+        }
+
+        .reset, .save {
+            float: right;
+        }
+    </style>
+{% endblock %}

@@ -77,6 +77,14 @@ page:
         redirect_settings: Redirect configuration
     comment:
         publish: Check if information should be visible for clients
+    button:
+        layout:
+            add_widget: Add box
+            save_widgets: Save layout
+            show_page: Show page
+            reset_widgets: Reset layout
+    flash:
+        layout_saved: Layout was saved
 
 news_feed:
     flash:

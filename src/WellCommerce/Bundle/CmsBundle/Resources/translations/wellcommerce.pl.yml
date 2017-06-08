@@ -86,6 +86,14 @@ page:
         redirect_settings: Ustawienia przekierowań
     comment:
         publish: Informacja będzie widoczna w sklepie
+    button:
+        layout:
+            add_widget: Dodaj boks
+            save_widgets: Zapisz układ
+            show_page: Pokaż stronę
+            reset_widgets: Resetuj układ
+    flash:
+        layout_saved: Layout został zapisany
 
 sitemap:
     heading:

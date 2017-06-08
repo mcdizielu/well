@@ -55,6 +55,9 @@ WellCommerce\Bundle\CmsBundle\Entity\Page:
             nullable: true
             precision: 0
             column: redirect_route
+        layout:
+            type: json_array
+            nullable: true
     manyToOne:
         parent:
             targetEntity: WellCommerce\Bundle\CmsBundle\Entity\Page

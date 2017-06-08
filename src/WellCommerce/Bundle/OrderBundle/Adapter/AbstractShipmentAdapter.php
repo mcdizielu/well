@@ -2,13 +2,12 @@
 
 namespace WellCommerce\Bundle\OrderBundle\Adapter;
 
-use Symfony\Component\HttpFoundation\Response;
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractContainerAware;
-use WellCommerce\Bundle\CoreBundle\Doctrine\Repository\RepositoryInterface;
 use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderStatus;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderStatusHistory;
-use WellCommerce\Bundle\OrderBundle\Entity\ShipmentInterface;
+use WellCommerce\Bundle\OrderBundle\Entity\Shipment;
+use WellCommerce\Bundle\OrderBundle\Manager\ShipmentManager;
 
 /**
  * Class AbstractShipmentAdapter
@@ -17,32 +16,14 @@ use WellCommerce\Bundle\OrderBundle\Entity\ShipmentInterface;
  */
 abstract class AbstractShipmentAdapter extends AbstractContainerAware implements ShipmentAdapterInterface
 {
-    public function addShipment(ShipmentInterface $shipment, array $formValues): Response
+    protected $manager;
+    
+    public function __construct(ShipmentManager $manager)
     {
-        // TODO: Implement addShipment() method.
+        $this->manager = $manager;
     }
     
-    public function generateLabel(ShipmentInterface $shipment)
-    {
-        // TODO: Implement generateLabel() method.
-    }
-    
-    public function getLabel(ShipmentInterface $shipment)
-    {
-        // TODO: Implement getLabel() method.
-    }
-    
-    public function getLabels(string $date)
-    {
-        // TODO: Implement getLabels() method.
-    }
-    
-    protected function getShipmentRepository(): RepositoryInterface
-    {
-        return $this->get('shipment.repository');
-    }
-    
-    protected function createOrderStatusHistory(ShipmentInterface $shipment, array $formValues): OrderStatusHistory
+    protected function createOrderStatusHistory(Shipment $shipment, array $formValues): OrderStatusHistory
     {
         /** @var ManagerInterface $manager */
         $manager       = $this->get('order_status_history.manager');

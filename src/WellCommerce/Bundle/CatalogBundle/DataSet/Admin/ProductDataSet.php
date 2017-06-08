@@ -39,7 +39,6 @@ class ProductDataSet extends AbstractDataSet
             'weight'      => 'product.weight',
             'grossAmount' => 'product.sellPrice.grossAmount',
             'stock'       => 'product.stock',
-            'shop'        => 'product_shops.id',
             'tax'         => 'sell_tax.value',
             'photo'       => 'photos.path',
             'category'    => 'GROUP_CONCAT(DISTINCT categories_translation.name ORDER BY categories_translation.name ASC SEPARATOR \', \')',
@@ -65,12 +64,12 @@ class ProductDataSet extends AbstractDataSet
         $queryBuilder->leftJoin('product.productPhotos', 'gallery', Expr\Join::WITH, 'gallery.mainPhoto = :mainPhoto');
         $queryBuilder->leftJoin('gallery.photo', 'photos');
         $queryBuilder->leftJoin('product.distinctions', 'distinction', Expr\Join::WITH, 'distinction.status = :status');
-        $queryBuilder->leftJoin('product.shops', 'product_shops');
+        $queryBuilder->innerJoin('product.shops', 'product_shops', Expr\Join::WITH, 'product_shops.id = :shop');
         $queryBuilder->leftJoin('product.variants', 'variant', Expr\Join::WITH, 'variant.enabled = :variantEnabled');
         $queryBuilder->leftJoin('variant.options', 'variant_option');
-        $queryBuilder->where($queryBuilder->expr()->eq('product_shops.id', $this->getShopStorage()->getCurrentShopIdentifier()));
         $queryBuilder->setParameter('mainPhoto', 1);
         $queryBuilder->setParameter('status', 0);
+        $queryBuilder->setParameter('shop', $this->getShopStorage()->getCurrentShopIdentifier());
         $queryBuilder->setParameter('variantEnabled', 1);
         
         return $queryBuilder;
