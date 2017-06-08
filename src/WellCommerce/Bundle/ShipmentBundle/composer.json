@@ -1,0 +1,42 @@
+{
+  "name": "wellcommerce/shipment-bundle",
+  "type": "wellcommerce-bundle",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "description": "WellCommerce ShipmentBundle",
+  "keywords": [
+    "wellcommerce",
+    "e-commerce",
+    "open-source",
+    "symfony"
+  ],
+  "authors": [
+    {
+      "name": "Adam Piotrowski",
+      "email": "adam@wellcommerce.org"
+    },
+    {
+      "name": "WellCommerce Developers",
+      "email": "developers@wellcommerce.org"
+    }
+  ],
+  "support": {
+    "email": "support@wellcommerce.org",
+    "issues": "https://github.com/WellCommerce/ShipmentBundle/issues",
+    "source": "https://github.com/WellCommerce/ShipmentBundle/"
+  },
+  "autoload": {
+    "psr-4": {
+      "WellCommerce\\Bundle\\ShipmentBundle\\": ""
+    }
+  },
+  "require": {
+    "wellcommerce/app-bundle": "^0.9@dev",
+    "wellcommerce/order-bundle": "^0.9@dev"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.9.x-dev"
+    }
+  }
+}
