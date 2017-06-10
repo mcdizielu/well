@@ -28,15 +28,6 @@
     </item>
 
     <item>
-        <identifier>shipment</identifier>
-        <css_class/>
-        <name>shipment</name>
-        <route_name>admin.shipment.index</route_name>
-        <parent>sales</parent>
-        <hierarchy>30</hierarchy>
-    </item>
-
-    <item>
         <identifier>order_status</identifier>
         <css_class/>
         <name>order_status</name>

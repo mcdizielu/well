@@ -36,6 +36,9 @@ wellcommerce_invoice:
 wellcommerce_order:
     resource: "@WellCommerceOrderBundle/Resources/config/routing.yml"
 
+wellcommerce_shipment:
+    resource: "@WellCommerceShipmentBundle/Resources/config/routing.yml"
+
 wellcommerce_feature:
     resource: "@WellCommerceFeatureBundle/Resources/config/routing.yml"
 

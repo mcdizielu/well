@@ -1,13 +1,13 @@
 <?php
 
-namespace WellCommerce\Bundle\OrderBundle\Adapter;
+namespace WellCommerce\Bundle\ShipmentBundle\Adapter;
 
 use WellCommerce\Bundle\CoreBundle\DependencyInjection\AbstractContainerAware;
 use WellCommerce\Bundle\CoreBundle\Manager\ManagerInterface;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderStatus;
 use WellCommerce\Bundle\OrderBundle\Entity\OrderStatusHistory;
-use WellCommerce\Bundle\OrderBundle\Entity\Shipment;
-use WellCommerce\Bundle\OrderBundle\Manager\ShipmentManager;
+use WellCommerce\Bundle\ShipmentBundle\Entity\Shipment;
+use WellCommerce\Bundle\ShipmentBundle\Manager\ShipmentManager;
 
 /**
  * Class AbstractShipmentAdapter

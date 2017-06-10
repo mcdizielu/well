@@ -44,7 +44,6 @@ reports: Reports
 review: Reviews
 routing: Routing configuration
 sales: Sales
-shipment: Shipments
 shipping_method: 'Shipping methods'
 tax: Taxes
 theme: Themes

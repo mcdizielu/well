@@ -59,3 +59,10 @@ admin.shipment.delete_group:
     options:
         expose: true
         require_admin_permission: shipment.delete
+
+admin.shipment.print:
+    path: /print/{guid}
+    defaults:
+        _controller: 'shipment.controller.admin:printAction'
+    options:
+        require_admin_permission: shipment.index

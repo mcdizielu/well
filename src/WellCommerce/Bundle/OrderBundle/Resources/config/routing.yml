@@ -26,10 +26,6 @@ _admin_sales_report:
     resource: "@WellCommerceOrderBundle/Resources/config/routing/sales_report/admin.yml"
     prefix: /admin/order/report
 
-_admin_shipment:
-    resource: "@WellCommerceOrderBundle/Resources/config/routing/shipment/admin.yml"
-    prefix: /admin/order/shipment
-
 _admin_shipping_method:
     resource: "@WellCommerceOrderBundle/Resources/config/routing/shipping_method/admin.yml"
     prefix: /admin/configuration/shipping_method

@@ -1,4 +1,12 @@
-WellCommerce\Bundle\OrderBundle\Entity\Shipment:
+# WellCommerce Open-Source E-Commerce Platform
+#
+# This file is part of the WellCommerce package.
+# (c) Adam Piotrowski <adam@wellcommerce.org>
+#
+# For the full copyright and license information,
+# please view the LICENSE file that was distributed with this source code.
+
+WellCommerce\Bundle\ShipmentBundle\Entity\Shipment:
     type: entity
     table: shipment
     id:
@@ -31,6 +39,7 @@ WellCommerce\Bundle\OrderBundle\Entity\Shipment:
     manyToOne:
         order:
             targetEntity: WellCommerce\Bundle\OrderBundle\Entity\Order
+            inversedBy: shipments
             joinColumn:
                 name: order_id
                 referencedColumnName: id

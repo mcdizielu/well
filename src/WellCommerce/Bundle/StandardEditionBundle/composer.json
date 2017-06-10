@@ -48,6 +48,7 @@
     "wellcommerce/product-last-viewed-bundle": "^0.9@dev",
     "wellcommerce/review-bundle": "^0.9@dev",
     "wellcommerce/search-bundle": "^0.9@dev",
+    "wellcommerce/shipment-bundle": "^0.9@dev",
     "wellcommerce/showcase-bundle": "^0.9@dev",
     "wellcommerce/similar-product-bundle": "^0.9@dev",
     "wellcommerce/template-editor-bundle": "^0.9@dev",

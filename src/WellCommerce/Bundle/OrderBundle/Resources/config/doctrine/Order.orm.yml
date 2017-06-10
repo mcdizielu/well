@@ -115,6 +115,10 @@ WellCommerce\Bundle\OrderBundle\Entity\Order:
             targetEntity:  WellCommerce\Bundle\InvoiceBundle\Entity\Invoice
             mappedBy: order
             orphanRemoval: true
+        shipments:
+            targetEntity:  WellCommerce\Bundle\ShipmentBundle\Entity\Shipment
+            mappedBy: order
+            orphanRemoval: true
     manyToOne:
         coupon:
             targetEntity: WellCommerce\Bundle\CouponBundle\Entity\Coupon

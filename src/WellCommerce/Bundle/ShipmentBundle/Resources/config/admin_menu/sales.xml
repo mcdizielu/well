@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<items>
+    <item>
+        <identifier>shipment</identifier>
+        <css_class/>
+        <name>shipment</name>
+        <route_name>admin.shipment.index</route_name>
+        <parent>sales</parent>
+        <hierarchy>30</hierarchy>
+    </item>
+</items>

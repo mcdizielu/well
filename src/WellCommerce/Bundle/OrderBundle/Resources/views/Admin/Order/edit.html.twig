@@ -97,6 +97,20 @@
                 {% endfor %}
             </ul>
         </fieldset>
+
+        <fieldset class="no-margin">
+            <legend><span>{% trans %}order.heading.shipments{% endtrans %} ({{ resource.shipments.count }})</span></legend>
+            <ul class="changes-detailed">
+                {% for shipment in resource.shipments %}
+                    <li>
+                        <h4><span>#{{ shipment.packageNumber }} - {{ shipment.createdAt|date }}</span></h4>
+                        <p><strong>{% trans %}shipment.label.sent{% endtrans %}:</strong> {{ shipment.sent|date }}</p>
+                        <p><strong>{% trans %}shipment.label.courier{% endtrans %}:</strong> {{ shipment.courier }}</p>
+                        <p class="author"><a href="{{ path('admin.shipment.print', {"guid": shipment.guid}) }}"><strong>{% trans %}shipment.button.print{% endtrans %}</strong></a></p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </fieldset>
     </div>
 
     <script type="text/javascript">

@@ -117,6 +117,11 @@ class Order implements EntityInterface
     /**
      * @var Collection
      */
+    protected $shipments;
+    
+    /**
+     * @var Collection
+     */
     protected $orderStatusHistory;
     
     /**
@@ -158,6 +163,8 @@ class Order implements EntityInterface
         $this->billingAddress     = new ClientBillingAddress();
         $this->shippingAddress    = new ClientShippingAddress();
         $this->minimumOrderAmount = new MinimumOrderAmount();
+        $this->invoices           = new ArrayCollection();
+        $this->shipments          = new ArrayCollection();
     }
     
     public function getClient()
@@ -398,6 +405,11 @@ class Order implements EntityInterface
     public function getInvoices(): Collection
     {
         return $this->invoices;
+    }
+    
+    public function getShipments(): Collection
+    {
+        return $this->shipments;
     }
     
     public function getShop(): Shop

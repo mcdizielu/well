@@ -13,7 +13,9 @@
 namespace WellCommerce\Bundle\ShipmentBundle;
 
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
+use WellCommerce\Bundle\ShipmentBundle\DependencyInjection\Compiler\RegisterShipmentAdapterPass;
 
 /**
  * Class WellCommerceShipmentBundle
@@ -22,6 +24,12 @@ use WellCommerce\Bundle\CoreBundle\HttpKernel\AbstractWellCommerceBundle;
  */
 final class WellCommerceShipmentBundle extends AbstractWellCommerceBundle
 {
+    public function build(ContainerBuilder $container)
+    {
+        parent::build($container);
+        $container->addCompilerPass(new RegisterShipmentAdapterPass());
+    }
+    
     public static function registerBundles(Collection $bundles, string $environment)
     {
         $bundles->add(new self());
