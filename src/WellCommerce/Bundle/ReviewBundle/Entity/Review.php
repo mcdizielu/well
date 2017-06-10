@@ -17,6 +17,7 @@ use WellCommerce\Bundle\CatalogBundle\Entity\Product;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\ReviewBundle\Entity\ReviewExtraTrait;
 
 /**
  * Class Review
@@ -28,6 +29,7 @@ class Review implements EntityInterface
     use Identifiable;
     use Enableable;
     use Timestampable;
+    use ReviewExtraTrait;
     
     protected $nick   = '';
     protected $review = '';

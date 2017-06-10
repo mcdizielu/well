@@ -37,6 +37,9 @@
   "extra": {
     "branch-alias": {
       "dev-master": "0.9.x-dev"
+    },
+    "enhancer-traits": {
+      "WellCommerce\\Extra\\ReviewBundle\\Entity\\ReviewExtraTrait": "src/WellCommerce/Extra/ReviewBundle/Entity/ReviewExtraTrait.php"
     }
   }
 }
