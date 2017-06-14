@@ -71,4 +71,9 @@ final class ProductContext implements ShippingSubjectInterface
     {
         return null;
     }
+    
+    public function getSubject()
+    {
+        return $this->product;
+    }
 }

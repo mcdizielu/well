@@ -34,4 +34,6 @@ interface ShippingSubjectInterface
     public function getCountry(): string;
     
     public function getShop();
+    
+    public function getSubject();
 }

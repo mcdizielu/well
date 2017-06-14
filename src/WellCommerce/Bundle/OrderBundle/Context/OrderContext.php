@@ -72,4 +72,9 @@ final class OrderContext implements ShippingSubjectInterface
     {
         return $this->order->getShop();
     }
+    
+    public function getSubject()
+    {
+        return $this->order;
+    }
 }
