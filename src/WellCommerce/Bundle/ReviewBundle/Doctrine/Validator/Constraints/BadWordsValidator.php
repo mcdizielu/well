@@ -14,8 +14,8 @@ namespace WellCommerce\Bundle\ReviewBundle\Doctrine\Validator\Constraints;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
-use WellCommerce\Bundle\ReviewBundle\Checker\BadWordsChecker;
 use WellCommerce\Bundle\ReviewBundle\Entity\Review;
+use WellCommerce\Bundle\ReviewBundle\Service\Checker\BadWordsChecker;
 
 /**
  * Class BadWordsValidator

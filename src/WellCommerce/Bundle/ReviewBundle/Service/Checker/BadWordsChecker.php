@@ -10,7 +10,7 @@
  * please view the LICENSE file that was distributed with this source code.
  */
 
-namespace WellCommerce\Bundle\ReviewBundle\Checker;
+namespace WellCommerce\Bundle\ReviewBundle\Service\Checker;
 
 use Expalmer\PhpBadWords\PhpBadWords;
 use ReflectionClass;
@@ -22,7 +22,7 @@ use ReflectionClass;
  */
 class BadWordsChecker
 {
-    public function isBadWord(string $phrase) : bool
+    public function isBadWord(string $phrase): bool
     {
         $reflection = new ReflectionClass($this);
         $directory  = dirname($reflection->getFileName());
