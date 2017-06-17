@@ -32,11 +32,14 @@ class ProductDataSetTest extends AbstractDataSetTestCase
             'id'          => 'product.id',
             'name'        => 'product_translation.name',
             'sku'         => 'product.sku',
+            'barcode'     => 'product.barcode',
             'weight'      => 'product.weight',
             'grossAmount' => 'product.sellPrice.grossAmount',
             'stock'       => 'product.stock',
-            'shop'        => 'product_shops.id',
+            'tax'         => 'sell_tax.value',
+            'photo'       => 'photos.path',
             'category'    => 'GROUP_CONCAT(DISTINCT categories_translation.name ORDER BY categories_translation.name ASC SEPARATOR \', \')',
+            'categoryId'  => 'categories.id',
         ];
     }
 }

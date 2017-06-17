@@ -67,7 +67,7 @@ parameters:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadSimilarProductData: 310
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadLastViewedData: 320
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadAlsoPurchaseddData: 330
-    fixtures_product_limit: 100
+    fixtures_product_limit: 50
     enabled_fixtures:
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadThemeData: true
         WellCommerce\Bundle\StandardEditionBundle\DataFixtures\ORM\LoadCompanyData: true
