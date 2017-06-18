@@ -21,6 +21,7 @@ use WellCommerce\Bundle\AppBundle\Entity\ShopCollectionAwareTrait;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Enableable;
 use WellCommerce\Bundle\CoreBundle\Doctrine\Behaviours\Identifiable;
 use WellCommerce\Bundle\CoreBundle\Entity\EntityInterface;
+use WellCommerce\Extra\CmsBundle\Entity\ContactExtraTrait;
 
 /**
  * Class Contact
@@ -36,6 +37,7 @@ class Contact implements EntityInterface
     use Blameable;
     use ShopCollectionAwareTrait;
     use AddressTrait;
+    use ContactExtraTrait;
     
     public function __construct()
     {

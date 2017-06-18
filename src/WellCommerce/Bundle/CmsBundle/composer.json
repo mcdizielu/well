@@ -37,7 +37,8 @@
       "dev-master": "0.9.x-dev"
     },
     "enhancer-traits": {
-      "WellCommerce\\Extra\\CmsBundle\\Entity\\PageExtraTrait": "src/WellCommerce/Extra/CmsBundle/Entity/PageExtraTrait.php"
+      "WellCommerce\\Extra\\CmsBundle\\Entity\\PageExtraTrait": "src/WellCommerce/Extra/CmsBundle/Entity/PageExtraTrait.php",
+      "WellCommerce\\Extra\\CmsBundle\\Entity\\ContactExtraTrait": "src/WellCommerce/Extra/CmsBundle/Entity/ContactExtraTrait.php"
     }
   }
 }
