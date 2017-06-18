@@ -49,6 +49,7 @@ class OrderProductDataSet extends AbstractDataSet
             'quantity'    => 'order_product.quantity',
             'productId'   => 'IDENTITY(order_product.product)',
             'variantId'   => 'IDENTITY(order_product.variant)',
+            'sku'         => 'IF_ELSE(order_product.variant IS NOT NULL, product_variant.symbol, product.sku)',
             'options'     => 'order_product.options',
             'name'        => 'product_translation.name',
             'route'       => 'IDENTITY(product_translation.route)',
