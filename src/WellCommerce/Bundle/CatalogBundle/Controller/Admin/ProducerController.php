@@ -12,6 +12,9 @@
 
 namespace WellCommerce\Bundle\CatalogBundle\Controller\Admin;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use WellCommerce\Bundle\CatalogBundle\Entity\Producer;
 use WellCommerce\Bundle\CoreBundle\Controller\Admin\AbstractAdminController;
 
 /**
@@ -21,4 +24,22 @@ use WellCommerce\Bundle\CoreBundle\Controller\Admin\AbstractAdminController;
  */
 class ProducerController extends AbstractAdminController
 {
+    public function updateAction(Request $request): JsonResponse
+    {
+        $id   = $request->request->get('id');
+        $data = $request->request->get('product');
+        
+        try {
+            $producer = $this->manager->getRepository()->find($id);
+            if ($producer instanceof Producer) {
+                $producer->setHierarchy($data['hierarchy']);
+                $this->manager->updateResource($producer);
+            }
+            $result = ['success' => $this->trans('producer.flash.success.saved')];
+        } catch (\Exception $e) {
+            $result = ['error' => $e->getMessage()];
+        }
+        
+        return $this->jsonResponse($result);
+    }
 }

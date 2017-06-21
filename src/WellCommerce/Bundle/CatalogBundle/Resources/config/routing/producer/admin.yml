@@ -37,6 +37,14 @@ admin.producer.edit:
         expose: true
         require_admin_permission: producer.edit
 
+admin.producer.update:
+    path: /update
+    defaults:
+        _controller: 'producer.controller.admin:updateAction'
+    options:
+        expose: true
+        require_admin_permission: producer.edit
+
 admin.producer.delete:
     path: '/delete/{id}'
     defaults:
