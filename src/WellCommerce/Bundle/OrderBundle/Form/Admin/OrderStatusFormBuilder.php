@@ -40,10 +40,10 @@ class OrderStatusFormBuilder extends AbstractFormBuilder
             'default' => 1
         ]));
     
-        $requiredData->addChild($this->getElement('text_field', [
+        $requiredData->addChild($this->getElement('colour_picker', [
             'name'    => 'colour',
             'label'   => 'order_status.label.colour',
-            'default' => '#000'
+            'default' => '000000'
         ]));
         
         $orderStatusGroups = $this->get('order_status_group.dataset.admin')->getResult('select');

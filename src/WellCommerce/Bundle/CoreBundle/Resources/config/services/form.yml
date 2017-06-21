@@ -104,6 +104,12 @@ services:
             - { name: form.element, alias: text_field }
         shared: false
 
+    form.element.colour_picker:
+        class: WellCommerce\Component\Form\Elements\Input\ColourPicker
+        tags:
+            - { name: form.element, alias: colour_picker }
+        shared: false
+
     form.element.slug_field:
         class: WellCommerce\Component\Form\Elements\Input\SlugField
         tags:
